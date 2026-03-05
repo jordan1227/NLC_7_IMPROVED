@@ -1,0 +1,159 @@
+--[[-----------------------------------------------------------------------------------------------
+ File              : ui_cheat_main.script
+ Description       : Óíèâåğñàëüíîå ñïàâí-ìåíş (Ò×, ×Í, ÇÏ)
+ Created           : 02.11.2014
+ Copyright         : naxac
+--]]-----------------------------------------------------------------------------------------------
+cheat_list = nil
+local ss_ver = script_server_object_version()
+local ver_prefix = (ss_ver <= 7 and "soc") or ((ss_ver > 7 and ss_ver < 12) and "cs") or (ss_ver >= 12 and "cop")
+local not_copy = true
+local file = nil
+
+function start_menu(self)	
+	if not_copy then
+		tolog("ui_cheat_main: copy ini file")
+		local f = getFS()
+		local f1, f2
+		f1 = f:update_path("$game_scripts$", "spawn_list.ltx")
+		f2 = f:update_path("$game_config$", "spawn_list.ltx")
+		f:file_copy(f1, f2)
+		not_copy = false
+	end
+	
+	if cheat_list == nil then
+		tolog("ui_cheat_main: create spawn array")
+		cheat_list = {}
+		local spawn_ini = ini_file("spawn_list.ltx")
+		local sections = {"weapons","ammo","addons","outfits","artefacts","items","quest_items","unique"}
+		for k,v in pairs(sections) do
+			if spawn_ini:section_exist(v) then
+				cheat_list[v] = {}
+				local t = cheat_list[v]
+				local result, id, value
+				for i=0,spawn_ini:line_count(v)-1 do
+					result, id, value = spawn_ini:r_line(v,i,"","")
+					if check_item(id) then table.insert(t,id) end
+				end
+				table.sort(cheat_list[v], sort_sections)
+			end
+		end
+	end
+	
+	
+	if self.spawn_dlg == nil then
+		if file == nil then
+			file = "ui_cheat_"..ver_prefix
+			if not _G[file] then
+				file = nil
+				tolog("ui_cheat_main: can't find module '%s' for version %d (%s)", file, ss_ver, ver_prefix)
+				return
+			end
+		end
+		self.spawn_dlg = _G[file].cheat_menu()
+		self.spawn_dlg.owner = self
+	end
+	
+	if ver_prefix == "cop" then
+		self.spawn_dlg:ShowDialog(true)
+		self:HideDialog()
+		self:Show(false)
+	else
+		self:GetHolder():start_stop_menu(self.spawn_dlg, true)
+		self:GetHolder():start_stop_menu(self, true)
+		self:Show(false)
+	end
+end
+
+-- Ñîğòèğóåì ïğåäìåòû ïî àëôàâèòó: ÷òîá áûëî ïğîùå èñêàòü íóæíîå
+local abc = [[1234567890abcdefghigklmnopqrstuvwxyzàáâãäå¸æçèéêëìíîïğñòóôõö÷øùúûüışÿ'"«»[]\|/?!@#*$¹:;.,()_-=+%&^`~<>]]
+function sort_sections(s1,s2)
+	local n1 = game.translate_string(read_if_exist("str", s1, "inv_name", s1))
+	local n2 = game.translate_string(read_if_exist("str", s2, "inv_name", s2))
+	local cnt = math.min(#n1, #n2)
+	for a=1,cnt do
+		local l1 = string_lower(string.sub(n1,a,a))
+		local l2 = string_lower(string.sub(n2,a,a))
+		local f1 = string.find(abc,l1,1,true) or 0
+		local f2 = string.find(abc,l2,1,true) or 0
+		if f1~=f2 then
+			return f1<f2
+		end
+	end
+	return #n1<#n2
+end
+
+function give_icon_params(section)
+	local t = {}
+	t.width = read_if_exist("u32", section, "inv_grid_width", 1)*50
+	t.height = read_if_exist("u32", section, "inv_grid_height", 1)*50
+	t.x = read_if_exist("u32", section, "inv_grid_x", 8)*50
+	t.y = read_if_exist("u32", section, "inv_grid_y", 13)*50
+	return t
+end
+
+function spawn_item(section)
+	if not section then return end
+	if check_game() then
+		alife():create(section,vector(),0,0,0)
+		local snd = sound_object([[detectors\contact_1]])
+		snd:play(db.actor, 0, sound_object.s2d)
+	end
+end
+
+function check_game()
+	return alife()~=nil and db.actor and db.actor:alive()
+end
+
+function read_if_exist(what, section, line, def, ini)
+	if not ini then ini = system_ini() end
+	if section and ini:section_exist(section) and ini:line_exist(section,line) then
+		if what == "flt" then
+			return ini:r_float(section,line)
+		elseif what == "u32" then
+			return ini:r_u32(section,line)
+		elseif what == "str" then
+			return ini:r_string(section,line)
+		elseif what == "bln" then
+			return ini:r_bool(section,line)
+		end
+	end
+	return def
+end
+
+-- made by Charsi
+function string_lower(str)
+	local low = [[qwertyuiopasdfghjklzxcvbnméöóêåíãøùçõúôûâàïğîëäæıÿ÷ñìèòüáş¸]]
+	local high = [[QWERTYUIOPASDFGHJKLZXCVBNMÉÖÓÊÅÍÃØÙÇÕÚÔÛÂÀÏĞÎËÄÆİß×ÑÌÈÒÜÁŞ¨]]
+	local low_str = ""
+	for i = 1, #str do
+		local letter = string.sub(str,i,i)
+		for a = 1,#high do
+			if letter == string.sub(high,a,a) then letter = string.sub(low,a,a) break end
+		end
+		low_str = low_str..letter
+	end
+	return low_str
+end
+
+function check_item(section)
+	if system_ini():section_exist(section) then
+		if read_if_exist("bln", section, "can_take", true)==true
+			and read_if_exist("str", section, "class", nil)~=nil
+			and read_if_exist("str", section, "description", nil)~=nil
+			and read_if_exist("str", section, "inv_name", nil)~=nil
+			and read_if_exist("str", section, "visual", nil)~=nil then return true
+		else tolog("ERROR! Incorrect section for spawn [%s]",section) return false end
+	else
+		tolog("ERROR! Section not found: [%s]",section)
+		return false
+	end
+end
+
+function tolog(fmt,...)
+	if alife()~=nil then
+		local con = get_console()
+		local msg = string.format(fmt,...)
+		con:execute("load ~cheat~ "..msg)
+	end
+end

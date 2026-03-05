@@ -1,0 +1,3588 @@
+<?xml version="1.0" encoding="windows-1251"  ?>
+<game_dialogs>
+
+<dialog id="bar_bar_visitors_3_start">
+	<phrase_list>
+		<phrase id="0">
+			<text></text>		
+			<next>100</next>
+			<next>200</next>
+		</phrase>
+		<phrase id="100">
+			<dont_has_info>bar_darklab_document_done</dont_has_info>
+			<next>101</next>
+		</phrase>
+		<phrase id="200">
+			<has_info>bar_darklab_document_done</has_info>
+			<next>201</next>
+		</phrase>
+		<phrase id="101">
+			<text>bar_bar_visitors_3_start_101</text>
+			<action>dialogs.no_trade_trader</action>			
+			<next>102</next>
+		</phrase>
+		<phrase id="102">
+			<text>bar_bar_visitors_3_start_102</text>
+			<next>103</next>
+		</phrase>
+		<phrase id="103">
+			<text>bar_bar_visitors_3_start_103</text>
+			<next>104</next>
+		</phrase>
+		<phrase id="104">
+			<text>bar_bar_visitors_3_start_104</text>
+			<next>105</next>
+		</phrase>
+		<phrase id="105">
+			<text>bar_bar_visitors_3_start_105</text>
+		</phrase>
+		<phrase id="201">
+			<text>bar_bar_visitors_3_start_201</text>
+			<action>dialogs.no_trade_trader</action>			
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="bar_bar_visitors_4_start">
+	<phrase_list>
+		<phrase id="0">
+			<text></text>		
+			<next>100</next>
+			<next>200</next>
+		</phrase>
+		<phrase id="100">
+			<dont_has_info>yan_kill_brain_done</dont_has_info>
+			<next>101</next>
+		</phrase>
+		<phrase id="200">
+			<has_info>yan_kill_brain_done</has_info>
+			<next>201</next>
+		</phrase>
+		<phrase id="101">
+			<text>bar_bar_visitors_4_start_101</text>			
+			<next>102</next>
+		</phrase>
+		<phrase id="102">
+			<text>bar_bar_visitors_4_start_102</text>
+			<next>103</next>
+		</phrase>
+		<phrase id="103">
+			<text>bar_bar_visitors_4_start_103</text>
+			<next>104</next>
+		</phrase>
+		<phrase id="104">
+			<text>bar_bar_visitors_4_start_104</text>
+			<next>105</next>
+		</phrase>
+		<phrase id="105">
+			<text>bar_bar_visitors_4_start_105</text>
+		</phrase>
+		<phrase id="201">
+			<text>bar_bar_visitors_4_start_201</text>		
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="bar_bar_visitors_5_start">
+	<phrase_list>
+		<phrase id="0">
+			<text></text>		
+			<next>100</next>
+			<next>200</next>
+			<next>300</next>			
+		</phrase>
+		<phrase id="100">
+			<dont_has_info>agroprom_military_case_know</dont_has_info>
+			<next>101</next>
+		</phrase>
+		<phrase id="200">
+			<has_info>agroprom_military_case_know</has_info>
+			<dont_has_info>bar_darklab_document_done</dont_has_info>			
+			<next>201</next>
+		</phrase>
+		<phrase id="300">
+			<has_info>bar_darklab_document_done</has_info>			
+			<next>301</next>
+		</phrase>		
+		<phrase id="101">
+			<text>bar_bar_visitors_5_start_101</text>		
+			<next>102</next>
+		</phrase>
+		<phrase id="102">
+			<text>bar_bar_visitors_5_start_102</text>
+			<next>103</next>
+		</phrase>
+		<phrase id="103">
+			<text>bar_bar_visitors_5_start_103</text>
+			<next>104</next>
+		</phrase>
+		<phrase id="104">
+			<text>bar_bar_visitors_5_start_104</text>
+			<next>105</next>
+		</phrase>
+		<phrase id="105">
+			<text>bar_bar_visitors_5_start_105</text>
+		</phrase>		
+		<phrase id="201">
+			<text>bar_bar_visitors_5_start_201</text>	
+			<next>202</next>
+		</phrase>
+		<phrase id="202">
+			<text>bar_bar_visitors_5_start_202</text>
+			<next>203</next>
+		</phrase>
+		<phrase id="203">
+			<text>bar_bar_visitors_5_start_203</text>
+			<next>204</next>
+		</phrase>
+		<phrase id="204">
+			<text>bar_bar_visitors_5_start_204</text>
+			<next>205</next>
+		</phrase>
+		<phrase id="205">
+			<text>bar_bar_visitors_5_start_205</text>
+		</phrase>		
+		<phrase id="301">
+			<text>bar_bar_visitors_5_start_201</text>			
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="bar_bar_visitors_6_start">
+	<phrase_list>
+		<phrase id="0">
+			<text></text>		
+			<next>100</next>
+			<next>200</next>
+		</phrase>
+		<phrase id="100">
+			<dont_has_info>yan_kill_brain_done</dont_has_info>
+			<next>101</next>
+		</phrase>
+		<phrase id="200">
+			<has_info>yan_kill_brain_done</has_info>
+			<next>201</next>
+		</phrase>
+		<phrase id="101">
+			<text>bar_bar_visitors_6_start_101</text>		
+			<next>102</next>
+		</phrase>
+		<phrase id="102">
+			<text>bar_bar_visitors_6_start_102</text>
+			<next>103</next>
+		</phrase>
+		<phrase id="103">
+			<text>bar_bar_visitors_6_start_103</text>
+			<next>104</next>
+		</phrase>
+		<phrase id="104">
+			<text>bar_bar_visitors_6_start_104</text>
+			<next>105</next>
+		</phrase>
+		<phrase id="105">
+			<text>bar_bar_visitors_6_start_105</text>
+		</phrase>
+		<phrase id="201">
+			<text>bar_bar_visitors_6_start_201</text>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="bar_bar_visitors_7_start">
+	<phrase_list>
+		<phrase id="0">
+			<text></text>		
+			<next>100</next>
+			<next>200</next>
+		</phrase>
+		<phrase id="100">
+			<dont_has_info>yan_kill_brain_done</dont_has_info>
+			<next>101</next>
+		</phrase>
+		<phrase id="200">
+			<has_info>yan_kill_brain_done</has_info>
+			<next>201</next>
+		</phrase>
+		<phrase id="101">
+			<text>bar_bar_visitors_7_start_101</text>
+			<next>102</next>
+		</phrase>
+		<phrase id="102">
+			<text>bar_bar_visitors_7_start_102</text>
+			<next>103</next>
+		</phrase>
+		<phrase id="103">
+			<text>bar_bar_visitors_7_start_103</text>
+			<next>104</next>
+		</phrase>
+		<phrase id="104">
+			<text>bar_bar_visitors_7_start_104</text>
+			<next>105</next>
+		</phrase>
+		<phrase id="105">
+			<text>bar_bar_visitors_7_start_105</text>
+		</phrase>
+		<phrase id="201">		
+			<text>bar_bar_visitors_7_start_201</text>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="bar_bar_visitors_8_start">
+	<phrase_list>
+		<phrase id="0">
+			<text></text>		
+			<next>100</next>
+			<next>200</next>
+		</phrase>
+		<phrase id="100">
+			<dont_has_info>bar_darklab_document_done</dont_has_info>
+			<next>101</next>
+		</phrase>
+		<phrase id="200">
+			<has_info>bar_darklab_document_done</has_info>
+			<next>201</next>
+		</phrase>
+		<phrase id="101">
+			<text>bar_bar_visitors_8_start_101</text>
+			<next>102</next>
+		</phrase>
+		<phrase id="102">
+			<text>bar_bar_visitors_8_start_102</text>
+			<next>103</next>
+		</phrase>
+		<phrase id="103">
+			<text>bar_bar_visitors_8_start_103</text>
+			<next>104</next>
+		</phrase>
+		<phrase id="104">
+			<text>bar_bar_visitors_8_start_104</text>
+			<next>105</next>
+		</phrase>
+		<phrase id="105">
+			<text>bar_bar_visitors_8_start_105</text>
+		</phrase>
+		<phrase id="201">
+			<text>bar_bar_visitors_8_start_201</text>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="bar_bar_visitors_9_start">
+	<phrase_list>
+		<phrase id="0">
+			<text></text>		
+			<next>100</next>
+			<next>200</next>
+		</phrase>
+		<phrase id="100">
+			<dont_has_info>bar_darklab_document_done</dont_has_info>
+			<next>101</next>
+		</phrase>
+		<phrase id="200">
+			<has_info>bar_darklab_document_done</has_info>
+			<next>201</next>
+		</phrase>
+		<phrase id="101">
+			<text>bar_bar_visitors_9_start_101</text>
+			<next>102</next>
+		</phrase>
+		<phrase id="102">
+			<text>bar_bar_visitors_9_start_102</text>
+			<next>103</next>
+		</phrase>
+		<phrase id="103">
+			<text>bar_bar_visitors_9_start_103</text>
+			<next>104</next>
+		</phrase>
+		<phrase id="104">
+			<text>bar_bar_visitors_9_start_104</text>
+			<next>105</next>
+		</phrase>
+		<phrase id="105">
+			<text>bar_bar_visitors_9_start_105</text>
+		</phrase>
+		<phrase id="201">
+			<text>bar_bar_visitors_9_start_201</text>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="bar_bar_visitors_10_start">
+	<phrase_list>
+		<phrase id="0">
+			<text></text>		
+			<next>100</next>
+			<next>200</next>
+		</phrase>
+		<phrase id="100">
+			<dont_has_info>bar_darklab_document_done</dont_has_info>
+			<next>101</next>
+		</phrase>
+		<phrase id="200">
+			<has_info>bar_darklab_document_done</has_info>
+			<next>201</next>
+		</phrase>
+		<phrase id="101">
+			<text>bar_bar_visitors_10_start_101</text>
+			<next>102</next>
+		</phrase>
+		<phrase id="102">
+			<text>bar_bar_visitors_10_start_102</text>
+			<next>103</next>
+		</phrase>
+		<phrase id="103">
+			<text>bar_bar_visitors_10_start_103</text>
+			<next>104</next>
+		</phrase>
+		<phrase id="104">
+			<text>bar_bar_visitors_10_start_104</text>
+			<next>105</next>
+		</phrase>
+		<phrase id="105">
+			<text>bar_bar_visitors_10_start_105</text>
+		</phrase>
+		<phrase id="201">
+			<text>bar_bar_visitors_10_start_201</text>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="bar_bar_visitors_13_start">
+	<phrase_list>
+		<phrase id="0">
+			<text></text>		
+			<next>100</next>
+			<next>200</next>
+		</phrase>
+		<phrase id="100">
+			<dont_has_info>bar_darklab_document_done</dont_has_info>
+			<next>101</next>
+		</phrase>
+		<phrase id="200">
+			<has_info>bar_darklab_document_done</has_info>
+			<next>201</next>
+		</phrase>
+		<phrase id="101">
+			<text>bar_bar_visitors_13_start_101</text>
+			<next>102</next>
+		</phrase>
+		<phrase id="102">
+			<text>bar_bar_visitors_13_start_102</text>
+			<next>103</next>
+		</phrase>
+		<phrase id="103">
+			<text>bar_bar_visitors_13_start_103</text>
+			<next>104</next>
+		</phrase>
+		<phrase id="104">
+			<text>bar_bar_visitors_13_start_104</text>
+			<next>105</next>
+		</phrase>
+		<phrase id="105">
+			<text>bar_bar_visitors_13_start_105</text>
+		</phrase>
+		<phrase id="201">
+			<text>bar_bar_visitors_13_start_201</text>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<!-- Лысый -->
+<dialog id="lisiy_bar_start">
+	<phrase_list>
+		<phrase id="0">
+		<action>dialogs.no_trade_trader</action>
+			<next>1</next>
+			<next>2</next>
+		</phrase>
+		<phrase id="1">
+		<dont_has_info>bar_lisiy_new_gg</dont_has_info>
+			<next>11</next>
+		</phrase>
+		<phrase id="2">
+		<has_info>bar_lisiy_new_gg</has_info>
+			<next>21</next>
+		</phrase>
+		<phrase id="11">
+			<text>lisiy_bar_start_11</text>
+			<next>12</next>
+		</phrase>
+		<phrase id="12">
+			<text>lisiy_bar_start_12</text>
+			<next>13</next>
+		</phrase>
+		<phrase id="13">
+			<text>lisiy_bar_start_13</text>
+			<next>14</next>
+		</phrase>
+		<phrase id="14">
+			<text>lisiy_bar_start_14</text>
+			<next>15</next>
+		</phrase>
+		<phrase id="15">
+			<text>lisiy_bar_start_15</text>
+			<next>16</next>
+		</phrase>
+		<phrase id="16">
+			<text>lisiy_bar_start_16</text>
+			<next>17</next>
+		</phrase>
+		<phrase id="17">
+			<text>lisiy_bar_start_17</text>
+			<give_info>minigame_start</give_info>
+			<give_info>bar_lisiy_new_gg</give_info>
+		</phrase>
+		<phrase id="21">
+			<text>lisiy_bar_start_21</text>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="barman_kruglov_flash">
+	<has_info>kruglov_flash_start</has_info>
+	<dont_has_info>barman_ecolog_flash_dialog_end</dont_has_info>
+	<dont_has_info>kruglov_flash_done</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+		<text>barman_kruglov_flash_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>barman_kruglov_flash_1</text>
+			<next>2</next>
+			<next>3</next>
+			<next>4</next>
+		</phrase>
+		<phrase id="2">
+		<precondition>bar_dialogs.actor_have_research</precondition>
+			<text>barman_kruglov_flash_2</text>
+			<next>21</next>
+		</phrase>
+		<phrase id="3">
+		<has_info>barman_ecolog_flash_give</has_info>
+			<text>barman_kruglov_flash_3</text>
+			<next>31</next>
+			<next>32</next>
+		</phrase>
+		<phrase id="4">
+			<text>barman_kruglov_flash_4</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="31">
+		<dont_has_info>timer_barman_flash_end</dont_has_info>
+			<text>barman_kruglov_flash_31</text>
+		</phrase>
+		<phrase id="32">
+		<has_info>timer_barman_flash_end</has_info>
+			<text>barman_kruglov_flash_32</text>
+			<next>33</next>
+		</phrase>
+		<phrase id="21">
+			<text>barman_kruglov_flash_21</text>
+			<next>22</next>
+		</phrase>
+		<phrase id="22">
+			<text>barman_kruglov_flash_22</text>
+			<next>23</next>
+		</phrase>
+		<phrase id="23">
+			<text>barman_kruglov_flash_23</text>
+			<action>sak_inventory.release_actor_items("kruglov_pda",1)</action>
+			<action>sak.start_barman_flash_timer</action>
+			<give_info>barman_ecolog_flash_give</give_info>
+			<next>24</next>
+		</phrase>
+		<phrase id="24">
+			<text>barman_kruglov_flash_24</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	
+		<phrase id="33">
+			<text>barman_kruglov_flash_33</text>
+			<next>34</next>
+		</phrase>
+		<phrase id="34">
+			<text>barman_kruglov_flash_34</text>
+			<next>35</next>
+		</phrase>
+		<phrase id="35">
+			<text>barman_kruglov_flash_35</text>
+			<next>36</next>
+		</phrase>
+		<phrase id="36">
+			<text>barman_kruglov_flash_36</text>
+			<next>361</next>
+			<next>362</next>
+			<next>363</next>
+			<next>364</next>
+		</phrase>
+		<phrase id="361">
+		<dont_has_info>volkodav_umer</dont_has_info>
+		<dont_has_info>kruglov_is_fly</dont_has_info>
+		<dont_has_info>sak_ros_ecolog_end</dont_has_info>
+		<dont_has_info>bar_heli_scene_professor_die</dont_has_info>
+			<text>barman_kruglov_flash_361</text>
+			<next>37</next>
+		</phrase>
+		<phrase id="362">
+		<precondition>sak.barman_flash_precond2</precondition>
+		<dont_has_info>bar_heli_scene_professor_die</dont_has_info>
+			<text>barman_kruglov_flash_362</text>
+			<next>37</next>
+		</phrase>
+		<phrase id="363">
+		<precondition>sak.barman_flash_precond</precondition>
+		<dont_has_info>bar_heli_scene_professor_die</dont_has_info>
+			<text>barman_kruglov_flash_363</text>
+			<next>37</next>
+		</phrase>
+		<phrase id="364">
+		<has_info>bar_heli_scene_professor_die</has_info>
+			<text>barman_kruglov_flash_364</text>
+			<next>37</next>
+		</phrase>
+		<phrase id="37">
+			<text>barman_kruglov_flash_37</text>
+			<next>38</next>
+		</phrase>
+		<phrase id="38">
+			<text>barman_kruglov_flash_38</text>
+			<next>39</next>
+		</phrase>
+		<phrase id="39">
+			<text>barman_kruglov_flash_39</text>
+			<next>40</next>
+		</phrase>
+		<phrase id="40">
+			<text>barman_kruglov_flash_40</text>
+			<next>41</next>
+		</phrase>		
+		<phrase id="41">
+			<text>barman_kruglov_flash_41</text>
+			<action>sak.create_items("wpn_svd",1)</action>
+			<action>sak.create_items("wpn_addon_1pso",1)</action>
+			<give_info>barman_ecolog_flash_dialog_end</give_info>
+		</phrase>		
+	</phrase_list>
+</dialog>
+
+<dialog id="barman_casset_dialog">
+	<has_info>mil_stalker_casset_info</has_info>
+	<dont_has_info>mil_stalker_casset_end_info</dont_has_info>
+	<dont_has_info>barman_casset_end_info</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>barman_casset_dialog_0</text>
+			<next>11</next>
+			<next>12</next>
+		</phrase>
+		<phrase id="11">
+		<dont_has_info>barman_casset_info</dont_has_info>
+			<text>barman_casset_dialog_11</text>
+			<next>2</next>
+		</phrase>		
+		<phrase id="12">
+		<has_info>barman_casset_info</has_info>
+			<text>barman_casset_dialog_12</text>
+			<next>131</next>
+			<next>132</next>
+		</phrase>
+		<phrase id="2">
+			<text>barman_casset_dialog_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>barman_casset_dialog_3</text>
+			<give_info>barman_casset_info</give_info>
+			<next>131</next>
+			<next>132</next>
+		</phrase>
+		<phrase id="131">
+		<precondition>sak_dialog.cond_items_have("b",1,0.9)</precondition>
+			<text>barman_casset_dialog_131</text>
+			<action>sak_dialog.cond_items_have("b",1,0.9,true)</action>
+			<next>4</next>
+		</phrase>
+		<phrase id="132">
+			<text>barman_casset_dialog_132</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="4">
+			<text>barman_casset_dialog_4</text>
+			<action>sak.create_items("video_casset",1)</action>
+			<give_info>barman_casset_end_info</give_info>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>barman_casset_dialog_5</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="kruglov_drugs_dialog">
+	<precondition>sak_dialog.can_talk_im_chain</precondition>
+	<has_info>kruglov_yantar_met</has_info>
+	<dont_has_info>kruglov_yantar_talk</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>kruglov_drugs_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>kruglov_drugs_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>kruglov_drugs_dialog_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>kruglov_drugs_dialog_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>kruglov_drugs_dialog_4</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>kruglov_drugs_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>kruglov_drugs_dialog_6</text>
+			<next>7</next>
+		</phrase>
+		<phrase id="7">
+			<text>kruglov_drugs_dialog_7</text>
+			<next>8</next>
+		</phrase>
+		<phrase id="8">
+			<text>kruglov_drugs_dialog_8</text>
+			<next>9</next>
+		</phrase>
+		<phrase id="9">
+			<text>kruglov_drugs_dialog_9</text>
+			<next>10</next>
+		</phrase>
+		<phrase id="10">
+			<text>kruglov_drugs_dialog_10</text>
+			<next>11</next>
+		</phrase>
+		<phrase id="11">
+			<text>kruglov_drugs_dialog_11</text>
+			<next>12</next>
+		</phrase>
+		<phrase id="12">
+			<text>kruglov_drugs_dialog_12</text>
+			<next>13</next>
+		</phrase>
+		<phrase id="13">
+			<text>kruglov_drugs_dialog_13</text>
+			<next>14</next>
+		</phrase>
+		<phrase id="14">
+			<text>kruglov_drugs_dialog_14</text>
+			<next>15</next>
+		</phrase>
+		<phrase id="15">
+			<text>kruglov_drugs_dialog_15</text>
+			<next>151</next>
+			<next>152</next>
+		</phrase>
+		<phrase id="151">
+		<precondition>sak_dialog.have_im_chain</precondition>
+			<text>kruglov_drugs_dialog_151</text>
+			<action>sak_dialog.give_im_chain</action>
+			<next>16</next>
+		</phrase>
+		<phrase id="152">
+			<text>kruglov_drugs_dialog_152</text>
+			<give_info>kruglov_yantar_talk</give_info>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="16">
+			<text>kruglov_drugs_dialog_16</text>
+			<next>17</next>
+		</phrase>
+		<phrase id="17">
+			<text>kruglov_drugs_dialog_17</text>
+			<next>18</next>
+		</phrase>
+		<phrase id="18">
+			<text>kruglov_drugs_dialog_18</text>
+			<give_info>kruglov_yantar_talk</give_info>
+			<give_info>drugs_receipt</give_info>
+			<give_info>mixture_drink_ready</give_info>
+			<next>19</next>
+		</phrase>
+		<phrase id="19">
+			<text>kruglov_drugs_dialog_19</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="kruglov_drugs_dialog_2">
+	<precondition>sak_dialog.have_im_chain</precondition>
+	<has_info>kruglov_yantar_talk</has_info>
+	<dont_has_info>kruglov_yantar_talk2</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>kruglov_drugs_dialog_2_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>kruglov_drugs_dialog_2_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>kruglov_drugs_dialog_2_2</text>
+			<action>sak_dialog.give_im_chain</action>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>kruglov_drugs_dialog_16</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>kruglov_drugs_dialog_17</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>kruglov_drugs_dialog_18</text>
+			<give_info>drugs_receipt</give_info>
+			<give_info>mixture_drink_ready</give_info>
+			<give_info>kruglov_yantar_talk2</give_info>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>kruglov_drugs_dialog_19</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="barman_musik_dialog">
+	<phrase_list>
+		<phrase id="0">
+			<text>barman_musik_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>barman_musik_dialog_1</text>
+			<next>2</next>
+			<next>10</next>
+		</phrase>
+		<phrase id="2">
+		<precondition>sak_dialog.actor_200_have</precondition>
+			<text>barman_musik_dialog_2</text>
+			<action>sak_dialog.give_200_money</action>
+			<next>3</next>
+		</phrase>
+		<phrase id="10">
+			<text>barman_musik_dialog_10</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+			<text>barman_musik_dialog_3</text>
+			<next>4</next>
+			<next>5</next>
+			<next>6</next>
+			<next>7</next>
+			<next>8</next>
+		</phrase>
+		<phrase id="4">
+			<text>barman_musik_dialog_4</text>
+			<give_info>bar_retro</give_info>
+			<next>41</next>
+		</phrase>
+		<phrase id="5">
+			<text>barman_musik_dialog_5</text>
+			<give_info>bar_rock</give_info>
+			<next>51</next>
+		</phrase>
+		<phrase id="6">
+			<text>barman_musik_dialog_6</text>
+			<give_info>bar_rockn</give_info>
+			<next>61</next>
+		</phrase>
+		<phrase id="7">
+			<text>barman_musik_dialog_7</text>
+			<give_info>bar_modern</give_info>
+			<next>71</next>
+		</phrase>
+		<phrase id="41">
+			<text>barman_musik_dialog_41</text>
+		</phrase>
+		<phrase id="51">
+			<text>barman_musik_dialog_51</text>
+		</phrase>
+		<phrase id="61">
+			<text>barman_musik_dialog_61</text>
+		</phrase>
+		<phrase id="71">
+			<text>barman_musik_dialog_71</text>
+		</phrase>
+		<phrase id="8">
+			<text>barman_musik_dialog_8</text>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="garik_start_dialog">
+<precondition>dialogs.is_not_wounded</precondition>
+	<dont_has_info>garik_start_gg</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>garik_start_dialog_0</text>
+			<next>1</next>			
+		</phrase>
+		<phrase id="1">			
+			<text>garik_start_dialog_1</text>
+			<next>2</next>
+		</phrase>		
+		<phrase id="2">
+			<text>garik_start_dialog_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>garik_start_dialog_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>garik_start_dialog_4</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>garik_start_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>garik_start_dialog_6</text>
+			<next>7</next>			
+		</phrase>
+		<phrase id="7">
+			<text>garik_start_dialog_7</text>
+			<next>8</next>
+		</phrase>
+		<phrase id="8">
+			<text>garik_start_dialog_8</text>
+			<next>9</next>
+		</phrase>
+		<phrase id="9">
+			<text>garik_start_dialog_9</text>
+			<give_info>garik_start_gg</give_info>
+			<next>10</next>			
+		</phrase>
+		<phrase id="10">
+			<text>garik_start_dialog_10</text>
+			<action>dialogs.break_dialog</action>			
+		</phrase>		
+	</phrase_list>
+</dialog>
+
+<dialog id="garik_need_room_dialog">
+<precondition>dialogs.is_not_wounded</precondition>
+	<has_info>garik_start_gg</has_info>
+	<dont_has_info>bar_barman_need_room</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>garik_need_room_dialog_0</text>
+			<next>100</next>
+			<next>200</next>
+			<next>300</next>
+			<next>400</next>			
+		</phrase>
+		<phrase id="100">
+		<dont_has_info>repair_starting</dont_has_info>		
+		<precondition>sak_dialog.bar_need_room_prec_no</precondition>
+			<text>garik_need_room_dialog_100</text>
+			<next>101</next>
+			<next>102</next>
+			<next>103</next>
+			<next>104</next>			
+		</phrase>
+		<phrase id="101">
+		<precondition>sak_dialog.antirad_have</precondition>
+			<text>garik_need_room_dialog_101</text>
+			<action>sak_dialog.give_antirad</action>
+			<next>500</next>
+		</phrase>
+		<phrase id="102">
+		<precondition>sak_dialog.medkit_army_have</precondition>
+			<text>garik_need_room_dialog_102</text>
+			<action>sak_dialog.give_medkit_army</action>
+			<next>500</next>
+		</phrase>
+		<phrase id="103">
+		<precondition>sak_dialog.medkit_scientic_have</precondition>
+			<text>garik_need_room_dialog_103</text>
+			<action>sak_dialog.give_medkit_scientic</action>
+			<next>500</next>
+		</phrase>
+		<phrase id="104">
+			<text>garik_need_room_dialog_104</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>		
+		<phrase id="500">
+			<text>garik_need_room_dialog_500</text>
+			<give_info>bar_barman_need_room</give_info>
+		</phrase>				
+		<phrase id="200"> <!-- если ремонт начат и уже закончился -->
+		<has_info>repair_starting</has_info>
+		<precondition>sak_dialog.bar_need_room_prec_no</precondition>
+		<precondition>sak_dialog.is_ready_repair</precondition>
+			<text>garik_need_room_dialog_200</text>
+			<give_info>repair_starting_go</give_info> <!-- активация халявного пропуска -->
+			<next>201</next>
+		</phrase>
+		<phrase id="201">
+			<text>garik_need_room_dialog_201</text>
+			<give_info>bar_barman_need_room</give_info>
+		</phrase>		
+		<phrase id="300">	<!-- если ремонт начат но не закончился -->	 
+		<has_info>repair_starting</has_info>
+		<precondition>sak_dialog.bar_need_room_prec_no</precondition>
+		<precondition>sak_dialog.not_ready_repair</precondition>                                     
+			<text>garik_need_room_dialog_300</text>
+			<next>101</next>
+			<next>102</next>
+			<next>103</next>
+			<next>104</next>			
+		</phrase>
+		<phrase id="400">
+		<precondition>sak_dialog.bar_need_room_prec_yes</precondition>
+			<text>garik_need_room_dialog_400</text>
+			<next>401</next>
+		</phrase>
+		<phrase id="401">
+			<text>garik_need_room_dialog_401</text>
+			<give_info>bar_barman_need_room</give_info>
+		</phrase>		
+	</phrase_list>
+</dialog>
+
+<dialog id="bar_dolg_guard_bunker_start">
+	<phrase_list>
+		<phrase id="0">
+			<action>dialogs.no_trade_trader</action>
+			<text />
+			<next>100</next>
+			<next>200</next>
+		</phrase>	
+		<phrase id="100">
+			<text />
+			<dont_has_info>bar_dolg_community_leader</dont_has_info>
+			<next>101</next>
+		</phrase>
+		<phrase id="101">
+			<text>bar_dolg_guard_bunker_start_101</text>						
+		</phrase>
+		<phrase id="200">
+			<text />
+			<has_info>bar_dolg_community_leader</has_info>
+			<next>201</next>
+		</phrase>
+		<phrase id="201">
+			<text>bar_dolg_guard_bunker_start_201</text>			
+		</phrase>		
+	</phrase_list>
+</dialog>
+
+<dialog id="bar_dolg_base_guard_talk">
+<dont_has_info>bar_dolg_base_pass</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>bar_dolg_base_guard_talk_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>bar_dolg_base_guard_talk_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>bar_dolg_base_guard_talk_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>bar_dolg_base_guard_talk_3</text>
+		</phrase>		
+	</phrase_list>
+</dialog>
+<!-- Киценко --> 
+<dialog id="bar_dolg_zastava">
+	<phrase_list>
+		<phrase id="0">
+			<action>dialogs.no_trade_trader</action>
+			<text />
+			<next>100</next>
+			<next>200</next>
+			<next>300</next>
+		</phrase>
+		<phrase id="100">
+			<text />
+			<dont_has_info>bar_deactivate_radar_done</dont_has_info>
+			<next>101</next>
+		</phrase>
+		<phrase id="200">
+			<text />
+			<dont_has_info>dolg_zastava_deactivate_radar_talk</dont_has_info>
+			<has_info>bar_deactivate_radar_done</has_info>
+			<next>201</next>
+		</phrase>
+		<phrase id="300">
+			<text />
+			<has_info>dolg_zastava_deactivate_radar_talk</has_info>
+			<next>301</next>
+		</phrase>
+		<phrase id="101">
+			<text>bar_dolg_zastava_101</text>
+		</phrase>
+		<phrase id="201">
+			<text>bar_dolg_zastava_201</text>
+			<next>2011</next>
+			<next>2021</next>
+		</phrase>
+		<phrase id="2011">
+		<has_info>deactivate_radar_folls_new</has_info>
+			<text>bar_dolg_zastava_2011</text>
+			<next>2012</next>
+		</phrase>
+		<phrase id="2012">
+			<text>bar_dolg_zastava_2012</text>
+			<give_info>dolg_zastava_deactivate_radar_talk</give_info>
+		</phrase>
+		<phrase id="2021">
+			<text>bar_dolg_zastava_2021</text>
+			<next>2022</next>
+		</phrase>
+		<phrase id="2022">
+			<text>bar_dolg_zastava_2022</text>
+			<give_info>dolg_zastava_deactivate_radar_talk</give_info>
+		</phrase>
+		<phrase id="301">
+			<text>bar_dolg_zastava_301</text>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="bar_dolg_zastava_talk">
+<dont_has_info>bar_deactivate_radar_done</dont_has_info>
+<dont_has_info>dolg_zastava_talk</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>bar_dolg_zastava_talk_0</text>
+			<next>1</next>			
+		</phrase>
+		<phrase id="1">
+			<text>bar_dolg_zastava_talk_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>bar_dolg_zastava_talk_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>bar_dolg_zastava_talk_3</text>
+			<give_info>dolg_zastava_talk</give_info>			
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>bar_dolg_zastava_talk_4</text>
+			<action>dialogs.break_dialog</action>			
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="playboy_start_dialog">
+	<has_info>bar_dolg_base_guard_art_done</has_info>
+	<has_info>agroprom_military_case_know</has_info>
+	<dont_has_info>kicenko_playboy_start</dont_has_info>
+	<dont_has_info>kicenko_playboy_done</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>playboy_start_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>playboy_start_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>playboy_start_dialog_2</text>
+			<next>31</next>
+			<next>32</next>
+		</phrase>
+		<phrase id="31">
+		<precondition>sak_dialog.not_have_razgruzka</precondition>
+			<text>playboy_start_dialog_31</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="32">
+		<precondition>sak_dialog.have_razgruzka</precondition>
+			<text>playboy_start_dialog_32</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<text>playboy_start_dialog_41</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="42">
+			<text>playboy_start_dialog_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="5">
+			<text>playboy_start_dialog_5</text>
+			<action>doc.add_playboy</action>			
+			<give_info>kicenko_playboy_start</give_info>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="playboy_done_dialog">
+	<precondition>sak.have_items_count("playboy10",1)</precondition>
+	<dont_has_info>kicenko_playboy_done</dont_has_info>
+	<has_info>kicenko_playboy_start</has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>playboy_done_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>playboy_done_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>playboy_done_dialog_2</text>
+			<give_info>kicenko_playboy_done</give_info>
+			<action>sak_inventory.release_actor_items("playboy10",1)</action>
+			<next>31</next>
+			<next>32</next>
+		</phrase>
+		<phrase id="31">
+		<precondition>sak_dialog.not_have_razgruzka</precondition>
+			<text>playboy_done_dialog_31</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="32">
+		<precondition>sak_dialog.have_razgruzka</precondition>
+			<text>playboy_done_dialog_32</text>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<text>playboy_done_dialog_41</text>
+			<action>sak_dialog.razgruzka_new_away</action>
+			<next>54</next>
+		</phrase>
+		<phrase id="42">
+			<text>playboy_done_dialog_42</text>
+			<next>51</next>
+			<next>52</next>
+			<next>53</next>
+		</phrase>
+		<phrase id="51">
+		<precondition>sak_dialog.rand_game_1</precondition>
+			<text>playboy_done_dialog_51</text>
+			<action>sak_dialog.add_playboy_treasure(1)</action>
+			<next>61</next>
+		</phrase>
+		<phrase id="52">
+		<precondition>sak_dialog.rand_game_2</precondition>
+			<text>playboy_done_dialog_52</text>
+			<action>sak_dialog.add_playboy_treasure(2)</action>
+			<next>61</next>
+		</phrase>
+		<phrase id="53">
+		<precondition>sak_dialog.rand_game_3</precondition>
+			<text>playboy_done_dialog_53</text>
+			<action>sak_dialog.add_playboy_treasure(3)</action>
+			<next>61</next>
+		</phrase>
+		<phrase id="54">
+			<text>playboy_done_dialog_54</text>
+			<action>sak_dialog.add_razgruzka</action>
+			<next>62</next>
+		</phrase>
+		<phrase id="61">
+			<text>playboy_done_dialog_61</text>
+			<next>7</next>
+		</phrase>
+		<phrase id="62">
+			<text>playboy_done_dialog_62</text>
+			<next>7</next>
+		</phrase>
+		<phrase id="7">
+			<text>playboy_done_dialog_7</text>
+			<next>8</next>			
+		</phrase>
+		<phrase id="8">
+			<text>playboy_done_dialog_8</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>		
+	</phrase_list>
+</dialog>
+
+<dialog id="bar_arena_man_start">
+	<phrase_list>
+		<phrase id="0">
+			<text />
+			<next>100</next>
+			<next>200</next>
+		</phrase>
+		<phrase id="100">
+			<text />
+			<dont_has_info>bar_arni_new_gg</dont_has_info>
+			<next>101</next>
+		</phrase>
+		<phrase id="200">
+			<text />
+			<has_info>bar_arni_new_gg</has_info>
+			<next>201</next>
+		</phrase>
+		<phrase id="101">
+			<text>bar_arena_man_start_101</text>
+			<action>dialogs.no_trade_trader</action>
+			<next>102</next>
+		</phrase>
+		<phrase id="102">
+			<text>bar_arena_man_start_102</text>
+			<next>103</next>
+		</phrase>
+		<phrase id="103">
+			<text>bar_arena_man_start_103</text>
+			<next>104</next>
+		</phrase>
+		<phrase id="104">
+			<text>bar_arena_man_start_104</text>
+			<next>105</next>
+		</phrase>
+		<phrase id="105">
+			<text>bar_arena_man_start_105</text>
+			<give_info>bar_arni_new_gg</give_info>
+			<next>1061</next>
+			<next>1062</next>
+		</phrase>
+		<phrase id="1061">
+			<precondition>sak_dialog.in_trade_zone</precondition>
+			<text>bar_arena_man_start_1061</text>
+			<action>dialogs.yes_trade</action>
+			<next>2031</next>
+		</phrase>
+		<phrase id="1062">
+			<text>bar_arena_man_start_1062</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="201">
+			<text>bar_arena_man_start_201</text>
+			<action>dialogs.no_trade_trader</action>
+			<next>2021</next>
+			<next>2022</next>
+		</phrase>
+		<phrase id="2021">
+		<precondition>sak_dialog.in_trade_zone</precondition>
+			<text>bar_arena_man_start_2021</text>
+			<action>dialogs.yes_trade</action>
+			<next>2031</next>
+		</phrase>
+		<phrase id="2022">
+			<text>bar_arena_man_start_2022</text>
+		</phrase>
+		<phrase id="2031">
+			<text>bar_arena_man_start_2031</text>
+			<action>dialogs.start_trade_trader</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+	
+<dialog id="bar_bar_hunter_quest_finish">
+	<precondition>bar_dialogs.have_hunters_toz</precondition>
+	<has_info>bar_bar_hunter_quest_start</has_info>
+	<dont_has_info>bar_bar_hunter_quest_finish</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>bar_bar_hunter_quest_finish_0</text>
+			<action>bar_dialogs.give_hunters_toz</action>
+			<next>11</next>
+			<next>12</next>
+			<next>13</next>
+		</phrase>
+		<phrase id="11">
+		<precondition>sak_dialog.rand_1_dialog</precondition>
+			<text>bar_bar_hunter_quest_finish_11</text>
+			<give_info>bar_bar_hunter_quest_finish</give_info>
+			<give_info>info_amk_recipt_tears_electra</give_info>
+			<action>sak_dialog.add_hunters_treasure1</action>
+			<action>sak.info_amk_received</action>
+		</phrase>
+		<phrase id="12">
+		<precondition>sak_dialog.rand_2_dialog</precondition>
+			<text>bar_bar_hunter_quest_finish_12</text>
+			<give_info>bar_bar_hunter_quest_finish</give_info>
+			<give_info>info_amk_recipt_steel_kolobok</give_info>
+			<action>sak_dialog.add_hunters_treasure2</action>
+			<action>sak.info_amk_received</action>
+		</phrase>
+		<phrase id="13">
+		<precondition>sak_dialog.rand_3_dialog</precondition>
+			<text>bar_bar_hunter_quest_finish_13</text>
+			<give_info>bar_bar_hunter_quest_finish</give_info>
+			<give_info>info_amk_recipt_grandmother_glassbeards</give_info>
+			<action>sak_dialog.add_hunters_treasure3</action>
+			<action>sak.info_amk_received</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="bar_bar_osvedomitel_start">
+	<phrase_list>
+		<phrase id="0">
+			<action>dialogs.no_trade_trader</action>
+			<text />
+			<next>100</next>
+			<next>200</next>
+			<next>300</next>
+			<next>400</next>
+		</phrase>
+		<phrase id="100">
+			<text />
+			<dont_has_info>osvedomitel_new_gg</dont_has_info>
+			<next>101</next>
+		</phrase>
+		<phrase id="200">
+			<text />
+			<has_info>osvedomitel_new_gg</has_info>
+			<dont_has_info>zub_night_star_receipt_have</dont_has_info>
+			<next>201</next>
+		</phrase>
+		<phrase id="300">
+			<text />
+			<has_info>osvedomitel_new_gg</has_info>
+			<has_info>zub_night_star_receipt_have</has_info>
+			<dont_has_info>zub_night_star_receipt_done</dont_has_info>
+			<next>301</next>
+		</phrase>
+		<phrase id="400">
+			<text />
+			<has_info>zub_night_star_receipt_done</has_info>
+			<next>401</next>
+		</phrase>
+		<phrase id="101">
+			<text>bar_bar_osvedomitel_start_101</text>
+			<next>102</next>
+		</phrase>
+		<phrase id="102">
+			<text>bar_bar_osvedomitel_start_102</text>
+			<next>103</next>
+		</phrase>
+		<phrase id="103">
+			<text>bar_bar_osvedomitel_start_103</text>
+			<give_info>osvedomitel_new_gg</give_info>
+		</phrase>
+		<phrase id="201">
+			<text>bar_bar_osvedomitel_start_201</text>
+		</phrase>
+		<phrase id="301">
+			<text>bar_bar_osvedomitel_start_301</text>
+		</phrase>
+		<phrase id="401">
+			<text>bar_bar_osvedomitel_start_401</text>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="zub_lim_start_dlg">
+	<phrase_list>
+		<phrase id="0">
+			<action>dialogs.no_trade_trader</action>
+			<text />
+			<next>100</next>
+			<next>200</next>
+		</phrase>
+		<phrase id="100">
+			<text />
+			<dont_has_info>zub_lim_new_gg</dont_has_info>
+			<next>101</next>
+		</phrase>
+		<phrase id="200">
+			<text />
+			<has_info>zub_lim_new_gg</has_info>
+			<next>201</next>
+		</phrase>
+		<phrase id="101">
+			<text>zub_lim_start_dlg_101</text>
+			<next>102</next>
+		</phrase>
+		<phrase id="102">
+			<text>zub_lim_start_dlg_102</text>
+			<next>103</next>
+		</phrase>
+		<phrase id="103">
+			<text>zub_lim_start_dlg_103</text>
+			<next>104</next>
+		</phrase>
+		<phrase id="104">
+			<text>zub_lim_start_dlg_104</text>
+			<give_info>zub_lim_new_gg</give_info>
+			<next>105</next>
+		</phrase>
+		<phrase id="105">
+			<text>zub_lim_start_dlg_105</text>
+		</phrase>
+		<phrase id="201">
+			<text>zub_lim_start_dlg_201</text>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="zub_recipes_pre_dialog">
+	<has_info>osvedomitel_new_gg</has_info>
+	<dont_has_info>zub_recipes_stage1_start_info</dont_has_info>
+	<dont_has_info>zub_recipes_stage1_refuse_info</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>zub_recipes_pre_dialog_0</text>
+			<next>101</next>
+			<next>102</next>
+		</phrase>
+		<phrase id="101">
+		<dont_has_info>bar_darklab_document_done</dont_has_info>
+			<text>zub_recipes_pre_dialog_101</text>
+			<next>201</next>
+		</phrase>
+		<phrase id="102">
+		<has_info>bar_darklab_document_done</has_info>
+			<text>zub_recipes_pre_dialog_102</text>
+			<next>202</next>
+		</phrase>
+		<phrase id="201">
+			<text>zub_recipes_pre_dialog_201</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="202">
+			<text>zub_recipes_pre_dialog_202</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>zub_recipes_pre_dialog_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>zub_recipes_pre_dialog_4</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>zub_recipes_pre_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>zub_recipes_pre_dialog_6</text>
+			<next>7</next>
+		</phrase>
+		<phrase id="7">
+			<text>zub_recipes_pre_dialog_7</text>
+			<next>81</next>
+			<next>82</next>
+		</phrase>
+		<phrase id="81">
+			<text>zub_recipes_pre_dialog_81</text>
+			<give_info>zub_recipes_stage1_start_info</give_info>
+			<next>91</next>
+		</phrase>
+		<phrase id="82">
+			<text>zub_recipes_pre_dialog_82</text>
+			<give_info>zub_recipes_stage1_refuse_info</give_info>
+			<next>92</next>
+		</phrase>
+		<phrase id="91">
+			<text>zub_recipes_pre_dialog_91</text>
+			<next>10</next>
+		</phrase>
+		<phrase id="92">
+			<text>zub_recipes_pre_dialog_92</text>
+		</phrase>
+		<phrase id="10">
+			<text>zub_recipes_pre_dialog_10</text>
+			<next>11</next>
+		</phrase>
+		<phrase id="11">
+			<text>zub_recipes_pre_dialog_11</text>
+			<next>121</next>
+			<next>122</next>
+		</phrase>
+		<phrase id="121">
+		<has_info>bar_dolg_angar_new_gg</has_info>
+			<text>zub_recipes_pre_dialog_121</text>
+			<next>131</next>
+		</phrase>
+		<phrase id="122">
+		<dont_has_info>bar_dolg_angar_new_gg</dont_has_info>
+			<text>zub_recipes_pre_dialog_122</text>
+			<next>132</next>
+		</phrase>
+		<phrase id="131">
+			<text>zub_recipes_pre_dialog_131</text>
+			<next>14</next>
+		</phrase>
+		<phrase id="132">
+			<text>zub_recipes_pre_dialog_132</text>
+			<next>14</next>
+		</phrase>
+		<phrase id="14">
+			<text>zub_recipes_pre_dialog_14</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="zub_recipes_pre_done_dialog">
+	<has_info>zub_recipes_stage1_start_info</has_info>
+	<has_info>dolg_dummy_quest_done</has_info>
+	<dont_has_info>zub_recipes_stage1_done_info</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>zub_recipes_pre_done_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>zub_recipes_pre_done_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>zub_recipes_pre_done_dialog_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>zub_recipes_pre_done_dialog_3</text>
+			<action>sak.create_items("ammo_9x19_pbp",5)</action>
+			<give_info>zub_recipes_stage1_done_info</give_info>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>zub_recipes_pre_done_dialog_4</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>zub_recipes_pre_done_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>zub_recipes_pre_done_dialog_6</text>
+			<next>7</next>
+		</phrase>
+		<phrase id="7">
+			<text>zub_recipes_pre_done_dialog_7</text>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="zub_investigation_start_dlg">
+	<has_info>dolg_dummy_quest_done</has_info>
+	<has_info>dolg_dummy_quest_gone</has_info>
+	<has_info>bar_x16_documents_know</has_info>
+	<dont_has_info>zub_investigation_start_info</dont_has_info>
+	<dont_has_info>zub_investigation_refuse_info</dont_has_info>
+	<dont_has_info>deactivate_radar_fall</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>zub_investigation_start_dlg_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>zub_investigation_start_dlg_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>zub_investigation_start_dlg_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>zub_investigation_start_dlg_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>zub_investigation_start_dlg_4</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>zub_investigation_start_dlg_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>zub_investigation_start_dlg_6</text>
+			<next>7</next>
+		</phrase>
+		<phrase id="7">
+			<text>zub_investigation_start_dlg_7</text>
+			<next>8</next>
+		</phrase>
+		<phrase id="8">
+			<text>zub_investigation_start_dlg_8</text>
+			<next>9</next>
+		</phrase>
+		<phrase id="9">
+			<text>zub_investigation_start_dlg_9</text>
+			<next>10</next>
+		</phrase>
+		<phrase id="10">
+			<text>zub_investigation_start_dlg_10</text>
+			<next>11</next>
+		</phrase>
+		<phrase id="11">
+			<text>zub_investigation_start_dlg_11</text>
+			<next>121</next>
+			<next>122</next>
+		</phrase>
+		<phrase id="121">
+			<text>zub_investigation_start_dlg_121</text>
+			<give_info>zub_investigation_start_info</give_info>
+			<next>131</next>
+		</phrase>
+		<phrase id="122">
+			<text>zub_investigation_start_dlg_122</text>
+			<give_info>zub_investigation_refuse_info</give_info>
+			<next>132</next>
+		</phrase>
+		<phrase id="131">
+			<text>zub_investigation_start_dlg_131</text>
+		</phrase>
+		<phrase id="132">
+			<text>zub_investigation_start_dlg_132</text>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="zub_investigation_done_dlg">
+	<has_info>zub_investigation_start_info</has_info>
+	<has_info>zub_investigation_body_info</has_info>
+	<dont_has_info>zub_investigation_done_info</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>zub_investigation_done_dlg_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>zub_investigation_done_dlg_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>zub_investigation_done_dlg_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>zub_investigation_done_dlg_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>zub_investigation_done_dlg_4</text>
+			<action>sak.free_recipe</action>
+			<give_info>zub_investigation_done_info</give_info>
+			<give_info>zub_recipes_stage2_done_info</give_info>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>zub_investigation_done_dlg_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>zub_investigation_done_dlg_6</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="barman_investigation_dlg">
+<has_info>zub_investigation_start_info</has_info>
+<dont_has_info>zub_investigation_body_info</dont_has_info>
+<dont_has_info>barman_investigation_info</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>barman_investigation_dlg_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>barman_investigation_dlg_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>barman_investigation_dlg_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>barman_investigation_dlg_3</text>
+			<give_info>barman_investigation_info</give_info>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>barman_investigation_dlg_4</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="garik_investigation_dlg">
+<has_info>zub_investigation_start_info</has_info>
+<dont_has_info>zub_investigation_body_info</dont_has_info>
+<dont_has_info>garik_investigation_info</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>garik_investigation_dlg_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>garik_investigation_dlg_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>garik_investigation_dlg_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>garik_investigation_dlg_3</text>
+			<give_info>garik_investigation_info</give_info>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>garik_investigation_dlg_4</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="zub_recipes_dialog">
+	<has_info>zub_recipes_stage1_done_info</has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>zub_recipes_dialog_0</text>
+			<next>101</next>
+		</phrase>
+		<phrase id="101">
+			<text>zub_recipes_dialog_101</text>
+			<next>1011</next>
+			<next>1012</next>
+			<next>1013</next>
+			<next>6</next>
+		</phrase>
+		<phrase id="1011">
+			<text>zub_recipes_dialog_1011</text>
+			<next>1021</next>
+		</phrase>
+		<phrase id="1012">
+			<text>zub_recipes_dialog_1012</text>
+			<next>1022</next>
+		</phrase>
+		<phrase id="1013">
+			<text>zub_recipes_dialog_1013</text>
+			<next>1023</next>
+			<next>1024</next>
+			<next>1025</next>
+		</phrase>
+		<phrase id="1021">
+			<text>zub_recipes_dialog_102</text>
+			<next>11</next>
+			<next>12</next>
+			<next>13</next>
+			<next>14</next>
+			<next>15</next>
+			<next>16</next>
+			<next>17</next>
+			<next>6</next>
+		</phrase>
+		<phrase id="1022">
+			<text>zub_recipes_dialog_102</text>
+			<next>21</next>
+			<next>22</next>
+			<next>23</next>
+			<next>24</next>
+			<next>25</next>
+			<next>26</next>
+			<next>27</next>
+			<next>6</next>
+		</phrase>
+		<phrase id="1023">
+		<has_info>zub_recipes_stage2_done_info</has_info>
+			<text>zub_recipes_dialog_102</text>
+			<next>31</next>
+			<next>32</next>
+			<next>33</next>
+			<next>34</next>
+			<next>35</next>
+			<next>36</next>
+			<next>37</next>
+			<next>6</next>
+		</phrase>
+		<phrase id="1024">
+		<dont_has_info>zub_recipes_stage2_done_info</dont_has_info>
+		<dont_has_info>zub_investigation_refuse_info</dont_has_info>
+			<text>zub_recipes_dialog_103</text>
+		</phrase>
+		<phrase id="1025">
+		<has_info>zub_investigation_refuse_info</has_info>
+			<text>zub_recipes_dialog_104</text>
+		</phrase>
+		<phrase id="11">
+			<text>zub_recipes_dialog_11</text>
+			<next>111</next>
+		</phrase>
+		<phrase id="12">
+			<text>zub_recipes_dialog_12</text>
+			<next>121</next>
+		</phrase>
+		<phrase id="13">
+			<text>zub_recipes_dialog_13</text>
+			<next>131</next>
+		</phrase>
+		<phrase id="14">
+			<text>zub_recipes_dialog_14</text>
+			<next>141</next>
+		</phrase>
+		<phrase id="15">
+			<text>zub_recipes_dialog_15</text>
+			<next>151</next>
+		</phrase>
+		<phrase id="16">
+			<text>zub_recipes_dialog_16</text>
+			<next>161</next>
+		</phrase>
+		<phrase id="17">
+			<text>zub_recipes_dialog_17</text>
+			<next>171</next>
+		</phrase>
+		<phrase id="21">
+			<text>zub_recipes_dialog_21</text>
+			<next>211</next>
+		</phrase>
+		<phrase id="22">
+			<text>zub_recipes_dialog_22</text>
+			<next>221</next>
+		</phrase>
+		<phrase id="23">
+			<text>zub_recipes_dialog_23</text>
+			<next>231</next>
+		</phrase>
+		<phrase id="24">
+			<text>zub_recipes_dialog_24</text>
+			<next>241</next>
+		</phrase>
+		<phrase id="25">
+			<text>zub_recipes_dialog_25</text>
+			<next>251</next>
+		</phrase>
+		<phrase id="26">
+			<text>zub_recipes_dialog_26</text>
+			<next>261</next>
+		</phrase>
+		<phrase id="27">
+			<text>zub_recipes_dialog_27</text>
+			<next>271</next>
+		</phrase>
+		<phrase id="31">
+			<text>zub_recipes_dialog_31</text>
+			<next>311</next>
+		</phrase>
+		<phrase id="32">
+			<text>zub_recipes_dialog_32</text>
+			<next>321</next>
+		</phrase>
+		<phrase id="33">
+			<text>zub_recipes_dialog_33</text>
+			<next>331</next>
+		</phrase>
+		<phrase id="34">
+			<text>zub_recipes_dialog_34</text>
+			<next>341</next>
+		</phrase>
+		<phrase id="35">
+			<text>zub_recipes_dialog_35</text>
+			<next>351</next>
+		</phrase>
+		<phrase id="36">
+			<text>zub_recipes_dialog_36</text>
+			<next>361</next>
+		</phrase>
+		<phrase id="37">
+			<text>zub_recipes_dialog_37</text>
+			<next>371</next>
+		</phrase>
+		<phrase id="111">
+			<text>zub_recipes_dialog_4</text>
+			<action>sak.recipes_tostring("af_medusa")</action>
+			<next>112</next>
+			<next>113</next>
+		</phrase>
+		<phrase id="121">
+			<text>zub_recipes_dialog_4</text>
+			<action>sak.recipes_tostring("af_vyvert")</action>
+			<next>112</next>
+			<next>113</next>
+		</phrase>
+		<phrase id="131">
+			<text>zub_recipes_dialog_4</text>
+			<action>sak.recipes_tostring("af_blood")</action>
+			<next>112</next>
+			<next>113</next>
+		</phrase>
+		<phrase id="141">
+			<text>zub_recipes_dialog_4</text>
+			<action>sak.recipes_tostring("af_electra_sparkler")</action>
+			<next>112</next>
+			<next>113</next>
+		</phrase>
+		<phrase id="151">
+			<text>zub_recipes_dialog_4</text>
+			<action>sak.recipes_tostring("af_drops")</action>
+			<next>112</next>
+			<next>113</next>
+		</phrase>
+		<phrase id="161">
+			<text>zub_recipes_dialog_4</text>
+			<action>sak.recipes_tostring("af_ameba_slime")</action>
+			<next>112</next>
+			<next>113</next>
+		</phrase>
+		<phrase id="171">
+			<text>zub_recipes_dialog_4</text>
+			<action>sak.recipes_tostring("af_rusty_thorn")</action>
+			<next>112</next>
+			<next>113</next>
+		</phrase>
+		<phrase id="211">
+			<text>zub_recipes_dialog_4</text>
+			<action>sak.recipes_tostring("af_cristal_flower")</action>
+			<next>212</next>
+			<next>213</next>
+			<next>113</next>
+		</phrase>
+		<phrase id="221">
+			<text>zub_recipes_dialog_4</text>
+			<action>sak.recipes_tostring("af_gravi")</action>
+			<next>212</next>
+			<next>213</next>
+			<next>113</next>
+		</phrase>
+		<phrase id="231">
+			<text>zub_recipes_dialog_4</text>
+			<action>sak.recipes_tostring("af_mincer_meat")</action>
+			<next>212</next>
+			<next>213</next>
+			<next>113</next>
+		</phrase>
+		<phrase id="241">
+			<text>zub_recipes_dialog_4</text>
+			<action>sak.recipes_tostring("af_electra_flash")</action>
+			<next>212</next>
+			<next>213</next>
+			<next>113</next>
+		</phrase>
+		<phrase id="251">
+			<text>zub_recipes_dialog_4</text>
+			<action>sak.recipes_tostring("af_fireball")</action>
+			<next>212</next>
+			<next>213</next>
+			<next>113</next>
+		</phrase>
+		<phrase id="261">
+			<text>zub_recipes_dialog_4</text>
+			<action>sak.recipes_tostring("af_ameba_slug")</action>
+			<next>212</next>
+			<next>213</next>
+			<next>113</next>
+		</phrase>
+		<phrase id="271">
+			<text>zub_recipes_dialog_4</text>
+			<action>sak.recipes_tostring("af_rusty_kristall")</action>
+			<next>212</next>
+			<next>213</next>
+			<next>113</next>
+		</phrase>
+		<phrase id="311">
+			<text>zub_recipes_dialog_4</text>
+			<action>sak.recipes_tostring("af_night_star_capsule")</action>
+			<next>312</next>
+			<next>313</next>
+			<next>113</next>
+		</phrase>
+		<phrase id="321">
+			<text>zub_recipes_dialog_4</text>
+			<action>sak.recipes_tostring("af_gold_fish_capsule")</action>
+			<next>312</next>
+			<next>313</next>
+			<next>113</next>
+		</phrase>
+		<phrase id="331">
+			<text>zub_recipes_dialog_4</text>
+			<action>sak.recipes_tostring("af_soul_capsule")</action>
+			<next>312</next>
+			<next>313</next>
+			<next>113</next>
+		</phrase>
+		<phrase id="341">
+			<text>zub_recipes_dialog_4</text>
+			<action>sak.recipes_tostring("af_electra_moonlight_capsule")</action>
+			<next>312</next>
+			<next>313</next>
+			<next>113</next>
+		</phrase>
+		<phrase id="351">
+			<text>zub_recipes_dialog_4</text>
+			<action>sak.recipes_tostring("af_cristall_capsule")</action>
+			<next>312</next>
+			<next>313</next>
+			<next>113</next>
+		</phrase>
+		<phrase id="361">
+			<text>zub_recipes_dialog_4</text>
+			<action>sak.recipes_tostring("af_ameba_mica_capsule")</action>
+			<next>312</next>
+			<next>313</next>
+			<next>113</next>
+		</phrase>
+		<phrase id="371">
+			<text>zub_recipes_dialog_4</text>
+			<action>sak.recipes_tostring("af_rusty_sea-urchin_capsule")</action>
+			<next>312</next>
+			<next>313</next>
+			<next>113</next>
+		</phrase>
+		<phrase id="112">
+			<text>zub_recipes_dialog_112</text>
+			<next>114</next>
+		</phrase>
+		<phrase id="113">
+			<text>zub_recipes_dialog_113</text>
+			<next>101</next>
+		</phrase>
+		<phrase id="114">
+			<text>zub_recipes_dialog_114</text>
+			<next>116</next>
+			<next>5</next>
+		</phrase>
+		<phrase id="116">
+		<precondition>sak_dialog.cond_items_have("b",2,0.99)</precondition>
+			<text>zub_recipes_dialog_116</text>
+			<action>sak_dialog.cond_items_have("b",2,0.99,true)</action>
+			<next>117</next>
+		</phrase>
+		<phrase id="117">
+			<text>zub_recipes_dialog_117</text>
+			<action>sak.give_dlg_recipe</action>
+		</phrase>
+		<phrase id="212">
+			<text>zub_recipes_dialog_212</text>
+			<next>2121</next>
+		</phrase>
+		<phrase id="213">
+			<text>zub_recipes_dialog_213</text>
+			<next>2131</next>
+		</phrase>
+		<phrase id="2121">
+			<text>zub_recipes_dialog_2121</text>
+			<next>214</next>
+			<next>5</next>
+		</phrase>
+		<phrase id="2131">
+			<text>zub_recipes_dialog_2121</text>
+			<next>215</next>
+			<next>5</next>
+		</phrase>
+		<phrase id="214">
+		<precondition>sak_dialog.cond_items_have("c",2,0.99)</precondition>
+			<text>zub_recipes_dialog_116</text>
+			<action>sak_dialog.cond_items_have("c",2,0.99,true)</action>
+			<next>217</next>
+		</phrase>
+		<phrase id="215">
+		<precondition>sak_dialog.cond_items_have("c",2,0.99)</precondition>
+			<text>zub_recipes_dialog_116</text>
+			<action>sak_dialog.cond_items_have("c",2,0.99,true)</action>
+			<next>218</next>
+		</phrase>
+		<phrase id="217">
+			<text>zub_recipes_dialog_117</text>
+			<action>sak.give_dlg_recipe(1)</action>
+		</phrase>
+		<phrase id="218">
+			<text>zub_recipes_dialog_117</text>
+			<action>sak.give_dlg_recipe(2)</action>
+		</phrase>
+		<phrase id="312">
+			<text>zub_recipes_dialog_212</text>
+			<next>3121</next>
+			<next>3122</next>
+		</phrase>
+		<phrase id="313">
+			<text>zub_recipes_dialog_213</text>
+			<next>3131</next>
+			<next>3132</next>
+		</phrase>
+		<phrase id="3121">
+		<precondition>sak.free_recipe_no_precond</precondition>
+			<text>zub_recipes_dialog_3121</text>
+			<next>314</next>
+			<next>5</next>
+		</phrase>
+		<phrase id="3122">
+		<precondition>sak.free_recipe_yes_precond</precondition>
+			<text>zub_recipes_dialog_3122</text>
+			<next>3141</next>
+			<next>6</next>
+		</phrase>
+		<phrase id="3131">
+		<precondition>sak.free_recipe_no_precond</precondition>
+			<text>zub_recipes_dialog_3121</text>
+			<next>315</next>
+			<next>5</next>
+		</phrase>
+		<phrase id="3132">
+		<precondition>sak.free_recipe_yes_precond</precondition>
+			<text>zub_recipes_dialog_3122</text>
+			<next>3151</next>
+			<next>6</next>
+		</phrase>
+		<phrase id="314">
+		<precondition>sak_dialog.cond_items_have("b",2,0.99)</precondition>
+		<precondition>sak_dialog.cond_items_have("c",2,0.99)</precondition>
+			<text>zub_recipes_dialog_116</text>
+			<action>sak_dialog.cond_items_have("b",2,0.99,true)</action>
+			<action>sak_dialog.cond_items_have("c",2,0.99,true)</action>
+			<next>217</next>
+		</phrase>
+		<phrase id="315">
+		<precondition>sak_dialog.cond_items_have("b",2,0.99)</precondition>
+		<precondition>sak_dialog.cond_items_have("c",2,0.99)</precondition>
+			<text>zub_recipes_dialog_116</text>
+			<action>sak_dialog.cond_items_have("b",2,0.99,true)</action>
+			<action>sak_dialog.cond_items_have("c",2,0.99,true)</action>
+			<next>218</next>
+		</phrase>
+		<phrase id="3141">
+			<text>zub_recipes_dialog_7</text>
+			<action>sak.free_recipe_reward</action>
+			<next>217</next>
+		</phrase>
+		<phrase id="3151">
+			<text>zub_recipes_dialog_7</text>
+			<action>sak.free_recipe_reward</action>
+			<next>218</next>
+		</phrase>
+		<phrase id="5">
+			<text>zub_recipes_dialog_5</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="6">
+			<text>zub_recipes_dialog_6</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="zub_dummy_sparkler_receipt_dlg">
+<has_info>borzyi_borov_quest_start_info</has_info>
+<dont_has_info>info_artmod_activ_anom</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>zub_dummy_sparkler_receipt_dlg_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>zub_dummy_sparkler_receipt_dlg_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+		<precondition>sak_dialog.cond_items_have("m1",1,0.75)</precondition>
+			<action>sak_dialog.cond_items_have("m1",1,0.75,true)</action>
+			<text>zub_dummy_sparkler_receipt_dlg_21</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="22">
+			<text>zub_dummy_sparkler_receipt_dlg_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+			<text>zub_dummy_sparkler_receipt_dlg_3</text>
+			<give_info>info_artmod_activ_anom</give_info>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>zub_dummy_sparkler_receipt_dlg_4</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="bagram_start_dialog">
+	<phrase_list>
+		<phrase id="0">
+		<action>dialogs.no_trade_trader</action>
+			<text />
+			<next>50</next>
+			<next>100</next>
+			<next>200</next>
+			<next>300</next>
+		</phrase>
+		<phrase id="50">
+		<dont_has_info>zub_investigation_start_info</dont_has_info>
+			<text />
+			<next>51</next>
+		</phrase>
+		<phrase id="100">
+		<has_info>zub_investigation_start_info</has_info>
+		<dont_has_info>bagram_investigation_start_info</dont_has_info>
+			<text />
+			<next>101</next>
+		</phrase>
+		<phrase id="200">
+		<has_info>bagram_investigation_start_info</has_info>
+		<dont_has_info>bagram_investigation_done_info</dont_has_info>
+			<text />
+			<next>201</next>
+		</phrase>
+		<phrase id="300">
+		<has_info>bagram_investigation_done_info</has_info>
+			<text />
+			<next>301</next>
+		</phrase>
+		<phrase id="51">
+			<text>bagram_start_dialog_51</text>
+			<next>52</next>
+		</phrase>
+		<phrase id="52">
+			<text>bagram_start_dialog_52</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="101">
+			<text>bagram_start_dialog_101</text>
+			<next>102</next>
+		</phrase>
+		<phrase id="102">
+			<text>bagram_start_dialog_102</text>
+			<next>103</next>
+		</phrase>
+		<phrase id="103">
+			<text>bagram_start_dialog_103</text>
+			<next>1041</next>
+			<next>1042</next>
+		</phrase>
+		<phrase id="1041">
+			<text>bagram_start_dialog_1041</text>
+			<next>105</next>
+		</phrase>
+		<phrase id="1042">
+			<text>bagram_start_dialog_1042</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="105">
+			<text>bagram_start_dialog_105</text>
+			<action>sak.fake_drink_vodka</action>
+			<next>106</next>
+		</phrase>
+		<phrase id="106">
+			<text>bagram_start_dialog_106</text>
+			<next>107</next>
+		</phrase>
+		<phrase id="107">
+			<text>bagram_start_dialog_107</text>
+			<next>108</next>
+		</phrase>
+		<phrase id="108">
+			<text>bagram_start_dialog_108</text>
+			<next>109</next>
+		</phrase>
+		<phrase id="109">
+			<text>bagram_start_dialog_109</text>
+			<next>110</next>
+		</phrase>
+		<phrase id="110">
+			<text>bagram_start_dialog_110</text>
+			<next>111</next>
+		</phrase>
+		<phrase id="111">
+			<text>bagram_start_dialog_111</text>
+			<next>112</next>
+		</phrase>
+		<phrase id="112">
+			<text>bagram_start_dialog_112</text>
+			<next>113</next>
+		</phrase>
+		<phrase id="113">
+			<text>bagram_start_dialog_113</text>
+			<next>114</next>
+		</phrase>
+		<phrase id="114">
+			<text>bagram_start_dialog_114</text>
+			<next>115</next>
+		</phrase>
+		<phrase id="115">
+			<text>bagram_start_dialog_115</text>
+			<next>116</next>
+		</phrase>
+		<phrase id="116">
+			<text>bagram_start_dialog_116</text>
+			<next>117</next>
+		</phrase>
+		<phrase id="117">
+			<text>bagram_start_dialog_117</text>
+			<next>118</next>
+		</phrase>
+		<phrase id="118">
+			<text>bagram_start_dialog_118</text>
+			<next>119</next>
+		</phrase>
+		<phrase id="119">
+			<text>bagram_start_dialog_119</text>
+			<next>120</next>
+		</phrase>
+		<phrase id="120">
+			<text>bagram_start_dialog_120</text>
+			<next>121</next>
+		</phrase>
+		<phrase id="121">
+			<text>bagram_start_dialog_121</text>
+			<give_info>bagram_investigation_start_info</give_info>
+			<next>122</next>
+		</phrase>
+		<phrase id="122">
+			<text>bagram_start_dialog_122</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="201">
+			<text>bagram_start_dialog_201</text>
+			<next>2021</next>
+			<next>2022</next>
+		</phrase>
+		<phrase id="2021">
+		<precondition>sak_dialog.bagram_quest_yes_precond</precondition>
+			<text>bagram_start_dialog_2021</text>
+			<next>203</next>
+		</phrase>
+		<phrase id="2022">
+		<precondition>sak_dialog.bagram_quest_no_precond</precondition>
+			<text>bagram_start_dialog_2022</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="203">
+			<text>bagram_start_dialog_203</text>
+			<next>204</next>
+		</phrase>
+		<phrase id="204">
+			<text>bagram_start_dialog_204</text>
+			<action>sak_dialog.bagram_quest_give_ammo</action>
+			<next>205</next>
+		</phrase>
+		<phrase id="205">
+			<text>bagram_start_dialog_205</text>
+			<give_info>bagram_investigation_done_info</give_info>
+		</phrase>
+		<phrase id="301">
+			<text>bagram_start_dialog_301</text>
+			<next>302</next>
+		</phrase>
+		<phrase id="302">
+			<text>bagram_start_dialog_302</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="lisaped_investigation_start_dlg">
+<has_info>bagram_investigation_done_info</has_info>
+<dont_has_info>lisaped_investigation_start_info</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>lisaped_investigation_start_dlg_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>lisaped_investigation_start_dlg_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>lisaped_investigation_start_dlg_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>lisaped_investigation_start_dlg_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>lisaped_investigation_start_dlg_4</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>lisaped_investigation_start_dlg_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>lisaped_investigation_start_dlg_6</text>
+			<next>7</next>
+		</phrase>
+		<phrase id="7">
+			<text>lisaped_investigation_start_dlg_7</text>
+			<give_info>lisaped_investigation_start_info</give_info>
+			<next>8</next>
+		</phrase>
+		<phrase id="8">
+			<text>lisaped_investigation_start_dlg_8</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="lisaped_investigation_done_dlg">
+<precondition>sak.have_n_repair_item_weapon(10)</precondition>
+<has_info>lisaped_investigation_start_info</has_info>
+<dont_has_info>lisaped_investigation_done_info</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>lisaped_investigation_done_dlg_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>lisaped_investigation_done_dlg_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>lisaped_investigation_done_dlg_2</text>
+			<action>sak.give_n_repair_item_weapon(10)</action>
+			<give_info>lisaped_investigation_done_info</give_info>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>lisaped_investigation_done_dlg_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>lisaped_investigation_done_dlg_4</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="sultan_investigation_start_dlg">
+<has_info>lisaped_investigation_done_info</has_info>
+<dont_has_info>sultan_investigation_start_info</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>sultan_investigation_start_dlg_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>sultan_investigation_start_dlg_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>sultan_investigation_start_dlg_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>sultan_investigation_start_dlg_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>sultan_investigation_start_dlg_4</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>sultan_investigation_start_dlg_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>sultan_investigation_start_dlg_6</text>
+			<next>7</next>
+		</phrase>
+		<phrase id="7">
+			<text>sultan_investigation_start_dlg_7</text>
+			<next>8</next>
+		</phrase>
+		<phrase id="8">
+			<text>sultan_investigation_start_dlg_8</text>
+			<next>9</next>
+		</phrase>
+		<phrase id="9">
+			<text>sultan_investigation_start_dlg_9</text>
+			<give_info>sultan_investigation_start_info</give_info>
+			<next>10</next>
+		</phrase>
+		<phrase id="10">
+			<text>sultan_investigation_start_dlg_10</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="sultan_investigation_done_dlg">
+<precondition>sak_dialog.actor_30000_have</precondition>
+<has_info>sultan_investigation_start_info</has_info>
+<dont_has_info>sultan_investigation_done_info</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>sultan_investigation_done_dlg_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>sultan_investigation_done_dlg_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>sultan_investigation_done_dlg_2</text>
+			<action>sak_dialog.give_30000_money</action>
+			<action>sak.bar_investigation_body</action>
+			<give_info>sultan_investigation_done_info</give_info>
+			<next>31</next>
+			<next>32</next>
+			<next>33</next>
+		</phrase>
+		<phrase id="31">
+		<precondition>sak_dialog.rand_1_dialog</precondition>
+			<text>sultan_investigation_done_dlg_3</text>
+			<action>sak.sultan_investigation_art</action>
+			<next>4</next>
+		</phrase>
+		<phrase id="32">
+		<precondition>sak_dialog.rand_2_dialog</precondition>
+			<text>sultan_investigation_done_dlg_3</text>
+			<action>sak.sultan_investigation_art</action>
+			<next>4</next>
+		</phrase>
+		<phrase id="33">
+		<precondition>sak_dialog.rand_3_dialog</precondition>
+			<text>sultan_investigation_done_dlg_3</text>
+			<action>sak.sultan_investigation_art</action>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>sultan_investigation_done_dlg_4</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="bar_dolg_zastava_about_zastava">
+<dont_has_info>about_zastava</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>bar_dolg_zastava_about_zastava_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>bar_dolg_zastava_about_zastava_1</text>
+			<give_info>about_zastava</give_info>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="bar_dolg_base_guard_rules">
+	<has_info>bar_dolg_base_rules_start</has_info>
+	<has_info>bar_deactivate_radar_start</has_info>
+	<dont_has_info>bar_dolg_base_rules_finish</dont_has_info>
+	<dont_has_info>bar_dolg_base_pass</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>bar_dolg_base_guard_rules_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>bar_dolg_base_guard_rules_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>bar_dolg_base_guard_rules_2</text>
+			<give_info>bar_dolg_base_rules_finish</give_info>
+			<give_info>bar_dolg_community_leader</give_info>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>bar_dolg_base_guard_rules_3</text>
+			<give_info>bar_dolg_base_pass</give_info>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="bar_bar_hunter_start">
+	<phrase_list>
+		<phrase id="0">
+			<action>dialogs.no_trade_trader</action>
+			<text />
+			<next>1</next>
+			<next>2</next>
+			<next>3</next>
+		</phrase>
+		<phrase id="1">
+			<text />
+			<dont_has_info>bar_bar_hunter_quest_start</dont_has_info>
+			<dont_has_info>bar_bar_hunter_quest_finish</dont_has_info>
+			<next>11</next>
+		</phrase>
+		<phrase id="2">
+			<text />
+			<dont_has_info>bar_bar_hunter_quest_finish</dont_has_info>
+			<has_info>bar_bar_hunter_quest_start</has_info>
+			<next>21</next>
+		</phrase>
+		<phrase id="3">
+			<text />
+			<has_info>bar_bar_hunter_quest_finish</has_info>
+			<next>31</next>
+		</phrase>
+		<phrase id="11">
+			<text>bar_bar_hunter_start_11</text>
+		</phrase>
+		<phrase id="21">
+			<text>bar_bar_hunter_start_21</text>
+		</phrase>
+		<phrase id="31">
+			<text>bar_bar_hunter_start_31</text>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="bar_bar_hunter_dark_start">
+	<phrase_list>
+		<phrase id="0">
+			<action>dialogs.no_trade_trader</action>
+			<text />
+			<next>100</next>
+			<next>200</next>
+		</phrase>
+		<phrase id="100">
+			<text />
+			<dont_has_info>bar_bar_hunter_dark_new</dont_has_info>
+			<next>101</next>
+		</phrase>
+		<phrase id="200">
+			<text />
+			<has_info>bar_bar_hunter_dark_new</has_info>
+			<next>201</next>
+		</phrase>
+		<phrase id="101">
+			<text>bar_bar_hunter_dark_start_101</text>
+			<next>102</next>
+		</phrase>
+		<phrase id="102">
+			<text>bar_bar_hunter_dark_start_102</text>
+			<next>103</next>
+		</phrase>
+		<phrase id="103">
+			<text>bar_bar_hunter_dark_start_103</text>
+			<give_info>bar_bar_hunter_dark_new</give_info>
+		</phrase>
+		<phrase id="201">
+			<text>bar_bar_hunter_dark_start_201</text>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="bar_dolg_petrenko_start">
+	<phrase_list>
+		<phrase id="0">
+			<action>dialogs.yes_trade</action>
+			<text />
+			<next>100</next>
+			<next>200</next>
+			<next>300</next>
+			<next>400</next>
+			<next>500</next>
+		</phrase>
+		<phrase id="100">
+			<text />
+			<dont_has_info>petrenko_new_gg</dont_has_info>
+			<next>101</next>
+		</phrase>
+		<phrase id="200">
+			<text />
+			<has_info>petrenko_new_gg</has_info>
+			<dont_has_info>yan_kill_brain_done</dont_has_info>
+			<next>201</next>
+		</phrase>
+		<phrase id="300">
+			<text />
+			<has_info>petrenko_new_gg</has_info>
+			<has_info>yan_kill_brain_done</has_info>
+			<dont_has_info>bar_dolg_petrenko_exo_start</dont_has_info>
+			<dont_has_info>bar_dolg_petrenko_exo_done</dont_has_info>
+			<next>301</next>
+		</phrase>
+		<phrase id="400">
+			<text />
+			<has_info>yan_kill_brain_done</has_info>
+			<has_info>bar_dolg_petrenko_exo_start</has_info>
+			<dont_has_info>bar_dolg_petrenko_exo_done</dont_has_info>
+			<next>401</next>
+		</phrase>
+		<phrase id="500">
+			<text />
+			<has_info>yan_kill_brain_done</has_info>
+			<has_info>bar_dolg_petrenko_exo_done</has_info>
+			<next>501</next>
+		</phrase>
+		<phrase id="101">
+			<text>bar_dolg_petrenko_start_101</text>
+			<next>102</next>
+		</phrase>
+		<phrase id="102">
+			<text>bar_dolg_petrenko_start_102</text>
+			<next>103</next>
+		</phrase>
+		<phrase id="103">
+			<text>bar_dolg_petrenko_start_103</text>
+			<give_info>petrenko_new_gg</give_info>
+			<next>104</next>
+		</phrase>
+		<phrase id="104">
+			<text>bar_dolg_petrenko_start_104</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="201">
+			<text>bar_dolg_petrenko_start_201</text>
+		</phrase>
+		<phrase id="301">
+			<text>bar_dolg_petrenko_start_301</text>
+		</phrase>
+		<phrase id="401">
+			<text>bar_dolg_petrenko_start_401</text>
+		</phrase>
+		<phrase id="501">
+			<text>bar_dolg_petrenko_start_501</text>
+		</phrase>		
+	</phrase_list>
+</dialog>
+<!-- Пертенко на Янтаре -->
+<dialog id="yan_dolg_petrenko_start">
+	<phrase_list>
+		<phrase id="0">
+			<action>dialogs.no_trade_trader</action>
+			<text />
+			<next>100</next>
+			<next>200</next>
+		</phrase>
+		<phrase id="100">
+		<dont_has_info>petrenko_new_yant_gg</dont_has_info>
+			<text />
+			<next>101</next>
+		</phrase>
+		<phrase id="200">
+		<has_info>petrenko_new_yant_gg</has_info>
+			<text />
+			<next>201</next>
+		</phrase>
+		<phrase id="101">
+			<text>yan_dolg_petrenko_start_101</text>
+			<next>102</next>
+		</phrase>
+		<phrase id="102">
+			<text>yan_dolg_petrenko_start_102</text>
+			<give_info>petrenko_new_yant_gg</give_info>
+			<next>103</next>
+		</phrase>
+		<phrase id="103">
+			<text>yan_dolg_petrenko_start_103</text>
+		</phrase>
+		<phrase id="201">
+			<text>yan_dolg_petrenko_start_201</text>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="bar_dolg_base_guard_start">
+	<phrase_list>
+	<phrase id="0">
+			<action>dialogs.no_trade_trader</action>
+			<text />
+			<next>1</next>
+			<next>2</next>
+		</phrase>
+		<phrase id="1">
+			<text />
+			<dont_has_info>bar_dolg_base_pass</dont_has_info>
+			<next>11</next>
+		</phrase>
+		<phrase id="2">
+			<text />
+			<has_info>bar_dolg_base_pass</has_info>
+			<next>21</next>
+		</phrase>
+		<phrase id="11">
+			<text>bar_dolg_base_guard_start_11</text>
+		</phrase>
+		<phrase id="21">
+			<text>bar_dolg_base_guard_start_21</text>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="bar_drunk_dolg_start">
+	<phrase_list>
+		<phrase id="0">
+		<action>dialogs.no_trade_trader</action>
+			<text />
+			<next>100</next>
+			<next>150</next>			
+			<next>200</next>
+			<next>300</next>
+			<next>400</next>
+		</phrase>
+		<phrase id="100">
+			<text />
+			<dont_has_info>bar_drunk_dolg_gg</dont_has_info>
+			<next>101</next>
+		</phrase>
+		<phrase id="150">
+			<text />
+			<has_info>bar_drunk_dolg_gg</has_info>
+			<dont_has_info>bar_drunk_dolg_new_gg</dont_has_info>			
+			<next>151</next>
+		</phrase>
+		<phrase id="200">
+			<text />
+			<has_info>bar_drunk_dolg_new_gg</has_info>
+			<dont_has_info>bar_bar_drunk_dolg_quest_start</dont_has_info>			
+			<next>201</next>
+		</phrase>
+		<phrase id="300">
+			<text />
+			<has_info>bar_bar_drunk_dolg_quest_start</has_info>
+			<dont_has_info>bar_bar_drunk_dolg_quest_done</dont_has_info>			
+			<next>301</next>
+		</phrase>
+		<phrase id="400">
+			<text />
+			<has_info>bar_bar_drunk_dolg_quest_done</has_info>			
+			<next>401</next>
+		</phrase>		
+		<phrase id="101">
+			<text>bar_drunk_dolg_start_101</text>
+			<next>102</next>
+		</phrase>
+		<phrase id="102">
+			<text>bar_drunk_dolg_start_102</text>
+			<next>103</next>
+		</phrase>		
+		<phrase id="103">
+			<text>bar_drunk_dolg_start_103</text>
+			<next>1041</next>
+			<next>1042</next>
+		</phrase>
+		<phrase id="1041">
+		<precondition>sak_dialog.have_vodka</precondition>		
+			<text>bar_drunk_dolg_start_1041</text>
+			<action>sak.drink_vodka</action>			
+			<next>1051</next>
+		</phrase>
+		<phrase id="1051">
+			<text>bar_drunk_dolg_start_1051</text>
+			<give_info>bar_drunk_dolg_gg</give_info>			
+		</phrase>		
+		<phrase id="1042">
+			<text>bar_drunk_dolg_start_1042</text>
+			<next>1052</next>
+		</phrase>
+		<phrase id="1052">
+			<text>bar_drunk_dolg_start_1052</text>
+			<give_info>bar_drunk_dolg_gg</give_info>			
+		</phrase>		
+		<phrase id="151">
+			<text>bar_drunk_dolg_start_151</text>
+			<next>1511</next>
+			<next>1512</next>
+		</phrase>
+		<phrase id="1511">
+			<text>bar_drunk_dolg_start_1511</text>
+			<action>dialogs.break_dialog</action>			
+		</phrase>
+		<phrase id="1512">
+		<precondition>sak_dialog.have_vodka</precondition>		
+			<text>bar_drunk_dolg_start_1512</text>
+			<next>152</next>			
+		</phrase>
+		<phrase id="152">
+			<text>bar_drunk_dolg_start_152</text>			
+			<next>153</next>			
+		</phrase>
+		<phrase id="153">
+			<text>bar_drunk_dolg_start_153</text>
+			<action>sak.drink_vodka</action>			
+			<next>154</next>			
+		</phrase>
+		<phrase id="154">
+			<text>bar_drunk_dolg_start_154</text>
+			<next>155</next>			
+		</phrase>
+		<phrase id="155">
+			<text>bar_drunk_dolg_start_155</text>
+			<next>156</next>			
+		</phrase>
+		<phrase id="156">
+			<text>bar_drunk_dolg_start_156</text>
+			<give_info>bar_drunk_dolg_new_gg</give_info>			
+		</phrase>		
+		<phrase id="201">
+			<text>bar_drunk_dolg_start_201</text>
+		</phrase>
+		<phrase id="301">
+			<text>bar_drunk_dolg_start_301</text>
+		</phrase>
+		<phrase id="401">
+			<text>bar_drunk_dolg_start_401</text>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="bar_drunk_dolg_patrul_start">
+	<phrase_list>
+		<phrase id="0">
+			<action>dialogs.no_trade_trader</action>
+			<text />
+			<next>100</next>
+			<next>200</next>
+		</phrase>
+		<phrase id="100">
+			<text />
+			<dont_has_info>bar_drunk_dolg_new_gg</dont_has_info>
+			<next>101</next>
+		</phrase>
+		<phrase id="200">
+			<text />
+			<has_info>bar_drunk_dolg_new_gg</has_info>
+			<next>201</next>
+		</phrase>
+		<phrase id="101">
+			<text>bar_drunk_dolg_patrul_start_101</text>
+			<next>102</next>
+		</phrase>
+		<phrase id="102">
+			<text>bar_drunk_dolg_patrul_start_102</text>
+			<next>103</next>
+		</phrase>
+		<phrase id="103">
+			<text>bar_drunk_dolg_patrul_start_103</text>
+			<give_info>bar_drunk_dolg_new_gg</give_info>
+		</phrase>
+		<phrase id="201">
+			<text>bar_drunk_dolg_patrul_start_201</text>
+			<next>202</next>
+		</phrase>
+		<phrase id="202">
+			<text>bar_drunk_dolg_patrul_start_202</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="bar_drunk_dolg_quest_start">
+	<precondition>sak_dialog.brom_dialog</precondition>
+	<has_info>bar_drunk_dolg_new_gg</has_info>
+	<dont_has_info>bar_bar_drunk_dolg_quest_start</dont_has_info>	
+	<phrase_list>
+		<phrase id="0">
+			<text>bar_drunk_dolg_quest_start_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>bar_drunk_dolg_quest_start_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>bar_drunk_dolg_quest_start_2</text>
+			<next>31</next>
+			<next>32</next>
+			<next>33</next>			
+		</phrase>		
+		<phrase id="31">
+		<precondition>sak_dialog.rand_1_dialog</precondition>
+			<text>bar_drunk_dolg_quest_start_31</text>
+			<action>sak_dialog.add_bar_dolg_debt_dialog</action>			
+			<next>41</next>
+		</phrase>
+		<phrase id="41">
+			<text>bar_drunk_dolg_quest_start_41</text>
+			<next>51</next>
+		</phrase>
+		<phrase id="51">
+			<text>bar_drunk_dolg_quest_start_51</text>
+			<action>sak_dialog.bar_dolg_debt_show</action>
+			<give_info>bar_bar_drunk_dolg_quest_start</give_info>
+			<give_info>info_brom1</give_info>
+			<next>61</next>
+		</phrase>
+		<phrase id="61">
+			<text>bar_drunk_dolg_quest_start_61</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>		
+		<phrase id="32">
+		<precondition>sak_dialog.rand_2_dialog</precondition>
+			<text>bar_drunk_dolg_quest_start_32</text>
+			<next>42</next>
+		</phrase>
+		<phrase id="42">
+			<text>bar_drunk_dolg_quest_start_42</text>
+			<next>52</next>
+		</phrase>
+		<phrase id="52">
+			<text>bar_drunk_dolg_quest_start_52</text>
+			<give_info>bar_bar_drunk_dolg_quest_start</give_info>
+			<give_info>info_brom2</give_info>
+			<next>62</next>
+		</phrase>
+		<phrase id="62">
+			<text>bar_drunk_dolg_quest_start_62</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="33">
+		<precondition>sak_dialog.rand_3_dialog</precondition>
+			<text>bar_drunk_dolg_quest_start_33</text>
+			<next>43</next>
+		</phrase>
+		<phrase id="43">
+			<text>bar_drunk_dolg_quest_start_43</text>
+			<next>53</next>
+		</phrase>
+		<phrase id="53">
+			<text>bar_drunk_dolg_quest_start_53</text>
+			<give_info>bar_bar_drunk_dolg_quest_start</give_info>
+			<give_info>info_brom3</give_info>
+			<next>63</next>
+		</phrase>
+		<phrase id="63">
+			<text>bar_drunk_dolg_quest_start_63</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="bar_drunk_dolg_quest_done">
+	<precondition>sak_dialog.brom_dialog</precondition>
+	<has_info>bar_bar_drunk_dolg_quest_start</has_info>
+	<dont_has_info>bar_bar_drunk_dolg_quest_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>	
+	<phrase_list>
+		<phrase id="0">
+			<text>bar_drunk_dolg_quest_done_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>bar_drunk_dolg_quest_done_1</text>
+			<next>21</next>
+			<next>22</next>
+			<next>23</next>
+			<next>24</next>			
+		</phrase>		
+		<phrase id="21">
+		<precondition>sak_dialog.rand_1_dialog</precondition>
+		<precondition>sak_dialog.have_capsule</precondition>
+		<has_info>bar_dolg_debt_new_gg</has_info>		
+			<text>bar_drunk_dolg_quest_done_21</text>			
+			<next>31</next>
+		</phrase>
+		<phrase id="31">
+			<text>bar_drunk_dolg_quest_done_31</text>
+			<next>41</next>
+		</phrase>
+		<phrase id="41">
+			<text>bar_drunk_dolg_quest_done_41</text>
+			<action>sak_dialog.transfer_any_capsule</action>			
+			<next>51</next>
+		</phrase>
+		<phrase id="51">
+			<text>bar_drunk_dolg_quest_done_51</text>
+			<give_info>info_amk_recipt_grandmother_glassbeards</give_info>			
+			<action>sak.info_amk_received</action>			
+			<give_info>bar_bar_drunk_dolg_quest_done</give_info>			
+			<next>61</next>
+		</phrase>		
+		<phrase id="61">
+			<text>bar_drunk_dolg_quest_done_61</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>		
+		<phrase id="22">
+		<precondition>sak_dialog.rand_2_dialog</precondition>
+		<precondition>sak_dialog.have_10vodka</precondition>		
+			<text>bar_drunk_dolg_quest_done_22</text>
+			<next>32</next>
+		</phrase>
+		<phrase id="32">
+			<text>bar_drunk_dolg_quest_done_32</text>
+			<next>42</next>
+		</phrase>
+		<phrase id="42">
+			<text>bar_drunk_dolg_quest_done_42</text>
+			<action>sak_dialog.give_10vodka</action>			
+			<next>52</next>
+		</phrase>
+		<phrase id="52">
+			<text>bar_drunk_dolg_quest_done_52</text>
+			<action>sak_dialog.add_drunk_dolg_treasure</action>
+			<give_info>bar_bar_drunk_dolg_quest_done</give_info>			
+			<next>62</next>
+		</phrase>
+		<phrase id="62">
+			<text>bar_drunk_dolg_quest_done_62</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="23">
+		<precondition>sak_dialog.rand_3_dialog</precondition>
+		<precondition>sak_dialog.boryan_kul_have</precondition>
+		<has_info>mar_boryan_drunk_quest_done</has_info>		
+			<text>bar_drunk_dolg_quest_done_23</text>
+			<next>33</next>
+		</phrase>
+		<phrase id="33">
+			<text>bar_drunk_dolg_quest_done_33</text>
+			<next>43</next>
+		</phrase>
+		<phrase id="43">
+			<text>bar_drunk_dolg_quest_done_43</text>
+			<action>sak_dialog.give_boryan_kul</action>			
+			<next>53</next>
+		</phrase>
+		<phrase id="53">
+			<text>bar_drunk_dolg_quest_done_53</text>
+			<give_info>info_amk_recipt_steel_kolobok</give_info>
+			<action>sak.info_amk_received</action>			
+			<give_info>bar_bar_drunk_dolg_quest_done</give_info>
+			<next>63</next>
+		</phrase>
+		<phrase id="63">
+			<text>bar_drunk_dolg_quest_done_63</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="24">
+			<text>bar_drunk_dolg_quest_done_24</text>
+			<next>34</next>
+		</phrase>
+		<phrase id="34">
+			<text>bar_drunk_dolg_quest_done_34</text>
+			<next>44</next>
+		</phrase>
+		<phrase id="44">
+			<text>bar_drunk_dolg_quest_done_44</text>
+			<action>dialogs.break_dialog</action>			
+		</phrase>		
+	</phrase_list>
+</dialog>
+
+<dialog id="bar_bar_hunter_quest_start">
+	<dont_has_info>bar_bar_hunter_quest_start</dont_has_info>
+	<dont_has_info>bar_bar_hunter_quest_finish</dont_has_info>
+	<phrase_list>
+		<phrase id="111">
+			<text>bar_bar_hunter_quest_start_111</text>
+			<next>1111</next>
+		</phrase>
+		<phrase id="12">
+			<text>bar_bar_hunter_quest_start_12</text>
+			<next>121</next>
+		</phrase>
+		<phrase id="1212">
+			<text>bar_bar_hunter_quest_start_1212</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="1111">
+			<text>bar_bar_hunter_quest_start_1111</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="11">
+			<text>bar_bar_hunter_quest_start_11</text>
+			<give_info>bar_bar_hunter_quest_start</give_info>
+			<next>111</next>
+		</phrase>
+		<phrase id="1">
+			<text>bar_bar_hunter_quest_start_1</text>
+			<next>11</next>
+			<next>12</next>
+		</phrase>
+		<phrase id="0">
+			<text>bar_bar_hunter_quest_start_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="121">
+			<text>bar_bar_hunter_quest_start_121</text>
+			<next>1212</next>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="mil_kurjer_voronin">
+	<has_info>bar_deactivate_radar_start</has_info>	<!-- диалог с Барменом об отключении Выжигателя -->
+	<dont_has_info>mil_kurjer_voronin_talk</dont_has_info>
+	<dont_has_info>mil_kurjer_voronin_start</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>mil_kurjer_voronin_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>mil_kurjer_voronin_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>mil_kurjer_voronin_2</text>
+			<next>3</next>
+		</phrase>		
+		<phrase id="3">
+			<text>mil_kurjer_voronin_3</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<text>mil_kurjer_voronin_41</text>
+			<give_info>mil_kurjer_voronin_start</give_info> <!-- для повара -->
+			<next>511</next>
+			<next>512</next>			
+		</phrase>
+		<phrase id="511">
+		<dont_has_info>mil_dolg_gulag_return</dont_has_info>		
+			<text>mil_kurjer_voronin_511</text>
+		</phrase>
+		<phrase id="512">
+		<has_info>mil_dolg_gulag_return</has_info>		
+			<text>mil_kurjer_voronin_512</text>
+		</phrase>		
+		<phrase id="42">
+			<text>mil_kurjer_voronin_42</text>
+			<next>52</next>
+		</phrase>		
+		<phrase id="52">
+			<text>mil_kurjer_voronin_52</text>
+			<give_info>mil_kurjer_voronin_talk</give_info> <!-- fin dialog  -->			
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="bar_dolg_leader_start">
+	<phrase_list>
+		<phrase id="0">
+			<action>dialogs.no_trade_trader</action>
+			<text></text>
+			<next>100</next>
+			<next>200</next>
+			<next>300</next>
+			<next>400</next>
+			<next>500</next>
+		</phrase>
+		<phrase id="100">
+			<text></text>
+			<dont_has_info>voronin_dolg_info</dont_has_info>
+			<next>101</next>
+		</phrase>
+		<phrase id="200">
+			<text></text>
+			<dont_has_info>mil_kurjer_voronin_start</dont_has_info>
+			<has_info>voronin_dolg_info</has_info>
+			<next>201</next>
+		</phrase>
+		<phrase id="300">
+			<text></text>
+			<has_info>mil_kurjer_voronin_start</has_info> <!-- взято задание на курьера -->
+			<precondition>sak_dialog.voronin_kurjer_precond</precondition> <!-- задание на курьера не закрыто ни по одной ветке -->
+			<next>301</next>
+		</phrase>
+		<phrase id="400">
+			<has_info>mil_kurjer_have_voronin_done</has_info> <!-- задание на курьера закрыто по ветке Воронина -->
+			<text></text>
+			<next>401</next>
+		</phrase>
+		<phrase id="500">
+			<precondition>sak_dialog.voronin_kurjer2_precond_bad</precondition> <!-- задание на курьера закрыто по любой другой ветке -->
+			<text></text>
+			<next>501</next>
+		</phrase>
+		<phrase id="101">
+			<text>bar_dolg_leader_start_101</text>
+			<next>102</next>
+		</phrase>
+		<phrase id="102">
+			<text>bar_dolg_leader_start_102</text>
+			<next>103</next>
+		</phrase>
+		<phrase id="103">
+			<text>bar_dolg_leader_start_103</text>
+			<next>104</next>
+		</phrase>
+		<phrase id="104">
+			<text>bar_dolg_leader_start_104</text>
+			<next>105</next>
+		</phrase>
+		<phrase id="105">
+			<text>bar_dolg_leader_start_105</text>
+			<give_info>voronin_dolg_info</give_info>
+			<next>106</next>
+		</phrase>
+		<phrase id="106">
+			<text>bar_dolg_leader_start_106</text>
+			<next>107</next>
+		</phrase>
+		<phrase id="107">
+			<text>bar_dolg_leader_start_107</text>
+		</phrase>
+		<phrase id="201">
+			<text>bar_dolg_leader_start_201</text>
+		</phrase>
+		<phrase id="301">
+			<text>bar_dolg_leader_start_301</text>
+		</phrase>
+		<phrase id="401">
+			<text>bar_dolg_leader_start_401</text>
+		</phrase>
+		<phrase id="501">
+			<text>bar_dolg_leader_start_501</text>
+		</phrase>
+	</phrase_list>
+</dialog>
+<!-- new_story -->
+<dialog id="bar_bar_drunk_dolg_story">
+	<has_info>info_way113a</has_info> <!-- поршень перехода на АС -->
+	<dont_has_info>drunk_dolg_story_start</dont_has_info>	
+	<dont_has_info>drunk_dolg_story_done</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>bar_bar_drunk_dolg_story_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>bar_bar_drunk_dolg_story_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>bar_bar_drunk_dolg_story_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>bar_bar_drunk_dolg_story_3</text>
+			<next>4</next>
+			<next>13</next>			
+		</phrase>
+		<phrase id="4">
+		<precondition>sak_dialog.have_vodka</precondition>
+			<text>bar_bar_drunk_dolg_story_4</text>
+			<action>sak.drink_vodka</action>			
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>bar_bar_drunk_dolg_story_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>bar_bar_drunk_dolg_story_6</text>
+			<action>sak.fake_drink_vodka</action>			
+			<next>7</next>
+		</phrase>
+		<phrase id="7">
+			<text>bar_bar_drunk_dolg_story_7</text>
+			<next>8</next>
+		</phrase>
+		<phrase id="8">
+			<text>bar_bar_drunk_dolg_story_8</text>
+			<action>sak.fake_drink_vodka</action>
+			<next>9</next>
+		</phrase>
+		<phrase id="9">
+			<text>bar_bar_drunk_dolg_story_9</text>
+			<next>10</next>
+			<next>11</next>			
+		</phrase>
+		<phrase id="10">
+			<text>bar_bar_drunk_dolg_story_10</text>
+			<next>12</next>
+		</phrase>
+		<phrase id="12">
+			<text>bar_bar_drunk_dolg_story_12</text>
+			<action>sak_dialog.spawn_drunk_dolg_spas</action>
+			<action>sak_dialog.pre_rolled_arts_set("a",5,5,nil,1,"drunk_dolg_rew")</action>
+			<give_info>drunk_dolg_story_start</give_info>
+		</phrase>
+		<phrase id="11">
+			<text>bar_bar_drunk_dolg_story_11</text>
+			<give_info>drunk_dolg_story_done</give_info>			
+		</phrase>
+		<phrase id="13">
+			<text>bar_bar_drunk_dolg_story_13</text>
+			<action>dialogs.break_dialog</action>			
+		</phrase>		
+	</phrase_list>
+</dialog>
+
+<dialog id="bar_bar_drunk_dolg_story_done">
+<precondition>sak_dialog.spas12_m1_have</precondition>
+	<has_info>drunk_dolg_story_start</has_info>	
+	<dont_has_info>drunk_dolg_story_done</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>bar_bar_drunk_dolg_story_done_0</text>
+			<next>1</next>			
+		</phrase>
+		<phrase id="1">		
+			<text>bar_bar_drunk_dolg_story_done_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>bar_bar_drunk_dolg_story_done_2</text>
+			<action>sak_dialog.give_spas12_m1</action>			
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>bar_bar_drunk_dolg_story_done_3</text>
+			<action>sak_dialog.pre_rolled_arts_give("drunk_dolg_rew")</action>
+			<give_info>drunk_dolg_story_done</give_info>
+			<next>4</next>			
+		</phrase>
+		<phrase id="4">
+			<text>bar_bar_drunk_dolg_story_done_4</text>
+			<action>dialogs.break_dialog</action>					
+		</phrase>
+	</phrase_list>
+</dialog>
+<!-- смотреть -->
+<dialog id="bar_bar_barmen_stories">
+	<phrase_list>
+		<phrase id="0">
+			<text>bar_bar_barmen_stories_0</text>
+			<next>1</next>
+		</phrase> 
+		<phrase id="1">
+			<text>bar_bar_barmen_stories_1</text>
+			<next>2</next>
+			<next>3</next>
+			<next>4</next>
+		</phrase> 
+		<phrase id="2">
+			<text>bar_bar_barmen_stories_2</text>
+			<next>22</next>
+		</phrase> 
+		<phrase id="22">
+			<text>bar_bar_barmen_stories_22</text>
+			<next>23</next>
+		</phrase> 
+		<phrase id="23">
+			<text>bar_bar_barmen_stories_23</text>
+			<next>24</next>
+		</phrase> 
+		<phrase id="24">
+			<text>bar_bar_barmen_stories_24</text>
+			<next>25</next>
+		</phrase> 
+		<phrase id="25">
+			<text>bar_bar_barmen_stories_25</text>
+			<next>26</next>
+		</phrase> 
+		<phrase id="26">
+			<text>bar_bar_barmen_stories_26</text>
+			<next>27</next>
+		</phrase> 
+		<phrase id="27">
+			<text>bar_bar_barmen_stories_27</text>
+			<next>28</next>
+		</phrase> 
+		<phrase id="28">
+			<text>bar_bar_barmen_stories_28</text>
+			<next>29</next>
+		</phrase> 
+		<phrase id="29">
+			<text>bar_bar_barmen_stories_29</text>
+			<next>291</next>
+		</phrase> 
+		<phrase id="291">
+			<text>bar_bar_barmen_stories_291</text>
+		</phrase> 
+		<phrase id="3">
+			<text>bar_bar_barmen_stories_3</text>
+			<next>33</next>
+		</phrase> 
+		<phrase id="33">
+			<text>bar_bar_barmen_stories_33</text>
+			<next>34</next>
+		</phrase> 
+		<phrase id="34">
+			<text>bar_bar_barmen_stories_34</text>
+			<next>35</next>
+		</phrase> 
+		<phrase id="35">
+			<text>bar_bar_barmen_stories_35</text>
+			<next>36</next>
+		</phrase> 
+		<phrase id="36">
+			<text>bar_bar_barmen_stories_36</text>
+			<next>37</next>
+		</phrase> 
+		<phrase id="37">
+			<text>bar_bar_barmen_stories_37</text>
+			<next>38</next>
+		</phrase> 
+		<phrase id="38">
+			<text>bar_bar_barmen_stories_38</text>
+			<next>39</next>
+		</phrase> 
+		<phrase id="39">
+			<text>bar_bar_barmen_stories_39</text>
+			<next>391</next>
+		</phrase> 
+		<phrase id="391">
+			<text>bar_bar_barmen_stories_391</text>
+		</phrase>
+		<phrase id="4">
+			<text>bar_bar_barmen_stories_4</text>
+			<next>44</next>
+		</phrase>  
+		<phrase id="44">
+			<text>bar_bar_barmen_stories_44</text>
+		</phrase>  
+	</phrase_list>
+</dialog>
+
+<dialog id="bar_drunk_dolg_black_tip">
+	<precondition>black_tip.have_black_tip</precondition>
+	<precondition>sak_dialog.black_tip_sid_bar_prec</precondition>
+	<dont_has_info>bar_bar_drunk_dolg_black_tip</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>bar_drunk_dolg_black_tip_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>bar_drunk_dolg_black_tip_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>bar_drunk_dolg_black_tip_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>bar_drunk_dolg_black_tip_3</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+		<precondition>sak_dialog.have_vodka</precondition>
+			<text>bar_drunk_dolg_black_tip_41</text>
+			<action>sak.drink_vodka</action>
+			<next>5</next>
+		</phrase>
+		<phrase id="42">
+			<text>bar_drunk_dolg_black_tip_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="5">
+			<text>bar_drunk_dolg_black_tip_5</text>
+			<next>61</next>
+			<next>62</next>
+		</phrase>
+		<phrase id="61">
+			<text>bar_drunk_dolg_black_tip_61</text>
+			<action>sak.fake_vodka_drink</action>
+			<next>71</next>
+		</phrase>
+		<phrase id="62">
+			<text>bar_drunk_dolg_black_tip_62</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="71">
+			<text>bar_drunk_dolg_black_tip_71</text>
+			<give_info>bar_bar_drunk_dolg_black_tip</give_info>
+		</phrase>
+	</phrase_list>
+</dialog>								
+</game_dialogs>

@@ -1,0 +1,191 @@
+#include "gulag_mil_dolg.ltx"
+#include "gulag_mil_village.ltx"
+#include "gulag_mil_nblockpost.ltx"
+#include "gulag_mil_fblockpost.ltx"
+#include "gulag_mil_freedom1.ltx"
+#include "gulag_mil_freedom2.ltx"
+#include "gulag_mil_zombied.ltx"
+#include "gulag_mil_mutants.ltx"
+
+;----------------------
+;--БЛОКПОСТ НАЁМНИКОВ--
+;----------------------
+;--Убрал оригинальный kamp. Непись в нём сидел посреди дороги. У костра пробовал ставить, но и там почему-то сидит спиной к костру. Рестриктор видимо мешает.
+;--Пробовал ставить sleep, но не удаётся прямо на матрас уложить почему-то. Что-то тоже неписю мешает.
+;--Ни одна точка путей из оригинала не используется - но в некоторых местах используются оригинальные координаты.
+;--Не использовал оригинальные исключительно потому что некорректные они и не подходят к нынешней ситуации (т.к. изначально стрельбы не планируется, да и точка перехода имеется).
+
+;--Использует оригинальные координаты. Поменял анимацию с ward на guard.
+[logic@mil_mercs_ara]
+active = walker@mil_mercs_ara
+combat_ignore = combat_ignore@mil_mercs
+threshold = threshold@mil_mercs_ara
+danger = danger_condition@mil_mercs_ara
+on_hit = hit@mil_mercs
+on_death = death@mil_mercs
+
+[walker@mil_mercs_ara]
+path_walk = ara_walk
+path_look = ara_look
+combat_ignore_cond = {-mil_mercs_fire =fighting_actor}
+meet = meet@mil_mercs_ara
+danger = danger_condition@mil_mercs_ara
+
+[meet@mil_mercs_ara]
+meet_dialog	= mil_mercs_ara_dialog_start
+precond = visibility
+
+[threshold@mil_mercs_ara]
+max_ignore_distance = 1
+
+
+[logic@mil_volkodav]
+active = walker@mil_volkodav
+combat_ignore = combat_ignore@mil_mercs
+danger = danger_condition@mil_mercs
+on_hit = hit@mil_mercs
+on_death = death@mil_mercs
+
+[walker@mil_volkodav]
+path_walk = volkodav_walk
+path_look = volkodav_look
+combat_ignore_cond = {-mil_mercs_fire =fighting_actor}
+meet = meet@mil_volkodav
+danger = danger_condition@mil_mercs
+
+[meet@mil_volkodav]
+meet_dialog	= volkodav_dt_dialog_start
+precond = visibility
+
+[logic@mil_mercs_walker1]
+active = walker@mil_mercs_walker1
+combat_ignore = combat_ignore@mil_mercs
+on_hit = hit@mil_mercs
+on_death = death@mil_mercs
+
+[walker@mil_mercs_walker1]
+path_walk = walker1_walk
+path_look = walker1_look
+meet = meet@mil_mercs
+combat_ignore_cond = {-mil_mercs_fire =fighting_actor}
+danger = danger_condition@mil_mercs
+
+
+;--Использует оригинальные координаты. Поменял фнимацию с ward на guard.
+[logic@mil_mercs_walker2]
+active = walker@mil_mercs_walker2
+combat_ignore = combat_ignore@mil_mercs
+on_hit = hit@mil_mercs
+on_death = death@mil_mercs
+
+[walker@mil_mercs_walker2]
+path_walk = walker2_walk
+path_look = walker2_look
+meet = meet@mil_mercs_muller
+combat_ignore_cond = {-mil_mercs_fire =fighting_actor}
+danger = danger_condition@mil_mercs
+
+[meet@mil_mercs_muller]
+meet_state     = 2|guard
+meet_state_wpn = 2|backoff
+victim         = 2|actor
+victim_wpn     = 2|actor
+use = true
+use_wpn = false
+abuse = true
+meet_talk_enabled = true
+meet_dialog	= muller_mil_start_dialog
+
+
+;--Стоит смотрит в торону перехода на другую локацию.
+;--Оригинальные пути walker_3_* не работают. Непись по ним должен патрулировать, но он стоял на месте у камаза и тупил.
+[logic@mil_mercs_walker3]
+active = walker@mil_mercs_walker3
+combat_ignore = combat_ignore@mil_mercs
+on_hit = hit@mil_mercs
+on_death = death@mil_mercs
+
+[walker@mil_mercs_walker3]
+path_walk = walker3_walk
+path_look = walker3_look
+meet = meet@mil_mercs
+combat_ignore_cond = {-mil_mercs_fire =fighting_actor}
+danger = danger_condition@mil_mercs
+
+
+;--Тоже стоит смотрит на ворота, в сторону перехода на др. локацию.
+[logic@mil_mercs_walker4]
+active = walker@mil_mercs_walker4
+combat_ignore = combat_ignore@mil_mercs
+on_hit = hit@mil_mercs
+on_death = death@mil_mercs
+
+[walker@mil_mercs_walker4]
+path_walk = walker4_walk
+path_look = walker4_look
+meet = meet@mil_mercs
+combat_ignore_cond = {-mil_mercs_fire =fighting_actor}
+danger = danger_condition@mil_mercs
+
+
+;--Патрулирует внутри блокпоста.
+[logic@mil_mercs_walker5]
+active = walker@mil_mercs_walker5
+combat_ignore = combat_ignore@mil_mercs
+on_hit = hit@mil_mercs
+on_death = death@mil_mercs
+
+[walker@mil_mercs_walker5]
+path_walk = walker5_walk
+path_look = walker5_look
+meet = meet@mil_mercs
+combat_ignore_cond = {-mil_mercs_fire =fighting_actor}
+danger = danger_condition@mil_mercs
+
+
+[combat_ignore@mil_mercs]
+combat_ignore_cond = {-mil_mercs_fire =fighting_actor}
+
+[meet@mil_mercs]
+meet_state     = 2|guard
+meet_state_wpn = 2|backoff
+victim         = 2|actor
+victim_wpn     = 2|actor
+use = true
+use_wpn = false
+abuse = true
+meet_dialog	= mil_mercs_start_dialog
+
+
+;--Поставил игнорирование трупов, т.к. это с одной стороны не пугливые новички, но с другой стороны, можно и убрать, если не нужно.
+;--Очень некрасиво смотрится, когда казалось бы опытный чувак шарахается трупа и по нескольку минут сидит где-нибудь в кустах с отдышкой.
+;--В mil_killers не надо убирать. Иначе Ара будет шугаться мёртвого Павла (если ГГ его прихлопнет до прихода Ары и ко).
+[danger_condition@mil_mercs_ara]
+ignore_types = corpse
+ignore_distance_corpse = 0
+ignore_distance_sound = 0
+ignore_distance = 0
+ignore_distance_grenade =0
+danger_inertion_time_grenade = 0
+danger_inertion_time_hit = 4000
+danger_inertion_time_ricochet = 0
+danger_inertion_time_corpse = 0
+danger_inertion_time_sound = 0
+
+[danger_condition@mil_mercs]
+ignore_distance = 8
+ignore_types = corpse
+
+[hit@mil_mercs]
+on_info = {-mil_mercs_fire =hit_by_actor} %+mil_mercs_fire =sak.mil_abuse()%
+
+[death@mil_mercs]
+on_info = {-mil_mercs_fire =killed_by_actor} %+mil_mercs_fire =sak.mil_abuse()%										
+
+
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+[logic]
+active = camper
+on_death = death@angar
+
+[death@angar]
+on_info = {=killed_by_actor} %=sak.gg_bandit()%
+
+[camper]
+path_walk = angar_zoneguard_walk
+path_look = angar_zoneguard_walk
+on_info = {=is_dolg_mor} walker@go
+radius = 15
+def_state_campering = threat
+def_state_campering_fire = threat_fire
+meet = meet@angar
+
+[walker@go]
+path_walk = bar_bar_angar_zoneguard_walk
+path_look = bar_bar_angar_zoneguard_look
+on_info = {!is_dolg_mor} camper
+on_signal = angar_zoneguard_bar | walker@bar
+meet = no_meet
+danger = danger_condition
+
+[walker@bar]
+path_walk = bar_bar_angar_zoneguard_walk
+path_look = bar_bar_angar_zoneguard_look
+on_info = {!is_dolg_mor} camper
+soundgroup = bar_visitors1
+meet = meet@bar
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 2
+ignore_distance_grenade = 10
+ignore_types = corpse
+
+[meet@angar]
+use = true
+use_wpn = true
+meet_dialog = bar_dolg_angar
+meet_state = 10|guard@bar_dolg_hangar_bridge_hello|5|wait
+meet_state_wpn = 10|guard@bar_dolg_hangar_bridge_hello|5|wait
+
+[meet@bar]
+use = true
+use_wpn = true
+meet_talk_enabled = true
+meet_state = ward
+meet_dialog = dolg_angar_bar

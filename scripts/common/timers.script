@@ -1,0 +1,190 @@
+local tTimers = {}
+local iTimeRN,iTimeGN = 0,0
+
+local time_factor  = system_ini():r_float("alife","time_factor")
+local tm_count_max = 100 -- 30
+
+function Set_Game_StartTime()
+	db.oGameStartTime = game.CTime()
+	-- установлено не фактическое время старта, а начало игровых суток; для таймеров оно без разницы, зато корректно обновляются "прожитые" дни 
+	db.oGameStartTime:set(2012, 05, 01, 0, 0, 0, 0) 
+	iTimeRN,iTimeGN = 0,0
+end
+function Get_Game_Seconds()
+	return game.get_game_time():diffSec(db.oGameStartTime)
+end
+function Get_Game_Minutes()
+	return math.floor(this.Get_Game_Seconds()/60)
+end
+function Get_Game_Hours()
+	return math.floor(this.Get_Game_Seconds()/3600)
+end
+
+function Get_Game_Days()
+	return math.ceil(this.Get_Game_Minutes()/1440) -- чтобы след. сутки не с 25-го часа стартовали, а с 1-ой минуты 24-го
+end
+
+local is_initialized
+function initialize_timers()
+	if is_initialized then return end
+	is_initialized = true
+	tTimers = {}
+
+	if get_value("timers") == nil then
+		set_value("timers", {})
+	end
+    
+	local t_list = get_value("timers", {})
+	for k,v in pairs(t_list) do
+
+		-- Manool: для совместимости со старыми сейвами
+		-- Убрать с НИ
+		if v[1] then v.n = v[1] end
+		if v[2] then v.t = v[2] end
+		if v[3] then v.p = v[3] end
+		if string.find(k,"^rt") then
+			v.m = true
+		else
+			v.m = false
+		end
+		--
+
+		if v.n ~= "" and v.p ~= "" and v.t then
+			tTimers[k] = v
+		end
+	end
+end
+
+function save_timers()
+	if get_value("timers") == nil then
+		set_value("timers", {})
+	end
+
+	set_value("timers", tTimers)
+end
+
+function start_timer(...)
+	initialize_timers()
+	local tArg = {...}
+	local sName = tArg[1]
+	if type(sName) == "string" and sName ~= "" then
+		local tTmr,sType = {n=sName},""
+		if #tArg == 3 then
+			tTmr.t = tArg[2]*1000*time_factor + game.time()
+			tTmr.p = tArg[3]
+			tTmr.m = true
+			sType  = "rt"
+		elseif type(tArg[4]) == "number" then
+			tTmr.t = math.floor(tArg[2]*1440 + tArg[3]*60 + tArg[4]) + this.Get_Game_Minutes()
+			tTmr.p = tArg[5]
+			tTmr.m = false
+			sType  = "gt"
+		else
+			return false
+		end
+		local i = 1
+		local sIdx = string.format("%s%d",sType,i)
+		while tTimers[sIdx] ~= nil do
+			if sName == tTimers[sIdx].n and (not tTmr.p or (type(tTmr.p) == type(tTimers[sIdx].p) and tTmr.p == tTimers[sIdx].p)) then
+				tTimers[sIdx] = tTmr
+				return true
+			end
+			i = i +1
+			if i > tm_count_max then
+				return false
+			end
+			sIdx = string.format("%s%d",sType,i)
+		end
+		tTimers[sIdx] = tTmr
+		if tTmr.m then
+			iTimeRN = math.min(iTimeRN,tTmr.t)
+		else
+			iTimeGN = math.min(iTimeGN,tTmr.t)
+		end
+		return true
+	end
+	return false
+end
+
+function attach(sm)
+	sm:subscribe({signal = "on_update", fun = this.check_timers})
+end
+
+function check_timers()
+	ogse_signals.get_mgr():reschedule(487)
+	if not sak.game_began then return false end
+	local iTimeR, iTimeG = game.time(), this.Get_Game_Minutes()
+	if iTimeR >= iTimeRN or iTimeG >= iTimeGN then
+		iTimeRN,iTimeGN = iTimeR +360 * 1000 * time_factor,iTimeG+60
+		local tTmrDone = {}
+		for k,v in pairs(tTimers) do
+		-- ODS("[~T]. #DBG: проверяем таймер ~C0A"..k.."   "..v.n.." время таймера : "..tostring(v.t).." время сейчас : "..iTimeG.."~C07")
+			if v.m then
+				if v.t <= iTimeR then
+					table.insert(tTmrDone, {id=k, n=v.n, p=v.p, t=iTimeR-v.t})
+					v.p = ""
+				elseif v.t <= iTimeRN then
+					iTimeRN = v.t
+				end
+			elseif v.t <= iTimeG then
+				table.insert(tTmrDone, {id=k, n=v.n, p=v.p, t=(iTimeG-v.t)*60000})
+				v.p = ""
+			elseif v.t <= iTimeGN then
+				iTimeGN = v.t
+			end
+		end
+		local iCnt = #tTmrDone
+		if iCnt > 0 then
+			if iCnt > 1 then
+				table.sort(tTmrDone, function(a,b) return a.t > b.t end)
+			end
+			for idx,v in ipairs(tTmrDone) do
+				tTimers[v.id] = nil
+				-- ODS("[~T]. #DBG: завершённый таймер "..v.n.." время таймера : "..tostring(v.t).." вызываем : "..tostring(v.p))
+				if v.p and v.p~="" then
+                   loadstring(v.p)()
+				end
+			end
+		end
+	end
+end
+
+function check_timer(sName,sParam,bMask)
+	initialize_timers()
+	if sName and sName ~= "" then
+		for _,tTmr in pairs(tTimers) do
+			if tTmr.n == sName or (bMask and string.find(tTmr.n, "^"..sName)) then
+				if sParam and sParam ~= "" and tTmr.p and tTmr.p == sParam then
+					local iTime = tTmr.t or 0
+					if tTmr.m then
+						iTime = (iTime - game.time())/1000
+					else
+						iTime = iTime - this.Get_Game_Minutes()
+					end
+					if iTime <= 0 then
+						iTime = 0
+					end
+					return true, iTime
+				end
+				return true, 0
+			end
+		end
+	end
+	return false, 0
+end
+
+function stop_timer(sName)
+	initialize_timers()
+	if sName and sName ~= "" then
+		for _,tTmr in pairs(tTimers) do
+			if tTmr.n == tostring(sName) or string.find(tTmr.n, "^"..sName) then
+				tTmr.p=""
+				tTmr.t=2
+			end
+		end
+	end
+end
+
+function test_func(arg1, arg2, arg3)
+	log2("~~timers.test_func: (%s, %s, %s)", tostring(arg1), tostring(arg2), tostring(arg3))
+end

@@ -1,0 +1,8 @@
+[logic]
+active = sr_idle
+
+[sr_idle]
+on_info = {+mil_freedom_commander_zil_mmz} sr_idle2
+
+[sr_idle2]
+on_actor_inside = %=doc.rad_mil_corpses()% nil

@@ -1,0 +1,1402 @@
+<?xml version="1.0" encoding="windows-1251"  ?>
+<game_dialogs>
+	<dialog id="doctor_dialog_start">
+		<phrase_list>
+			<phrase id="0">
+				<action>dialogs.no_trade_trader</action>
+				<text />
+				<next>100</next>
+				<next>200</next>
+			</phrase>
+			<phrase id="100">
+				<dont_has_info>doktor_meet_info</dont_has_info>
+				<text />
+				<next>101</next>
+			</phrase>
+			<phrase id="200">
+				<has_info>doktor_meet_info</has_info>
+				<text />
+				<next>201</next>
+			</phrase>			
+			<phrase id="101">
+				<text>doctor_dialog_start_101</text>
+				<next>102</next>
+			</phrase>
+			<phrase id="102">
+				<text>doctor_dialog_start_102</text>
+				<next>103</next>
+			</phrase>
+			<phrase id="103">
+				<text>doctor_dialog_start_103</text>
+				<next>104</next>
+			</phrase>
+			<phrase id="104">
+				<text>doctor_dialog_start_104</text>
+				<next>105</next>				
+			</phrase>
+			<phrase id="105">
+				<text>doctor_dialog_start_105</text>
+				<action>sak_dialog.add_doc_start</action>
+				<action>sak.post_dialog_exec("sak.doc_move_out()")</action>
+				<give_info>doktor_meet_info</give_info>
+				<next>106</next>				
+			</phrase>
+			<phrase id="106">
+				<text>doctor_dialog_start_106</text>
+				<action>dialogs.break_dialog</action>				
+			</phrase>
+			<phrase id="201">
+				<text>doctor_dialog_start_201</text>
+				<next>202</next>
+			</phrase>
+			<phrase id="202">
+				<text>doctor_dialog_start_202</text>
+				<next>203</next>
+			</phrase>
+			<phrase id="203">
+				<text>doctor_dialog_start_203</text>
+			</phrase>			
+		</phrase_list>
+	</dialog>
+
+	<dialog id="tutorial_wounded_give_medkit">
+		<phrase_list>
+			<phrase id="0">
+				<text />
+				<next>100</next>
+				<next>200</next>
+				<next>300</next>
+				<next>400</next>				
+			</phrase>
+			<phrase id="100">
+				<text />
+				<dont_has_info>tutorial_wounded_help</dont_has_info>
+				<next>101</next>
+			</phrase>
+			<phrase id="200">
+				<text />
+				<has_info>tutorial_wounded_help</has_info>
+				<has_info>tutorial_wounded_heal</has_info>
+				<dont_has_info>tutorial_wounded_gg</dont_has_info>				
+				<next>201</next>
+			</phrase>
+			<phrase id="300">
+				<text />
+				<dont_has_info>tutorial_wounded_heal</dont_has_info>
+				<has_info>tutorial_wounded_help</has_info>
+				<next>301</next>
+			</phrase>
+			<phrase id="400">
+				<text />
+				<has_info>val_raid_start</has_info>
+				<has_info>tutorial_wounded_gg</has_info>				
+				<next>401</next>
+			</phrase>			
+<!-- 100 -->			
+			<phrase id="101">
+				<text>tutorial_wounded_give_medkit_101</text>
+				<next>102</next>
+			</phrase>
+			<phrase id="102">
+				<text>tutorial_wounded_give_medkit_102</text>
+				<next>103</next>
+			</phrase>
+			<phrase id="103">
+				<text>tutorial_wounded_give_medkit_103</text>
+				<next>1030</next>
+				<next>1040</next>
+			</phrase>
+			<phrase id="1030">
+				<text>tutorial_wounded_give_medkit_1030</text>
+				<precondition>dialogs.actor_have_medkit</precondition>
+				<action>dialogs.transfer_medkit</action>
+				<next>1031</next>
+			</phrase>
+			<phrase id="1031">
+				<text>tutorial_wounded_give_medkit_1031</text>
+				<give_info>tutorial_wounded_help</give_info>
+			</phrase>
+			<phrase id="1040">
+				<text>tutorial_wounded_give_medkit_1040</text>
+				<next>1041</next>
+			</phrase>			
+			<phrase id="1041">
+				<text>tutorial_wounded_give_medkit_1041</text>
+			</phrase>
+<!-- 200 new -->
+			<phrase id="201">
+				<text>tutorial_wounded_give_medkit_201</text>
+				<next>2021</next>
+				<next>2022</next>				
+			</phrase>
+			<phrase id="2021">
+			<dont_has_info>val_raid_start</dont_has_info>			
+				<text>tutorial_wounded_give_medkit_2021</text>
+				<next>2031</next>
+			</phrase>
+			<phrase id="2031">
+				<text>tutorial_wounded_give_medkit_2031</text>
+			</phrase>
+			<phrase id="2022">
+			<has_info>val_raid_start</has_info>			
+				<text>tutorial_wounded_give_medkit_2022</text>
+				<next>2032</next>
+			</phrase>
+			<phrase id="2032">
+				<text>tutorial_wounded_give_medkit_2032</text>
+				<next>204</next>				
+			</phrase>
+			<phrase id="204">
+				<text>tutorial_wounded_give_medkit_204</text>
+				<next>205</next>
+			</phrase>
+			<phrase id="205">
+				<text>tutorial_wounded_give_medkit_205</text>
+				<next>206</next>
+			</phrase>
+			<phrase id="206">
+				<text>tutorial_wounded_give_medkit_206</text>
+				<next>207</next>				
+			</phrase>
+			<phrase id="207">
+				<text>tutorial_wounded_give_medkit_207</text>
+				<next>208</next>
+			</phrase>
+			<phrase id="208">
+				<text>tutorial_wounded_give_medkit_208</text>
+				<next>209</next>				
+			</phrase>
+			<phrase id="209">
+				<text>tutorial_wounded_give_medkit_209</text>
+				<give_info>tutorial_wounded_gg</give_info>				
+			</phrase>			
+<!-- 300 -->			
+			<phrase id="301">
+				<text>tutorial_wounded_give_medkit_301</text>
+				<next>302</next>
+			</phrase>
+			<phrase id="302">
+				<text>tutorial_wounded_give_medkit_302</text>
+				<next>303</next>
+			</phrase>
+			<phrase id="303">
+				<text>tutorial_wounded_give_medkit_303</text>
+				<next>304</next>
+			</phrase>
+			<phrase id="304">
+				<text>tutorial_wounded_give_medkit_304</text>
+				<next>305</next>
+			</phrase>
+			<phrase id="305">
+				<text>tutorial_wounded_give_medkit_305</text>
+			</phrase>
+			<phrase id="401">
+				<text>tutorial_wounded_give_medkit_401</text>
+			</phrase>			
+		</phrase_list>
+	</dialog>
+<!-- Петруха_Кордон -->	
+	<dialog id="escape_factory_assault_start">
+		<phrase_list>
+			<phrase id="0">
+				<text />
+				<next>100</next>				
+				<next>200</next>
+				<next>300</next> <!-- Шустрый труп -->				
+				<next>400</next>
+				<next>500</next>
+				<next>600</next>
+				<next>700</next>
+				<next>800</next>
+				<next>900</next>
+				<next>910</next>
+				<next>920</next>				
+				<next>930</next>
+			</phrase>
+			<phrase id="100">
+				<text />
+				<dont_has_info>esc_bandits_start</dont_has_info>
+				<dont_has_info>escape_factory_assault_say_hello</dont_has_info>
+				<dont_has_info>esc_kill_bandits_quest_kill</dont_has_info>
+				<has_info>esc_kill_bandits_quest_have</has_info>
+				<dont_has_info>help_to_volk</dont_has_info>
+				<next>101</next>
+			</phrase>			
+			<phrase id="200">
+				<text />
+				<dont_has_info>esc_bandits_start</dont_has_info>
+				<dont_has_info>escape_factory_assault_say_hello</dont_has_info>
+				<dont_has_info>esc_kill_bandits_quest_kill</dont_has_info>
+				<has_info>esc_kill_bandits_quest_have</has_info>
+				<has_info>help_to_volk</has_info>
+				<next>201</next>
+			</phrase>
+			<phrase id="300"> <!-- Шустрый труп -->
+				<text />
+				<dont_has_info>esc_bandits_start</dont_has_info>
+				<has_info>esc_kill_bandits_quest_kill</has_info>
+				<has_info>esc_shustryi_umer</has_info>
+				<dont_has_info>esc_petruha_toz_start</dont_has_info>
+				<dont_has_info>esc_petruha_toz_have</dont_has_info>
+				<dont_has_info>esc_petruha_toz_done</dont_has_info>
+				<next>301</next>
+			</phrase>			
+			<phrase id="400">
+				<text />
+				<dont_has_info>esc_kill_bandits_quest_done</dont_has_info>
+				<has_info>esc_kill_bandits_quest_kill</has_info>
+				<has_info>esc_bandits_start</has_info>
+				<next>401</next>
+			</phrase>
+			<phrase id="500">
+				<text />
+				<dont_has_info>esc_kill_bandits_quest_kill</dont_has_info>
+				<has_info>esc_bandits_start</has_info>
+				<next>501</next>
+			</phrase>
+			<phrase id="600">
+				<text />
+				<dont_has_info>esc_bandits_start</dont_has_info>
+				<has_info>esc_kill_bandits_quest_kill</has_info>
+				<dont_has_info>esc_shustryi_umer</dont_has_info>
+				<dont_has_info>esc_petruha_toz_start</dont_has_info>
+				<dont_has_info>esc_petruha_toz_have</dont_has_info>
+				<dont_has_info>esc_petruha_toz_done</dont_has_info>
+				<next>601</next>
+			</phrase>
+			<phrase id="700">
+				<text />
+				<dont_has_info>esc_kill_bandits_quest_kill</dont_has_info>
+				<dont_has_info>esc_bandits_start</dont_has_info>
+				<has_info>escape_factory_assault_say_hello</has_info>
+				<next>701</next>
+			</phrase>
+			<phrase id="800">
+				<text />
+				<has_info>esc_petruha_toz_start</has_info>
+				<dont_has_info>esc_petruha_toz_done</dont_has_info>
+				<dont_has_info>esc_petruha_toz_have</dont_has_info>
+				<next>801</next>
+			</phrase>
+			<phrase id="900">
+				<text />
+				<has_info>esc_kill_bandits_quest_done</has_info>
+				<has_info>esc_shustryi_umer</has_info>
+				<dont_has_info>esc_petruha_toz_start</dont_has_info>
+				<next>901</next>
+			</phrase>
+			<phrase id="910">
+				<text />
+				<has_info>esc_petruha_toz_done</has_info>
+				<next>801</next>
+			</phrase>			
+			<phrase id="920">
+				<text />
+				<has_info>esc_petruha_toz_have</has_info>
+				<dont_has_info>esc_petruha_toz_done</dont_has_info>
+				<next>801</next>
+			</phrase>			
+			<phrase id="930">
+				<text />
+				<has_info>esc_kill_bandits_quest_done</has_info>
+				<dont_has_info>esc_petruha_toz_start</dont_has_info>
+				<next>931</next>
+			</phrase>
+<!-- 100 -->			
+			<phrase id="101">
+				<text>escape_factory_assault_start_101</text>
+				<action>dialogs.no_trade_trader</action>
+				<next>102</next>
+			</phrase>			
+			<phrase id="102">
+				<text>escape_factory_assault_start_102</text>
+				<next>103</next>
+			</phrase>
+			<phrase id="103">
+				<text>escape_factory_assault_start_103</text>
+				<next>104</next>
+			</phrase>
+			<phrase id="104">
+				<text>escape_factory_assault_start_104</text>
+				<next>105</next>
+			</phrase>
+			<phrase id="105">
+				<text>escape_factory_assault_start_105</text>
+				<next>106</next>
+			</phrase>
+			<phrase id="106">
+				<text>escape_factory_assault_start_106</text>
+				<next>107</next>
+			</phrase>			
+			<phrase id="107">
+				<text>escape_factory_assault_start_107</text>
+				<next>1071</next>
+				<next>1072</next>
+				<next>1073</next>				
+			</phrase>
+			<phrase id="1071">
+				<text>escape_factory_assault_start_1071</text>
+				<give_info>escape_factory_assault_say_hello</give_info>
+				<give_info>esc_bandits_start</give_info>
+			</phrase>
+			<phrase id="1072">
+				<text>escape_factory_assault_start_1072</text>
+				<give_info>escape_factory_assault_say_hello</give_info>				
+				<next>1082</next>
+			</phrase>
+			<phrase id="1082">
+				<text>escape_factory_assault_start_1082</text>
+			</phrase>			
+			<phrase id="1073">
+				<text>escape_factory_assault_start_1073</text>
+				<next>1083</next>
+			</phrase>
+			<phrase id="1083">
+				<text>escape_factory_assault_start_1083</text>
+				<next>109</next>
+			</phrase>
+			<phrase id="109">
+				<text>escape_factory_assault_start_109</text>
+				<next>1091</next>
+				<next>1092</next>
+			</phrase>
+			<phrase id="1091">
+			<dont_has_info>esc_wolf_dead</dont_has_info>
+				<text>escape_factory_assault_start_1091</text>
+				<action>sak_spawn.add_esc_monsters</action>
+				<next>1101</next>
+				<next>1102</next>
+			</phrase>
+			<phrase id="1101">
+				<text>escape_factory_assault_start_1101</text>
+				<give_info>help_to_volk</give_info>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="1102">
+				<text>escape_factory_assault_start_1102</text>
+				<give_info>escape_factory_assault_say_hello</give_info>
+				<next>1082</next>
+			</phrase>			
+			<phrase id="1092">
+			<has_info>esc_wolf_dead</has_info>
+				<text>escape_factory_assault_start_1092</text>
+				<action>sak_spawn.add_esc_monsters</action>
+				<next>1071</next>
+			</phrase>
+<!-- 200 -->			
+			<phrase id="201">
+				<text>escape_factory_assault_start_201</text>
+				<action>dialogs.no_trade_trader</action>
+				<next>2011</next>
+				<next>2012</next>
+				<next>2013</next>
+				<next>2014</next>
+				<next>2015</next>
+				<next>2016</next>
+				<next>2017</next>
+				<next>2018</next>
+			</phrase>
+			<phrase id="2011">
+			<dont_has_info>atp_bandit_pda_done</dont_has_info>
+			<dont_has_info>parley_bandits</dont_has_info>
+				<text>escape_factory_assault_start_2011</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="2012">
+			<dont_has_info>atp_bandit_pda_done</dont_has_info>
+			<has_info>volk_prisoner_start</has_info>
+				<text>escape_factory_assault_start_2012</text>
+				<next>2020</next>
+			</phrase>
+			<phrase id="2020">
+				<text>escape_factory_assault_start_2020</text>
+				<next>1071</next>
+				<next>1072</next>
+			</phrase>			
+			<phrase id="2013">
+			<precondition>sak_dialog.atp_bandit_pda_not_have</precondition>
+			<dont_has_info>atp_bandit_pda_done</dont_has_info>
+			<has_info>volk_prisoner_start</has_info>
+			<dont_has_info>volk_prisoner_battle</dont_has_info>
+				<text>escape_factory_assault_start_2013</text>
+				<next>20131</next>
+				<next>20133</next>
+			</phrase>
+			<phrase id="20131">
+			<dont_has_info>petruha_add_tail</dont_has_info>
+				<text>escape_factory_assault_start_20131</text>
+				<action>mike.take_mutant_psevdodog_tail</action>
+				<give_info>petruha_add_tail</give_info>
+				<next>20132</next>
+			</phrase>
+			<phrase id="20132">
+				<text>escape_factory_assault_start_20132</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>			
+			<phrase id="20133">
+			<dont_has_info>atp_bandit_pda_done</dont_has_info>
+			<has_info>petruha_add_tail</has_info>
+				<text>escape_factory_assault_start_20133</text>
+				<next>20134</next>
+			</phrase>
+			<phrase id="20134">
+				<text>escape_factory_assault_start_20134</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>			
+			<phrase id="2014">
+			<dont_has_info>atp_bandit_pda_done</dont_has_info>
+			<dont_has_info>volk_prisoner_start</dont_has_info>
+			<has_info>parley_bandits</has_info>
+			<dont_has_info>esc_shustryi_prisoner_new_gg</dont_has_info>
+				<text>escape_factory_assault_start_2014</text>
+				<next>20141</next>
+			</phrase>
+			<phrase id="20141">
+				<text>escape_factory_assault_start_20141</text>
+				<next>20142</next>
+			</phrase>
+			<phrase id="20142">
+				<text>escape_factory_assault_start_20142</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>			
+			<phrase id="2015">
+			<dont_has_info>atp_bandit_pda_done</dont_has_info>
+			<dont_has_info>volk_prisoner_start</dont_has_info>
+			<has_info>parley_bandits</has_info>
+			<has_info>esc_shustryi_prisoner_new_gg</has_info>
+				<text>escape_factory_assault_start_2015</text>
+				<next>20151</next>
+			</phrase>
+			<phrase id="20151">
+				<text>escape_factory_assault_start_20151</text>
+				<next>20152</next>
+			</phrase>
+			<phrase id="20152">
+				<text>escape_factory_assault_start_20152</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>			
+			<phrase id="2016">
+			<has_info>atp_bandit_pda_done</has_info>
+				<text>escape_factory_assault_start_2016</text>
+				<next>20161</next>
+			</phrase>
+			<phrase id="20161">
+				<text>escape_factory_assault_start_20161</text>
+				<next>20162</next>				
+			</phrase>
+			<phrase id="20162">
+				<text>escape_factory_assault_start_20162</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>			
+			<phrase id="2017">
+			<precondition>sak_dialog.atp_bandit_pda_have</precondition>
+				<text>escape_factory_assault_start_2017</text>
+				<next>20171</next>
+			</phrase>
+			<phrase id="20171">
+				<text>escape_factory_assault_start_20171</text>
+				<next>20172</next>				
+			</phrase>			
+			<phrase id="20172">
+				<text>escape_factory_assault_start_20172</text>
+				<action>dialogs.break_dialog</action>				
+			</phrase>			
+			<phrase id="2018">
+			<has_info>esc_wolf_dead</has_info>
+			<dont_has_info>atp_bandit_pda_done</dont_has_info>
+			<dont_has_info>parley_bandits</dont_has_info>
+				<text>escape_factory_assault_start_2018</text>
+				<next>2020</next>
+			</phrase>
+<!-- 300 --> <!-- Шустрый труп -->
+			<phrase id="301">
+				<text>escape_factory_assault_start_301</text>
+				<give_info>esc_petruha_great</give_info>
+			</phrase>			
+<!-- 400 -->
+			<phrase id="401">
+				<text>escape_factory_assault_start_401</text>
+				<action>dialogs.no_trade_trader</action>
+				<next>402</next>
+			</phrase>
+			<phrase id="402">
+				<text>escape_factory_assault_start_402</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+<!-- 500 -->			
+			<phrase id="501">
+				<text>escape_factory_assault_start_501</text>
+				<action>dialogs.no_trade_trader</action>
+			</phrase>
+<!-- 600 -->			
+			<phrase id="601">
+				<text>escape_factory_assault_start_601</text>
+				<give_info>esc_petruha_great</give_info>
+			</phrase>			
+<!-- 700 -->			
+			<phrase id="701">
+				<text>escape_factory_assault_start_701</text>
+				<action>dialogs.no_trade_trader</action>
+			</phrase>			
+<!-- 800 -->			
+			<phrase id="801">
+				<text>escape_factory_assault_start_801</text>
+			</phrase>
+<!-- 900 -->			
+			<phrase id="901">
+				<text>escape_factory_assault_start_901</text>
+			</phrase>
+<!-- 930 -->			
+			<phrase id="931">
+				<text>escape_factory_assault_start_931</text>
+			</phrase>			
+		</phrase_list>
+	</dialog>
+<!-- Сидор -->	
+	<dialog id="what_do_to_do">
+	<dont_has_info>what_do_to</dont_has_info>
+	<has_info>tutorial_end</has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>what_do_to_do_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>what_do_to_do_1</text>
+				<action>sak.add_new_esc_gar_91</action>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>what_do_to_do_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>what_do_to_do_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>what_do_to_do_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>what_do_to_do_5</text>
+				<give_info>what_do_to</give_info>
+				<next>6</next>
+			</phrase>
+			<phrase id="6">
+				<text>what_do_to_do_6</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+		</phrase_list>
+	</dialog>
+
+	<dialog id="esc_provodnik_start">
+		<phrase_list>
+			<phrase id="0">
+				<action>dialogs.no_trade_trader</action>
+				<text />
+				<next>100</next>
+				<next>150</next>
+				<next>200</next>
+				<next>300</next>
+			</phrase>
+			<phrase id="100">
+				<text />
+				<dont_has_info>esc_provodnik_new_gg</dont_has_info>
+				<next>101</next>
+			</phrase>
+			<phrase id="150">
+				<text />
+				<has_info>esc_provodnik_new_gg</has_info>
+				<dont_has_info>esc_find_doctor_start</dont_has_info>
+				<next>151</next>
+			</phrase>
+			<phrase id="200">
+				<text />
+				<has_info>esc_provodnik_new_gg</has_info>
+				<has_info>esc_find_doctor_start</has_info>
+				<dont_has_info>info_way182a</dont_has_info>
+				<next>201</next>
+			</phrase>
+			<phrase id="300">
+				<text />
+				<has_info>esc_provodnik_new_gg</has_info>
+				<has_info>esc_find_doctor_start</has_info>
+				<has_info>info_way182a</has_info>
+				<next>301</next>
+			</phrase>
+			<phrase id="101">
+				<text>esc_provodnik_start_101</text>
+				<next>102</next>
+			</phrase>
+			<phrase id="102">
+				<text>esc_provodnik_start_102</text>
+				<next>103</next>
+			</phrase>
+			<phrase id="103">
+				<text>esc_provodnik_start_103</text>
+				<give_info>esc_provodnik_new_gg</give_info>
+				<next>104</next>
+				<next>1041</next>
+			</phrase>
+			<phrase id="1041">
+			<dont_has_info>esc_find_doctor_start</dont_has_info>
+				<text>esc_provodnik_start_1041</text>
+				<next>1051</next>
+			</phrase>
+			<phrase id="1051">
+				<text>esc_provodnik_start_1051</text>
+			</phrase>
+			<phrase id="104">
+			<dont_has_info>esc_find_doctor_start</dont_has_info>
+				<text>esc_provodnik_start_104</text>
+				<next>105</next>
+			</phrase>
+			<phrase id="105">
+				<text>esc_provodnik_start_105</text>
+				<next>106</next>
+			</phrase>
+			<phrase id="106">
+				<text>esc_provodnik_start_106</text>
+				<next>107</next>
+			</phrase>
+			<phrase id="107">
+				<text>esc_provodnik_start_107</text>
+				<give_info>esc_find_doctor_start</give_info>
+				<next>1081</next>
+				<next>1082</next>
+				<next>2041</next>
+				<next>2042</next>				
+			</phrase>
+			<phrase id="1081">
+			<dont_has_info>info_way182a</dont_has_info>
+				<text>esc_provodnik_start_1081</text>
+				<next>1091</next>
+			</phrase>
+			<phrase id="1082">
+			<has_info>info_way182a</has_info>
+				<text>esc_provodnik_start_1082</text>
+				<next>1092</next>
+			</phrase>
+			<phrase id="151">
+				<text>esc_provodnik_start_151</text>
+				<next>104</next>
+				<next>152</next>
+			</phrase>
+			<phrase id="152">
+			<has_info>esc_find_doctor_start</has_info>
+				<text>esc_provodnik_start_152</text>
+				<next>153</next>
+			</phrase>
+			<phrase id="153">
+				<text>esc_provodnik_start_153</text>
+			</phrase>
+			<phrase id="201">
+				<text>esc_provodnik_start_201</text>
+				<next>202</next>
+			</phrase>
+			<phrase id="202">
+				<text>esc_provodnik_start_202</text>
+				<next>203</next>
+			</phrase>
+			<phrase id="203">
+				<text>esc_provodnik_start_203</text>
+				<next>1081</next>
+				<next>1082</next>
+				<next>2041</next>
+				<next>2042</next>				
+			</phrase>
+			<phrase id="2041">
+				<precondition>sak_dialog.have_any_x_art("b",true)</precondition>
+				<text>esc_provodnik_start_2041</text>
+				<action>sak_dialog.transfer_any_x_art("b")</action>
+				<next>205</next>
+			</phrase>
+			<phrase id="2042">
+				<precondition>sak_dialog.have_any_x_art("c",true)</precondition>
+				<text>esc_provodnik_start_2042</text>
+				<action>sak_dialog.transfer_any_x_art("c")</action>
+				<next>205</next>
+			</phrase>
+			<phrase id="205">
+				<text>esc_provodnik_start_205</text>
+				<action>sak.add_new_agroprom_101</action>
+				<action>sak.add_new_lost_esc_182</action>
+				<next>2051</next>
+			</phrase>
+			<phrase id="2051">
+				<text>esc_provodnik_start_2051</text>
+				<next>2052</next>
+			</phrase>
+			<phrase id="2052">
+				<text>esc_provodnik_start_2052</text>
+				<next>206</next>
+			</phrase>
+			<phrase id="206">
+				<text>esc_provodnik_start_206</text>
+				<next>207</next>
+			</phrase>
+			<phrase id="207">
+				<text>esc_provodnik_start_207</text>
+			</phrase>
+			<phrase id="1091">
+				<text>esc_provodnik_start_1091</text>
+			</phrase>
+			<phrase id="1092">
+				<text>esc_provodnik_start_1092</text>
+			</phrase>
+			<phrase id="301">
+				<text>esc_provodnik_start_301</text>
+			</phrase>
+		</phrase_list>
+	</dialog>
+
+	<dialog id="escape_lager_guard_start_dialog">
+		<phrase_list>
+			<phrase id="0">
+				<text />
+				<next>100</next>
+				<next>200</next>
+				<next>300</next>
+				<next>400</next>
+			</phrase>
+			<phrase id="100">
+				<text />
+				<dont_has_info>esc_bridge_pass_fire</dont_has_info>
+				<dont_has_info>tutorial_wounded_start</dont_has_info>
+				<next>101</next>
+			</phrase>
+			<phrase id="200">
+				<text />
+				<dont_has_info>esc_bridge_pass_fire</dont_has_info>
+				<has_info>esc_path_to_lager</has_info>
+				<next>201</next>
+			</phrase>
+			<phrase id="300">
+				<text />
+				<dont_has_info>esc_bridge_pass_fire</dont_has_info>
+				<dont_has_info>esc_path_to_lager</dont_has_info>
+				<has_info>tutorial_wounded_start</has_info>
+				<next>301</next>
+			</phrase>
+			<phrase id="400">
+				<text />
+				<has_info>esc_bridge_pass_fire</has_info>
+				<next>401</next>
+			</phrase>
+			<phrase id="101">
+				<text>escape_lager_guard_start_dialog_101</text>
+				<action>dialogs.no_trade_trader</action>
+				<next>1021</next>
+				<next>1022</next>
+			</phrase>
+			<phrase id="1021">
+				<text>escape_lager_guard_start_dialog_1021</text>
+				<next>103</next>
+			</phrase>
+			<phrase id="1022">
+				<text>escape_lager_guard_start_dialog_1022</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="103">
+				<text>escape_lager_guard_start_dialog_103</text>
+				<next>1041</next>
+				<next>1042</next>
+			</phrase>
+			<phrase id="1041">
+				<text>escape_lager_guard_start_dialog_1041</text>
+				<next>1051</next>
+			</phrase>
+			<phrase id="1042">
+				<text>escape_lager_guard_start_dialog_1042</text>
+				<next>1052</next>
+			</phrase>
+			<phrase id="1051">
+				<text>escape_lager_guard_start_dialog_1051</text>
+				<next>1022</next>
+			</phrase>
+			<phrase id="1022">
+				<text>escape_lager_guard_start_dialog_1022</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="1052">
+				<text>escape_lager_guard_start_dialog_1052</text>
+				<next>1022</next>
+			</phrase>
+			<phrase id="201">
+				<text>escape_lager_guard_start_dialog_201</text>
+				<action>dialogs.no_trade_trader</action>
+			</phrase>			
+			<phrase id="301">
+				<text>escape_lager_guard_start_dialog_301</text>
+				<action>dialogs.yes_trade</action>
+			</phrase>			
+			<phrase id="401">
+				<text>escape_lager_guard_start_dialog_401</text>
+				<action>dialogs.no_trade_trader</action>
+				<next>402</next>
+			</phrase>
+			<phrase id="402">
+				<text>escape_lager_guard_start_dialog_402</text>
+				<next>403</next>
+			</phrase>
+			<phrase id="403">
+				<text>escape_lager_guard_start_dialog_403</text>
+				<next>404</next>
+			</phrase>
+			<phrase id="404">
+				<text>escape_lager_guard_start_dialog_404</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+		</phrase_list>
+	</dialog>
+<!-- Фанат -->
+	<dialog id="escape_lager_leader_hello">
+		<phrase_list>
+		<phrase id="0">
+				<action>dialogs.no_trade_trader</action>
+				<text />
+				<next>100</next>
+				<next>200</next>
+				<next>300</next>
+				<next>400</next>
+				<next>500</next>
+			</phrase>
+			<phrase id="100">
+				<text />
+				<dont_has_info>escape_lager_failed</dont_has_info>
+				<dont_has_info>escape_lager_help</dont_has_info>
+				<dont_has_info>escape_lager_complete</dont_has_info>							
+				<next>101</next>
+			</phrase>
+			<phrase id="200">
+				<text />
+				<dont_has_info>escape_lager_failed</dont_has_info>
+				<dont_has_info>escape_lager_killers_die</dont_has_info>
+				<has_info>escape_lager_help</has_info>
+				<next>201</next>
+			</phrase>
+			<phrase id="300">
+				<text />
+				<dont_has_info>escape_lager_failed</dont_has_info>
+				<dont_has_info>escape_lager_complete</dont_has_info>
+				<has_info>escape_lager_killers_die</has_info>
+				<next>301</next>
+			</phrase>
+			<phrase id="400">
+				<text />
+				<dont_has_info>escape_lager_failed</dont_has_info>
+				<has_info>escape_lager_complete</has_info>
+				<next>401</next>
+			</phrase>
+			<phrase id="500">
+				<text />
+				<has_info>escape_lager_failed</has_info>
+				<next>501</next>
+			</phrase>
+<!-- 100 -->			
+			<phrase id="101">
+				<text>escape_lager_leader_hello_101</text>
+				<next>102</next>
+			</phrase>
+			<phrase id="102">
+				<text>escape_lager_leader_hello_102</text>
+				<next>103</next>
+			</phrase>
+			<phrase id="103">
+				<text>escape_lager_leader_hello_103</text>
+				<next>104</next>
+			</phrase>
+			<phrase id="104">
+				<text>escape_lager_leader_hello_104</text>
+				<next>105</next>
+			</phrase>
+			<phrase id="105">
+				<text>escape_lager_leader_hello_105</text>
+				<next>106</next>
+			</phrase>			
+			<phrase id="106">
+				<text>escape_lager_leader_hello_106</text>
+				<next>107</next>
+			</phrase>
+			<phrase id="107">
+				<text>escape_lager_leader_hello_107</text>
+				<next>108</next>
+			</phrase>
+			<phrase id="108">
+				<text>escape_lager_leader_hello_108</text>
+				<next>109</next>
+			</phrase>
+			<phrase id="109">
+				<text>escape_lager_leader_hello_109</text>
+				<next>1091</next>
+				<next>1092</next>
+			</phrase>
+			<phrase id="1091">
+				<text>escape_lager_leader_hello_1091</text>
+				<next>110</next>
+			</phrase>
+			<phrase id="110">
+				<text>escape_lager_leader_hello_110</text>
+				<next>111</next>
+			</phrase>
+			<phrase id="111">
+				<text>escape_lager_leader_hello_111</text>
+				<give_info>escape_lager_help</give_info>
+				<give_info>escape_lager_spawn_killers</give_info>				
+				<action>dialogs.break_dialog</action>
+			</phrase>			
+			<phrase id="1092">
+				<text>escape_lager_leader_hello_1092</text>
+				<next>121</next>
+			</phrase>
+			<phrase id="121">
+				<text>escape_lager_leader_hello_121</text>
+				<give_info>escape_lager_failed</give_info>
+				<give_info>escape_lager_spawn_killers</give_info>
+			</phrase>
+<!-- 200 -->			
+			<phrase id="201">
+				<text>escape_lager_leader_hello_201</text>
+				<next>202</next>				
+			</phrase>
+			<phrase id="202">
+				<text>escape_lager_leader_hello_202</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>			
+<!-- 300 -->
+			<phrase id="301">
+				<text>escape_lager_leader_hello_301</text>
+				<next>302</next>
+			</phrase>
+			<phrase id="302">
+				<text>escape_lager_leader_hello_302</text>
+				<give_info>escape_lager_complete</give_info>
+				<next>303</next>
+			</phrase>
+			<phrase id="303">
+				<text>escape_lager_leader_hello_303</text>
+				<action>sak_dialog.pre_rolled_arts_give("fanat_killers_rew")</action>
+			    <action>sak.create_items("ammo_7.62x39_ap",7)</action>
+				<action>mike.good_job</action>
+			</phrase>
+<!-- 400 -->			
+			<phrase id="401">
+				<text>escape_lager_leader_hello_401</text>
+				<next>4021</next>
+				<next>4022</next>
+			</phrase>
+			<phrase id="4021">
+			<has_info>volk_gde</has_info>			
+				<text>escape_lager_leader_hello_4021</text>
+				<next>4031</next>				
+			</phrase>
+			<phrase id="4031">
+				<text>escape_lager_leader_hello_4031</text>
+			</phrase>			
+			<phrase id="4022">
+			<dont_has_info>volk_gde</dont_has_info>
+				<text>escape_lager_leader_hello_4022</text>
+				<next>4032</next>
+			</phrase>
+			<phrase id="4032">
+				<text>escape_lager_leader_hello_4032</text>
+				<give_info>volk_gde</give_info>
+			</phrase>
+<!-- 500 -->
+			<phrase id="501">
+				<text>escape_lager_leader_hello_501</text>
+				<next>502</next>				
+			</phrase>
+			<phrase id="502">
+				<text>escape_lager_leader_hello_502</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	
+	<dialog id="esc_lager_no_talk">
+		<phrase_list>
+			<phrase id="0">
+				<text />
+				<next>100</next>
+				<next>200</next>
+				<next>300</next>
+				<next>400</next>
+			</phrase>
+			<phrase id="100">
+				<text />
+				<dont_has_info>esc_bridge_pass_fire</dont_has_info>
+				<dont_has_info>tutorial_wounded_start</dont_has_info>
+				<next>101</next>
+			</phrase>
+			<phrase id="200">
+				<text />
+				<dont_has_info>esc_bridge_pass_fire</dont_has_info>
+				<has_info>esc_kill_bandits_quest_done</has_info>
+				<next>201</next>
+				<next>202</next>
+			</phrase>
+			<phrase id="300">
+				<text />
+				<dont_has_info>esc_bridge_pass_fire</dont_has_info>
+				<dont_has_info>esc_kill_bandits_quest_done</dont_has_info>
+				<has_info>tutorial_wounded_start</has_info>
+				<next>301</next>
+			</phrase>			
+			<phrase id="400">
+				<text />
+				<has_info>esc_bridge_pass_fire</has_info>
+				<next>401</next>
+			</phrase>
+			<phrase id="101">
+				<text>esc_lager_no_talk_101</text>
+				<action>dialogs.no_trade_trader</action>
+				<next>102</next>
+			</phrase>			
+			<phrase id="102">
+				<text>esc_lager_no_talk_102</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="201">
+			<precondition>sak_dialog.is_not_ivan</precondition>
+				<text>esc_lager_no_talk_201</text>
+				<action>dialogs.yes_trade</action>
+			</phrase>
+			<phrase id="202">
+			<precondition>sak_dialog.is_ivan</precondition>
+				<text>esc_lager_no_talk_202</text>
+				<action>dialogs.no_trade_trader</action>
+			</phrase>
+			<phrase id="301">
+				<text>esc_lager_no_talk_301</text>
+				<action>dialogs.no_trade_trader</action>
+			</phrase>
+			<phrase id="401">
+				<text>esc_lager_no_talk_401</text>
+				<action>dialogs.no_trade_trader</action>
+				<next>402</next>
+			</phrase>
+			<phrase id="402">
+				<text>esc_lager_no_talk_402</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+		</phrase_list>
+	</dialog>
+<!-- Шустрый -->
+	<dialog id="escape_shustryi_start">
+		<phrase_list>
+			<phrase id="0">
+				<action>dialogs.no_trade_trader</action>							   
+				<text />
+				<next>100</next>
+				<next>200</next>
+			</phrase>
+			<phrase id="100">
+				<text />
+				<dont_has_info>tutorial_wounded_give_info</dont_has_info>
+				<has_info>esc_kill_bandits_quest_kill</has_info>
+				<next>101</next>
+			</phrase>
+			<phrase id="200">
+				<text />
+				<has_info>tutorial_wounded_give_info</has_info>
+				<next>201</next>
+			</phrase>
+			<phrase id="101">
+				<text>escape_shustryi_start_101</text>
+				<next>102</next>
+			</phrase>
+			<phrase id="102">
+				<text>escape_shustryi_start_102</text>
+				<next>103</next>
+			</phrase>
+			<phrase id="103">
+				<text>escape_shustryi_start_103</text>
+				<action>escape_dialog.wounded_give_flash</action>
+				<give_info>tutorial_wounded_give_info</give_info>
+				<next>104</next>
+			</phrase>
+			<phrase id="104">
+				<text>escape_shustryi_start_104</text>
+				<next>105</next>
+			</phrase>
+			<phrase id="105">
+				<text>escape_shustryi_start_105</text>
+			</phrase>
+<!-- 200 -->
+			<phrase id="201">
+				<text>escape_shustryi_start_201</text>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	
+<dialog id="sidor_agro_quest_start_dlg">
+	<has_info>esc_serious_talk</has_info>
+	<dont_has_info>agroprom_military_case</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>sidor_agro_quest_start_dlg_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>sidor_agro_quest_start_dlg_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>sidor_agro_quest_start_dlg_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>sidor_agro_quest_start_dlg_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>sidor_agro_quest_start_dlg_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>sidor_agro_quest_start_dlg_5</text>
+				<next>6</next>
+			</phrase>
+			<phrase id="6">
+				<text>sidor_agro_quest_start_dlg_6</text>
+				<next>7</next>
+			</phrase>
+			<phrase id="7">
+				<text>sidor_agro_quest_start_dlg_7</text>
+				<next>8</next>
+			</phrase>
+			<phrase id="8">
+				<text>sidor_agro_quest_start_dlg_8</text>
+				<next>9</next>
+			</phrase>
+			<phrase id="9">
+				<text>sidor_agro_quest_start_dlg_9</text>
+				<next>10</next>
+			</phrase>
+			<phrase id="10">
+				<text>sidor_agro_quest_start_dlg_10</text>
+				<give_info>agroprom_military_case</give_info>
+				<next>11</next>
+			</phrase>
+			<phrase id="11">
+				<text>sidor_agro_quest_start_dlg_11</text>
+				<action>sak.add_new_gar_agr_191</action>
+				<action>mike.add_spots_gar_agr</action>
+			</phrase>
+		</phrase_list>
+</dialog>
+
+<dialog id="sidor_agro_quest_done_dlg">
+	<has_info>agroprom_military_case</has_info>
+	<dont_has_info>agroprom_military_case_know</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>sidor_agro_quest_done_dlg_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>sidor_agro_quest_done_dlg_1</text>
+				<next>21</next>
+				<next>22</next>
+				<next>23</next>
+			</phrase>
+			<phrase id="21">
+			<dont_has_info>esc_02_dezertir_info</dont_has_info>
+			<has_info>agr_02_dezertir_info</has_info>
+				<text>sidor_agro_quest_done_dlg_21</text>
+				<next>31</next>
+			</phrase>
+			<phrase id="22">
+			<precondition>sak.have_items_count("redcatcher_albom",1)</precondition>
+			<has_info>esc_02_dezertir_info</has_info>
+				<text>sidor_agro_quest_done_dlg_22</text>
+				<action>sak_inventory.release_actor_items("redcatcher_albom",1)</action>
+				<next>7</next>
+			</phrase>
+			<phrase id="23">
+				<text>sidor_agro_quest_done_dlg_23</text>
+				<next>33</next>
+			</phrase>
+			<phrase id="31">
+				<text>sidor_agro_quest_done_dlg_31</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="33">
+				<text>sidor_agro_quest_done_dlg_33</text>
+			</phrase>
+			<phrase id="4">
+				<text>sidor_agro_quest_done_dlg_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>sidor_agro_quest_done_dlg_5</text>
+				<give_info>esc_02_dezertir_info</give_info>
+				<next>61</next>
+				<next>62</next>
+			</phrase>
+			<phrase id="61">
+			<precondition>sak.have_items_count("redcatcher_albom",1)</precondition>
+				<text>sidor_agro_quest_done_dlg_61</text>
+				<action>sak_inventory.release_actor_items("redcatcher_albom",1)</action>
+				<next>7</next>
+			</phrase>
+			<phrase id="62">
+				<text>sidor_agro_quest_done_dlg_62</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="7">
+				<text>sidor_agro_quest_done_dlg_7</text>
+				<action>sak.create_items("redcatcher_albom",1)</action>
+				<next>8</next>
+			</phrase>
+			<phrase id="8">
+				<text>sidor_agro_quest_done_dlg_8</text>
+				<next>9</next>
+			</phrase>
+			<phrase id="9">
+				<text>sidor_agro_quest_done_dlg_9</text>
+				<give_info>agroprom_military_case_know</give_info>
+				<action>sak_dialog.add_redcatcher_albom_priz</action>
+				<action>mike.not_bad_job</action>
+			</phrase>
+		</phrase_list>
+</dialog>
+
+<dialog id="sidor_bp_case_start_dlg">
+	<has_info>esc_trader_speak</has_info>
+	<dont_has_info>escape_blockpost_case</dont_has_info>
+	<dont_has_info>info_blockpost_case_end</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>sidor_bp_case_start_dlg_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>sidor_bp_case_start_dlg_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>sidor_bp_case_start_dlg_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>sidor_bp_case_start_dlg_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>sidor_bp_case_start_dlg_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>sidor_bp_case_start_dlg_5</text>
+				<next>6</next>
+			</phrase>
+			<phrase id="6">
+				<text>sidor_bp_case_start_dlg_6</text>
+				<next>7</next>
+			</phrase>
+			<phrase id="7">
+				<text>sidor_bp_case_start_dlg_7</text>
+				<action>sak_dialog.esc_case_foto</action>
+				<next>81</next>
+				<next>82</next>
+			</phrase>
+			<phrase id="81">
+				<text>sidor_bp_case_start_dlg_81</text>
+				<action>doc.timer_blockpost_case</action>
+				<give_info>escape_blockpost_case</give_info>
+				<next>91</next>
+			</phrase>
+			<phrase id="82">
+				<text>sidor_bp_case_start_dlg_82</text>
+				<give_info>info_blockpost_case_end</give_info>
+				<next>92</next>
+			</phrase>
+			<phrase id="91">
+				<text>sidor_bp_case_start_dlg_91</text>
+			</phrase>
+			<phrase id="92">
+				<text>sidor_bp_case_start_dlg_92</text>
+			</phrase>
+		</phrase_list>
+</dialog>
+	
+<dialog id="sidor_dumenko_case_start">
+	<dont_has_info>agroprom_military_case_done</dont_has_info>
+	<precondition>doc.dsc_quest_case_have</precondition>
+		<phrase_list>
+			<phrase id="0">
+				<text>sidor_dumenko_case_start_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>sidor_dumenko_case_start_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>sidor_dumenko_case_start_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>sidor_dumenko_case_start_3</text>
+				<next>31</next>
+				<next>32</next>
+			</phrase>
+			<phrase id="31">
+				<text>sidor_dumenko_case_start_31</text>
+				<give_info>sidor_dumenko_case_dialog</give_info>
+				<action>doc.give_dsc_quest_case</action>
+				<action>sak.sidor_dumenko_case_timer</action>
+			</phrase>
+			<phrase id="32">
+				<text>sidor_dumenko_case_start_32</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="4">
+				<text>sidor_dumenko_case_start_4</text>
+			</phrase>
+		</phrase_list>
+</dialog>
+	
+<dialog id="sidor_dumenko_case_done">
+	<dont_has_info>agroprom_military_case_done</dont_has_info>
+	<has_info>sidor_dumenko_case_dialog</has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>sidor_dumenko_case_done_0</text>
+				<next>11</next>
+				<next>12</next>
+			</phrase>
+			<phrase id="11">
+			<has_info>sidor_dumenko_case_timer</has_info>
+				<text>sidor_dumenko_case_done_11</text>
+				<action>misc.spawn_to("quest_case_02", db.actor)</action>
+				<action>sak.relocate_item("in","quest_case_02",1)</action>
+				<next>2</next>
+			</phrase>
+			<phrase id="12">
+			<dont_has_info>sidor_dumenko_case_timer</dont_has_info>
+				<text>sidor_dumenko_case_done_12</text>
+			</phrase>
+			<phrase id="2">
+				<text>sidor_dumenko_case_done_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>sidor_dumenko_case_done_3</text>
+				<give_info>agroprom_military_case_done</give_info>
+				<give_info>info_artmod_rusty_thorn_buzz</give_info>
+				<action>sak.info_artmod</action>
+				<action>mike.good_job</action>
+				<action>bar_dialogs.give_agroprom_reward</action>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>sidor_dumenko_case_done_4</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+		</phrase_list>
+</dialog>
+</game_dialogs>

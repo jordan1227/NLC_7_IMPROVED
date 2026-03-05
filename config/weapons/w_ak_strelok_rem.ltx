@@ -1,0 +1,409 @@
+;АК Стрелка
+[wpn_ak74_m2]:wpn_ak74
+description							= enc_weapons1_wpn-ak_strelok1
+
+default_to_ruck						= false
+
+
+ammo_mag_size						= 45 ; 35
+
+ammo_class							= ammo_5.45x39_fmj,ammo_5.45x39_ap,ammo_5.45x39_merc
+
+slot 								= 2
+cost								= 30000
+
+
+fire_modes							= 1, 2, -1
+
+inv_name                    		= wpn-ak_strelok1    
+inv_name_short              		= wpn-ak_strelok1
+
+inv_weight							= 3.5
+icon_group                  		= 7
+inv_grid_height                                    = 2
+inv_grid_width                                     = 7
+inv_grid_x                                         = 72
+inv_grid_y                                         = 26
+
+
+fire_dispersion_base				= 0.15
+
+control_inertion_factor		= 1.4f
+
+	
+cam_relax_speed        	 	= 5.0 	
+cam_dispersion          	= 0.2
+cam_dispersion_inc		= 0.25	
+cam_dispertion_frac		= 0.7
+cam_max_angle			= 15.0	
+cam_max_angle_horz		= 7.5	
+cam_step_angle_horz		= 0.5
+
+fire_dispersion_condition_factor 	= 2.5
+misfire_probability 			    = 0.001
+misfire_condition_k				    = 0.05
+condition_shot_dec 					= 0.00015	
+
+PDM_disp_base 						= 1.8
+PDM_disp_vel_factor 				= 2.2
+PDM_disp_accel_factor 				= 3.5
+PDM_crouch	 						= 1.45
+PDM_crouch_no_acc 					= 0.65 
+
+hit_power                			= 1.25
+hit_impulse		 					= 1.0
+fire_distance            			= 170	
+bullet_speed						= 700
+rpm                      			= 680
+
+
+grenade_launcher_status				= 2
+scope_status 						= 2
+silencer_status						= 2
+scope_mode 							= 3
+scope_name 							= wpn_addon_eotech
+scope_names 							= ac10632, wpn_addon_eotech, microt1, specter
+
+scope_respawn_ac10632 = wpn_ak12_ac10632
+scope_respawn_wpn_addon_eotech = wpn_ak12_eot
+scope_respawn_microt1 = wpn_ak12_microt1
+scope_respawn_specter = wpn_ak12_specter
+
+silencer_name						= wpn_addon_sil_545_ar
+grenade_launcher_name 				= wpn_addon_grenade_launcher
+scope_x                     = 69		; offset in inventory icon
+scope_y                     = -17
+silencer_x                  = 226		; offset in inventory icon
+silencer_y                  = 1
+silencer_x_offset			= 0
+silencer_y_offset			= -1
+grenade_launcher_x          = 136		; offset in inventory icon
+grenade_launcher_y          = 10
+
+
+scope_zoom_factor           		= 90
+zoom_enabled					    = true	
+	
+hud									= wpn_ak74_m2_hud
+
+position         	        = -0.026, -0.175, 0.0
+strap_orientation                                  = -15,-9,110
+strap_position                                     = -0.26,-0.11,0.25
+strap_orientation      		= -01,-183, -109
+strap_bone0					= bip01_spine2
+strap_bone1					= bip01_spine1
+
+
+visual                  			= dynamics\weapons\wpn_ak12\wpn_ak12
+	
+snd_bore                                           = weapons\generic_draw
+snd_draw                                           = weapons\assault_draw
+snd_empty                                          = weapons\ak_empty, 0.5
+snd_holster                                        = weapons\assault_holster
+snd_reload                                         = weapons\abakan\abakan_reload
+snd_reload_empty                                   = weapons\abakan\abakan_reload_empty
+snd_reload_jammed                                 = weapons\abakan\abakan_misfire
+snd_reload_grenade                                 = weapons\gp25_grenload
+
+snd_firemode                                       = weapons\l85\l85_firemode
+snd_firemode_w_gl                                  = weapons\l85\l85_firemode
+snd_sprint_idle								   	   = weapons\sprint_assault
+
+snd_shoot_grenade				= weapons\gp25_shoot_mono
+snd_reload_grenade				= weapons\gp25\gp25_grenload, 1.0, 0.8
+snd_switch						= weapons\abakan\abakan_gl_deactivate
+snd_razgruzka					= weapons\razgruzka\ammo_5
+
+snd_shoot							= weapons\ak12\ak12_muzzle_mono
+snd_silncer_shot				= weapons\ak74\ak74_silencer_mono
+	
+
+
+fire_point             		= 0,0.216,0.66
+fire_point2            		= 0,0.1650,0.730
+
+
+
+[wpn_ak74_m2_hud]:hud_base
+
+aim_hud_offset_pos = -0.068000,0.023000,-0.09
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+
+aim_hud_offset_pos_16x9 = -0.068000,0.023000,-0.09
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+gl_hud_offset_pos = -0.026100,-0.235600,-0.057500
+gl_hud_offset_rot	 = -0.471000,0.043000,0.072500
+
+gl_hud_offset_pos_16x9 = -0.026100,-0.235600,-0.057500
+gl_hud_offset_rot_16x9	 = -0.471000,0.043000,0.072500
+
+
+anm_show										   = ak12_draw
+anm_hide                						   = ak12_holster
+anm_idle                						   = ak12_idle
+anm_idle_aim            						   = ak12_idle_aim
+anm_idle_sprint         						   = ak12_sprint
+anm_idle_moving         						   = ak12_moving
+anm_idle_moving_slow    						   = ak12_moving_slow
+anm_idle_moving_crouch							   = ak12_crouch
+anm_shots_when_aim              				   = ak12_shoot_aim, shoot
+anm_shots               						   = ak12_shoot, shoot
+anm_reload              						   = ak12_reload, reload
+anm_reload_empty             					   = ak12_reload_empty, reload_empty
+anm_reload_jammed								   = ak12_misfire, misfire
+anm_bore                						   = ak12_idle_aim
+anm_idle_aim_moving                 			   = ak12_moving_aim
+anm_firemode                					   = ak12_firemode
+
+anm_idle_sprint_start         						   = ak12_sprint_start
+anm_idle_sprint         						   = ak12_sprint
+anm_idle_sprint_end         						   	   = ak12_sprint_end
+
+anm_firemode_empty                				   = ak12_firemode, idle_empty
+
+anm_firemode_aim = ak12_firemode, idle_empty
+anm_firemode_empty = ak12_firemode, idle_empty
+anm_firemode_aim_empty = ak12_firemode, idle_empty
+
+anm_firemode_aim_w_gl = ak12_firemode_w_gl, idle_w_gl
+anm_firemode_empty_w_gl = ak12_firemode_w_gl, idle_w_gl
+anm_firemode_aim_empty_w_gl = ak12_firemode_w_gl, idle_w_gl
+
+anm_idle_aim_moving_empty           			   = ak12_moving_aim, idle_empty
+anm_show_empty									   = ak12_draw, idle_empty
+anm_hide_empty                					   = ak12_holster, idle_empty
+anm_idle_empty                					   = ak12_idle, idle_empty
+anm_idle_aim_empty            					   = ak12_idle_aim, idle_empty
+anm_idle_sprint_empty         					   = ak12_sprint, idle_empty
+anm_idle_moving_empty         					   = ak12_moving, idle_empty
+anm_idle_moving_slow_empty    					   = ak12_moving_slow, idle_empty
+anm_idle_moving_crouch_empty					   = ak12_crouch, idle_empty
+anm_shots_when_aim_last             			   = ak12_shoot_aim, idle_empty
+anm_shots_last               					   = ak12_shoot, idle_empty
+anm_bore_empty                					   = ak12_idle_aim, idle_empty
+
+anm_idle_sprint_start_empty         					   = ak12_sprint_start, idle_empty
+anm_idle_sprint_empty         					   = ak12_sprint, idle_empty
+anm_idle_sprint_end_empty         					   = ak12_sprint_end, idle_empty
+
+anm_hide_w_gl           						   = ak12_holster_w_gl, holster_w_gl
+anm_hide_w_gl_empty           					   = ak12_holster_w_gl, holster_w_gl_empty
+anm_show_w_gl           						   = ak12_draw_w_gl, draw_w_gl
+anm_show_w_gl_empty           					   = ak12_draw_w_gl, draw_w_gl_empty
+anm_idle_w_gl           						   = ak12_idle_w_gl, idle_w_gl
+anm_idle_w_gl_empty            					   = ak12_idle_w_gl, idle_w_gl_empty
+anm_shots_w_gl          						   = ak12_w_gl_shoot, shoot_w_gl
+anm_shots_w_gl_last          					   = ak12_w_gl_shoot, idle_w_gl_empty
+anm_shots_w_gl_when_aim							   = ak12_w_gl_shoot_aim, shoot_w_gl
+anm_shots_w_gl_when_aim_last					   = ak12_w_gl_shoot_aim, idle_w_gl_empty
+anm_reload_w_gl         						   = ak12_reload_w_gl, reload_w_gl
+anm_reload_empty_w_gl         					   = ak12_reload_empty_w_gl, reload_w_gl_empty
+anm_reload_jammed_w_gl							   = ak12_misfire_w_gl, misfire_w_gl
+anm_idle_w_gl_aim       						   = ak12_idle_aim_w_gl, idle_w_gl
+anm_idle_w_gl_aim_empty       					   = ak12_idle_aim_w_gl, idle_w_gl_empty
+anm_idle_sprint_w_gl    						   = ak12_sprint_w_gl, sprint_w_gl
+anm_idle_sprint_empty_w_gl     					   = ak12_sprint_w_gl, sprint_w_gl_empty
+anm_idle_moving_slow_w_gl    					   = ak12_moving_slow_w_gl, idle_w_gl
+anm_idle_moving_slow_w_gl_empty     			   = ak12_moving_slow_w_gl, idle_w_gl_empty
+anm_idle_moving_w_gl    						   = ak12_moving_w_gl, idle_w_gl
+anm_idle_moving_w_gl_empty    					   = ak12_moving_w_gl, idle_w_gl_empty
+anm_idle_moving_crouch_w_gl    					   = ak12_crouch_w_gl, idle_w_gl
+anm_idle_moving_crouch_w_gl_empty    			   = ak12_crouch_w_gl, idle_w_gl_empty
+anm_idle_w_gl_aim_moving						   = ak12_moving_aim_w_gl, idle_w_gl
+anm_idle_w_gl_aim_moving_empty 					   = ak12_moving_aim_w_gl, idle_w_gl_empty
+anm_firemode_w_gl                				   = ak12_firemode_w_gl, idle_w_gl
+anm_firemode_w_gl_empty                			   = ak12_firemode_w_gl, idle_w_gl_empty
+anm_bore_w_gl           						   = ak12_idle_aim_w_gl, idle_w_gl
+anm_bore_w_gl_empty            					   = ak12_idle_aim_w_gl, idle_w_gl_empty
+
+anm_idle_sprint_start_w_gl         						   = ak12_sprint_w_gl_start, idle_w_gl
+anm_idle_sprint_w_gl         						   = ak12_sprint_w_gl, idle_w_gl
+anm_idle_sprint_end_w_gl         						   = ak12_sprint_w_gl_end, idle_w_gl
+
+anm_idle_sprint_start_empty_w_gl         						   = ak12_sprint_w_gl_start, idle_w_gl_empty
+anm_idle_sprint_empty_w_gl         						   	= ak12_sprint_w_gl, idle_w_gl_empty
+anm_idle_sprint_end_empty_w_gl         						   = ak12_sprint_w_gl_end, idle_w_gl_empty
+
+anm_idle_sprint_start_jammed      = ak12_sprint_start
+anm_idle_sprint_end_jammed       = ak12_sprint_end
+anm_idle_sprint_start_jammed_w_gl = ak12_sprint_w_gl_start, idle_w_gl_empty
+anm_idle_sprint_start_jammed_g    = ak12_sprint_g_start
+
+anm_idle_sprint_end_jammed_w_gl  = ak12_sprint_w_gl_end, idle_w_gl
+anm_idle_sprint_end_jammed_g     = ak12_sprint_g_end, gl_idle
+
+anm_switch              						   = ak12_g_off, gl_off
+anm_switch_empty              					   = ak12_g_off, gl_off_empty       
+anm_switch_g            						   = ak12_g_on, gl_on 
+anm_switch_g_empty            					   = ak12_g_on, gl_on_empty 
+anm_hide_g           						   	   = ak12_g_holster, gl_holster
+anm_hide_g_empty           					   	   = ak12_g_holster, gl_holster_empty
+anm_show_g           						   	   = ak12_g_draw, gl_draw
+anm_show_g_empty           					   	   = ak12_g_draw, gl_draw_empty
+anm_idle_g           						   	   = ak12_g_idle, gl_idle
+anm_idle_g_empty            					   = ak12_g_idle, gl_idle_empty
+anm_shots_g          						   	   = ak12_g_shoot, gl_shoot
+anm_shots_g_empty          						   = ak12_g_shoot, gl_shoot_empty
+anm_reload_g         						   	   = ak12_g_reload, gl_reload
+anm_reload_g_empty         						   = ak12_g_reload, gl_reload_empty
+anm_idle_g_aim       						   	   = ak12_g_idle_aim, gl_idle
+anm_idle_g_aim_empty       					   	   = ak12_g_idle_aim, gl_idle_empty
+anm_idle_sprint_g    						   	   = ak12_sprint_w_gl, gl_sprint
+anm_idle_sprint_empty_g     					   = ak12_sprint_w_gl, gl_sprint_empty
+anm_idle_moving_slow_g    					   	   = ak12_g_moving_slow, gl_idle
+anm_idle_moving_slow_g_empty     			   	   = ak12_g_moving_slow, gl_idle_empty
+anm_idle_moving_g    						   	   = ak12_g_moving, gl_idle
+anm_idle_moving_g_empty    					   	   = ak12_g_moving, gl_idle_empty
+anm_idle_moving_crouch_g    					   = ak12_g_crouch, gl_idle
+anm_idle_moving_crouch_g_empty    			   	   = ak12_g_crouch, gl_idle_empty
+anm_idle_g_aim_moving						   	   = ak12_g_moving_aim, gl_idle
+anm_idle_g_aim_moving_empty 					   = ak12_g_moving_aim, gl_idle_empty
+anm_bore_g           						  	   = ak12_g_idle_aim, gl_idle
+anm_bore_g_empty            					   = ak12_g_idle_aim, gl_idle_empty
+
+anm_idle_sprint_start_g         						   = ak12_sprint_g_start, gl_idle
+anm_idle_sprint_g         						   	= ak12_sprint_g, gl_idle
+anm_idle_sprint_end_g         						   = ak12_sprint_g_end, gl_idle
+
+anm_idle_sprint_start_empty_g         						   = ak12_sprint_g_start, gl_idle_empty
+anm_idle_sprint_empty_g         						   	= ak12_sprint_g, gl_idle_empty
+anm_idle_sprint_end_empty_g         						   = ak12_sprint_g_end, gl_idle_empty
+
+anm_headlamp_on                                = ak12_flash
+anm_gasmask                                      = ak12_clear
+
+anm_headlamp_on_w_gl                           = ak12_flash_w_gl
+anm_gasmask_w_gl                                 = ak12_clear_w_gl
+
+anm_headlamp_on_g                              = ak12_flash_g, gl_idle
+anm_gasmask_g                                    = ak12_clear_g, gl_idle
+
+anm_headlamp_on_empty                          = ak12_flash, idle_empty
+anm_gasmask_empty                                = ak12_clear, idle_empty
+
+anm_headlamp_on_w_gl_empty                     = ak12_flash_w_gl, idle_empty
+anm_gasmask_w_gl_empty                           = ak12_clear_w_gl, idle_empty
+
+anm_headlamp_on_g_empty                        = ak12_flash_g, gl_idle_empty
+anm_gasmask_g_empty                              = ak12_clear_g, gl_idle_empty
+
+attach_place_idx                                   = 0
+fire_bone                                          = wpn_body
+fire_bone2                                         = wpn_body
+fire_point                                         = 0.003025,-0.002950,0.345626
+fire_point2                                        = 0.000000,-0.048600,0.264600
+hands_position									   = 0.009675,-0.017200,-0.009600
+hands_position_16x9								   = 0.009675,-0.017200,-0.009600
+hands_orientation								   = 0,0,0
+hands_orientation_16x9							   = 0,0,0
+item_position									   = 0,0,0
+item_orientation								   = 0,0,0
+item_visual                                        = dynamics\weapons\wpn_ak12\wpn_ak12_hud.ogf
+lean_hud_offset_pos                                = 0,0,0
+lean_hud_offset_rot                                = 0,0,0
+shell_bone                                         = wpn_body
+shell_dir                                          = 0.0, 1.0, 0.0
+shell_point                                        = 0.000000,0.000000,-0.118500
+zoom_hide_crosshair                                = true
+
+; anim_aim_start 									   = aim_start_abakan, 1.11, 1, 0.14, 0.15
+; anim_aim_idle  									   = aim_idle_abakan, 1, 1, 0.2, 0.2
+; anim_aim_end   									   = aim_end_abakan, 1.18, 1, 0.14, 0.15
+; anim_aim_start_g 								   = aim_start_abakan_gl, 1, 1, 0.14, 0.15
+; anim_aim_idle_g								       = aim_idle_abakan_gl, 1, 1, 0.2, 0.2
+; anim_aim_end_g   								   = aim_end_abakan_gl, 1, 1, 0.14, 0.15
+
+;------------------------------------------------------------------------------------------
+
+[wpn_ak12_ac10632]:wpn_ak74_m2
+$spawn             							 	   = "weapons\wpn_ak12_ac10632"
+hud											 	   = wpn_ak12_ac10632_hud
+visual										 	   = dynamics\weapons\wpn_ak12\wpn_ak12_ac10632.ogf
+scope_x                                      	   = 97
+scope_y                                      	   = -17
+
+scope_name = ac10632
+scope_respawn = wpn_ak74_m2
+
+[wpn_ak12_ac10632_hud]:wpn_ak74_m2_hud
+item_visual                						   = dynamics\weapons\wpn_ak12\wpn_ak12_ac10632_hud.ogf
+
+aim_hud_offset_pos = -0.068000,0.003000,-0.07
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+
+aim_hud_offset_pos_16x9 = -0.068000,0.003000,-0.07
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+
+[wpn_ak12_eot]:wpn_ak74_m2
+$spawn             						     	   = "weapons\wpn_ak12_eot"
+hud										     	   = wpn_ak12_eot_hud
+visual									     	   = dynamics\weapons\wpn_ak12\wpn_ak12_eot.ogf
+scope_x                                      	   = 101
+scope_y                                      	   = -17
+
+scope_name = wpn_addon_eotech
+scope_respawn = wpn_ak74_m2
+
+[wpn_ak12_eot_hud]:wpn_ak74_m2_hud
+item_visual                						   = dynamics\weapons\wpn_ak12\wpn_ak12_eot_hud.ogf
+
+aim_hud_offset_pos = -0.068000,0.001500,-0.07
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+
+aim_hud_offset_pos_16x9 = -0.068000,0.001500,-0.07
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+
+[wpn_ak12_microt1]:wpn_ak74_m2
+$spawn             						   	 	   = "weapons\wpn_ak12_microt1"
+hud										   	 	   = wpn_ak12_microt1_hud
+visual									   	 	   = dynamics\weapons\wpn_ak12\wpn_ak12_micro-t1.ogf
+scope_x                                      	   = 102
+scope_y                                      	   = -15
+
+scope_name = microt1
+scope_respawn = wpn_ak74_m2
+
+[wpn_ak12_microt1_hud]:wpn_ak74_m2_hud
+item_visual                						   = dynamics\weapons\wpn_ak12\wpn_ak12_micro-t1_hud.ogf
+
+aim_hud_offset_pos = -0.068000,0.000000,-0.07
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+
+aim_hud_offset_pos_16x9 = -0.068000,0.000000,-0.07
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+
+[wpn_ak12_specter]:wpn_ak74_m2
+$spawn             							  	   = "weapons\wpn_ak12_specter"
+hud											  	   = wpn_ak12_specter_hud
+scope_x                                       	   = 78
+scope_y                                       	   = -18
+visual										  	   = dynamics\weapons\wpn_ak12\wpn_ak12_specter.ogf
+
+3d_reticle_size = 5.9
+3dss_gen_zoom_enable = true
+
+scope_name = specter
+scope_respawn = wpn_ak74_m2
+
+[wpn_ak12_specter_hud]:wpn_ak74_m2_hud
+item_visual                						   = dynamics\weapons\wpn_ak12\wpn_ak12_specter_hud.ogf
+
+anm_shots_when_aim              				   = ak12_shoot_scope, shoot
+anm_shots_when_aim_last             			   = ak12_shoot_scope, idle_w_gl_empty
+anm_shots_w_gl_when_aim 						   = ak12_w_gl_shoot_scope, shoot_w_gl
+anm_shots_w_gl_when_aim_last					   = ak12_w_gl_shoot_scope, idle_w_gl_empty
+
+aim_hud_offset_pos = -0.068,0.0025,-0.1005
+aim_hud_offset_rot = 0.0035,-0.002,0
+aim_hud_offset_pos_16x9 = -0.068,0.0025,-0.1005
+aim_hud_offset_rot_16x9 = 0.0035,-0.002,0
+
+use_alt_aim_zoom = true
+alt_aim_hud_offset_pos = -0.068025,-0.021575,-0.05
+alt_aim_hud_offset_rot = 0.000000,0.000000,0.000000
+alt_aim_hud_offset_pos_16x9 = -0.068025,-0.021575,-0.05
+alt_aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000

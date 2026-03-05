@@ -1,0 +1,227 @@
+
+local art_lvl 	= 1
+local art_page 	= 1
+local prev_page = 1
+
+class "notebook_arts_blank"(CUIScriptWnd)
+
+function notebook_arts_blank:__init(owner) super()
+	self.owner = owner
+	self:InitControls()
+	self:InitCallBacks()
+end
+
+function notebook_arts_blank:InitControls()
+	self:Init( 0, 0, 1024, 768 )
+	local xml = CScriptXmlInit()
+	xml:ParseFile( "ui_notebook_arts.xml" )
+	xml:InitStatic( "background", self )
+	
+	local txt = game.translate_string("st_table_art_lvl_"..art_lvl.."_"..art_page)
+	
+	self.text = make_static( "text", self, txt, 360, 185, 310, 500 )
+    self.text:SetTextColor( 255, 39,  40,  34 )
+    self.text:SetFont( GetFontGraffiti19Russian() )	
+			
+	self:Register( xml:Init3tButton( "btn_leave",  	self ), "btn_leave" 	)	
+	
+	self:Register(xml:Init3tButton(  "btn_prev", 	self ),	"btn_prev" 		)		
+	self:Register(xml:Init3tButton(  "btn_next", 	self ),	"btn_next" 		)	
+	
+	if art_page == 1 then 
+		self:GetButton( "btn_prev" ):Show( false )	
+	end	
+	
+	self:Register( xml:Init3tButton( "btn_page_1", 	self ), "btn_page_1" 	)		
+	self:Register( xml:Init3tButton( "btn_page_2", 	self ), "btn_page_2" 	)	
+	self:Register( xml:Init3tButton( "btn_page_3", 	self ), "btn_page_3" 	)
+	self:Register( xml:Init3tButton( "btn_page_4", 	self ), "btn_page_4" 	)		
+	self:Register( xml:Init3tButton( "btn_page_5", 	self ), "btn_page_5" 	)	
+	self:Register( xml:Init3tButton( "btn_page_6", 	self ), "btn_page_6" 	)	
+	self:Register( xml:Init3tButton( "btn_page_7", 	self ), "btn_page_7" 	)		
+	self:Register( xml:Init3tButton( "btn_page_8", 	self ), "btn_page_8" 	)	
+	self:Register( xml:Init3tButton( "btn_page_9", 	self ), "btn_page_9" 	)		
+
+	self:GetButton( "btn_page_" .. tostring( art_lvl ) ):Show( false )
+end
+
+function notebook_arts_blank:InitCallBacks()
+	self:AddCallback( "btn_leave",  ui_events.BUTTON_CLICKED, self.on_quit, 		self )
+	
+	self:AddCallback( "btn_prev",  	ui_events.BUTTON_CLICKED, self.on_btn_prev, 	self )
+	self:AddCallback( "btn_next",  	ui_events.BUTTON_CLICKED, self.on_btn_next, 	self )
+	
+	self:AddCallback( "btn_page_1", ui_events.BUTTON_CLICKED, self.on_btn_page_1, 	self )
+	self:AddCallback( "btn_page_2", ui_events.BUTTON_CLICKED, self.on_btn_page_2, 	self )
+	self:AddCallback( "btn_page_3", ui_events.BUTTON_CLICKED, self.on_btn_page_3, 	self )	
+	self:AddCallback( "btn_page_4", ui_events.BUTTON_CLICKED, self.on_btn_page_4, 	self )	
+	self:AddCallback( "btn_page_5", ui_events.BUTTON_CLICKED, self.on_btn_page_5, 	self )	
+	self:AddCallback( "btn_page_6", ui_events.BUTTON_CLICKED, self.on_btn_page_6, 	self )	
+	self:AddCallback( "btn_page_7", ui_events.BUTTON_CLICKED, self.on_btn_page_7, 	self )	
+	self:AddCallback( "btn_page_8", ui_events.BUTTON_CLICKED, self.on_btn_page_8, 	self )	
+	self:AddCallback( "btn_page_9", ui_events.BUTTON_CLICKED, self.on_btn_page_9, 	self )		
+end
+
+function notebook_arts_blank:OnKeyboard( dik, keyboard_action )
+	CUIScriptWnd.OnKeyboard( self,dik, keyboard_action )
+	if keyboard_action == ui_events.WINDOW_KEY_PRESSED then
+		if dik == DIK_keys.DIK_ESCAPE then
+			self:on_quit()
+		end
+	end
+	return true
+end
+
+function notebook_arts_blank:on_quit()
+	self:GetHolder():start_stop_menu( self, true )
+	self:ClearCallbacks()
+end
+-----------------------------------------------------------
+function notebook_arts_blank:on_btn_prev()
+	art_page = art_page - 1
+	if art_page == 1 then 
+		self:GetButton( "btn_prev" ):Show( false )		
+		art_page = 1 
+	end	
+	self:on_btn_do( art_page )		
+end
+
+function notebook_arts_blank:on_btn_next()
+	art_page = art_page + 1
+	if art_page == 3 then 
+		self:GetButton( "btn_next" ):Show( false )		
+		art_page = 3 
+	end		
+	self:on_btn_do( art_page )	
+end
+
+
+function notebook_arts_blank:on_btn_do( art_page )
+    if self.text then self:DetachChild( self.text ) end	
+	if art_page > 1 then 
+		self:GetButton( "btn_prev" ):Show( true )	
+	end		
+	if art_page < 3 then
+		self:GetButton( "btn_next" ):Show( true )	
+	end	
+	
+	local txt = game.translate_string("st_table_art_lvl_"..art_lvl.."_"..art_page)
+	
+	self.text = make_static( "text", self, txt, 360, 185, 310, 500 )
+    self.text:SetTextColor( 255, 39,  40,  34 )
+    self.text:SetFont( GetFontGraffiti19Russian() )		
+end
+-----------------------------------------------------------
+function notebook_arts_blank:on_btn_page_1()
+	prev_page = art_lvl
+	art_lvl, art_page = 1, 1
+	self:on_btn_page( art_lvl, art_page )	
+end
+
+function notebook_arts_blank:on_btn_page_2()
+	prev_page = art_lvl
+	art_lvl, art_page = 2, 1
+	self:on_btn_page( art_lvl, art_page )	
+end
+
+function notebook_arts_blank:on_btn_page_3()
+	prev_page = art_lvl
+	art_lvl, art_page = 3, 1
+	self:on_btn_page( art_lvl, art_page )	
+end
+
+function notebook_arts_blank:on_btn_page_4()
+	prev_page = art_lvl
+	art_lvl, art_page = 4, 1
+	self:on_btn_page( art_lvl, art_page )	
+end
+
+function notebook_arts_blank:on_btn_page_5()
+	prev_page = art_lvl
+	art_lvl, art_page = 5, 1
+	self:on_btn_page( art_lvl, art_page )	
+end
+
+function notebook_arts_blank:on_btn_page_6()
+	prev_page = art_lvl
+	art_lvl, art_page = 6, 1
+	self:on_btn_page( art_lvl, art_page )	
+end
+
+function notebook_arts_blank:on_btn_page_7()
+	prev_page = art_lvl
+	art_lvl, art_page = 7, 1
+	self:on_btn_page( art_lvl, art_page )	
+end
+
+function notebook_arts_blank:on_btn_page_8()
+	prev_page = art_lvl
+	art_lvl, art_page = 8, 1
+	self:on_btn_page( art_lvl, art_page )	
+end
+
+function notebook_arts_blank:on_btn_page_9()
+	prev_page = art_lvl
+	art_lvl, art_page = 9, 1
+	self:on_btn_page( art_lvl, art_page )	
+end
+
+function notebook_arts_blank:on_btn_page( art_lvl, art_page )
+    if self.text then self:DetachChild( self.text ) end	
+	local txt = game.translate_string("st_table_art_lvl_"..art_lvl.."_"..art_page)
+	
+	if art_page ~= 1 then 
+		self:GetButton( "btn_prev" ):Show( true )	
+	else
+		self:GetButton( "btn_prev" ):Show( false )		
+	end		
+	
+	if art_page ~= 3 then 
+		self:GetButton( "btn_next" ):Show( true )	
+	else
+		self:GetButton( "btn_next" ):Show( false )		
+	end			
+	
+	self:GetButton( "btn_page_" .. tostring( prev_page ) ):Show( true )
+	self:GetButton( "btn_page_" .. tostring( art_lvl ) ):Show( false )
+	
+	self.text = make_static( "text", self, txt, 360, 185, 310, 500 )
+    self.text:SetTextColor( 255, 39,  40,  34 )
+    self.text:SetFont( GetFontGraffiti19Russian() )			
+end
+-----------------------------------------------------------
+function make_static( name, own, text, x, y, width, height )
+    local static = CUIStatic()
+    static:SetWindowName( name )
+    static:SetAutoDelete( true )
+    if text then
+        static:SetTextComplexMode( true )
+        static:SetText( text )
+    end
+    static:Init( x, y, width, height )
+    own:AttachChild( static )
+    return static
+end
+-----------------------------------------------------------
+function notebook_arts_screen()
+	if not has_alife_info("arts_notebook_read") then
+		local act = db.actor
+		act:give_info_portion("info_fakeartmod1")
+		act:give_info_portion("info_fakeartmod2")
+		act:give_info_portion("info_fakeartmod3")
+		act:give_info_portion("info_fakeartmod4")
+		act:give_info_portion("info_fakeartmod5")
+		act:give_info_portion("info_fakeartmod_m")
+		act:give_info_portion("info_fakeartmod_mm")
+		act:give_info_portion("info_fakeartmod_gm")
+		act:give_info_portion("info_fakeartmod_a")
+		act:give_info_portion("arts_notebook_read")
+		sak.send_tip("Новая информация добавлена в ПДА","",3,10,"pribor","news","green")
+	end
+	if has_alife_info( "ui_inventory" ) then
+		level.start_stop_menu( level.main_input_receiver(), true )	
+	end			
+    level.start_stop_menu( notebook_arts_blank(), true )
+end
+
+-- flush !ui_notebook_arts.notebook_arts_screen

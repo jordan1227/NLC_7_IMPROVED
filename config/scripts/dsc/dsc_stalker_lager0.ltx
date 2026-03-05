@@ -1,0 +1,22 @@
+[logic]
+active = walker
+on_death = on_death@hunter
+
+[on_death@hunter]
+on_info = %+dsc_hunter_umer%
+
+[walker]
+path_walk = dsc_hunter_walk
+path_look = dsc_hunter_look
+meet = meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 2
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+meet_state = sit_ass
+meet_dialog = nazar_start_dialog

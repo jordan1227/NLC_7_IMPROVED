@@ -1,0 +1,33 @@
+[logic]
+active = heli_move@wait
+
+[heli_move@wait]
+path_move       = val_chase_heli_wait_move
+engine_sound    = false
+on_info         = {+val_raid_start} heli_move@ready
+on_timer = 30000 | {+val_chase_start -bar_darklab_document_done} heli_move@attack
+
+[heli_move@ready]
+path_move       = val_chase_heli_ready_move
+path_look       = val_chase_heli_ready_look
+engine_sound    = true
+combat_enemy    = nil
+combat_use_rocket  = false
+combat_use_mgun = true
+on_info         = {+val_chase_start} heli_move@start
+
+[heli_move@start]
+path_move       = val_chase_heli_start_move
+path_look       = val_chase_heli_start_look
+engine_sound    = true
+combat_use_rocket  = false
+combat_use_mgun = true
+on_signal       = arrived | heli_move@attack
+
+[heli_move@attack]
+path_move       = val_chase_heli_attack
+engine_sound    = true
+combat_use_rocket  = true
+combat_use_mgun = true
+combat_enemy    = actor
+on_info = %=heli_func.heli_enemy_actor%

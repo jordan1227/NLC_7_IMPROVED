@@ -1,0 +1,30 @@
+[logic]
+active = walker
+trade = misc\shop_other\trade_zub.ltx
+on_hit = hit@informer
+
+[hit@informer]
+on_info = {=hit_by_actor} %=sak.gg_bandit()%
+
+[walker]
+path_walk = bar_bar_osvedomitel_walk
+path_look = bar_bar_osvedomitel_look
+on_info = {+deactivate_radar_fall} remark@zub 
+meet = meet
+danger = danger_condition
+
+[remark@zub]
+anim = ward
+target = actor
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_grenade = 10
+ignore_types = corpse
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+meet_state = 10|ward@bar_bar_osvedomitel_hello|2|ward
+meet_state_wpn = 2|ward

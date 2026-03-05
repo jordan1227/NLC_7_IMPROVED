@@ -1,0 +1,474 @@
+-- таблица названий монстров в ПДА (из gamedata\config\text\rus\stable_statistic_caption.xml) для инициализации
+-- в начале игры (для сортировки).
+--
+
+function attach(sm)
+  sm:subscribe({signal = "on_init_modules", fun = this.init_module})
+--   sm:subscribe({signal = "on_late_init_all", fun = this.late_init})
+--   sm:subscribe({signal = "on_before_save_game", fun = this.on_before_save})
+end
+
+local table_initialize_monsterkills = {
+--	"crow",
+
+    "fracture_weak",
+	"fracture_normal",
+	"fracture_strong",
+
+	"rat_weak",
+	"rat_mad_wery_strong",
+
+	"tushkano_normal",
+	"tushkano_strong",
+	"electro_tushkano_normal",
+
+	"dog_weak",
+	"dog_normal",
+	"dog_strong",
+	--"dog_sak",
+
+	"boar_weak",
+	"boar_normal",
+	"boar_strong",
+
+	"pseudodog_weak",
+	"pseudodog_normal",
+	"pseudodog_strong",
+	--"psy_dog",
+	"psy_dog_radar",
+
+	"cat_weak",
+	"cat_normal",
+	"cat_strong",
+
+	"flesh_weak",
+	"flesh_normal",
+	"flesh_strong",
+
+	"zombie_weak",
+	"zombie_normal",
+	"zombie_scientist",
+	"zombie_blow",
+
+	"snork_weak",
+	"snork_normal",
+	"snork_strong",
+
+	"burer_weak",
+	"burer_normal",
+	"burer_strong",
+	"burer_hos",
+
+	"chimera_weak",
+	"chimera_normal",
+	"chimera_strong",
+	"electro_chimera",
+
+	"controller_weak",
+
+	"bloodsucker_weak",
+	"bloodsucker_normal",
+	"bloodsucker_strong",
+	
+    --"m_poltergeist_normal",
+    "m_poltergeist_normal_tele",
+	--"m_poltergeist_tele_outdoor",
+	"m_poltergeist_normal_flame",
+	--"m_poltergeist_strong_flame",
+	--"m_poltergeist_dark_flame",
+
+	"gigant_normal",
+	"gigant_strong",
+}
+
+-- таблица названий человекоподобных в ПДА (из gamedata\config\text\rus\stable_statistic_caption.xml) для инициализации
+-- в начале игры (для сортировки).
+-- Закомментированные строки - названия человекоподобных, которых игроку не желательно убивать по ходу игры (за них
+-- снимают очки), в инициализацию их не включаем.
+--
+local table_initialize_stalkerkills = {
+	"zombied_novice",
+	"zombied_experienced",
+	"zombied_veteran",
+	"zombied_master",
+
+--	"stalker_novice",
+--	"stalker_experienced",
+--	"stalker_veteran",
+--	"stalker_master",
+
+--	"stranger_novice",
+--	"stranger_experienced",
+--	"stranger_veteran",
+--	"stranger_master",
+
+--	"green_novice",
+--	"green_experienced",
+--	"green_veteran",
+--	"green_master",
+
+--	"dolg_novice",
+--	"dolg_experienced",
+--	"dolg_veteran",
+--	"dolg_master",
+
+--	"ecolog_novice",
+--	"ecolog_experienced",
+--	"ecolog_veteran",
+--	"ecolog_master",
+
+--	"freedom_novice",
+--	"freedom_experienced",
+--	"freedom_veteran",
+--	"freedom_master",
+
+	"killer_novice",
+	"killer_experienced",
+	"killer_veteran",
+	"killer_master",
+
+	"bandit_novice",
+	"bandit_experienced",
+	"bandit_veteran",
+	"bandit_master",
+
+	"military_novice",
+	"military_experienced",
+	"military_veteran",
+	"military_master",
+
+--	"monolith_novice",
+--	"monolith_experienced",
+--	"monolith_veteran",
+--	"monolith_master",
+}
+
+-- таблица для настройки статистики по убитым существам в ПДА
+-- Каждая строка соответствует мутанту, которого мы хотим включить в статистику, и имеет формат:
+-- название = {pda_alias = {}, pda_pts= {}} 
+-- где:
+-- название	- примерное имя секции мутанта. Для поиска информации о мутанте, ищется максимально возможное
+--		совпадение этого названия с npc:section() или npc:character_community() убитого существа.
+-- pda_alias	- как существо будет называться в ПДА (см. gamedata\config\text\rus\stable_statistic_caption.xml
+--		представляет из себя таблицу из 3-х (в случае мутантов) или 4-х (в случае НПС) названий, которые
+--		выбираются в зависимости от ранга существа
+--		(мутанты: weak, normal, strong. НПС: novice, experienced, veteran, master)
+-- pda_pts	- сколько очков будет даваться за убийство существа
+--		представляет из себя таблицу из 3-х (в случае мутантов) или 4-х (в случае НПС) чисел, которые
+--		выбираются в зависимости от ранга существа
+-- Если существо не найдено в таблице, то для информации о нем будут использованы строки unknown_monster (для монстров)
+-- или unknown_stalker (для НПС).
+--
+local table_statistic_kill_data = {
+	-- Неизвестный науке мутант
+	unknown_monster		= {pda_alias = {"unknown_monster", "unknown_monster", "unknown_monster"}, pda_pts = {0.0, 0.0, 0.0}},
+
+	-- Излом
+	fracture			= {pda_alias = {"fracture_weak", "fracture_normal", "fracture_strong"}, pda_pts = {0.5, 1.0, 2.0}},
+
+	-- Карлик
+	karlik				= {pda_alias = {}, pda_pts = {}},
+
+	-- Ворона
+	crow				= {pda_alias = {"crow","crow","crow"}, pda_pts = {0.0, 0.0, 0.0}},
+
+	-- Крыса
+	rat					= {pda_alias = {"rat_weak","rat_weak","rat_weak"}, pda_pts = {0.001, 0.001, 0.001}},
+	rat_mad				= {pda_alias = {"rat_mad_wery_strong","rat_mad_wery_strong","rat_mad_wery_strong"}, pda_pts = {0.005, 0.005, 0.005}},
+
+	-- Тушкан
+	tushkano			= {pda_alias = {"tushkano_normal","tushkano_normal","tushkano_strong"}, pda_pts = {0.01, 0.02, 0.03}},
+	electro_tushkano	= {pda_alias = {"electro_tushkano_normal","electro_tushkano_normal","electro_tushkano_normal"}, pda_pts = {0.05, 0.05, 0.05}},
+
+	-- Собака
+	dog					= {pda_alias = {"dog_weak","dog_normal","dog_strong"}, pda_pts = {0.03, 0.04, 0.05}},
+
+	-- Кабан
+	boar				= {pda_alias = {"boar_weak","boar_normal","boar_strong"}, pda_pts = {0.1, 0.12, 0.15}},
+
+	-- Псевдособака
+	pseudodog			= {pda_alias = {"pseudodog_weak", "pseudodog_normal", "pseudodog_strong"}, pda_pts = {0.1, 0.15, 0.2}},
+	psy_dog_weak		= {pda_alias = {"psy_dog","psy_dog","psy_dog"}, pda_pts = {0.0, 0.0, 0.0}},
+	psy_dog_normal		= {pda_alias = {"psy_dog","psy_dog","psy_dog"}, pda_pts = {0.0, 0.0, 0.0}},
+	psy_dog_strong		= {pda_alias = {"psy_dog","psy_dog","psy_dog"}, pda_pts = {0.0, 0.0, 0.0}},
+	psy_dog_radar		= {pda_alias = {"psy_dog_radar","psy_dog_radar","psy_dog_radar"}, pda_pts = {2.0, 2.0, 2.0}},
+
+	-- Кот-баюн
+	cat					= {pda_alias = {"cat_weak","cat_normal","cat_strong"}, pda_pts = {0.08, 0.1, 0.12}},
+
+	-- Плоть
+	flesh				= {pda_alias = {"flesh_weak","flesh_normal","flesh_strong"}, pda_pts = {0.2, 0.3, 0.5}},
+
+	-- Зомби
+	zombie				= {pda_alias = {"zombie_weak","zombie_weak","zombie_weak"}, pda_pts = {0.05, 0.07, 0.09}},
+	zombie_trup			= {pda_alias = {"zombie_weak","zombie_weak","zombie_weak"}, pda_pts = {0.05, 0.05, 0.05}}, -- потом удалить
+	zombie_normal		= {pda_alias = {"zombie_normal","zombie_normal","zombie_normal"}, pda_pts = {0.07, 0.07, 0.07}},
+	zombie_strong		= {pda_alias = {"zombie_normal","zombie_normal","zombie_normal"}, pda_pts = {0.09, 0.09, 0.09}},
+	zombie_scientist	= {pda_alias = {"zombie_scientist","zombie_scientist","zombie_scientist"}, pda_pts = {0.09, 0.09, 0.09}},
+	zombie_blow			= {pda_alias = {"zombie_blow","zombie_blow","zombie_blow"}, pda_pts = {0.15, 0.15, 0.15}},
+
+	-- Снорк
+	snork				= {pda_alias = {"snork_weak","snork_normal","snork_strong"}, pda_pts = {0.3, 0.4, 0.6}},
+	aes_snork			= {pda_alias = {"snork_strong","snork_strong","snork_strong"}, pda_pts = {1.0, 1.0, 1.0}},
+
+	-- Бюрер
+	burer				= {pda_alias = {"burer_weak","burer_normal","burer_strong"}, pda_pts = {1.0, 1.2, 1.5}},
+	burer_yan			= {pda_alias = {"burer_hos","burer_hos","burer_hos"}, pda_pts = {2.0, 2.0, 2.0}},
+	burer_hos			= {pda_alias = {"burer_hos","burer_hos","burer_hos"}, pda_pts = {2.0, 2.0, 2.0}},
+
+	-- Химера
+	chimera			    = {pda_alias = {"chimera_weak","chimera_normal","chimera_strong"}, pda_pts = {1.0, 1.5, 2.0}},
+	electro_chimera		= {pda_alias = {"electro_chimera","electro_chimera","electro_chimera"}, pda_pts = {3.0, 3.0, 3.0}},
+
+	-- Контролёр
+	controller		    = {pda_alias = {"controller_weak", "controller_weak", "controller_weak"}, pda_pts = {1.0, 1.5, 2.0}},
+	m_controller_old    = {pda_alias = {"controller_weak", "controller_weak", "controller_weak"}, pda_pts = {1.0, 1.5, 2.0}},
+	controller_tubeman  = {pda_alias = {"controller_weak", "controller_weak", "controller_weak"}, pda_pts = {1.0, 1.5, 2.0}},
+
+	-- Кровосос
+	bloodsucker			= {pda_alias = {"bloodsucker_weak","bloodsucker_normal","bloodsucker_strong"}, pda_pts = {1.0, 1.5, 2.0}},
+
+	-- Полтергейст
+	poltergeist                  = {pda_alias = {"m_poltergeist_normal","m_poltergeist_normal_tele","m_poltergeist_tele_outdoor"}, pda_pts = {1.0, 1.0, 1.0}},
+	m_poltergeist_normal_flame	 = {pda_alias = {"m_poltergeist_normal_flame","m_poltergeist_normal_flame","m_poltergeist_normal_flame"}, pda_pts = {1.5, 1.5, 1.5}},
+	m_poltergeist_strong_flame   = {pda_alias = {"m_poltergeist_normal_flame","m_poltergeist_normal_flame","m_poltergeist_normal_flame"}, pda_pts = {2.0, 2.0, 2.0}},
+	m_poltergeist_dark_flame     = {pda_alias = {"m_poltergeist_normal_flame","m_poltergeist_normal_flame","m_poltergeist_normal_flame"}, pda_pts = {2.0, 2.0, 2.0}},
+
+	-- Псевдогигант
+	gigant			= {pda_alias = {"gigant_normal","gigant_normal","gigant_strong"}, pda_pts = {2.5, 3.0, 3.5}},
+
+	-- Неизвестное науке существо
+	unknown_stalker	= {pda_alias = {"unknown_stalker", "unknown_stalker", "unknown_stalker", "unknown_stalker"}, pda_pts = {0.0, 0.0, 0.0, 0.0}},
+
+	-- Зомбированный
+	zombied			= {pda_alias = {"zombied_novice","zombied_experienced","zombied_veteran","zombied_master"}, pda_pts = {0.3, 0.4, 0.5, 0.6}},
+
+	-- Сталкера
+	stalker			= {pda_alias = {"stalker_novice","stalker_experienced","stalker_veteran","stalker_master"}, pda_pts = {-100.0,-100.0,-100.0,-100.0}},
+	stranger		= {pda_alias = {"stranger_novice","stranger_experienced","stranger_veteran","stranger_master"}, pda_pts = {-100.0,-100.0,-100.0,-100.0}},
+	green			= {pda_alias = {"green_novice","green_experienced","green_veteran","green_master"}, pda_pts = {-100.0,-100.0,-100.0,-100.0}},
+	dolg			= {pda_alias = {"dolg_novice","dolg_experienced","dolg_veteran","dolg_master"}, pda_pts = {-100.0,-100.0,-100.0,-100.0}},
+	ecolog			= {pda_alias = {"ecolog_novice","ecolog_experienced","ecolog_veteran","ecolog_master"}, pda_pts = {-100.0,-100.0,-100.0,-100.0}},
+	freedom			= {pda_alias = {"freedom_novice","freedom_experienced","freedom_veteran","freedom_master"}, pda_pts = {-100.0,-100.0,-100.0,-100.0}},
+
+	-- Торговцы (вдруг их можно убить)
+	trader			= {pda_alias = {"trader","trader","trader","trader"}, pda_pts = {-100.0,-100.0,-100.0,-100.0}},
+
+	-- Бандитское отродье
+	killer			= {pda_alias = {"killer_novice","killer_experienced","killer_veteran","killer_master"}, pda_pts = {0.0, 0.0, 0.0, 0.0}},
+	bandit			= {pda_alias = {"bandit_novice","bandit_experienced","bandit_veteran","bandit_master"}, pda_pts = {0.0, 0.0, 0.0, 0.0}},
+
+	-- Военные
+	military		= {pda_alias = {"military_novice","military_experienced","military_veteran","military_master"}, pda_pts = {0.0, 0.0, 0.0, 0.0}},
+
+	-- Неприкасаемые
+	monolith		= {pda_alias = {"monolith_novice","monolith_experienced","monolith_veteran","monolith_master"}, pda_pts = {-100.0,-100.0,-100.0,-100.0}},
+}
+
+monster_classes = {}
+
+function init_module()
+  monster_classes = {
+    [ CLID_TUSHKANO           ] = "tushkano",
+    [ CLID_FLESH              ] = "flesh",
+    [ CLID_BOAR               ] = "boar",
+    [ CLID_CAT                ] = "cat",
+    [ CLID_ZOMBIE             ] = "zombie",
+    [ CLID_BURER              ] = "burer",
+    [ CLID_FRACTURE           ] = "fracture",
+    [ CLID_CHIMERA            ] = "chimera",
+    [ CLID_DOG                ] = "dog",
+    [ CLID_PSEUDODOG          ] = "pseudodog",
+    [ CLID_PSY_DOG            ] = "psy_dog",
+    [ clsid.psy_dog_phantom_s ] = "psy_dog_phantom",
+    [ CLID_SNORK              ] = "snork",
+    [ CLID_POLTERGEIST        ] = "poltergeist",
+    [ CLID_GIGANT             ] = "pseudo_gigant",
+    [ CLID_CONTROLLER         ] = "controller",
+    [ CLID_BLOODSUCKER        ] = "bloodsucker"
+  }    
+end    
+
+-- обновляем статистику на странице "Данные" в ПДА
+-- используются глобальные переменные:
+--	set_value("add_pts__flag_initialize_monsterkills	- если nil или false, то нужна инициализация раздела monsterkills в ПДА
+--	set_value("add_pts__flag_initialize_stalkerkills	- если nil или false, то нужна инициализация раздела stalkerkills в ПДА
+-- варианты props (см. gamedata\config\ui\actor_statistic.xml):
+--	"monsterkills"	- убито мутантов
+--	"stalkerkills"	- убито людей
+--	"exp"		- вылечено людей
+--	"quests"	- выполнено заданий
+--	"arts"		- найдено артефактов
+--	"artefacts"	- сварено артефактов
+--	"otherstats"	- прочая статистика
+--	"total"		- всего
+--
+function add_pts(props, sect_name, count, pts)
+	if pts == nil then return end
+
+	if (not get_value("add_pts__flag_initialize_monsterkills")) and (props == "monsterkills") then
+		-- инициализация раздела monsterkills в статистике ПДА для удобной сортировки убитых монстров
+		for _, v in ipairs(table_initialize_monsterkills) do
+			actor_stats.add_points("monsterkills", v, 0, 0.0)
+		end
+		set_value("add_pts__flag_initialize_monsterkills", true)
+	elseif (not get_value("add_pts__flag_initialize_stalkerkills")) and (props == "stalkerkills") then
+		-- инициализация раздела stalkerkills в статистике ПДА для удобной сортировки убитых человекоподобных
+		for _, v in ipairs(table_initialize_stalkerkills) do
+			actor_stats.add_points("stalkerkills", v, 0, 0.0)
+		end
+		set_value("add_pts__flag_initialize_stalkerkills", true)
+	end
+
+	-- wprintf(
+		-- " points for~C0F %s ~C0A %s~C07 ~C0B x ~C0D %d~C0B =~C0D %.3f~C07 ",
+		-- props, sect_name, count, pts
+	-- )
+	actor_stats.add_points(props, sect_name, count, pts)
+	local temp
+	if (actor_stats.get_points("total") == nil) or type(actor_stats.get_points("total"))~="number" then
+		temp = db.actor:character_rank() + (pts * count)
+	else
+		temp = actor_stats.get_points("total")
+		temp = temp - temp % 1			-- целая часть числа
+	end
+	db.actor:set_character_rank(temp)
+end
+
+-- убили существо, обновляем статистику в ПДА
+function addKillCount(npc)
+	if npc == nil then
+		return
+	end
+
+	local isS, isM = false, false
+	if IsStalker(npc) then
+		isS = true
+	elseif IsMonster(npc) then
+		isM = true
+	else
+		return
+	end
+
+	local npc_section = npc:section() or ""
+	local npc_character_community, npc_reputation = "", 0
+	if isS then
+		npc_character_community = npc:character_community() or ""
+		npc_reputation = npc:character_reputation() or 0
+		-- log2("[addKillCount]: npc_name = %s, npc_section = %s, npc_character_community = %s, npc_reputation = %d", npc:name(), npc_section, npc_character_community, npc_reputation)
+	end
+
+	-- ранг существа в npc_rank (1..3 для монстров, 1..4 для НПС), в npc_rank_string ранг существа строчкой
+	local table_ranks = {
+		none = 1,												-- nil rank
+		novice = 1, experienced = 2, veteran = 3, master = 4,	-- stalkers ranks
+		weak = 1, normal = 2, strong = 3						-- monsters ranks
+	}
+	local npc_rank_string = ranks.get_obj_rank_name(npc) or "none"
+	local npc_rank = table_ranks[npc_rank_string] or 1
+
+	-- в npc_index_to_search что будем искать в table_statistic_kill_data для соответствия убитому существу
+	local npc_index_to_search = npc_section						-- для монстров используем section
+	if isS and npc_character_community ~= "" then
+		npc_index_to_search = npc_character_community			-- для сталкеров используем character_community
+	end
+
+	-- ищем в ключах таблицы table_statistic_kill_data лучшее совпадение со строкой npc_index_to_search
+	local npc_index_bestfind = "unknown_monster"				-- ключ лучшего совпадения
+	if isS then
+		npc_index_bestfind = "unknown_stalker"
+	end
+	if npc_index_to_search ~= "" then
+		local length_bestfind = 1								-- длина лучшего совпадения (ищем совпадения length_bestfind+1 и лучше)
+		for k, _ in pairs(table_statistic_kill_data) do
+			local x,y = string.find(npc_index_to_search, k)
+			x = x or 1
+			y = y or 0
+			local length = y - x + 1							-- длина текущего совпадения
+			if length > length_bestfind then					-- лучшее совпадение?
+				length_bestfind = length
+				npc_index_bestfind = k
+			end
+		end
+	end
+
+	-- название убитого существа в ПДА в pda_alias_data
+	local pda_alias_data = table_statistic_kill_data[npc_index_bestfind].pda_alias[npc_rank]
+	if pda_alias_data == nil then
+		-- если в нашей таблице нет информации, как назвать существо в ПДА, пусть будет "unknown_stalker"
+		pda_alias_data = table_statistic_kill_data["unknown_stalker"].pda_alias[npc_rank]
+	end
+	-- очков в ПДА за убитое существо в pda_pts_data. Если в нашей таблице не информации об очках, пусть будет 0
+	local pda_pts_data = table_statistic_kill_data[npc_index_bestfind].pda_pts[npc_rank] or 0
+
+	-- Если репутация у существа плохая, то за его убийство не снимаем очки в ПДА
+	if (pda_pts_data < 0) and (npc_reputation < 0) then
+		pda_pts_data = 0
+	end
+	-- attitude_neutal_threshold (из game_relations.ltx) будем использовать? Eсли будем, то смотреть
+	-- amk_offline_alife.script, news_main.script (использование utils.cfg_get_number для загрузки параметров из game_relations.ltx)
+	-- Но аккуратно, т.к. плохим человеком игра считает НПС с репутацией -150 и ниже, а, например, бандиты на
+	-- Свалке имеют репутацию -50..-100
+
+-- debug. Если раскомментировать строки ниже, то при убийстве существа будет выводится на экран:
+--local debug1 = ""
+--debug1 = debug1.."npc_section="..npc_section				-- section существа
+--debug1 = debug1..", npc_character_community="..npc_character_community	-- character_community существа
+--debug1 = debug1..", npc_reputation="..npc_reputation			-- reputation существа
+--debug1 = debug1..", npc_rank_string="..npc_rank_string		-- ранг существа
+--debug1 = debug1..", npc_index_to_search="..npc_index_to_search	-- название существа для поиска в таблице table_statistic_kill_data
+--debug1 = debug1..", npc_index_bestfind="..npc_index_bestfind	-- что нашлось про существо в таблице table_statistic_kill_data
+--debug1 = debug1..", pda_alias_data="..pda_alias_data		-- какое название у существа будет в статистике ПДА
+--debug1 = debug1..", pda_pts_data="..tostring(pda_pts_data)	-- сколько очков будет дано за убитое существо в статистике ПДА
+--jack.show(debug1,30)
+
+	if isM then
+		add_pts("monsterkills", pda_alias_data, 1, pda_pts_data)
+	elseif isS then
+		add_pts("stalkerkills", pda_alias_data, 1, pda_pts_data)
+	end
+end
+
+-- сварили артефакт, обновляем статистику в ПДА, начисляем экспу
+function addCookingPoints(sect_name)
+	if strpos(sect_name, "_capsule") then
+		sect_name = string.gsub(sect_name, "_capsule", "")
+	end
+	local translatedSection = ""
+	local mod_flag = false
+	local pts = 0.5
+	for _,v in pairs(sak_dialog.table_modarts) do
+		for _,vv in ipairs(v) do
+			if sect_name == vv then
+				mod_flag = true
+				break
+			end
+		end
+		if mod_flag then
+			break
+		end
+	end
+	if mod_flag then
+		translatedSection = game.translate_string("st_pda_mods_artefacts")
+	elseif str_in_tab(sect_name, {"af_dummy_green", "af_red_dummy", "af_dummy_sparkler", "af_dummy_dummy_new"} ) then
+		translatedSection = game.translate_string("st_pda_other_artefacts")
+	else
+		translatedSection = get_string(sect_name,"inv_name",game.translate_string("unknown_art"))
+		pts = get_cooking_exp(sect_name)
+	end
+	add_pts("artefacts", translatedSection, 1, pts)
+end
+
+function get_cooking_exp(sect_name)
+	local pts = 0
+	if str_in_tab(sect_name,sak_dialog.table_aart) then
+		pts = 0.5
+	elseif str_in_tab(sect_name,sak_dialog.table_bart) then
+		pts = 1
+	elseif str_in_tab(sect_name,sak_dialog.table_cart) then
+		pts = 1.5
+	else
+		pts = 2
+	end
+	return pts
+end

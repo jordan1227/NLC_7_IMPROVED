@@ -1,0 +1,43 @@
+;-------------------------------------------------------------------------------------------------
+;-- Village freedom kamp
+;-------------------------------------------------------------------------------------------------
+;-- ugrumy
+[logic@mil_village_ugrumy]
+active = walker1@mil_village_ugrumy
+on_death = death@mil_village_ugrumy
+
+[death@mil_village_ugrumy]
+on_info = %+mil_ugrumy_dead +mil_hunt_ready%
+
+[walker1@mil_village_ugrumy]
+path_walk = ugrumy_meet_walk
+path_look = ugrumy_meet_look
+meet = meet@mil_village_ugrumy
+danger = danger@mil_freedom
+
+[meet@mil_village_ugrumy]
+meet_state = 5|ward
+meet_state_wpn = 5|ward
+victim = 10|actor
+victim_wpn = 10|actor
+use = true
+use_wpn = false
+meet_dialog = mil_hunter_dialog
+
+;--specnaz
+[logic@mil_village_soldier1]
+active = kamp@mil_village_soldier1
+on_death = death@mil_village_ugrumy
+
+[kamp@mil_village_soldier1]
+center_point = kamp
+danger = danger@mil_freedom
+
+;--regular
+[logic@mil_village_soldier2]
+active = kamp@mil_village_soldier2
+on_death = death@mil_village_ugrumy
+
+[kamp@mil_village_soldier2]
+center_point = kamp
+danger = danger@mil_freedom

@@ -1,0 +1,32 @@
+[logic]
+active = walker
+on_death = on_death@hunter
+
+[on_death@hunter]
+on_info = %+hunter_umer%
+
+[walker]
+path_walk = bar_bar_visitor_hunter_walk
+path_look = bar_bar_visitor_hunter_look
+soundgroup = bar_visitors1
+meet = meet
+danger = danger_condition
+on_info = {+bar_bar_hunter_quest_finish} walker@2
+
+[walker@2]
+path_walk = bar_bar_visitor_hunter_walk
+path_look = bar_bar_visitor_hunter_look_1
+soundgroup = bar_visitors1
+meet = meet
+danger = danger_condition
+
+
+[danger_condition]
+ignore_distance = 0
+
+[meet]
+use = true
+use_wpn = true
+meet_talk_enabled = true
+meet_state = ward
+meet_dialog = bar_bar_hunter_start

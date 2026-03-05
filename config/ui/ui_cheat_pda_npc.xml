@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+
+<cheat>
+
+    <background x="0" y="0" width="768" height="476" stretch="1">
+      	<texture>ui_podsumok_btn_blank</texture>
+    </background>
+
+    <btn_start_1 x="583" y="130" width="15" height="51" stretch="1">
+      	<!-- <texture_e>ui_podsumok_btn_blank</texture_e>
+		<texture_t>ui_pda_btn_start2_t</texture_t> -->
+		<texture_h></texture_h>
+    </btn_start_1>
+
+    <btn_search_1 x="60" y="51" width="476" height="382" stretch="1">
+      	<texture_e>ui_podsumok_btn_blank</texture_e>
+    </btn_search_1>
+
+    <btn_a1_1 x="203" y="357" width="50" height="16" stretch="1">
+      	<texture_e>ui_pda_btn_a_1_e</texture_e>
+		<texture_t>ui_pda_btn_a_1_t</texture_t>
+		<texture_h>ui_pda_btn_a_1_h</texture_h>
+    </btn_a1_1>
+
+	<btn_a1_2 x="267" y="357" width="50" height="16" stretch="1">
+      	<texture_e>ui_pda_btn_a_2_e</texture_e>
+		<texture_t>ui_pda_btn_a_2_t</texture_t>
+		<texture_h>ui_pda_btn_a_2_h</texture_h>
+    </btn_a1_2>
+
+    <btn_a1_3 x="331" y="357" width="50" height="16" stretch="1">
+      	<texture_e>ui_pda_btn_a_3_e</texture_e>
+		<texture_t>ui_pda_btn_a_3_t</texture_t>
+		<texture_h>ui_pda_btn_a_3_h</texture_h>
+    </btn_a1_3>
+
+    <btn_a1_4 x="203" y="380" width="50" height="16" stretch="1">
+      	<texture_e>ui_pda_btn_a_4_e</texture_e>
+		<texture_t>ui_pda_btn_a_4_t</texture_t>
+		<texture_h>ui_pda_btn_a_4_h</texture_h>
+    </btn_a1_4>
+
+	<btn_a1_5 x="267" y="380" width="50" height="16" stretch="1">
+      	<texture_e>ui_pda_btn_a_5_e</texture_e>
+		<texture_t>ui_pda_btn_a_5_t</texture_t>
+		<texture_h>ui_pda_btn_a_5_h</texture_h>
+    </btn_a1_5>
+
+    <btn_a1_6 x="331" y="380" width="50" height="16" stretch="1">
+      	<texture_e>ui_pda_btn_a_6_e</texture_e>
+		<texture_t>ui_pda_btn_a_6_t</texture_t>
+		<texture_h>ui_pda_btn_a_6_h</texture_h>
+    </btn_a1_6>
+
+    <btn_a1_7 x="203" y="403" width="50" height="16" stretch="1">
+      	<texture_e>ui_pda_btn_a_7_e</texture_e>
+		<texture_t>ui_pda_btn_a_7_t</texture_t>
+		<texture_h>ui_pda_btn_a_7_h</texture_h>
+    </btn_a1_7>
+
+    <btn_a1_8 x="331" y="403" width="50" height="16" stretch="1">
+      	<texture_e>ui_pda_btn_a_8_e</texture_e>
+		<texture_t>ui_pda_btn_a_8_t</texture_t>
+		<texture_h>ui_pda_btn_a_8_h</texture_h>
+    </btn_a1_8>
+
+    <btn_u1m_1 x="413" y="398" width="38" height="45" stretch="1">
+      	<texture_e>ui_pda_btn_u_1m_e</texture_e>
+		<texture_t>ui_pda_btn_u_1m_t</texture_t>
+		<texture_h>ui_pda_btn_u_1m_h</texture_h>
+    </btn_u1m_1>
+
+    <btn_u1m_2 x="142" y="351" width="38" height="45" stretch="1">
+      	<texture_e>ui_pda_btn_u_2m_e</texture_e>
+		<texture_t>ui_pda_btn_u_2m_t</texture_t>
+		<texture_h>ui_pda_btn_u_2m_h</texture_h>
+    </btn_u1m_2>
+
+    <btn_u1m_3 x="438" y="500" width="88" height="35" stretch="1">
+      	<texture_e>ui_podsumok_btn_blank</texture_e>
+		<texture_t>ui_pda_btn_u_3_t</texture_t>
+		<texture_h>ui_pda_btn_u_3_h</texture_h>
+    </btn_u1m_3>
+
+    <btn_u1m_4 x="413" y="351" width="38" height="45" stretch="1">
+      	<texture_e>ui_pda_btn_u_4m_e</texture_e>
+		<texture_t>ui_pda_btn_u_4m_t</texture_t>
+		<texture_h>ui_pda_btn_u_4m_h</texture_h>
+    </btn_u1m_4>
+
+    <btn_u1m_5 x="142" y="398" width="38" height="45" stretch="1">
+      	<texture_e>ui_pda_btn_u_5m_e</texture_e>
+		<texture_t>ui_pda_btn_u_5m_t</texture_t>
+		<texture_h>ui_pda_btn_u_5m_h</texture_h>
+    </btn_u1m_5>
+	
+</cheat>

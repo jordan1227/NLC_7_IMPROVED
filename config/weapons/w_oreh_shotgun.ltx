@@ -1,0 +1,220 @@
+[wpn_hunters_toz_new]:weapon_immunities,base_wpn_shotgun
+GroupControlSection			= spawn_group
+discovery_dependency 		= 
+$spawn				     	= "weapons\toz-34"	
+$npc			 			= on
+$prefetch 		 			= 8
+scheduled				  	= off
+cform				      	= skeleton
+class				      	= WP_BM16
+min_radius					= 0
+max_radius				 	= 60
+description					= enc_weapons_wpn_orex
+
+default_to_ruck				= false
+
+ef_main_weapon_type			= 1
+ef_weapon_type				= 7
+
+holder_range_modifier		= 1.0
+holder_fov_modifier			= 0.7
+
+cost					 	= 6000
+weapon_class			 	= shotgun
+
+ammo_limit		 			= 60
+ammo_current		 		= 10
+ammo_elapsed		 		= 0
+
+f_mode						= 1
+
+ammo_mag_size				= 2
+ammo_class		 			= ammo_12x70_buck,ammo_12x76_dart,ammo_12x76_zhekan
+
+fire_dispersion_base		= 0.45  
+control_inertion_factor		= 1.25f
+
+cam_relax_speed         	= 7.0
+cam_dispersion          	= 2.7
+cam_dispersion_inc			= 2.7
+cam_dispertion_frac			= 0.8
+cam_max_angle				= 30
+cam_max_angle_horz			= 10
+cam_step_angle_horz			= 1.3
+
+fire_dispersion_condition_factor = 1.5
+misfire_probability 		= 0.03
+misfire_condition_k			= 0.1
+condition_shot_dec 			= 0.0003
+
+hand_dependence 	 		= 1
+single_handed		 		= 0
+
+slot 				 		= 2
+animation_slot		 		= 3
+
+inv_name					= wpn_orex
+inv_name_short				= wpn_orex
+
+inv_weight					= 3.2
+
+inv_grid_width									   = 6
+inv_grid_height									   = 2
+inv_grid_x										   = 66
+inv_grid_y										   = 10
+
+direction				 	= 0, 0, 1
+shell_point					= 0.0, 0.183, 0.07
+fire_point					= 0.0, 0.183, 0.730
+fire_point2					= 0.0, 0.160, 0.730
+
+flame_particles		   		= weapons\generic_weapon05
+smoke_particles		   		= _ecp\weapon_shotgun
+rpm_empty_click 	   		= 200
+
+PDM_disp_base 				= 2.0
+PDM_disp_vel_factor 		= 3.0
+PDM_disp_accel_factor 		= 5.0
+PDM_crouch					= 1.9
+PDM_crouch_no_acc			= 0.7
+
+hit_power        			= 1.2
+hit_impulse      			= 1
+hit_type 					= fire_wound
+
+fire_distance            	= 50
+bullet_speed				= 250
+rpm				        	= 250
+
+use_aim_bullet				= false
+time_to_aim					= 1.0
+
+hud				        	= wpn_hunters_toz_hud
+normal  					= 0, 1, 0
+position				   	= -0.026, -0.112, 0.072
+orientation					= 0, 30, 0
+
+strap_orientation                                  = -15,-9,110
+strap_position                                     = -0.26,-0.11,0.15
+
+startup_ammo             	= 10
+visual				    	= dynamics\weapons\wpn_mp43\wpn_mp43_full
+
+light_color		 			= 0.6,0.5,0.3
+light_range		 			= 6.0
+light_var_color		 		= 0.05
+light_var_range		 		= 0.5
+light_time 		 			= 0.2
+
+ph_mass			 			= 3
+
+scope_zoom_factor = 90
+
+scope_status				= 0
+silencer_status				= 0
+grenade_launcher_status		= 0
+
+snd_shoot					= weapons\bm16\bm16_hole_mono
+snd_shoot_duplet			= weapons\bm16\bm16_hole_mono
+
+snd_razgruzka				= weapons\razgruzka\ammo_1
+
+snd_draw                                           = weapons\bm16\toz66_draw
+snd_empty                                          = weapons\bm16\toz66_empty
+snd_holster                                        = weapons\bm16\toz66_holster
+snd_reload                                         = weapons\mp43\mp43_reload_empty
+snd_reload_1                                       = weapons\mp43\mp43_reload
+snd_reload_jammed_1                               = weapons\mp43\mp43_misfire
+snd_reload_jammed                                 = weapons\mp43\mp43_misfire
+snd_changeammo_1                                   = weapons\mp43\mp43_ammochange
+snd_changeammo_2                                   = weapons\mp43\mp43_ammochange
+snd_sprint_idle								   	   = weapons\sprint_assault
+
+[wpn_hunters_toz_hud]:hud_base
+aim_hud_offset_pos = -0.066000,0.046000,-0.09
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.066000,0.046000,-0.09
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+; anm_bore_0                                         = mp43_bore
+; anm_bore_1                                         = mp43_bore
+; anm_bore_2                                         = mp43_bore
+anm_hide_0                                         = mp43_holster
+anm_hide_1                                         = mp43_holster
+anm_hide_2                                         = mp43_holster
+anm_idle_0                                         = mp43_idle
+anm_idle_1                                         = mp43_idle
+anm_idle_2                                         = mp43_idle
+anm_idle_aim_0                                     = mp43_idle_aim
+anm_idle_aim_1                                     = mp43_idle_aim
+anm_idle_aim_2                                     = mp43_idle_aim
+anm_idle_moving_0                                  = mp43_moving
+anm_idle_moving_1                                  = mp43_moving
+anm_idle_moving_2                                  = mp43_moving
+anm_idle_aim_moving_0                              = mp43_moving_aim
+anm_idle_aim_moving_1                              = mp43_moving_aim
+anm_idle_aim_moving_2                              = mp43_moving_aim
+anm_idle_moving_slow_0                             = mp43_moving_slow
+anm_idle_moving_slow_1	                           = mp43_moving_slow
+anm_idle_moving_slow_2	                           = mp43_moving_slow
+anm_idle_moving_crouch_0                           = mp43_crouch
+anm_idle_moving_crouch_1                           = mp43_crouch
+anm_idle_moving_crouch_2                           = mp43_crouch
+anm_reload_jammed_1                               = mp43_misfire, misfire_empty
+anm_reload_jammed_2                               = mp43_misfire, misfire
+anm_reload_1                                       = mp43_reload, reload
+anm_reload_2                                       = mp43_reload_empty, reload_empty
+lock_time_end_anm_reload_1                         = 1.4
+lock_time_end_anm_reload_2                         = 1.4
+anm_shot_1                                         = mp43_shoot_last, shoot
+anm_shot_2                                         = mp43_shoot, shoot
+anm_shots_when_aim_1				   			   = mp43_shoot_aim, shoot
+anm_shots_when_aim_2				   			   = mp43_shoot_aim, shoot
+anm_show_0                                         = mp43_draw
+anm_show_1                                         = mp43_draw
+anm_show_2                                         = mp43_draw
+
+anm_idle_sprint_start_2         				           = mp43_sprint_start
+anm_idle_sprint_2         				           = mp43_sprint
+anm_idle_sprint_end_2         					       = mp43_sprint_end
+
+anm_idle_sprint_start_1         				           = mp43_sprint_start
+anm_idle_sprint_1         				           = mp43_sprint
+anm_idle_sprint_end_1         					       = mp43_sprint_end
+
+anm_idle_sprint_start_0         					   	   = mp43_sprint_start
+anm_idle_sprint_0         					   	   = mp43_sprint
+anm_idle_sprint_end_0         					   	   = mp43_sprint_end
+
+anm_headlamp_on_0                                = mp43_flash
+anm_gasmask_0                                      = mp43_clear
+
+anm_headlamp_on_1                                = mp43_flash
+anm_gasmask_1                                      = mp43_clear
+
+anm_headlamp_on_2                                = mp43_flash
+anm_gasmask_2                                      = mp43_clear
+lock_time_end_anm_headlamp_on = 0.5
+
+attach_place_idx                                   = 0
+fire_bone                                          = wpn_body
+gl_hud_offset_pos                                  = 0,0,0
+gl_hud_offset_rot                                  = 0,0,0
+hands_orientation                                  = 0,0,0
+hands_orientation_16x9                             = 0,0,0
+hands_position					   				   = 0.007700,0.013975,-0.143099
+hands_position_16x9				   				   = 0.007700,0.013975,-0.143099
+item_orientation                                   = 0,0,0
+item_position                                      = 0,0,0
+
+lean_hud_offset_pos                                = 0,0,0
+lean_hud_offset_rot                                = 0,0,0
+shell_bone                                         = wpn_body
+shell_dir                                          = 0.0, 1.0, 0.0
+shell_point                                        = 0,0,0
+
+item_visual										   = dynamics\weapons\wpn_mp43\wpn_mp43_full_hud.ogf
+
+anm_ammochange_1                                   = mp43_ammochange, ammochange_1
+anm_ammochange_2                                   = mp43_ammochange, ammochange_2
+fire_point                      				   = 0.000000,0.007700,0.4485000

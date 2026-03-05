@@ -1,0 +1,203 @@
+;ПКМ Тактический
+[wpn_pkp]:wpn_pkm
+GroupControlSection			= spawn_group
+discovery_dependency		= 
+$spawn              		= "weapons\pkm"
+$npc						= on				
+$prefetch 					= 8
+scheduled					= off
+cform               		= skeleton
+class               		= WP_LR300
+min_radius          		= 0
+max_radius          		= 150
+description					= enc_weapons1_wpn-pkp
+dialog_description		    = desc_dialog_wpn-pkp
+
+default_to_ruck				= false
+	
+ef_main_weapon_type			= 2
+ef_weapon_type				= 6
+sprint_allowed				= true
+
+holder_range_modifier		= 1.0
+holder_fov_modifier			= 0.7
+
+cost						= 50000
+weapon_class				= assault_rifle	
+	
+ammo_limit					= 100
+ammo_elapsed				= 100
+	
+ammo_mag_size				= 100
+fire_modes					= -1
+
+ammo_class					= ammo_7.62x54r
+
+hand_dependence				= 1						
+single_handed				= 0
+	
+slot 						= 2
+animation_slot				= 2							
+
+inv_name	        		= wpn-pkp
+inv_name_short				= wpn-pkp	
+
+inv_weight					= 7.5
+
+inv_grid_height                                    = 2
+inv_grid_width                                     = 7
+inv_grid_x                                         = 72
+inv_grid_y                                         = 10
+
+weapon_type					= heavy
+heavy_ammo					= ammo
+
+kill_msg_x					= 0
+kill_msg_y					= 123
+kill_msg_width				= 69
+kill_msg_height				= 30
+
+fire_dispersion_base 		= 0.15
+control_inertion_factor 	= 1.8f
+
+cam_relax_speed          	= 10
+cam_dispersion           	= 0.33
+cam_dispersion_inc 			= 0.1
+cam_dispertion_frac 		= 0.5
+cam_max_angle				= 20
+cam_max_angle_horz			= 10
+cam_step_angle_horz 		= 1.65
+
+fire_dispersion_condition_factor = 1.5     
+misfire_probability 		= 0.004
+misfire_condition_k 		= 0.10 
+condition_shot_dec 			= 0.00025
+
+fire_point             		=  0.0, 0.262, 0.447
+
+flame_particles				= weapons\generic_weapon03
+smoke_particles				= weapons\generic_shoot_00
+grenade_flame_particles		= weapons\generic_weapon01
+	
+shell_point		 			= 0.00, 0.262, 0.189
+shell_particles	 			= amik\weapons\7_62x54\7_62x54_l
+
+PDM_disp_base 				= 6.0
+PDM_disp_vel_factor 		= 7.0
+PDM_disp_accel_factor 		= 9.0
+PDM_crouch					= 5.9
+PDM_crouch_no_acc			= 4.7
+
+hit_power                 	= 1.2
+hit_impulse		 			= 1
+hit_type 					= fire_wound
+
+fire_distance             	= 300
+bullet_speed 				= 640
+rpm                       	= 650	
+
+hud                      	= wpn_pkm_zulus_hud
+
+visual         		        = dynamics\weapons\wpn_pkm\wpn_pkm_zulus.ogf
+
+light_color					= 0.6,0.5,0.3
+light_range					= 5
+light_var_color				= 0.05						
+light_var_range				= 0.5
+light_time 					= 0.2						
+
+ph_mass						= 5
+
+scope_status					= 2		
+silencer_status					= 0					
+grenade_launcher_status			= 0
+scope_mode 						= 3
+scope_name 						= wpn_addon_eotech
+scope_names 											   = ac10632, wpn_addon_eotech, microt1
+
+scope_respawn_ac10632 = wpn_pkm_zulus_ac10632
+scope_respawn_wpn_addon_eotech = wpn_pkm_zulus_eot
+scope_respawn_microt1 = wpn_pkm_zulus_microt1
+
+silencer_name  					= wpn_addon_silencer
+grenade_launcher_name 			= wpn_addon_grenade_launcher_m203
+
+scope_x                     = 68		; offset in inventory icon
+scope_y                     = -14
+silencer_x                  = 0		; offset in inventory icon
+silencer_y                  = 0
+grenade_launcher_x          = 0		; offset in inventory icon
+grenade_launcher_y          = 0
+
+
+zoom_enabled				= true
+scope_zoom_factor	    	= 85
+
+snd_shoot					= weapons\pkm\muzzle_pkm_mono
+snd_shoot1					= weapons\pkm\muzzle_pkm_mono1
+snd_shoot2					= weapons\pkm\muzzle_pkm_mono2
+snd_shoot3					= weapons\pkm\muzzle_pkm_mono3
+
+snd_razgruzka				= weapons\razgruzka\ammo_3
+ 
+[wpn_pkm_zulus_hud]:wpn_pkm_hud
+item_visual                                        = dynamics\weapons\wpn_pkm\wpn_pkm_zulus_hud
+anm_reload                                         = pkm_zulus_reload, reload
+anm_reload_empty                                   = pkm_zulus_reload_empty, reload_empty
+
+[wpn_pkm_zulus_ac10632]:wpn_pkp
+$spawn             			= "weapons\wpn_pkm_zulus_ac10632"
+hud					= wpn_pkm_zulus_ac10632_hud
+visual					= dynamics\weapons\wpn_pkm\wpn_pkm_zulus_ac10632.ogf
+scope_x                                      = 125
+scope_y                                      = -15
+
+scope_name = ac10632
+scope_respawn = wpn_pkp
+
+[wpn_pkm_zulus_ac10632_hud]:wpn_pkm_zulus_hud
+item_visual                		= dynamics\weapons\wpn_pkm\wpn_pkm_zulus_ac10632_hud.ogf
+
+aim_hud_offset_pos = -0.069500,0.012100,-0.07
+aim_hud_offset_rot = -0.005350,0.000985,-0.184200
+aim_hud_offset_pos_16x9 = -0.069500,0.012100,-0.07
+aim_hud_offset_rot_16x9 = -0.005350,0.000985,-0.184200
+
+
+[wpn_pkm_zulus_eot]:wpn_pkp
+$spawn                  		= "weapons\wpn_pkm_zulus_eot"
+hud					= wpn_pkm_zulus_eot_hud
+visual					= dynamics\weapons\wpn_pkm\wpn_pkm_zulus_eot.ogf
+scope_x                                      = 127
+scope_y                                      = -15
+
+scope_name = wpn_addon_eotech
+scope_respawn = wpn_pkp
+
+[wpn_pkm_zulus_eot_hud]:wpn_pkm_zulus_hud
+item_visual                		= dynamics\weapons\wpn_pkm\wpn_pkm_zulus_eot_hud.ogf
+
+aim_hud_offset_pos = -0.069600,0.010800,-0.07
+aim_hud_offset_rot = -0.005350,0.000985,-0.184200
+
+aim_hud_offset_pos_16x9 = -0.069600,0.010800,-0.07
+aim_hud_offset_rot_16x9 = -0.005350,0.000985,-0.184200
+
+
+[wpn_pkm_zulus_microt1]:wpn_pkp
+$spawn             			= "weapons\wpn_pkm_zulus_microt1"
+hud					= wpn_pkm_zulus_microt1_hud
+visual					= dynamics\weapons\wpn_pkm\wpn_pkm_zulus_micro-t1.ogf
+scope_x                                      = 134
+scope_y                                      = -13
+
+scope_name = microt1
+scope_respawn = wpn_pkp
+
+[wpn_pkm_zulus_microt1_hud]:wpn_pkm_zulus_hud
+item_visual                		= dynamics\weapons\wpn_pkm\wpn_pkm_zulus_micro-t1_hud.ogf
+
+aim_hud_offset_pos = -0.069200,0.006100,-0.07
+aim_hud_offset_rot = -0.005350,0.000985,-0.184200
+aim_hud_offset_pos_16x9 = -0.069200,0.006100,-0.07
+aim_hud_offset_rot_16x9 = -0.005350,0.000985,-0.184200

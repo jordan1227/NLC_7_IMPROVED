@@ -1,0 +1,749 @@
+                                                        <!-- Бартер Сидора -->
+
+<string id="trade_dialog_sidor_0"><text>Мне нужно кое-какое снаряжение.</text></string>
+<string id="trade_dialog_sidor_1"><text>Сам понимаешь, нормальные вещи только за артефакты доступны и только в хорошем состоянии, тухлые можешь молодняку в деревне впаривать...\nТак что именно нужно?</text></string>
+<string id="trade_dialog_sidor_2"><text>Боеприпасы, снаряжение...</text></string>
+<string id="trade_dialog_sidor_3"><text>Оружие хорошее...</text></string>
+<string id="trade_dialog_sidor_4"><text>Здоровье поправить...</text></string>
+<string id="trade_dialog_sidor_5"><text>Ремонтные комплекты...</text></string>
+<string id="trade_dialog_sidor_211"><text>Из боеприпасов я могу предложить за арты первого уровня:\n1. Патроны 12х70 дробь\n2. Патроны 12х76 картечь\n3. Патроны 12х76 жакан</text></string>
+<string id="trade_dialog_sidor_212"><text>Из боеприпасов я могу предложить за арты первого уровня:\n1. Патроны 12х70 дробь\n2. Патроны 12х76 картечь\n3. Патроны 12х76 жакан\n4. Динамит</text></string>
+<string id="trade_dialog_sidor_54"><text>Ладно, пока ничего не буду покупать...</text></string>
+<string id="trade_dialog_sidor_22"><text>Давай дробь...</text></string>
+<string id="trade_dialog_sidor_23"><text>Картечь нужна...</text></string>
+<string id="trade_dialog_sidor_24"><text>Жаканы возьму...</text></string>
+<string id="trade_dialog_sidor_26"><text>Взрывчатка нужна...</text></string> 
+<string id="trade_dialog_sidor_222"><text>За артефакт пять пачек дроби даю... Согласен?</text></string>
+<string id="trade_dialog_sidor_221"><text>Бери вот, что сделаешь...</text></string>
+<string id="trade_dialog_sidor_223"><text>Артефакт у меня есть, бери...</text></string>
+<string id="trade_dialog_sidor_232"><text>Три пачки картечи за арт... Берёшь?</text></string>
+<string id="trade_dialog_sidor_231"><text>Картечь нужна, а то бы и не обращался...</text></string>
+<string id="trade_dialog_sidor_242"><text>Две пачки патронов за артефакт первого уровня... Берёшь?</text></string>
+<string id="trade_dialog_sidor_241"><text>Беру, без них никак...</text></string>
+<string id="trade_dialog_sidor_262"><text>Ящик с динамитом будет стоить тебе артефакт класса "Пустышка"... Есть такой?</text></string>
+<string id="trade_dialog_sidor_261"><text>Дорого, но нужда сильная. Держи...</text></string>
+<string id="trade_dialog_sidor_263"><text>Ну, смотри. Динамит на старом месте, в первом доме от дороги. Поторопись, уноси отсюда подальше. Мало ли...</text></string>
+<string id="trade_dialog_sidor_666"><text>Нет, в другой раз...</text></string>
+
+<string id="trade_dialog_sidor_31"><text>Пока могу предложить за артефакты:\n1. ТОЗ-34 "Вертикалка"\n2. ТОЗ-66\n3. Короткое ружьё MP-133</text></string>
+<string id="trade_dialog_sidor_32"><text>Беру ТОЗ-34...</text></string>
+<string id="trade_dialog_sidor_32001"><text>Пожалуй, ТОЗ-66 возьму...</text></string>
+<string id="trade_dialog_sidor_33"><text>Давай МР-133 попробую...</text></string>
+<string id="trade_dialog_sidor_322"><text>За ТОЗ-34 два артефакта простых, первого уровня, или один хороший. Согласен?</text></string>
+<string id="trade_dialog_sidor_32202"><text>ТОЗ-66 - за него два артефакта простых или один получше, второго уровня. Устраивает?</text></string>
+<string id="trade_dialog_sidor_321"><text>Ну да, вот есть пара, держи, что сделаешь...</text></string>
+<string id="trade_dialog_sidor_323"><text>У меня второго уровня арт есть, пойдёт?</text></string>
+<string id="trade_dialog_sidor_32103"><text>Да, вот есть пара простых..., держи.</text></string>
+<string id="trade_dialog_sidor_32304"><text>Второго уровня арт есть, забирай.</text></string>
+<string id="trade_dialog_sidor_332"><text>Укороченный МР-133 только в обмен на два артефакта второго уровня... Ну или четыре арта первого. Берёшь?</text></string>
+<string id="trade_dialog_sidor_333"><text>Четыре арта первого уровня, держи...</text></string>
+<string id="trade_dialog_sidor_331"><text>Вот два хороших арта...</text></string>
+
+<string id="trade_dialog_sidor_41"><text>Пока могу предложить аптечки или, хе-хе, водочку...\nЛадно, только для тебя - чуток антирадов есть...</text></string>
+<string id="trade_dialog_sidor_42"><text>Аптечки возьму...</text></string>
+<string id="trade_dialog_sidor_43"><text>В Зоне без водки не проживёшь...</text></string>
+<string id="trade_dialog_sidor_44"><text>Антирады давай! Запарило водкой лечиться.</text></string>
+<string id="trade_dialog_sidor_422"><text>За десять аптечек один артефакт второго уровня, или пяток за простенький артефакт... Согласен?</text></string>
+<string id="trade_dialog_sidor_421"><text>Пяти хватит, бери простой...</text></string>
+<string id="trade_dialog_sidor_423"><text>Вот хороший арт, давай аптечки...</text></string>
+
+<string id="trade_dialog_sidor_432"><text>Три пузыря в обмен на артефактик! Берёшь?</text></string>
+<string id="trade_dialog_sidor_431"><text>Беру-беру... Вот... "артефактик".</text></string>
+
+<string id="trade_dialog_sidor_442"><text>Значится так, за артик простенький дам пару антирадов. За арт второго уровня - пять штук... А если не жалко редкого, третьеуровнего артефакта, дам полтора десятка.</text></string>
+<string id="trade_dialog_sidor_4411"><text>Беру, беру... Вот артик простенький...</text></string>
+<string id="trade_dialog_sidor_4412"><text>Вот у меня арт второго уровня.</text></string>
+<string id="trade_dialog_sidor_4413"><text>Не жалко... Держи третий уровень!</text></string>
+
+<string id="trade_dialog_sidor_51"><text>Могу предложить:\n1. Ремкомплекты для брони\n2. Ремкомплекты для оружия\n3. Ящик для ремкомплектов</text></string>
+<string id="trade_dialog_sidor_52"><text>Для брони возьму.</text></string>
+<string id="trade_dialog_sidor_53"><text>Оружейные больше нужны.</text></string>
+<string id="trade_dialog_sidor_57"><text>Ящик, наверно, возьму.</text></string>
+<string id="trade_dialog_sidor_522"><text>За пять комплектов один артефакт второго уровня... Согласен?</text></string>
+<string id="trade_dialog_sidor_521"><text>Согласен, что сделаешь...</text></string>
+<string id="trade_dialog_sidor_532"><text>Пять оружейных комплектов в обмен на один артефакт второго уровня... Берёшь?</text></string>
+<string id="trade_dialog_sidor_531"><text>Да, возьму. Оружие часто выходит из строя...</text></string>
+<string id="trade_dialog_sidor_572"><text>Два артефакта...</text></string>
+<string id="trade_dialog_sidor_571"><text>Да-да, вот держи парочку...</text></string>
+
+                                                               <!-- Бартер Бармена -->
+
+<string id="trade_dialog_barman_0"><text>Хочу прикупить кое-какое снаряжение.</text></string>
+<string id="trade_dialog_barman_1"><text>Главная валюта в Зоне - артефакты! У меня, как в обменнике: рваную да мятую валюту не приму. В том смысле, чтоб б/у всякое не тащил, уяснил?\nТак что тебя интересует?</text></string>
+<string id="trade_dialog_barman_2"><text>Боеприпасы, снаряжение...</text></string>
+<string id="trade_dialog_barman_3"><text>Оружие хорошее...</text></string>
+<string id="trade_dialog_barman_4"><text>Здоровье поправить...</text></string>
+<string id="trade_dialog_barman_5"><text>Ремонтные комплекты...</text></string>
+<string id="trade_dialog_barman_21"><text>Ну... Из боеприпасов есть:\n1. Патроны 357 Magnum\n2. Патроны 12-го калибра\n3. К натовскому подствольнику гранатки\n4. Глушитель для пистолета Glock 18C</text></string>
+<string id="trade_dialog_barman_54"><text>Пока ничего не нужно...</text></string>
+<string id="trade_dialog_barman_25"><text>Патроны 357 Magnum давай...</text></string>
+<string id="trade_dialog_barman_26"><text>К гладкостволу сколько отсыплешь?</text></string>
+<string id="trade_dialog_barman_27"><text>Сколько гранаток к подстволу даёшь?</text></string>
+<string id="trade_dialog_barman_28"><text>Что за глушитель хочешь?</text></string>
+<string id="trade_dialog_barman_252"><text>Три пачки за арт первого уровня.</text></string>
+<string id="trade_dialog_barman_262"><text>За арт второго уровня - девять пачек дроби, шесть пачек картечи или четыре пачки жаканов...</text></string>
+<string id="trade_dialog_barman_261"><text>Давай дробь. Вот арт...</text></string>
+<string id="trade_dialog_barman_2611"><text>Картечь возьму, держи вот.</text></string>
+<string id="trade_dialog_barman_26111"><text>Жаканы давай, держи вот.</text></string>
+<string id="trade_dialog_barman_251"><text>Беру, держи вот арт.</text></string>
+
+<string id="trade_dialog_barman_271"><text>За четыре гранатки - один простенький артефакт прошу.</text></string>
+<string id="trade_dialog_barman_272"><text>Ну, если простенький - давай.</text></string>
+
+<string id="trade_dialog_barman_282"><text>Сущий пустяк - любой второуровневый артефакт.</text></string>
+<string id="trade_dialog_barman_281"><text>Для кого пустяк, а для кого и не очень. Но очень уж нужная приблуда. Согласен.</text></string>
+
+<string id="trade_dialog_barman_666"><text>Нет, в другой раз...</text></string>
+<string id="trade_dialog_barman_31"><text>Из "хорошего" оружия:\n1. Пистолет Glock 17\n2. Пистолет Glock 18C\n3. Пистолет-пулемёт BT MP9\n4. Дробовик МР-153</text></string>
+<string id="trade_dialog_barman_32"><text>Глок нужен!</text></string>
+<string id="trade_dialog_barman_33"><text>Глок 18C, давай!</text></string>
+<string id="trade_dialog_barman_34"><text>MP9 беру!</text></string>
+<string id="trade_dialog_barman_35"><text>Дробаш возьму!</text></string>
+<string id="trade_dialog_barman_322"><text>За Glock 17 три артефакта первого уровня. Согласен?</text></string>
+<string id="trade_dialog_barman_321"><text>Есть у меня три простеньких, Глок того стоит... Надеюсь.</text></string>
+<string id="trade_dialog_barman_332"><text>Glock 18C в обмен на один артефакт третьего уровня плюс один второго... Ну как?</text></string>
+<string id="trade_dialog_barman_331"><text>Согласен! Вот артефакты.</text></string>
+<string id="trade_dialog_barman_342"><text>Пистолет-пулемёт BT MP9 в обмен на арт третьего уровня...Берёшь?</text></string>
+<string id="trade_dialog_barman_341"><text>У меня есть отличный артефакт. Держи.</text></string>
+<string id="trade_dialog_barman_352"><text>За дробовик - четыре артефакта второго уровня. Ну, если жаба не давит, то можешь рассчитаться одним артом третьего уровня плюс ещё одним первого.</text></string>
+<string id="trade_dialog_barman_351"><text>Вот четыре арта второго уровня, МР-153 того стоит...</text></string>
+<string id="trade_dialog_barman_3511"><text>Один третьего, один первого. Забирай...</text></string>
+<string id="trade_dialog_barman_41"><text>Для поправки здоровья предлагаю или аптечки, либо водочку, или антирады.</text></string>
+<string id="trade_dialog_barman_42"><text>Аптечки возьму...</text></string>
+<string id="trade_dialog_barman_43"><text>Водку возьму, антистресс, понимаешь!...</text></string>
+<string id="trade_dialog_barman_44"><text>Антирады давай!</text></string>
+<string id="trade_dialog_barman_422"><text>За четыре аптечки один артефакт класса "Медузы", ну, или 10 сразу - за один арт более высокого уровня.</text></string>
+<string id="trade_dialog_barman_441"><text>Вот хороший арт, давай десяток аптечек.</text></string>
+<string id="trade_dialog_barman_421"><text>Давай четыре, вот простой арт.</text></string>
+<string id="trade_dialog_barman_432"><text>Два пузыря за простенький артефактик, или семь поллитровок за хороший. Берёшь?</text></string>
+<string id="trade_dialog_barman_431"><text>Вот простой. Хватит мне покуда.</text></string>
+<string id="trade_dialog_barman_442"><text>Значит, так: один антирад за простой артефакт, четыре за арт второго уровня, десяток за третьеуровневый... Ну что?</text></string>
+<string id="trade_dialog_barman_4411"><text>Вот простой. Хватит мне покуда.</text></string>
+<string id="trade_dialog_barman_4412"><text>Есть второуровневый... Пока хватит.</text></string>
+<string id="trade_dialog_barman_4413"><text>Давай десять! Держи артефакт...</text></string>
+<string id="trade_dialog_barman_451"><text>Давай побольше - вот держи артефакт!</text></string>
+<string id="trade_dialog_barman_51"><text>Для ремонта могу предложить ремкомплекты для брони и оружия. Ну, и ящик для ремкомплектов.</text></string>
+<string id="trade_dialog_barman_52"><text>Для брони возьму.</text></string>
+<string id="trade_dialog_barman_53"><text>Оружейные больше нужны.</text></string>
+<string id="trade_dialog_barman_57"><text>Давай ящик.</text></string>
+<string id="trade_dialog_barman_522"><text>За три комплекта один артефакт второго уровня. Или за простой арт один комплект. Что решаем?</text></string>
+<string id="trade_dialog_barman_521"><text>Три давай. Пригодятся...</text></string>
+<string id="trade_dialog_barman_541"><text>А! Одним пока обойдусь...</text></string>
+<string id="trade_dialog_barman_572"><text>За ящик прошу навалить артов простых - 3 штуки, берёшь?</text></string>
+<string id="trade_dialog_barman_571"><text>Простые арты... Ну, держи вот...</text></string>
+<string id="trade_dialog_barman_532"><text>За три комплекта один артефакт второго уровня. Или за простой арт один комплект. Что решаем?</text></string>
+<string id="trade_dialog_barman_531"><text>Давай три, держи вот...</text></string>
+<string id="trade_dialog_barman_551"><text>Эх, с артами заминка, хватит одного пока.</text></string>
+
+                                                             <!-- Бартер Петренко -->
+
+<string id="trade_dialog_petrenko_0"><text>Мне нужно кое-какое снаряжение.</text></string>
+<string id="trade_dialog_petrenko_1"><text>Если есть артефакты, то не вопрос. Но учти, ношенные меня не интересуют...\nТак что ты хочешь получить?</text></string>
+<string id="trade_dialog_petrenko_2"><text>Боеприпасы...</text></string>
+<string id="trade_dialog_petrenko_3"><text>Оружие хорошее...</text></string>
+<string id="trade_dialog_petrenko_4"><text>Для здоровья что-нибудь...</text></string>
+<string id="trade_dialog_petrenko_5"><text>Обвесы для оружия...</text></string>
+<string id="trade_dialog_petrenko_21"><text>Могу предложить:\n1. Патроны 7,62х54 мм\n2. Патроны 7,62х39 мм\n3. Патроны 9x39 мм\n4. Патроны 5,45х39 мм\n5. Выстрелы к подствольному гранатомёту ВОГ-25</text></string>
+<string id="trade_dialog_petrenko_31"><text>У меня есть вот, что предложить:\n1. Пистолет-пулемёт "Витязь-СН"\n2. Автомат АК-104 «Тактик»\n3. Винтовка ВСС "Винторез"\n4. Автомат АС «Вал»</text></string>
+<string id="trade_dialog_petrenko_41"><text>У меня только военные аптечки есть...</text></string>
+<string id="trade_dialog_petrenko_51"><text>Сейчас имею в наличии:\n1. Коллиматорные прицелы "Кобра", "Ракурс", "ОКП"\n2. Глушители под 5,45 и 7,62, в том числе и для СВД.</text></string>
+
+<string id="trade_dialog_petrenko_221"><text>Патроны к СВД нужны.</text></string>
+<string id="trade_dialog_petrenko_222"><text>Возьму гранаты подствольные.</text></string>
+<string id="trade_dialog_petrenko_223"><text>К АКМу давай патроны...</text></string>
+<string id="trade_dialog_petrenko_224"><text>Патроны 9х39 к "Винторезу" давай...</text></string>
+<string id="trade_dialog_petrenko_225"><text>Патроны к АК-74 буду брать...</text></string>
+
+<string id="trade_dialog_petrenko_231"><text>За один артефакт первого уровня даю три пачки 7Н1 или две 7Н14, ну или одну пачку бронебойных 7Н26. Что выберешь?</text></string>
+<string id="trade_dialog_petrenko_232"><text>За один артефакт первого уровня могу предложить четыре ВОГ-25. Берёшь?</text></string>
+<string id="trade_dialog_petrenko_233"><text>Четыре пачки стандартных патронов за один простой артефакт.</text></string>
+<string id="trade_dialog_petrenko_234"><text>Пять пачек простых, четыре снайперских или три бронебойных за артефакт второго уровня... Какие выберешь?</text></string>
+<string id="trade_dialog_petrenko_235"><text>Даю сто пятьдесят простых патронов за артефакт первого уровня.</text></string>
+
+<string id="trade_dialog_petrenko_2311"><text>Давай штатные снайперские 7Н1...</text></string>
+<string id="trade_dialog_petrenko_2312"><text>Мне нужны снайперские бронебойные патроны 7Н14...</text></string>
+<string id="trade_dialog_petrenko_2313"><text>Возьму бронебойные 7Н26...</text></string>
+<string id="trade_dialog_petrenko_2321"><text>По рукам.</text></string>
+<string id="trade_dialog_petrenko_2331"><text>Сто двадцать штук... беру.</text></string>
+<string id="trade_dialog_petrenko_2341"><text>Давай пять простых, держи вот арт.</text></string>
+<string id="trade_dialog_petrenko_2342"><text>Вот артефакт. Снайперские возьму.</text></string>
+<string id="trade_dialog_petrenko_2343"><text>Бронебойные - они кровососа враз валят. Бери арт...</text></string>
+<string id="trade_dialog_petrenko_2351"><text>Простой арт у меня есть, возьму.</text></string>
+
+<string id="trade_dialog_petrenko_321"><text>"Витязь"? Отличный ствол, беру...</text></string>
+<string id="trade_dialog_petrenko_322"><text>АК-104 "Тактик" возьму...</text></string>
+<string id="trade_dialog_petrenko_323"><text>Всю жизнь мечтал из "Винтореза" пострелять...</text></string>
+<string id="trade_dialog_petrenko_323_2"><text>Вал должен быть хорошим стволом...</text></string>
+
+<string id="trade_dialog_petrenko_331"><text>За "Витязь" - артефакт третьего уровня возьму. Согласен?</text></string>
+<string id="trade_dialog_petrenko_332"><text>АК-104 "Тактик" в обмен на два арта третьего уровня. Имеешь такие?</text></string>
+<string id="trade_dialog_petrenko_333"><text>"Винторез" только в обмен на один отличный артефакт и один попроще. Только смотри, оптика не входит в комплект, за коллиматорный прицел отдельно платить придётся... Берёшь?</text></string>
+<string id="trade_dialog_petrenko_333_2"><text>"Вал" только в обмен на один отличный артефакт и два попроще. Только смотри, оптика не входит в комплект, за коллиматорный прицел отдельно платить придётся... Берёшь?</text></string>
+
+<string id="trade_dialog_petrenko_3311"><text>Да, согласен...</text></string>
+<string id="trade_dialog_petrenko_3321"><text>Да, есть они у меня...</text></string>
+<string id="trade_dialog_petrenko_3331"><text>Конечно, беру!</text></string>
+
+<string id="trade_dialog_petrenko_42"><text>Что хочешь за них?</text></string>
+<string id="trade_dialog_petrenko_43"><text>За три аптечки один арт второго уровня или два первого... Согласен?</text></string>
+<string id="trade_dialog_petrenko_441"><text>Бери, вот второго, что сделаешь...</text></string>
+<string id="trade_dialog_petrenko_442"><text>Вот пара первого, держи...</text></string>
+
+<string id="trade_dialog_petrenko_521"><text>"Кобра" не помешала бы...</text></string>
+<string id="trade_dialog_petrenko_521_2"><text>"Ракурс" хотел бы...</text></string>
+<string id="trade_dialog_petrenko_521_3"><text>"ОКП" хороший прицел...</text></string>
+<string id="trade_dialog_petrenko_522"><text>Глушитель к СВД хочу...</text></string>
+<string id="trade_dialog_petrenko_523"><text>Глушитель к АК-74 точно пригодится...</text></string>
+<string id="trade_dialog_petrenko_524"><text>Глушитель к автоматам под 7,62 нужен...</text></string>
+<string id="trade_dialog_petrenko_525"><text>А есть что-нибудь этакое... необычное?</text></string>
+
+<string id="trade_dialog_petrenko_531"><text>Такой прицел обойдётся тебе в два арта второго уровня. Что скажешь?</text></string>
+<string id="trade_dialog_petrenko_532"><text>Хоть сейчас обменяю на арт второго уровня.</text></string>
+<string id="trade_dialog_petrenko_5351"><text>Необычное? Ну, есть подстволыный гранатомёт к "Грозе". Последний остался. Их и было-то несколько штук всего. Такое оружие мало у кого есть, чисто для спецов. Интересует? За артефакт третьего уровня отдам.</text></string>
+<string id="trade_dialog_petrenko_5352"><text>Хм... сейчас, пожалуй, что и нет. Хотя привозят иногда довольно редкие экземпляры. Ты забегай почаще, дорогу знаешь.</text></string>
+
+<string id="trade_dialog_petrenko_5361"><text>А что, я возьму, пожалуй. Вот арт.</text></string>
+<string id="trade_dialog_petrenko_5362"><text>Ладно, тогда увидимся.</text></string>
+
+<string id="trade_dialog_petrenko_5311"><text>Боялся, что совсем заломишь цену, а так вполне ещё по-божески. Принимай арты.</text></string>
+<string id="trade_dialog_petrenko_5321"><text>Не вопрос. Вот, держи...</text></string>
+
+<string id="trade_dialog_petrenko_6"><text>Передумал, пока ничего не буду брать.</text></string>
+<string id="trade_dialog_petrenko_61"><text>Слишком много просишь...</text></string>
+
+<string id="trad_dialog_sanya_0"><text>Я хочу поменять артефакты, покажи, что у тебя есть.</text></string>
+<string id="trad_dialog_sanya_1"><text>Пожалуйста. Смотри, выбирай...</text></string>
+
+<string id="trad_dialog_sakharov_0"><text>Принёс кое-какие артефакты...</text></string>
+<string id="trad_dialog_sakharov_1"><text>Хотите посмотреть то, что мы можем предложить за ваши находки? Давайте...</text></string>
+<string id="trad_dialog_sakharov_2"><text>Да, давайте глянем...</text></string>
+<string id="trad_dialog_sakharov_3"><text>Хорошо, хорошо...</text></string>
+
+<string id="zub_zapiski_0"><text>Ты интересуешься всякой информацией, как я понял. Всякие редкие бумажки тебе тащить?</text></string>
+<string id="zub_zapiski_1"><text>Правильно мыслишь. Если найдёшь чего интересного - приноси. Я заинтересован в такого рода вещах.</text></string>
+<string id="zub_zapiski_2"><text>Понял, принесу, если попадётся чего...</text></string>
+
+<string id="trade_informator_0"><text>Я тебе тут принёс кое-чего... Глянешь?</text></string>
+<string id="trade_informator_1"><text>Принёс говоришь? Ну давай, показывай.</text></string>
+<string id="trade_informator_2"><text>Смотри.</text></string>
+<string id="trade_informator_3"><text>Так-с, так-с.</text></string>
+
+                                                                  <!-- Бартер Скряга -->
+	
+<string id="trade_dialog_skraga_0"><text>Не подгонишь кое-какой товар?</text></string>
+<string id="trade_dialog_skraga_1"><text>Могу сменять. Артефакты есть не коцанные? Пользованные не приму, так и знай.\nТебе что именно нужно?</text></string>
+<string id="trade_dialog_skraga_2"><text>Патроны, гранаты...</text></string>
+<string id="trade_dialog_skraga_3"><text>Оружие хорошее...</text></string>
+<string id="trade_dialog_skraga_4"><text>Для поправки здоровья...</text></string>
+<string id="trade_dialog_skraga_5"><text>Принадлежности для ремонта...</text></string>
+<string id="trade_dialog_skraga_6"><text>Может есть в наличии патроны .338 Lapua Magnum... или обвесы...</text></string>
+<string id="trade_dialog_skraga_21"><text>Из боеприпасов за простые артефакты:\n1. Патроны 5,56 для натовских стволов\n2. Гранаты Ф-1\n3. Гранаты к подствольнику НАТО\n4. Барабан с патронами 5,56x45 мм\nЗа арты второго уровня:\n1. Патроны 7,62 НАТО</text></string>
+<string id="trade_dialog_skraga_54"><text>Ничего не нужно, артов нет...</text></string>
+<string id="trade_dialog_skraga_22"><text>Давай патроны 5,56...</text></string>
+<string id="trade_dialog_skraga_23"><text>Гранаты нужны...</text></string>
+<string id="trade_dialog_skraga_24"><text>Гранаты к подстволу буду брать...</text></string>
+<string id="trade_dialog_skraga_25"><text>Барабан буду брать...</text></string>
+<string id="trade_dialog_skraga_26"><text>Натовские буду брать..</text></string>
+<string id="trade_dialog_skraga_222"><text>За один арт первого уровня могу подогнать пять пачек простых патронов. Ну что?</text></string>
+<string id="trade_dialog_skraga_221"><text>Давай пять простых...</text></string>
+<string id="trade_dialog_skraga_232"><text>Три гранаты - один простенький арт... Берёшь?</text></string>
+<string id="trade_dialog_skraga_231"><text>Гранаты нужны, а то бы и не обращался.</text></string>
+<string id="trade_dialog_skraga_242"><text>Четыре выстрела - артефакт первого уровня... Берёшь?</text></string>
+<string id="trade_dialog_skraga_241"><text>Беру, нужны сильно...</text></string>
+<string id="trade_dialog_skraga_252"><text>Один барабан. За один простенький арт... Согласен?</text></string>
+<string id="trade_dialog_skraga_251"><text>Ага. Давай.</text></string>
+<string id="trade_dialog_skraga_262"><text>За один арт второго уровня могу подогнать четыре пачки простых патронов. Ну что?</text></string>
+<string id="trade_dialog_skraga_261"><text>Ага, беру.</text></string>
+<string id="trade_dialog_skraga_666"><text>Нет, в другой раз...</text></string>
+
+<string id="trade_dialog_skraga_31"><text>Из оружия могу предложить: \n1.Пистолет HK USP\n2.Пистолет FN FNX-45\n3.Пистолет Springfield 1911</text></string>
+<string id="trade_dialog_skraga_311"><text>Из оружия могу предложить: \n1.Ружьё Benelli M4 Super 90 (M1014)\n2.Пистолет HK USP\n3.Пистолет FN FNX-45\n4.Пистолет Springfield 1911</text></string>
+<string id="trade_dialog_skraga_32"><text>Benelli M4 Super 90 (M1014)? Ладно, давай попробую.</text></string>
+<string id="trade_dialog_skraga_33"><text>Ёрш твою медь, давно хотел USP в руках подержать!</text></string>
+<string id="trade_dialog_skraga_34"><text>FN FNX-45? Ну давай посмотрим на него.</text></string>
+<string id="trade_dialog_skraga_35"><text>Springfield 1911! Да это же мировая классика, беру!</text></string>
+<string id="trade_dialog_skraga_322"><text>Прошу за него пять артов второго уровня или два третьего. Что-нибудь класса "Пустышка" тоже сгодится. Если не жалко, конечно.</text></string>
+<string id="trade_dialog_skraga_321"><text>Вот, забирай пять второго...</text></string>
+<string id="trade_dialog_skraga_3211"><text>Забирай скупердяй, два третьего...</text></string>
+<string id="trade_dialog_skraga_3212"><text>Жалко, но что поделать. Очень уж глянулась мне эта ружбайка. Вот арт.</text></string>
+<string id="trade_dialog_skraga_332"><text>Три арта второго уровня - и делай с ним, что хочешь.</text></string>
+<string id="trade_dialog_skraga_331"><text>Вот твои артефакты.</text></string>
+<string id="trade_dialog_skraga_342"><text>Давай один артефакт третьего уровня - и он твой.</text></string>
+<string id="trade_dialog_skraga_341"><text>Держи.</text></string>
+<string id="trade_dialog_skraga_352"><text>Всего два арта второго уровня - и можешь владеть.</text></string>
+<string id="trade_dialog_skraga_351"><text>Забирай артефакты.</text></string>
+<string id="trade_dialog_skraga_41"><text>Пока могу предложить:\n1. Аптечки за простенькие артефакты\n2. Антирады за артефакты второго уровня</text></string>
+<string id="trade_dialog_skraga_42"><text>Аптечки возьму...</text></string>
+<string id="trade_dialog_skraga_43"><text>В Зоне без антирадов не проживёшь...</text></string>
+<string id="trade_dialog_skraga_422"><text>За пару военных аптечек - один артефакт первого уровня... Согласен?</text></string>
+<string id="trade_dialog_skraga_421"><text>Бери, что сделаешь...</text></string>
+<string id="trade_dialog_skraga_432"><text>Пять антирадов в обмен на арт второго уровня... Берёшь?</text></string>
+<string id="trade_dialog_skraga_431"><text>Беру-беру... Не понадобится самому, обменяю...</text></string>
+<string id="trade_dialog_skraga_51"><text>Ремкомплекты за артефакты второго уровня.</text></string>
+<string id="trade_dialog_skraga_52"><text>Для брони возьму.</text></string>
+<string id="trade_dialog_skraga_53"><text>Оружейные больше нужны.</text></string>
+<string id="trade_dialog_skraga_522"><text>За четыре комплекта один арт... Согласен?</text></string>
+<string id="trade_dialog_skraga_521"><text>Согласен, что сделаешь...</text></string>
+<string id="trade_dialog_skraga_532"><text>Четыре оружейных комплекта в обмен на артефакт неплохой... Берёшь?</text></string>
+<string id="trade_dialog_skraga_531"><text>Да, возьму. Оружие часто выходит из строя...</text></string>
+<string id="trade_dialog_skraga_61"><text>Пока могу предложить:\n1. 338 Lapua Magnum\n2. 338 Lapua Magnum AP\n3. Глушитель 5.56\n4. Глушитель 7.62 НАТО</text></string>
+<string id="trade_dialog_skraga_62"><text>Простые возьму...</text></string>
+<string id="trade_dialog_skraga_63"><text>Бронебойные давай...</text></string>
+<string id="trade_dialog_skraga_64"><text>Глушитель под 5.56x45 возьму...</text></string>
+<string id="trade_dialog_skraga_65"><text>Глушитель под 7.62x51 НАТО бы взял...</text></string>
+<string id="trade_dialog_skraga_622"><text>За 5 пачек простых плати артефактом третьего уровня... Согласен?</text></string>
+<string id="trade_dialog_skraga_621"><text>По рукам.</text></string>
+<string id="trade_dialog_skraga_632"><text>За 3 пачки бронебойных с тебя артефакт третьего уровня... Устраивает?</text></string>
+<string id="trade_dialog_skraga_631"><text>Да, буду брать.</text></string>
+<string id="trade_dialog_skraga_642"><text>Глушитель под 5.56x45 - артефакт второго уровня. Нужен?</text></string>
+<string id="trade_dialog_skraga_641"><text>Беру-беру...</text></string>
+<string id="trade_dialog_skraga_652"><text>Глушитель под 7.62x51 НАТО - артефакт второго уровня. Согласен?</text></string>
+<string id="trade_dialog_skraga_651"><text>Возьму, пожалуй.</text></string>
+
+                                                                    <!-- Бартер Жила -->
+
+<string id="jila_start_dialog_101"><text>И что за личность и без охраны? Ты ко мне или как?</text></string>
+<string id="jila_start_dialog_102"><text>К тебе? А ты кто?</text></string>
+<string id="jila_start_dialog_103"><text>Вот те раз! Меня и не знают! Абыдно! Я же тут всех корешей кормлю, можно сказать. Они ж без папы-Жилы и двух дней не протянут. Странно, что про меня не слышал... Или ты новичок-лопушок, подорожник? Как тебя называть-то, незнающий?</text></string>
+<string id="jila_start_dialog_104"><text>Я Меченный, не слыхал? А ты, значит, повар?</text></string>
+<string id="jila_start_dialog_105"><text>Какой, ляд, повар! Я жрачку собираю для братанов. Меняю её у сталкерюг залётных ну и, бывает, с мертвяков забираю... Колбаса, консервы и прочие прелести нормальной еды. Сечёшь?</text></string>
+<string id="jila_start_dialog_106"><text>Типа завхоз, понял. А если нет "мертвяков" тогда что в дело идёт?</text></string>
+<string id="jila_start_dialog_107"><text>Да всяко-разно... Людоедством не занимаемся, если ты про это. Свининку иногда, кабанчика... К Игнату вот время от времени в Кишку можно наведаться. Он хоть вонь эту монстрячью научился почти на нет сводить. Короче: жратва ваша - снаряга наша! Подваливай, Меченный...</text></string>
+<string id="jila_start_dialog_108"><text>Посмотрим.</text></string>
+<string id="jila_start_dialog_201"><text>Ага! Снова ты? И снова без охраны. Что на этот раз?</text></string>
+	
+<string id="trade_dialog_jlob_0"><text>Всё жратву запасаешь? Думаю, есть у меня для вас кое-что на обмен...</text></string>
+<string id="trade_dialog_jlob_1"><text>Ну, показывай, что имеешь. Учти, морозильников тута нема, а портится всё быстро. Так что, если тухлятину притащил, сам её хавать будешь.\nТак чем затариться хочешь?</text></string>
+<string id="trade_dialog_jlob_2"><text>Какие патроны есть? Или ещё что?</text></string>
+<string id="trade_dialog_jlob_3"><text>Волынами фарцуешь?</text></string>
+<string id="trade_dialog_jlob_4"><text>Для здоровья что имеешь?</text></string>
+<string id="trade_dialog_jlob_5"><text>Для ремонта подгонишь что-нибудь?</text></string>
+<string id="trade_dialog_jlob_6"><text>Слышал, что у тебя ПДА всякие имеются?</text></string>
+<string id="trade_dialog_jlob_21"><text>Патронов не много:\n1. Патроны 5.45х39 мм к калашу. Пять пачек простых - за пяток консерв\n2. Гранаты РГД-5. Два энергетика - штука\n3. Патроны 9x19 мм, обычные - три банки энергетика за две пачки\n4. Граната Ф-1 - одна консерва и к ней энергетик</text></string>
+<string id="trade_dialog_jlob_54"><text>Пока ничего не нужно...</text></string>
+<string id="trade_dialog_jlob_22"><text>Патроны к калашу буду брать.</text></string>
+<string id="trade_dialog_jlob_23"><text>Гранаты нужны.</text></string>
+<string id="trade_dialog_jlob_24"><text>Девятки давай.</text></string>
+<string id="trade_dialog_jlob_25"><text>Эфку возьму.</text></string>
+<string id="trade_dialog_jlob_222"><text>Покажи консервы для начала...</text></string>
+<string id="trade_dialog_jlob_221"><text>Да вот они, не бзди...</text></string>
+<string id="trade_dialog_jlob_232"><text>Щас бы энергетика вмазать, а то в сон что-то клонит...</text></string>
+<string id="trade_dialog_jlob_231"><text>Не вопрос, держи. Гони гранатку...</text></string>
+<string id="trade_dialog_jlob_242"><text>Пить охота, с водой здесь вообще крантец...</text></string>
+<string id="trade_dialog_jlob_241"><text>На, промочи горло... </text></string>
+<string id="trade_dialog_jlob_252"><text>Базара нет. Закусон и запивон нам обеспечь.</text></string>
+<string id="trade_dialog_jlob_251"><text>Поберегли бы печень. Держи...</text></string>
+<string id="trade_dialog_jlob_666"><text>Нет, в другой раз...</text></string>
+<string id="trade_dialog_jlob_31"><text>Волыну хочешь? Ну выбирай:\n1. Пистолет-пулемёт СР-2МП «Вереск» за 15 консерв\n2. Пистолет-пулемёт "Бизон-2" в отличном состоянии - за 20 армейских сухпайков\n3. Пистолет SIG Sauer P250 - всего за 10 армейских сухпайков\n4. Карабин Молот ОП-СКС за 8 охотничьих колбас\n5. Глушитель 9мм за 5 охотничьих колбас</text></string>
+<string id="trade_dialog_jlob_32"><text>СР-2МП «Вереск» давай.</text></string>
+<string id="trade_dialog_jlob_33"><text>"Бизон" брать буду.</text></string>
+<string id="trade_dialog_jlob_34"><text>SIG Sauer P250 возьму.</text></string>
+<string id="trade_dialog_jlob_35"><text>Молот ОП-СКС заверни.</text></string>
+<string id="trade_dialog_jlob_36"><text>Глушитель давай.</text></string>																					   
+<string id="trade_dialog_jlob_322"><text>Консервы зарисуй...</text></string>
+<string id="trade_dialog_jlob_321"><text>Не боись, не кину...</text></string>
+<string id="trade_dialog_jlob_332"><text>Сухпайки принёс? Не просроченные?</text></string>
+<string id="trade_dialog_jlob_331"><text>Даже если и просроченные, всё лучше вашего хрючева. Забирай давай.</text></string>
+<string id="trade_dialog_jlob_342"><text>Где сухпайки? Не вскрытые хоть?</text></string>
+<string id="trade_dialog_jlob_341"><text>Держи, делец, можешь проверить...</text></string>
+<string id="trade_dialog_jlob_352"><text>Принёс колбаску?</text></string>
+<string id="trade_dialog_jlob_351"><text>Держи, крохобор...</text></string>
+<string id="trade_dialog_jlob_362"><text>Колбаска где?</text></string>
+<string id="trade_dialog_jlob_361"><text>Забирай, барыга</text></string>																				   
+<string id="trade_dialog_jlob_41"><text>Здоровье нужно поправить? Вот, гляди:\n1. Аптечка за две охотничьих колбаски\n2. Водка за четыре консервы</text></string>
+<string id="trade_dialog_jlob_42"><text>Аптечку возьму...</text></string>
+<string id="trade_dialog_jlob_43"><text>Водочку давай...</text></string>
+<string id="trade_dialog_jlob_422"><text>Колбаску гони. Не стухла хоть?</text></string>
+<string id="trade_dialog_jlob_421"><text>Да вроде есть можно. Сам понюхай...</text></string>
+<string id="trade_dialog_jlob_432"><text>Консервы нарисуй быренько...</text></string>
+<string id="trade_dialog_jlob_431"><text>Одна, две... вот, четыре банки.</text></string>
+<string id="trade_dialog_jlob_51"><text>Есть кое-какие ремкомплекты:\n1. Для брони - три банки энергетика\n2. Для оружия - армейский сухпаёк за два комплекта</text></string>
+<string id="trade_dialog_jlob_52"><text>Для брони возьму.</text></string>
+<string id="trade_dialog_jlob_53"><text>Оружейные больше нужны.</text></string>
+<string id="trade_dialog_jlob_522"><text>Энергетики покажи...</text></string>
+<string id="trade_dialog_jlob_521"><text>Забирай, вот три банки...</text></string>
+<string id="trade_dialog_jlob_532"><text>О, нормального хавчика хоть порубать!</text></string>
+<string id="trade_dialog_jlob_531"><text>Губу особо не раскатывай, сухпайки достать не так-то просто. Но сегодня - гуляйте...</text></string>
+<string id="trade_dialog_jlob_61"><text>Слышал? Ну... Ладно, есть чутка, могу обменять: десять консерв или пять свежих охотничьих колбасок, за один наладонник. Только учти, они не включаются, может, просто аккумулятор сдох, а может и совсем того...</text></string>
+<string id="trade_dialog_jlob_62"><text>Ладно, давай возьму, может, заряжу.</text></string>
+<string id="trade_dialog_jlob_622"><text>На что меняешь?</text></string>
+<string id="trade_dialog_jlob_621"><text>Забирай, вот консервы...</text></string>
+<string id="trade_dialog_jlob_641"><text>Охотничья, как и просил...</text></string>
+<string id="trade_dialog_jlob_64"><text>Не имею пока столько. Мож, ещё подойду.</text></string>
+
+                                                                      <!-- Бартер Шерстюк -->
+
+<string id="trade_dialog_sherstyk_0"><text>Можешь подогнать кое-какое снаряжение?</text></string>
+<string id="trade_dialog_sherstyk_1"><text>Почему нет?! Тащи водочку и будет тебе счастье... По количеству пузырей.\nЧто именно нужно?</text></string>
+<string id="trade_dialog_sherstyk_2"><text>Патроны, гранаты...</text></string>
+<string id="trade_dialog_sherstyk_3"><text>Автомат или пулемёт можно достать?</text></string>
+<string id="trade_dialog_sherstyk_4"><text>Говорят, у военных лекарства есть уникальные или продукты...</text></string>
+<string id="trade_dialog_sherstyk_5"><text>Я слышал, разгрузки у вас хорошие...</text></string>
+<string id="trade_dialog_sherstyk_21"><text>Ну... могу обменять на водку:\n1. Патроны 5,45х39 мм к АК-74\n2. Гранаты Ф-1\n3. Гранаты РГО\n4. К пулемёту ПКМ патронные ленты 7.62х54 мм R\n5. Патроны 7,62х39 мм к АКМ\n6. Барабан с патронами 5,45х39 мм к РПК</text></string>
+<string id="trade_dialog_sherstyk_54"><text>Пока ничего не нужно...</text></string>
+<string id="trade_dialog_sherstyk_22"><text>Патроны к АК-74 буду брать...</text></string>
+<string id="trade_dialog_sherstyk_23"><text>Давай гранаты, эфка очень помогает от нечисти...</text></string>
+<string id="trade_dialog_sherstyk_24"><text>Для ПКМ? Возьму, пожалуй...</text></string>
+<string id="trade_dialog_sherstyk_25"><text>РГО? Это те, которые с контактным взрывателем? Сколько просишь?</text></string>
+<string id="trade_dialog_sherstyk_55"><text>Патроны к АКМ буду брать...</text></string>
+<string id="trade_dialog_sherstyk_56"><text>Барабан к РПК возьму...</text></string>
+<string id="trade_dialog_sherstyk_222"><text>Могу дать пять пачек простых патронов за три бутылки.</text></string>
+<string id="trade_dialog_sherstyk_221"><text>Пять пачек, возьму.</text></string>
+<string id="trade_dialog_sherstyk_232"><text>Гранаток, говоришь, хочешь?</text></string>
+<string id="trade_dialog_sherstyk_231"><text>Гранаты нужны, а то бы и не обращался.</text></string>
+<string id="trade_dialog_sherstyk_242"><text>Один короб патронов - шесть бутылок.</text></string>
+<string id="trade_dialog_sherstyk_252"><text>Сейчас прикину... </text></string>
+<string id="trade_dialog_sherstyk_251"><text>За такие гранаты не жалко. Согласный я.</text></string>
+<string id="trade_dialog_sherstyk_241"><text>Согласен...</text></string>
+<string id="trade_dialog_sherstyk_552"><text>Могу дать четыре пачки простых патронов за четыре бутылки.</text></string>
+<string id="trade_dialog_sherstyk_551"><text>Четыре пачки, возьму.</text></string>
+<string id="trade_dialog_sherstyk_562"><text>Один барабан за две бутылки.</text></string>
+<string id="trade_dialog_sherstyk_561"><text>Беру.</text></string>
+<string id="trade_dialog_sherstyk_666"><text>Нет, в другой раз.</text></string>
+<string id="trade_dialog_sherstyk_31"><text>Могу достать:\n1. Пистолет Walther P99\n2. Пистолет "ОЦ-33 «Пернач»", очень надёжная машинка\n3. РПК-74 - хоть и несколько тяжеловат, но очень удобен и валит нечисть враз\n4. Легендарный советский АКМ</text></string>
+<string id="trade_dialog_sherstyk_32"><text>Walther P99? Сколько просишь?</text></string>
+<string id="trade_dialog_sherstyk_3222"><text>Пернач почём?</text></string>
+<string id="trade_dialog_sherstyk_33"><text>За пулемёт водки много нужно?</text></string>
+<string id="trade_dialog_sherstyk_34"><text>За сколько "легенду" отдашь?</text></string>
+<string id="trade_dialog_sherstyk_322"><text>Всего-то восемь пузырей. Согласен?</text></string>
+<string id="trade_dialog_sherstyk_3223"><text>Всего десять пузырей! Согласен?</text></string>
+<string id="trade_dialog_sherstyk_3221"><text>Тащи дюжину... нет! Пятнадцать штук - и будет тебе Walther P99. Согласен?</text></string>
+<string id="trade_dialog_sherstyk_321"><text>Ладно, восемь, так восемь...</text></string>
+<string id="trade_dialog_sherstyk_3225"><text>Согласен, вот десять бутылок...</text></string>
+<string id="trade_dialog_sherstyk_3224"><text>Пятнадцать бутылей. Ну как?</text></string>
+<string id="trade_dialog_sherstyk_3226"><text>Вот они, все пятнадцать.</text></string>
+<string id="trade_dialog_sherstyk_332"><text>Пулемёт - вещь не маленькая, трудно вынести... Раскошелиться тебе придётся. Двадцать бутылок, идёт?</text></string>
+<string id="trade_dialog_sherstyk_3321"><text>Пулемёт - вещь не маленькая, трудно вынести... Раскошелиться тебе придётся. Сорок бутылок, идёт?</text></string>
+<string id="trade_dialog_sherstyk_3311"><text>Набрал я сорок пузырей. На!</text></string>
+<string id="trade_dialog_sherstyk_331"><text>Согласен! Давай!</text></string>
+<string id="trade_dialog_sherstyk_341"><text>Уступлю за пятнадцать бутылок беленькой. По рукам?</text></string>
+<string id="trade_dialog_sherstyk_342"><text>Уступлю за двадцать бутылок беленькой. По рукам?</text></string>
+<string id="trade_dialog_sherstyk_3411"><text>Слышишь, звенят родимые у меня в рюкзаке? Принимай.</text></string>
+
+<string id="trade_dialog_sherstyk_41"><text>Да врут, собаки... Нам эти новые штуки, которые на выставках показывают, и не дают. Обычные наши, армейские, аптечки да сухпайки.</text></string>
+<string id="trade_dialog_sherstyk_50"><text>Ага, для спецуры подкинули недавно партию. Все нахваливают. Не штамповка дешёвая, сам понимаешь... Так что обойдётся тебе такая в двадцать пять бутылок. Потянешь? А если согласен ту, что на тебе в мой обменный фонд пожертвовать, то сторгуемся на ящик.</text></string>
+<string id="trade_dialog_sherstyk_51"><text>По рукам. Надеюсь, она того стоит. Принимай, ровно двадцать бутылей...</text></string>
+<string id="trade_dialog_sherstyk_52"><text>Ого, горазд ты цену ломить! Позже подойду, может.</text></string>
+<string id="trade_dialog_sherstyk_511"><text>Отлично! Ручаюсь, потом ещё сам придёшь Шерстюку "спасибо" сказать. Знаешь ведь, в какой таре я предпочитаю благодарности принимать? Шутка.</text></string>
+<string id="trade_dialog_sherstyk_42"><text>Сколько дашь аптек?</text></string>
+<string id="trade_dialog_sherstyk_43"><text>Сухпайков бы не мешало...</text></string>
+<string id="trade_dialog_sherstyk_422"><text>Аптечку за бутылку.</text></string>
+<string id="trade_dialog_sherstyk_4221"><text>За две бутылки? Ну, дам аптечку. Одну.</text></string>
+<string id="trade_dialog_sherstyk_102"><text>Сухпаёк за бутылку.</text></string>
+<string id="trade_dialog_sherstyk_1020"><text>Две бутылки сухпаёк.</text></string>
+<string id="trade_dialog_sherstyk_1022"><text>Три бутылки сухпаёк.</text></string>
+<string id="trade_dialog_sherstyk_421"><text>Договорились!</text></string>
+<string id="trade_dialog_sherstyk_101"><text>Отлично!</text></string>
+
+                                                                        <!-- Бартер Кузнецов -->
+	
+<string id="trade_dialog_kuznezov_0"><text>Я насчёт того, обмена. Мне кое-что нужно...</text></string>
+<string id="trade_dialog_kuznezov_1"><text>Тащи водочку, может, чем и помогу. По количеству пузырей.\nЧто именно хочешь-то?</text></string>
+<string id="trade_dialog_kuznezov_12"><text>Вали-ка ты отсюда, Меченный. Я слышал, тебя видели когда однокашника моего, Серёгу, в Тёмной долине убили. Знал бы точно, что это ты - пристрелил бы!</text></string>
+<string id="trade_dialog_kuznezov_13"><text>Ухожу, ухожу.</text></string>
+<string id="trade_dialog_kuznezov_2"><text>Патроны, гранаты, может, броник хороший...</text></string>
+<string id="trade_dialog_kuznezov_3"><text>Автомат или пулемёт можно достать?</text></string>
+<string id="trade_dialog_kuznezov_4"><text>Говорят, у военных лекарства есть уникальные...</text></string>
+<string id="trade_dialog_kuznezov_5"><text>Я слышал, народ разгрузки армейские нахваливает...</text></string>
+<string id="trade_dialog_kuznezov_21"><text>Ну... могу обменять на водку:\n1. Патроны 5,45х39 мм к АК-74\n2. Гранаты РГД-5\n3. Гранаты РГО\n4. Патроны 7,62х39 мм</text></string>
+<string id="trade_dialog_kuznezov_51"><text>Ха! Ещё бы! Армейское - значит, надёжное. Нам как раз для спецуры подкинули недавно партию. С такой можно пол склада РАВ нашего полка на себе утащить. Не штамповка дешёвая, сам понимаешь... Так что обойдётся она тебе в двадцать пять бутылок. Потянешь? А если согласен ту, что на тебе в мой обменный фонд пожертвовать, то сторгуемся на ящик.</text></string>
+<string id="trade_dialog_kuznezov_52"><text>Ха! Ещё бы! Армейское - значит, надёжное. Вот только сейчас достать тебе такую не смогу, мало их совсем на складе осталось, все под отчёт. Может, позже подбросят.</text></string>
+<string id="trade_dialog_kuznezov_511"><text>По рукам. Надеюсь, она того стоит. Принимай, ровно двадцать бутылей...</text></string>
+<string id="trade_dialog_kuznezov_512"><text>Ого, горазд ты цену ломить! Позже загляну... наверное.</text></string>
+<string id="trade_dialog_kuznezov_5111"><text>Отлично! Ручаюсь, потом ещё сам придёшь Кузнецову "спасибо" сказать. Знаешь ведь, в какой таре я предпочитаю благодарности принимать? Шутка.</text></string>
+<string id="trade_dialog_kuznezov_521"><text>Жаль... забегу в другой раз тогда.</text></string>
+<string id="trade_dialog_kuznezov_54"><text>Пока ничего не нужно...</text></string>
+<string id="trade_dialog_kuznezov_22"><text>Патроны к АК-74 буду брать...</text></string>
+<string id="trade_dialog_kuznezov_23"><text>Давай гранаты, они очень помогают от нечисти...</text></string>
+<string id="trade_dialog_kuznezov_24"><text>К АКМ? К АК-47? Возьму, пожалуй...</text></string>
+<string id="trade_dialog_kuznezov_25"><text>РГО? Они же от удара срабатывают, да? Такие мне нужны!</text></string>
+<string id="trade_dialog_kuznezov_222"><text>Могу дать пять пачек простых патронов за четыре бутылки.</text></string>
+<string id="trade_dialog_kuznezov_221"><text>Пять пачек, возьму...</text></string>
+<string id="trade_dialog_kuznezov_232"><text>Две гранаты - одна водка. Берёшь?</text></string>
+<string id="trade_dialog_kuznezov_231"><text>Гранаты нужны, а то бы и не обращался.</text></string>
+<string id="trade_dialog_kuznezov_242"><text>Обычные патроны - пять бутылок за четыре пачки...</text></string>
+<string id="trade_dialog_kuznezov_241"><text>Согласен...</text></string>
+<string id="trade_dialog_kuznezov_252"><text>Они всем нужны, да не всем жаба баланс подписывать соглашается. Дай-ка прикинуть... </text></string>
+<string id="trade_dialog_kuznezov_251"><text>Да уж, моя тоже душит, но ничего, как-нибудь договорюсь с ней.</text></string>
+<string id="trade_dialog_kuznezov_666"><text>Ладно, может быть, в другой раз...</text></string>
+<string id="trade_dialog_kuznezov_31"><text>Есть возможность получить АКС-74.</text></string>
+<string id="trade_dialog_kuznezov_32"><text>АКС-74? Сколько просишь?</text></string>
+<string id="trade_dialog_kuznezov_322"><text>Десяти бутылочек хватит... Согласен?</text></string>
+<string id="trade_dialog_kuznezov_321"><text>Конечно! Вот они, пузырики...</text></string>
+<string id="trade_dialog_kuznezov_41"><text>Примерно так... Военные всегда здоровье берегут, но на продажу аптечки у меня только простые.</text></string>
+<string id="trade_dialog_kuznezov_42"><text>А сколько просишь?</text></string>
+<string id="trade_dialog_kuznezov_422"><text>За пару обычных аптечек...</text></string>
+<string id="trade_dialog_kuznezov_421"><text>Договорились!</text></string>
+<string id="trade_dialog_kuznezov_667"><text>Смотри сам...</text></string>
+
+<string id="enc_price"><text>Бартер</text></string>
+                                                                     <!-- Сидор -->
+<string id="price_sidor_text"><text>%c[255,160,160,160]Боеприпасы, за 1 артефакт первого уровня:\n%c[default]• 12х70 дробь - 5 пачек\n• 12x76 картечь - 3 пачки\n• 12x76 жакан - 2 пачки\n \n%c[255,160,160,160]Оружие:\n%c[default]• ТОЗ-34 "Вертикалка" - 2 арта первого уровня или 1 второго\n• ТОЗ-66 - за 2 артефакта первого уровня или 1 второго\n• Короткое ружьё MP-133 - 4 артефакта первого уровня или 2 второго уровня\n \n%c[255,160,160,160]Здоровье поправить:\n%c[default]• Аптечки - 10 штук за артефакт второго, 5 за артефакт первого уровня\n• Водка - 3 бутылки за артефакт первого уровня\n• Антирады - 2 штуки за простой арт, 5 за арт получше и 15 за арт третьего уровня\n \n%c[255,160,160,160]Для ремонта:\n%c[default]• Ремкомплекты для брони или оружия - 5 штук за арт второго уровня\n• Ящик для ремкомплектов - за 2 простых артефакта</text></string>
+                                                                     <!-- Кордон -->
+<string id="price_kanistra_esc_text"><text>%c[255,160,160,160]Обмен за 1 канистру на выбор:%c[default] \n \n • Патроны 9x18 БП - 5 пачек\n • Патроны 5.45x39 - 4 пачки\n • Патроны 7.62x39 - 2 пачки\n • Патроны 12х70 дробь - 5 пачек\n • Гранаты ВОГ-25 - 3шт\n \n • Консервы - 5шт\n • Водка - 4шт\n • Аптечка - 5шт\n • Антирады - 3шт</text></string>
+                                                                     <!-- Бар -->
+<string id="price_kanistra_bar_text"><text>%c[255,160,160,160]Обмен за 1 канистру на выбор:%c[default] \n \n • Патроны 9x19 БП - 4 пачки\n • Патроны 5.45x39 - 5 пачек\n • Патроны 7.62x39 - 2 пачки\n • Патроны 12х70 дробь - 5 пачек\n • Гранаты РГД-5 - 10шт\n \n • Консервы - 7шт\n • Гранаты М406 - 3шт\n • Армейские аптечки - 3шт\n • Антирады - 3шт</text></string>
+                                                                     <!-- Сидор за модификаты -->
+<string id="price_artm_esc_text"><text>%c[255,160,160,160]Обмен за модификаты:%c[default] \n • Патроны 5.45x39 - 60 пачек\n • Патроны 5.45x39 БП - 40 пачек\n • Патроны 7.62x39 - 30 пачек\n • Патроны 7.62x39 БП - 20 пачек\n • Патроны 7.62x54R 7H1 - 35 пачек\n • Патроны 7.62x54R 7H14 - 25 пачек\n • Патроны 7.62x54 CБП - 15 пачек\n • Выстрелы ВОГ-25 - 30 шт\n • Выстрелы M406 - 30 шт\n \n%c[255,160,160,160]Обмен за мезомодификаты:%c[default] \n • Патроны 7.62x39 - 50 пачек\n • Патроны 7.62x39 БП - 35 пачек\n • Патроны 9x39 СП-6 - 20 пачек\n • Патроны 7.62x54R 7H1 - 50 пачек\n • Патроны 7.62x54R 7H14 - 40 пачек\n • Патроны 7.62x54 CБП - 30 пачек\n • Выстрелы ВОГ-25 - 50 шт\n \n%c[255,160,160,160]Обмен за гипермодификаты:%c[default] \n • Патроны 7.62x39 - 70 пачек\n • Патроны 7.62x39 БП - 50 пачек\n • Патроны 9x39 СП-6 - 30 пачек\n • Патроны 7.62x54R 7H1 - 65 пачек\n • Патроны 7.62x54R 7H14 - 55 пачек\n • Патроны 7.62x54 CБП - 45 пачек\n • Выстрелы ВОГ-25 - 70 шт\n \n%c[255,160,160,160]Обмен за абсолюты:%c[default] \n • Патроны 9x39 СП-6 - 40 пачек\n • Патроны 7.62x54R 7H1 - 80 пачек\n • Патроны 7.62x54R 7H14 - 70 пачек\n • Патроны 7.62x54 CБП - 60 пачек\n • Выстрелы ВОГ-25 - 100 шт\n • Бронежилет СКАТ-10</text></string>
+                                                                         <!-- Бармен -->
+<string id="price_barman_text"><text>%c[255,160,160,160]Боеприпасы и снаряжение:\n%c[default]• Дробь 12х70 - 90 патронов за средний артефакт\n• Картечь 12х76 - 60 патронов за арт второго уровня\n• Жакан 12х76 - 40 патронов за арт второго уровня\n• Патроны .357 Magnum - 3 пачки за простенький арт\n• К натовскому подствольнику выстрелы - 4 штуки за простой артефакт\n• Глушитель для пистолета Glock 18C - артефакт второго уровня\n \n%c[255,160,160,160]Оружие:\n%c[default]• Пистолет Glock 17 - 3 арта первого уровня\n• Пистолет Glock 18C - 1 артефакт третьего уровня + 1 второго уровня\n• Пистолет Пистолет-пулемёт BT MP9 - 1 артефакт третьего уровня\n• Дробовик МР-153 - 4 артефакта второго уровня или 1 третьего уровня + 1 первого уровня\n \n%c[255,160,160,160]Для здоровья:\n%c[default]• Аптечки - 4 штуки за простой арт, 10 - за артефакт получше\n• Водка - 2 пузыря за артефакт первого уровня, 7 - за артефакт второго уровня\n• Антирады - 1 штука за простой арт, 4 за артефакт получше, 10 - за артефакт третьего уровня\n \n%c[255,160,160,160]Для ремонта:\n%c[default]• Ремкомплекты для брони или оружия - 3 штуки за артефакт второго уровня или 1 за простой арт\n• Ящик для ремкомплектов - 3 артефакта первого уровня</text></string>
+                                                                          <!-- Петренко -->
+<string id="price_petrenko_text"><text>%c[255,160,160,160]Боеприпасы и снаряжение:\n%c[default]• Патроны 7,62х54 - 30 шт. 7Н1 или 20 шт. 7Н14, или 10 шт. 7Н26 - за артефакт первого уровня\n• Патроны 7,62х39 - 120 обычных за простой арт\n• Патроны 9x39 - 150 обычных, 120 снайперских или 90 бронебойных за артефакт второго уровня\n• Патроны 5,45х39 - 150 обычных за простой арт\n• Выстрелы для  гранатомёта - 4 ВОГ-25 за арт первого уровня\n• Глушители 5,45, 7,62 для автоматов или 7,62 для СВД -  любой за артефакт второго уровня\n• Коллиматорные прицелы: "Кобра", "Ракурс", "ОКП" - любой за 2 артефакта второго уровня\n \n%c[255,160,160,160]Оружие:\n%c[default]• Пистолет-пулемёт "Витязь-СН" - 1 артефакт третьего уровня\n• Автомат АК-104 «Тактик» - 2 артефакта третьего уровня\n• Винтовка ВСС "Винторез" - 1 артефакт третьего уровня + 1 второго уровня\n• Автомат АС «Вал» - 1 артефакт третьего уровня + 2 второго уровня\n \n%c[255,160,160,160]Медицина:\n%c[default]• Военные аптечки - 3 штуки за 2 простых арта или за 1 арт второго уровня</text></string>
+                                                                        <!-- Скряга -->
+<string id="price_scraga_text"><text>%c[255,160,160,160]Боеприпасы:\n%c[default]• Патроны 5,56x45 - 150 обычных за простой арт\n• Гранаты Ф-1 - 3 штуки за простенький арт\n• Четыре гранаты к подствольнику НАТО, за артефакт первого уровня\n• Патроны 7,62х51 НАТО - 80 обычных за арт второго уровня\n• Барабан с патронами 5,56x45 мм (100 шт) за арт первого уровня\n \n%c[255,160,160,160]Оружие:\n%c[default]• Ружьё Benelli M4 Super 90 (M1014) - 5 артефактов второго уровня или 2 третьего (может не быть в наличии)\n• Пистолет HK USP - 3 артефакта второго уровня\n• Пистолет FN FNX-45 - 1 артефакт третьего уровня\n• Пистолет Springfield 1911 - 2 артефакта второго уровня\n \n%c[255,160,160,160]Медицина:\n%c[default]• Военные аптечки - 2 штуки за артефакт первого уровня\n• Антирады - 5 штук за арт второго уровня\n \n%c[255,160,160,160]Для ремонта:\n%c[default]• Ремкомплекты для оружия или брони - 4 штуки за артефакт второго уровня\n \n%c[255,160,160,160]Патроны 338 Lapua Magnum и обвесы:\n%c[default]• Патрон .338 Lapua Magnum  - 5 пачек 1 артефакт третьего уровня\n• Патрон .338 Lapua Magnum AP - 3 пачки за 1 арт третьего уровня\n• Глушитель 5.56 - за артефакт второго уровня\n• Глушитель 7.62 НАТО - за артефакт второго уровня</text></string>
+                                                                            <!-- Ара -->
+<string id="price_ara_text"><text>%c[255,160,160,160]Боеприпасы:\n%c[default]• Патроны 5,56x45 - 100 штук обычных за 1 ПДА\n• Гранаты для подствольника М203 - 10 штук за 3 ПДА\n• Патроны 7,62х51 НАТО - 2 пачки бронебойных за 4 ПДА\n \n%c[255,160,160,160]Винтовки и обвесы:\n%c[default]• Автомат M4А1 - за 20 ПДА\n• Автомат G36 - 10 ПДА\n• Автомат SIG SG 552 Commando - за 10 ПДА\n• Подствольный гранатомёт AG36 (для G36) - за 8 ПДА\n• Коллиматорный прицел EOTech 553 - за 10 ПДА\n• Глушитель 11,43 мм. - за 5 ПДА\n \n%c[255,160,160,160]Медицина:\n%c[default]• Научные аптечки - одна штука за 1 ПДА\n• Антирад - 3 штук за 1 ПДА\n \n%c[255,160,160,160]Снаряжение:\n%c[default]• Комбинезон спецподразделений с маской-противогазом - за 10 ПДА</text></string>
+                                                                    <!-- Валера егерь -->
+<string id="price_red_forest_lesnik_text"><text>• Хвосты слепышей - 1 штука за 20 патронов дроби, 2 штуки за бутылку\n• Псевдопсов хвосты - 1 штука за 50 дроби, за 30 картечи, либо 3 пузыря\n• Копыта кабаньи - 1 за 30 дроби или 20 картечи, 2 копыта за 2 водки\n• Глаза плотей - за 50 картечи, либо 30 пуль, либо 3 пузыря\n• Щупальце кровососа - за 100 картечи или 50 пуль, ну или 10 бутылок водки</text></string>
+                                                                         <!-- Жила -->
+<string id="price_jila_text"><text>%c[255,160,160,160]Боеприпасы:\n%c[default]• Патроны 5,45х39 к калашу - 150 обычных за 5 консерв\n• Гранаты РГД-5 - одна за 2 энергетика\n• Патроны 9x19 обычные - 80 штук за 3 банки энергетика\n• Гранаты Ф-1 - одну за консерву и энергетик\n \n%c[255,160,160,160]Оружие:\n%c[default]• Пистолет-пулемёт СР-2МП «Вереск» - за 15 консерв\n• Пистолет-пулемёт "Бизон-2" - 20 армейских сухпайков\n• Пистолет SIG Sauer P250 - 10 армейских сухпайков\n• Карабин Молот ОП-СКС - за 8 охотничьих колбас\n• Глушитель 9мм. - 5 охотничьих колбас\n \n%c[255,160,160,160]Для здоровья:\n%c[default]• Аптечки - одну за 2 охотничьих колбаски\n• Водка - пузырь за 4 консервы\n \n%c[255,160,160,160]Для ремонта:\n%c[default]• Для брони ремкомплект - 3 банки энергетика\n• Для оружия ремкомплект - пара за армейский сухпаёк\n \n%c[255,160,160,160]ПДА:\n%c[default]• За один ПДА - 10 консерв или 5 свежих охотничьих колбасок</text></string>
+                                                                      <!-- Кузнецов -->
+<string id="price_kuznezov_text"><text>%c[255,160,160,160]Боеприпасы и снаряжение:\n%c[default]• Патроны 5,45х39 - 150 обычных за 4 водки\n• Гранаты РГД-5 - от 1 бутылки за 2 гранаты\n• Гранаты РГО - от 2 пузырей за штуку\n• Патроны 7,62х39 к АКМ - 120 штук обычных за 5 бутылок\n \n%c[255,160,160,160]Оружие:\n%c[default]• Автомат АКС-74 - 10 пузырей\n \n%c[255,160,160,160]Медицина:\n%c[default]• Аптечки - пока 2 обычных за пузырь, а там видно будет</text></string>
+                                                                              <!-- Шерстюк -->
+<string id="price_sherstuk_text"><text>%c[255,160,160,160]Боеприпасы и снаряжение:\n%c[default]• Патроны 5,45х39 - 150 обычных за 3 бутылки\n• Гранаты Ф-1 - пока штуку за 1 пузырь, а там видно будет\n• Гранаты РГО - от 2 бутылок за штуку\n• Пулемётная лента к ПКМ (100 шт) за 6 бутылок\n• Патроны 7,62х39 - 120 обычных за 4 бутылки\n• Барабан с патронами 5,45x39 мм (95 шт) за 2 бутылки\n \n%c[255,160,160,160]Оружие:\n%c[default]• Пистолет Walther P99 - от 8 пузырей, а там посмотрим\n• Пулемёт РПК-74 - от 20 пузырей\n• Пистолет ОЦ-33 «Пернач» - от 10 пузырей пока что\n• Автомат АКМ - не меньше 15 пузырей\n \n%c[255,160,160,160]Армейская еда и медицина:\n%c[default]• Армейские аптечки - сейчас одна за пузырь, а дальше посмотрим\n• Сухпаёк - за 1 бутылку пока</text></string>
+                                                                         <!-- Султан -->
+<string id="price_sultan_text"><text>%c[255,160,160,160]За артефакты 2-го уровня:\n%c[default]• Barska ELECTRO SIGHT AC10632\n• Aimpoint Micro T-1\n \n%c[255,160,160,160]За модификаты:\n%c[default]• Пистолет-пулемёт HK UMP под 45 калибр\n• Автомат FN F2000 Tactical (FDE)\n• Пулемёт РПК-74(П)\n• СВД\n• Карабин Сайга-12М\n \n%c[255,160,160,160]За мезомодификаты:\n%c[default]• Автомат АК-103\n• Ружьё Remington 870 (FD)\n• Снайперская винтовка СВ-98М\n• Пулемёт MG36\n• Пистолет-пулемёт TDI KRISS Vector\n• Оптический прицел ПСО-1 (4 крат)\n• Оптический прицел ELCAN DR (4 крат)\n• Оптический прицел HK Schmidt Bender\n \n%c[255,160,160,160]За гипермодификаты:\n%c[default]• Винтовка СВУ-А\n• Автомат СР-3М «Вихрь»\n \n%c[255,160,160,160]За абсолюты:\n%c[default]• Винтовка FN SCAR-H\n• Пулемёт ПКМ Тактический\n• Снайперская винтовка AWM-F</text></string>
+                                                                          <!-- Степаныч за плащи -->
+<string id="price_stepanych_plash_text"><text>%c[255,160,160,160]Пошив плащей:\n%c[default]• Коричневый плащ - две выделанные шкуры + артефакт второго уровня\n• Коричневый плащ с противогазом - две выделанные шкуры + два артефакта второго уровня\n• Чёрный плащ - четыре выделанных шкуры + артефакт третьего уровня\n• Чёрный плащ с противогазом - четыре выделанных шкуры + артефакт третьего и второго уровней\n\n%c[255,160,160,160]Ремонт плащей:\n%c[default]• За любой плащ - деньги + бутылка водки</text></string>
+
+<string id="minigame_lysyi_dialog_0"><text>Развлечёмся, Лысый? Что ставим?</text></string>
+<string id="minigame_lysyi_dialog_11"><text>Кхм... Слишком везёт тебе, Меченный. Кончились артефакты у меня, может, завтра ещё будут.</text></string>
+<string id="minigame_lysyi_dialog_12"><text>Как обычно. Мой хороший арт, против твоих 30000 рупликов, или простенький артефактик против 15000. На что играешь?</text></string>
+<string id="minigame_lysyi_dialog_21"><text>Тогда - до завтра!</text></string>
+<string id="minigame_lysyi_dialog_31"><text>Давай на простенький артефакт. Держи бабосы.</text></string>
+<string id="minigame_lysyi_dialog_32"><text>Попробую нормальный арт выиграть, вот тридцатка.</text></string>
+<string id="minigame_lysyi_dialog_33"><text>Передумал я, не буду играть.</text></string>
+<string id="minigame_lysyi_dialog_41"><text>Ага, кидаю...</text></string>
+<string id="minigame_lysyi_dialog_42"><text>Ладно, кидаю...</text></string>
+<string id="minigame_lysyi_dialog_51"><text>Ну, с Богом...</text></string>
+<string id="minigame_lysyi_dialog_52"><text>Эх! Понеслась...</text></string>
+<string id="minigame_lysyi_dialog_7"><text>Не, побаловались и хватит.</text></string>
+<string id="minigame_lysyi_dialog_611"><text>Ага, продул ты, Меченный...\nМожет, ещё сыграем?</text></string>
+<string id="minigame_lysyi_dialog_612"><text>Везёт тебе, Меченный, держи артефактик и деньги свои...\nМожет, ещё сыграем?</text></string>
+<string id="minigame_lysyi_dialog_613"><text>Ничья! Вот твои денежки, Меченный...\nМожет, ещё сыграем?</text></string>
+<string id="minigame_lysyi_dialog_621"><text>Ты проиграл, Меченный, плакали твои денежки...\nМожет, ещё сыграем?</text></string>
+<string id="minigame_lysyi_dialog_622"><text>Смотри-ка, выиграл...\nМожет, ещё сыграем?</text></string>
+<string id="minigame_lysyi_dialog_623"><text>Ничья! Вот твои денежки, Меченный...\nМожет, ещё сыграем?</text></string>
+
+<string id="minigame_start_dialog_stas_0"><text>Послушай, Волк. А как вы водку достаёте?</text></string>
+<string id="minigame_start_dialog_stas_1"><text>Водку? По-разному, а тебе зачем?</text></string>
+<string id="minigame_start_dialog_stas_2"><text>Кузнецов, тот что под мостом, за водку только согласен иметь дело. Я к Сидоровичу сунулся, а он артефакты хочет...</text></string>
+<string id="minigame_start_dialog_stas_3"><text>Ха! Сидор - тот ещё жук... Ты попробуй с его охранником поговорить. Он имеет свой канал поставки водки. Только он не продаёт просто так - видите ли, скучно ему, вот и предлагает в кости перекинуться. Если повезёт, можешь много водки выиграть...</text></string>
+
+<string id="minigame_dialog_stas_0"><text>Стас, скучаешь? Может, сыграем? Какие ставки?</text></string>
+<string id="minigame_dialog_stas_11"><text>Нет, Меченный, не сейчас. Отоспаться хочу.</text></string>
+<string id="minigame_dialog_stas_121"><text>Ну, ты меня без штанов уже оставил! Извини, нету у меня больше на сегодня водки. Завтра подходи.</text></string>
+<string id="minigame_dialog_stas_122"><text>Давай играть. Ставь артефакт против моих семи пол-литров кристально-чистого напитка. Ну, если не имеешь артов, то можно и на деньги, полторы штуки рупий за пузырь.</text></string>
+<string id="minigame_dialog_stas_131"><text>Ладно, до завтра.</text></string>
+<string id="minigame_dialog_stas_113"><text>Я пока не могу. Немного погоди, хорошо? Минут через пятнадцать, ну, может, через полчасика подходи...</text></string>
+<string id="minigame_dialog_stas_1111"><text>Э-э-э... Не понял.</text></string>
+<string id="minigame_dialog_stas_2"><text>Может, ещё сыграем?</text></string>
+<string id="minigame_dialog_stas_21"><text>Не вопрос. У меня ставки твёрдые. А что от тебя на кону: арт или деньги?</text></string>
+<string id="minigame_dialog_stas_22"><text>Извини, друг. Выиграл ты всё, что было у меня. Завтра подходи, ещё будет.</text></string>
+<string id="minigame_dialog_stas_31"><text>Держи арт и... Начали!</text></string>
+<string id="minigame_dialog_stas_32"><text>Вот штука и ещё пять сотен! Погнали.</text></string>
+<string id="minigame_dialog_stas_33"><text>Хм... что-то передумал я играть.</text></string>
+<string id="minigame_dialog_stas_41"><text>Что ж, рискнём! Кидаю...</text></string>
+<string id="minigame_dialog_stas_42"><text>Ладно, кидаю...</text></string>
+<string id="minigame_dialog_stas_51"><text>Теперь я! С Богом...</text></string>
+<string id="minigame_dialog_stas_52"><text>Эх! Понеслась...</text></string>
+<string id="minigame_dialog_stas_611"><text>Я выиграл! Ты в пролёте.</text></string>
+<string id="minigame_dialog_stas_612"><text>Повезло тебе, Меченный, держи обратно арт и свои пузыри.</text></string>
+<string id="minigame_dialog_stas_613"><text>Ничья! Держи обратно своё.</text></string>
+<string id="minigame_dialog_stas_621"><text>Ты проиграл, Меченный, плакали твои денежки.</text></string>
+<string id="minigame_dialog_stas_622"><text>Смотри-ка, выиграл.</text></string>
+<string id="minigame_dialog_stas_623"><text>Ничья! Возвращаю бабки.</text></string>
+<string id="minigame_dialog_stas_7"><text>Ладно, побаловались и хватит.</text></string>
+
+<string id="sidor_modart_order_dialog_0"><text>У меня есть необычный артефакт!</text></string>
+<string id="sidor_modart_order_dialog_1"><text>Какой?</text></string>
+<string id="sidor_modart_order_dialog_201"><text>Модификат.</text></string>
+<string id="sidor_modart_order_dialog_202"><text>Мезомодификат.</text></string>
+<string id="sidor_modart_order_dialog_203"><text>Гипермодификат.</text></string>
+<string id="sidor_modart_order_dialog_204"><text>Абсолют.</text></string>
+<string id="sidor_modart_order_dialog_299"><text>Знаешь, я тут вспомнил... идти мне надо.</text></string>
+<string id="sidor_modart_order_dialog_3"><text>Хорошее дело. Я могу предложить тебе за него: патроны 5.45x39, патроны 7.62x39, патроны 7.62x54R, выстрелы ВОГ-25, выстрелы M406. Что выбираешь?</text></string>
+<string id="sidor_modart_order_dialog_301"><text>Мне нужны патроны 5.45x39.</text></string>
+<string id="sidor_modart_order_dialog_302"><text>Мне нужны патроны 5.45x39БП.</text></string>
+<string id="sidor_modart_order_dialog_303"><text>Мне нужны патроны 7.62x39.</text></string>
+<string id="sidor_modart_order_dialog_304"><text>Мне нужны патроны 7.62x39БП.</text></string>
+<string id="sidor_modart_order_dialog_305"><text>Мне нужны патроны 7.62x54R 7Н1.</text></string>
+<string id="sidor_modart_order_dialog_306"><text>Мне нужны патроны 7.62x54R 7Н14.</text></string>
+<string id="sidor_modart_order_dialog_307"><text>Мне нужны патроны 7.62x54R БП.</text></string>
+<string id="sidor_modart_order_dialog_308"><text>Мне нужны выстрелы ВОГ-25.</text></string>
+<string id="sidor_modart_order_dialog_309"><text>Мне нужны выстрелы M406.</text></string>
+<string id="sidor_modart_order_dialog_4"><text>Хорошее дело. Я могу предложить тебе за него: патроны 7.62x39, патроны 9x39, патроны 7.62x54R, выстрелы ВОГ-25. Что выбираешь?</text></string>
+<string id="sidor_modart_order_dialog_401"><text>Мне нужны патроны 7.62x39.</text></string>
+<string id="sidor_modart_order_dialog_402"><text>Мне нужны патроны 7.62x39БП.</text></string>
+<string id="sidor_modart_order_dialog_403"><text>Мне нужны патроны 9x39 СП-6.</text></string>
+<string id="sidor_modart_order_dialog_404"><text>Мне нужны патроны 7.62x54R 7Н1.</text></string>
+<string id="sidor_modart_order_dialog_405"><text>Мне нужны патроны 7.62x54R 7Н14.</text></string>
+<string id="sidor_modart_order_dialog_406"><text>Мне нужны патроны 7.62x54R БП.</text></string>
+<string id="sidor_modart_order_dialog_407"><text>Мне нужны выстрелы ВОГ-25.</text></string>
+<string id="sidor_modart_order_dialog_5"><text>Хорошее дело. Я могу предложить тебе за него: патроны 7.62x39, патроны 9x39, патроны 7.62x54R, выстрелы ВОГ-25. Что выбираешь?</text></string>
+<string id="sidor_modart_order_dialog_501"><text>Мне нужны патроны 7.62x39.</text></string>
+<string id="sidor_modart_order_dialog_502"><text>Мне нужны патроны 7.62x39БП.</text></string>
+<string id="sidor_modart_order_dialog_503"><text>Мне нужны патроны 9x39 СП-6.</text></string>
+<string id="sidor_modart_order_dialog_504"><text>Мне нужны патроны 7.62x54R 7Н1.</text></string>
+<string id="sidor_modart_order_dialog_505"><text>Мне нужны патроны 7.62x54R 7Н14.</text></string>
+<string id="sidor_modart_order_dialog_506"><text>Мне нужны патроны 7.62x54R БП.</text></string>
+<string id="sidor_modart_order_dialog_507"><text>Мне нужны выстрелы ВОГ-25.</text></string>
+<string id="sidor_modart_order_dialog_6"><text>Хорошее дело. Я могу предложить тебе за него: патроны 9x39, патроны 7.62x54R, выстрелы ВОГ-25, бронежилет СКАТ-10. Что выбираешь?</text></string>
+<string id="sidor_modart_order_dialog_601"><text>Мне нужны патроны 9x39 СП-6.</text></string>
+<string id="sidor_modart_order_dialog_602"><text>Мне нужны патроны 7.62x54R 7Н1.</text></string>
+<string id="sidor_modart_order_dialog_603"><text>Мне нужны патроны 7.62x54R 7Н14.</text></string>
+<string id="sidor_modart_order_dialog_604"><text>Мне нужны патроны 7.62x54R БП.</text></string>
+<string id="sidor_modart_order_dialog_605"><text>Мне нужны выстрелы ВОГ-25.</text></string>
+<string id="sidor_modart_order_dialog_606"><text>Мне нужен бронежилет СКАТ-10.</text></string>
+<string id="sidor_modart_order_dialog_7"><text>Ну, а мне нужен соответствующий артефакт, да в отличном состоянии, если вдруг забыл. Так чем расплачиваться будешь?</text></string>
+<string id="sidor_modart_order_dialog_8"><text>Ой, не гунди только. Вот, держи. Муха... ничего не делала.</text></string>
+<string id="sidor_modart_order_dialog_85"><text>Ага, чудненько. Заказ принят, Меченный. Будет ещё какая нужда - ты заходи.</text></string>
+<string id="sidor_modart_order_dialog_86"><text>Ага, чудненько. Заказ принят, Меченный. Твой товар через сутки будет на блок посту у военных, на западе Болот. Всё как раньше.</text></string>
+<string id="sidor_modart_order_dialog_851"><text>Постой, Сидорович, зайти то я зайду... А где мой товар?!</text></string>
+<string id="sidor_modart_order_dialog_861"><text>Понял. Тогда пока.</text></string>
+<string id="sidor_modart_order_dialog_852"><text>Товар? А... ты же у нас того... в первый раз заказываешь, не знаешь ничего. На Болотах твой товар. Блок пост военных знаешь на западе, ученых охраняют? С вышкой еще такой... Вот у них твой заказ. Все с ними договорено и согласовано. Иди и забирай. Только не сегодня. Завтра иди. Твой заказ через сутки у них будет. Так что отоспись, подкрепись, зарядись.... Спички купил?</text></string>
+<string id="sidor_modart_order_dialog_853"><text>Погоди со своими спичками.... На Болотах, через сутки? А почему не здесь получать?!</text></string>
+<string id="sidor_modart_order_dialog_854"><text>По качану! Во-первых, не держу я у себя военное имущество в товарных количествах, так, по мелочи если только. Во-вторых, договорённости имею с... определёнными людьми. Я, считай, просто посредник, клиентов им ищу, а они мне... тоже в общем помогают кое с чем. Понял? Короче, завтра на Болотах у военных всё получишь.</text></string>
+<string id="sidor_modart_order_dialog_855"><text>Вот, оно что... Ладно, я всё понял.</text></string>
+<string id="sidor_modart_order_dialog_91"><text>Меченный, если заказывать пришёл чего, так ты ещё прошлую посылку не забрал! Сперва на Болота сбегай за причитающимся, а потом - милости прошу на огонёк... желательно, не с пустыми руками.</text></string>
+<string id="sidor_modart_order_dialog_92"><text>Точно, вот голова садовая...</text></string>
+<string id="sidor_modart_order_dialog_99"><text>Что-то выбор не поражает... Остались при своих.</text></string>
+
+<string id="art_exchanger_dialog_start_101"><text>Привет тебе, сталкер, меняешь что?</text></string>
+<string id="art_exchanger_dialog_start_102"><text>И тебе привет. Меняю?</text></string>
+<string id="art_exchanger_dialog_start_103"><text>Ну я же меняла... Все знают меня как Санька-Менялу, обмениваю артефакты. Хорошие на более простые, обычный размен, так сказать. А тебя как звать-величать?</text></string>
+<string id="art_exchanger_dialog_start_104"><text>Меченный я.</text></string>
+<string id="art_exchanger_dialog_start_105"><text>Что ж, Меченный, будет нужда, обращайся, я сегодня здесь. За каждый артефакт высокой категории могу предложить по два артефакта более низкой. Или, если захочешь, четыре арта низкой категории, за один более высокой. Справедливо, мне кажется.</text></string>
+<string id="art_exchanger_dialog_start_106"><text>Что значит "сегодня здесь"?</text></string>
+<string id="art_exchanger_dialog_start_107"><text>Ну, я на одном месте не засиживаюсь, день-два я в Баре меняю, потом на базе свободовцев, потом пойду ещё дальше по Зоне. Сталкеров много, много артов, вот я и верчусь... Думаю, через полгодика на покой, на большую землю. Куплю себе виллу на Багамах, девчонок привезу...</text></string>
+<string id="art_exchanger_dialog_start_201"><text>А! Это ты, Меченный... Имеешь что?</text></string>
+<string id="art_exchanger_dialog_start_202"><text>Да вот, мимо проходил, дай, думаю, поздороваюсь...</text></string>
+<string id="art_exchanger_dialog_start_203"><text>Здорово тогда! Если хочешь что менять, говори...</text></string>
+
+<string id="kruglov_art_exchange_dlg_0"><text>Я насчёт обмена артефактов. Махнёмся по-быстрому?</text></string>
+<string id="kruglov_art_exchange_dlg_100"><text>Не вопрос. Что-то конкретное ищешь или без разницы? Напоминаю: в первом случае я отдаю два искомых артефакта первого уровня в обмен на артефакт второго, не ниже третьего дана, в отличном состоянии. Во втором случае сгодится любой артефакт второго уровня, но получишь ты кота в мешке. Зато целых трёх.</text></string>
+<string id="kruglov_art_exchange_dlg_200"><text>Извини, Меченный, я пустой. Пришлось излишки Сахарову сдать, у него внеплановый эксперимент наклюнулся. Завтра подходи.</text></string>
+<string id="kruglov_art_exchange_dlg_111"><text>Мне нужно кое-что конкретное. Такой арт подойдёт?</text></string>
+<string id="kruglov_art_exchange_dlg_112"><text>Мне любые впрок будут. Держи арт.</text></string>
+<string id="kruglov_art_exchange_dlg_113"><text>Вот, блин! Забыл захватить обменный фонд. Подойду ещё.</text></string>
+<string id="kruglov_art_exchange_dlg_21"><text>Вполне. Давай по порядку: какой артефакт хочешь получить первым?</text></string>
+<string id="kruglov_art_exchange_dlg_22"><text>Так... Вот один, вот второй и... третий. Порядок?</text></string>
+<string id="kruglov_art_exchange_dlg_32"><text>Ага, спасибо. Сейчас поглядим, что там у нас...</text></string>
+<string id="kruglov_art_exchange_dlg_211"><text>"Медузу".</text></string>
+<string id="kruglov_art_exchange_dlg_212"><text>"Выверт".</text></string>
+<string id="kruglov_art_exchange_dlg_213"><text>"Кровь камня".</text></string>
+<string id="kruglov_art_exchange_dlg_214"><text>"Бенгальский огонь".</text></string>
+<string id="kruglov_art_exchange_dlg_215"><text>"Капли".</text></string>
+<string id="kruglov_art_exchange_dlg_216"><text>"Слизь".</text></string>
+<string id="kruglov_art_exchange_dlg_217"><text>"Колючку".</text></string>
+<string id="kruglov_art_exchange_dlg_3"><text>Момент... Так, это не то... Вот, прошу.\nТеперь второй. Чего изволит месье?</text></string>
+<string id="kruglov_art_exchange_dlg_4"><text>Где-то у меня был такой артефакт. Точно, вот же он. Забирай.</text></string>
+<!-- exo_trade -->
+<string id="barman_exo_dialog_0"><text>Смотрю, тут некоторые сталкеры в экзоскелетах ходят, а как бы мне такой заиметь?</text></string>
+<string id="barman_exo_dialog_1"><text>Оно тебе надо? Вещь дорогая, ломучая, в обслуживании не из дешёвых. Уймись.</text></string>
+<string id="barman_exo_dialog_2"><text>Да как бы оно и не горит, но сам понимаешь - таскать приходится много, а с таким механизмом оно всяк сподручней будет.</text></string>
+<string id="barman_exo_dialog_3"><text>А чего ты как грузовик по Зоне бегаешь... Ладно, учитывая моё к тебе доброе отношение, постараюсь спросить своих поставщиков, может, кто и подкинет. Только сразу предупреждаю, что это влетит тебе в копеечку, точнее - в артефакты.</text></string>
+<string id="barman_exo_dialog_4"><text>И что хочешь?</text></string>
+<string id="barman_exo_dialog_5"><text>Для начала я с поставщиком договорюсь, и примерно через пару-тройку дней сообщу, что да как. Сам пойми, товар штучный, на складе не валяется. А ты пока готовь капсулы... Четыре штуки в самый раз будет, учитывая хлопоты за доставку. Уяснил?</text></string>
+<string id="barman_exo_dialog_6"><text>Вот это ты загнул... Я ещё подумаю, а надо он мне вообще или нет.</text></string>
+
+<string id="barman_exo_dialog_done_0"><text>Собрал я капсулы, ну те, что за экзоскелет.</text></string>
+<string id="barman_exo_dialog_done_1"><text>Долго ты думал, я уже и забывать стал.</text></string>
+<string id="barman_exo_dialog_done_2"><text>Забирай. Долго...</text></string>
+<string id="barman_exo_dialog_done_3"><text>Вот и молодец. Держи свой экзоскелет. Только предупреждаю, носи аккуратно, бережно, рекламации не будет.</text></string>
+<string id="barman_exo_dialog_done_4"><text>Тяжёлый, зараза. Но всё равно спасибо.</text></string>
+
+<string id="freedom_exo_dialog_0"><text>Смотрю, тут некоторые сталкеры в экзоскелетах ходят, а как бы мне такой заиметь?</text></string>
+<string id="freedom_exo_dialog_1"><text>Оно тебе надо? Вещь дорогая, ломучая, в обслуживании не из дешёвых. Уймись.</text></string>
+<string id="freedom_exo_dialog_2"><text>Да как бы оно и не горит, но сам понимаешь - таскать приходится много, а с таким механизмом оно всяк сподручней будет.</text></string>
+<string id="freedom_exo_dialog_3"><text>А чего ты как грузовик по Зоне бегаешь... Ладно, учитывая моё к тебе доброе отношение, постараюсь спросить своих поставщиков, может, кто и подкинет. Только сразу предупреждаю, что это влетит тебе в копеечку, точнее - в артефакты.</text></string>
+<string id="freedom_exo_dialog_4"><text>И что хочешь?</text></string>
+<string id="freedom_exo_dialog_5"><text>Для начала я с поставщиком договорюсь, и примерно через пару-тройку суток сообщу, что да как. Сам пойми, товар штучный, на складе не валяется. А ты пока готовь капсулы... Четыре штуки в самый раз будет, учитывая хлопоты за доставку. Уяснил?</text></string>
+<string id="freedom_exo_dialog_6"><text>Вот это ты загнул... Я ещё подумаю, а надо он мне вообще или нет.</text></string>
+
+<string id="freedom_exo_dialog_done_0"><text>Собрал я капсулы, ну те, что за экзоскелет.</text></string>
+<string id="freedom_exo_dialog_done_1"><text>Долго ты думал, я уже и забывать стал.</text></string>
+<string id="freedom_exo_dialog_done_2"><text>Забирай. Долго...</text></string>
+<string id="freedom_exo_dialog_done_3"><text>Вот и молодец. Держи свой экзоскелет. Только предупреждаю, носи аккуратно, бережно, рекламации не будет.</text></string>
+<string id="freedom_exo_dialog_done_4"><text>Тяжёлый, зараза. Но всё равно - спасибо.</text></string>
+
+<string id="dolg_exo_dialog_0"><text>Смотрю, тут некоторые сталкеры в экзоскелетах ходят, а как бы мне такой заиметь?</text></string>
+<string id="dolg_exo_dialog_1"><text>Оно тебе надо? Вещь дорогая, ломучая, в обслуживании не из дешёвых. Уймись.</text></string>
+<string id="dolg_exo_dialog_2"><text>Да как бы оно и не горит, но сам понимаешь - таскать приходится много, а с таким механизмом оно всяк сподручней будет.</text></string>
+<string id="dolg_exo_dialog_3"><text>А чего ты как грузовик по Зоне бегаешь... Ладно, учитывая моё к тебе доброе отношение, постараюсь спросить своих поставщиков, может, кто и подкинет. Только сразу предупреждаю, что это влетит тебе в копеечку, точнее - в артефакты.</text></string>
+<string id="dolg_exo_dialog_4"><text>И что хочешь?</text></string>
+<string id="dolg_exo_dialog_5"><text>Для начала я с поставщиком договорюсь, и примерно через пару-тройку суток сообщу, что да как. Сам пойми, товар штучный, на складе не валяется. А ты пока готовь капсулы... Четыре штуки в самый раз будет, учитывая хлопоты за доставку. Уяснил?</text></string>
+<string id="dolg_exo_dialog_6"><text>Вот это ты загнул... Я ещё подумаю, а надо он мне вообще или нет.</text></string>
+
+<string id="dolg_exo_dialog_done_0"><text>Собрал я капсулы, ну те, что за экзоскелет.</text></string>
+<string id="dolg_exo_dialog_done_1"><text>Долго ты думал, я уже и забывать стал.</text></string>
+<string id="dolg_exo_dialog_done_2"><text>Забирай. Долго...</text></string>
+<string id="dolg_exo_dialog_done_3"><text>Вот и молодец. Держи свой экзоскелет. Только предупреждаю, носи аккуратно, бережно, рекламации не будет.</text></string>
+<string id="dolg_exo_dialog_done_4"><text>Тяжёлый, зараза. Но всё равно - спасибо.</text></string>
+
+                                                                     <!-- Бартер Ара -->
+
+<!-- new_ara_trade -->
+<string id="trade_dialog_mercs_ara_0"><text>Что у тебя можно взять за ПДА?</text></string>
+<string id="trade_dialog_mercs_ara_100"><text>Давай сматры: автомат - ест, прыцэл для автамат - ест, подстволник - тожэ ест. Патрон-шматрон, гранат для падствол, мэдыцын, бронык... Всё ест. Гавары, што нада?</text></string>
+<string id="trade_dialog_mercs_ara_150"><text>Хм... Давай поглядим, что ещё есть.</text></string>
+<string id="trade_dialog_mercs_ara_250"><text>Пока ничего не надо.</text></string>
+
+<string id="trade_dialog_mercs_ara_211"><text>Что за автоматы и приблуды к ним? И сколько ПДА?</text></string>
+<string id="trade_dialog_mercs_ara_222"><text>Патрон-шматрон, гранаты для подствола? Сколько и какие?</text></string>
+<string id="trade_dialog_mercs_ara_233"><text>И какая медицина? Я бы взял кое-что.</text></string>
+<string id="trade_dialog_mercs_ara_244"><text>Броники есть? Какие и за сколько?</text></string>
+<!-- -->
+<string id="trade_dialog_mercs_ara_311"><text>Бэри прыцел, очень рэдкый товар. Магу EOTech 553 за дэсат ПДА отдат. Падстволыный гранатамэт AG36 ещё эст за 8 ПДА. Глушытэл под 45 калибр в налычыэ - 5 ПДА. Автамат хочэш? Два дэсатка ПДА за лэгэндарный "M4А1", а за дэсат ПДА - новый "Гэ36" илы "СЫГ-552"!</text></string>
+<string id="trade_dialog_mercs_ara_410"><text>Ладно. СИГ брать буду.</text></string>
+<!-- <string id="trade_dialog_mercs_ara_411"><text>Посмотрим, что за Green Dot такой. Держи ПДА.</text></string> -->
+<string id="trade_dialog_mercs_ara_412"><text>Возьму EOTech 553, вот ПДА.</text></string>
+<string id="trade_dialog_mercs_ara_413"><text>М4А1? Ладно, давай возьму.</text></string> 
+<string id="trade_dialog_mercs_ara_414"><text>Возьму Г36. Думаю, пригодится.</text></string>
+<string id="trade_dialog_mercs_ara_415"><text>Держи вот ПДА за граник.</text></string>
+<string id="trade_dialog_mercs_ara_416"><text>Глушитель беру, вот твои ПДА.</text></string>
+<string id="trade_dialog_mercs_ara_417"><text>Я потом заскочу. Подумать нужно.</text></string>
+<string id="trade_dialog_mercs_ara_510"><text>Правылный выбор, хароший машинка.</text></string>
+<!-- <string id="trade_dialog_mercs_ara_511"><text>На Green Dot. Ой хароший вэщ. Беры, тушкан глаз бить будэш.</text></string> -->
+<string id="trade_dialog_mercs_ara_512"><text>EOTech 553 хочэш? Вот беры. Савсэм новый. Муха не сыдэл.</text></string>
+<string id="trade_dialog_mercs_ara_513"><text>Вах, хароший машинка. Сам пользавал сэйчас.</text></string>
+<string id="trade_dialog_mercs_ara_514"><text>Нэмэцкый, точный. Белка глаз бить будэш.</text></string>
+<string id="trade_dialog_mercs_ara_515"><text>Вай-вай. От сэрдца отрываю...</text></string>
+<string id="trade_dialog_mercs_ara_516"><text>Глушытэль? Вот бэры.</text></string>
+<!-- -->
+<string id="trade_dialog_mercs_ara_322"><text>Патрон надо? Адын ПДА давай - получай 100 прастой патрон для автамат 5.56. Чатырэ ПДА нэси - получай 2 бранэбойный пачка НАТО 7.62 на 51... Тры ПДА давай - бери 10 падстволный гранат.</text></string>
+<string id="trade_dialog_mercs_ara_421"><text>Давай сто патронов обычных. Вот ПДА.</text></string>
+<string id="trade_dialog_mercs_ara_422"><text>Беру 7.62. Держи ПДА.</text></string>
+<string id="trade_dialog_mercs_ara_423"><text>Гранаты нужны. С меня 3 наладонника.</text></string>
+<string id="trade_dialog_mercs_ara_424"><text>Обойдусь пока...</text></string>
+<string id="trade_dialog_mercs_ara_521"><text>Вот тэбэ патрон-шматрон. Всэ, как я говорыл.</text></string>
+<string id="trade_dialog_mercs_ara_522"><text>Сэрьёзный патрон, уважаю, да! Всякий шпана адного звука выстрела баяться будет, точно гаварю!</text></string>
+<string id="trade_dialog_mercs_ara_523"><text>Харашо думаеш! Всэгда нада так - думат!</text></string>
+<!-- -->
+<string id="trade_dialog_mercs_ara_333"><text>Здоров хочэш быт? ПДА давай - аптэка научный забырай. Другой ПДА давай - бэри тры укол антырад.</text></string>
+<string id="trade_dialog_mercs_ara_431"><text>Согласен на аптечку. Меняю.</text></string>
+<string id="trade_dialog_mercs_ara_432"><text>Антирады? Беру. Вот ПДА.</text></string>
+<string id="trade_dialog_mercs_ara_433"><text>Перетопчусь пока. Своего хватает.</text></string>
+<string id="trade_dialog_mercs_ara_531"><text>Аптэчка ест - живош, аптэчка нэт - нэ живош.</text></string>
+<string id="trade_dialog_mercs_ara_532"><text>Радыацый - такой зараз! Всэгда нужно калот.</text></string>
+<!-- -->
+<string id="trade_dialog_mercs_ara_344"><text>Бронык нужен? Ест бронык с пратывагазом - дэсят ПДА.</text></string>
+<string id="trade_dialog_mercs_ara_442"><text>С противогазом, да? Возьму для коллекции, пожалуй.</text></string>
+<string id="trade_dialog_mercs_ara_443"><text>Подумаю. Пока не буду брать ничего.</text></string>
+<string id="trade_dialog_mercs_ara_542"><text>Хароший выбар. Стэкло особэнный - всэгда чистый. Насы на здоровьэ!</text></string>
+<!-- -->
+<string id="ara_exo_dialog_start_0"><text>Слушай, Вахтанг... Ты вот вроде тоговец серьёзный, а экзоскелета у тебя в продаже как-то не наблюдаю.</text></string>
+<string id="ara_exo_dialog_start_1"><text>Зачэм абыжаешь, дарагой, пачэму нэт, всё ест. Толька такой вэщ сталкер нэ карман будет. Очень дарагой. Поэтому на вэтрина нэт. Зачэм, если нэ кто нэ покупает. Комэрция.</text></string>
+<string id="ara_exo_dialog_start_2"><text>Дорогой - дело относительное. Может, всё же договоримся о цене? Тем более люди говорят, что ваши экзоскелеты лучшие.</text></string>
+<string id="ara_exo_dialog_start_3"><text>За дэнги и ПэДэАшки такой тавар я не прадам. Вэщ штучный, заказ дэлать надо, ждать, карочэ... думат надо.</text></string>
+<string id="ara_exo_dialog_start_4"><text>И что же ты хочешь?</text></string>
+<string id="ara_exo_dialog_start_5"><text>Наш главный, искал адын артэфакт, очэн рэдкый и очэн дарагой. Зачэм - нэ знаю, но надо. Элэктрическые бусы называется. Прынаси такой, тагда за экзоскэлет и гаварыть будэм.</text></string>
+<string id="ara_exo_dialog_start_61"><text>Ну ты загнул! Где такой артефакт найти?.. Подумаю я ещё.</text></string>
+<string id="ara_exo_dialog_start_62"><text>Так у меня есть рецепт на это чудо Зоны, могу сварить, готовь экзу.</text></string>
+<string id="ara_exo_dialog_start_71"><text>Нэт артэфакт - нэт экза. Будэт артэфакт, тагда и прыхади.</text></string>
+<string id="ara_exo_dialog_start_72"><text>Ты сматры, какой быстрый. Вахтанг слово всэгда дэржит. Будэт, будэт тэбе экза. Чэрэз два-тры дэня падхады. Пока туда-сюда, поставка товар, время надо. Я саабщу.</text></string>
+
+<string id="ara_exo_dialog_done_0"><text>Нашёл я артефакт, который за экзоскелет.</text></string>
+<string id="ara_exo_dialog_done_1"><text>А... Долга ты хадыл, я уже и забыват стал.</text></string>
+<string id="ara_exo_dialog_done_2"><text>Так что там с бронёй? Уговор был: я артефакт, а ты экзу.</text></string>
+<string id="ara_exo_dialog_done_3"><text>Вахтанг слова всэгда дэржит. Бэри экза, савсем новый, красавчык будешь.</text></string>

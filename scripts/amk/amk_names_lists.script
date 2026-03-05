@@ -1,0 +1,3 @@
+function get_strings()
+return translate("anl.fnames_"..lua_random(177)),translate("anl.snames_"..lua_random(816))
+end

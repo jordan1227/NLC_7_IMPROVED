@@ -1,0 +1,13 @@
+[logic]
+active = ph_button@locked
+
+[ph_button@locked]
+tooltip = labx10_button4
+anim_blend = false
+anim = button_false
+on_press = ph_button@unlocked %+labx10_code_door_unlocked =play_snd(device\power_switch)%
+
+[ph_button@unlocked]
+anim_blend = false
+anim = button_true
+on_info = {-labx10_code_door_unlocked} ph_button@locked %=play_snd(device\power_switch)%

@@ -1,0 +1,25 @@
+[logic]
+active = walker
+on_death = death
+
+[walker]
+path_walk = dead_botans_walk
+path_look = dead_botans_look
+meet = meet
+danger = danger_condition
+show_spot = false 
+
+[meet]
+victim = 2 | actor
+victim_wpn = 2 | actor
+meet_dialog = dead_botan_radar_dialog
+use = true
+
+[danger_condition]
+ignore_distance = 1
+ignore_distance_grenade = 5
+ignore_distance_corpse = 3
+ignore_distance_sound = 5
+
+[death]
+on_info = %+dead_botan_umer%

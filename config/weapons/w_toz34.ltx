@@ -1,0 +1,212 @@
+;рнг-34
+[wpn_toz34]:weapon_immunities,base_wpn_shotgun
+GroupControlSection			= spawn_group
+discovery_dependency 		= 
+$spawn				     	= "weapons\toz-34"	
+$npc			 			= on
+$prefetch 		 			= 8
+scheduled				  	= off
+cform				      	= skeleton
+class				      	= WP_BM16
+min_radius					= 0
+max_radius				 	= 60
+description					= enc_weapons1_wpn-toz34
+
+default_to_ruck				= false
+
+ef_main_weapon_type			= 1
+ef_weapon_type				= 7
+
+holder_range_modifier		= 1.0
+holder_fov_modifier			= 0.7
+
+cost					 	= 2800
+weapon_class			 	= shotgun
+
+ammo_limit		 			= 60
+ammo_current		 		= 10
+ammo_elapsed		 		= 0
+
+f_mode						= 1
+
+ammo_mag_size				= 2
+ammo_class		 			= ammo_12x70_buck,ammo_12x76_dart,ammo_12x76_zhekan
+
+fire_dispersion_base		= 0.44  
+control_inertion_factor		= 1.25f
+
+cam_relax_speed         	= 7.0
+cam_dispersion          	= 2.7
+cam_dispersion_inc			= 2.7
+cam_dispertion_frac			= 0.8
+cam_max_angle				= 30
+cam_max_angle_horz			= 10
+cam_step_angle_horz			= 1.3
+
+fire_dispersion_condition_factor = 1.5
+misfire_probability 		= 0.03
+misfire_condition_k			= 0.1
+condition_shot_dec 			= 0.0005
+
+hand_dependence 	 		= 1
+single_handed		 		= 0
+
+slot 				 		= 2
+animation_slot		 		= 3
+
+inv_name					= wpn-toz34
+inv_name_short				= wpn-toz34
+
+inv_weight					= 3.2
+
+inv_grid_height                                    = 2
+inv_grid_width                                     = 6
+inv_grid_x                                         = 60
+inv_grid_y                                         = 12
+
+direction				 	= 0, 0, 1
+shell_point					= 0.0, 0.183, 0.07
+fire_point					= 0.0, 0.183, 0.730
+fire_point2					= 0.0, 0.160, 0.730
+
+flame_particles		   		= weapons\generic_weapon05
+smoke_particles		   		= _ecp\weapon_shotgun
+rpm_empty_click 	   		= 200
+
+PDM_disp_base 				= 2.0
+PDM_disp_vel_factor 		= 3.0
+PDM_disp_accel_factor 		= 5.0
+PDM_crouch					= 1.9
+PDM_crouch_no_acc			= 0.7
+
+hit_power        			= 1
+hit_impulse      			= 1
+hit_type 					= fire_wound
+
+fire_distance            	= 60
+bullet_speed				= 270
+rpm				        	= 250
+
+use_aim_bullet				= false
+time_to_aim					= 1.0
+
+hud				        	= wpn_shotgun_hud
+normal  					= 0, 1, 0
+position				   	= -0.025,-0.11,0.06
+orientation					= 0, 30, 0
+
+strap_orientation                                  = -15,-9,110
+strap_position                                     = -0.26,-0.11,0.15
+
+startup_ammo             	= 10
+visual				     	= dynamics\weapons\wpn_toz34\wpn_toz34
+
+light_color		 			= 0.6,0.5,0.3
+light_range		 			= 6.0
+light_var_color		 		= 0.05
+light_var_range		 		= 0.5
+light_time 		 			= 0.2
+
+ph_mass			 			= 3
+
+scope_status				= 0
+silencer_status				= 0
+grenade_launcher_status		= 0
+scope_zoom_factor = 90
+
+snd_shoot					= weapons\toz34\toz34_hole_mono
+snd_shoot_duplet			= weapons\toz34\toz34_hole_mono
+
+snd_draw                                           = weapons\toz34\toz34_draw
+snd_empty                                          = weapons\toz34\toz34_empty
+snd_holster                                        = weapons\shotgun_holster
+snd_reload_jammed                                 = weapons\toz34\toz34_misfire
+snd_reload_jammed_1                               = weapons\toz34\toz34_misfire
+snd_reload                                         = weapons\toz34\toz34_reload_empty
+snd_reload_1                                       = weapons\toz34\toz34_reload
+snd_changeammo_1                                   = weapons\toz34\toz34_reload_empty
+snd_changeammo_2                                   = weapons\toz34\toz34_reload_empty
+snd_mag_shot									   = $silent
+snd_sprint_idle								   	   = weapons\sprint_assault
+
+[wpn_shotgun_hud]:hud_base
+aim_hud_offset_pos = -0.065000,0.038500,-0.09
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.065000,0.038500,-0.09
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+; anm_bore_0                                         = toz34_bore
+; anm_bore_1                                         = toz34_bore
+; anm_bore_2                                         = toz34_bore
+anm_hide_0                                         = toz34_holster
+anm_hide_1                                         = toz34_holster
+anm_hide_2                                         = toz34_holster
+anm_idle_0                                         = toz34_idle
+anm_idle_1                                         = toz34_idle
+anm_idle_2                                         = toz34_idle
+anm_idle_aim_0                                     = toz34_idle_aim
+anm_idle_aim_1                                     = toz34_idle_aim
+anm_idle_aim_2                                     = toz34_idle_aim
+anm_idle_moving_0                                  = toz34_moving
+anm_idle_moving_1                                  = toz34_moving
+anm_idle_moving_2                                  = toz34_moving
+anm_idle_aim_moving_0                              = toz34_moving_aim
+anm_idle_aim_moving_1                              = toz34_moving_aim
+anm_idle_aim_moving_2                              = toz34_moving_aim
+anm_idle_moving_slow_0                             = toz34_moving_slow
+anm_idle_moving_slow_1	                           = toz34_moving_slow
+anm_idle_moving_slow_2	                           = toz34_moving_slow
+anm_idle_moving_crouch_0                           = toz34_crouch
+anm_idle_moving_crouch_1                           = toz34_crouch
+anm_idle_moving_crouch_2                           = toz34_crouch
+anm_reload_jammed_1                               = toz34_misfire, misfire_empty
+anm_reload_jammed_2                               = toz34_misfire, misfire
+anm_reload_1                                       = toz34_reload, reload
+anm_reload_2                                       = toz34_reload_empty, reload_empty
+lock_time_end_anm_reload_1                         = 1.4
+lock_time_end_anm_reload_2                         = 1.4
+anm_shot_1                                         = toz34_shoot_last
+anm_shot_2                                         = toz34_shoot
+anm_shots_when_aim_1				   			   = toz34_shoot_aim
+anm_shots_when_aim_2				   			   = toz34_shoot_aim
+anm_show_0                                         = toz34_draw
+anm_show_1                                         = toz34_draw
+anm_show_2                                         = toz34_draw
+
+anm_idle_sprint_start_2         				           = toz34_sprint_start
+anm_idle_sprint_2         				           = toz34_sprint
+anm_idle_sprint_end_2         					       = toz34_sprint_end
+
+anm_idle_sprint_start_1         				           = toz34_sprint_start
+anm_idle_sprint_1         				           = toz34_sprint
+anm_idle_sprint_end_1         					       = toz34_sprint_end
+
+anm_idle_sprint_start_0         					   	   = toz34_sprint_start
+anm_idle_sprint_0         					   	   = toz34_sprint
+anm_idle_sprint_end_0         					   	   = toz34_sprint_end
+
+anm_ammochange_1                                   = toz34_reload_empty, ammochange_1
+anm_ammochange_2                                   = toz34_reload_empty, ammochange_2
+
+anm_headlamp_on_0                                = toz34_flash
+anm_gasmask_0                                      = toz34_clear
+
+anm_headlamp_on_1                                = toz34_flash
+anm_gasmask_1                                      = toz34_clear
+
+anm_headlamp_on_2                                = toz34_flash
+anm_gasmask_2                                      = toz34_clear
+
+attach_place_idx                                   = 0
+fire_bone                                          = wpn_body
+fire_point                                         = 0.000000,0.007700,0.510401
+hands_orientation                                  = 0,0,0
+hands_orientation_16x9                             = 0,0,0
+hands_position					   				   = 0.007100,0.045275,-0.113899
+hands_position_16x9				   				   = 0.007100,0.045275,-0.113899
+item_orientation                                   = 0,0,0
+item_position                                      = 0,0,0
+item_visual                                        = dynamics\weapons\wpn_toz34\wpn_toz34_hud.ogf
+shell_bone                                         = wpn_body
+shell_dir                                          = 0.0, 1.0, 0.0
+shell_point                                        = 0,0,0

@@ -1,0 +1,33 @@
+[logic]
+active = walker@drunk
+
+[walker@drunk]
+path_walk = bar_bar_visitor_dolg_walk
+path_look = bar_bar_visitor_dolg_look
+on_info = {=is_fri_day} walker@bar_barin
+soundgroup = bar_visitors1
+meet = meet@bar
+danger = danger_condition
+
+[walker@bar_barin]
+path_walk = bar_barin_walk_way
+path_look = bar_barin_way_look
+on_info = {!is_fri_day} walker@drunk
+meet = meet@patrul
+
+[danger_condition]
+ignore_distance = 0
+
+[meet@bar]
+use = true
+use_wpn = true
+meet_talk_enabled = true
+meet_state = ward
+meet_dialog = bar_drunk_dolg_start
+
+[meet@patrul]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+meet_state = wait
+meet_dialog = bar_drunk_dolg_patrul_start

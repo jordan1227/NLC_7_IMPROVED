@@ -1,0 +1,278 @@
+
+function actor_on_item_before_put_in_slot(obj, slot)
+	local sect = obj and obj:section()
+
+	-- Manool: в этот слот можно помещать предметы только через разгрузку
+	if slot == 8 then return false end
+
+	-- log2("~~[actor_on_item_before_put_in_slot]: %s", obj and obj:section() or "!NIL")
+	if sect == "af_full_akkum" then
+		for i = 2, 6 do
+			if db.actor:object("belt_" .. i .. "_art") then return true end
+		end
+		return false
+	end
+	return true
+end
+
+function actor_on_item_before_show_in_carbody(obj, b_our)
+	if b_our and obj then
+		if db.actor:is_in_slot(obj)
+			or db.actor:is_on_belt(obj)
+			-- or (obj:is_inventory_box() and obj:object_count() > 0)
+		then
+			return false
+		end
+
+		-- Manool: обрабатываем ситуации, когда сюда
+		-- случайно попадают предметы из теневых рюкзаков
+		local parent = obj:parent()
+		if parent and not parent:is_actor() then return false end
+		--
+		local sobj = server_obj(obj:id())
+		if sobj and sobj.parent_id ~= db.actor:id() then return false end
+	end
+	return true
+end
+
+local time_states = {
+	rent = {color = "red", text = string.format("[%s]", game.translate_string("st_t_out"))},
+	repairer = {color = "green", text = string.format("[%s]", game.translate_string("st_completed"))}
+}
+
+local rem_pre = "%c[green](+) %c[default]"
+
+function declension(num, a1, a2, a3)
+	return (num % 10 == 1 and num % 100 ~= 11) and a1 or
+		(num % 10 >= 2 and num % 10 <= 4 and (num % 100 < 10 or num % 100 >= 20) and a2 or a3)
+end
+
+function format_time_remaining(minutes, what)
+	if minutes == 0 then
+		local state = what and time_states[what]
+		if not state then return "" end
+		return string.format("%%c[%s]%s%%c[default] \\n", state.color, state.text)
+	end
+
+	local days = math.floor(minutes / (24 * 60))
+	local hours = math.floor((minutes % (24 * 60)) / 60)
+	local mins = minutes % 60
+
+	if days > 0 then
+		return string.format(
+			"%d %s %d %s %d %s",
+			days, declension(days, game.translate_string("st_t_day_1"), game.translate_string("st_t_day_2"), game.translate_string("st_t_day_3")),
+			hours, declension(hours, game.translate_string("st_t_hour_1"), game.translate_string("st_t_hour_2"), game.translate_string("st_t_hour_3")),
+			mins, declension(mins, game.translate_string("st_t_min_1"), game.translate_string("st_t_min_2"), game.translate_string("st_t_min_3"))
+		)
+	elseif hours > 0 then
+		return string.format(
+			"%d %s %d %s",
+			hours, declension(hours, game.translate_string("st_t_hour_1"), game.translate_string("st_t_hour_2"), game.translate_string("st_t_hour_3")),
+			mins, declension(mins, game.translate_string("st_t_min_1"), game.translate_string("st_t_min_2"), game.translate_string("st_t_min_3"))
+		)
+	end
+	return string.format("%d %s", mins, declension(mins, game.translate_string("st_t_min_1"), game.translate_string("st_t_min_2"), game.translate_string("st_t_min_3")))
+end
+
+function on_set_article_text(txt)
+	if txt == "reminders_main_text" then
+		txt = ""
+
+		-- Время до окончания пользования сейфами
+		local t_npc = {
+			{"t_stas", "stas", 3},
+			{"t_docent", "bar_docent_name", 2},
+			{"t_lukash", "mil_Svoboda_leader_name", 3},
+			{"t_voronin", "bar_voronin_name", 3}
+		}
+
+		local has_t
+		for i, d in ipairs(t_npc) do
+			local et = sak_dialog.treasure_get_time_have(d[1], d[3])
+			if et > 0 then
+				if not has_t then txt = txt.."\\n \\n"..rem_pre.."%c[255,160,160,160]"..translate("use_seif_time_left")..":" end
+				has_t = true
+				txt=txt.."\\n%c[default]"..string.format("    • %s: %s", translate(d[2]), format_time_remaining(et, "rent"))
+			end
+		end
+
+        -- Время до завершения ремонта
+		local t_npc = {
+			{"dolgovjaz", "dolgovazyi_name"},
+			{"lisaped", "bar_lisaped_name"},
+			{"stepanych", "stepanych_name"},
+			{"vergas", "vergas_name"}
+		}
+		local has_t
+		for i, d in ipairs(t_npc) do
+			local et, sect = sak_dialog.get_ready_repair(d[1])
+			if type(et) == "number" then
+				if et < 0 then et = 0 end
+				if not has_t then txt = txt.."\\n \\n"..rem_pre.."%c[255,160,160,160]"..translate("repair_time_left")..":" end
+				has_t = true
+				txt = txt.."\\n%c[default]"..string.format("    • %s: %s - %s", translate(d[2]), translate(amk.get_inv_name(sect)), format_time_remaining(et, "repairer"))
+			end
+		end
+
+		-- Нужен бензин на Кордоне или в Баре
+		txt = txt.."\\n"
+		if has_alife_info("esc_generator") and not has_alife_info("kanistra_esc_not_over") then
+			txt = txt.."\\n \\n"..rem_pre..translate("esc_need_fuel")
+		end
+		if has_alife_info("bar_generator") and not has_alife_info("kanistra_bar_not_over") then
+			txt = txt.."\\n \\n"..rem_pre..translate("bar_need_fuel")
+		end
+
+		-- Пошив плащей у Степаныча
+		local timer, sect, tl
+		if has_alife_info("stepanych_1plash_new_start_time") then
+			timer, sect, tl = "time_start_stepanych_1plash", "bandit_veteran_outfit", 1430
+		elseif has_alife_info("stepanych_2plash_new_start_time") then
+			timer, sect, tl = "time_start_stepanych_2plash", "bandit_master_outfit", 2800
+		end
+
+		if timer then
+			local et = sak_dialog.get_ready_time(timer, tl, 0)
+			if et < 0 then et = 0 end
+			txt = txt.."\\n \\n"..rem_pre.."%c[255,160,160,160]"..translate("stepanych_plash")..":"
+			txt = txt.."\\n%c[default]"..string.format("    • %s: %s", translate(amk.get_inv_name(sect)), format_time_remaining(et, "repairer"))
+		end
+
+		-- Зарядка ПДА
+		local t = {
+			{"mil_Svoboda_engineer_name","shurup_charge_pda_time","shurup_charge_pda_not_ready",30},
+			{"yan_semenov_name","saharov_charge_pda_time","saharov_charge_pda_not_ready",30},
+			{"bar_lisaped_name","lisaped_charge_pda_time", "lisaped_charge_pda_not_ready",30},
+			{"vergas_name","vergas_charge_pda_time","vergas_charge_pda_not_ready",30}
+		}
+
+		local has_t
+		for _, data in ipairs(t) do
+			if has_alife_info(data[3]) then
+				local et = sak_dialog.get_ready_time(data[2], data[4], 0)
+				if et < 0 then et = 0 end
+				if not has_t then txt = txt.."\\n \\n"..rem_pre.."%c[255,160,160,160]"..translate("pda_charging")..":" end
+				has_t = true
+				txt = txt.."\\n%c[default]"..string.format("    • %s: %s", translate(data[1]), format_time_remaining(et, "repairer"))
+			end
+		end
+
+	end
+
+	return translate(txt)
+end
+
+function ui_item_text_info_callback(desc, obj)
+	local sect = obj:section()
+	if obj:is_outfit() and string.find(desc, "$carrying") then
+		local aw = get_float(sect, "additional_inventory_weight")
+		local w = string.format("%.2f", aw)
+		desc = string.gsub(desc, "$carrying", w)
+	end
+
+	if sect == "rucksack" then
+		desc = nlc_container.get_item_desc(obj:id()) .. desc
+	end
+
+	if obj:is_outfit() then
+		desc = desc .. ui_inv_descr.get_add_out_desc(obj)
+	end
+
+	return desc
+end
+
+local function get_ranks(trader)
+	local a_r = db.actor:character_rank()
+	local t_r = trader:character_rank()
+	if a_r == 0 then
+		a_r = 1
+	elseif t_r == 0 then
+		t_r = 1
+	end
+	return a_r, t_r
+end
+
+function trade_get_buy_price(trader, sec, full_eng_price, no_dfactor_price, deficit_factor)
+	-- log2("trade_get_buy_price: called for sec [%s] @ trader [%s] full_eng_price [%f]",sec,trader:name(),full_eng_price)
+	local a_r, t_r = get_ranks(trader)
+	local coeff = (a_r - t_r) / 100
+	local final_price = full_eng_price + (full_eng_price / 100 * coeff)
+	-- log2("trade_get_buy_price: a_r [%d] t_r [%d] coeff [%f]",a_r,t_r,coeff)
+	return final_price
+end
+
+function trade_get_sell_price(trader, sec, full_eng_price, no_dfactor_price, deficit_factor)
+	-- log2("trade_get_sell_price: called for sec [%s] @ trader [%s] full_eng_price [%f]",sec,trader:name(),full_eng_price)
+	local a_r, t_r = get_ranks(trader)
+	local coeff = (a_r - t_r) / 100
+	local final_price = full_eng_price - (full_eng_price / 100 * coeff)
+	-- log2("trade_get_sell_price: a_r [%d] t_r [%d] coeff [%f]",a_r,t_r,coeff)
+	return final_price
+end
+
+function ui_task_time_remaning(task_id)
+	if not task_id then return "" end
+	-- log2("ui_task_time_remaning: task_id [%s]", task_id)
+
+	local name, delay = timers.check_timer("task_"..task_id,"task_manager.make_task_failed(\""..task_id.."\")")
+	if not name or delay <= 0 then
+		name, delay = timers.check_timer("task_"..task_id,"task_manager.make_task_refused(\""..task_id.."\")")
+	end
+	if name and delay then
+		local days = math.floor(delay / (24 * 60))
+		local hours = math.floor((delay % (24 * 60)) / 60)
+		local mins = delay % 60
+
+		if days > 0 then
+			return string.format("%s %d %s %d %s %d %s",
+			game.translate_string("ui_st_time_remains"), 
+			days,game.translate_string("ui_st_days"),
+			hours,game.translate_string("ui_st_hours"),
+			mins,game.translate_string("ui_st_mins"))
+		elseif hours > 0 then
+			return string.format("%s %d %s %d %s", game.translate_string("ui_st_time_remains"),hours,game.translate_string("ui_st_hours"),mins,game.translate_string("ui_st_mins"))
+		end
+		return string.format("%s %d %s", game.translate_string("ui_st_time_remains"), mins, game.translate_string("ui_st_mins"))
+	end
+
+	return ""
+end
+
+function on_engine_weather_change(time_sect)
+	dsh.timeout(1000, set_weather_info)
+end
+
+function set_weather_info()
+	local env, cur_info = level.environment(), "pasmurno_info"
+	for idx = 0, 1 do
+		local env_desc = env:getCurrentWeather(idx)
+
+		if type(env_desc.thunderbolt_duration) ~= "number" then
+			log1("!! Incorrect env_desc.thunderbolt_duration!")
+			return
+		end
+
+		-- Порядок проверок важен!!!
+
+		-- Просто идёт дождь
+		if level.rain_factor() > 0.1 then
+			cur_info = "rain_info"
+		end
+
+		-- Молнии
+		if env_desc.thunderbolt_duration > 0.01 or env_desc.thunderbolt_period > 0.1 then
+			cur_info = "groza_info"
+		end
+
+		-- Чистое небо или свет солнца
+		if string.find(tostring(env_desc.sky_texture), "clear", 1) or (env_desc.sun_color.x > 0.01) or (env_desc.sun_color.y > 0.01) or (env_desc.sun_color.z > 0.01) then
+			cur_info = "clear_info"
+		end
+
+		if get_value("blowout", 0) > 0 then
+			cur_info = "vybros_info"
+		end
+	end
+	if db.actor then db.actor:give_info_portion(cur_info) end
+end

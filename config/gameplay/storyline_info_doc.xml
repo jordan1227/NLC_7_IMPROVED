@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<article id="tex_mikhalych_item" name="tex_mikhalych_item_name" article_type="journal" group="enc_task">
+	<text>tex_mikhalych_item</text>
+</article>
+<article id="tex_lim_trader_bauble" name="tex_lim_trader_bauble_name" article_type="journal" group="enc_task">
+	<text>tex_lim_trader_bauble</text>
+</article>
+<article id="tex_sidor_outfit" name="tex_sidor_outfit_name" article_type="journal" group="enc_task">
+	<text>tex_sidor_outfit</text>
+</article>
+<article id="tex_barmen_outfit" name="tex_barmen_outfit_name" article_type="journal" group="enc_task">
+	<text>tex_barmen_outfit</text>
+</article>
+<article id="tex_sherstuk_outfit" name="tex_sherstuk_outfit_name" article_type="journal" group="enc_task">
+	<text>tex_sherstuk_outfit</text>
+</article>
+<article id="tex_marsh_baze_ecolog_1" name="tex_marsh_baze_ecolog_name" article_type="journal" group="enc_task">
+	<texture x="600" y="0" width="50" height="100">ui\ui_icon_equipment</texture>
+	<text>tex_marsh_baze_ecolog_1</text>
+</article>
+<article id="tex_marsh_baze_ecolog_2" name="tex_marsh_baze_ecolog_name" article_type="journal" group="enc_task">
+	<texture x="600" y="550" width="50" height="50">ui\ui_icon_equipment</texture>
+	<text>tex_marsh_baze_ecolog_2</text>
+</article>
+<article id="tex_marsh_baze_ecolog_3" name="tex_marsh_baze_ecolog_name" article_type="journal" group="enc_task">
+	<texture x="600" y="400" width="50" height="50">ui\ui_icon_equipment</texture>
+	<text>tex_marsh_baze_ecolog_3</text>
+</article>
+<article id="tex_marsh_baze_ecolog_4" name="tex_marsh_baze_ecolog_name" article_type="journal" group="enc_task">
+	<texture x="600" y="450" width="50" height="50">ui\ui_icon_equipment</texture>
+	<text>tex_marsh_baze_ecolog_4</text>
+</article>
+
+<article id="ecolog_artefact1_rand1_article" name="ecolog_artefact1_rand1_article_name" article_type="journal" group="enc_task">
+	<ltx>af_ameba_slug</ltx>	
+	<text>tex_ecolog_artefact1_rand1_article</text>
+</article>
+<article id="ecolog_artefact1_rand2_article" name="ecolog_artefact1_rand1_article_name" article_type="journal" group="enc_task">
+	<ltx>af_cristal_flower</ltx>	
+	<text>tex_ecolog_artefact1_rand2_article</text>
+</article>
+<article id="ecolog_artefact1_rand3_article" name="ecolog_artefact1_rand1_article_name" article_type="journal" group="enc_task">
+	<ltx>af_electra_flash</ltx>	
+	<text>tex_ecolog_artefact1_rand3_article</text>
+</article>
+
+<article id="ecolog_artefact2_rand1_article" name="ecolog_artefact1_rand1_article_name" article_type="journal" group="enc_task">
+	<ltx>af_mincer_meat</ltx>	
+	<text>tex_ecolog_artefact2_rand1_article</text>
+</article>
+<article id="ecolog_artefact2_rand2_article" name="ecolog_artefact1_rand1_article_name" article_type="journal" group="enc_task">
+	<ltx>af_rusty_kristall</ltx>	
+	<text>tex_ecolog_artefact2_rand2_article</text>
+</article>
+<article id="ecolog_artefact2_rand3_article" name="ecolog_artefact1_rand1_article_name" article_type="journal" group="enc_task">
+	<ltx>af_fireball</ltx>	
+	<text>tex_ecolog_artefact2_rand3_article</text>
+</article>
+
+<article id="ecolog_artefact3_rand1_article" name="ecolog_artefact1_rand1_article_name" article_type="journal" group="enc_task">
+	<ltx>af_ameba_mica</ltx>	
+	<text>tex_ecolog_artefact3_rand1_article</text>
+</article>
+<article id="ecolog_artefact3_rand2_article" name="ecolog_artefact1_rand1_article_name" article_type="journal" group="enc_task">
+	<ltx>af_cristall</ltx>	
+	<text>tex_ecolog_artefact3_rand2_article</text>
+</article>
+<article id="ecolog_artefact3_rand3_article" name="ecolog_artefact1_rand1_article_name" article_type="journal" group="enc_task">
+	<ltx>af_gold_fish</ltx>	
+	<text>tex_ecolog_artefact3_rand3_article</text>
+</article>
+
+<article id="ecolog_artefact4_rand1_article" name="ecolog_artefact1_rand1_article_name" article_type="journal" group="enc_task">
+	<ltx>af_night_star</ltx>	
+	<text>tex_ecolog_artefact4_rand1_article</text>
+</article>
+<article id="ecolog_artefact4_rand2_article" name="ecolog_artefact1_rand1_article_name" article_type="journal" group="enc_task">
+	<ltx>af_rusty_sea-urchin</ltx>	
+	<text>tex_ecolog_artefact4_rand2_article</text>
+</article>
+<article id="ecolog_artefact4_rand3_article" name="ecolog_artefact1_rand1_article_name" article_type="journal" group="enc_task">
+	<ltx>af_soul</ltx>	
+	<text>tex_ecolog_artefact4_rand3_article</text>
+</article>
+
+<article id="ecolog_artefact5_rand1_article" name="ecolog_artefact1_rand1_article_name" article_type="journal" group="enc_task">
+	<texture x="650" y="700" width="150" height="50">ui\ui_icon_equipment_3</texture>
+	<text>tex_ecolog_artefact5_rand1_article</text>
+</article>
+<article id="ecolog_artefact5_rand2_article" name="ecolog_artefact1_rand1_article_name" article_type="journal" group="enc_task">
+	<texture x="650" y="750" width="150" height="50">ui\ui_icon_equipment_3</texture>
+	<text>tex_ecolog_artefact5_rand2_article</text>
+</article>
+<article id="ecolog_artefact5_rand3_article" name="ecolog_artefact1_rand1_article_name" article_type="journal" group="enc_task">
+	<texture x="650" y="800" width="150" height="50">ui\ui_icon_equipment_3</texture>
+	<text>tex_ecolog_artefact5_rand3_article</text>
+</article>
+
+<article id="tex_barmen_scafandr" name="tex_barmen_scafandr_name" article_type="journal" group="enc_task">	
+	<text>tex_barmen_scafandr</text>
+</article>
+<article id="tex_sidor_scafandr" name="tex_sidor_scafandr_name" article_type="journal" group="enc_task">	
+	<text>tex_sidor_scafandr</text>
+</article>
+<article id="tex_sidor_scafandr_dlg" name="tex_sidor_scafandr_dlg_name" article_type="journal" group="enc_task">	
+	<text>tex_sidor_scafandr_dlg</text>
+</article>
+<article id="tex_saharov_controler" name="tex_saharov_controler_name" article_type="journal" group="enc_task">
+	<texture x="750" y="0" width="200" height="150">ui\ui_icon_photo</texture>
+	<text>tex_saharov_controler</text>
+</article>
+<article id="tex_volk_gonec" name="tex_volk_gonec_name" article_type="journal" group="enc_task">
+	<text>tex_volk_gonec</text>
+</article>
+<article id="tex_ivan_toz" name="tex_ivan_toz_name" article_type="journal" group="enc_task">
+	<ltx>wpn_hunters_toz_new</ltx>
+	<text>tex_ivan_toz</text>
+</article>
+<article id="tex_marsh_crash_vertolet" name="tex_marsh_crash_vertolet_name" article_type="journal" group="enc_task">
+	<ltx>agr_black_box</ltx>	
+	<text>tex_marsh_crash_vertolet</text>
+</article>
+<article id="tex_dar_crash_vertolet" name="tex_dar_crash_vertolet_name" article_type="journal" group="enc_task">
+	<ltx>agr_black_box</ltx>	
+	<text>tex_dar_crash_vertolet</text>
+</article>
+<article id="tex_gen_crash_vertolet" name="tex_gen_crash_vertolet_name" article_type="journal" group="enc_task">
+	<ltx>agr_black_box</ltx>
+	<text>tex_gen_crash_vertolet</text>
+</article>
+<article id="tex_dead_crash_vertolet" name="tex_dead_crash_vertolet_name" article_type="journal" group="enc_task">
+	<ltx>agr_black_box</ltx>	
+	<text>tex_dead_crash_vertolet</text>
+</article>
+<article id="tex_saharov_scientist_rf" name="tex_saharov_scientist_rf_name" article_type="journal" group="enc_task">
+	<text>tex_saharov_scientist_rf</text>
+</article>
+<article id="tex_semenov_green_art" name="tex_semenov_green_art_name" article_type="journal" group="enc_task">
+	<text>tex_semenov_green_art</text>
+</article>
+<article id="tex_marsh_baze_guard_ohota" name="tex_marsh_baze_guard_ohota_name" article_type="journal" group="enc_task">
+	<text>tex_marsh_baze_guard_ohota</text>
+</article>
+<article id="tex_agroprom_prikaz" name="tex_agroprom_prikaz_name" article_type="journal" group="enc_task">
+	<text>tex_agroprom_prikaz</text>
+</article>																											  
+<article id="tex_barmen_freeman" name="tex_barmen_freeman_name" article_type="journal" group="enc_task">
+	<text>tex_barmen_freeman</text>
+</article>																											  
+<article id="tex_dar_greens_yan_way" name="tex_dar_greens_yan_way_name" article_type="journal" group="enc_task">
+	<texture x="350" y="500" width="100" height="150">ui\ui_icon_equipment_1</texture>
+	<text>tex_dar_greens_yan_way</text>
+</article>																																
+<article id="tex_marsh_cook_ammo" name="tex_marsh_cook_ammo_name" article_type="journal" group="enc_task">
+	<texture x="800" y="700" width="150" height="100">ui\ui_icon_equipment</texture>
+	<text>tex_marsh_cook_ammo</text>
+</article>
+<article id="petrenko_ammo_article" name="petrenko_ammo_article_name" article_type="journal" group="enc_task">
+	<text>tex_petrenko_ammo_article</text>
+</article>
+<article id="petrenko_ammo2_article" name="petrenko_ammo2_article_name" article_type="journal" group="enc_task">
+	<text>tex_petrenko_ammo2_article</text>
+</article>
+<article id="tex_green_dan_passage" name="tex_green_dan_passage_name" article_type="journal" group="enc_task">
+	<text>tex_green_dan_passage</text>
+</article>																											
+<article id="tex_shurup_instrument" name="tex_shurup_instrument_name" article_type="journal" group="enc_task">
+	<texture x="700" y="600" width="100" height="100">ui\ui_icon_equipment</texture>
+	<text>tex_shurup_instrument</text>
+</article>
+<article id="shurup_fal_upgrade_article" name="shurup_fal_upgrade_article_name" article_type="journal" group="enc_task/fal_up_quest">
+	<texture x="300" y="100" width="200" height="50">ui\ui_icon_equipment_3</texture>
+	<text>tex_shurup_fal_upgrade_article</text>
+</article>
+<article id="voron_upgrade_kit_article" name="voron_upgrade_kit_article_name" article_type="journal" group="enc_task/fal_up_quest">
+    <texture x="650" y="0" width="150" height="150">ui\ui_icon_equipment_1</texture>
+	<text>tex_voron_upgrade_kit_article</text>
+</article>
+<article id="shurup_mtv_upgrade_article" name="shurup_mtv_upgrade_article_name" article_type="journal" group="enc_task">
+	<text>tex_shurup_mtv_upgrade_article</text>
+</article>
+<article id="tex_private_blockpost_outfit" name="tex_private_blockpost_outfit_name" article_type="journal" group="enc_task">
+	<texture x="0" y="850" width="100" height="150">ui\ui_icon_equipment_3</texture>
+	<text>tex_private_blockpost_outfit</text>
+</article>
+<article id="tex_private_blockpost_recipt" name="tex_private_blockpost_recipt_name" article_type="journal" group="enc_task">
+	<text>tex_private_blockpost_recipt</text>
+</article>
+<article id="tex_barmen_upir" name="tex_barmen_upir_name" article_type="journal" group="enc_task">
+	<text>tex_barmen_upir</text>
+</article>																															   
+<article id="tex_lisiy_umnik" name="tex_lisiy_umnik_name" article_type="journal" group="enc_task">
+	<text>tex_lisiy_umnik</text>
+</article>																													
+<article id="tex_pahom_petrov_box" name="tex_pahom_petrov_box_name" article_type="journal" group="enc_task">
+	<text>tex_pahom_petrov_box</text>
+</article>																													   
+<article id="tex_mil_trader_aver" name="tex_mil_trader_aver_name" article_type="journal" group="enc_task">
+	<texture x="900" y="450" width="100" height="100">ui\ui_icon_equipment</texture>
+	<text>tex_mil_trader_aver</text>
+</article>																														

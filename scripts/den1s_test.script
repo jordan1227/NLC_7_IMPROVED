@@ -1,0 +1,196 @@
+tbl_arts = {
+    [ "lvl1" ] = {          -- 1 УРОВЕНЬ --
+        "af_medusa", "af_vyvert", "af_blood", "af_electra_sparkler",
+        "af_drops", "af_ameba_slime", "af_rusty_thorn"
+    },
+    [ "lvl2" ] = {          -- 2 УРОВЕНЬ --
+        "af_cristal_flower", "af_gravi", "af_mincer_meat", "af_electra_flash",
+        "af_fireball", "af_ameba_slug", "af_rusty_kristall"
+    },
+    [ "lvl3" ] = {          -- 3 УРОВЕНЬ --
+        "af_cristall", "af_electra_moonlight", "af_night_star", "af_gold_fish",
+        "af_rusty_sea-urchin", "af_soul", "af_ameba_mica"
+    },
+    [ "lvl4" ] = {          -- ПУСТЫШКИ --
+        "af_dummy_spring", "af_dummy_dummy", "af_dummy_battery",
+        "af_dummy_pellicle", "af_dummy_glassbeads", "af_dummy_kolobok"
+    },
+    [ "lvl5" ] = {          -- МОДИФИКАТЫ --
+        "af_armor_1", "af_babka_1", "af_cry_1", "af_dik_1", "af_dummy_simbion",
+        "af_kol_1", "af_pudd_1", "af_spirit_1", "af_dummy_buliz"
+    },
+    [ "lvl6" ] = {          -- МЕЗОМОДИФИКАТЫ --
+        "af_armor_2", "af_babka_2", "af_cry_2", "af_dik_2",
+        "af_kol_2", "af_pudd_2", "af_spirit_2"
+    },
+    [ "lvl7" ] = {          -- ГИПЕРМОДИФИКАТЫ --
+        "af_armor_3", "af_babka_3", "af_cry_3", "af_dik_3",
+        "af_kol_3", "af_pudd_3", "af_spirit_3"
+    },
+    [ "lvl8" ] = {          -- АБСОЛЮТЫ --
+        "af_armor_4", "af_babka_4", "af_cry_4", "af_dik_4",
+        "af_kol_4", "af_pudd_4", "af_spirit_4"
+    },
+    [ "lvl9" ] = {          -- КАПСУЛЫ 3ур --
+        "af_night_star_capsule", "af_gold_fish_capsule", "af_cristall_capsule", "af_soul_capsule",
+        "af_electra_moonlight_capsule", "af_rusty_sea-urchin_capsule", "af_ameba_mica_capsule"
+    },
+    [ "lvl10" ] = {         -- КАПСУЛЫ ПУСТЫШКИ --
+        "af_dummy_spring_capsule", "af_dummy_dummy_capsule", "af_dummy_battery_capsule",
+        "af_dummy_pellicle_capsule", "af_dummy_kolobok_capsule", "af_dummy_glassbeads_capsule"
+    },
+    [ "lvl11" ] = {         -- УНИКИ --
+        "af_dummy_green_medusa", "af_dummy_green_vyvert", "af_dummy_green_blood",
+        "af_red_dummy_spring", "af_red_dummy_battery", "af_red_dummy_pellicle",
+        "af_medus_new",
+        "af_crist_new",
+        "af_flower_new",
+        "af_star_new",
+        "af_glass_new",
+        "af_dummy_fire",
+        "af_sul_new"
+    }
+} 
+
+tbl_arts = den1s_test.tbl_arts
+
+function on_new_game()
+	-- заполним нулями с НИ таблицу найденных артов
+    for _, v in ipairs({
+		"st_pda_arts_found_1",
+		"st_pda_arts_found_2",
+		"st_pda_arts_found_3",
+	}) do
+        xr_statistic.add_pts( "arts", game.translate_string( v ), 0, 0 )
+    end
+	-- заполним нулями с НИ таблицу прочей статистики
+    -- for _, v in ipairs({
+		-- "st_pda_otherstats_blowouts",
+		-- "st_pda_otherstats_black_tip",
+	-- }) do
+        -- xr_statistic.add_pts( "otherstats", game.translate_string( v ), 0, 0 )
+    -- end
+	
+end
+
+function add_art_to_vars( id )
+    if id ~= nil then
+        local lname = level.name()
+        local tbl   = get_value("tbl_bio_art", {})
+        if tbl[ lname ] == nil then tbl[ lname ] = {} end
+        table.insert( tbl[ lname ], id )
+        set_value("tbl_bio_art", tbl)
+    end 
+end
+
+function art_is_bio_art( id )
+    local lname = level.name()
+    local tbl   = get_value("tbl_bio_art", {})
+    if tbl ~= nil then
+        for k, v in pairs( tbl ) do
+            if k == lname then
+                for i = 1, #v do
+                    if id == v[ i ] then
+						xr_detector.del_from_tbl(id)
+						-- dump_table(xr_detector.get_art_tbl())
+                        v[ i ] = -1
+                        set_value("tbl_bio_art", tbl)
+                        return true
+                    end
+                end
+            end
+        end
+    end
+    return false
+end
+
+function handle_art_for_stats( sect, id )
+	if art_is_bio_art( id ) then                                -- природный арт, нужно заполнить статистику
+		local q_tbl = nil
+		local d_flag = false
+		if has_alife_info("detector_quest_start") and not has_alife_info("detector_quest_end") and not has_alife_info("detector_quest_fail") and not has_alife_info("detector_quest_refuse") then
+			q_tbl = get_value("art_detect_quest_tbl",{})
+			if not q_tbl["lvl1"] then
+				q_tbl["lvl1"] = {}
+			end
+			if not q_tbl["lvl2"] then
+				q_tbl["lvl2"] = {}
+			end
+			if not q_tbl["lvl9"] then
+				q_tbl["lvl9"] = {}
+			end
+			local detector_record = razgruzka.active_detectors[8]
+			if detector_record and strpos(detector_record,"art") then
+				d_flag = true
+			end
+		end
+		for k, v in pairs( tbl_arts ) do
+			for i = 1, #v do
+				if strposx( sect, v[ i ] ) then
+				
+					if k == "lvl1" then                         -- арт первого уровня
+						if q_tbl ~= nil and d_flag then
+							if not q_tbl["lvl1"][sect] then
+								q_tbl["lvl1"][sect] = 0
+							end
+							local sum = q_tbl["lvl1"][sect]
+							q_tbl["lvl1"][sect] = sum + 1
+						end
+						xr_statistic.add_pts( "arts",
+                            game.translate_string( "st_pda_arts_found_1" ), 1, 0.5
+						)
+					elseif k == "lvl2" then                     -- арт второго уровня
+						if q_tbl ~= nil and d_flag then
+							if not q_tbl["lvl2"][sect] then
+								q_tbl["lvl2"][sect] = 0
+							end
+							local sum = q_tbl["lvl2"][sect]
+							q_tbl["lvl2"][sect] = sum + 1
+						end
+						xr_statistic.add_pts( "arts",
+                            game.translate_string( "st_pda_arts_found_2" ), 1, 0.5
+						)
+					elseif k == "lvl9" or k == "lvl10" then     -- капсула
+						if q_tbl ~= nil and d_flag then
+							if not q_tbl["lvl9"][sect] then
+								q_tbl["lvl9"][sect] = 0
+							end
+							local sum = q_tbl["lvl9"][sect]
+							q_tbl["lvl9"][sect] = sum + 1
+						end
+						xr_statistic.add_pts( "arts",
+                            game.translate_string( "st_pda_arts_found_3" ), 1, 0.5
+						)
+					end
+                end
+            end
+        end
+		if q_tbl ~= nil then
+            set_value("art_detect_quest_tbl",q_tbl)
+		end
+    end
+end
+
+function on_monster_kill_check_parts( obj, who )
+	if who == nil then return  end -- если мут убился "об воздух" - оставляем запчасть
+	 -- если его убил актор или что угодно, кроме других НПС - оставляем
+    if ( not obj ) or ( who:id() == db.actor:id() ) or ( not IsStalker(who) ) then return end
+	
+	-- если этоу нас квестовый мутант, которому обязательно нужно оставить запчасть,
+	-- и неважно, кто его убил - тоже выходим, ничего не делая
+	
+	local keep_always = get_bool( obj:section(), "Spawn_Inventory_Item_Keep", false )
+	if keep_always then
+		return
+	end 
+	
+    obj:iterate_inventory(
+        function( obj, item )
+            if strposx( item:section(), "mutant_" ) then
+                local sobj = alife():object( item:id() )
+                if sobj then alife():release( sobj ) end
+            end
+        end,
+        obj
+    )
+end

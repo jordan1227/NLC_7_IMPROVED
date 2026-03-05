@@ -1,0 +1,1182 @@
+<?xml version="1.0" encoding="windows-1251"  ?>
+<game_dialogs>
+<!-- semenov_start_new -->	
+<dialog id="yantar_help_scientist">
+	<phrase_list>
+		<phrase id="0">
+			<action>dialogs.no_trade_trader</action>	
+			<text />
+			<next>100</next>
+			<next>200</next>
+		</phrase>
+		<phrase id="100">
+			<text />
+			<dont_has_info>kruglov_is_fly</dont_has_info>
+			<next>101</next>
+		</phrase>
+		<phrase id="200">
+			<text />
+			<has_info>kruglov_is_fly</has_info>
+			<next>201</next>
+		</phrase>
+		<phrase id="101">
+			<text>yantar_help_scientist_101</text>			
+		</phrase>
+		<phrase id="201">
+			<text>yantar_help_scientist_201</text>				
+		</phrase>			
+	</phrase_list>
+</dialog>
+	
+<dialog id="saharov_start_dialog">
+	<phrase_list>
+		<phrase id="0">
+			<action>dialogs.no_trade_trader</action>
+			<text></text>
+			<next>100</next>
+			<next>150</next>
+			<next>200</next>
+			<next>350</next>
+			<next>400</next>
+			<next>500</next>
+			<next>700</next>
+			<next>800</next>
+			<next>900</next>
+			<next>950</next>
+			<next>960</next>
+		</phrase>
+		<phrase id="100">
+			<text></text>
+			<dont_has_info>sakharov_hello_info</dont_has_info>
+			<next>101</next>
+		</phrase>
+		<phrase id="150">
+			<text></text>
+			<has_info>sakharov_hello_info</has_info>
+			<dont_has_info>yan_izm_start</dont_has_info>
+			<next>151</next>
+		</phrase>
+		<phrase id="200">
+			<text></text>
+			<has_info>yan_izm_start</has_info>
+			<dont_has_info>brainlab_safe_time_info</dont_has_info>
+			<next>201</next>
+		</phrase>
+		<phrase id="350">
+			<text></text>
+			<has_info>brainlab_safe_time_info</has_info>
+			<dont_has_info>yan_find_vasilyev_start</dont_has_info>
+			<next>351</next>
+		</phrase>
+		<phrase id="400">
+			<text></text>
+			<has_info>yan_find_vasilyev_start</has_info>
+			<dont_has_info>yan_find_boloto_start</dont_has_info>
+			<next>401</next>
+		</phrase>
+		<phrase id="500">
+			<text></text>
+			<has_info>yan_find_boloto_start</has_info>
+			<dont_has_info>yantar_attack_start</dont_has_info>
+			<next>501</next>
+		</phrase>
+		<phrase id="700">
+			<text></text>
+			<has_info>yantar_attack_start</has_info>
+			<dont_has_info>yan_kill_brain_done</dont_has_info>
+			<next>701</next>
+		</phrase>
+		<phrase id="800">
+			<text></text>
+			<has_info>yan_kill_brain_done</has_info>
+			<dont_has_info>deactivate_radar_fall</dont_has_info>
+			<next>801</next>
+		</phrase>
+		<phrase id="900">
+			<text></text>
+			<has_info>deactivate_radar_fall</has_info>
+			<dont_has_info>sakharov_radar_info</dont_has_info>
+			<next>901</next>
+		</phrase>
+		<phrase id="950">
+			<text></text>
+			<has_info>sakharov_radar_info</has_info>
+			<dont_has_info>radar_on</dont_has_info>
+			<next>951</next>
+		</phrase>
+		<phrase id="960">
+			<text></text>
+			<has_info>radar_on</has_info>
+			<next>961</next>
+		</phrase>
+		<phrase id="101">
+			<text>saharov_start_dialog_101</text>
+			<next>102</next>
+		</phrase>
+		<phrase id="102">
+			<text>saharov_start_dialog_102</text>
+			<next>103</next>
+		</phrase>
+		<phrase id="103">
+			<text>saharov_start_dialog_103</text>
+			<next>104</next>
+		</phrase>
+		<phrase id="104">
+			<text>saharov_start_dialog_104</text>
+			<give_info>sakharov_hello_info</give_info>
+			<next>105</next>
+		</phrase>
+		<phrase id="105">
+			<text>saharov_start_dialog_105</text>
+			<next>106</next>
+		</phrase>
+		<phrase id="106">
+			<text>saharov_start_dialog_106</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="151">
+			<text>saharov_start_dialog_151</text>
+		</phrase>
+		<phrase id="201">
+			<text>saharov_start_dialog_351</text>		<!-- не ошибка -->
+		</phrase>
+		<phrase id="351">
+			<text>saharov_start_dialog_351</text>
+			<next>352</next>
+		</phrase>
+		<phrase id="352">
+			<text>saharov_start_dialog_352</text>
+			<next>353</next>
+		</phrase>
+		<phrase id="353">
+			<text>saharov_start_dialog_353</text>			
+			<next>354</next>
+		</phrase>
+		<phrase id="354">
+			<text>saharov_start_dialog_354</text>
+			<next>355</next>
+		</phrase>
+		<phrase id="355">
+			<text>saharov_start_dialog_355</text>
+			<action>sak_dialog.start_time_yan_find_vasilyev</action>
+			<action>sak.create_vasilev_suit</action>
+			<give_info>yan_find_vasilyev_start</give_info>
+			<next>356</next>
+		</phrase>
+		<phrase id="356">
+			<text>saharov_start_dialog_356</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>		
+		<phrase id="401">
+			<text>saharov_start_dialog_401</text>
+			<next>4021</next>
+			<next>4022</next>
+		</phrase>
+		<phrase id="4021">
+		<dont_has_info>yan_find_vasilyev_end</dont_has_info>
+			<text>saharov_start_dialog_4021</text>
+			<next>4031</next>
+			<next>4032</next>
+		</phrase>
+		<phrase id="4022">
+		<has_info>yan_find_vasilyev_end</has_info>
+			<text>saharov_start_dialog_4022</text>
+			<action>sak_dialog.clear_ready_time_yan_find_vasilyev</action>
+			<next>403</next>
+		</phrase>
+		<phrase id="4031">
+		<precondition>sak_dialog.not_ready_time_yan_find_vasilyev</precondition>
+			<text>saharov_start_dialog_4031</text>
+		</phrase>
+		<phrase id="4032">
+		<precondition>sak_dialog.is_ready_time_yan_find_vasilyev</precondition>
+			<text>saharov_start_dialog_4032</text>
+			<give_info>yan_find_vasilyev_end</give_info>
+			<next>4042</next>
+		</phrase>
+		<phrase id="4042">
+			<text>saharov_start_dialog_4042</text>
+			<action>sak_dialog.clear_ready_time_yan_find_vasilyev</action>
+			<next>405</next>
+		</phrase>
+		<phrase id="403">
+			<text>saharov_start_dialog_403</text>
+			<next>404</next>
+		</phrase>
+		<phrase id="404">
+			<text>saharov_start_dialog_404</text>
+			<next>405</next>
+		</phrase>
+		<phrase id="405">
+			<text>saharov_start_dialog_405</text>
+			<give_info>yan_find_boloto_start</give_info>
+			<next>4061</next>
+			<next>4062</next>
+		</phrase>
+		<phrase id="4061">
+		<precondition>sak_dialog.gg_new_about_marsh</precondition>
+			<text>saharov_start_dialog_4061</text>
+			<next>4071</next>
+		</phrase>
+		<phrase id="4062">
+		<precondition>sak_dialog.gg_not_new_about_marsh</precondition>
+			<text>saharov_start_dialog_4062</text>
+			<next>4072</next>
+		</phrase>
+		<phrase id="4071">
+			<text>saharov_start_dialog_4071</text>
+		</phrase>
+		<phrase id="4072">
+			<text>saharov_start_dialog_4072</text>
+		</phrase>			
+		<phrase id="501">
+			<text>saharov_start_dialog_501</text>
+		</phrase>
+		<phrase id="701">
+			<text>saharov_start_dialog_701</text>
+			<give_info>yan_kill_brain_done</give_info>
+			<action>sak_dialog.del_time_yan_psy</action>
+			<action>sak_dialog.x16_documents_info</action>		<!-- страховочная перевыдача поршня о доках из х16 при наличие оных в инвентаре -->
+			<next>7011</next>
+			<next>7012</next>				
+		</phrase>
+		<phrase id="7011">
+			<text>saharov_start_dialog_7011</text>
+			<next>7021</next>
+		</phrase>
+		<phrase id="7012">
+			<text>saharov_start_dialog_7012</text>
+			<next>7022</next>
+		</phrase>
+		<phrase id="7021">
+			<text>saharov_start_dialog_7021</text>
+			<give_info>info_amk_recipt_tears_fire</give_info>
+			<action>sak.info_amk_received</action>				
+		</phrase>
+		<phrase id="7022">
+			<text>saharov_start_dialog_7022</text>
+			<action>sak_dialog.relocate_money(db.actor,30000,"in")</action>
+		</phrase>			
+		<phrase id="801">
+			<text>saharov_start_dialog_801</text>
+		</phrase>
+		<phrase id="901">
+			<text>saharov_start_dialog_901</text>
+			<next>902</next>
+		</phrase>
+		<phrase id="902">
+			<text>saharov_start_dialog_902</text>
+			<next>903</next>
+		</phrase>
+		<phrase id="903">
+			<text>saharov_start_dialog_903</text>
+			<next>904</next>
+		</phrase>
+		<phrase id="904">
+			<text>saharov_start_dialog_904</text>
+			<next>905</next>
+		</phrase>
+		<phrase id="905">
+			<text>saharov_start_dialog_905</text>
+			<next>906</next>
+		</phrase>
+		<phrase id="906">
+			<text>saharov_start_dialog_906</text>
+			<give_info>sakharov_radar_info</give_info>
+			<next>907</next>
+		</phrase>
+		<phrase id="907">
+			<text>saharov_start_dialog_907</text>
+		</phrase>
+		<phrase id="951">
+			<text>saharov_start_dialog_951</text>
+		</phrase>
+		<phrase id="961">
+			<text>saharov_start_dialog_951</text>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="sakharov_kruglov_help">
+	<has_info>kruglov_yantar_talk</has_info>
+	<dont_has_info>sakharov_kruglov_help_info</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>sakharov_kruglov_help_0</text>
+			<next>11</next>
+			<next>12</next>
+			<next>13</next>
+		</phrase>
+		<phrase id="11">
+		<has_info>kruglov_way_2_end</has_info>
+		<dont_has_info>kruglov_flash_done</dont_has_info>
+			<text>sakharov_kruglov_help_11</text>
+			<next>21</next>
+		</phrase>
+		<phrase id="12">
+		<has_info>kruglov_flash_done</has_info>
+		<dont_has_info>kruglov_way_2_end</dont_has_info>
+			<text>sakharov_kruglov_help_12</text>
+			<next>22</next>
+		</phrase>
+		<phrase id="13">
+		<precondition>sak.kruglov_no_help_precond</precondition>
+			<text>sakharov_kruglov_help_13</text>
+			<give_info>sakharov_kruglov_help_info</give_info>
+			<next>23</next>
+		</phrase>
+		<phrase id="21">
+			<text>sakharov_kruglov_help_2</text>	<!-- не ошибка -->
+			<next>3</next>
+		</phrase>
+		<phrase id="22">
+			<text>sakharov_kruglov_help_2</text> 	<!-- не ошибка -->
+			<next>3</next>
+		</phrase>
+		<phrase id="23">
+			<text>sakharov_kruglov_help_23</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+			<text>sakharov_kruglov_help_3</text>
+			<action>sak_dialog.relocate_money(db.actor,20000,"in")</action>														 
+			<action>mike.add_nagrad_saharov</action>
+			<give_info>sakharov_kruglov_help_info</give_info>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>sakharov_kruglov_help_4</text>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="sakharov_brainlab_izm_start">
+	<has_info>bar_x16_documents_start</has_info>
+	<dont_has_info>yan_izm_start</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>sakharov_brainlab_izm_start_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>sakharov_brainlab_izm_start_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>sakharov_brainlab_izm_start_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>sakharov_brainlab_izm_start_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>sakharov_brainlab_izm_start_4</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>sakharov_brainlab_izm_start_5</text>
+			<next>61</next>
+			<next>62</next>
+		</phrase>
+		<phrase id="61">
+			<text>sakharov_brainlab_izm_start_61</text>
+			<give_info>yan_izm_start</give_info>
+			<next>7</next>
+		</phrase>
+		<phrase id="62">
+			<text>sakharov_brainlab_izm_start_62</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="7">
+			<text>sakharov_brainlab_izm_start_7</text>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="sakharov_brainlab_izm_end">
+	<has_info>yan_izm_start</has_info>
+	<dont_has_info>yan_izm_done</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>sakharov_brainlab_izm_end_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>sakharov_brainlab_izm_end_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+		<has_info>yan_izm_1faze</has_info>
+		<has_info>yan_izm_2faze</has_info>
+		<has_info>yan_izm_3faze</has_info>
+			<text>sakharov_brainlab_izm_end_21</text>
+			<next>31</next>
+		</phrase>
+		<phrase id="22">
+			<text>sakharov_brainlab_izm_end_22</text>
+			<next>32</next>
+		</phrase>
+		<phrase id="31">
+			<text>sakharov_brainlab_izm_end_31</text>
+			<next>41</next>
+		</phrase>
+		<phrase id="32">
+			<text>sakharov_brainlab_izm_end_32</text>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<text>sakharov_brainlab_izm_end_41</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="42">
+			<text>sakharov_brainlab_izm_end_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="5">
+			<text>sakharov_brainlab_izm_end_5</text>
+			<next>61</next>
+			<next>62</next>
+		</phrase>
+		<phrase id="61">
+		<precondition>sak_dialog.have_psy_pribor</precondition>
+			<text>sakharov_brainlab_izm_end_61</text>
+			<action>sak_dialog.give_psy_pribor</action>
+			<action>sak_dialog.start_time_yan_psy</action>
+			<give_info>yan_izm_done</give_info>
+			<next>7</next>
+		</phrase>
+		<phrase id="62">
+		<precondition>sak_dialog.havent_psy_pribor</precondition>
+			<text>sakharov_brainlab_izm_end_62</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="7">
+			<text>sakharov_brainlab_izm_end_7</text>
+			<action>mike.good_job</action>
+			<next>8</next>
+		</phrase>
+		<phrase id="8">
+			<text>sakharov_brainlab_izm_end_8</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="sakharov_brainlab_safe_time">
+	<has_info>yan_izm_done</has_info>
+	<dont_has_info>brainlab_safe_time_info</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>sakharov_brainlab_safe_time_0</text>
+			<next>11</next>
+			<next>12</next>
+		</phrase>
+		<phrase id="11">
+		<precondition>sak_dialog.is_ready_time_yan_psy</precondition>
+			<text>sakharov_brainlab_safe_time_11</text>
+			<action>sak_dialog.time_yan_psy</action>
+			<next>21</next>
+		</phrase>
+		<phrase id="12">
+		<precondition>sak_dialog.not_ready_time_yan_psy</precondition>
+			<text>sakharov_brainlab_safe_time_12</text>
+			<next>22</next>
+		</phrase>
+		<phrase id="22">
+			<text>sakharov_brainlab_safe_time_22</text>
+			<action>dialogs.break_dialog</action>			
+		</phrase>		
+		<phrase id="21">
+			<text>sakharov_brainlab_safe_time_21</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>sakharov_brainlab_safe_time_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>sakharov_brainlab_safe_time_4</text>
+			<action>sak_dialog.clear_ready_time_yan_psy</action>
+			<give_info>brainlab_safe_time_info</give_info>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>sakharov_brainlab_safe_time_5</text>
+			<action>sak.add_yantar_corpses</action>
+			<next>6</next>			
+		</phrase>
+		<phrase id="6">
+			<text>sakharov_brainlab_safe_time_6</text>
+			<action>dialogs.break_dialog</action>			
+		</phrase>		
+	</phrase_list>
+</dialog>
+
+<dialog id="sakharov_brainlab_safe_time_re">
+	<has_info>dsc_ecolog_glavn_x16_info</has_info>
+	<has_info>brainlab_safe_time_info</has_info>
+	<dont_has_info>yan_kill_brain_done</dont_has_info>
+	<dont_has_info>brainlab_safe_time_re_info</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>sakharov_brainlab_safe_time_re_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>sakharov_brainlab_safe_time_re_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>sakharov_brainlab_safe_time_re_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>sakharov_brainlab_safe_time_re_3</text>
+			<action>sak_dialog.time_yan_psy</action>
+			<give_info>brainlab_safe_time_re_info</give_info>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>sakharov_brainlab_safe_time_re_4</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>sakharov_brainlab_safe_time_re_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>sakharov_brainlab_safe_time_re_6</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="sakharov_x18docs_start">
+	<has_info>info_way103a</has_info>
+	<has_info>val_raid_start</has_info>
+	<dont_has_info>yan_scientist_books_start</dont_has_info>
+	<dont_has_info>yan_scientist_books_done</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>sakharov_x18docs_start_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>sakharov_x18docs_start_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+			<text>sakharov_x18docs_start_21</text>
+			<action>sak_dialog.add_docs_X18</action>
+			<give_info>yan_scientist_books_start</give_info>
+		</phrase>
+		<phrase id="22">
+			<text>sakharov_x18docs_start_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="sakharov_x18docs_done">
+	<dont_has_info>yan_scientist_books_done</dont_has_info>
+	<has_info>yan_scientist_books_start</has_info>
+	<precondition>sak.have_items_count("x18_document",1)</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>sakharov_x18docs_done_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>sakharov_x18docs_done_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+			<text>sakharov_x18docs_done_21</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="22">
+			<text>sakharov_x18docs_done_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+			<text>sakharov_x18docs_done_3</text>
+			<action>sak_dialog.docs_X18_nagrad1</action>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>sakharov_x18docs_done_4</text>
+			<next>510</next>
+			<next>520</next>
+		</phrase>
+		<phrase id="510">
+		<precondition>sak_dialog.docs_X18_not_have_done</precondition>
+			<text>sakharov_x18docs_done_510</text>
+			<next>511</next>
+			<next>512</next>
+		</phrase>
+		<phrase id="520">
+		<precondition>sak_dialog.docs_X18_have_done</precondition>
+			<text>sakharov_x18docs_done_520</text>
+			<give_info>info_medus_new</give_info>
+			<action>sak.info_artmod</action>
+			<action>sak_dialog.add_gift_saharov</action>	
+			<give_info>yan_scientist_books_done</give_info>
+		</phrase>
+		<phrase id="511">
+			<text>sakharov_x18docs_done_511</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="512">
+			<text>sakharov_x18docs_done_512</text>
+			<next>513</next>
+		</phrase>
+		<phrase id="513">
+			<text>sakharov_x18docs_done_513</text>
+			<give_info>yan_scientist_books_done</give_info>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="sakharov_monolith_code_dialog">
+	<has_info>sakharov_final_start_info</has_info>
+	<dont_has_info>sakharov_monolith_code_info</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>sakharov_monolith_code_dialog_0</text>
+			<next>1</next>
+		</phrase>		
+		<phrase id="1">
+			<text>sakharov_monolith_code_dialog_1</text>
+			<next>2</next>
+		</phrase>		
+		<phrase id="2">
+			<text>sakharov_monolith_code_dialog_2</text>
+			<next>3</next>
+		</phrase>		
+		<phrase id="3">
+			<text>sakharov_monolith_code_dialog_3</text>
+			<next>4</next>
+		</phrase>		
+		<phrase id="4">
+			<text>sakharov_monolith_code_dialog_4</text>
+			<next>5</next>
+		</phrase>		
+		<phrase id="5">
+			<text>sakharov_monolith_code_dialog_5</text>
+			<next>6</next>
+		</phrase>		
+		<phrase id="6">
+			<text>sakharov_monolith_code_dialog_6</text>
+			<next>7</next>
+		</phrase>		
+		<phrase id="7">
+			<text>sakharov_monolith_code_dialog_7</text>
+			<next>8</next>
+		</phrase>		
+		<phrase id="8">
+			<text>sakharov_monolith_code_dialog_8</text>
+			<next>9</next>
+		</phrase>
+		<phrase id="9">
+			<text>sakharov_monolith_code_dialog_9</text>
+			<next>10</next>
+		</phrase>
+		<phrase id="10">
+			<text>sakharov_monolith_code_dialog_10</text>
+			<next>11</next>
+		</phrase>
+		<phrase id="11">
+			<text>sakharov_monolith_code_dialog_11</text>
+			<next>12</next>
+		</phrase>
+		<phrase id="12">
+			<text>sakharov_monolith_code_dialog_12</text>
+			<next>13</next>
+		</phrase>
+		<phrase id="13">
+			<text>sakharov_monolith_code_dialog_13</text>
+			<next>14</next>
+		</phrase>
+		<phrase id="14">
+			<text>sakharov_monolith_code_dialog_14</text>
+			<next>15</next>
+		</phrase>
+		<phrase id="15">
+			<text>sakharov_monolith_code_dialog_15</text>
+			<next>16</next>
+		</phrase>
+		<phrase id="16">
+			<text>sakharov_monolith_code_dialog_16</text>
+			<next>17</next>
+		</phrase>
+		<phrase id="17">
+			<text>sakharov_monolith_code_dialog_17</text>
+			<next>18</next>
+		</phrase>
+		<phrase id="18">
+			<text>sakharov_monolith_code_dialog_18</text>
+			<give_info>sakharov_monolith_code_info</give_info>
+			<give_info>yan_gg_psy_scan_info</give_info>
+			<next>19</next>
+		</phrase>
+		<phrase id="19">
+			<text>sakharov_monolith_code_dialog_19</text>
+			<next>20</next>
+		</phrase>
+		<phrase id="20">
+			<text>sakharov_monolith_code_dialog_20</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>		
+	</phrase_list>
+</dialog>
+
+<dialog id="sakharov_gg_psy_scan_done_dialog">
+	<precondition>sak.have_items_count("psy_scan_data_flash",1)</precondition>
+	<has_info>gg_psy_scan_done</has_info>
+	<dont_has_info>yan_gg_psy_scan_done</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>sakharov_gg_psy_scan_done_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>sakharov_gg_psy_scan_done_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>sakharov_gg_psy_scan_done_dialog_2</text>
+			<action>sak_inventory.release_actor_items("psy_scan_data_flash",1)</action>
+			<give_info>yan_gg_psy_scan_done</give_info>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>sakharov_gg_psy_scan_done_dialog_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>sakharov_gg_psy_scan_done_dialog_4</text>
+			<next>51</next>
+			<next>52</next>
+		</phrase>		
+		<phrase id="51">
+		<has_info>info_ecolog_apparat_aver_done</has_info>
+			<text>sakharov_gg_psy_scan_done_dialog_51</text>
+			<next>61</next>
+		</phrase>		
+		<phrase id="52">
+		<dont_has_info>info_ecolog_apparat_aver_done</dont_has_info>
+			<text>sakharov_gg_psy_scan_done_dialog_52</text>
+			<next>62</next>
+		</phrase>
+		<phrase id="61">
+			<text>sakharov_gg_psy_scan_done_dialog_61</text>
+			<next>71</next>
+		</phrase>
+		<phrase id="62">
+			<text>sakharov_gg_psy_scan_done_dialog_62</text>
+			<next>72</next>
+		</phrase>
+		<phrase id="71">
+			<text>sakharov_gg_psy_scan_done_dialog_71</text>
+			<next>81</next>
+		</phrase>
+		<phrase id="72">
+			<text>sakharov_gg_psy_scan_done_dialog_72</text>
+			<next>82</next>
+		</phrase>
+		<phrase id="81">
+			<text>sakharov_gg_psy_scan_done_dialog_81</text>
+			<next>91</next>
+		</phrase>
+		<phrase id="82">
+			<text>sakharov_gg_psy_scan_done_dialog_82</text>
+			<give_info>ecolog_find_item_3_start</give_info> 	<!-- чтоб не плодить поршни, используется тот же, что у Круглова -->
+			<next>92</next>
+		</phrase>
+		<phrase id="91">
+			<text>sakharov_gg_psy_scan_done_dialog_91</text>
+			<next>101</next>
+		</phrase>
+		<phrase id="92">
+			<text>sakharov_gg_psy_scan_done_dialog_92</text>
+			<next>102</next>
+		</phrase>
+		<phrase id="101">
+			<text>sakharov_gg_psy_scan_done_dialog_101</text>
+			<next>111</next>
+		</phrase>
+		<phrase id="102">
+			<text>sakharov_gg_psy_scan_done_dialog_102</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="111">
+			<text>sakharov_gg_psy_scan_done_dialog_111</text>
+			<next>121</next>
+		</phrase>
+		<phrase id="121">
+			<text>sakharov_gg_psy_scan_done_dialog_121</text>
+			<next>131</next>
+		</phrase>
+		<phrase id="131">
+			<text>sakharov_gg_psy_scan_done_dialog_131</text>
+			<next>141</next>
+		</phrase>
+		<phrase id="141">
+			<text>sakharov_gg_psy_scan_done_dialog_141</text>
+			<give_info>phantom_data_task_info</give_info>
+			<action>sak.post_dialog_exec("sak.docent_secret_room_msg()")</action>
+			<next>151</next>
+		</phrase>
+		<phrase id="151">
+			<text>sakharov_gg_psy_scan_done_dialog_151</text>
+			<action>sak.create_items("x12_secret_flash",1)</action>
+			<next>161</next>
+		</phrase>
+		<phrase id="161">
+			<text>sakharov_gg_psy_scan_done_dialog_161</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="sakharov_aver_scanners">
+	<precondition>sak_dialog.have_3_aver_cart</precondition>
+	<has_info>yan_gg_psy_scan_done</has_info>
+	<has_info>ecolog_find_item_3_start</has_info>
+	<dont_has_info>info_ecolog_apparat_aver_done</dont_has_info>	<!-- чтоб не плодить поршни, используется тот же, что у Круглова -->
+	<phrase_list>
+		<phrase id="0">
+			<text>sakharov_aver_scanners_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>sakharov_aver_scanners_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>sakharov_aver_scanners_dialog_2</text>
+			<action>sak_dialog.give_3_aver_cart</action>
+			<give_info>info_ecolog_apparat_aver_done</give_info>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>sakharov_aver_scanners_dialog_3</text>
+			<action>sak_dialog.sakharov_aver_cards_timer</action>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>sakharov_aver_scanners_dialog_4</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="phantom_data_task">
+	<has_info>yan_gg_psy_scan_done</has_info>
+	<has_info>info_ecolog_apparat_aver_done</has_info>
+	<dont_has_info>phantom_data_task_info</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>phantom_data_task_0</text>
+			<next>11</next>
+			<next>12</next>
+		</phrase>
+		<phrase id="11">
+		<precondition>sak_dialog.is_ready_time_sakharov_aver_cards</precondition>
+			<text>phantom_data_task_11</text>
+			<next>21</next>
+		</phrase>
+		<phrase id="12">
+		<precondition>sak_dialog.not_ready_time_sakharov_aver_cards</precondition>
+			<text>phantom_data_task_12</text>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+			<text>phantom_data_task_21</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="22">
+			<text>phantom_data_task_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+			<text>sakharov_gg_psy_scan_done_dialog_71</text>     <!-- отсюда и ниже идут дубли фраз из диалога sakharov_gg_psy_scan_done_dialog -->
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>sakharov_gg_psy_scan_done_dialog_81</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>sakharov_gg_psy_scan_done_dialog_91</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>sakharov_gg_psy_scan_done_dialog_101</text>
+			<next>7</next>
+		</phrase>
+		<phrase id="7">
+			<text>sakharov_gg_psy_scan_done_dialog_111</text>
+			<next>8</next>
+		</phrase>
+		<phrase id="8">
+			<text>sakharov_gg_psy_scan_done_dialog_121</text>
+			<next>9</next>
+		</phrase>
+		<phrase id="9">
+			<text>sakharov_gg_psy_scan_done_dialog_131</text>
+			<next>10</next>
+		</phrase>
+		<phrase id="10">
+			<text>sakharov_gg_psy_scan_done_dialog_141</text>
+			<next>11</next>
+		</phrase>
+		<phrase id="11">
+			<text>sakharov_gg_psy_scan_done_dialog_151</text>
+			<action>sak_dialog.clear_ready_time_sakharov_aver_cards</action>
+			<action>sak.create_items("x12_secret_flash",1)</action>
+			<give_info>phantom_data_task_info</give_info>
+			<next>12</next>
+		</phrase>
+		<phrase id="12">
+			<text>sakharov_gg_psy_scan_done_dialog_161</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="phantom_data_task_end">
+	<precondition>sak.have_items_count("x12_secret_flash",1)</precondition>
+	<has_info>x12_secret_flash_have</has_info>
+	<dont_has_info>x12_secret_flash_done</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>phantom_data_task_end_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>phantom_data_task_end_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>phantom_data_task_end_2</text>
+			<action>sak_inventory.release_actor_items("x12_secret_flash",1)</action>
+			<give_info>x12_secret_flash_done</give_info>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>phantom_data_task_end_3</text>
+			<action>sak_dialog.start_time_psy</action>		<!-- используем существующий таймер на 2 часа -->
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>phantom_data_task_end_4</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="dead_monolith_scan_dialog">
+	<has_info>x12_secret_flash_done</has_info>
+	<dont_has_info>aver_phantom_off_task</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>dead_monolith_scan_dialog_0</text>
+			<next>11</next>
+			<next>12</next>
+		</phrase>
+		<phrase id="11">
+		<precondition>sak_dialog.is_ready_time_psy</precondition>
+			<text>dead_monolith_scan_dialog_11</text>
+			<next>21</next>
+		</phrase>
+		<phrase id="12">
+		<precondition>sak_dialog.not_ready_time_psy</precondition>
+			<text>dead_monolith_scan_dialog_12</text>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+			<text>dead_monolith_scan_dialog_21</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="22">
+			<text>dead_monolith_scan_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+			<text>dead_monolith_scan_dialog_3</text>
+			<action>sak_dialog.clear_ready_time_psy</action>
+			<give_info>aver_phantom_off_task</give_info>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>dead_monolith_scan_dialog_4</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>dead_monolith_scan_dialog_5</text>
+			<next>61</next>
+			<next>62</next>
+		</phrase>
+		<phrase id="61">
+		<dont_has_info>akk_aver_done</dont_has_info>
+			<text>dead_monolith_scan_dialog_61</text>
+			<next>7</next>
+		</phrase>
+		<phrase id="62">
+		<has_info>akk_aver_done</has_info>
+			<text>dead_monolith_scan_dialog_62</text>
+			<next>7</next>
+		</phrase>
+		<phrase id="7">
+			<text>dead_monolith_scan_dialog_7</text>
+			<action>sak.create_items("aver_monolith_scanner",1)</action>
+			<action>sak.post_dialog_exec("sak.reds_phantom_off_msg()")</action>
+			<action>sak.aver_monolit_spot_on</action>
+			<next>8</next>
+		</phrase>
+		<phrase id="8">
+			<text>dead_monolith_scan_dialog_8</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="dead_monolith_scan_end_dialog">
+	<has_info>aver_monolith_scanner_set</has_info>
+	<dont_has_info>aver_monolith_last_info</dont_has_info>
+	<dont_has_info>sakharov_mayat_task_info</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>dead_monolith_scan_end_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>dead_monolith_scan_end_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>dead_monolith_scan_end_dialog_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>dead_monolith_scan_end_dialog_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>dead_monolith_scan_end_dialog_4</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>dead_monolith_scan_end_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>dead_monolith_scan_end_dialog_6</text>
+			<next>71</next>
+			<next>72</next>
+		</phrase>
+		<phrase id="71">
+		<dont_has_info>kontainer_saharov_done</dont_has_info>
+			<text>dead_monolith_scan_end_dialog_71</text>
+			<give_info>sakharov_mayat_task_info</give_info>
+			<next>81</next>
+		</phrase>
+		<phrase id="72">
+		<has_info>kontainer_saharov_done</has_info>
+			<text>dead_monolith_scan_end_dialog_72</text>
+			<give_info>aver_monolith_last_info</give_info>
+			<next>82</next>
+		</phrase>
+		<phrase id="81">
+			<text>dead_monolith_scan_end_dialog_81</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="82">
+			<text>dead_monolith_scan_end_dialog_82</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="sakharov_mayat_task_dialog">
+	<precondition>sak_dialog.sakharov_mayat_precond</precondition>
+	<has_info>sakharov_mayat_task_info</has_info>
+	<dont_has_info>sakharov_mayat_task_done_info</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>sakharov_mayat_task_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>sakharov_mayat_task_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>sakharov_mayat_task_dialog_2</text>
+			<action>sak_dialog.sakharov_mayat_release</action>
+			<action>sak_dialog.sakharov_last_dialog_timer</action>
+			<give_info>sakharov_mayat_task_done_info</give_info>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>sakharov_mayat_task_dialog_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>sakharov_mayat_task_dialog_4</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="sakharov_aver_monolith_ready">
+	<has_info>aver_monolith_last_info</has_info>
+	<dont_has_info>aver_monolith_ready</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>sakharov_aver_monolith_ready_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>sakharov_aver_monolith_ready_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>sakharov_aver_monolith_ready_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>sakharov_aver_monolith_ready_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>sakharov_aver_monolith_ready_4</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>sakharov_aver_monolith_ready_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>sakharov_aver_monolith_ready_6</text>
+			<next>7</next>
+		</phrase>
+		<phrase id="7">
+			<text>sakharov_aver_monolith_ready_7</text>
+			<action>sak_spawn.dead_monolith_ambush_spawn</action>
+			<give_info>aver_monolith_ready</give_info>
+			<next>8</next>
+		</phrase>
+		<phrase id="8">
+			<text>sakharov_aver_monolith_ready_8</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+</game_dialogs>

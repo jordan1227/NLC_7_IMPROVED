@@ -1,0 +1,12 @@
+[logic]
+active = {-docent_deadsity_new_done} sr_idle@work, nil
+
+[sr_idle@work]
+on_info = {+docent_deadsity_new_done} nil
+on_actor_inside = %+new_teleport_anomalies% sr_teleport
+
+[sr_teleport]
+on_info = {+docent_deadsity_new_done} nil
+point1 = gen_sak_teleport_dead_exit_walk
+look1 = gen_sak_teleport_dead_exit_look
+timeout = 5

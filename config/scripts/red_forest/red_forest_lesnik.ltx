@@ -1,0 +1,18 @@
+[logic]
+active = walker
+
+[walker]
+path_walk = red_forest_lesnik_walk
+path_look = red_forest_lesnik_look
+soundgroup = bar_visitors1
+meet = meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_types = corpse
+
+[meet]
+use			= true
+use_wpn		= false
+meet_dialog	= red_forest_lesnik_start_dialog

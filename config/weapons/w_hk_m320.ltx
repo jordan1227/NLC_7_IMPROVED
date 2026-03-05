@@ -1,0 +1,186 @@
+;Гранатомёт HK M320
+[wpn_gm94]:weapon_immunities
+GroupControlSection			= spawn_group
+$spawn                   	= "weapons\rg-6"					; option for Level Editor
+$npc			 			= on				; option for Level Editor
+$prefetch 		 			= 2
+scheduled                	= off              ; option for ALife Simulator
+cform                    	= skeleton
+class                    	= WP_RG6
+min_radius               	= 20
+max_radius               	= 150
+description					= enc_weapons1_wpn-gm94
+
+ef_main_weapon_type			= 4
+ef_weapon_type				= 9
+
+;-----------------------------------------------------------------------------------
+holder_range_modifier	= 1.0               ; во сколько раз увеличивается eye_range 
+holder_fov_modifier		= 1.0              ; во сколько раз увеличивается eye_fov
+;-----------------------------------------------------------------------------------
+
+cost					 	= 15000
+weapon_class			 	= heavy_weapon
+
+tri_state_reload			= off
+
+ammo_limit		 			= 60
+ammo_current		 		= 10
+ammo_elapsed		 		= 0
+
+ammo_mag_size		 		= 1
+ammo_class		 			= ammo_m209
+launch_speed				= 76;50 ;for rocket
+sprint_allowed				= true
+;-----------------------------------------------------------------------------------
+;базовая дисперсия
+fire_dispersion_base		= 0.5  ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor			= 1.1f
+
+;отдача
+cam_relax_speed         	= 5.0	;скорость возврата в исходное положение
+cam_dispersion          	= 2.0	;увеличения угла (в градусах) с каждым выстрелом
+cam_max_angle				= 12		;максимальный угол отдачи
+cam_max_angle_horz			= 5.0	;(degree) maximum shot horizontal degree 
+cam_step_angle_horz			= 0.5	;(degree) size of step camera moved in horizontal position while shooting
+
+fire_dispersion_condition_factor = 5	;увеличение дисперсии в процентах при максимальном износе 
+misfire_probability 		= 0.003	    ;вероятность осечки при максимальном износе 
+condition_shot_dec 			= 0.00003	;увеличение износа при каждом выстреле
+;-----------------------------------------------------------------------------------
+
+hand_dependence 	 		= 1
+single_handed				= 0
+
+slot 				 		= 1,2		; // secondary
+animation_slot		 		= 9	; type of the animation that will be used
+
+inv_name					= wpn-gm94
+inv_name_short				= wpn-gm94
+inv_weight					= 1.5 ; 5.2
+
+inv_grid_height                                    = 2
+inv_grid_width                                     = 5
+inv_grid_x                                         = 53
+inv_grid_y                                         = 22
+
+direction                	= 0, 0, 1
+shell_point				 	= 0.0, 0.120, 0.20
+fire_point               	= 0.0, 0.120, 0.452
+fire_point2              	= 0.0, 0.120, 0.452
+
+flame_particles		   		= weapons\generic_weapon05
+smoke_particles		   		= weapons\generic_shoot_00
+rpm_empty_click 	   		= 200
+; ttc
+
+hit_power        			= 1.0
+hit_impulse      			= 210
+hit_type 					= fire_wound
+
+fire_distance            	= 100
+bullet_speed			 	= 76			;начальная скорость пули
+rpm                      	= 120
+; end ttc
+
+hud                      	= wpn_gm94_hud
+normal                   	= 0, 1, 0
+position                 	= -0.025, -0.225, 0.02
+orientation              	= 0, 0, 0
+strap_orientation                                  = -15,-9,110
+strap_position                                     = -0.26,-0.11,0.15
+startup_ammo             	= 0
+visual                   	= dynamics\weapons\wpn_m320\wpn_m320				
+
+light_color		 			= 0.6,0.5,0.3
+light_range		 			= 6.0
+light_var_color		 		= 0.05
+light_var_range		 		= 0.5
+light_time 		 			= 0.2
+
+ph_mass			 			= 3
+;cost			 			= 900
+
+;addons
+scope_status				= 0
+silencer_status				= 0
+grenade_launcher_status		= 0
+
+scope_name 					= wpn_addon_eotech
+scope_names 					= wpn_addon_eotech
+scope_respawn_wpn_addon_eotech = wpn_gm94_eotech
+scope_x                     = 81		; offset in inventory icon
+scope_y                     = -14
+silencer_x                  = 0		; offset in inventory icon
+silencer_y                  = 0
+grenade_launcher_x          = 0		; offset in inventory icon
+grenade_launcher_y          = 0
+
+;звуки
+snd_shoot					= weapons\m320\m320_muzzle_mono
+snd_shoot_duplet			= weapons\m320\m320_muzzle_mono
+
+scope_zoom_factor = 90
+
+snd_bore                                           = weapons\generic_draw
+snd_close                                          = weapons\generic_close
+snd_draw                                           = weapons\assault_draw
+snd_empty                                          = weapons\ak_empty, 0.5
+snd_holster                                        = weapons\assault_holster
+snd_open_weapon                                    = weapons\generic_draw
+snd_close_weapon                                   = weapons\generic_draw
+snd_reload                                         = weapons\m320\m320_reload
+snd_reload_empty                                   = weapons\m320\m320_reload
+
+missile_throw_offset = 0.3, 0.5, 0.5
+ 
+[wpn_gm94_hud]:hud_base
+aim_hud_offset_pos = -0.055400,-0.047200,-0.09
+aim_hud_offset_rot = -0.138000,0.016750,0.104500
+aim_hud_offset_pos_16x9 = -0.055400,-0.047200,-0.09
+aim_hud_offset_rot_16x9 = -0.138000,0.016750,0.104500
+
+anm_fakeshoot_empty                = m320_empty_click, empty_click
+anm_fakeshoot_aim_empty            = m320_empty_click, empty_click
+anm_fakeshoot_jammed               = m320_empty_click, empty_click
+anm_fakeshoot_aim_jammed           = m320_empty_click, empty_click
+
+anm_bore                                           = m320_idle_aim
+anm_hide                                           = m320_holster
+anm_idle                                           = m320_idle
+anm_idle_aim                                       = m320_idle_aim
+anm_idle_moving                                    = m320_moving
+anm_idle_moving_slow                               = m320_moving_slow
+anm_idle_moving_crouch                             = m320_crouch
+anm_idle_aim_moving             				   = m320_moving_aim
+anm_shots                                          = m320_shoot, shoot
+anm_show                                           = m320_draw
+
+anm_reload										   = m320_reload, reload
+anm_reload_empty								   = m320_reload, reload
+anm_reload_speed_k = 1.1
+anm_reload_empty_speed_k = 1.1
+
+anm_idle_sprint_start         					       = m320_sprint_start
+anm_idle_sprint         					       = m320_sprint
+anm_idle_sprint_end         					           = m320_sprint_end
+anm_idle_sprint_end_jammed = m320_sprint_end
+anm_idle_sprint_start_jammed = m320_sprint_start
+anm_idle_sprint_end_empty = m320_sprint_end
+anm_idle_sprint_start_empty = m320_sprint_start
+
+anm_headlamp_on                                  = m320_flash
+; anm_gasmask                                        = m320_clear
+
+anm_headlamp_on_empty                                  = m320_flash
+; anm_gasmask_empty                                        = m320_clear
+
+attach_place_idx                                   = 0
+fire_bone                                          = wpn_body
+fire_point                                         = 0.000000,0.003300,0.112700
+hands_position									   = 0.016075,0.008800,-0.187500
+hands_position_16x9 							   = 0.016075,0.008800,-0.187500
+item_visual                                        = dynamics\weapons\wpn_m320\wpn_m320_hud.ogf
+shell_bone                                         = wpn_body
+shell_dir                                          = 0.0, 1.0, 0.0
+shell_point                                        = 0.0, 0.0, 0.0

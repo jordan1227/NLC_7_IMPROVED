@@ -1,0 +1,122 @@
+ENABLE = false -- Manool: флаг включения рисунка для HD интерфейса
+
+local rec_wnd = nil
+local initial = false
+local slots = {{825, 300}, {825, 480}}
+local TBtn = {}
+local static, armor, gg_rykzack, gg_icon
+
+class "BkgrWnd"(CUIScriptWnd)
+function BkgrWnd:__init(owner) super()
+	self.owner = owner
+	self:Init(0, 0, 1024, 768)
+	self.ClickBtn = {}
+	self:InitControls()
+end
+
+function BkgrWnd:__finalize()
+end
+
+function BkgrWnd:InitControls()
+	self.bkgr_static = CUIStatic()
+	self.bkgr_static:Init("ui\\ui_disk_io", 10, 0, 1024, 100)
+	self.bkgr_static:SetStretchTexture(true)
+	self.bkgr_static:SetOriginalRect(0, 0, 1024, 100)
+	self.owner:AttachChild(self.bkgr_static)
+	self.stat = CUIStatic()
+	self.stat:Init(0, 0, 1024, 768)
+	self.owner:AttachChild(self.stat)
+	for k, v in pairs(slots) do
+		local name = "static_" .. k
+		self.btn = CUIStatic()
+		self.btn:SetAutoDelete(false)
+		self.btn:SetWindowName(name)
+		self:Register(self.btn)
+		self.stat:AttachChild(self.btn)
+		TBtn[name] = self.btn
+		init_btn(k)
+	end
+end
+
+function init_btn(num)
+	local static = TBtn["static_" .. num]
+	armor = db.actor:item_in_slot(6)
+	gg_icon = ""
+	if num == 1 then
+		if armor then
+			--костюм на ГГ есть
+			gg_icon = vergas_lib.set_pr_from_config_str(armor:section(), "full_icon_name")
+		else
+			--костюма нет
+			gg_icon = "npc_icon_without_outfit"
+		end
+		static:SetOriginalRect(0, 0, 1024, 768)
+		static:SetStretchTexture(true)
+		static:InitTexture(gg_icon)
+		static:Init(712, 176, 107, 320)
+		static:Show(true)
+	elseif num == 2 then
+		gg_rykzack = ""
+		if armor then
+			gg_rykzack = vergas_lib.set_pr_from_config_str(armor:section(), "backpack_type")
+		else
+			gg_rykzack = "ui_icon_rykzack_1_brown"
+		end
+		static:SetOriginalRect(0, 0, 1024, 768)
+		static:SetStretchTexture(true)
+		static:InitTexture(gg_rykzack)
+		static:Init(802, 319, 107, 178)
+		static:Show(true)
+	end
+	initial = true
+end
+
+function BkgrWnd:ShowWnd()
+	if initial and rec_wnd.stat ~= nil then
+		rec_wnd.stat:Show(true)
+	end
+end
+
+function BkgrWnd:HideWnd()
+	if initial and rec_wnd.stat ~= nil then
+		rec_wnd.stat:Show(false)
+	end
+end
+
+function BkgrWnd:DetachWnd()
+	self.owner:DetachChild(self.stat)
+	initial = false
+end
+
+local inv_window
+function on_info(info_id)
+	if not ENABLE then return end
+	if info_id == "ui_inventory" then
+		inv_window = level.get_inventory_wnd()
+		if not inv_window then return end
+		if not initial then
+			rec_wnd = BkgrWnd(inv_window)
+		end
+		if not rec_wnd.stat:IsShown() then
+			rec_wnd:ShowWnd()
+		end
+	elseif info_id == "ui_inventory_hide" then
+		if rec_wnd then
+			rec_wnd:DetachWnd()
+		end
+	end
+end
+
+function inventory_close()
+	if inv_window and inv_window:IsShown() then
+		level.start_stop_menu(inv_window, true)
+	end
+end
+
+function update()
+	if not ENABLE then return end
+	if initial == true then
+		init_btn(1)
+		init_btn(2)
+	end
+end

@@ -1,0 +1,9 @@
+[logic]
+active = sr_idle@idle
+
+[sr_idle@idle]
+on_info = {+mar_leader_job_done +marsh_leader_desertirs_done -marsh_tuzla_document_info} sr_idle@idle2
+on_info2 = {+marsh_tuzla_document_info} nil
+
+[sr_idle@idle2]
+on_actor_inside = nil %+mar_ecolog_corpse_go +marsh_tuzla_document_info =sak.mar_flash() =sak.add_mar_ecolog_corpses()%

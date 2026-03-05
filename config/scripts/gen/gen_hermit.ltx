@@ -1,0 +1,24 @@
+[logic]
+active = walker@day
+combat_ignore = combat_ignore@gen_hermit
+danger = danger_condition@gen_hermit
+
+[walker@day]
+path_walk = gen_hermit_walk
+path_look = gen_hermit_look
+meet = meet@gen_hermit
+danger = danger_condition@gen_hermit
+combat_ignore_cond = {=fighting_actor}
+
+[meet@gen_hermit]
+use			= true
+use_wpn		= false
+meet_dialog	= gen_hermit_start_dialog
+precond = visibility
+
+[danger_condition@gen_hermit]
+ignore_distance = 1
+ignore_types = grenade, corpse, sound
+
+[combat_ignore@gen_hermit]
+combat_ignore_cond = {=fighting_actor}

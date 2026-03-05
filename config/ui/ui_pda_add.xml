@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<main>
+	<btn_show_timer x="675" y="630" width="17" height="17" stretch="1" hint="st_alarm">
+		<texture x="937" y="93" width="69" height="69">ui\ui_hud</texture>
+	</btn_show_timer>
+	<back_frame x="362" y="250" width="300" height="194">
+		<texture>ui_pda_frame_sub</texture>
+	</back_frame>
+	<cap_day_of_week x="7" y="7" width="286" height="20">
+		<text font="ui_font_digital_18" align="c"></text>
+	</cap_day_of_week>
+	<cap_days_in_zone x="7" y="36" width="286" height="20">
+		<text font="ui_font_digital_18" align="c">st_days_in_zone</text>
+	</cap_days_in_zone>
+	<cap_rad x="7" y="65" width="286" height="20">
+		<text font="ui_font_digital_18" align="c"></text>
+	</cap_rad>
+
+	<caption x="7" y="94" width="286" height="20">
+		<text font="ui_font_digital_18" align="c" vert_align="c">st_alarm</text>
+	</caption>
+
+	<cap_hours x="50" y="123" width="120" height="22">
+		<text font="ui_font_digital_18" vert_align="c">ui_st_hours</text>
+	</cap_hours>
+	<edit_hours x="80" y="123" width="45" height="21">
+		<text font="letterica18" r="245" g="222" b="158"/>
+	</edit_hours>
+
+	<cap_minutes x="145" y="123" width="120" height="22">
+		<text font="ui_font_digital_18" vert_align="c">ui_st_mins</text>
+	</cap_minutes>
+	<edit_minutes x="175" y="123" width="45" height="21">
+		<text font="letterica18" r="245" g="222" b="158"/>
+	</edit_minutes>
+
+	<btn_start x="100" y="163" width="40" height="24" stretch="1">
+		<texture>ui_hud_button_pda_01</texture>
+		<text align="c">st_start</text>
+		<text_color>
+			<t r="231" g="168" b="12"/> <d r="181" g="170" b="148"/> <e r="127" g="127" b="127"/> <h r="255" g="255" b="255"/>
+		</text_color>
+	</btn_start>
+	<btn_stop x="150" y="163" width="40" height="24" stretch="1">
+		<texture>ui_hud_button_pda_01</texture>
+		<text align="c">st_reset</text>
+		<text_color>
+			<t r="231" g="168" b="12"/> <d r="181" g="170" b="148"/> <e r="127" g="127" b="127"/> <h r="255" g="255" b="255"/>
+		</text_color>
+	</btn_stop>
+	<btn_quit x="200" y="163" width="40" height="24" stretch="1">
+		<texture>ui_hud_button_pda_01</texture>
+		<text align="c">ui_inv_cancel</text>
+		<text_color>
+			<t r="231" g="168" b="12"/> <d r="181" g="170" b="148"/> <e r="127" g="127" b="127"/> <h r="255" g="255" b="255"/>
+		</text_color>
+	</btn_quit>
+</main>

@@ -1,0 +1,154 @@
+#include "m_flesh.ltx"
+#include "m_chimera.ltx"
+#include "m_bloodsucker.ltx"
+#include "m_dog.ltx"
+#include "m_boar.ltx"
+#include "m_pseudodog.ltx"
+#include "m_burer.ltx"
+#include "m_giant.ltx"
+#include "m_controller.ltx"
+#include "m_poltergeist.ltx"
+#include "m_zombie.ltx"
+#include "m_fracture.ltx"
+#include "m_snork.ltx"
+#include "m_cat.ltx"
+#include "m_rat.ltx"
+#include "m_crow.ltx"
+#include "m_tushkano.ltx"
+#include "m_phantom.ltx"
+#include "m_pseudodogfrend.ltx"
+#include "m_karlik.ltx"
+
+[monsters_common]
+	corpse_remove_game_time_interval	= 2 ; in hours
+	stay_after_death_time_interval		= 2 ; in hours
+
+;;;;;;;;; секции монстров для квестов
+;кровососы ТД 
+[val_bloodsucker1]:bloodsucker_strong
+Spawn_Inventory_Item_Probability = 1.0
+Spawn_Inventory_Item_Keep = true
+custom_data = scripts\val\val_bloodsucker1.ltx
+
+[val_bloodsucker2]:bloodsucker_strong
+Spawn_Inventory_Item_Probability = 1.0
+Spawn_Inventory_Item_Keep = true
+custom_data = scripts\val\val_bloodsucker2.ltx
+
+[val_bloodsucker3]:bloodsucker_strong
+Spawn_Inventory_Item_Probability = 1.0
+Spawn_Inventory_Item_Keep = true
+custom_data = scripts\val\val_bloodsucker3.ltx
+
+;химеры в Кишке
+[dsc_chimera1]:chimera_strong
+Spawn_Inventory_Item_Probability = 1.0
+Spawn_Inventory_Item_Keep = true
+custom_data = scripts\dsc\dsc_chimera1.ltx 
+
+[dsc_chimera2]:chimera_strong
+Spawn_Inventory_Item_Probability = 1.0
+Spawn_Inventory_Item_Keep = true
+custom_data = scripts\dsc\dsc_chimera2.ltx 
+
+[dsc_chimera3]:chimera_strong
+Spawn_Inventory_Item_Probability = 1.0
+Spawn_Inventory_Item_Keep = true
+custom_data = scripts\dsc\dsc_chimera3.ltx
+
+;контролёры на Болотах
+[marsh_controller1]:m_controller_old
+Spawn_Inventory_Item_Probability = 1.0
+Spawn_Inventory_Item_Keep = true
+custom_data = scripts\marsh\marsh_controller1.ltx 
+
+[marsh_controller2]:m_controller_old
+Spawn_Inventory_Item_Probability = 1.0
+Spawn_Inventory_Item_Keep = true
+custom_data = scripts\marsh\marsh_controller2.ltx
+
+;гиганты на Радаре 
+[agr_gigant1]:gigant_strong
+Spawn_Inventory_Item_Probability = 1.0
+Spawn_Inventory_Item_Keep = true
+custom_data = scripts\agr\agr_gigant1.ltx
+
+[agr_gigant2]:gigant_strong
+Spawn_Inventory_Item_Probability = 1.0
+Spawn_Inventory_Item_Keep = true
+custom_data = scripts\agr\agr_gigant2.ltx
+
+;-- квест Борзого
+[red_bloodsucker1]:bloodsucker_strong
+custom_data = scripts\red_forest\red_bloodsucker1.ltx
+
+[red_bloodsucker2]:bloodsucker_strong
+custom_data = scripts\red_forest\red_bloodsucker2.ltx
+
+;-- saharov_controler
+[yan_controller]:m_controller_old
+Spawn_Inventory_Item_Probability = 1.0
+Spawn_Inventory_Item_Keep = true
+custom_data = scripts\yan\yan_controller.ltx
+;-- всякое	
+[red_smart_bloodsuckers]:bloodsucker_strong
+Spawn_Inventory_Item_Probability = 0.4
+
+;-- marsh_ohota
+[fracture_marsh]:fracture_strong
+Spawn_Inventory_Item_Probability = 0
+custom_data = scripts\marsh\fracture_marsh.ltx
+
+[fracture_marsh_ohota]:fracture_normal
+Spawn_Inventory_Item_Probability = 0
+custom_data = scripts\marsh\fracture_marsh_ohota.ltx			   
+
+[dsc_kolonna_burer1]:burer_normal
+Spawn_Inventory_Item_Probability = 0
+custom_data = scripts\dsc\dsc_kolonna_burer1.ltx
+
+[dsc_kolonna_burer2]:burer_normal
+Spawn_Inventory_Item_Probability = 0
+custom_data = scripts\dsc\dsc_kolonna_burer2.ltx
+
+[dsc_kolonna_controller]:m_controller_normal
+Spawn_Inventory_Item_Probability = 0
+custom_data = scripts\dsc\dsc_kolonna_controller.ltx
+
+[electro_chimera_dt]:electro_chimera
+Spawn_Inventory_Item_Probability = 1.0
+Spawn_Inventory_Item_Keep = true
+
+[dsc_kolonna_burer_strong]:burer_strong
+Spawn_Inventory_Item_Probability = 1.0
+custom_data = scripts\dsc\dsc_kolonna_burer1.ltx
+
+[dog_strong_fox]:dog_strong
+panic_threshold		= 0
+custom_data = scripts\esc\esc_fox_dogs.ltx
+
+[pseudodog_weak_fox]:pseudodog_weak
+panic_threshold		= 0
+custom_data = scripts\esc\esc_fox_dogs.ltx
+
+[val_flame_polter1]:m_poltergeist_dark_flame
+Spawn_Inventory_Item_Probability  = 0.0
+immunities_sect		= val_flame_polter_immunities
+custom_data = scripts\val\val_flame_polter1.ltx
+[val_flame_polter_immunities]
+burn_immunity 		= 0.0
+strike_immunity 	= 0.0
+shock_immunity 		= 0.0
+wound_immunity 		= 0.0
+radiation_immunity 	= 0.0
+telepatic_immunity 	= 0.0
+chemical_burn_immunity 	= 0.0
+explosion_immunity 	= 0.15
+fire_wound_immunity = 0.0
+
+[val_flame_polter2]:val_flame_polter1
+custom_data = scripts\val\val_flame_polter2.ltx
+
+[nazar_chimera_weak]:chimera_weak
+Spawn_Inventory_Item_Probability = 0.0
+								 

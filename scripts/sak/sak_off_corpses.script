@@ -1,0 +1,231 @@
+local tabl_corpses, tabl_weapons, sids_off = {}, {}, {}
+
+local cnt = 0
+
+local dist_to_corpses	 = 55
+local dist_to_weapons	 = 40
+
+-- Sn: таблица порезана, т.к. дублирует схему работы уборщика на основе стори_айди
+-- эта схема удаляет трупы после их осмотра и ухода с текущей локации 
+local filt_corpses={
+				["mar_ecolog_corpse_1"] = "mar_ecolog_corpse",
+				["mar_ecolog_corpse_2"] = "mar_ecolog_corpse",
+				["mar_ecolog_corpse_3"] = "mar_ecolog_corpse",
+				["val_sos_dead1"] = "val_sos_actor_near_wounded",
+				["val_escort_bandit1_dead"] = "val_escort_scene_end",
+				["val_escort_bandit2_dead"] = "val_escort_scene_end",
+				["val_sacrifice_victim"] = "val_escort_scene_end",
+				["bar_ecolog_crush_dead"] = "kruglov_is_fly",
+				["bar_ecolog_crush_dead_0000"] = "kruglov_is_fly",
+				["bar_ecolog_crush_dead_0001"] = "kruglov_is_fly",
+				["bar_ecolog_crush_dead_0002"] = "kruglov_is_fly",
+				["vil_stalker_corps"] = "trup_sanek_to_charch_end",
+				}
+
+function compare_dist(a, b)
+	return a.dist < b.dist
+end
+
+function release_trash(tab, limit)
+	if table_size(tab) <= limit then
+		return tab
+	end
+	-- convert to pairs
+	local plist = {}
+	for i, d in pairs(tab) do
+		local p = { id = i, dist = d }
+		table.insert (plist, p) 
+	end
+  
+	table.sort(plist, compare_dist) -- place first pairs with max dist
+	while #plist > limit do
+		local id = plist[1].id 
+                                                               
+		if g_sim:object(id) then
+			misc.release_obj (id, 'destroy_trash')
+			cnt = cnt + 1
+		end
+		table.remove(plist, 1) -- без этого цикл будет бесконечным!
+	end
+  
+	local result = {}
+  
+	for i, p in ipairs(plist) do
+		result [p.id] = p.dist
+	end
+  
+	return result
+end        
+        
+function off_corpses(l_change)
+    -- уборщик мусора, в частности трупов и брошенного лута. Организован в частности для облегчения производительности игры.
+
+	if nil == tabl_corpses then
+		wprintf("~C0C #ERROR:~C07 tabl_corpses == nil ")
+		return   
+	end
+	if nil == tabl_weapons then
+		wprintf("~C0C #ERROR:~C07 tabl_weapons == nil ")
+		return
+	end
+
+	_G.g_sim = alife()
+    if g_sim == nil then return end
+
+	local pt = profile_timer()
+	pt:start()
+
+	local actorpos = db.actor:position()
+	sids_off = get_value("sids_off_tbl", {})
+
+	local tab_off = {}
+	for id, obj in alife():objects() do
+		local posobj = obj.position
+		local npc_name = obj:name() or "nil"
+        local sect_name = "?"                            
+        local cid = get_clsid(obj)
+		--ODS( string.format('[~T]. #DBG: candidat_name %30s', npc_name) )
+        if obj.section_name then
+			sect_name = obj:section_name()
+        end         
+         
+        if (id ~= 0) and IsStalker(obj) and (obj.alive == nil) then
+			wprintf("[~T].~C0C #ERROR:~C07 strange, object id = %d, clsid = %d, name = %s, but alive == nil ", id, cid, npc_name)
+			if obj.health then
+				wprintf(" obj.health = %.3f ", obj.health)
+			end
+        end
+        
+		if xrs_grenade.fake_gr_types[sect_name] then
+			tab_off[id] = obj
+		end
+
+        -- Manool: удаление монстров
+		if l_change and (id ~= 0) and IsMonster(obj) and not obj.is_alive then
+			-- wprintf(" possible monster trup id = %5d, name = %-30s, clsid = %3d, gvid = %5d, level = %s ", id, npc_name, cid, obj.m_game_vertex_id, obj.level_name)
+			local dist = posobj:distance_to(actorpos) 
+			if dist > dist_to_corpses then
+				local uniq_t = bind_monster.unique_monsters[sect_name]
+				if (not uniq_t) or (type(uniq_t)=="string" and db.actor:has_info(uniq_t)) then
+					tabl_corpses [id] = dist
+				end
+			end
+		end
+		--
+		if l_change and (id ~= 0) and IsStalker(obj) and not obj.is_alive then
+			-- wprintf(" possible trup id = %5d, name = %-30s, clsid = %3d, gvid = %5d, level = %s ", id, npc_name, cid, obj.m_game_vertex_id, obj.level_name)
+			if (obj.m_story_id > 10000 or sids_off[id]) and ( ( filt_corpses[npc_name] == nil and filt_corpses[sect_name] == nil ) 
+				or db.actor:has_info(filt_corpses[npc_name]) or db.actor:has_info(filt_corpses[sect_name]) ) then
+				-- ODS( string.format('[~T]. #DBG: candidat1  id %5d, addr %s  name %30s, info %30s, clsid = %4d', id, FormatPtr(addr), npc_name, tostring(filt_corpses[npc_name]), cid) )
+				local dist = posobj:distance_to(actorpos) 
+				if level.name()=="l12u_sarcofag" then
+					dist_to_corpses = 3
+				end
+				if dist > dist_to_corpses then
+					if obj.m_story_id > 10000 or ( sids_off[id] and l_change ) then
+						tabl_corpses [id] = dist
+						sids_off[id] = nil
+					end
+				end
+			end
+		end
+		
+		if l_change then
+			if sect_name == "amk_kanistra" and obj.parent_id~=nil then
+				if obj.parent_id~=BAD_OBJ_ID and obj.parent_id~=0 then
+					local hran_id=obj.parent_id
+					local obj1=g_sim:object(hran_id)
+					if box_is_protected(obj1)~=true and obj1:section_name()~="rucksack" then
+						tab_off[id] = obj
+					end
+				elseif obj.parent_id == BAD_OBJ_ID then
+					local gv_range = const.game_vertices["warlab"]
+					if obj.m_game_vertex_id >= gv_range[1] and obj.m_game_vertex_id <= gv_range[2] then
+						-- log2("amk_kanistra found at gv %d --> ignoring",obj.m_game_vertex_id)
+					else
+						-- misc.release_obj(obj)
+						tab_off[id] = obj
+					end
+				end
+			end
+            -- оружием считается и безобидный хабар
+			if (strposx(npc_name,"vodka") or strpos(npc_name,"medkit") or strpos(npc_name,"antirad") or strpos(npc_name,"bandage")) and
+                tonumber(npc_name:sub(-5,-5)) ~=nil and (obj.parent_id==nil or obj.parent_id==BAD_OBJ_ID) then
+				--ODS( string.format('[~T]. #DBG: candidat1  id %5d,  name %30s', id, npc_name))
+				-- misc.release_obj(obj)
+				tab_off[id] = obj
+			end
+			if strposx(npc_name,"repair_boxoutfit") and (obj.parent_id==nil or obj.parent_id==BAD_OBJ_ID) then
+				-- log2("repair_boxoutfit found! --> %s",npc_name)
+				local tbl = get_value("self_rep_boxes", {})
+				-- dump_table(tbl)
+				for k,v in pairs(tbl) do
+					for kk,vv in pairs(v) do
+						if type(vv) == 'number' and vv == id then
+							-- log2("repair_boxoutfit id match! --> %d",vv)
+							-- misc.release_obj(tbl[k]["phis"])
+							tab_off[tbl[k]["phis"]] = g_sim:object(tbl[k]["phis"])
+							tbl[k] = nil
+							set_value("self_rep_boxes", tbl)
+							db.actor:disable_info_portion("rem_close")
+							db.actor:disable_info_portion("rem_open")
+							break
+						end
+					end
+				end
+				-- misc.release_obj(obj)
+				tab_off[id] = obj
+			end
+		end
+
+		if (obj.parent_id==nil or obj.parent_id==BAD_OBJ_ID) and
+		-- kat_wpn_ak74_m1
+			not str_in_tab(npc_name, {"wpn_ak74_m1", "hunters_toz_new", "wpn_gungauss", "outfit_bandit_m1", "wpn_spas12_m1", "quest"}) then
+			if isWeapon(obj) or str_in_tab(npc_name, {"grenade_", "outfit", "knife"}) then
+			local skip = false
+				if sect_name == "wpn_gauss_auto" then
+					local gv_range = const.game_vertices["l10u_bunker"]
+					if obj.m_game_vertex_id >= gv_range[1] and obj.m_game_vertex_id <= gv_range[2] then
+						skip = true
+					end
+				end
+				local dist = posobj:distance_to(actorpos)
+				if (dist > dist_to_weapons) and not skip then 
+					--ODS( string.format('[~T]. #DBG: candidat2  id %5d, addr %s  name %30s, section %30s, clsid = %4d', id, FormatPtr(addr), npc_name, sect_name, cid) )
+					tabl_weapons[obj.id] = dist  
+				end
+			end
+		end
+	end
+	-- log2("sak_off_corpses.script:\n")
+	-- dump_table(tabl_corpses)
+	if tabl_corpses and table_size(tabl_corpses) > 0 then              
+        tabl_corpses = release_trash (tabl_corpses, 0)
+	end
+	if tabl_weapons and table_size(tabl_weapons) > 0 then
+		tabl_weapons = release_trash (tabl_weapons, 0)  
+	end
+
+	for id, obj in pairs(tab_off) do
+		misc.release_obj(obj)
+		cnt = cnt + 1
+	end
+
+	pt:stop()
+	log2("[%s.off_corpses]: %d objects released in %.2fms", script_name(), cnt, pt:time() / 1000)
+end
+
+function box_is_protected(v)
+	local st_id = v and v.m_story_id
+	if st_id and amk_offline_alife.get_protected_sids()[st_id] then return true end
+	return false
+end
+function check_looted(obj)
+	local id = obj:id()
+	if not sids_off[id] then
+		sids_off[id] = true
+	end
+	set_value("sids_off_tbl", sids_off)
+	-- log2("[check_looted]: saving sids_off\n")
+	-- dump_table(sids_off)
+end

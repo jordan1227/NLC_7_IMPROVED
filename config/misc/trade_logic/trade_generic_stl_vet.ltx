@@ -1,0 +1,554 @@
+[trader]
+buy_condition = generic_buy_stl_vet
+sell_condition = generic_sell_stl_vet 
+
+;------------------------------------------------------------------------------
+;--------------------- СТАЛКЕРЫ (ВЕТЕРАНЫ) ПОКУПАЮТ  --------------------------
+;------------------------------------------------------------------------------
+
+[generic_buy_stl_vet]
+
+/.*capsule/
+/.*ammo_/
+/.*wpn_/
+/^af_/
+/^inventory_sakbox/
+/^arc_art/
+/^detector_/
+/^belt_/
+/^amk_/
+/^zapiska_/
+/^x18_/
+/.*book/
+/.*_document/
+/.*playboy/ = 0.8, 0.9
+/.*exo/
+/.*outfit/
+/.*dollars/
+/.*letter/
+/.*quest/
+/.*pda/
+/.*docs/
+/.*flash/
+/.*banka/
+/.*_cart/
+/.*scanner/
+
+;------------------------------------------------------------
+;--------------------------Медицина--------------------------
+;------------------------------------------------------------
+
+bandage
+medkit
+medkit_scientic			                = 0.2, 0.3
+medkit_army				                = 0.2, 0.3  
+antirad		                            = 0.2, 0.3
+drag_cat_eyes                           = 0.2, 0.5
+
+bread
+kolbasa
+green_kolbasa							= 0.3, 0.4
+conserva				                = 0.3, 0.4
+vodka					                = 0.3, 0.4
+energy_drink                            = 0.3, 0.4
+
+matches									= 0.2, 0.4
+batt_torch
+af_full_akkum
+sleeping_pill
+
+;------------------------------------------------------------
+;--------------------------Мутанты---------------------------
+;------------------------------------------------------------
+
+mutant_flesh_eye
+mutant_boar_leg
+mutant_dog_tail
+mutant_psevdodog_tail
+mutant_krovosos_jaw						= 0.1, 0.2
+mutant_burer_hand						= 0.1, 0.2
+mutant_zombie_hand
+mutant_snork_leg
+mutant_face_tushkano
+mutant_hand_kontroler					= 0.1, 0.2
+mutant_poltergeist_glas					= 0.1, 0.2
+mutant_psevdogigant_hand
+mutant_tail_cat
+mutant_chimera_kogot					= 0.1, 0.2
+mutant_e_chimera_kidney					= 0.1, 0.2
+mutant_flesh_shkura					
+flesh_leather
+
+;------------------------------------------------------------
+;-------------------------Второй ур.-------------------------
+;------------------------------------------------------------
+
+af_gravi_dyn4d			            		= 0.6, 0.7
+af_gravi_dyn5d			            		= 0.6, 0.7
+
+af_rusty_kristall_dyn4d			    		= 0.6, 0.7
+af_rusty_kristall_dyn5d			    		= 0.6, 0.7
+
+af_cristal_flower_dyn4d		        		= 0.6, 0.7
+af_cristal_flower_dyn5d			    		= 0.6, 0.7
+
+af_fireball_dyn4d			        		= 0.6, 0.7
+af_fireball_dyn5d			        		= 0.6, 0.7
+
+af_electra_flash_dyn4d		        		= 0.6, 0.7
+af_electra_flash_dyn5d		        		= 0.6, 0.7
+
+af_mincer_meat_dyn4d			    		= 0.6, 0.7
+af_mincer_meat_dyn5d			    		= 0.6, 0.7
+
+af_ameba_slug_dyn4d			       			= 0.6, 0.7
+af_ameba_slug_dyn5d			        		= 0.6, 0.7
+
+; ------------------------------------------------------------
+; -------------------------Третий ур.-------------------------
+; ------------------------------------------------------------ 
+
+af_night_star_dyn3d			    			= 0.6, 0.7
+af_night_star_dyn4d			    			= 0.6, 0.7
+af_night_star_dyn5d			    			= 0.6, 0.7
+
+af_gold_fish_dyn3d			    			= 0.6, 0.7
+af_gold_fish_dyn4d			    			= 0.6, 0.7
+af_gold_fish_dyn5d			    			= 0.6, 0.7
+
+af_ameba_mica_dyn3d			    			= 0.6, 0.7
+af_ameba_mica_dyn4d			    			= 0.6, 0.7
+af_ameba_mica_dyn5d			    			= 0.6, 0.7
+
+af_electra_moonlight_dyn3d					= 0.6, 0.7
+af_electra_moonlight_dyn4d					= 0.6, 0.7
+af_electra_moonlight_dyn5d					= 0.6, 0.7
+
+af_rusty_sea-urchin_dyn3d					= 0.6, 0.7
+af_rusty_sea-urchin_dyn4d	    			= 0.6, 0.7
+af_rusty_sea-urchin_dyn5d					= 0.6, 0.7
+
+af_soul_dyn3d			        			= 0.6, 0.7
+af_soul_dyn4d			        			= 0.6, 0.7
+af_soul_dyn5d			        			= 0.6, 0.7
+
+af_cristall_dyn3d			    			= 0.6, 0.7
+af_cristall_dyn4d			    			= 0.6, 0.7
+af_cristall_dyn5d			    			= 0.6, 0.7
+
+; ------------------------------------------------------------
+; ---------------------------Патроны--------------------------
+; ------------------------------------------------------------
+
+ammo_11.43x23_hydro							= 1.1, 1.4
+ammo_11.43x23_fmj		                    = 1.1, 1.4
+ammo_5.45x39_ap			                    = 1.1, 1.4
+ammo_7.62x39_ap	                            = 1.1, 1.4
+ammo_9x39_sp5			                    = 1.1, 1.4
+ammo_9x39_ap			                    = 1.1, 1.4
+ammo_9x39_pab9			                    = 1.1, 1.4
+ammo_5.56x45_ap			                    = 1.1, 1.4
+ammo_7.62x54_7h14		                    = 1.1, 1.4
+ammo_7.62x54_7h1		             		= 1.1, 1.4
+ammo_7.62x54_ap			           			= 1.1, 1.4
+ammo_7.62x51_fmj                  			= 1.1, 1.4
+ammo_7.62x51_ap                   			= 1.1, 1.4 
+
+grenade_f1
+grenade_rgd5
+grenade_rgo
+
+; ------------------------------------------------------------
+; ---------------------------Оружие---------------------------
+; ------------------------------------------------------------
+
+wpn_akm                                    = 0.2, 0.3, 0.5
+wpn_aps                                    = 0.2, 0.3, 0.5
+wpn_beretta                                = 0.2, 0.3, 0.5
+wpn_bizon                                  = 0.2, 0.3, 0.5
+wpn_bizon_1p78                             = 0.2, 0.3, 0.5
+wpn_bizon_1pso                             = 0.2, 0.3, 0.5
+wpn_bizon_cobra                            = 0.2, 0.3, 0.5
+wpn_colt1911                               = 0.2, 0.3, 0.5
+wpn_desert_eagle                           = 0.2, 0.3, 0.5
+wpn_eagle_m1                               = 0.2, 0.3, 0.5
+wpn_g36                                    = 0.2, 0.3, 0.5
+wpn_g36_g36l                               = 0.2, 0.3, 0.5
+wpn_g36c                                   = 0.2, 0.3, 0.5
+wpn_g36c_acog                              = 0.2, 0.3, 0.5
+wpn_g36c_eotech							   = 0.2, 0.3, 0.5
+wpn_g36c_mt								   = 0.2, 0.3, 0.5
+wpn_glock                                  = 0.2, 0.3, 0.5
+wpn_m16a4                                  = 0.2, 0.3, 0.5
+wpn_m16a4_acog                             = 0.2, 0.3, 0.5
+wpn_m16a4_eotech                           = 0.2, 0.3, 0.5
+wpn_m16a4_mt                               = 0.2, 0.3, 0.5
+wpn_sig220                                 = 0.2, 0.3, 0.5
+wpn_sig550                                 = 0.2, 0.3, 0.5
+wpn_sig550_acog                            = 0.2, 0.3, 0.5
+wpn_sig550_eotech                          = 0.2, 0.3, 0.5
+wpn_sig550_mt                              = 0.2, 0.3, 0.5
+wpn_val                                    = 0.2, 0.3, 0.5
+wpn_val_1p78                               = 0.2, 0.3, 0.5
+wpn_val_1pso                               = 0.2, 0.3, 0.5
+wpn_val_cobra                              = 0.2, 0.3, 0.5
+wpn_vintorez                               = 0.2, 0.3, 0.5
+wpn_vintorez_1p78                          = 0.2, 0.3, 0.5
+wpn_vintorez_1pso                          = 0.2, 0.3, 0.5
+wpn_vintorez_cobra                         = 0.2, 0.3, 0.5
+ac10632
+microt1
+specter
+okp
+rakurs
+g28_scope
+
+; ------------------------------------------------------------
+; ---------------------------Броня----------------------------
+; ------------------------------------------------------------
+
+specops_outfit                             = 0.2, 0.3, 0.5
+military_outfit                            = 0.2, 0.3, 0.5
+militaryspec_outfit                        = 0.2, 0.3, 0.5
+cs_light_outfit                            = 0.2, 0.3, 0.5
+cs_heavy_outfit                            = 0.2, 0.3, 0.5
+
+belt_4_art	  							   = 0.3, 0.4
+flask_army								   = 0.3, 0.5
+
+; --------------------------------------------------------------
+; ----------------------Квестовые предметы----------------------
+; --------------------------------------------------------------
+
+bearer_cheque
+hand_radio
+agr_black_box
+agr_shema
+ballon
+bochonok_vine
+boryan_kul
+box_ammo
+box_conserv
+cherep_decoder
+closer_box
+decoder	
+decoder1			
+decoder2
+dynamite
+energy_drink_new
+flamethrower_bad
+fmradio
+gorelka
+hard_disc
+harmonica_b			 	
+im_chain
+instrument_box			
+instrument_box_shurup
+item_battery_02
+item_battery_03
+item_kamaz_accum
+item_psi_helmet_01		
+item_psi_helmet_02		
+item_psi_helmet_03
+kanistra			
+kartina04			
+klava_feik
+klyk_pribor_1c
+kulinar_voron_box
+lot_many
+manometr
+marsh_pribor
+mar_ecolog_theory	
+medkit_npc			 			
+memory_module
+mixture
+neum_drags
+paper_box
+personal_things
+playboy10
+posilka_petrik
+postmens_bag      
+postmens_text_1
+rad_scaintist_doc
+redcatcher_albom
+repair_item_weapon_feik
+resiept_activ_anom
+rucksack
+rygyi_med_r
+sak_plan			
+sak_resiver			
+sak_resiver_yantar
+self_made_decoder
+sleeping_bag
+solt_bag
+strelok_sheets	
+suhpay
+trubka	
+uncoder
+ventilator_01
+weapon_box
+fal_upgrade_kit
+strange_bs_jaw
+mask_repair_kit
+
+; ------------------------------------------------------------------------------
+; --------------------------- ПРОДАЖА ------------------------------------------
+; ------------------------------------------------------------------------------
+
+[generic_sell_stl_vet]
+
+/.*capsule/
+/.*ammo_/
+/.*wpn_/
+/^af_/
+/^inventory_sakbox/
+/^arc_art/
+/^detector_/
+/^belt_/
+/^amk_/
+/^zapiska_/
+/^x18_/
+/.*book/
+/.*_document/
+/.*playboy/
+/.*exo/
+/.*outfit/
+/.*dollars/
+/.*letter/
+/.*quest/
+/.*pda/
+/.*docs/
+/.*flash/
+/.*banka/
+/.*_cart/
+/.*scanner/
+
+; ------------------------------------------------------------
+; --------------------------Медицина--------------------------
+; ------------------------------------------------------------
+
+bandage					         = 4.9, 4.9
+medkit					               
+medkit_scientic			                 
+medkit_army				                 
+antirad		                     = 4.0, 5.5
+drag_cat_eyes
+
+bread					         = 4.5, 5.5     
+kolbasa					         = 4.0, 5.0
+green_kolbasa
+conserva				         = 4.5, 5.5       
+vodka					         = 6.5, 9.5       
+energy_drink                     = 5.0, 6.0
+
+matches	                         = 1.4, 1.5
+batt_torch
+
+; ------------------------------------------------------------
+; --------------------------Мутанты---------------------------
+; ------------------------------------------------------------
+
+mutant_flesh_eye                 = 1.8, 2.6
+mutant_boar_leg                  = 1.8, 2.6
+mutant_dog_tail                  = 2.2, 3.0
+mutant_psevdodog_tail            = 1.8, 2.6
+mutant_krovosos_jaw
+mutant_burer_hand
+mutant_zombie_hand               = 2.6, 3.0
+mutant_snork_leg				 = 2.6, 3.0
+mutant_face_tushkano             = 2.2, 3.0
+mutant_hand_kontroler
+mutant_poltergeist_glas
+mutant_psevdogigant_hand
+mutant_tail_cat                  = 2.2, 3.0
+mutant_chimera_kogot			 = 2.6, 3.0
+mutant_e_chimera_kidney
+mutant_flesh_shkura
+flesh_leather
+
+; ------------------------------------------------------------
+; -------------------------Первый ур.-------------------------
+; ------------------------------------------------------------
+
+af_medusa_dyn1d			            = 2.1, 2.1
+af_medusa_dyn2d			            = 2.1, 2.1
+af_medusa_dyn3d			            = 2.1, 2.1
+af_medusa_dyn4d			        	= 2.1, 2.1
+
+af_vyvert_dyn1d			        	= 2.1, 2.1
+af_vyvert_dyn2d			        	= 2.1, 2.1
+af_vyvert_dyn3d   		        	= 2.1, 2.1
+af_vyvert_dyn4d			         	= 2.1, 2.1
+   
+af_drops_dyn1d			        	= 2.1, 2.1
+af_drops_dyn2d			        	= 2.1, 2.1
+af_drops_dyn3d                  	= 2.1, 2.1
+af_drops_dyn4d                  	= 2.1, 2.1
+   
+af_blood_dyn1d			        	= 2.1, 2.1
+af_blood_dyn2d			        	= 2.1, 2.1
+af_blood_dyn3d			        	= 2.1, 2.1
+af_blood_dyn4d			        	= 2.1, 2.1
+
+af_rusty_thorn_dyn1d		    	= 2.1, 2.1
+af_rusty_thorn_dyn2d		    	= 2.1, 2.1
+af_rusty_thorn_dyn3d				= 2.1, 2.1
+af_rusty_thorn_dyn4d				= 2.1, 2.1
+
+af_electra_sparkler_dyn1d	    	= 2.1, 2.1
+af_electra_sparkler_dyn2d			= 2.1, 2.1
+af_electra_sparkler_dyn3d	    	= 2.1, 2.1
+af_electra_sparkler_dyn4d			= 2.1, 2.1
+
+af_ameba_slime_dyn1d		    	= 2.1, 2.1
+af_ameba_slime_dyn2d		    	= 2.1, 2.1
+af_ameba_slime_dyn3d				= 2.1, 2.1
+af_ameba_slime_dyn4d				= 2.1, 2.1
+
+; ------------------------------------------------------------
+; -------------------------Второй ур.-------------------------
+; ------------------------------------------------------------
+   
+af_gravi_dyn1d			            = 2.1, 2.1
+af_gravi_dyn2d			            = 2.1, 2.1
+af_gravi_dyn3d			            = 2.1, 2.1
+af_gravi_dyn4d			            = 2.1, 2.1
+
+af_rusty_kristall_dyn1d		        = 2.1, 2.1
+af_rusty_kristall_dyn2d			    = 2.1, 2.1
+af_rusty_kristall_dyn3d		        = 2.1, 2.1
+af_rusty_kristall_dyn4d			    = 2.1, 2.1
+
+af_cristal_flower_dyn1d		        = 2.1, 2.1
+af_cristal_flower_dyn2d			    = 2.1, 2.1
+af_cristal_flower_dyn3d			    = 2.1, 2.1
+af_cristal_flower_dyn4d		        = 2.1, 2.1
+
+af_fireball_dyn1d			        = 2.1, 2.1
+af_fireball_dyn2d			        = 2.1, 2.1
+af_fireball_dyn3d			        = 2.1, 2.1
+af_fireball_dyn4d			        = 2.1, 2.1
+
+af_electra_flash_dyn1d		        = 2.1, 2.1
+af_electra_flash_dyn2d		        = 2.1, 2.1
+af_electra_flash_dyn3d		        = 2.1, 2.1
+af_electra_flash_dyn4d		        = 2.1, 2.1
+
+af_mincer_meat_dyn1d		        = 2.1, 2.1
+af_mincer_meat_dyn2d		        = 2.1, 2.1
+af_mincer_meat_dyn3d		        = 2.1, 2.1
+af_mincer_meat_dyn4d			    = 2.1, 2.1
+
+af_ameba_slug_dyn1d			        = 2.1, 2.1
+af_ameba_slug_dyn2d			        = 2.1, 2.1
+af_ameba_slug_dyn3d			        = 2.1, 2.1
+af_ameba_slug_dyn4d			        = 2.1, 2.1
+
+; ------------------------------------------------------------
+; ---------------------------Патроны--------------------------
+; ------------------------------------------------------------
+
+ammo_9x18_fmj			                    = 7.5, 8.0
+ammo_9x18_pmm			                    = 7.5, 8.0
+ammo_9x19_pbp			                    = 7.5, 8.0
+ammo_9x19_fmj			                    = 7.5, 8.0
+ammo_12x70_buck			                    = 7.5, 8.0
+ammo_12x76_dart			                    = 7.5, 8.0
+ammo_12x76_zhekan		                    = 7.5, 8.0
+ammo_5.45x39_ap			                    = 7.5, 8.0
+ammo_5.45x39_fmj	                        = 7.5, 8.0
+ammo_7.62x39_ap	                            = 7.5, 8.0
+ammo_7.62x39_fmj		                    = 7.5, 8.0
+ammo_5.56x45_ss190		                    = 7.5, 8.0
+ammo_5.56x45_ap			                    = 7.5, 8.0
+
+grenade_f1
+grenade_rgd5
+grenade_rgo
+
+; --------------------------------------------------------------
+; ----------------------Квестовые предметы----------------------
+; --------------------------------------------------------------
+
+harmonica_a
+guitar_a
+device_torch
+flask_army
+bearer_cheque
+hand_radio
+detector_simple_fake
+agr_black_box
+agr_shema
+ballon
+bochonok_vine
+boryan_kul
+box_ammo
+box_conserv
+cherep_decoder
+closer_box
+decoder	
+decoder1			
+decoder2
+dynamite
+energy_drink_new
+flamethrower_bad
+fmradio
+gorelka
+hard_disc
+harmonica_b			 	
+im_chain
+instrument_box			
+instrument_box_shurup
+item_battery_02
+item_battery_03
+item_kamaz_accum
+item_psi_helmet_01		
+item_psi_helmet_02		
+item_psi_helmet_03
+kanistra			
+kartina04			
+klava_feik
+klyk_pribor_1c
+kulinar_voron_box
+lot_many
+manometr
+marsh_pribor
+mar_ecolog_theory	
+medkit_npc			 			
+memory_module
+mixture
+neum_drags
+paper_box
+personal_things
+playboy10
+posilka_petrik
+postmens_bag      
+postmens_text_1
+rad_scaintist_doc
+redcatcher_albom
+repair_item_weapon_feik
+resiept_activ_anom
+rucksack
+rygyi_med_r
+sak_plan			
+sak_resiver			
+sak_resiver_yantar
+self_made_decoder
+sleeping_bag
+solt_bag
+strelok_sheets	
+suhpay
+trubka	
+uncoder
+ventilator_01
+weapon_box
+fal_upgrade_kit
+strange_bs_jaw
+mask_repair_kit
+
+ac10632
+microt1
+specter
+okp
+rakurs
+g28_scope

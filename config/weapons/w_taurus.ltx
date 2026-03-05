@@ -1,0 +1,142 @@
+;Ðוגמכüגונ Taurus
+[wpn_eagle_m1]:wpn_desert_eagle
+$spawn						= "weapons\uniq\wpn_eagle_m1"
+inv_name					= wpn-eagle_m1
+inv_name_short				= wpn-eagle_m1
+description					= enc_weapons1_wpn-eagle_m1
+
+default_to_ruck				= false
+
+cost 						= 12000
+
+slot						= 1,4
+
+inv_weight					= 1.2
+
+fire_dispersion_base		= 0.18
+control_inertion_factor		= 1.15f
+
+cam_dispersion				= 1.5
+
+inv_grid_height                                    = 2
+inv_grid_width                                     = 2
+inv_grid_x                                         = 79
+inv_grid_y                                         = 34
+
+ammo_class					= ammo_9x33_hp
+ammo_mag_size				= 6
+
+rpm							= 200
+bullet_speed				= 400
+hit_power					= 1.35
+
+position = -0.021, -0.085, 0.0
+
+condition_shot_dec			= 0.0006
+
+visual                   	= dynamics\weapons\wpn_taurus\wpn_taurus
+
+scope_status				= 0
+silencer_status				= 0
+grenade_launcher_status		= 0
+
+snd_shoot					= weapons\taurus\muzzle_raging_mono
+snd_shoot1					= weapons\taurus\muzzle_raging_mono
+
+snd_close                                          = weapons\pistol_holster
+snd_bore                                           = weapons\generic_draw
+snd_draw                                           = weapons\pistol_draw
+snd_empty                                          = weapons\taurus\taurus_click
+snd_holster                                        = weapons\pistol_holster
+snd_reload                                         = weapons\taurus\taurus_reload_empty
+snd_reload_jammed                                 = weapons\taurus\taurus_misfire
+snd_silncer_shot                                   = weapons\generic_draw
+snd_mag_shot									   = $silent
+snd_sprint_idle								   	   = weapons\sprint_pistol
+
+
+hud							= wpn_eagle_m1_hud
+
+[wpn_eagle_m1_hud]:hud_base
+
+aim_hud_offset_pos = -0.075500,0.030500,-0.09
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+
+aim_hud_offset_pos_16x9 = -0.075500,0.030500,-0.09
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+anm_bore                                           = taurus_idle_aim
+anm_bore_empty                                     = taurus_idle_aim
+anm_hide                                           = taurus_holster
+anm_hide_empty                                     = taurus_holster
+anm_idle                                           = taurus_idle
+anm_idle_aim                                       = taurus_idle_aim
+anm_idle_aim_empty                                 = taurus_idle_aim
+anm_idle_empty                                     = taurus_idle
+anm_idle_moving_slow                               = taurus_moving_slow
+anm_idle_moving_slow_empty                         = taurus_moving_slow
+anm_idle_moving                                    = taurus_moving
+anm_idle_moving_empty                              = taurus_moving
+anm_idle_moving_crouch                             = taurus_crouch
+anm_idle_moving_crouch_empty                       = taurus_crouch
+anm_idle_aim_moving		 						   = taurus_moving_aim
+anm_idle_aim_moving_empty						   = taurus_moving_aim
+anm_idle_sprint_start         						   = taurus_sprint_start
+anm_idle_sprint         						   = taurus_sprint
+anm_idle_sprint_end         						   	   = taurus_sprint_end
+anm_idle_sprint_start_empty         					   = taurus_sprint_start
+anm_idle_sprint_empty         					   = taurus_sprint
+anm_idle_sprint_end_empty         					   = taurus_sprint_end
+anm_idle_sprint_start_jammed      = taurus_sprint_start
+anm_idle_sprint_end_jammed       = taurus_sprint_end
+; anm_reload                                         = taurus_reload_five, reload_five
+; anm_reload_jammed								   = taurus_misfire, misfire
+anm_reload_jammed								   = taurus_misfire, misfire
+anm_shot_l                                         = taurus_shoot, click
+anm_shots                                          = taurus_shoot, click
+anm_shots_when_aim								   = taurus_shoot_aim, click
+anm_shot_l_when_aim								   = taurus_shoot_aim, click
+anm_show                                           = taurus_draw
+anm_show_empty                                     = taurus_draw
+anm_empty_click									   = taurus_click, click
+
+allow_drum_anims = true
+
+anm_reload_6                                       = taurus_reload_five, reload_five
+anm_reload_5                                       = taurus_reload_one, reload_one
+anm_reload_4                                       = taurus_reload_two, reload_two
+anm_reload_3                                       = taurus_reload_three, reload_three
+anm_reload_2                                       = taurus_reload_four, reload_four
+anm_reload_1                                       = taurus_reload_five, reload_five
+anm_reload_0                                       = taurus_reload_five, reload_five
+
+anm_reload_empty = taurus_reload_five, reload_five
+
+anm_prepare_detector                               = taurus_hand_holster
+anm_prepare_detector_empty                         = taurus_hand_holster, idle_empty
+anm_finish_detector                                = taurus_hand_draw
+anm_finish_detector_empty                          = taurus_hand_draw, idle_empty
+
+anm_headlamp_on                                  = taurus_flash
+anm_gasmask                                        = taurus_clear
+
+anm_headlamp_on_empty                            = taurus_flash
+anm_gasmask_empty                                  = taurus_clear
+
+attach_place_idx                                   = 0
+fire_bone                                          = muzzle
+fire_point                                         = 0,0,0
+gl_hud_offset_pos                                  = 0,0,0
+gl_hud_offset_rot                                  = 0,0,0
+hands_position									   = 0.000000,-0.087600,-0.008500
+hands_orientation								   = 0.0,0.0,0.0
+hands_position_16x9								   = 0.000000,-0.087600,-0.008500
+hands_orientation_16x9							   = 0.0,0.0,0.0
+item_orientation                                   = 0,0,0
+item_position                                      = 0,0,0
+item_visual                                        = dynamics\weapons\wpn_taurus\wpn_taurus_hud.ogf
+lean_hud_offset_pos                                = 0,0,0
+lean_hud_offset_rot                                = 0,0,0
+shell_bone                                         = wpn_body
+shell_point                                        = 0,0,0
+zoom_hide_crosshair                                = true

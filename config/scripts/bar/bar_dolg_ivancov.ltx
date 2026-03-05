@@ -1,0 +1,27 @@
+[logic]
+active = walker@one
+on_death = death
+
+[death]
+on_info = %+ivancov_dead%
+
+[walker@one]
+path_walk = bar_dolg_ivancov_new_walk
+path_look = bar_dolg_ivancov_new_look
+meet = meet
+def_state_standing = guard
+on_info = {+bar_voronin_dead} walker@two
+
+[walker@two]
+path_walk = bar_dolg_leader_walk
+path_look = bar_dolg_leader_look
+meet = meet
+
+[meet]
+meet_state = 5 | guard
+meet_state_wpn = 5 | guard
+abuse = false
+use = true
+use_wpn = false
+victim = 5 | actor
+victim_wpn = 5 | actor

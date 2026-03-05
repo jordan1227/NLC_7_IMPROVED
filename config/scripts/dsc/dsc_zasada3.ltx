@@ -1,0 +1,23 @@
+[smart_terrains]
+none = true
+
+[dont_spawn_character_supplies]
+
+[spawn]
+wpn_toz34
+ammo_12x70_buck = 2
+
+[logic]
+active = walker
+
+[walker]
+path_walk = dsc_zasada3_walk
+path_look = dsc_zasada3_look
+meet = no_meet
+danger = danger_condition
+
+[danger_condition]
+ignore_types = corpse
+ignore_distance_corpse = 0
+ignore_distance = 7
+ignore_distance_sound = 7

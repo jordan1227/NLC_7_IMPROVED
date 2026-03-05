@@ -1,0 +1,28 @@
+[logic]
+active = walker@day
+on_death = death
+on_hit = hit
+
+[walker@day]
+path_walk = lim_vovan_walk_way
+path_look = lim_vovan_way_look
+meet = meet@lim_guard
+danger = danger_condition
+
+[meet@lim_guard]
+meet_state = 5 | guard
+meet_state_wpn = 5 | guard
+victim 			= 5 | actor
+victim_wpn = 5 | actor
+use			= true
+use_wpn		= false
+abuse   = true
+
+[danger_condition]
+ignore_distance = 0
+
+[death]
+on_info = {=killed_by_actor} %+lim_guard_fire +lim_vovan_umer%, %+lim_vovan_umer%
+
+[hit]
+on_info = {=hit_by_actor} %+lim_guard_fire%

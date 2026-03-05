@@ -1,0 +1,8 @@
+[logic]
+active = sr_idle@2
+
+[sr_idle@2]
+on_actor_inside = {-red_monsters_1_add_have} %+red_monsters_1_add_have =sak_spawn.red_near_tank_monsters()%  sr_idle@3
+
+[sr_idle@3]
+on_actor_outside = sr_idle@2

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="windows-1251"  ?>
+<encyclopedia>
+#include "gameplay\storyline_info_pda.xml"	
+#include "gameplay\storyline_info_taskmanager.xml"
+#include "gameplay\stories.xml"
+#include "gameplay\storyline_info_amk_recipts.xml"
+#include "gameplay\encyclopedia_amk_recipts.xml"
+#include "gameplay\storyline_info_sak_way.xml"
+#include "gameplay\encyclopedia_sak_way.xml"
+#include "gameplay\arc_diary_articles.xml"
+#include "gameplay\storyline_info_mike.xml"
+#include "gameplay\storyline_info_doc.xml"
+</encyclopedia>

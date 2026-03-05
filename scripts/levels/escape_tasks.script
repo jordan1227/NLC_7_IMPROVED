@@ -1,0 +1,25 @@
+function proceed()
+    local actor = db.actor
+	if	(has_alife_info("tutorial_end") or
+		has_alife_info("esc_kill_bandits_quest_done")) and
+		not has_alife_info("esc_path_to_lager") 
+	then		
+		actor:give_info_portion("esc_path_to_lager")
+	end
+
+	if has_alife_info("escape_blockpost_case") and
+	   not has_alife_info("escape_blockpost_case_have") and 
+	   actor:object("quest_case_01") ~= nil
+	then
+		actor:give_info_portion("escape_blockpost_case_have")
+	end       	
+	
+	if has_alife_info("esc_kill_bandits_quest_done") and
+	   not has_alife_info("esc_petruha_great")
+	then
+		actor:give_info_portion("esc_petruha_great")
+	end
+end
+
+function process_info_portion(info_id)
+end

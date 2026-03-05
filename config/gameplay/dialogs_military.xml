@@ -1,0 +1,1221 @@
+<?xml version="1.0" encoding="windows-1251"  ?>
+<!-- Шуруп -->
+<game_dialogs>
+	<dialog id="mil_screw_dialog">
+		<phrase_list>
+			<phrase id="0">
+				<action>dialogs.no_trade_trader</action>
+				<text />
+				<next>100</next>
+				<next>200</next>
+				<next>300</next>
+			</phrase>
+			<phrase id="100">
+				<text />
+				<dont_has_info>mil_screw_talk</dont_has_info>
+				<dont_has_info>mil_screw_talk_short</dont_has_info>
+				<next>101</next>
+			</phrase>
+			<phrase id="200">
+				<text />
+				<has_info>mil_screw_talk</has_info>
+				<next>201</next>
+			</phrase>
+			<phrase id="300">
+				<text />
+				<dont_has_info>mil_screw_talk</dont_has_info>
+				<has_info>mil_screw_talk_short</has_info>
+				<next>301</next>
+			</phrase>			
+			<phrase id="101">
+				<text>mil_screw_dialog_101</text>
+				<next>102</next>
+			</phrase>
+			<phrase id="102">
+				<text>mil_screw_dialog_102</text>
+				<next>103</next>
+			</phrase>
+			<phrase id="103">
+				<text>mil_screw_dialog_103</text>
+				<next>104</next>
+			</phrase>
+			<phrase id="104">
+				<text>mil_screw_dialog_104</text>
+				<next>105</next>
+			</phrase>
+			<phrase id="105">
+				<text>mil_screw_dialog_105</text>
+				<next>106</next>
+			</phrase>
+			<phrase id="106">
+				<text>mil_screw_dialog_106</text>
+				<next>107</next>
+			</phrase>
+			<phrase id="107">
+				<text>mil_screw_dialog_107</text>
+				<next>108</next>
+			</phrase>
+			<phrase id="108">
+				<text>mil_screw_dialog_108</text>
+				<next>109</next>
+			</phrase>
+			<phrase id="109">
+				<text>mil_screw_dialog_109</text>
+				<give_info>mil_lukash_question_already</give_info>
+				<next>110</next>
+			</phrase>
+			<phrase id="110">
+				<text>mil_screw_dialog_110</text>
+				<next>111</next>
+			</phrase>
+			<phrase id="111">
+				<text>mil_screw_dialog_111</text>
+				<next>1121</next>
+				<next>1111</next>
+			</phrase>
+			<phrase id="1111">
+			<precondition>sak_dialog.not_have_vodka</precondition>			
+				<text>mil_screw_dialog_1111</text>
+				<next>1112</next>
+			</phrase>
+			<phrase id="1121">
+			<precondition>sak_dialog.have_vodka</precondition>
+				<text>mil_screw_dialog_1121</text>
+				<action>sak_dialog.give_vodka</action>
+				<next>1122</next>
+			</phrase>
+			<phrase id="1112">
+				<text>mil_screw_dialog_1112</text>
+				<give_info>mil_screw_talk_short</give_info>	
+				<next>1113</next>				
+			</phrase>
+			<phrase id="1122">
+				<text>mil_screw_dialog_1122</text>
+				<action>sak.create_items("repair_item_weapon_feik",2)</action>
+				<give_info>mil_screw_talk</give_info>
+				<give_info>mil_screw_talk_short</give_info>	
+				<next>1123</next>
+			</phrase>
+			<phrase id="1113">
+				<text>mil_screw_dialog_1113</text>
+				<action>dialogs.break_dialog</action>			
+			</phrase>			
+			<phrase id="1123">
+				<text>mil_screw_dialog_1123</text>
+				<action>dialogs.break_dialog</action>			
+			</phrase>	
+			<phrase id="201">
+				<text>mil_screw_dialog_201</text>
+			</phrase>
+			<phrase id="301">
+				<text>mil_screw_dialog_301</text>
+				<next>1121</next>
+				<next>302</next>
+			</phrase>
+			<phrase id="302">
+			<precondition>sak_dialog.not_have_vodka</precondition>			
+				<text>mil_screw_dialog_302</text>
+				<next>303</next>
+			</phrase>
+			<phrase id="303">
+				<text>mil_screw_dialog_303</text>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	
+	<dialog id="shurup_flame_reload_dialog">
+		<precondition>sak_dialog.have_info_flamethrower</precondition>
+		<dont_has_info>flame_reload_wait</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>shurup_flame_reload_dialog_0</text>
+				<next>11</next>
+				<next>121</next>
+				<next>122</next>
+			</phrase>
+			<phrase id="11">
+			<dont_has_info>shurup_flame_reload_rules</dont_has_info>
+				<text>shurup_flame_reload_dialog_11</text>
+				<next>21</next>
+			</phrase>
+			<phrase id="121">
+			<has_info>shurup_flame_reload_rules</has_info>
+			<has_info>flame_reload_not_ready_shu</has_info>
+				<text>shurup_flame_reload_dialog_121</text>
+				<next>131</next>
+			</phrase>
+			<phrase id="122">
+			<has_info>shurup_flame_reload_rules</has_info>
+			<dont_has_info>flame_reload_not_ready_shu</dont_has_info>
+				<text>shurup_flame_reload_dialog_122</text>
+				<next>41</next>
+				<next>42</next>
+				<next>43</next>
+			</phrase>
+			<phrase id="21">
+				<text>shurup_flame_reload_dialog_21</text>
+				<next>31</next>
+			</phrase>
+			<phrase id="131">
+				<text>shurup_flame_reload_dialog_131</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="31">
+				<text>shurup_flame_reload_dialog_31</text>
+				<give_info>shurup_flame_reload_rules</give_info>
+				<next>41</next>
+				<next>42</next>
+				<next>43</next>
+			</phrase>
+			<phrase id="41">
+				<precondition>sak_dialog.have_reload_fuel</precondition>
+				<precondition>sak_dialog.cond_items_have("a",1,0.9)</precondition>
+				<text>shurup_flame_reload_dialog_41</text>
+				<action>sak_dialog.give_reload_fuel</action>
+				<action>sak_dialog.cond_items_have("a",1,0.9,true)</action>
+				<next>5</next>
+			</phrase>
+			<phrase id="42">
+			<precondition>sak_dialog.cond_items_have("b",1,0.9)</precondition>
+				<text>shurup_flame_reload_dialog_42</text>
+				<action>sak_dialog.cond_items_have("b",1,0.9,true)</action>
+				<next>5</next>
+			</phrase>
+			<phrase id="43">
+				<text>shurup_flame_reload_dialog_43</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="5">
+				<text>shurup_flame_reload_dialog_5</text>
+				<action>sak.create_items("ammo_flame",1)</action>
+				<action>sak_dialog.shurup_flame_reload_timer</action>
+				<give_info>flame_reload_wait</give_info>
+				<give_info>flame_reload_not_ready_shu</give_info>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	
+	<dialog id="mil_zoneguard_common1">
+		<has_info>mil_kurjer_voronin_start</has_info>
+		<dont_has_info>mil_cook_question_already</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>mil_zoneguard_common1_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>mil_zoneguard_common1_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>mil_zoneguard_common1_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>mil_zoneguard_common1_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>mil_zoneguard_common1_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>mil_zoneguard_common1_5</text>
+				<next>6</next>
+			</phrase>		
+			<phrase id="6">
+				<text>mil_zoneguard_common1_6</text>
+				<give_info>mil_cook_question_already</give_info>
+				<next>7</next>
+			</phrase>
+			<phrase id="7">
+				<text>mil_zoneguard_common1_7</text>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	
+	<dialog id="mil_patrol_dialog1">
+		<phrase_list>
+			<phrase id="0">
+				<text>mil_patrol_dialog1_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>mil_patrol_dialog1_1</text>
+				<next>2</next>
+			</phrase>			
+			<phrase id="2">
+				<text>mil_patrol_dialog1_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>mil_patrol_dialog1_3</text>
+				<give_info>mil_patrol1_talk</give_info>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>mil_patrol_dialog1_4</text>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	
+	<dialog id="mil_zoneguard_common2">											
+		<dont_has_info>mil_lukash_question_already</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>mil_zoneguard_common2_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>mil_zoneguard_common2_1</text>
+				<next>21</next>
+				<next>22</next>
+			</phrase>
+			<phrase id="21">
+				<dont_has_info>mil_patrol_glavn_ok</dont_has_info>
+				<text>mil_zoneguard_common2_21</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="22">
+				<has_info>mil_patrol_glavn_ok</has_info>
+				<text>mil_zoneguard_common2_22</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>mil_zoneguard_common2_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>mil_zoneguard_common2_4</text>
+				<give_info>mil_lukash_question_already</give_info>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	
+	<dialog id="mil_patrol_dialog2">
+		<phrase_list>
+			<phrase id="0">
+				<text>mil_patrol_dialog2_0</text>
+				<next>1</next>
+			</phrase>		
+			<phrase id="1">
+				<text>mil_patrol_dialog2_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>mil_patrol_dialog2_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>mil_patrol_dialog2_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>mil_patrol_dialog2_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>mil_patrol_dialog2_5</text>
+				<next>6</next>
+			</phrase>
+			<phrase id="6">
+				<text>mil_patrol_dialog2_6</text>
+				<next>7</next>
+			</phrase>
+			<phrase id="7">
+				<text>mil_patrol_dialog2_7</text>
+				<give_info>mil_patrol2_talk</give_info>
+				<next>8</next>
+			</phrase>
+			<phrase id="8">
+				<text>mil_patrol_dialog2_8</text>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	
+	<dialog id="mil_dolg_skull_dialog">
+		<phrase_list>
+			<phrase id="0">
+				<action>dialogs.no_trade_trader</action>
+				<text />
+				<next>100</next>
+				<next>200</next>
+				<next>300</next>
+				<next>400</next>
+			</phrase>
+			<phrase id="100">
+				<text />
+				<dont_has_info>mil_scull_dead</dont_has_info>
+				<dont_has_info>mil_dolg_dialog_already</dont_has_info>
+				<next>101</next>
+			</phrase>
+			<phrase id="200">
+				<text />
+				<dont_has_info>mil_scull_dead</dont_has_info>
+				<has_info>mil_sniper_no_job</has_info>
+				<has_info>mil_dolg_dialog_already</has_info>
+				<next>201</next>
+			</phrase>
+			<phrase id="300">
+				<text />
+				<dont_has_info>mil_scull_dead</dont_has_info>
+				<dont_has_info>mil_sniper_no_job</dont_has_info>
+				<has_info>mil_dolg_dialog_already</has_info>
+				<next>301</next>
+			</phrase>
+			<phrase id="400">
+				<text />
+				<has_info>mil_scull_dead</has_info>
+				<next>401</next>
+			</phrase>
+<!-- new -->
+			<phrase id="101">
+				<text>mil_dolg_skull_dialog_101</text>
+				<give_info>mil_dolg_dialog_already</give_info>
+				<next>1021</next>
+				<next>1011</next>
+			</phrase>
+			<phrase id="1011">
+				<text>mil_dolg_skull_dialog_1011</text>
+				<next>1012</next>
+			</phrase>
+			<phrase id="1021">
+				<has_info>ivancov_return_cherep_start</has_info>
+				<text>mil_dolg_skull_dialog_1021</text>
+				<next>1022</next>
+			</phrase>
+			<phrase id="1012">
+				<text>mil_dolg_skull_dialog_1012</text>
+				<next>1013</next>
+				<next>10131</next>
+			</phrase>
+			<phrase id="1022">
+				<text>mil_dolg_skull_dialog_1022</text>
+				<next>1023</next>
+			</phrase>
+			<phrase id="1013">
+				<dont_has_info>mil_sniper_dead</dont_has_info>
+				<text>mil_dolg_skull_dialog_1013</text>
+				<next>1014</next>
+			</phrase>
+			<phrase id="10131">
+				<has_info>mil_sniper_dead</has_info>
+				<text>mil_dolg_skull_dialog_10131</text>
+				<next>10132</next>
+			</phrase>
+			<phrase id="1023">
+				<text>mil_dolg_skull_dialog_1023</text>
+				<next>1024</next>
+			</phrase>
+			<phrase id="1014">
+				<text>mil_dolg_skull_dialog_1014</text>
+				<next>1015</next>
+				<next>1035</next>
+			</phrase>
+			<phrase id="10132">
+				<text>mil_dolg_skull_dialog_10132</text>
+				<give_info>mil_sniper_no_job</give_info>
+				<next>10133</next>
+			</phrase>
+			<phrase id="1024">
+				<text>mil_dolg_skull_dialog_1024</text>
+				<next>1025</next>
+			</phrase>
+			<phrase id="1015">
+				<text>mil_dolg_skull_dialog_1015</text>
+				<give_info>mil_sniper_no_job</give_info>
+				<next>1016</next>
+			</phrase>
+			<phrase id="1035">
+				<has_info>ivancov_return_cherep_start</has_info>
+				<text>mil_dolg_skull_dialog_1035</text>
+				<next>1036</next>
+			</phrase>
+			<phrase id="10133">
+				<text>mil_dolg_skull_dialog_10133</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="1025">
+				<text>mil_dolg_skull_dialog_1025</text>
+				<give_info>ivancov_return_cherep_have</give_info>
+				<next>1026</next>
+			</phrase>
+			<phrase id="1016">
+				<text>mil_dolg_skull_dialog_1016</text>
+				<next>1017</next>
+			</phrase>
+			<phrase id="1026">
+				<text>mil_dolg_skull_dialog_1026</text>
+				<next>1027</next>
+			</phrase>
+			<phrase id="1036">
+				<text>mil_dolg_skull_dialog_1036</text>
+				<next>1037</next>
+			</phrase>
+			<phrase id="1017">
+				<text>mil_dolg_skull_dialog_1017</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="1027">
+				<text>mil_dolg_skull_dialog_1027</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="1037">
+				<text>mil_dolg_skull_dialog_1037</text>
+				<next>1038</next>
+			</phrase>
+			<phrase id="1038">
+				<text>mil_dolg_skull_dialog_1038</text>
+				<next>1039</next>
+			</phrase>
+			<phrase id="1039">
+				<text>mil_dolg_skull_dialog_1039</text>
+				<give_info>ivancov_return_cherep_have</give_info>
+				<next>1026</next> <!-- не ошибка -->
+			</phrase>
+			<phrase id="201">
+				<text>mil_dolg_skull_dialog_201</text>
+			</phrase>
+			<phrase id="301">
+				<text>mil_dolg_skull_dialog_301</text>
+			</phrase>
+			<phrase id="401">
+				<text>mil_dolg_skull_dialog_401</text>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	
+	<dialog id="mil_freedom_commander_common2">
+	<dont_has_info>mil_freedom_barjer_info</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>mil_freedom_commander_common2_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>mil_freedom_commander_common2_1</text>
+				<next>2</next>
+			</phrase>			
+			<phrase id="2">
+				<text>mil_freedom_commander_common2_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>mil_freedom_commander_common2_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>mil_freedom_commander_common2_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>mil_freedom_commander_common2_5</text>
+				<next>6</next>
+			</phrase>
+			<phrase id="6">
+				<text>mil_freedom_commander_common2_6</text>
+				<give_info>mil_freedom_barjer_info</give_info>
+				<next>7</next>
+			</phrase>
+			<phrase id="7">
+				<text>mil_freedom_commander_common2_7</text>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	
+	<dialog id="mil_guard_arsenal_dialog">
+		<phrase_list>
+			<phrase id="0">
+				<action>dialogs.no_trade_trader</action>
+				<text>mil_guard_arsenal_dialog_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>mil_guard_arsenal_dialog_1</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	
+	<dialog id="mil_hunter_dialog">
+		<phrase_list>
+			<phrase id="0">
+				<text />
+				<next>100</next>
+				<next>150</next>
+				<next>300</next>
+				<next>400</next>
+				<next>500</next>
+				<next>600</next>
+				<next>700</next>
+				<next>750</next>
+				<next>800</next>
+				<next>900</next>
+			</phrase>
+			<phrase id="100">
+				<text />
+				<dont_has_info>mil_hunt_ready</dont_has_info>
+				<dont_has_info>kill_mil_bloodsucker</dont_has_info>
+				<has_info>mil_miser_task</has_info>
+				<next>101</next>
+			</phrase>
+			<phrase id="150">
+				<text />
+				<dont_has_info>mil_hunt_ready</dont_has_info>
+				<has_info>kill_mil_bloodsucker</has_info>
+				<has_info>mil_miser_task</has_info>
+				<next>151</next>
+			</phrase>
+			<phrase id="300">
+				<text />
+				<has_info>mil_hunt_ready</has_info>
+				<dont_has_info>mil_after_hunt_talked</dont_has_info>
+				<dont_has_info>mil_controller_ready</dont_has_info>
+				<precondition>sak_dialog.bloodsuckers_dead</precondition>
+				<next>301</next>
+			</phrase>
+			<phrase id="400">
+				<text />
+				<has_info>mil_after_hunt_talked</has_info>
+				<next>401</next>
+			</phrase>
+			<phrase id="500">
+				<text />
+				<dont_has_info>mil_miser_task</dont_has_info>
+				<dont_has_info>kill_mil_bloodsucker</dont_has_info>
+				<dont_has_info>mil_hunt_ready</dont_has_info>
+				<next>501</next>
+			</phrase>
+			<phrase id="600">
+				<text />
+				<dont_has_info>mil_miser_task</dont_has_info>
+				<dont_has_info>mil_go_to_miser</dont_has_info>
+				<dont_has_info>mil_hunt_ready</dont_has_info>
+				<has_info>kill_mil_bloodsucker</has_info>
+				<next>601</next>
+			</phrase>
+			<phrase id="700">
+				<text />
+				<precondition>sak_dialog.bloodsuckers_dead</precondition>
+				<dont_has_info>mil_go_to_miser</dont_has_info>
+				<dont_has_info>mil_miser_task_failed</dont_has_info>
+				<give_info>mil_hunt_end</give_info>
+				<has_info>mil_hunt_ready</has_info>
+				<next>701</next>
+			</phrase>
+			<phrase id="750">
+				<text />
+				<precondition>sak_dialog.bloodsuckers_not_dead</precondition>
+				<has_info>mil_hunt_ready</has_info>
+				<next>751</next>
+			</phrase>
+			<phrase id="800">
+				<text />
+				<has_info>kill_mil_bloodsucker</has_info>
+				<dont_has_info>mil_hunt_ready</dont_has_info>
+				<has_info>mil_miser_task_failed</has_info>
+				<next>801</next>
+			</phrase>
+			<phrase id="900">
+				<text />
+				<precondition>sak_dialog.bloodsuckers_dead</precondition>
+				<dont_has_info>mil_after_hunt_talked</dont_has_info>
+				<has_info>mil_hunt_ready</has_info>
+				<has_info>mil_miser_task_failed</has_info>
+				<next>901</next>
+			</phrase>
+			<phrase id="101">
+				<text>mil_hunter_dialog_101</text>
+				<next>102</next>
+			</phrase>			
+			<phrase id="102">
+				<text>mil_hunter_dialog_102</text>
+				<next>103</next>
+			</phrase>
+			<phrase id="103">
+				<text>mil_hunter_dialog_103</text>
+				<next>104</next>
+			</phrase>
+			<phrase id="104">
+				<text>mil_hunter_dialog_104</text>
+				<next>105</next>
+			</phrase>
+			<phrase id="105">
+				<text>mil_hunter_dialog_105</text>
+				<give_info>mil_hunt_ready</give_info>
+				<next>106</next>
+			</phrase>
+			<phrase id="106">
+				<text>mil_hunter_dialog_106</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="151">
+				<text>mil_hunter_dialog_151</text>
+				<next>152</next>
+			</phrase>
+			<phrase id="152">
+				<text>mil_hunter_dialog_152</text>
+				<next>153</next>
+			</phrase>
+			<phrase id="153">
+				<text>mil_hunter_dialog_153</text>
+				<give_info>mil_hunt_ready</give_info>
+				<next>154</next>
+			</phrase>
+			<phrase id="154">
+				<text>mil_hunter_dialog_154</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="301">
+				<text>mil_hunter_dialog_301</text>
+				<next>302</next>
+			</phrase>
+			<phrase id="302">
+				<text>mil_hunter_dialog_302</text>
+				<give_info>mil_after_hunt_talked</give_info>
+				<next>303</next>
+			</phrase>
+			<phrase id="303">
+				<text>mil_hunter_dialog_303</text>
+				<next>304</next>
+			</phrase>
+			<phrase id="304">
+				<text>mil_hunter_dialog_304</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="401">
+				<text>mil_hunter_dialog_401</text>
+				<next>402</next>
+			</phrase>
+			<phrase id="402">
+				<text>mil_hunter_dialog_402</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="501">
+				<text>mil_hunter_dialog_501</text>
+				<next>502</next>
+			</phrase>
+			<phrase id="502">
+				<text>mil_hunter_dialog_502</text>
+				<next>503</next>
+			</phrase>
+			<phrase id="503">
+				<text>mil_hunter_dialog_503</text>
+				<next>504</next>
+			</phrase>
+			<phrase id="504">
+				<text>mil_hunter_dialog_504</text>
+				<next>505</next>
+			</phrase>
+			<phrase id="505">
+				<text>mil_hunter_dialog_505</text>
+				<next>506</next>
+			</phrase>
+			<phrase id="506">
+				<text>mil_hunter_dialog_506</text>
+				<next>507</next>
+			</phrase>
+			<phrase id="507">
+				<text>mil_hunter_dialog_507</text>
+				<give_info>mil_hunt_ready</give_info>
+				<give_info>mil_controller_ready</give_info>
+				<next>508</next>
+			</phrase>
+			<phrase id="508">
+				<text>mil_hunter_dialog_508</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="601">
+				<text>mil_hunter_dialog_601</text>
+				<give_info>mil_hunt_ready</give_info>
+				<next>602</next>
+			</phrase>
+			<phrase id="602">
+				<text>mil_hunter_dialog_602</text>
+				<next>603</next>
+			</phrase>
+			<phrase id="603">
+				<text>mil_hunter_dialog_603</text>
+				<next>604</next>
+			</phrase>
+			<phrase id="604">
+				<text>mil_hunter_dialog_604</text>
+				<next>605</next>
+			</phrase>
+			<phrase id="605">
+				<text>mil_hunter_dialog_605</text>
+				<give_info>mil_go_to_miser</give_info>
+				<next>606</next>
+			</phrase>
+			<phrase id="606">
+				<text>mil_hunter_dialog_606</text>
+				<next>607</next>
+			</phrase>
+			<phrase id="607">
+				<text>mil_hunter_dialog_607</text>
+			</phrase>
+			<phrase id="701">
+				<text>mil_hunter_dialog_701</text>
+				<next>702</next>
+			</phrase>
+			<phrase id="702">
+				<text>mil_hunter_dialog_702</text>
+				<next>703</next>
+			</phrase>
+			<phrase id="703">
+				<text>mil_hunter_dialog_703</text>
+				<give_info>mil_after_hunt_talked</give_info>
+				<give_info>mil_go_to_miser</give_info>
+				<next>704</next>
+			</phrase>
+			<phrase id="704">
+				<text>mil_hunter_dialog_704</text>
+				<next>705</next>
+			</phrase>
+			<phrase id="705">
+				<text>mil_hunter_dialog_705</text>
+				<next>7061</next>
+				<next>7062</next>
+			</phrase>
+			<phrase id="7061">
+			<dont_has_info>mil_miser_task</dont_has_info>
+				<text>mil_hunter_dialog_7061</text>
+				<next>707</next>
+			</phrase>
+			<phrase id="707">
+				<text>mil_hunter_dialog_707</text>
+			</phrase>
+			<phrase id="7062">
+			<has_info>mil_miser_task</has_info>
+				<text>mil_hunter_dialog_7062</text>
+			</phrase>
+			<phrase id="751">
+				<text>mil_hunter_dialog_751</text>
+				<next>752</next>
+			</phrase>
+			<phrase id="752">
+				<text>mil_hunter_dialog_752</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="801">
+				<text>mil_hunter_dialog_801</text>
+				<next>802</next>
+			</phrase>
+			<phrase id="802">
+				<text>mil_hunter_dialog_802</text>
+				<next>803</next>
+			</phrase>
+			<phrase id="803">
+				<text>mil_hunter_dialog_803</text>
+				<next>804</next>
+			</phrase>
+			<phrase id="804">
+				<text>mil_hunter_dialog_804</text>
+				<next>805</next>
+			</phrase>
+			<phrase id="805">
+				<text>mil_hunter_dialog_805</text>
+				<next>806</next>
+			</phrase>
+			<phrase id="806">
+				<text>mil_hunter_dialog_806</text>
+				<next>807</next>
+			</phrase>
+			<phrase id="807">
+				<text>mil_hunter_dialog_807</text>
+				<give_info>mil_hunt_ready</give_info>
+				<give_info>mil_controller_ready</give_info>
+				<next>808</next>
+			</phrase>
+			<phrase id="808">
+				<text>mil_hunter_dialog_808</text>
+			</phrase>			
+			<phrase id="901">
+				<text>mil_hunter_dialog_901</text>
+				<next>902</next>
+			</phrase>
+			<phrase id="902">
+				<text>mil_hunter_dialog_902</text>
+				<next>903</next>
+			</phrase>
+			<phrase id="903">
+				<text>mil_hunter_dialog_903</text>
+				<next>904</next>
+			</phrase>
+			<phrase id="904">
+				<text>mil_hunter_dialog_904</text>
+				<give_info>mil_after_hunt_talked</give_info>
+				<give_info>mil_hunt_end</give_info>
+			</phrase>
+		</phrase_list>
+	</dialog>
+
+	<dialog id="mil_bodyguard_dialog">
+		<phrase_list>
+			<phrase id="0">
+				<text>mil_bodyguard_dialog_0</text>
+				<next>1</next>
+				<next>2</next>
+				<next>3</next>
+			</phrase>
+			<phrase id="1">
+			<dont_has_info>mil_dolg_dead</dont_has_info>
+			<dont_has_info>mil_dolg_gulag_return</dont_has_info>
+			<has_info>mil_patrol_glavn_ok</has_info>
+				<text>mil_bodyguard_dialog_1</text>
+				<next>10</next>
+			</phrase>
+			<phrase id="2">
+			<has_info>mil_lukash_question_already</has_info>
+				<text>mil_bodyguard_dialog_2</text>
+				<next>20</next>
+			</phrase>
+			<phrase id="3">
+				<text>mil_bodyguard_dialog_3</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="10">
+				<text>mil_bodyguard_dialog_10</text>
+				<next>11</next>
+			</phrase>
+			<phrase id="20">
+				<text>mil_bodyguard_dialog_20</text>
+				<next>21</next>
+			</phrase>
+			<phrase id="11">
+				<text>mil_bodyguard_dialog_11</text>
+				<next>12</next>
+			</phrase>
+			<phrase id="21">
+				<text>mil_bodyguard_dialog_21</text>
+				<next>22</next>
+			</phrase>
+			<phrase id="12">
+				<text>mil_bodyguard_dialog_12</text>
+				<next>131</next>
+				<next>132</next>
+			</phrase>
+			<phrase id="22">
+				<text>mil_bodyguard_dialog_22</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="131">
+				<text>mil_bodyguard_dialog_131</text>
+				<next>141</next>
+			</phrase>
+			<phrase id="132">
+				<text>mil_bodyguard_dialog_132</text>
+				<action>sak_dialog.up_repa(-20)</action>
+				<next>142</next>
+			</phrase>
+			<phrase id="4">
+				<text>mil_bodyguard_dialog_4</text>
+				<give_info>mil_lukash_guard_talked</give_info>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="141">
+				<text>mil_bodyguard_dialog_141</text>
+				<next>151</next>
+			</phrase>
+			<phrase id="142">
+				<text>mil_bodyguard_dialog_142</text>
+				<next>152</next>
+			</phrase>
+			<phrase id="151">
+				<text>mil_bodyguard_dialog_151</text>
+				<give_info>mil_lukash_guard_talked</give_info>
+				<action>sak_dialog.lukash_guard_timer</action>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="152">
+				<text>mil_bodyguard_dialog_152</text>
+				<give_info>mil_lukash_guard_talked</give_info>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+		</phrase_list>
+	</dialog>
+
+	<dialog id="mil_trader_dialog">
+		<phrase_list>
+			<phrase id="0">
+				<text></text>
+				<next>100</next>
+				<next>200</next>
+				<next>300</next>
+				<next>400</next>
+				<next>500</next>
+				<next>600</next>
+				<next>700</next>
+				<next>800</next>
+			</phrase>
+			<phrase id="100">
+				<text></text>
+				<dont_has_info>mil_miser_new_gg</dont_has_info>
+				<next>101</next>
+			</phrase>
+			<phrase id="200">
+				<text></text>
+				<has_info>mil_miser_new_gg</has_info>
+				<has_info>mil_miser_task</has_info>
+				<has_info>mil_miser_task_failed</has_info>
+				<next>201</next>
+			</phrase>			
+			<phrase id="300">
+				<text></text>
+				<has_info>mil_miser_new_gg</has_info>
+				<dont_has_info>mil_miser_task</dont_has_info>
+				<dont_has_info>mil_miser_task_complete</dont_has_info>
+				<dont_has_info>mil_go_to_miser</dont_has_info>
+				<next>301</next>
+			</phrase>			
+			<phrase id="400">
+				<text></text>
+				<has_info>mil_miser_new_gg</has_info>
+				<dont_has_info>mil_miser_task_complete</dont_has_info>
+				<has_info>mil_miser_task</has_info>
+				<precondition>sak_dialog.bloodsuckers_dead</precondition>
+				<next>401</next>
+			</phrase>			
+			<phrase id="500">
+				<text></text>
+				<has_info>mil_miser_new_gg</has_info>
+				<precondition>sak_dialog.bloodsuckers_not_dead</precondition>
+				<dont_has_info>mil_miser_task_failed</dont_has_info>
+				<dont_has_info>mil_hunt_ready</dont_has_info>
+				<dont_has_info>mil_miser_task_complete</dont_has_info>
+				<has_info>mil_miser_task</has_info>
+				<next>501</next>
+			</phrase>			
+			<phrase id="600">
+				<text></text>
+				<has_info>mil_miser_new_gg</has_info>
+				<precondition>sak_dialog.bloodsuckers_not_dead</precondition>
+				<dont_has_info>mil_miser_task_failed</dont_has_info>
+				<dont_has_info>mil_miser_task_complete</dont_has_info>
+				<has_info>mil_miser_task</has_info>
+				<has_info>mil_hunt_ready</has_info>
+				<next>601</next>
+			</phrase>
+			<phrase id="700">
+				<text></text>
+				<has_info>mil_miser_new_gg</has_info>
+				<dont_has_info>mil_miser_task</dont_has_info>
+				<dont_has_info>mil_go_to_miser_end</dont_has_info>
+				<has_info>mil_go_to_miser</has_info>
+				<next>701</next>
+			</phrase>
+			<phrase id="800">
+				<text></text>
+				<has_info>mil_miser_task_complete</has_info>
+				<next>801</next>
+			</phrase>
+			<phrase id="101">
+				<text>mil_trader_dialog_101</text>
+				<action>dialogs.no_trade_trader</action>
+				<next>102</next>
+			</phrase>
+			<phrase id="102">
+				<text>mil_trader_dialog_102</text>
+				<next>103</next>
+			</phrase>
+			<phrase id="103">
+				<text>mil_trader_dialog_103</text>
+				<next>104</next>
+			</phrase>
+			<phrase id="104">
+				<text>mil_trader_dialog_104</text>
+				<next>105</next>
+			</phrase>
+			<phrase id="105">
+				<text>mil_trader_dialog_105</text>
+				<action>dialogs.yes_trade</action>
+				<action>sak_dialog.pre_rolled_arts_set("a",5,5,nil,1,"skrjaga_kurjer_rew")</action>
+				<action>sak_dialog.pre_rolled_arts_set("b",5,5,nil,1,"skrjaga_kurjer_rew")</action>
+				<give_info>mil_miser_new_gg</give_info>
+			</phrase>
+			<phrase id="201">
+				<text>mil_trader_dialog_201</text>
+				<action>dialogs.yes_trade</action>
+			</phrase>			
+			<phrase id="301">
+				<text>mil_trader_dialog_301</text>
+				<action>dialogs.yes_trade</action>
+				<next>302</next>
+				<next>340</next>
+			</phrase>
+			<phrase id="302">			
+			<dont_has_info>mil_miser_task_failed</dont_has_info>
+				<text>mil_trader_dialog_302</text>
+				<next>303</next>
+			</phrase>
+			<phrase id="303">
+				<text>mil_trader_dialog_303</text>
+				<next>304</next>
+			</phrase>
+			<phrase id="304">
+				<text>mil_trader_dialog_304</text>
+				<next>305</next>
+			</phrase>
+			<phrase id="305">
+				<text>mil_trader_dialog_305</text>
+				<next>306</next>
+			</phrase>
+			<phrase id="306">
+				<text>mil_trader_dialog_306</text>
+				<next>307</next>
+			</phrase>
+			<phrase id="307">
+				<text>mil_trader_dialog_307</text>
+				<next>3071</next>				
+				<next>3072</next>
+				<next>350</next>
+			</phrase>			
+			<phrase id="3071">
+				<text>mil_trader_dialog_3071</text>
+				<next>3081</next>
+			</phrase>
+			<phrase id="3081">
+				<text>mil_trader_dialog_3081</text>
+			</phrase>			
+			<phrase id="3072">
+				<dont_has_info>mil_after_hunt_talked</dont_has_info>			
+				<text>mil_trader_dialog_3072</text>
+				<give_info>mil_miser_task</give_info>
+				<next>3082</next>
+			</phrase>
+			<phrase id="3082">
+				<text>mil_trader_dialog_3082</text>
+			</phrase>
+			<phrase id="340">
+				<has_info>mil_miser_task_failed</has_info>			
+				<text>mil_trader_dialog_340</text>
+				<next>341</next>
+			</phrase>
+			<phrase id="341">
+				<text>mil_trader_dialog_341</text>
+			</phrase>			
+			<phrase id="350">
+				<has_info>mil_after_hunt_talked</has_info>			
+				<text>mil_trader_dialog_350</text>
+				<next>351</next>
+			</phrase>
+			<phrase id="351">
+				<text>mil_trader_dialog_351</text>
+				<action>sak_dialog.add_mil_trader_art</action>
+				<give_info>mil_miser_task_complete</give_info>
+				<give_info>mil_kurjer_skrjaga_info</give_info>
+			</phrase>			
+			<phrase id="401">
+				<text>mil_trader_dialog_401</text>
+				<action>dialogs.yes_trade</action>
+				<next>402</next>
+			</phrase>
+			<phrase id="402">
+				<text>mil_trader_dialog_402</text>
+				<next>403</next>
+			</phrase>
+			<phrase id="403">
+				<text>mil_trader_dialog_403</text>
+				<next>404</next>
+			</phrase>
+			<phrase id="404">
+				<text>mil_trader_dialog_404</text>
+				<next>405</next>
+			</phrase>
+			<phrase id="405">
+				<text>mil_trader_dialog_405</text>
+				<action>sak_dialog.add_mil_trader_art</action>
+				<give_info>mil_miser_task_complete</give_info>
+				<give_info>mil_kurjer_skrjaga_info</give_info>
+			</phrase>			
+			<phrase id="501">
+				<text>mil_trader_dialog_501</text>
+				<action>dialogs.yes_trade</action>
+				<next>5021</next>
+				<next>5022</next>
+			</phrase>
+			<phrase id="5021">
+				<text>mil_trader_dialog_5021</text>
+				<next>5031</next>
+			</phrase>
+			<phrase id="5031">
+				<text>mil_trader_dialog_5031</text>
+				<next>5041</next>
+				<next>5042</next>
+			</phrase>
+			<phrase id="5041">
+				<text>mil_trader_dialog_5041</text>
+				<give_info>mil_miser_task_failed</give_info>
+				<action>dialogs.break_dialog</action>				
+			</phrase>
+			<phrase id="5042">
+				<text>mil_trader_dialog_5042</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="5022">
+				<text>mil_trader_dialog_5022</text>
+				<next>5032</next>
+			</phrase>
+			<phrase id="5032">
+				<text>mil_trader_dialog_5032</text>
+			</phrase>			
+			<phrase id="601">
+				<text>mil_trader_dialog_601</text>
+				<action>dialogs.yes_trade</action>
+				<next>6021</next>
+				<next>6022</next>
+			</phrase>
+			<phrase id="6021">
+				<text>mil_trader_dialog_6021</text>
+				<next>6031</next>
+			</phrase>
+			<phrase id="6031">
+				<text>mil_trader_dialog_6031</text>
+			</phrase>
+			<phrase id="6022">
+				<text>mil_trader_dialog_6022</text>
+				<next>6032</next>
+			</phrase>
+			<phrase id="6032">
+				<text>mil_trader_dialog_6032</text>
+				<give_info>mil_miser_task_failed</give_info>				
+			</phrase>			
+			<phrase id="701">
+				<text>mil_trader_dialog_701</text>
+				<action>dialogs.yes_trade</action>
+				<next>702</next>
+			</phrase>
+			<phrase id="702">
+				<text>mil_trader_dialog_702</text>
+				<next>703</next>
+			</phrase>
+			<phrase id="703">
+				<text>mil_trader_dialog_703</text>
+				<next>704</next>
+			</phrase>
+			<phrase id="704">
+				<text>mil_trader_dialog_704</text>
+				<next>705</next>
+			</phrase>
+			<phrase id="705">
+				<text>mil_trader_dialog_705</text>
+				<action>sak_dialog.add_mil_trader_art</action>
+				<give_info>mil_miser_task_complete</give_info>
+				<give_info>mil_go_to_miser_end</give_info>
+				<next>706</next>
+			</phrase>
+			<phrase id="706">
+				<text>mil_trader_dialog_706</text>
+				<next>707</next>
+			</phrase>			
+			<phrase id="707">
+				<text>mil_trader_dialog_707</text>
+				<give_info>mil_kurjer_skrjaga_info</give_info>
+			</phrase>
+			<phrase id="801">
+				<text>mil_trader_dialog_801</text>
+				<action>dialogs.yes_trade</action>
+			</phrase>			
+		</phrase_list>
+	</dialog>
+</game_dialogs>

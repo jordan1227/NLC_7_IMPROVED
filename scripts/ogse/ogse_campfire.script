@@ -1,0 +1,443 @@
+local DIST_TO_FLAME = 1
+local DIST_TO_ACTOR = 10 --4 --2^2
+local ACTOR_STAND_TIME = 3000
+total_ignite_time = 78
+
+-- костры "без логики", но с возможностью сохранения, если их использует кэмп
+local zone_flame_tbl = {
+	["mil_zone_flame_small_0012"] = true, -- АС, костёр на базе Свободы
+	["Esc_zone_flame_small_0002"] = true, -- Кордон, костёр под мостом
+	["esc_zone_flame_small_0004"] = true, -- Кордон, костёр в ДН
+	["esc_zone_flame_small_0005"] = true, -- Кордон, костёр на БП
+	["zone_bar_flame_off_0000"]   = true, -- Бар, костёр в Ангаре№1 (временно, до НИ)
+	["zone_bar_flame_off_0001"]   = true, -- Бар, костёр в Ангаре№2 (временно, до НИ)
+}
+
+function attach(sm)
+	sm:subscribe({signal = "on_first_update", fun = this.create_all_flames})
+	sm:subscribe({signal = "on_update", fun = this.on_actor_update, queued = true})
+	sm:subscribe({signal = "on_actor_weapon_fire", fun = this.flamer_ignite})
+end
+
+function bind_flame(obj)
+	local name = obj:name()
+	if strpos(name,"^zone_flame_") or zone_flame_tbl[name] then
+		obj:bind_object(flame_binder(obj))
+	end
+end
+
+function bind_light(obj)
+	if obj:clsid() == clsid.projector then
+		bind_physic_object.init(obj)
+	elseif strpos(obj:name(),"^lights_hanging_lamp") or strpos(obj:name(),"^lights_camp_fire") or strpos(obj:name(),"^lights_bar_flame_off") then -- ^lights_bar_flame_off убрать с НИ
+		obj:bind_object(campfire_binder(obj))
+	end
+end
+
+
+local start_stand_time  = time_global()
+local prev_actor_pos
+function on_actor_update()
+	ogse_signals.get_mgr():reschedule(math.random(1000, 1500))
+	if not prev_actor_pos then prev_actor_pos = db.actor:position() end
+	if prev_actor_pos:distance_to_sqr(db.actor:position()) > 0.01 then -- 0.1^2
+		start_stand_time = time_global()
+	end
+	prev_actor_pos = db.actor:position()
+end
+
+function stand_time()
+	return time_global() - start_stand_time
+end
+
+
+local flames, sheduled_flames, lights = {}, {}, {}
+
+function get_nearest_campfire( pos, radius )
+  local found = {}
+  for _, campfire in pairs( lights ) do
+    local pos2 = campfire.object:position()
+    if pos2:distance_to( pos ) < radius then
+      table.insert( found, campfire )
+    end
+  end
+  table.sort(
+    found,
+    function( a, b )
+      return pos:distance_to( a.object:position() ) < pos:distance_to( b.object:position() )
+    end
+  )
+  if table.getn( found ) > 0 then
+    return found[ 1 ]
+  end
+end
+
+function get_nearest_active_campfire(pos, radius)
+	local kamp = get_nearest_campfire(pos, radius)
+	if kamp and (kamp.has_users or kamp.is_eternal_fire or (kamp.ignite_time or 0) > 1) then
+		return kamp
+	end
+end
+
+function switch_light(light, ena)
+	local lamp = light:get_hanging_lamp()
+	if lamp == nil then	return end
+	local bind = light:binded_object()
+	if bind.unsuitable then return end
+	-- log2("--switch_light: %s, %s", light:name(), ena)
+	if ena then
+		lamp:turn_on()
+	else
+		lamp:turn_off()			
+	end
+end
+
+function switch_flame(flame, ena)
+	if ena then
+		flame:enable_anomaly()
+	else
+		flame:disable_anomaly()
+	end
+	-- flame:binded_object().is_ignite = ena
+end
+
+function check_shedule(flame)
+	for k, t in pairs(sheduled_flames) do
+		if t.pos:distance_to_sqr(flame:position()) < DIST_TO_FLAME then
+			switch_flame(flame, ena)
+			sheduled_flames[k] = nil
+			return
+		end
+	end
+end
+
+function switch_flame_near_light(light, ena)
+	local has_flame
+	for _, campfire in pairs(flames) do
+		if (not has_flame) and campfire.object:position():distance_to_sqr(light:position()) < DIST_TO_FLAME then
+			if campfire.object:section() == "zone_flame_candle_self" then
+				local bind = light:binded_object()
+				bind.is_candle = true
+			end
+			switch_flame(campfire.object, ena)
+			has_flame = true
+		end
+	end
+
+	if not has_flame then
+		local bind = light:binded_object()
+		bind.unsuitable = true
+		lights[light:id()] = nil
+		-- local dbg = string.format("~~Light has no flame: [%s]", light:name())
+		-- level.map_add_object_spot(light:id(), "red_location", dbg)
+		return
+	end
+
+	local name = light:name()
+	local t = sheduled_flames[name]
+	if t == nil then
+		sheduled_flames[name] = {}
+		t = sheduled_flames[name]		
+	end
+	t.pos = light:position()
+	t.ena = ena
+end
+
+function play_particle_near_light(light, particle)
+	for _, campfire in pairs(flames) do
+		if campfire.object:position():distance_to_sqr(light:position()) < DIST_TO_FLAME then
+			particle:play_at_pos(campfire.object:position())
+			return
+		end
+	end
+	local pos = light:position()
+	pos.y = pos.y - 0.5
+	particle:play_at_pos(pos)	
+end
+
+
+--[[
+  типа конечный автомат:
+    next - переводит КА в следующее состояние
+	action - вызывается при переходе в данное состояние
+]]
+states = {
+	-- костер полностью погашен: аномалия отключена, лампа погашена, партиклы не играют
+	turn_off = {
+		next = function(has_users, now, prev)
+			if has_users then return states.firing
+			else return states.turn_off end
+		end,
+		action = function(self)
+			switch_flame_near_light(self.object, false)
+			if self.particle then self.particle:stop() end
+			switch_light(self.object, false)
+		end,
+	},
+	
+	-- костер горит на полную: аномалия включена, лампочка отключена (т.к. у аномалии в конфиге включено idle_light), партиклов нет
+	firing = {
+		next = function(has_users, now, prev)
+			if has_users or prev + 10000 > now then return states.firing
+			else return states.down end
+		end,
+		action = function(self)
+			switch_flame_near_light(self.object, true)
+			-- switch_light(self.object, false)
+			-- Manool: нам нужна лампочка
+			switch_light(self.object, true)
+			if self.particle then self.particle:stop() end
+		end,
+	},
+	
+	-- костер начинает гаснуть: аномалия еще включена, лампочка отключена (т.к. у аномалии в конфиге включено idle_light), включается партикл затухающего огня
+	down = {
+		next = function(has_users, now, prev)
+			if has_users then return states.firing
+			elseif prev + 5000 < now then return states.flame_off
+			else return states.down end
+		end,
+		action = function(self)
+			switch_flame_near_light(self.object, true)
+			switch_light(self.object, false)
+			local s_part = (self.is_candle and "explosions\\gas_light") or "dyn_kfire\\dyingfire"
+			if not self.particle then self.particle = particles_object(s_part) end
+			play_particle_near_light(self.object, self.particle)
+		end,
+	},
+	
+	-- следующий этап угасания: отключается аномалия, включается лампочка (чтоб не было резкого затухания костра после отключения аномалии), партикл играется
+	flame_off = {
+		next = function(has_users, now, prev)
+			if has_users then return states.firing
+			elseif prev + 32000 < now then return states.turn_off
+			else return states.flame_off end
+		end,
+		action = function(self)
+			switch_flame_near_light(self.object, false)
+			switch_light(self.object, true)
+			if not self.particle then
+				local s_part = (self.is_candle and "explosions\\gas_light") or "dyn_kfire\\dyingfire"
+				self.particle = particles_object(s_part)
+				play_particle_near_light(self.object, self.particle)
+			end
+		end,
+	},
+}
+
+
+class "flame_binder" (object_binder)
+function flame_binder:__init(obj) super(obj)
+	-- self.is_ignite = true
+end
+
+function flame_binder:net_spawn()
+	flames[self.object:id()] = self
+	check_shedule(self.object)
+	return true
+end
+
+function is_actor_alive()
+	return level.present() and db.actor and db.actor:alive() and db.actor.health > 0
+end
+
+function check_near_en_flame()
+	if not (_G.flag_can_save and is_actor_alive()) then return end
+	local kamp = get_nearest_active_campfire(db.actor:position(), 10)
+	local obj = kamp and kamp.object
+	if obj and obj:position():distance_to_sqr(db.actor:position()) < DIST_TO_ACTOR then
+		return true
+	end
+end
+
+function flame_binder:net_destroy()
+	flames[self.object:id()] = nil
+end
+
+
+class "campfire_binder" (object_binder)
+function campfire_binder:__init(obj) super(obj)
+	self.ignite_time = 0
+	self.state = states.turn_off
+	self.has_users = false --Этим управляет xr_kamp
+	if self.object:name() == "lights_camp_fire_omni_r1_r2_0002" then -- Костёр под насыпью
+		self.is_eternal_fire = true
+	end
+end
+
+function campfire_binder:net_spawn()
+	lights[self.object:id()] = self
+	return true
+end
+
+function campfire_binder:net_destroy()
+	lights[self.object:id()] = nil
+	self.ignite_time = 0
+end
+
+function campfire_binder:check_actor()
+	if self.is_eternal_fire then return true end
+	if self.check_is_in_hide == nil then
+		self.check_is_in_hide = is_obj_in_hide(self.object)
+	end
+	if self.ignite_time > 1 then
+		self.ignite_time = self.ignite_time - 1
+
+		-- Manool: идёт дождь и костёр не под укрытием, ещё отнимем время горения
+		local rf = level.rain_factor()
+		if rf > 0 and not self.check_is_in_hide then
+			self.ignite_time = self.ignite_time - rf
+		end
+
+		if is_actor_alive() and self.object:position():distance_to_sqr(db.actor:position()) < DIST_TO_ACTOR then
+			self.ignite_time = total_ignite_time
+		end
+		return true
+	end
+	-- return db.actor:alive() and self.object:position():distance_to_sqr(db.actor:position()) < DIST_TO_ACTOR and stand_time() > ACTOR_STAND_TIME
+end
+
+function campfire_binder:update(delta)
+	local time = time_global()
+	if self.scan_time == nil then
+		self.scan_time = time
+		self.state.action(self)
+		self.time = time
+	elseif self.scan_time < time or self.update_now then
+		self.update_now = nil
+		local new_state = self.state.next(self.has_users or self:check_actor(), time, self.time)
+		ASSERT(new_state ~= nil, "new_state ~= nil")
+		if new_state ~= self.state then
+			new_state.action(self)
+			self.state = new_state
+			self.time = time
+		end		
+
+		self.scan_time = time + 5000
+	end
+end
+
+function campfire_binder:net_save_relevant()
+	return true
+end
+
+function campfire_binder:save(packet)
+	local state_name = nil
+	for k,v in pairs(states) do
+		if v == self.state then state_name = k end
+	end
+	ASSERT(state_name ~= nil, "state_name ~= nil")
+	packet:w_stringZ(state_name)
+	if self.ignite_time < 0 then self.ignite_time = 0 end
+	self.ignite_time = math.ceil(self.ignite_time) -- Manool: округление нужно для записи!
+	packet:w_u16(self.ignite_time)
+end
+
+function campfire_binder:load(reader)
+	if reader:r_eof() then return end
+	self.state = states[reader:r_stringZ()]
+	ASSERT(self.state ~= nil, "self.state ~= nil")
+	self.ignite_time = reader:r_u16()
+end
+
+eternal_fires = {
+	["mar_koster_31"] = true, -- Камин Демьяна
+	-- ["esc_koster_07"] = true, -- Домик Лиса
+	["gar_koster_05"] = true, -- Ангар на Свалке
+}
+
+function create_all_flames()
+	if get_value("ogse_campfire.all_flames") then return end
+	set_value("ogse_campfire.all_flames", 1)
+
+	local flames_ph = {}
+	for id, sobj in alife():objects() do
+		local cd = sobj.custom_data or ""
+		if string.find(cd, "koster_logic", 1) then
+			flames_ph[id] = {sobj, "zone_flame_small"}
+		elseif string.find(cd, "candle_logic", 1) then
+			flames_ph[id] = {sobj, "zone_flame_candle_self"}
+		end
+	end
+
+	local cnt = 0
+	for _, params in pairs(flames_ph) do
+		local sobj = params[1]
+		-- level.map_add_object_spot_ser(sobj.id, "yellow_flag_location", string.format("%s, %s", sobj:name(), sobj.level_name))
+		local pos, lv, gv = sobj.position, sobj.m_level_vertex_id, sobj.m_game_vertex_id
+
+		local add_height = (params[2] == "zone_flame_small") and 0.28 or 0.15
+
+		-- аномалия
+		sobj = dsh.spawn_anomaly(params[2],
+			vector():set(pos.x, pos.y + add_height, pos.z), lv, gv,
+			{shtype = 0, radius = 0.1, center = {0, 0, 0}}
+		)
+
+		sobj = alife():object(sobj.id)
+		local sr = sobj:get_space_restrictor()
+		sr.restrictor_type = global_flags.eRestrictorTypeNone
+
+		-- лампочка
+		sobj = alife():create("lights_hanging_lamp", vector():set(pos.x, pos.y + add_height, pos.z), lv, gv)
+		local pk = get_netpk(sobj, 1)
+		ASSERT(pk and pk:isOk(), "can't read netpacket of %s", sobj:name())
+		local data = pk:get()
+		local props = {
+			["main_color"] = tonumber("fffab807", 16),
+			["main_brightness"] = 0.7,
+			["main_color_animator"] = "koster",
+			["main_range"] = 6,
+			["light_flags"] = tonumber("2a", 16),
+			["health"] = 100,
+			["main_virtual_size"] = 0.1,
+			["ambient_radius"] = (params[2] == "zone_flame_small") and 2 or 1,
+			["ambient_power"] = 0.40000001,
+			["main_cone_angle"] = 2.0943952,
+			["glow_radius"] = 0.69999999
+		}
+		for k, v in pairs(props) do
+			data[k] = v
+		end
+		pk:set(data)
+		cnt = cnt + 1
+	end
+	log2("[%s.create_all_flames]: Total flames created: %s", script_name(), cnt)
+end
+
+local data_flames = {}
+function flamer_ignite(obj)
+	if not (obj and obj:section() == "wpn_flame") then return end
+	local rq = level.get_current_ray_query()
+	local target_obj = rq and rq.range and (rq.range <= 3) and rq.object
+	if target_obj and not target_obj:is_custom_monster() then
+		if not data_flames[target_obj:id()] then
+			local ini = target_obj:spawn_ini()
+			local cd = ini and ini:get_as_string() or ""
+			local m_cnt
+			if string.find(cd, "koster_logic", 1) then
+				m_cnt = 20
+			elseif string.find(cd, "candle_logic", 1) then
+				m_cnt = 10
+			end
+			if m_cnt then
+				local kamp = get_nearest_campfire(target_obj:position(), 1)
+				if kamp then data_flames[target_obj:id()] = {kamp = kamp, hit_cnt = 1, m_cnt = m_cnt} end
+			end
+		else
+			local dt = data_flames[target_obj:id()]
+			if dt.hit_cnt > dt.m_cnt then
+				dt.kamp.update_now = true
+				dt.kamp.ignite_time = total_ignite_time
+				dt.hit_cnt = 0
+			else
+				if level.rain_factor() > 0 and not is_obj_in_hide(target_obj) then
+					-- идёт дождь и костёр не под укрытием
+					dt.hit_cnt = dt.hit_cnt + lua_random(0, 1)
+				else
+					dt.hit_cnt = dt.hit_cnt + 1
+				end
+			end
+		end
+	end
+end

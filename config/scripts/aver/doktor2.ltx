@@ -1,0 +1,19 @@
+[logic]
+active = walker@one
+
+[walker@one]
+path_walk = doctor_les_walk_way
+path_look = doctor_les_way_look
+meet = meet@one
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+
+[meet@one]
+use = true
+use_wpn = true
+abuse = false
+meet_state = 3|wait
+meet_state_wpn = 3|wait
+meet_dialog	= doktor_aver_start_dialog

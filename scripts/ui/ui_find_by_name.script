@@ -1,0 +1,392 @@
+--- на основе наработок naxac и den1s, доработал котовод, текстурки paradox
+
+_dialog = level.main_input_receiver()
+
+function attach(sm)
+  sm:subscribe({signal = "on_init_modules", fun = this.init_module})
+--   sm:subscribe({signal = "on_late_init_all", fun = this.late_init})
+--   sm:subscribe({signal = "on_before_save_game", fun = this.on_before_save})
+end
+
+function init_module()
+	_dialog = nil
+end
+
+function start_find()
+	level.start_stop_menu( find_by_name( get_hud() ), true )
+end
+
+class "find_by_name"( CUIScriptWnd )
+
+function find_by_name:__init( owner ) super()
+	local eng = [[qwertyuiop[]asdfghjkl;'zxcvbnm,./QWERTYUIOP{}ASDFGHJKL:"ZXCVBNM<>?!@#$%^&*()-_+=\| 0123456789]]
+	local rus = [[йцукенгшщзхъфывапролджэячсмитьбюёЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ,!"№;%:?*()-_+=\/ 0123456789]]
+	self.translit = {}
+	for i = 1, string.len( rus ) do
+		self.translit[ string.sub( eng, i, i ) ] = string.sub( rus, i, i )
+	end
+	_dialog = self
+	self:InitControls()
+	used_items.set_get_flag_use_gadget(1,false)
+end
+
+function find_by_name:__finalize()
+end
+
+function find_by_name:InitControls()
+	self:Init( 0, 0, 1026, 861 )
+	local xml = CScriptXmlInit()
+	local ctrl
+	xml:ParseFile( "ui_find_by_name.xml" )
+	self.dialog =  xml:InitStatic( "main_dialog:dialog", self )
+	self.edit_box = xml:InitEditBox( "main_dialog:frame_search", self.dialog )
+	self.search = CUIStatic()
+	self.search:SetWindowName( "search" )
+	self.search:SetAutoDelete( true )
+	self.search:SetTextST( "st_input_text" )
+	self.search:SetTextColor( 255, 255, 255, 255 )
+	self.search:SetFont( GetFontLetterica18Russian() )
+	self.search:Init( 375, 212, 250, 24 )
+	self:AttachChild( self.search )
+	------
+	local windows_text = game.translate_string("windows_text")
+    self.windows = make_static( "windows_info", self, windows_text, 185, 160, 500, 200 )
+    self.windows:SetTextColor( 255, 255, 255, 255 )
+    self.windows:SetFont( GetFontLetterica18Russian() )	
+	------	
+	self.text = ""
+	self:dozent_npc_search_init()	
+end
+
+function find_by_name:SearchText( letter )
+	self.search:SetText( "" )
+	self.search:SetTextColor( 255, 240, 165, 25 )
+	local lett = letter and ( self.translit[ letter ] or letter ) or ""
+	self.text = self.text .. lett
+	self.search:SetText( self.text )
+end
+
+function find_by_name:OnQuit()
+	if self then
+		local holder = self:GetHolder()
+		if holder then holder:start_stop_menu( self, true ) end
+		-- level.destroy_dialog( self )
+		self:ClearCallbacks()
+	end
+	_dialog = nil
+	dozent_npc_search_finalize()	
+	used_items.set_get_flag_use_gadget(1,true)
+end
+
+function find_by_name:Reboot()
+	if self then
+		local holder = self:GetHolder()
+		if holder then holder:start_stop_menu( self, true ) end
+		-- level.destroy_dialog( self )
+		self:ClearCallbacks()
+	end
+	_dialog = nil
+	dozent_npc_search_finalize()
+	start_find()	
+end
+
+function find_by_name:BackSpace()
+	if self.text ~= "" and string.len( self.text ) > 1 then
+		self.text = string.sub( self.text, 1, string.len( self.text ) - 1 )
+		self.search:SetText( self.text )
+	else
+		self.text = ""
+	end
+	self.search:SetText( self.text )
+end
+
+function find_by_name:OnKeyboard( dik, keyboard_action )
+	CUIScriptWnd.OnKeyboard( self, dik, keyboard_action )
+	if keyboard_action == ui_events.WINDOW_KEY_PRESSED then
+		if
+			dik == DIK_keys.DIK_RETURN then self:OnBtnOk()
+		elseif
+			dik == DIK_keys.DIK_DELETE or dik == DIK_keys.DIK_LEFT then self:BackSpace() self:dozent_npc_search()
+		elseif
+			dik == DIK_keys.DIK_ESCAPE then self:OnQuit()
+		elseif	
+			dik == DIK_keys.DIK_END or dik == DIK_keys.DIK_RIGHT then self:Reboot()
+		else
+			local letter = string.sub( self.edit_box:GetText(), -1 )
+			if letter and letter ~= "" then
+				self:SearchText( letter )
+				self.edit_box:SetText( "" )
+				self:dozent_npc_search()				
+			end
+		end
+	end
+	return true
+end
+
+local State = {CurString = ""}
+
+local count_npc 		= 0			-- сколько найдено НПС с именем
+local id_npc 			= 0			-- id последнего НПС с именем 
+
+local table_npc_id 		= {}		-- таблица с id всех НПС в игре
+local table_npc_name 	= {}		-- таблица с именами всех НПС в игре
+local count_npc_total 	= 0			-- количество всех НПС в игре
+
+-- очищаем таблицы table_npc_id, table_npc_name для освобождения памяти
+function dozent_npc_search_finalize()
+	for i = 1, #table_npc_id do
+		table_npc_id[ i ] = nil
+	end
+	for i = 1, #table_npc_name do
+		table_npc_name[ i ] = nil
+	end
+end
+
+-- ищем всех НПС в игре (заполняем таблицы table_npc_id, table_npc_name и переменную count_npc_total).
+-- Выводим в диалог строку с количеством НПС в игре
+function find_by_name:dozent_npc_search_init()
+
+	-- очистка таблиц от предыдущих поисков
+	dozent_npc_search_finalize()
+
+	count_npc_total = 0
+	-- новый поиск всех НПС в игре
+	for i = 1, MAX_OBJ_ID do
+		local obj = alife():object( i )
+		if 
+			obj 
+			and obj.m_game_vertex_id 
+			and db.actor and db.actor:id() ~= obj.id 
+			and IsStalker( obj ) 
+			and obj:community() ~= "zombied" 
+			and obj:community() ~= "monolith" 
+			and obj:community() ~= "military" 
+			and obj:community() ~= "killer" 
+		then
+			if ( obj.can_switch_online and obj:can_switch_online() == true ) or obj:name() == 'vorobey' then	-- попытка убрать неактивных или присутствующих в нескольких экземплярах НПС (Оксана, Кузнецов, Санек-Меняла, Болотный доктор и т.д.)
+		
+				local name_temp = ""
+				if news_main.isGameObject( obj ) then
+					if obj.character_name then name_temp = obj:character_name() end
+				else
+					local obj2 = news_main.get_obj( obj.id )
+					if obj2 and obj2.character_name then
+						name_temp = obj2:character_name()
+					else
+						name_temp = news_main.get_npc_name(obj)
+						data = nil	-- release memory
+					end
+				end
+
+				if ( name_temp ~= nil ) and ( name_temp ~= "" ) then
+					count_npc_total = count_npc_total + 1		-- нашли НПС
+					table_npc_id[ count_npc_total ] = i
+					table_npc_name[ count_npc_total ] = name_temp
+				end
+			end
+		end
+	end
+
+	if self.stalker_amount then self:DetachChild( self.stalker_amount ) end
+	self.stalker_amount = make_static( "stalker_amount", self, game.translate_string("stalker_amount")..": ".. count_npc_total, 185, 230, 500, 200 )
+	self.stalker_amount:SetTextColor( 255, 255, 255, 255 )
+	self.stalker_amount:SetFont( GetFontLetterica18Russian() )	
+end
+
+function find_by_name:dozent_npc_search()
+
+	-- if self.stalker_info ~= nil then self:DetachChild( self.stalker_info ) end	Нормально не пашет, при втором нажатии вылет
+	
+	count_npc = 0
+	id_npc = 0
+	local names_string = ""
+	local names_string_isverylong = false
+
+	local i = 1
+	while ( i < count_npc_total ) and ( not names_string_isverylong ) do	-- выход также если найдено уже очень много НПС и строка с именами очень длинная
+
+		-- для поиска в имена НПС добавляем его id, чтобы можно было отдельно найти "Воробей" и "Макс Воробей"
+		local name_temp = table_npc_name[ i ] .. " [" .. tostring( table_npc_id[ i ] ) .."]"
+
+		if string.find( string.upper( name_temp ), string.upper( self.text ) ) then
+			local obj = alife():object( table_npc_id[ i ] )
+			if 
+				obj 
+				and obj.m_game_vertex_id 
+				and db.actor and db.actor:id() ~= obj.id 
+				and IsStalker( obj ) 
+				and obj:community() ~= "zombied" 
+				and obj:community() ~= "monolith" 
+				and obj:community() ~= "military" 
+				and obj:community() ~= "killer" 
+			then						
+				if ( obj.can_switch_online and obj:can_switch_online() == true ) or obj:name() == 'vorobey' then	-- попытка убрать неактивных или присутствующих в нескольких экземплярах НПС (Оксана, Кузнецов, Санек-Меняла, Болотный доктор и т.д.)
+					id_npc = table_npc_id[ i ]
+					count_npc = count_npc + 1
+					if count_npc == 1 then
+						names_string = name_temp
+					else
+						names_string_isverylong = string.len( names_string ) > 500 -- если слишком длинная строка, перестаем добавлять найденные имена
+						if not names_string_isverylong then
+							names_string = names_string .. ", " .. name_temp
+						end
+					end
+				end
+			end
+		end
+		i = i + 1
+	end
+
+	if count_npc > 0 then		-- были найдены НПС
+		names_string = names_string
+	else
+		names_string = game.translate_string("fbn_nothing")
+	end
+
+	if self.stalker_amount then self:DetachChild( self.stalker_amount ) end
+	self.stalker_amount = make_static( "stalker_amount", self, game.translate_string("stalker_amount")..": ".. count_npc, 185, 230, 500, 200 )
+	self.stalker_amount:SetTextColor( 255, 255, 255, 255 )
+	self.stalker_amount:SetFont( GetFontLetterica18Russian() )		
+
+	if self.stalker_names then self:DetachChild( self.stalker_names ) end
+	self.stalker_names = make_static( "stalker_names", self, game.translate_string("fbn_cmd").. names_string, 185, 250, 500, 200 )
+	self.stalker_names:SetTextColor( 255, 255, 255, 255 )
+	self.stalker_names:SetFont( GetFontLetterica18Russian() )	
+end
+
+
+function find_by_name:OnBtnOk()
+	local show_text = ""
+	State.CurString = self.text or State.CurString
+	local isntFind = true
+	for i = 1, MAX_OBJ_ID do
+		local obj = alife():object( i )
+		if 
+			obj 
+			and obj.m_game_vertex_id 
+			and db.actor and db.actor:id() ~= obj.id 
+			and IsStalker( obj ) 
+			and obj:community() ~= "zombied" 
+			and obj:community() ~= "monolith" 
+			and obj:community() ~= "military" 
+			and obj:community() ~= "killer" 
+		then
+			local name = news_main.get_npc_name( obj )
+			if name ~= "" and string.find( State.CurString, "^" .. name ) then 
+				isntFind = false
+				local m_level = news_main.get_point_description( news_main.get_object_levelname( obj ), news_main.get_object_position( obj ) )
+				if 
+					m_level == "" 
+				then 
+					m_level = game.translate_string("st_unknown")
+				else 
+					m_level = m_level
+				end
+
+				if sak_dialog.bar_npc_search_money_have() then
+					if obj.alive and obj:alive() and obj.health and obj:health() > 0 then 
+						sak_dialog.bar_npc_search_money_give()
+						dozent_npc_mark(obj.id)
+						-----------
+						show_text = 
+							game.translate_string("fbn_1") .. m_level .. "\\n \\n" ..
+							string.format(game.translate_string("fbn_2"), sak_dialog.bar_npc_search_money_price(), db.actor:money()) .. "\\n \\n" ..
+							game.translate_string("fbn_4")
+						if self.stalker_info then self:DetachChild( self.stalker_info ) end
+						self.stalker_info = make_static( "stalker_info", self, show_text, 185, 270, 500, 200 )
+						self.stalker_info:SetTextColor( 255, 255, 255, 255 )
+						self.stalker_info:SetFont( GetFontLetterica18Russian() )						
+						-----------							
+						return						
+					else
+						sak_dialog.bar_npc_search_money_give()
+						-----------
+						show_text = 
+							game.translate_string("fbn_3").. m_level .."\\n \\n" ..
+							string.format(game.translate_string("fbn_2"), sak_dialog.bar_npc_search_money_price(), db.actor:money()) .. "\\n \\n" ..
+							game.translate_string("fbn_4")
+						if self.stalker_info then self:DetachChild( self.stalker_info ) end
+						self.stalker_info = make_static( "stalker_info", self, show_text, 185, 270, 500, 200 )
+						self.stalker_info:SetTextColor( 255, 255, 255, 255 )
+						self.stalker_info:SetFont( GetFontLetterica18Russian() )	
+						-----------					
+						return
+					end
+				else
+					-----------
+					if self.stalker_info then self:DetachChild( self.stalker_info ) end
+					self.stalker_info = make_static( "stalker_info", self, game.translate_string("fbn_5"), 185, 270, 500, 200 )
+					self.stalker_info:SetTextColor( 255, 255, 255, 255 )
+					self.stalker_info:SetFont( GetFontLetterica18Russian() )	
+					-----------								
+					return
+				end
+			end
+		end
+	end
+	if isntFind then show_text = game.translate_string("fbn_6") end
+	-----------
+	if self.stalker_info then self:DetachChild( self.stalker_info ) end
+	self.stalker_info = make_static( "stalker_info", self, game.translate_string("fbn_1").. show_text, 185, 270, 500, 200 )
+	self.stalker_info:SetTextColor( 255, 255, 255, 255 )
+	self.stalker_info:SetFont( GetFontLetterica18Russian() )			
+end
+
+function bar_docent_notebook()
+	local note = g_sim:object("Sak_notebook_bar")
+	if note==nil then
+		return
+	end
+	misc.release_obj ( note )
+	local sobj = g_sim:create( "physic_object", sak.v3f( 116.300003051758, -4.40000009536743, 17.5599994659424 ), 34184, 1239 )
+	if sobj then
+		local pk 		 = get_netpk( sobj, 1 )
+		local data 		 = pk:get()
+		data.physic_type = 3
+		data.mass 		 = 10
+		data.visual_name = "equipments\\item_notebook"
+		data.custom_data =
+			"[collide]\n" ..
+			"ignore_dynamic\nignore_ragdoll\nignore_static\n\n" ..
+			"[ph_heavy]\n" ..
+			"[logic]\n" ..
+			"active = ph_idle@enable\n" ..
+			"[ph_idle@enable]\n" ..
+			"tips = switch_on\n" ..
+			"on_use = {+bar_docent_npc_search_available2} %=ui_find_by_name.start_find()%"
+		pk:set( data )
+        sobj.direction = sak.v3f( 0, -2.25999999046326, 0 )
+	end
+end
+
+function dozent_npc_mark(id)
+	-- удаляем предыдущую метку НПС на карте
+	local sp = get_value("dozent_map_spot_active")
+	if sp ~= nil and level.map_has_object_spot(sp, 'blue_location') > 0 then
+		level.map_remove_object_spot(sp, 'blue_location')
+	end
+
+	-- ставим метку НПС на карте
+	local obj = alife():object( id )
+	local name = news_main.get_npc_name( obj )
+	if name == game.translate_string("sim_stalker_veteran_vorobey_name") then
+		db.actor:give_info_portion("vorobey_spawn")
+	end
+	level.map_add_object_spot( obj.id, 'blue_location', name )
+	set_value("dozent_map_spot_active", obj.id)
+
+	--db.actor:give_talk_message( "Поставлена метка на карте.", "ui\\ui_iconstotal", Frect():set(0,0,10,10), "simple_answer_item" )
+end
+
+function make_static( name, own, text, x, y, width, height )
+    local static = CUIStatic()
+    static:SetWindowName( name )
+    static:SetAutoDelete( true )
+    if text then
+        static:SetTextComplexMode( true )
+        static:SetText( text )
+    end
+    static:Init( x, y, width, height )
+    own:AttachChild( static )
+    return static
+end

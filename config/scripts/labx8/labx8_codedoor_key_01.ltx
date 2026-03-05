@@ -1,0 +1,10 @@
+[logic]
+active = ph_idle@lock
+
+[ph_idle@lock]
+tips = no_supply
+on_info = {+deactivate_radar_fall} ph_code@lock
+
+[ph_code@lock]
+on_check_code1 = 658956 | {+add_new_warlab_info} %=sak.add_new_x8_192%
+on_check_code2 = 1455987401 | %=sak.add_new_x8_192%

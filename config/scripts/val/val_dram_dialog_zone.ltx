@@ -1,0 +1,14 @@
+[logic]
+active = sr_idle@work
+
+[sr_idle@work]
+on_actor_inside = {+val_actor_has_borov_key} sr_idle@wait %+val_dram_pass_on%
+on_info = {+val_dram_pda_end_info} nil, {+val_dram_pda_out_info -val_dram_pda_end_info} sr_idle@check2
+
+[sr_idle@wait]
+on_actor_outside = %=sak_dialog.val_dram_restr_check()%
+on_info = {+val_dram_pda_end_info} nil, {+val_dram_pda_out_info -val_dram_pda_end_info} sr_idle@check2
+
+[sr_idle@check2]
+on_actor_inside = {+val_dram_pda_out_info -val_dram_pda_end_info} nil %+val_dram_fire =sak.set_val_gulag_enemy_actor()%
+on_info = {+val_dram_pda_end_info} nil

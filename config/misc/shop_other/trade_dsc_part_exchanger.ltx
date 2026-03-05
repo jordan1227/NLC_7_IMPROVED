@@ -1,0 +1,168 @@
+[trader]
+buy_condition = dsc_part_exchanger_generic_buy
+sell_condition = dsc_part_exchanger_generic_sell
+buy_supplies = dsc_part_exchanger_supplies
+
+[dsc_part_exchanger_supplies]
+
+wpn_bm16_full				    = 1, 1		
+ammo_12x76_dart					= 1, 1
+
+mutant_flesh_eye				=5,0.6
+mutant_boar_leg					=10,0.6
+mutant_dog_tail					=10,0.6
+mutant_psevdodog_tail			=5,0.6
+mutant_krovosos_jaw				=2,0.6
+mutant_burer_hand				=2,0.6
+mutant_zombie_hand				=5,0.6
+mutant_snork_leg				=3,0.6
+mutant_face_tushkano			=15,0.6
+mutant_hand_kontroler			=1,0.6
+mutant_psevdogigant_hand		=1,0.6
+mutant_tail_cat					=5,0.6
+mutant_chimera_kogot			=3,0.6
+mutant_poltergeist_glas         =1,0.6
+
+[dsc_part_exchanger_generic_sell]
+
+/.*capsule/
+/.*ammo_/
+/.*wpn_/
+/^af_/
+/^mutant_/ = 1.0, 1.2
+/^inventory_sakbox/
+/^arc_art/
+/^detector_/
+/^belt_/
+/^amk_/
+/^zapiska_/
+/^x18_/
+/.*book/
+/.*_document/
+/.*playboy/
+/.*outfit/
+/.*dollars/
+/.*letter/
+/.*quest/
+/.*pda/
+/.*docs/
+/.*flash/
+/.*banka/
+/.*_cart/
+/.*scanner/
+
+
+grenade_f1
+grenade_rgd5
+grenade_rgo
+
+flesh_leather
+mutant_flesh_shkura
+mutant_fracture_spleen
+
+matches
+sleeping_bag
+rucksack	
+gorelka
+kanistra
+manometr
+kolbasa_green
+flask_army
+batt_torch	
+trubka
+flamethrower_bad		
+antirad
+bread
+kolbasa
+conserva
+vodka
+energy_drink
+sleeping_pill
+device_torch		
+hand_radio		
+dynamite		
+decoder	 
+bandage	
+medkit 
+medkit_scientic	
+medkit_army		
+agr_black_box
+agr_shema
+bearer_cheque
+bochonok_vine
+box_ammo
+box_conserv
+cherep_decoder
+closer_box
+decoder1
+decoder2
+drag_cat_eyes
+energy_drink_new
+flame_parts
+fmradio
+green_kolbasa
+hard_disc
+harddisc
+harmonica_b
+im_chain
+instrument_box
+instrument_box_shurup
+item_psi_helmet_01
+item_psi_helmet_02
+item_psi_helmet_03
+kartina04
+klava_feik
+klyk_pribor_1c
+kulinar_voron_box
+lot_many
+marsh_inventory_box
+mixture
+neum_drags
+paper_box
+personal_things
+postmens_bag
+postmens_text_1
+rad_scaintist_doc
+redcatcher_albom
+repair_item_weapon
+repair_item_weapon_feik
+resiept_activ_anom
+rygyi_med_r
+sak_plan
+sak_resiver
+sak_resiver_yantar
+solt_bag
+uncoder
+ventilator_01
+weapon_box
+conserva_tm
+self_made_decoder
+marsh_pribor
+item_kamaz_accum
+mar_ecolog_theory
+posilka_petrik
+memory_module
+item_battery_02
+item_battery_03
+boryan_kul
+suhpay
+strelok_sheets
+fal_upgrade_kit
+strange_bs_jaw
+mask_repair_kit
+ac10632
+microt1
+specter
+okp
+rakurs
+g28_scope
+
+
+[dsc_part_exchanger_generic_buy]
+
+/^mutant_/ = 0.5, 0.7, 0.3
+
+mutant_fracture_spleen
+mutant_flesh_shkura = 0.5, 0.7, 0.5
+
+/.*/

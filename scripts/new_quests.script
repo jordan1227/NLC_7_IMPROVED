@@ -1,0 +1,181 @@
+------------------------------------------------------------
+-------------- Мутантские потроха для Игната ---------------
+------------------------------------------------------------
+
+function get_inv_name( item )
+	return ( game.translate_string( vergas_lib.set_pr_from_config_str( item, "inv_name" ) ) )
+end
+
+function format_reward_text( reward_list )
+	local reward_text = ""
+	for k, v in pairs( reward_list ) do
+		if task_manager.is_ammo( k ) then
+			reward_text = reward_text .. get_inv_name( k ) .. " - ".. v .." "..game.translate_string("st_count_packs").."\\n"
+		else
+			reward_text = reward_text .. get_inv_name( k ) .. " - ".. v .." "..game.translate_string("st_count").."\\n"
+		end
+	end
+	return reward_text
+end
+
+local generate_mutant_request = {
+    [ "lvl1" ] = {  
+		{ "mutant_face_tushkano", 		10, "dsc_ignat_generate_tushkano"		},
+		{ "mutant_dog_tail", 			8, "dsc_ignat_generate_dog"			},
+		{ "mutant_boar_leg", 		  	 6, "dsc_ignat_generate_boar" 			},
+		{ "mutant_zombie_hand", 		 5, "dsc_ignat_generate_zombie"			},
+		{ "mutant_tail_cat", 		 	 5, "dsc_ignat_generate_cat" 			}
+	},	
+    [ "lvl2" ] = {  
+		{ "mutant_flesh_eye", 		 	 5, "dsc_ignat_generate_flesh"			},		
+		{ "mutant_psevdodog_tail", 	 	 5, "dsc_ignat_generate_psevdodog"		},	
+		{ "mutant_snork_leg", 			 4, "dsc_ignat_generate_snork"			},	
+		{ "mutant_chimera_kogot", 		 3, "dsc_ignat_generate_chimera"		},
+		{ "mutant_burer_hand", 			 3, "dsc_ignat_generate_burer"			}
+	},
+    [ "lvl3" ] = { 	
+		{ "mutant_krovosos_jaw", 		 3, "dsc_ignat_generate_krovosos"	 	},	
+		{ "mutant_hand_kontroler", 		 1, "dsc_ignat_generate_kontroler" 		},	
+		{ "mutant_psevdogigant_hand", 	 1, "dsc_ignat_generate_psevdogigant" 	},	
+		{ "mutant_poltergeist_glas", 	 2, "dsc_ignat_generate_poltergeist" 	},
+		{ "mutant_e_chimera_kidney", 	 1, "dsc_ignat_generate_chimera_kidney" }
+	}	
+}
+
+local generate_mutant_reward = {
+    [ "lvl1" ] = {
+		{ arc_art_box_8basic = 1, medkit = 5, antirad = 3, batt_torch = 5 },
+		{ wpn_fort = 1, ammo_9x18_fmj = 3 },
+		{ wpn_knife = 1, medkit_army = 5, green_kolbasa = 5 },
+		{ flesh_leather = 2, medkit_army = 3, green_kolbasa = 5 },
+		{ [ "ammo_7.62x39_fmj" ] = 5, medkit_army = 2, antirad = 3, matches = 5 },
+		{ 20000 }
+	},
+    [ "lvl2" ] = {
+		{ ammo_12x70_buck = 5, ammo_12x76_dart = 5, ammo_12x76_zhekan = 5 },
+		{ wpn_saiga12c   = 1, [ "ammo_12x70_buck" ] = 3 },
+		{ wpn_mp153_m1   = 1, [ "ammo_12x70_buck" ] = 3 },
+		{ wpn_saiga12c_m2 = 1, [ "ammo_7.62x39_ap" ] = 3 },
+		{ outfit_stalker_m2 = 1 },
+		{ 30000 }
+	},
+    [ "lvl3" ] = {
+		{ wpn_knife_m1 = 1 },
+		{ wpn_winchester_m1 = 1, [ "ammo_12x70_buck" ] = 3 },
+		{ wpn_spas15 = 1, ammo_12x70_buck = 3 },
+		{ ammo_12x70_buck = 10, ammo_12x76_dart = 10, ammo_12x76_zhekan = 10 },
+		{ bandit_master_outfit_gas = 1 },
+		{ 45000 }		
+	}
+}
+
+function is_enough_days()
+	if get_value("ignat_day") ~= nil then return true end
+end
+
+function have_ignat_task()
+	local tbl = { "ignat_request", "ignat_reward", "ignat_level" }
+	local count = 0
+	for _, v in pairs( tbl ) do
+		if get_value( v ) ~= nil then
+			count = count + 1
+		end
+	end	
+	if count == 3 then
+		return true 
+	end
+end
+
+function not_have_ignat_task()
+	return not have_ignat_task()
+end
+
+function generate_ignat_mutants()
+	local current_day = timers.Get_Game_Days() or 1
+	local last_update = get_value("ignat_day", 7)
+	if current_day ~= last_update then return end
+	local r = lua_random( 2, 4 )
+	set_value("ignat_day", current_day + r) 
+	-----------------
+	local random  = dsh.get_next_random( "generate_mutant_table", 1, 3 )
+	local level   = "lvl" .. tostring( random ) 	
+	local request = dsh.get_next_random( "generate_mutant_request", 1, 5 )
+	local section = generate_mutant_request[ level ][ request ][ 1 ] 
+	local amount  = section[ 2 ]
+	local reward  = dsh.get_next_random( "generate_mutant_reward", 1, 5 )
+	-----------------
+	set_value("ignat_request", request)
+	set_value("ignat_level", level)
+	set_value("ignat_reward", reward)
+	-----------------
+end
+
+function prosha_part_out()
+	if get_value("ignat_request") == nil then return end
+	local tbl = generate_mutant_request[get_value("ignat_level")][get_value("ignat_request")]
+	if tbl == nil then return end
+	local sobj = g_sim:object("dsc_part_exchanger")
+	if sobj then
+	    local section = tbl[1]
+	    local t = {}
+	    for id, s_obj in alife():objects() do
+	        if s_obj.parent_id == sobj.id and strpos(s_obj:section_name(), section) then
+	            t[id] = s_obj
+	        end
+	    end
+	    for id, sobj in pairs(t) do
+	        misc.release_obj(id)
+	    end
+	end
+end
+
+function ignat_mutants_request( flag )
+	local tbl = generate_mutant_request[ get_value("ignat_level") ][ get_value("ignat_request") ]
+	if tbl == nil then return end
+
+	if flag == "show" then 
+		local text = tbl[ 3 ] 
+		db.actor:give_talk_message(
+			"" .. game.translate_string( text ) .. "",
+			"ui\\ui_iconsTotal", Frect():set( 0, 0, 0, 0), "simple_answer_item"
+		)			
+		
+		local task_texture, task_rect = get_texture_info( "ui_iconsTotal_find_item" )
+		local level  		= ( "lvl" .. tostring( random ) )
+		local reward 		= generate_mutant_reward[ get_value("ignat_level") ][ get_value("ignat_reward") ]
+		local reward_text   = format_reward_text( reward )
+		local reward_money 	= generate_mutant_reward[ get_value("ignat_level") ][ 6 ][ 1 ] 
+		local money_texture, money_rect = get_texture_info( "ui_iconsTotal_found_money" )
+		db.actor:give_talk_message( reward_text, task_texture, task_rect, "iconed_trade_info" )
+		db.actor:give_talk_message( game.translate_string("st_choice").." ".. reward_money .." "..game.translate_string("ui_st_money_descr"), money_texture, money_rect, "iconed_trade_info" )					
+	end
+	
+	local item 	 = tbl[ 1 ]
+	local amount = tbl[ 2 ]
+
+	if flag == "have" then
+		return sak.have_items_count( item, amount ) ~= false	
+	end
+	
+	if flag =="give" then 
+		sak_inventory.release_actor_items( item, amount )	
+	end
+	
+	if flag == "reward_item" then 
+		local items = generate_mutant_reward[ get_value("ignat_level") ][ get_value("ignat_reward")  ]
+		sak.create_items(items)
+	end
+	
+	if flag == "reward_money" then 
+		local money = generate_mutant_reward[ get_value("ignat_level") ][ 6 ][ 1 ]
+		sak_dialog.relocate_money( db.actor, money, "in" )
+	end
+	
+	if flag == "reward_item" or flag == "reward_money" then
+		local snd = xr_sound.get_safe_sound_object([[device\pda\pda_objective]])
+		snd:play(db.actor, 0, sound_object.s2d)
+		remove_value("ignat_request")
+		remove_value("ignat_reward")	
+		remove_value("ignat_level")
+	end
+end

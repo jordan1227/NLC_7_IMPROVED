@@ -1,0 +1,167 @@
+----------------------------------------------------------------------------------------------------
+-- Proceed
+----------------------------------------------------------------------------------------------------
+function proceed()
+    local actor = db.actor
+ 	
+	if not has_alife_info("dar_document2") and
+ 		actor:object("dar_document2") then
+ 		actor:give_info_portion("dar_document2") 
+	end
+ 
+	if not has_alife_info("dar_document3") and
+ 		actor:object("dar_document3") then
+ 		actor:give_info_portion("dar_document3")
+	end
+ 	
+	if not has_alife_info("dar_document4") and
+ 		actor:object("dar_document4") then
+ 		actor:give_info_portion("dar_document4") 
+	end		
+	
+	if not has_alife_info("dar_document5") and
+ 		actor:object("dar_document5") then
+ 		actor:give_info_portion("dar_document5") 
+	end	
+	
+	if has_alife_info("dar_ring_spawn2_1") and
+		has_alife_info("dar_ring_spawn2_2") and
+		not has_alife_info("dar_ring_spawn2")
+	then
+		actor:give_info_portion("dar_ring_spawn2")
+	end
+	
+	if has_alife_info("dar_password_info1") and
+		not has_alife_info("dar_password_info1_know") 
+	then
+		actor:give_info_portion("dar_password_info1_know")
+		news_manager.send_tip(db.actor, "pass_to_1st_door")
+	end
+	
+	if has_alife_info("dar_password_info2") and
+		not has_alife_info("dar_password_info2_know") 
+	then
+		actor:give_info_portion("dar_password_info2_know")
+		news_manager.send_tip(db.actor, "pass_to_2nd_door")
+	end
+	
+end
+
+----------------------------------------------------------------------------------------------------
+-- Process info portions
+----------------------------------------------------------------------------------------------------
+function process_info_portion(info_id)
+    if info_id == "val_sos_give_tip_first" then
+		level_tasks.add_location(422, "green_location", "sos_location")
+	elseif info_id == "val_sos_got_medkit" then
+		level_tasks.remove_location(422, "green_location")
+	else
+        return false
+	end
+	
+	return true
+end
+
+----------------------------------------------------------------------------------------------------
+-- Common functions
+----------------------------------------------------------------------------------------------------
+function has_darklab_key(task, objective)
+	return db.actor:object("borov_flash") ~= nil
+end
+
+function has_darklab_documents(task, objective)
+	return db.actor:object("dar_document4") ~= nil
+end
+
+function escort_task_done(task, objective)
+       return not has_alife_info("val_escort_captive_dead") and
+           has_alife_info("val_escort_guard1_dead") and
+           has_alife_info("val_escort_guard2_dead") and
+           has_alife_info("val_escort_actor_helped")
+end
+
+function escort_task_fail(task, objective)
+    return has_alife_info("val_escort_captive_dead") or
+           has_alife_info("val_escort_guard1_dead") and
+           has_alife_info("val_escort_guard2_dead") and
+           not has_alife_info("val_escort_actor_helped")
+end
+
+function level_cleanup(pass)
+	pass = pass or 1
+	local vpos = vector():set(74, 0, -119) -- victim Max
+	local apos = db.actor:position()
+	local npcs = {}
+
+	local objs = {}
+	for id, sobj in alife():objects() do
+		local obj = client_obj(id)
+		if obj then table.insert(objs, obj) end
+	end
+
+	for i, obj in ipairs(objs) do
+		local name = obj:name()
+
+		if obj:is_stalker() and obj:alive() then
+			npcs[name] = obj
+
+			if strpos(name, "escort") then
+				local sobj = server_obj(obj:id())
+				if sobj and sobj.is_alive then
+					local stid = sobj.m_smart_terrain_id or -1
+					wprintf(" checking~C0A %s~C07, smart terrain =~C0D %d~C07 ", sobj:name(), stid)
+					if stid > 0 then
+						local st = server_obj(sobj.m_smart_terrain_id)
+						if st then
+							wprintf(" smart_terrain object =~C0A %s~C07", st:name())
+						end
+					end -- if
+				end
+			elseif obj:position():distance_to(vpos) < 30 then
+				-- obj:character_community() == "bandit" and
+				wprintf(" checking stalker in position ~C0A %s~C07", obj:name())
+				if strpos(obj:name(), "bandit_respawn") then -- левый чел, грабеж и смертоубийство
+					local cnt = 0
+               obj:iterate_inventory(function(_, o)
+                  wprintf(" removing item~C0D %d~C07", o:id())
+                  misc.release_obj(o:id(), true)
+                  cnt = cnt + 1
+               end)
+					if cnt > 0 then
+						local h = hit()
+						h.draftsman = obj
+						h.type = hit.wound
+						h.direction = vector():set(0, 0, 0)
+						h.power = 150
+						h.impulse = 1
+						obj:hit(h)
+						pass = 10 -- not need repeat
+					end
+				else
+					obj.health = 1
+					obj.power = 1
+				end
+			end
+		end -- if obj.is_alive
+	end
+
+	if npcs.mongol then
+		if npcs.val_escort_nap1 then
+			wprintf("#CHEAT: Пуля не враг Монголу (взаимно) ")
+			npcs.mongol:change_goodwill(500, npcs.val_escort_nap1) -- чтобы переломить гудвил группировки нужно "дружить"
+			npcs.val_escort_nap1:change_goodwill(500, npcs.mongol)
+		end
+		if npcs.val_escort_captive then
+			wprintf("#CHEAT: Макс не враг Монголу ")
+			npcs.mongol:change_goodwill(500, npcs.val_escort_captive)
+		end
+	end
+
+	if pass < 10 then
+		schedule.add("level_cleanup", sprintf("%s.level_cleanup(%d)", script_name(), pass + 1), 500)
+	end
+end -- come_l04...
+
+function come_l04_darkvalley(count) -- вызывается при заходе на локацию
+ level_cleanup(1)
+end

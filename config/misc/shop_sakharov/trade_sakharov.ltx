@@ -1,0 +1,10 @@
+[trader]
+buy_condition = ecolog_generic_buy
+sell_condition = {+sakharov_discount_info} ecolog_discount_sell, {+yan_kill_brain_done -docent_sakbox_borov_open} ecolog_after_brain_sell, {+bar_darklab_document_done -docent_sakbox_borov_open} ecolog_after_darkvalley_sell, ecolog_start_sell
+buy_supplies = {+sakharov_discount_info} supplies_after_discount, {+yan_kill_brain_done -docent_sakbox_borov_open} supplies_after_brain, {+bar_darklab_document_done -docent_sakbox_borov_open} supplies_after_darkvalley, supplies_start
+
+
+
+#include "sakharov_buy.ltx"
+#include "sakharov_supl.ltx"
+#include "sakharov_trade.ltx"

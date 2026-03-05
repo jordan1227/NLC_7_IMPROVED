@@ -1,0 +1,31 @@
+function set_obj_section(id, section)
+	local obj = client_obj(id)
+	local sobj = server_obj(id)
+	if obj then
+		obj:set_section(section)
+	elseif sobj then
+		sobj:set_section_name(section)
+	end
+end
+
+function item_prop(id, key, newval)
+ local obj = client_obj(id) -- game_object
+ if obj == nil then 
+    return nil
+ end
+ 
+ local iobj = obj:get_inventory_item()
+ if iobj then
+ --ODS("[~T].~C0C item_prop "..tostring(key).."    "..tostring(newval).."~C07")
+    return update_prop(iobj, key, newval)
+ end    
+ return 0
+end
+
+function immun_prop(id, key, newval)
+ local obj = client_obj(id) -- game_object
+ if obj then
+ return update_prop(obj.immunities, key, newval)
+ end
+end
+                                                

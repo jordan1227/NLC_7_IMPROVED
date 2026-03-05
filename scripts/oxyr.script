@@ -1,0 +1,596 @@
+-----------------------------oxyr----------------------
+-- определяем, какие запчасти можно хранить  - через задание хранимых переменных в ф-и-action в диалоге
+-- где полностью "договариваемся" насчет возможности хранить запчасти (ГГ все необходимое выполнил)
+------------------------------------------------------------------------------- 
+local my_test
+function set_saving_parts_params()
+set_value("chimera_kidney",0)
+set_value("chimera_kidney_cond",0)
+set_value("kontr_hand",0)
+set_value("kontr_hand_cond",0)
+set_value("gig_hand",0)
+set_value("gig_hand_cond",0)
+set_value("polter_eye",0)
+set_value("polter_eye_cond",0)
+end
+ 
+ -- ф-ции -прекондишны для появления каждого из диалогов на сохранение
+ -------------------------------------------------------------------------------
+function check_saving_ability_kidney()
+	if get_value("chimera_kidney") and (get_value("chimera_kidney") == 0) and (sak.calc_items_count("mutant_e_chimera_kidney")~=0) then 
+		return true	
+	end
+		return false
+end
+ 
+function check_saving_ability_gig()
+	if get_value("gig_hand") and (get_value("gig_hand") == 0) and (sak.calc_items_count("mutant_psevdogigant_hand")~=0) then 
+		return true	
+	end
+		return false
+end
+ 
+function check_saving_ability_polter()
+	if get_value("polter_eye") and (get_value("polter_eye") == 0) and (sak.calc_items_count("mutant_poltergeist_glas")~=0) then 
+		return true	
+	end
+		return false
+end 
+ 
+function check_saving_ability_kontr()
+	if get_value("kontr_hand") and (get_value("kontr_hand") == 0) and (sak.calc_items_count("mutant_hand_kontroler")~=0) then 
+		return true	
+	end
+		return false
+end
+
+function check_saving_ability_hvost()
+	if (get_value("chimera_kidney") == 0) and (sak.calc_items_count("mutant_dog_tail")~=0) then 
+		return true	
+	end
+		return false
+end
+ 
+-- В диалоге на собственно сохранение через action вызываем ф-ю do_proceed_saving_имя_мутанта(), в которой 
+-- а) определяем самую тухлую запчасть из существующих
+-- б) сохраняем ее текущю кондицию 
+-- в) переключаем флажок данной секции на "занято"
+-- г) удаляем запчасть из рюкзака ГГ
+-------------------------------------------------------------------------------	
+function do_proceed_saving_kidney()	
+	local rotted = find_most_rotted_part("mutant_e_chimera_kidney")
+	if rotted then
+		set_value("chimera_kidney_cond", rotted:condition())
+		set_value("chimera_kidney", 1)
+		misc.release_obj(rotted:id())
+		sak.relocate_item("out", "mutant_e_chimera_kidney", 1)
+	end
+	db.actor:give_info_portion("info_kidney_in work")
+	local rnd = lua_random(10,16)
+	timers.start_timer("mutant_kidney_timer",1,rnd,0,"oxyr.mutant_kidney_timer_end()")
+    -- sak.send_tip("ѕочка электрохимеры 1 шт","ќтдал:",5,15,"g_g","sak","red")	
+end
+function mutant_kidney_timer_end()
+	db.actor:disable_info_portion("info_kidney_in work")
+end
+
+function do_proceed_saving_gig()	
+	local rotted = find_most_rotted_part("mutant_psevdogigant_hand")
+	if rotted then
+		set_value("gig_hand_cond", rotted:condition())
+		set_value("gig_hand", 1)
+		misc.release_obj(rotted:id())
+		sak.relocate_item("out", "mutant_psevdogigant_hand", 1)
+	end
+	db.actor:give_info_portion("info_gig_in work")
+	local rnd = lua_random(10,16)
+	timers.start_timer("mutant_gig_timer",1,rnd,0,"oxyr.mutant_gig_timer_end()")
+    -- sak.send_tip("Ћапа гиганта 1 шт","ќтдал:",5,15,"g_g","sak","red")	
+end
+function mutant_gig_timer_end()
+	db.actor:disable_info_portion("info_gig_in work")
+end
+
+function do_proceed_saving_kontr()	
+	local rotted = find_most_rotted_part("mutant_hand_kontroler")
+	if rotted then
+		set_value("kontr_hand_cond", rotted:condition())
+		set_value("kontr_hand", 1)
+		misc.release_obj(rotted:id())
+		sak.relocate_item("out", "mutant_hand_kontroler", 1)
+	end
+	db.actor:give_info_portion("info_kontr_in work")
+	local rnd = lua_random(10,16)
+	timers.start_timer("mutant_kontr_timer",1,rnd,0,"oxyr.mutant_kontr_timer_end()")
+    -- sak.send_tip("–ука контролЄра 1 шт","ќтдал:",5,15,"g_g","sak","red")	
+end
+function mutant_kontr_timer_end()
+	db.actor:disable_info_portion("info_kontr_in work")
+end
+
+function do_proceed_saving_polter()	
+	local rotted = find_most_rotted_part("mutant_poltergeist_glas")
+	if rotted then
+		set_value("polter_eye_cond", rotted:condition())
+		set_value("polter_eye", 1)
+		misc.release_obj(rotted:id())
+		sak.relocate_item("out", "mutant_poltergeist_glas", 1)
+	end
+	db.actor:give_info_portion("info_polter_in work")
+	local rnd = lua_random(10,16)
+	timers.start_timer("mutant_polter_timer",1,rnd,0,"oxyr.mutant_polter_timer_end()")
+    -- sak.send_tip("√лаз полтергейста 1 шт","ќтдал:",5,15,"g_g","sak","red")	
+end
+function mutant_polter_timer_end()
+	db.actor:disable_info_portion("info_polter_in work")
+end
+
+function do_proceed_saving_hvost()	
+	local rotted = find_most_rotted_part("mutant_dog_tail")
+	if rotted then
+		set_value("chimera_kidney_cond", rotted:condition())
+		set_value("chimera_kidney", 1)
+		misc.release_obj(rotted:id())
+	end	
+end
+
+-- универсальная ф-я определения наиболее пропавшей части, вызываем
+-- с параметром "секция запчасти" из ф-ции - actiona каждого диалога
+ -------------------------------------------------------------------------------
+ 
+function find_most_rotted_part(part_in_question)
+	local found_part
+	db.actor:iterate_inventory(
+    function( npc, obj )
+		if
+			( obj:section() == part_in_question )
+			and (	( not found_part ) or ( found_part:condition() > obj:condition())   )
+			and ( obj:condition() > 0.01  )
+			then
+			found_part = obj
+		end
+	end,
+    db.actor)
+	return found_part
+end
+
+-------------------------------------------------------------------------------
+-- ф-ции для возврата запчасти актору
+-------------------------------------------------------------------------------
+ 
+-- ф-ции -прекондишны для появления каждого из диалогов на сохранение
+-- если возвращается true - в action -фции следующей реплики данного диалога 
+-- будем спавнить нужную запчасть в нужной кондиции
+-------------------------------------------------------------------------------
+function have_saved_kidney_part()
+	if get_value("chimera_kidney") == 1 and get_shadow_inv():update_storage() then return true end
+	return false
+end
+
+function have_saved_kontr_part()
+	if get_value("kontr_hand") == 1 and get_shadow_inv():update_storage() then return true end
+	return false
+end
+
+function have_saved_polter_part()
+	if get_value("polter_eye") == 1 and get_shadow_inv():update_storage() then return true end
+	return false
+end 
+
+function have_saved_gig_part()
+	if get_value("gig_hand") == 1 and get_shadow_inv():update_storage() then return true end
+	return false
+end
+-- тестовый хвост собаки
+function have_saved_hvost_part()
+	if get_value("chimera_kidney") == 1 and get_shadow_inv():update_storage() then return true end
+	return false
+end
+
+-- ф-ции - action-ы для собственно спавна запчасти актору в нужной кондиции
+-- должны идти строкаим поддиалогов после соотв. диалога по нужному кондишну
+-------------------------------------------------------------------------------
+function return_kidney_part()
+	local sobj -- серверный объект - при создании
+	local obj -- клиентский объект - у нас в рюкзаке
+	if get_value("chimera_kidney") == 1 			-- в слоте есть запчасть
+		and get_value("chimera_kidney_cond") > 0.01	-- ее кондиция >0.01
+	then
+	
+		-- здесь тоже надо проверить, что нам есть, КУДА спавнить 
+		-- т.е. рюкзак у ГГ в наличии 
+		if get_shadow_inv():update_storage()then
+			sobj = alife():create("mutant_e_chimera_kidney", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(),db.actor:id())
+			
+			if sobj then
+				sak.relocate_item("in", "mutant_e_chimera_kidney", 1)
+				-- перезаписываем кондицию запчасти
+				local pk = get_netpk( sobj, 1 )
+				ASSERT( ( pk and pk:isOk() ), "can't read netpacket of %s", sobj:name() )
+				local data = pk:get()
+				data.condition  = get_value("chimera_kidney_cond")
+				pk:set( data )
+				-- для клиентского объекта сразу переопределяем кондицию тоже?
+				obj = level.object_by_id(sobj.id)
+				if obj then
+					params.upd_condition(obj:id(), get_value("chimera_kidney_cond") )
+				end
+				
+				-- "освобождаем" слот для следующей запчасти для хранения
+				set_value("chimera_kidney", 0)
+				set_value("chimera_kidney_cond", 0)
+			end
+		end
+	end 
+	-- sak.send_tip("ѕочка электрохимеры 1 шт","ѕолучил:",5,15,"g_g","sak","red")	
+end
+ 
+function return_kontr_part()
+	local sobj -- серверный объект - при создании
+	local obj -- клиентский объект - у нас в рюкзаке
+	if get_value("kontr_hand") == 1 			-- в слоте есть запчасть
+		and get_value("kontr_hand_cond") > 0.01	-- ее кондиция >0.01
+	then
+	
+		-- здесь тоже надо проверить, что нам есть, КУДА спавнить 
+		-- т.е. рюкзак у ГГ в наличии 
+		if get_shadow_inv():update_storage()then
+			sobj = alife():create("mutant_hand_kontroler", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(),db.actor:id())
+			
+			if sobj then
+				sak.relocate_item("in", "mutant_hand_kontroler", 1)
+				-- перезаписываем кондицию запчасти
+				local pk = get_netpk( sobj, 1 )
+				ASSERT( ( pk and pk:isOk() ), "can't read netpacket of %s", sobj:name() )
+				local data = pk:get()
+				data.condition  = get_value("kontr_hand_cond")
+				pk:set( data )
+				-- для клиентского объекта сразу переопределяем кондицию тоже?
+				obj = level.object_by_id(sobj.id)
+				if obj then
+					params.upd_condition(obj:id(), get_value("kontr_hand_cond") )
+				end
+				
+				-- "освобождаем" слот для следующей запчасти для хранения
+				set_value("kontr_hand", 0)
+				set_value("kontr_hand_cond", 0)
+			end			
+		end
+	end
+	-- sak.send_tip("–ука контролЄра 1 шт","ѕолучил:",5,15,"g_g","sak","red")	
+end 
+ 
+function return_gig_part()
+	local sobj -- серверный объект - при создании
+	local obj -- клиентский объект - у нас в рюкзаке
+	if get_value("gig_hand") == 1 			-- в слоте есть запчасть
+		and get_value("gig_hand_cond") > 0.01	-- ее кондиция >0.01
+	then
+
+		-- здесь тоже надо проверить, что нам есть, КУДА спавнить 
+		-- т.е. рюкзак у ГГ в наличии 
+		if get_shadow_inv():update_storage()then
+			sobj = alife():create("mutant_psevdogigant_hand", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(),db.actor:id())
+			
+			if sobj then
+				sak.relocate_item("in", "mutant_psevdogigant_hand", 1)
+				-- перезаписываем кондицию запчасти
+				local pk = get_netpk( sobj, 1 )
+				ASSERT( ( pk and pk:isOk() ), "can't read netpacket of %s", sobj:name() )
+				local data = pk:get()
+				data.condition  = get_value("gig_hand_cond")
+				pk:set( data )
+				-- для клиентского объекта сразу переопределяем кондицию тоже?
+				obj = level.object_by_id(sobj.id)
+				if obj then
+					params.upd_condition(obj:id(), get_value("gig_hand_cond") )
+				end
+				
+				-- "освобождаем" слот для следующей запчасти для хранения
+				set_value("gig_hand", 0)
+				set_value("gig_hand_cond", 0)
+			end			
+		end
+	end  
+	-- sak.send_tip("Ћапа псевдогиганта 1 шт","ѕолучил:",5,15,"g_g","sak","red")	
+end
+ 
+function return_polter_part()
+	local sobj -- серверный объект - при создании
+	local obj -- клиентский объект - у нас в рюкзаке
+	if get_value("polter_eye") == 1 			-- в слоте есть запчасть
+		and get_value("polter_eye_cond") > 0.01	-- ее кондиция >0.01
+	then
+	
+		-- здесь тоже надо проверить, что нам есть, КУДА спавнить 
+		-- т.е. рюкзак у ГГ в наличии 
+		if get_shadow_inv():update_storage()then
+			sobj = alife():create("mutant_poltergeist_glas", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(),db.actor:id())
+			
+			if sobj then
+				sak.relocate_item("in", "mutant_poltergeist_glas", 1)
+				-- перезаписываем кондицию запчасти
+				local pk = get_netpk( sobj, 1 )
+				ASSERT( ( pk and pk:isOk() ), "can't read netpacket of %s", sobj:name() )
+				local data = pk:get()
+				data.condition  = get_value("polter_eye_cond")
+				pk:set( data )
+				-- для клиентского объекта сразу переопределяем кондицию тоже?
+				obj = level.object_by_id(sobj.id)
+				if obj then
+					params.upd_condition(obj:id(), get_value("polter_eye_cond") )
+				end
+				
+				-- "освобождаем" слот для следующей запчасти для хранения
+				set_value("polter_eye", 0)
+				set_value("polter_eye_cond", 0)
+			end			
+		end
+	end  
+	-- sak.send_tip("√лаз полтергейста 1 шт","ѕолучил:",5,15,"g_g","sak","red")	
+end
+
+function hit_in_undrgrounds_6sec()
+	local custom_defined_undegrgounds ={
+				"l10u_bunker",
+				"l04u_labx18",
+				"labx10",
+				"labx8",
+				"warlab",
+				"l08u_brainlab"
+				}
+
+	local u_lname = level.name()
+	if str_in_tab( u_lname, custom_defined_undegrgounds ) ~= nil then
+		if lua_random(1,100) < 70 then
+			local flag_good = false
+			local cond_flag = false
+			local item_in_slot_6 = db.actor:item_in_slot(6)
+				
+			if item_in_slot_6 ~= nil then
+				if get_bool(item_in_slot_6:section(),"closed_circuit_breathing",false) then
+					flag_good = true
+					if item_in_slot_6:condition() >= 0.82 then
+						cond_flag = true
+					end
+					-- log2("[hit_in_undrgrounds_6sec]: break @ %s with flag_good = %s, cond_flag = %s",s_name,tostring(flag_good),tostring(cond_flag))
+				end
+			end
+
+			if not flag_good then
+				-- log2("[hit_in_undrgrounds_6sec]: doc.gas_lab_info(1) called")
+				doc.gas_lab_info(1)
+			elseif flag_good and not cond_flag then
+				-- log2("[hit_in_undrgrounds_6sec]: doc.gas_lab_info(2) called")
+				doc.gas_lab_info(2)
+			end
+		end			
+	end
+end
+
+------------вспомогательные ф-ции для спавна артов в контейнере ----------------
+
+-- соответствие кол-ва спавнящихся артов  и вместимости заданного контейнера----
+function art_count_is_good( container_type, art_count )
+	local cont_table = {
+				["arc_art_box_8basic"]	= 8,
+				["arc_art_box_1basic"]	= 1,
+				["arc_art_box_basic"]	= 3,
+				}
+	local flag = false
+	for k, vv in pairs (cont_table) do
+		if container_type == k and art_count > 0 and art_count <= vv then
+			flag = true
+		break
+		end
+	end
+	return flag	
+end
+
+
+-------------- универсальная ф-ция для создания списка артов -------------------
+---------------на входе принимает таблицу секций артов с данами и состоянием ---
+---------------и тип контейнера  -----------------------------------------------
+--------------- таблица должна иметь структуру вида:----------------------------
+--------------- table = {
+---------------  ["секция_арта_с_даном"] = кондиция арта ( NB! - в процентах!!!), 
+--------------- }
+--------------------------------------------------------------------------------
+
+
+function lst_of_arts_in_cont(tbl_arts_with_dyn, container_type)
+
+	local local_tbl_arts_with_dyn, local_art_count, local_container_type
+	local string_of_arts = ""
+	local new_len
+			-- учет поправки на дурака, если не задали таблицу секций артов или задали ее пустой
+	
+			if tbl_arts_with_dyn == nil or tbl_arts_with_dyn == {} then
+				local_tbl_arts_with_dyn = {
+				["af_medusa_dyn1d"] = 0.5,
+				}
+			else
+				local_tbl_arts_with_dyn = tbl_arts_with_dyn
+			--	misc.dump_table( local_tbl_arts_with_dyn )
+			end
+			local_art_count = 0
+			for kk, vvv in pairs(local_tbl_arts_with_dyn) do
+				local_art_count = local_art_count + 1
+			end
+			-- учет поправки на дурака, если не задана секция контейнера или она неправильная
+			if container_type == nil 
+			or 
+				str_in_tab( container_type, {"arc_art_box_8basic","arc_art_box_1basic","arc_art_box_basic"} ) == nil
+			then 
+				local_container_type = "arc_art_box_8basic"
+				local_art_count  =	1
+			else
+				local_container_type = container_type
+			end
+			-- учет поправки на дурака, если  задали неверное  кол-во артов для
+			-- спавна относительно заданного типа контейнера
+			if art_count_is_good( local_container_type, local_art_count) == true then
+				
+				-- кол-во не превышено,
+				-- теперь формируем текстовую строку из последовательности артов
+				-- в табличке для контейнера
+				for k, vv in pairs (local_tbl_arts_with_dyn) do
+					string_of_arts = string_of_arts..tostring(k).."_"..tostring(vv)..","
+				end
+				-- обрежем последний символ - это ненужная нам запятая
+					new_len = string.len(string_of_arts) - 1
+					string_of_arts = string.sub( string_of_arts, 1, new_len )
+				
+			end
+	return 	string_of_arts
+end
+
+function spn_cont_with_arts_in_invent_box()	
+	-- настроечные таблички
+	-- таблица артов для спавна в контейнер
+	local tbl_arts_with_dyn = {
+	["af_medusa_dyn1d"]	= 50,
+	["af_drops_dyn5d"]	= 70,
+	["af_blood_dyn5d"]	= 60,
+	["af_rusty_thorn_dyn1d"] = 80,
+		}
+	-- таблица имен инв.ящиков-рюкзаков на ЗХ - из аллспавна
+	local tbl_inv_box = {
+	"lost_inventory_box_03",
+	"lost_inventory_box_05",
+	"lost_inventory_box_06",
+	"lost_inventory_box_08",
+	"lost_inventory_box_09",
+	"lost_inventory_box_10",
+	"lost_inventory_box_11",
+	"lost_inventory_box_12",
+	"lost_inventory_box_13",
+	}
+
+	local index_in_tbl = get_value("x18_iq_check", 1)
+	local sobj_cont, lst_of_arts
+	local sobj_box = alife():object( tbl_inv_box[ index_in_tbl ] )
+	-- получили серверный объект случайного инв. €щика на ЗХ
+	if sobj_box then
+		lst_of_arts = lst_of_arts_in_cont( tbl_arts_with_dyn, "arc_art_box_8basic" )			
+		-- спавним в выбранный €щик сам контейнер 
+		sobj_cont = alife():create("arc_art_box_8basic", sobj_box.position, sobj_box.m_level_vertex_id, sobj_box.m_game_vertex_id, sobj_box.id)
+		alife():create("zapiska_volk2", sobj_box.position, sobj_box.m_level_vertex_id, sobj_box.m_game_vertex_id, sobj_box.id)
+		-- и теперь перезаписываем ему в кастомную дату те самые арты
+		if sobj_cont then
+			local pk = get_netpk(sobj_cont)
+			ASSERT( ( pk and pk:isOk() ), "can't read netpacket of %s", sobj_cont:name() )
+			local data = pk:get()
+			data.custom_data = lst_of_arts
+			pk:set(data)
+		end
+		sak.obj_off_on(sobj_box)
+		level.map_add_object_spot_ser(sobj_box.id,"crlc_big_treasure0","?")
+    end
+    sak.add_vil_ranger_treasure()	
+end
+
+function check_knife_to_repair(mode)
+	local m = 1
+	if mode and type(mode) == 'number' then
+		m = mode
+	end
+	local sec = "wpn_knife"
+	if m == 2 then
+		sec = "wpn_knife_m1"
+	end
+
+	local current_knife = db.actor:item_in_slot( 0 )
+	if current_knife and current_knife:section() == sec then
+		if m == 1 then
+			return current_knife:condition() <= 0.75
+		else
+			return current_knife:condition() <= 0.95
+		end
+	end
+	return false
+end
+function check_knife_to_repair_any()
+	return check_knife_to_repair(1) or check_knife_to_repair(2)
+end
+function trader_knife_precond()
+	return has_alife_info("info_vergas_sharpen_knife") or has_alife_info("info_lisaped_sharpen_knife")
+end
+-- €щики јгро
+function remove_wpn_boxes_from_agro()
+	local t = {}
+	for id, sobj in alife():objects() do
+	    if sobj and string.find(sobj:section_name(), "weapon_box", 1) and sobj.level_name == "l03_agroprom" then
+	        table.insert(t, sobj)
+	    end
+	end
+	for _, sobj in pairs(t) do
+	    misc.release_obj(sobj)
+	end
+end
+
+--[[Ќе значени€, а именно количество элементов.
+“.е. если в одной 5 через зап€тую - то и во второй тоже должно быть 5.
+ј сами значени€ в amount - это количество объектов, которое мы рандомно выберем дл€ спавна.
+“.е. из items - рандомно набор объектов, а из amount - дл€ каждого наименовани€ из набора - его количество
+--]]
+
+function add_volk_woodbox()
+	local custom_data_for_woodbox = "[drop_box]\ncommunity = def_box\nitems = "
+	-- настроечные таблички дл€ задани€ секций	наград
+	local item = {"ammo_7.62x54_ap", "vodka", "medkit_army", "medkit_scientic", "suhpay"}
+	local amount = { 3, 5, 2, 3, 4 } 
+	local main_prize = "af_dummy_kolobok_capsule"
+	local temp_count = #item
+	for i = 1, temp_count do -- из всех элементов таблицы item, полный набор
+		custom_data_for_woodbox = custom_data_for_woodbox..item[ i ]..","..tostring( amount[ lua_random( 1, temp_count ) ] )..","
+	end
+	-- плюс к основному набору - одна из капсул рандомно
+	custom_data_for_woodbox = custom_data_for_woodbox..main_prize..", 1"
+	-- log2( "Created customdata for our WOODBOX. = %s", custom_data_for_woodbox )	 
+	-- теперь сам спавн €щичка с определенной кастомдатой	 
+	local points = {
+		{50.8370,2.9998,14.3317,3263,81206},{26.2044,0.2472,37.4878,3263,81534},{13.2490,2.1050,35.2632,3263,75009},
+			{55.8906,1.0810,-10.7317,3290,92239},{33.3816,0.4944,-4.3365,3290,84782}
+		}
+	
+	local p = points[get_value("r_task_reward", 4)]
+	local sobj = amk.spawn_item("physic_destroyable_object",sak.v3f(p[1],p[2],p[3]),p[4],p[5])
+	if sobj then
+		local pk = get_netpk( sobj,1)
+		ASSERT( ( pk and pk:isOk() ), "can't read netpacket of %s", sobj:name() )
+		local data = pk:get()
+		data.visual_name = "physics\\box\\box_wood_01.ogf"
+		data.custom_data = custom_data_for_woodbox
+		data.mass = 10
+		pk:set(data)
+	end
+    level.map_add_object_spot(sobj.id, "crlc_big_treasure3","wolf_rew")
+    sak.send_tip(game.translate_string("st_get_treasure_tip"),game.translate_string("wolf_rew"),5,15,"g_g","sak","green")	
+end
+
+function spawn_restr_agro_undrgrnd()
+	local sobj = alife():create(
+	"space_restrictor_agro_undrgrnd",
+	vector():set( -73.3501281738281, -3.09999918937683, -70.5624237060547 ),
+	3188,717
+	)
+		
+	local pk = get_netpk( sobj, 1 )
+	ASSERT( ( pk and pk:isOk() ), "can't read netpacket of %s", sobj:name() )
+	local data = pk:get()
+	local customdata = data.custom_data
+	data.shapes:addBox(
+		vector():set( 15, 0, 0 ),
+		vector():set( 0, 10, 0 ),
+		vector():set( 0, 0, 13 ),
+		vector():set( 0, 0, 0 )
+	)
+	data.story_id = story_ids.sr_agr_undrgrnd_safe_place
+	pk:set( data )
+	sobj.angle = vector():set( 0, 0, 0 )
+	-- log2(
+		-- "[sak.start_progress]: spawned : %s (%s)",
+		-- sobj:name(), sobj.level_name
+		-- )
+end

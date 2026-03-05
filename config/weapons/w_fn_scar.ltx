@@ -1,0 +1,597 @@
+;FN SCAR-H
+[wpn_m110]: weapon_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn                  = "weapons\m110"		; option for Level Editor
+$npc			 		= on				; option for Level Editor
+$prefetch 		 		= 8
+scheduled               = off              	; option for ALife Simulator
+cform                   = skeleton
+class					= WP_AK74
+
+min_radius              = 20
+max_radius              = 200
+description				= enc_weapons1_wpn-m110
+dialog_description		= desc_dialog_wpn_m110
+ef_main_weapon_type		= 3
+ef_weapon_type			= 8
+
+;--- scope weapons -----------------------------------------------------------------
+holder_range_modifier	= 2.15             
+holder_fov_modifier		= 0.3              
+;-----------------------------------------------------------------------------------
+
+cost					= 55000
+weapon_class			= assault_rifle
+
+ammo_limit				= 60
+ammo_current			= 30
+ammo_elapsed		 	= 30
+
+ammo_mag_size			= 20
+fire_modes				= -1,1
+f_mode					= 2
+
+ammo_class				= ammo_7.62x51_fmj,  ammo_7.62x51_ap
+grenade_class			= ammo_m209
+launch_speed			 = 0
+
+fire_dispersion_base		= 0.14	
+control_inertion_factor		= 1.35f
+disp_rate 			= 1.85
+	
+cam_relax_speed         = 5.0
+cam_dispersion          = 0.5	
+cam_dispersion_inc		= 0.3	
+cam_dispertion_frac		= 1.0	
+cam_max_angle			= 20.0	
+cam_max_angle_horz		= 15.0	
+cam_step_angle_horz		= 1.5	
+
+fire_dispersion_condition_factor = 3	
+misfire_probability 		= 0.01 
+misfire_condition_k			= 0.05
+condition_shot_dec 			= 0.00015
+;-----------------------------------------------------------------------------------
+
+hand_dependence 		= 1
+single_handed			= 0
+
+slot 					= 2		
+animation_slot			= 8		
+
+
+inv_name				= wpn-m110
+inv_name_short			= wpn-m110
+inv_weight				= 3.5
+
+inv_grid_height                                    = 2
+inv_grid_width                                     = 7
+inv_grid_x                                         = 72
+inv_grid_y                                         = 20
+
+direction               = 0, 0, 1
+
+fire_point				=  0,0.231,0.679
+
+flame_particles		    = weapons\generic_weapon06
+smoke_particles		   	= weapons\generic_shoot_00
+grenade_flame_particles		= weapons\generic_weapon01
+
+rpm_empty_click 		= 200
+
+shell_point		 		= 0.0, 0.129, 0.192	
+shell_dir		 		= 0.0, 0.0, 0.4
+shell_particles			= 
+
+PDM_disp_base				= 1.25
+PDM_disp_vel_factor			= 2.5
+PDM_disp_accel_factor		= 3.0
+PDM_crouch					= 1.1
+PDM_crouch_no_acc			= 1.0
+
+; ttc
+hit_power          		 	= 1.1
+hit_impulse		 	    	= 2
+hit_type 			      	= fire_wound
+hit_rate					= 4.0
+fire_distance      			= 300
+bullet_speed		 	  	= 580	
+rpm                 		= 600
+
+; end ttc
+
+use_aim_bullet				= false
+
+hud                     = wpn_m110_hud
+normal                  = 0, 1, 0
+position                    = -0.026, -0.126, -0.015
+orientation					= 0, 0, 0
+
+;--STRAP PARAMETERS-----------------------------------------------------------------
+strap_orientation                                  = -15,-9,110
+strap_position                                     = -0.26,-0.11,0.25
+
+startup_ammo            = 10
+visual                  = dynamics\weapons\wpn_scarh\wpn_scarh
+
+light_color		 		= 0.6,0.5,0.3
+light_range		 		= 4.0
+light_var_color		 	= 0.05
+light_var_range		 	= 0.5
+light_time 		 		= 0.2
+
+ph_mass			 		= 7
+
+;addons
+scope_status				= 2		
+silencer_status				= 2					
+grenade_launcher_status		= 2
+scope_mode 					= 3
+
+scope_name 					= specter
+scope_names 					= ac10632, wpn_addon_eotech, microt1, specter
+
+scope_respawn_ac10632 = wpn_scarh_ac10632
+scope_respawn_wpn_addon_eotech = wpn_scarh_eot
+scope_respawn_microt1 = wpn_scarh_microt1
+scope_respawn_specter = wpn_scarh_specter
+
+grenade_launcher_name 		= wpn_addon_grenade_launcher_m203
+silencer_name  				= wpn_addon_sil_762_sr2
+
+scope_zoom_factor = 90
+
+scope_x                     = 123		; offset in inventory icon
+scope_y                     = -5
+silencer_x                  = 244		; offset in inventory icon
+silencer_y                  = 21
+silencer_x_offset			= -2
+silencer_y_offset			= 0
+grenade_launcher_x          = 141		; offset in inventory icon
+grenade_launcher_y          = 34
+
+snd_shoot					= weapons\scar\scar_muzzle_mono
+snd_silncer_shot			= weapons\scar\scar_silencer_mono
+snd_shoot_grenade			= weapons\m203_shoot_mono
+
+snd_fire_mode_switch 		= weapons\firemode_switch\ar15_firemode_switch
+
+snd_draw                                           = weapons\assault_draw
+snd_holster                                        = weapons\assault_holster
+snd_empty                                          = weapons\scar\scar_empty, 0.5
+snd_reload                                         = weapons\scar\scar_reload
+snd_reload_empty                                   = weapons\scar\scar_reload_empty
+snd_reload_jammed                                 = weapons\scar\scar_misfire
+snd_reload_grenade                                 = weapons\m203\m203_reload
+snd_switch                                         = weapons\m203\m203_deactivate
+snd_switch_g                                       = weapons\m203\m203_activate
+snd_firemode                                       = weapons\l85\l85_firemode
+snd_firemode_w_gl                                  = weapons\l85\l85_firemode
+snd_sprint_idle								   	   = weapons\sprint_assault
+
+silencer_flame_particles	= weapons\generic_weapon00
+silencer_smoke_particles 	= weapons\generic_shoot_00
+
+silencer_light_color		= 0.6,0.5,0.3
+silencer_light_range		= 0.01
+silencer_light_var_color	= 0.05
+silencer_light_var_range	= 0.5
+silencer_light_time 		= 0.2
+
+[wpn_m110_hud]:hud_base
+aim_hud_offset_pos = -0.068500,0.008500,-0.09
+aim_hud_offset_rot = -0.003250,0.000000,0.000000
+
+aim_hud_offset_pos_16x9 = -0.068500,0.008500,-0.09
+aim_hud_offset_rot_16x9 = -0.003250,0.000000,0.000000
+
+anm_show										   = scar_draw, idle
+anm_show_empty									   = scar_draw, idle_empty
+anm_hide                						   = scar_holster, idle
+anm_hide_empty                					   = scar_holster, idle_empty
+anm_idle                						   = scar_idle, idle
+anm_idle_empty               					   = scar_idle, idle_empty
+anm_idle_aim            						   = scar_idle_aim, idle
+anm_idle_aim_empty            					   = scar_idle_aim, idle_empty
+anm_idle_moving         						   = scar_moving, idle
+anm_idle_moving_empty        					   = scar_moving, idle_empty
+anm_idle_moving_slow    						   = scar_moving_slow, idle
+anm_idle_moving_slow_empty    					   = scar_moving_slow, idle_empty
+anm_idle_moving_crouch							   = scar_crouch, idle
+anm_idle_moving_crouch_empty					   = scar_crouch, idle_empty
+anm_idle_aim_moving							  	   = scar_moving_aim, idle
+anm_idle_aim_moving_empty						   = scar_moving_aim, idle_empty
+anm_shots_when_aim              				   = scar_shoot_aim, shoot
+anm_shots_when_aim_last               			   = scar_shoot_aim, idle_empty
+anm_shots               						   = scar_shoot, shoot
+anm_shots_last               					   = scar_shoot, idle_empty
+anm_reload              						   = scar_reload, reload
+anm_reload_empty             					   = scar_reload_empty, reload_empty
+anm_reload_jammed								   = scar_misfire, misfire
+anm_firemode                					   = scar_firemode, idle
+anm_firemode_empty                				   = scar_firemode, idle_empty
+
+anm_bore                						   = scar_idle_aim, idle
+anm_bore_empty                					   = scar_idle_aim, idle_empty
+
+anm_idle_sprint_start         						   = scar_sprint_start
+anm_idle_sprint         						   = scar_sprint
+anm_idle_sprint_end         						   	   = scar_sprint_end
+
+anm_idle_sprint_start_empty         					   = scar_sprint_start, idle_empty
+anm_idle_sprint_empty         					   = scar_sprint, idle_empty
+anm_idle_sprint_end_empty         					   = scar_sprint_end, idle_empty
+
+anm_hide_w_gl           						   = scar_holster_w_gl, idle
+anm_hide_w_gl_empty           					   = scar_holster_w_gl, idle_empty
+anm_show_w_gl           						   = scar_draw_w_gl, idle
+anm_show_w_gl_empty           					   = scar_draw_w_gl, idle_empty
+anm_idle_w_gl           						   = scar_idle_w_gl, idle
+anm_idle_w_gl_empty            					   = scar_idle_w_gl, idle_empty
+anm_shots_w_gl          						   = scar_w_gl_shoot, shoot
+anm_shots_w_gl_last          					   = scar_w_gl_shoot, idle_empty
+anm_shots_w_gl_when_aim							   = scar_w_gl_shoot_aim, shoot
+anm_shots_w_gl_when_aim_last					   = scar_w_gl_shoot_aim, idle_empty
+anm_reload_w_gl         						   = scar_reload_w_gl, reload
+anm_reload_empty_w_gl         					   = scar_reload_empty_w_gl, reload_empty
+anm_reload_jammed_w_gl							   = scar_misfire_w_gl, misfire
+anm_idle_w_gl_aim       						   = scar_idle_aim_w_gl, idle
+anm_idle_w_gl_aim_empty       					   = scar_idle_aim_w_gl, idle_empty
+anm_idle_moving_slow_w_gl    					   = scar_moving_slow_w_gl, idle
+anm_idle_moving_slow_w_gl_empty     			   = scar_moving_slow_w_gl, idle_empty
+anm_idle_moving_w_gl    						   = scar_moving_w_gl, idle
+anm_idle_moving_w_gl_empty    					   = scar_moving_w_gl, idle_empty
+anm_idle_moving_crouch_w_gl    					   = scar_crouch_w_gl, idle
+anm_idle_moving_crouch_w_gl_empty    			   = scar_crouch_w_gl, idle_empty
+anm_idle_w_gl_aim_moving						   = scar_moving_aim_w_gl, idle
+anm_idle_w_gl_aim_moving_empty 					   = scar_moving_aim_w_gl, idle_empty
+anm_firemode_w_gl                				   = scar_firemode_w_gl, idle
+anm_firemode_empty_w_gl                			   = scar_firemode_w_gl, idle_empty
+anm_bore_w_gl           						   = scar_idle_aim_w_gl, idle
+anm_bore_w_gl_empty            					   = scar_idle_aim_w_gl, idle_empty
+
+anm_idle_sprint_start_w_gl         						   = scar_sprint_w_gl_start, idle
+anm_idle_sprint_w_gl         						   = scar_sprint_w_gl, idle
+anm_idle_sprint_end_w_gl         						   = scar_sprint_w_gl_end, idle
+
+anm_idle_sprint_start_empty_w_gl         				   = scar_sprint_w_gl_start, idle_empty
+anm_idle_sprint_empty_w_gl         					   = scar_sprint_w_gl, idle_empty
+anm_idle_sprint_end_empty_w_gl         				       = scar_sprint_w_gl_end, idle_empty
+
+anm_switch              						   = scar_g_off, g_off
+anm_switch_empty              					   = scar_g_off, g_off_empty       
+anm_switch_g            						   = scar_g_on, g_on 
+anm_switch_g_empty            					   = scar_g_on, g_on_empty 
+anm_hide_g           						   	   = scar_holster_g, idle_g
+anm_hide_g_empty           					   	   = scar_holster_g, idle_empty_g
+anm_show_g           						   	   = scar_draw_g, idle_g
+anm_show_g_empty           					   	   = scar_draw_g, idle_empty_g
+anm_idle_g           						   	   = scar_idle_g, idle_g
+anm_idle_g_empty            					   = scar_idle_g, idle_empty_g
+anm_shots_g          						   	   = scar_g_shoot, shoot_g
+anm_shots_g_empty          						   = scar_g_shoot, shoot_empty_g
+anm_reload_g         						   	   = scar_reload_g, reload_g
+anm_reload_g_empty         						   = scar_reload_g, reload_empty_g
+anm_idle_g_aim       						   	   = scar_idle_aim_g, idle_g
+anm_idle_g_aim_empty       					   	   = scar_idle_aim_g, idle_empty_g
+anm_idle_sprint_g    						   	   = scar_sprint_g, idle_g
+anm_idle_sprint_empty_g     					   = scar_sprint_g, idle_empty_g
+anm_idle_moving_slow_g    					   	   = scar_moving_slow_g, idle_g
+anm_idle_moving_slow_g_empty     			   	   = scar_moving_slow_g, idle_empty_g
+anm_idle_moving_g    						   	   = scar_moving_g, idle_g
+anm_idle_moving_g_empty    					   	   = scar_moving_g, idle_empty_g
+anm_idle_moving_crouch_g    					   = scar_crouch_g, idle_g
+anm_idle_moving_crouch_g_empty    			   	   = scar_crouch_g, idle_empty_g
+anm_idle_g_aim_moving						   	   = scar_moving_aim_g, idle_g
+anm_idle_g_aim_moving_empty 					   = scar_moving_aim_g, idle_empty_g
+anm_bore_g           						  	   = scar_idle_aim_g, idle_g
+anm_bore_g_empty            					   = scar_idle_aim_g, idle_empty_g
+
+anm_idle_sprint_start_g         						   = scar_sprint_g_start, idle_g
+anm_idle_sprint_g         						   	= scar_sprint_g, idle_g
+anm_idle_sprint_end_g         						   = scar_sprint_g_end, idle_g
+
+anm_idle_sprint_start_empty_g         						   = scar_sprint_g_start, idle_empty_g
+anm_idle_sprint_empty_g         						   	= scar_sprint_g, idle_empty_g
+anm_idle_sprint_end_empty_g         						   = scar_sprint_g_end, idle_empty_g
+anm_idle_sprint_end_jammed_g = scar_sprint_g_end,idle_g
+anm_idle_sprint_end_jammed = scar_sprint_end
+anm_idle_sprint_start_jammed = scar_sprint_start
+anm_idle_sprint_end_jammed_w_gl = scar_sprint_w_gl_end,idle
+anm_idle_sprint_start_jammed_w_gl = scar_sprint_w_gl_start,idle
+anm_idle_sprint_start_jammed_g = scar_sprint_g_start,idle_g
+
+anm_headlamp_on                                = scar_flash
+anm_gasmask                                      = scar_clear
+
+anm_headlamp_on_empty                                = scar_flash
+anm_gasmask_empty                                      = scar_clear
+
+anm_headlamp_on_w_gl                           = scar_flash_w_gl
+anm_gasmask_w_gl                                 = scar_clear_w_gl
+
+anm_headlamp_on_g                              = scar_flash_g, idle_g
+anm_gasmask_g                                    = scar_clear_g, idle_g
+
+anm_headlamp_on_empty                          = scar_flash, idle_empty
+anm_gasmask_empty                                = scar_clear, idle_empty
+
+anm_headlamp_on_w_gl_empty                     = scar_flash_w_gl, idle_empty
+anm_gasmask_w_gl_empty                           = scar_clear_w_gl, idle_empty
+
+anm_headlamp_on_g_empty                        = scar_flash_g, idle_empty_g
+anm_gasmask_g_empty                              = scar_clear_g, idle_empty_g
+
+attach_place_idx                                   = 0
+fire_bone                                          = wpn_body
+fire_bone2                                         = wpn_launcher_barrel
+fire_point                                         = 0.000000,0.044900,0.440200
+fire_point2                                        = 0,0,-0.155400
+
+gl_hud_offset_pos = -0.077000,-0.052700,0.000000
+gl_hud_offset_rot	 = -0.087500,0.012250,0.088250
+
+gl_hud_offset_pos_16x9 = -0.077000,-0.052700,0.000000
+gl_hud_offset_rot_16x9	 = -0.087500,0.012250,0.088250
+
+hands_orientation                                  = 0,0,0
+hands_orientation_16x9                             = 0,0,0
+hands_position                                     = -0.058025,0.056425,-0.291453
+hands_position_16x9                                = -0.058025,0.056425,-0.291453
+item_orientation                                   = 0,0,0
+item_position                                      = 0,0,0
+item_visual                                        = dynamics\weapons\wpn_scarh\wpn_scarh_hud.ogf
+lean_hud_offset_pos                                = 0,0,0
+lean_hud_offset_rot                                = 0,0,0
+shell_bone                                         = wpn_body
+shell_dir                                          = 0.0, 1.0, 0.0
+shell_point                                        = 0,0.035,-0.035
+
+
+[wpn_scarh_ac10632]:wpn_m110
+$spawn                                             = "weapons\wpn_scarh_ac10632"
+scope_x                                      = 82
+scope_y                                      = -5
+hud                                                = wpn_scarh_ac10632_hud
+visual                                             = dynamics\weapons\wpn_scarh\wpn_scarh_ac10632.ogf
+
+scope_respawn = wpn_m110
+scope_name = ac10632
+
+[wpn_scarh_ac10632_hud]:wpn_m110_hud
+item_visual                                        = dynamics\weapons\wpn_scarh\wpn_scarh_ac10632_hud.ogf
+aim_hud_offset_pos = -0.068500,0.011000,-0.07
+aim_hud_offset_rot = -0.003250,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.068500,0.011000,-0.07
+aim_hud_offset_rot_16x9 = -0.003250,0.000000,0.000000
+
+[wpn_scarh_eot]:wpn_m110
+$spawn                                             = "weapons\wpn_scarh_eot"
+scope_x                                      = 88
+scope_y                                      = -5
+hud                                                = wpn_scarh_eot_hud
+visual                                             = dynamics\weapons\wpn_scarh\wpn_scarh_eot.ogf
+
+scope_respawn = wpn_m110
+scope_name = wpn_addon_eotech
+
+[wpn_scarh_eot_hud]:wpn_m110_hud
+item_visual                                        = dynamics\weapons\wpn_scarh\wpn_scarh_eot_hud.ogf
+aim_hud_offset_pos = -0.068500,0.011000,-0.07
+aim_hud_offset_rot = -0.003250,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.068500,0.011000,-0.07
+aim_hud_offset_rot_16x9 = -0.003250,0.000000,0.000000
+
+[wpn_scarh_microt1]:wpn_m110
+$spawn                                             = "weapons\wpn_scarh_microt1"
+scope_x                                      = 87
+scope_y                                      = -4
+hud                                                = wpn_scarh_microt1_hud
+visual                                             = dynamics\weapons\wpn_scarh\wpn_scarh_micro-t1.ogf
+
+scope_respawn = wpn_m110
+scope_name = microt1
+
+[wpn_scarh_microt1_hud]:wpn_m110_hud
+item_visual                                        = dynamics\weapons\wpn_scarh\wpn_scarh_micro-t1_hud.ogf
+aim_hud_offset_pos = -0.068500,0.007000,-0.07
+aim_hud_offset_rot = -0.003250,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.068500,0.007000,-0.07
+aim_hud_offset_rot_16x9 = -0.003250,0.000000,0.000000
+
+
+[wpn_scarh_specter]:wpn_m110
+$spawn					= "weapons\wpn_scarh_specter"
+visual					= dynamics\weapons\wpn_scarh\wpn_scarh_specter.ogf
+hud					= wpn_scarh_specter_hud
+scope_x                                      = 72
+scope_y                                      = -7
+
+3d_reticle_size = 5.2
+3dss_gen_zoom_enable = true
+
+scope_respawn = wpn_m110
+scope_name = specter
+
+[wpn_scarh_specter_hud]:wpn_m110_hud
+item_visual										   = dynamics\weapons\wpn_scarh\wpn_scarh_specter_hud.ogf
+anm_shots_when_aim               				   = scar_shoot_scope, shoot
+anm_shots_when_aim_last               			   = scar_shoot_scope, idle_empty
+anm_shots_w_gl_when_aim							   = scar_w_gl_shoot_scope, shoot
+anm_shots_w_gl_when_aim_last					   = scar_w_gl_shoot_scope, idle_empty
+
+aim_hud_offset_pos = -0.0683,0.0085,-0.0935
+aim_hud_offset_rot = 0.00275,-0.0025,0
+aim_hud_offset_pos_16x9 = -0.0683,0.0085,-0.0935
+aim_hud_offset_rot_16x9 = 0.00275,-0.0025,0
+
+use_alt_aim_zoom = true
+alt_aim_hud_offset_pos = -0.068525,-0.015075,-0.05
+alt_aim_hud_offset_rot = 0.000000,0.000000,0.000000
+
+alt_aim_hud_offset_pos_16x9 = -0.068525,-0.015075,-0.05
+alt_aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+;;;;;;;;;;;;;;;;;;;;;;; HÊ MR308 HK G28 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[wpn_mr308]:wpn_m110
+class					= WP_LR300
+description				= enc_weapons1_wpn-mr308
+dialog_description		= desc_dialog_mr308
+
+cost					= 40000
+weapon_class			= sniper_rifle
+
+; ammo_mag_size				= 10
+fire_modes					= 1
+
+fire_dispersion_base		= 0.035	
+control_inertion_factor		= 1.5f
+
+misfire_probability 		= 0.005 
+misfire_condition_k			= 0.05
+condition_shot_dec 			= 0.0003
+
+inv_name				= wpn-mr308
+inv_name_short			= wpn-mr308
+inv_weight				= 5.0
+inv_grid_height                                    = 2
+inv_grid_width                                     = 7
+inv_grid_x                                         = 72
+inv_grid_y                                         = 18
+
+position                                           = -0.026, -0.136, -0.015
+strap_orientation                                  = -15,-9,110
+strap_position                                     = -0.26,-0.11,0.25
+
+hit_power          		 	= 1.1
+fire_distance      			= 300
+bullet_speed		 	  	= 700
+rpm                 		= 250
+visual                  	= dynamics\weapons\wpn_g28\wpn_g28
+hud 						= wpn_mr308_hud
+
+;addons
+scope_status				= 2
+silencer_status				= 2					
+grenade_launcher_status		= 0
+
+scope_name = g28_scope
+scope_names = g28_scope
+scope_respawn_g28_scope = wpn_mr308_g28_scope
+
+scope_texture                                      = wpn_crosshair_g28
+scope_zoom_factor			= 75
+scope_dynamic_zoom = true
+
+scope_x                     = 47		; offset in inventory icon
+scope_y                     = -8
+silencer_x                  = 250		; offset in inventory icon
+silencer_y                  = 18
+silencer_x_offset			= -2
+silencer_y_offset			= 0
+
+snd_fire_mode_switch		= $no_sound
+
+snd_reload                                         = weapons\g28\g28_reload
+snd_reload_empty                                   = weapons\g28\g28_reload_empty
+snd_reload_jammed                                 = weapons\g28\g28_misfire
+
+[wpn_mr308_hud]:hud_base
+aim_hud_offset_pos = -0.068500,0.020500,-0.09
+aim_hud_offset_rot = -0.004000,0.001000,0.000000
+aim_hud_offset_pos_16x9 = -0.068500,0.020500,-0.09
+aim_hud_offset_rot_16x9 = -0.004000,0.001000,0.000000
+
+anm_show										   = g28_draw, idle
+anm_show_empty									   = g28_draw, idle_empty
+anm_hide                						   = g28_holster, idle
+anm_hide_empty                					   = g28_holster, idle_empty
+anm_idle                						   = g28_idle, idle
+anm_idle_empty               					   = g28_idle, idle_empty
+anm_idle_aim            						   = g28_idle_aim, idle
+anm_idle_aim_empty            					   = g28_idle_aim, idle_empty
+anm_idle_moving         						   = g28_moving, idle
+anm_idle_moving_empty        					   = g28_moving, idle_empty
+anm_idle_moving_slow    						   = g28_moving_slow, idle
+anm_idle_moving_slow_empty    					   = g28_moving_slow, idle_empty
+anm_idle_moving_crouch							   = g28_crouch, idle
+anm_idle_moving_crouch_empty					   = g28_crouch, idle_empty
+anm_idle_aim_moving							  	   = g28_moving_aim, idle
+anm_idle_aim_moving_empty						   = g28_moving_aim, idle_empty
+anm_shots_when_aim              				   = g28_shoot_scope, shoot
+anm_shots_when_aim_last               			   = g28_shoot_scope, idle_empty
+anm_shots               						   = g28_shoot, shoot
+anm_shots_last               					   = g28_shoot, idle_empty
+anm_reload              						   = g28_reload, reload
+anm_reload_empty             					   = g28_reload_empty, reload_empty
+anm_reload_jammed								   = g28_misfire, misfire
+anm_bore                						   = g28_idle_aim, idle
+anm_bore_empty                					   = g28_idle_aim, idle_empty
+
+anm_idle_sprint_start         						   = g28_sprint_start
+anm_idle_sprint         						   = g28_sprint
+anm_idle_sprint_end         						   	   = g28_sprint_end
+
+anm_idle_sprint_start_empty         					   = g28_sprint_start, idle_empty
+anm_idle_sprint_empty         					   = g28_sprint, idle_empty
+anm_idle_sprint_end_empty         					   = g28_sprint_end, idle_empty
+
+anm_idle_sprint_end_jammed = g28_sprint_end
+anm_idle_sprint_start_jammed = g28_sprint_start
+
+anm_headlamp_on                                = g28_flash
+anm_gasmask                                      = g28_clear
+
+anm_headlamp_on_empty                          = g28_flash, idle_empty
+anm_gasmask_empty                                = g28_clear, idle_empty
+
+attach_place_idx                                   = 0
+fire_bone                                          = wpn_body
+fire_bone2                                         = wpn_body
+fire_point                                         = 0.000000,0.042700,0.482000
+fire_point2                                        = 0,0,0
+gl_hud_offset_pos_16x9							   = 0,0,0
+gl_hud_offset_rot_16x9							   = 0,0,0
+gl_hud_offset_pos								   = 0,0,0
+gl_hud_offset_rot								   = 0,0,0
+hands_orientation                                  = 0,0,0
+hands_orientation_16x9                             = 0,0,0
+hands_position                                     = -0.058025,0.056425,-0.291453
+hands_position_16x9                                = -0.058025,0.056425,-0.291453
+item_orientation                                   = 0,0,0
+item_position                                      = 0,0,0
+item_visual                                        = dynamics\weapons\wpn_g28\wpn_g28_hud.ogf
+lean_hud_offset_pos                                = 0,0,0
+lean_hud_offset_rot                                = 0,0,0
+shell_bone                                         = wpn_body
+shell_dir                                          = 0.0, 1.0, 0.0
+shell_point                                        = 0,0.04,0.01
+
+[wpn_mr308_g28_scope]:wpn_mr308
+$spawn					= "weapons\wpn_mr308_g28_scope"
+visual = dynamics\weapons\wpn_g28\wpn_g28_scope
+hud					= wpn_mr308_g28_scope_hud
+scope_x                                      = 58
+scope_y                                      = -10
+3d_reticle_size = 6.3
+3dss_gen_zoom_enable = true
+
+scope_respawn = wpn_mr308
+scope_name = g28_scope
+
+[wpn_mr308_g28_scope_hud]:wpn_mr308_hud
+item_visual                                        = dynamics\weapons\wpn_g28\wpn_g28_scope_hud
+
+aim_hud_offset_pos = -0.0683,0.0155,-0.0405
+aim_hud_offset_rot = 0.003,-0.003,0
+aim_hud_offset_pos_16x9 = -0.0683,0.0155,-0.0405
+aim_hud_offset_rot_16x9 = 0.003,-0.003,0
+
+use_alt_aim_zoom = true
+alt_aim_hud_offset_pos = -0.068525,-0.031075,-0.07
+alt_aim_hud_offset_rot = 0.000000,0.000000,0.000000
+
+alt_aim_hud_offset_pos_16x9 = -0.068525,-0.031075,-0.07
+alt_aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000

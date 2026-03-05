@@ -1,0 +1,12 @@
+[logic]
+active = sr_idle1
+
+[sr_idle1]
+on_info = {+deactivate_radar_fall} sr_idle, {-deactivate_radar_fall} sr_idle@dolg
+
+[sr_idle]
+on_actor_inside = {-gar_bandit_blokpost_pass_on} nil %+gar_bandit_blokpost_pass_fire%
+on_info = {+gar_bandit_blokpost_pass_on} nil
+
+[sr_idle@dolg]
+on_actor_inside = {-gar_free_pass} %=sak.make_dolg_enemy()%

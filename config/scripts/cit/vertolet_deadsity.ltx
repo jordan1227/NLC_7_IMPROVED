@@ -1,0 +1,12 @@
+[logic]
+active = ph_idle@idle
+
+[ph_idle@idle]
+on_info = {+info_dead_crash_vertolet} ph_idle@idle1
+
+[ph_idle@idle1]
+tips = vert_look
+on_use = {-dead_black_box_have} %=sak.btr_looks() +dead_black_box_have%  ph_idle@idle2, nil
+
+[ph_idle@idle2]
+on_timer = 10000 | %=sak.add_black_box()% nil

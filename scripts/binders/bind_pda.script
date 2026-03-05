@@ -1,0 +1,92 @@
+function init(obj)
+	local b = pda_binder(obj)
+	obj:bind_object(b)
+end
+
+class "pda_binder"(object_binder)
+function pda_binder:__init(obj) super(obj)
+	self.active_time = -1
+end
+
+function pda_binder:reload(section)
+	object_binder.reload(self, section)
+end
+
+function pda_binder:save(packet)
+	object_binder.save(self, packet)
+	if self.last_upd then
+		packet:w_bool(true)
+		packet:w_u32(self.last_upd)
+	else
+		packet:w_bool(false)
+	end
+end
+
+function pda_binder:load(reader)
+	object_binder.load(self, reader)
+	local last_upd = reader:r_bool()
+	if last_upd then
+		self.last_upd = reader:r_u32()
+	end
+end
+
+function pda_binder:net_spawn(sobj)
+	if not object_binder.net_spawn(self, sobj) then return false end
+	return true
+end
+
+function pda_binder:update(delta)
+	if not self.first_update then
+		self.first_update = true
+		self.active_time = get_string("device_pda", "active_time", -1) * 60
+	end
+	if self.active_time <= 0 then return end
+	if self.object:parent() and self.object:parent():id() == db.actor:id() then
+		local cur_cond = self.object:condition()
+		if cur_cond <= 0 then return end
+		
+		local cur_minutes = timers.Get_Game_Minutes()
+		if not self.last_upd then
+			self.last_upd = cur_minutes
+		end
+		
+		local delta_time = cur_minutes - self.last_upd
+		if delta_time < 1 then return end
+		
+		self.last_upd = cur_minutes
+		local cond_dec = delta_time / self.active_time
+		local new_cond = cur_cond - cond_dec
+		if new_cond < 0 then
+			new_cond = 0
+			self.last_upd = nil
+			disable_pda()
+			misc.spawn_to("device_pda_discharged_gg",db.actor)
+			sak.send_tip("0%",game.translate_string("pda_battery_status_msg"),3,10, "pribor","pda_news","red")
+		end
+		
+		self.object:set_condition(new_cond)
+	end
+end
+-- Sn: на всякий пожарный, ещё вариант сброса счётчика для корректной работы апдейтов после "зарядки"
+function reset_last_upd(obj)
+	local b = obj and obj:binded_object()
+	if b then
+		b.last_upd = nil
+	end
+end
+
+function disable_pda()
+	level.set_actor_allow_pda(false)
+	local item = db.actor:active_item()
+	if item and item:section() == 'device_pda' then
+		set_pda_params(vector():set(0.5,0.2,0.0))
+		level.send_event_key_press(bind_to_dik(key_bindings.kACTIVE_JOBS))
+	elseif has_alife_info("ui_pda") then
+		sak.close_window()
+	end
+end
+
+function enable_pda()
+	level.set_actor_allow_pda(true)
+	set_pda_params(vector():set(0,0,0))
+end

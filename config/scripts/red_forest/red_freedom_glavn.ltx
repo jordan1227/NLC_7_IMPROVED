@@ -1,0 +1,20 @@
+[logic]
+active = walker
+
+[walker]
+path_walk = red_freedom_glavn_walk
+path_look = red_freedom_glavn_look
+meet = meet@red_freedom_glavn
+danger = danger_condition
+show_spot = false
+
+[meet@red_freedom_glavn]
+meet_state = 2|sit
+meet_state_wpn = 2|sit
+meet_dialog = red_freedom_glavn_dialog
+use			= true
+use_wpn		= false
+abuse   = true
+
+[danger_condition]
+ignore_distance = 2

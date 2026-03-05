@@ -1,0 +1,303 @@
+<?xmlversion='1.0'encoding="windows-1251"?>
+<game_information_portions>
+<!-- mikhalych_item -->
+<info_portion id="mikhalych_item_start"><article>tex_mikhalych_item</article></info_portion>
+<info_portion id="mikhalych_item_done"><article_disable>tex_mikhalych_item</article_disable></info_portion>
+<info_portion id="lim_trader_bauble_gg"><article_disable>tex_lim_trader_bauble</article_disable></info_portion>
+
+<!-- private_blockpost_outfit -->
+<info_portion id="info_trader_outfit"></info_portion>
+<info_portion id="info_trader_outfit_fail"><article_disable>tex_mil_Svoboda_trader_outfit</article_disable></info_portion>
+<info_portion id="info_private_blockpost_outfit"><article>tex_private_blockpost_outfit</article></info_portion>
+<info_portion id="info_private_blockpost_outfit_yes"></info_portion>
+<info_portion id="info_private_blockpost_outfit_done"><article_disable>tex_private_blockpost_outfit</article_disable></info_portion>
+
+<!-- sidor_outfit -->
+<info_portion id="info_sidor_outfit_start"><article>tex_sidor_outfit</article></info_portion>
+<info_portion id="info_sidor_outfit_done"><article_disable>tex_sidor_outfit</article_disable></info_portion>
+<info_portion id="info_plichko_rpk_have"><article>tex_plichko_rpk</article></info_portion>
+<info_portion id="info_plichko_rpk_done"><article_disable>tex_plichko_rpk</article_disable></info_portion>
+
+<!-- barmen_outfit -->
+<info_portion id="info_barmen_outfit_start"><article>tex_barmen_outfit</article></info_portion>
+<info_portion id="info_barmen_outfit_done"><article_disable>tex_barmen_outfit</article_disable></info_portion>
+<info_portion id="info_barmen_parcel_1_start"></info_portion>
+<info_portion id="info_barmen_parcel_1_done"></info_portion>
+<info_portion id="info_barmen_parcel_2_start"></info_portion>
+<info_portion id="info_barmen_parcel_2_done"></info_portion>
+<info_portion id="zub_night_star_receipt_info"></info_portion>
+<info_portion id="zub_night_star_receipt_start"></info_portion>
+<info_portion id="zub_night_star_receipt_have"></info_portion>
+<info_portion id="zub_night_star_receipt_done"></info_portion>
+
+<!-- sherstuk_outfit -->
+<info_portion id="info_sherstuk_outfit_start"></info_portion>
+<info_portion id="info_sherstuk_outfit_gg"></info_portion>
+<info_portion id="info_sherstuk_outfit_2start"></info_portion>
+<info_portion id="info_mar_military_post_gg"><article>tex_sherstuk_outfit</article></info_portion>
+<info_portion id="info_mar_military_post_tower_done"><article_disable>tex_sherstuk_outfit</article_disable></info_portion>
+<info_portion id="info_sherstuk_outfit_done"></info_portion>
+<info_portion id="info_sherstuk_outfit_2done"></info_portion>
+<info_portion id="sherstuk_holiday_allowed"></info_portion>
+<info_portion id="info_mar_leader_vine_start"></info_portion> <!-- Абрамович -->
+<info_portion id="info_mar_leader_vine_done"></info_portion>
+<!-- new_ecolog_mutant -->
+<info_portion id="info_ecolog_mutant_start"></info_portion>
+<info_portion id="info_ecolog_mutant_done"></info_portion>
+<!--  -->
+<info_portion id="val_bloodsucker_dead"><action>doc.mutant_ecolog_dead</action></info_portion>
+<info_portion id="val_bloodsucker1_dead"></info_portion>
+<info_portion id="val_bloodsucker2_dead"></info_portion>
+<info_portion id="val_bloodsucker3_dead"></info_portion>
+
+<info_portion id="dsc_chimera_dead"><action>doc.mutant_ecolog_dead</action></info_portion>
+<info_portion id="dsc_chimera1_dead"></info_portion>
+<info_portion id="dsc_chimera2_dead"></info_portion>
+<info_portion id="dsc_chimera3_dead"></info_portion>
+
+<info_portion id="marsh_controller_dead"><action>doc.mutant_ecolog_dead</action></info_portion>
+<info_portion id="marsh_controller1_dead"></info_portion>
+<info_portion id="marsh_controller2_dead"></info_portion>
+
+<info_portion id="agr_gigant_dead"><action>doc.mutant_ecolog_dead</action></info_portion>
+<info_portion id="agr_gigant1_dead"></info_portion>
+<info_portion id="agr_gigant2_dead"></info_portion>
+
+<info_portion id="info_ecolog_mutant1_start"><article>tex_marsh_baze_ecolog_1</article></info_portion>
+<info_portion id="info_ecolog_mutant1_done"><article_disable>tex_marsh_baze_ecolog_1</article_disable></info_portion>
+<info_portion id="info_ecolog_mutant2_start"><article>tex_marsh_baze_ecolog_2</article></info_portion>
+<info_portion id="info_ecolog_mutant2_done"><article_disable>tex_marsh_baze_ecolog_2</article_disable></info_portion>
+<info_portion id="info_ecolog_mutant3_start"><article>tex_marsh_baze_ecolog_3</article></info_portion>
+<info_portion id="info_ecolog_mutant3_done"><article_disable>tex_marsh_baze_ecolog_3</article_disable></info_portion>
+<info_portion id="info_ecolog_mutant4_start"><article>tex_marsh_baze_ecolog_4</article></info_portion>
+<info_portion id="info_ecolog_mutant4_done"><article_disable>tex_marsh_baze_ecolog_4</article_disable></info_portion>
+<info_portion id="info_ecolog_mutant_save"></info_portion>
+
+<!-- monster_part_save -->
+<info_portion id="info_part_monster_save"></info_portion>
+<info_portion id="info_kontr_save"></info_portion>
+<info_portion id="info_gig_save"></info_portion>
+<info_portion id="info_polter_save"></info_portion>
+<info_portion id="info_kidney_save"></info_portion>
+<info_portion id="info_kontr_in work"></info_portion>
+<info_portion id="info_gig_in work"></info_portion>
+<info_portion id="info_polter_in work"></info_portion>
+<info_portion id="info_kidney_in work"></info_portion>
+
+<!-- info pro namazku and upgrade_dialog -->
+<info_portion id="vergas_upgrade_dialog_info"></info_portion>
+<info_portion id="vergas_upgrade_dialog_done"></info_portion>
+<info_portion id="marsh_general_ecolog_upgrade_dialog_info"></info_portion>
+<info_portion id="marsh_general_ecolog_upgrade_2dialog_info"></info_portion>
+<info_portion id="marsh_glavn_upgrade_2dialog_info"></info_portion>
+<!-- wpn_junkman -->
+<info_portion id="info_junkman_wpn_prize"></info_portion>
+<info_portion id="info_junkman_wpn_done"></info_portion>
+<!-- ecolog_artefact -->
+<info_portion id="timer_ecolog_art_end"></info_portion>
+
+<info_portion id="info_ecolog_artefact1_start"></info_portion>
+<info_portion id="info_ecolog_artefact1_done"></info_portion>
+<info_portion id="info_ecolog_artefact1_start_rand_1"><article>ecolog_artefact1_rand1_article</article></info_portion>
+<info_portion id="info_ecolog_artefact1_done_rand_1"><article_disable>ecolog_artefact1_rand1_article</article_disable></info_portion>
+<info_portion id="info_ecolog_artefact1_start_rand_2"><article>ecolog_artefact1_rand2_article</article></info_portion>
+<info_portion id="info_ecolog_artefact1_done_rand_2"><article_disable>ecolog_artefact1_rand2_article</article_disable></info_portion>
+<info_portion id="info_ecolog_artefact1_start_rand_3"><article>ecolog_artefact1_rand3_article</article></info_portion>
+<info_portion id="info_ecolog_artefact1_done_rand_3"><article_disable>ecolog_artefact1_rand3_article</article_disable></info_portion>
+
+<info_portion id="info_ecolog_artefact2_start"></info_portion>
+<info_portion id="info_ecolog_artefact2_done"></info_portion>
+<info_portion id="info_ecolog_artefact2_start_rand_1"><article>ecolog_artefact2_rand1_article</article></info_portion>
+<info_portion id="info_ecolog_artefact2_done_rand_1"><article_disable>ecolog_artefact2_rand1_article</article_disable></info_portion>
+<info_portion id="info_ecolog_artefact2_start_rand_2"><article>ecolog_artefact2_rand2_article</article></info_portion>
+<info_portion id="info_ecolog_artefact2_done_rand_2"><article_disable>ecolog_artefact2_rand2_article</article_disable></info_portion>
+<info_portion id="info_ecolog_artefact2_start_rand_3"><article>ecolog_artefact2_rand3_article</article></info_portion>
+<info_portion id="info_ecolog_artefact2_done_rand_3"><article_disable>ecolog_artefact2_rand3_article</article_disable></info_portion>
+
+<info_portion id="info_ecolog_artefact3_start"></info_portion>
+<info_portion id="info_ecolog_artefact3_done"></info_portion>
+<info_portion id="info_ecolog_artefact3_start_rand_1"><article>ecolog_artefact3_rand1_article</article></info_portion>
+<info_portion id="info_ecolog_artefact3_done_rand_1"><article_disable>ecolog_artefact3_rand1_article</article_disable></info_portion>
+<info_portion id="info_ecolog_artefact3_start_rand_2"><article>ecolog_artefact3_rand2_article</article></info_portion>
+<info_portion id="info_ecolog_artefact3_done_rand_2"><article_disable>ecolog_artefact3_rand2_article</article_disable></info_portion>
+<info_portion id="info_ecolog_artefact3_start_rand_3"><article>ecolog_artefact3_rand3_article</article></info_portion>
+<info_portion id="info_ecolog_artefact3_done_rand_3"><article_disable>ecolog_artefact3_rand3_article</article_disable></info_portion>
+
+<info_portion id="info_ecolog_artefact4_start"></info_portion>
+<info_portion id="info_ecolog_artefact4_done"></info_portion>
+<info_portion id="info_ecolog_artefact4_start_rand_1"><article>ecolog_artefact4_rand1_article</article></info_portion>
+<info_portion id="info_ecolog_artefact4_done_rand_1"><article_disable>ecolog_artefact4_rand1_article</article_disable></info_portion>
+<info_portion id="info_ecolog_artefact4_start_rand_2"><article>ecolog_artefact4_rand2_article</article></info_portion>
+<info_portion id="info_ecolog_artefact4_done_rand_2"><article_disable>ecolog_artefact4_rand2_article</article_disable></info_portion>
+<info_portion id="info_ecolog_artefact4_start_rand_3"><article>ecolog_artefact4_rand3_article</article></info_portion>
+<info_portion id="info_ecolog_artefact4_done_rand_3"><article_disable>ecolog_artefact4_rand3_article</article_disable></info_portion>
+
+<info_portion id="info_ecolog_artefact5_start"></info_portion>
+<info_portion id="info_ecolog_artefact5_done"></info_portion>
+<info_portion id="sakharov_discount_info"></info_portion>
+<info_portion id="info_ecolog_artefact5_start_rand_1"><article>ecolog_artefact5_rand1_article</article></info_portion>
+<info_portion id="info_ecolog_artefact5_done_rand_1"><article_disable>ecolog_artefact5_rand1_article</article_disable></info_portion>
+<info_portion id="info_ecolog_artefact5_start_rand_2"><article>ecolog_artefact5_rand2_article</article></info_portion>
+<info_portion id="info_ecolog_artefact5_done_rand_2"><article_disable>ecolog_artefact5_rand2_article</article_disable></info_portion>
+<info_portion id="info_ecolog_artefact5_start_rand_3"><article>ecolog_artefact5_rand3_article</article></info_portion>
+<info_portion id="info_ecolog_artefact5_done_rand_3"><article_disable>ecolog_artefact5_rand3_article</article_disable></info_portion>
+<!-- info_scafandr -->
+<info_portion id="info_barmen_scafandr_start"><article>tex_barmen_scafandr</article></info_portion>
+<info_portion id="info_barmen_scafandr_done"><article_disable>tex_barmen_scafandr</article_disable></info_portion>
+<info_portion id="barmen_scafandr_dlg_info"></info_portion>
+<info_portion id="barmen_scafandr_dlg_done"></info_portion>
+<info_portion id="barmen_scafandr_sv_dlg_info"></info_portion>
+<info_portion id="barmen_scafandr_sv_dlg_done"></info_portion>
+<info_portion id="info_barmen_scafandr_proha"></info_portion>
+<info_portion id="info_barmen_scafandr_2proha"></info_portion>
+<info_portion id="info_sidor_scafandr_start"><article>tex_sidor_scafandr</article></info_portion>
+<info_portion id="info_sidor_scafandr_done"><article_disable>tex_sidor_scafandr</article_disable></info_portion>
+<info_portion id="sidor_scafandr_dlg_info"><article>tex_sidor_scafandr_dlg</article></info_portion>
+<info_portion id="sidor_scafandr_dlg_done"><article_disable>tex_sidor_scafandr_dlg</article_disable><action>sak.sidor_scafandr_msg</action></info_portion>
+<info_portion id="info_sidor_scafandr_ignat"></info_portion>
+<info_portion id="info_sidor_scafandr_2ignat"></info_portion>
+<info_portion id="info_ignat_cheque"></info_portion>
+<info_portion id="info_ignat_cart"></info_portion>
+<info_portion id="info_sidor_scafandr_proha"></info_portion>
+<info_portion id="info_sidor_scafandr_2proha"></info_portion>
+<!-- agr_dumenko -->
+<info_portion id="agr_mil_dumenko_gg"></info_portion>
+<info_portion id="dumenko_quest_refuse_info"></info_portion>
+<info_portion id="agr_mil_dumenko_job_start"><action>doc.off_agr_mines</action></info_portion>
+<info_portion id="agr_mil_dumenko_job_done"></info_portion>
+<info_portion id="dumenko_fire"></info_portion>
+<info_portion id="agr_und_soldier_dead"></info_portion>
+<info_portion id="agr_und_blood_spawned"></info_portion>
+<info_portion id="info_dsc_kolonna_start"></info_portion>
+<info_portion id="info_dsc_kolonna_done"></info_portion>
+
+<info_portion id="info_gas_lab"></info_portion>
+<!-- заточка ножа-->
+<info_portion id="ignat_sharpen_knife_gg"></info_portion>
+<info_portion id="ignat_sharpen_knife_not_ready"><disable>ignat_sharpen_knife_ready</disable></info_portion>
+<info_portion id="ignat_sharpen_knife_ready"><disable>ignat_sharpen_knife_not_ready</disable></info_portion>
+<!-- -->
+<info_portion id="esc_trader_knife_gg"></info_portion>
+<info_portion id="info_vergas_sharpen_knife"></info_portion>
+<info_portion id="info_lisaped_sharpen_knife"></info_portion>
+
+<!-- Colt King Cobra -->
+<info_portion id="marsh_cook_colt_start_info"><article>tex_marsh_cook_colt</article></info_portion>
+<info_portion id="marsh_cook_colt_done_info"><article_disable>tex_marsh_cook_colt</article_disable></info_portion>
+<info_portion id="voron_colt_start_info"><article>voron_colt_article</article></info_portion>
+<info_portion id="voron_colt_done_info"><article_disable>voron_colt_article</article_disable></info_portion>
+
+<!-- rad_spec_outfit -->
+<info_portion id="rad_spec_outfit_done"></info_portion>
+<!-- saharov_conroler -->
+<info_portion id="info_saharov_controler_start"><article>tex_saharov_controler</article></info_portion>
+<info_portion id="info_saharov_controler_done"><article_disable>tex_saharov_controler</article_disable></info_portion>
+<info_portion id="yan_controler_dead"><action>doc.yan_controler_dead</action></info_portion>
+<!-- near_bridge_leader -->
+<info_portion id="red_bridge_leader_umer"><article_disable>borzyi_borov_quest_article</article_disable><article_disable>borzyi_borov_package_article</article_disable></info_portion>
+<!-- volk_gonec -->
+<info_portion id="volk_gonec_start"><article>tex_volk_gonec</article></info_portion>
+<info_portion id="volk_gonec_done"><article_disable>tex_volk_gonec</article_disable></info_portion>
+<!-- volk_yurik_help -->
+<info_portion id="gar_dm_novice_help_start"></info_portion>
+<info_portion id="gar_dm_novice_help_done"></info_portion>
+<!-- new_ivan_nebov -->
+<info_portion id="ivan_toz_start"><article>tex_ivan_toz</article></info_portion>
+<info_portion id="ivan_toz_done"><article_disable>tex_ivan_toz</article_disable></info_portion>
+<!-- new_nebov_limansk -->
+<info_portion id="ivan_lim_new_gg"></info_portion>
+<!-- new_krivoy -->
+<info_portion id="oreh_kishka_info"></info_portion>
+<!-- blockpost_case -->
+<info_portion id="info_blockpost_case_end"><article_disable>blockpost_case_article</article_disable></info_portion>
+<!-- kvest_Tesla-->
+<info_portion id="info_escape_trader_tesla_start"></info_portion>
+<info_portion id="info_escape_trader_tesla_have"><article>tex_lim_trader_bauble</article></info_portion>
+<info_portion id="info_escape_trader_tesla_done"></info_portion>
+<!-- crash_vertolet -->
+<info_portion id="info_sakharov_crash_vertolet"></info_portion>
+<info_portion id="info_sakharov_crash_vertolet_gg"></info_portion>
+<info_portion id="info_sakharov_crash_vertolet_start"></info_portion>
+<info_portion id="info_marsh_crash_vertolet"><article>tex_marsh_crash_vertolet</article></info_portion>
+<info_portion id="info_dar_crash_vertolet"><article_disable>tex_marsh_crash_vertolet</article_disable><article>tex_dar_crash_vertolet</article></info_portion>
+<info_portion id="info_gen_crash_vertolet"><article_disable>tex_dar_crash_vertolet</article_disable><article>tex_gen_crash_vertolet</article></info_portion>
+<info_portion id="info_dead_crash_vertolet"><article_disable>tex_gen_crash_vertolet</article_disable><article>tex_dead_crash_vertolet</article></info_portion>
+<info_portion id="info_sakharov_crash_vertolet_done"><article_disable>tex_dead_crash_vertolet</article_disable></info_portion>
+<info_portion id="marsh_black_box_have"></info_portion>
+<info_portion id="dar_black_box_have"></info_portion>
+<info_portion id="gen_black_box_have"></info_portion>
+<info_portion id="dead_black_box_have"></info_portion>
+<!-- saharov_scientist_red_forest -->
+<info_portion id="info_saharov_scientist_rf_start"><article>tex_saharov_scientist_rf</article></info_portion>
+<info_portion id="info_saharov_scientist_rf_done"><article_disable>tex_saharov_scientist_rf</article_disable></info_portion>
+<info_portion id="scientist_red_forest_dead"></info_portion>
+
+<info_portion id="info_semenov_green_art_start"><article>tex_semenov_green_art</article></info_portion>
+<info_portion id="info_semenov_green_art_done"><article_disable>tex_semenov_green_art</article_disable></info_portion>
+<!-- Самогон -->
+<info_portion id="info_proha_samogon_start"></info_portion>
+<info_portion id="info_proha_samogon_done"></info_portion>
+<!-- marsh_ohota -->
+<info_portion id="marsh_baze_guard_ohota_start"><article>tex_marsh_baze_guard_ohota</article></info_portion>
+<info_portion id="marsh_baze_guard_ohota_done"><article_disable>tex_marsh_baze_guard_ohota</article_disable></info_portion>
+<info_portion id="fracture_marsh_dead"><action>doc.fracture_marsh_dead</action></info_portion>
+<!-- barmen_freeman -->
+<info_portion id="info_barmen_freeman_start"><article>tex_barmen_freeman</article></info_portion>
+<info_portion id="info_barmen_freeman_done"><article_disable>tex_barmen_freeman</article_disable></info_portion>
+<!-- dibils and krazy-->
+<info_portion id="info_marsh_glavn_dibils"></info_portion>
+<info_portion id="info_mil_trader_krazy"></info_portion>
+<info_portion id="info_yan_sakharov_dibils"></info_portion>						
+<!-- new_dar_greens_yan_way -->
+<info_portion id="dar_greens_yan_way_info"><article>tex_dar_greens_yan_way</article></info_portion>
+<info_portion id="dar_greens_yan_way_have"><article_disable>tex_dar_greens_yan_way</article_disable></info_portion>							   
+<!-- cook_ammo -->
+<info_portion id="marsh_cook_ammo_start_info"><article>tex_marsh_cook_ammo</article></info_portion>
+<info_portion id="marsh_cook_ammo_done_info"><article_disable>tex_marsh_cook_ammo</article_disable></info_portion>
+<info_portion id="petrenko_ammo_start_info"><article>petrenko_ammo_article</article></info_portion>
+<info_portion id="petrenko_ammo2_start_info"><article>petrenko_ammo2_article</article></info_portion>
+<info_portion id="petrenko_ammo_done_info"><article_disable>petrenko_ammo_article</article_disable><article_disable>petrenko_ammo2_article</article_disable></info_portion>
+<info_portion id="petrenko_chuchelo_dialog_info"></info_portion>				  
+<!-- new_green_dan_prohod -->
+<info_portion id="green_dan_passage_start_info"><article>tex_green_dan_passage</article></info_portion>
+<info_portion id="green_dan_passage_done_info"><article_disable>tex_green_dan_passage</article_disable></info_portion>							 
+<!-- shurup_instrument -->
+<info_portion id="shurup_instrument_start_info"><article>tex_shurup_instrument</article></info_portion>
+<info_portion id="shurup_instrument_done_info"><article_disable>tex_shurup_instrument</article_disable></info_portion>
+<info_portion id="esc_trader_shurup_instrument_info"></info_portion>
+<info_portion id="esc_trader_shurup_instrument_price_info"></info_portion>
+<!-- shurup_spas_improve -->
+<info_portion id="shurup_spas_improve_start_info"></info_portion>
+<info_portion id="shurup_spas_improve_done_info"></info_portion>
+<info_portion id="shurup_spas_improve_info"></info_portion>
+<!-- shurup_fal_upgrade -->
+<info_portion id="shurup_upgrade_kit_start_info"><article>shurup_fal_upgrade_article</article></info_portion>
+<info_portion id="shurup_upgrade_kit_done_info"><article_disable>shurup_fal_upgrade_article</article_disable></info_portion>
+<info_portion id="voron_upgrade_kit_start"><article>voron_upgrade_kit_article</article></info_portion>
+<info_portion id="voron_upgrade_kit_refuse"></info_portion>
+<info_portion id="voron_upgrade_kit_done"><article_disable>voron_upgrade_kit_article</article_disable></info_portion>
+<info_portion id="shurup_fal_upgrade_start"></info_portion>
+<info_portion id="shurup_fal_upgrade_ready"></info_portion>
+<info_portion id="shurup_fal_upgrade_end"></info_portion>
+<info_portion id="shurup_mtv_upgrade_info"><article>shurup_mtv_upgrade_article</article></info_portion>
+<info_portion id="shurup_mtv_upgrade_done_info"><article_disable>shurup_mtv_upgrade_article</article_disable></info_portion>
+<!-- upir -->
+<info_portion id="barmen_upir_start_info"><article>tex_barmen_upir</article></info_portion>
+<info_portion id="barmen_upir_info"></info_portion>
+<info_portion id="barmen_upir_done_info"><article_disable>tex_barmen_upir</article_disable></info_portion>			 
+			  <!-- umnik -->
+<info_portion id="lisiy_umnik_start_info"><article>tex_lisiy_umnik</article></info_portion>
+<info_portion id="lisiy_umnik_gg_info"></info_portion>
+<info_portion id="lisiy_umnik_info"></info_portion>
+<info_portion id="lisiy_umnik_done_info"><article_disable>tex_lisiy_umnik</article_disable></info_portion>			 
+<!-- petrov_paper_box -->
+<info_portion id="pahom_petrov_box_start_info"><article>tex_pahom_petrov_box</article></info_portion>
+<info_portion id="pahom_petrov_box_done_info"><article_disable>tex_pahom_petrov_box</article_disable></info_portion>
+
+<info_portion id="dsc_ecolog_vasilyev_search_info"></info_portion>						 
+<info_portion id="barmen_monsters_part_info"></info_portion>																   
+<!-- mil_trader_aver -->
+<info_portion id="mil_trader_aver_start_info"><article>tex_mil_trader_aver</article></info_portion>
+<info_portion id="mil_trader_aver_have"></info_portion>	<!-- получаем в ТЧ -->
+<info_portion id="mil_trader_aver_done_info"><article_disable>tex_mil_trader_aver</article_disable></info_portion>
+</game_information_portions>

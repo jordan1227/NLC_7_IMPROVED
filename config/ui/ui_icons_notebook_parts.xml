@@ -1,0 +1,86 @@
+<ui_texture>
+
+	<file_name>ui\ui_notebook_parts</file_name>
+	
+	<texture id="ui_icons_notebook_leave" 			x="60" y="18" width="220" height="54" />
+	<texture id="ui_icons_notebook_leave_h" 		x="60" y="18" width="220" height="54" />
+	<texture id="ui_icons_notebook_leave_d" 		x="60" y="18" width="220" height="54" />		
+	<texture id="ui_icons_notebook_leave_t" 		x="60" y="18" width="220" height="54" />
+	<texture id="ui_icons_notebook_leave_e" 		x="60" y="18" width="220" height="54" />
+	
+	<texture id="ui_icons_notebook_prev" 			x="340" y="34" width="68" height="51" />
+	<texture id="ui_icons_notebook_prev_h" 			x="340" y="34" width="68" height="51" />
+	<texture id="ui_icons_notebook_prev_d" 			x="340" y="34" width="68" height="51" />		
+	<texture id="ui_icons_notebook_prev_t" 			x="340" y="34" width="68" height="51" />
+	<texture id="ui_icons_notebook_prev_e" 			x="340" y="34" width="68" height="51" />
+
+	<texture id="ui_icons_notebook_next" 			x="408" y="34" width="85" height="51" />
+	<texture id="ui_icons_notebook_next_h" 			x="408" y="34" width="85" height="51" />
+	<texture id="ui_icons_notebook_next_d" 			x="408" y="34" width="85" height="51" />		
+	<texture id="ui_icons_notebook_next_t" 			x="408" y="34" width="85" height="51" />
+	<texture id="ui_icons_notebook_next_e" 			x="408" y="34" width="85" height="51" />	
+
+	<!-- 1 ур. -->		
+	<texture id="ui_icons_notebook_page_1" 			x="378" y="90" width="84" height="72" />
+	<texture id="ui_icons_notebook_page_1_h" 		x="378" y="90" width="84" height="72" />
+	<texture id="ui_icons_notebook_page_1_d" 		x="378" y="90" width="84" height="72" />		
+	<texture id="ui_icons_notebook_page_1_t" 		x="378" y="90" width="84" height="72" />
+	<texture id="ui_icons_notebook_page_1_e" 		x="378" y="90" width="84" height="72" />
+
+	<!-- 2 ур.  -->		
+	<texture id="ui_icons_notebook_page_2" 			x="378" y="200" width="84" height="40" />
+	<texture id="ui_icons_notebook_page_2_h" 		x="378" y="200" width="84" height="40" />
+	<texture id="ui_icons_notebook_page_2_d" 		x="378" y="200" width="84" height="40" />	
+	<texture id="ui_icons_notebook_page_2_t" 		x="378" y="200" width="84" height="40" />
+	<texture id="ui_icons_notebook_page_2_e" 		x="378" y="200" width="84" height="40" />
+
+	<!-- 3 ур.  -->	
+	<texture id="ui_icons_notebook_page_3" 			x="384" y="272" width="80" height="64" />
+	<texture id="ui_icons_notebook_page_3_h" 		x="384" y="272" width="80" height="64" />
+	<texture id="ui_icons_notebook_page_3_d" 		x="384" y="272" width="80" height="64" />		
+	<texture id="ui_icons_notebook_page_3_t" 		x="384" y="272" width="80" height="64" />
+	<texture id="ui_icons_notebook_page_3_e" 		x="384" y="272" width="80" height="64" />
+
+	<!-- Пустышки -->	
+	<texture id="ui_icons_notebook_page_4" 			x="380" y="360" width="76" height="60" />
+	<texture id="ui_icons_notebook_page_4_h" 		x="380" y="360" width="76" height="60" />
+	<texture id="ui_icons_notebook_page_4_d" 		x="380" y="360" width="76" height="60" />		
+	<texture id="ui_icons_notebook_page_4_t" 		x="380" y="360" width="76" height="60" />
+	<texture id="ui_icons_notebook_page_4_e" 		x="380" y="360" width="76" height="60" />
+
+	<!-- Уники -->
+	<texture id="ui_icons_notebook_page_5" 			x="380" y="450" width="80" height="50" />
+	<texture id="ui_icons_notebook_page_5_h" 		x="380" y="450" width="80" height="50" />
+	<texture id="ui_icons_notebook_page_5_d" 		x="380" y="450" width="80" height="50" />	
+	<texture id="ui_icons_notebook_page_5_t" 		x="380" y="450" width="80" height="50" />
+	<texture id="ui_icons_notebook_page_5_e" 		x="380" y="450" width="80" height="50" />
+
+	<!-- Модификаты -->
+	<texture id="ui_icons_notebook_page_6" 			x="80" y="184" width="88" height="64" />
+	<texture id="ui_icons_notebook_page_6_h" 		x="80" y="184" width="88" height="64" />
+	<texture id="ui_icons_notebook_page_6_d" 		x="80" y="184" width="88" height="64" />		
+	<texture id="ui_icons_notebook_page_6_t" 		x="80" y="184" width="88" height="64" />
+	<texture id="ui_icons_notebook_page_6_e" 		x="80" y="184" width="88" height="64" />
+
+	<!-- Мезомодификаты -->
+	<texture id="ui_icons_notebook_page_7" 			x="85" y="272" width="65" height="48" />
+	<texture id="ui_icons_notebook_page_7_h" 		x="85" y="272" width="65" height="48" />
+	<texture id="ui_icons_notebook_page_7_d" 		x="85" y="272" width="65" height="48" />		
+	<texture id="ui_icons_notebook_page_7_t" 		x="85" y="272" width="65" height="48" />
+	<texture id="ui_icons_notebook_page_7_e" 		x="85" y="272" width="65" height="48" />
+
+	<!-- Гипермодификаты -->
+	<texture id="ui_icons_notebook_page_8" 			x="85" y="336" width="85" height="64" />
+	<texture id="ui_icons_notebook_page_8_h" 		x="85" y="336" width="85" height="64" />
+	<texture id="ui_icons_notebook_page_8_d" 		x="85" y="336" width="85" height="64" />		
+	<texture id="ui_icons_notebook_page_8_t" 		x="85" y="336" width="85" height="64" />
+	<texture id="ui_icons_notebook_page_8_e" 		x="85" y="336" width="85" height="64" />
+
+	<!-- Абсолюты -->
+	<texture id="ui_icons_notebook_page_9" 			x="85" y="424" width="80" height="48" />
+	<texture id="ui_icons_notebook_page_9_h" 		x="85" y="424" width="80" height="48" />
+	<texture id="ui_icons_notebook_page_9_d" 		x="85" y="424" width="80" height="48" />		
+	<texture id="ui_icons_notebook_page_9_t" 		x="85" y="424" width="80" height="48" />
+	<texture id="ui_icons_notebook_page_9_e" 		x="85" y="424" width="80" height="48" />
+
+</ui_texture>

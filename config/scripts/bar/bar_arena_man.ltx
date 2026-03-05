@@ -1,0 +1,99 @@
+[logic]
+active = walker@job
+combat_ignore = combat_ignore
+danger = danger_condition
+trade = misc\shop_other\trade_arny.ltx
+inv_max_weight = 1000
+on_death = death@arny
+
+[death@arny]
+on_info = {=killed_by_actor} %+arny_umer =sak.gg_bandit()%, %+arny_umer%
+
+[walker@job]
+path_walk = bar_arena_man_walk
+path_look = bar_arena_man_look
+on_info = {=is_dolg_nig} walker@no_job_go
+on_signal = arena_man_job | walker@job_yes
+meet = no_meet
+danger = danger_condition
+ 
+[walker@job_yes]
+path_walk = bar_arena_man_walk
+path_look = bar_arena_man_look
+on_info = {=is_dolg_nig} walker@no_job_go
+meet = meet@job
+on_actor_dist_le = 7 | remark@arny_hello
+combat_ignore_cond = {!actor_enemy}
+danger = danger_condition
+
+[remark@arny_hello]
+anim = hello
+target = actor
+snd = arny_hello
+meet = meet@job
+on_timer = 5000|walker@job3
+on_signal = sound_end| walker@job3
+
+[walker@job2]
+path_walk = bar_arena_man_walk
+path_look = bar_arena_man_look
+meet = meet@job
+on_info = {+ui_trade_hide} remark@arny_bye
+on_info2 = {=is_dolg_nig} walker@no_job_go
+combat_ignore_cond = {!actor_enemy}
+danger = danger_condition
+
+[remark@arny_bye]
+target = actor
+snd = arny_thanks
+meet = no_meet
+on_signal = sound_end| walker@job3
+
+[walker@job3]
+path_walk = bar_arena_man_walk
+path_look = bar_arena_man_look
+meet = meet@job
+on_info = {+ui_trade} walker@job2
+on_info2 = {=is_dolg_nig} walker@no_job_go
+combat_ignore_cond = {!actor_enemy}
+danger = danger_condition
+
+[walker@no_job_go]
+path_walk = bar_bar_angar_zoneguard_walk
+path_look = bar_bar_angar_zoneguard_look
+on_info = {!is_dolg_nig} walker@job
+on_signal = angar_zoneguard_bar | walker@no_job
+meet = no_meet
+danger = danger_condition
+
+[walker@no_job]
+path_walk = bar_bar_angar_zoneguard_walk
+path_look = bar_bar_angar_zoneguard_look
+on_info = {!is_dolg_nig} walker@job
+meet = meet@no_job
+danger = danger_condition
+ 
+[meet@job]
+;meet_state = 10 | wait
+;meet_state_wpn = 10 | wait
+victim = 10 | actor
+victim_wpn = 10 | actor
+use = true
+use_wpn = false
+meet_dialog = bar_arena_man_start
+
+[meet@no_job]
+use = true
+use_wpn = true
+meet_talk_enabled = true
+meet_state = ward
+meet_dialog = bar_arena_man_no_job_start
+ 
+[danger_condition]
+ignore_distance_sound = 50
+ignore_distance = 5
+ignore_distance_grenade = 5
+ignore_types = corpse
+ 
+[combat_ignore]
+combat_ignore_cond = {!actor_enemy}

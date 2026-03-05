@@ -1,0 +1,17 @@
+[logic]
+active = ph_door@closed
+
+[ph_door@closed]
+locked = false
+closed = true
+tip_open = open_this_door
+tip_close = 
+on_use = ph_door@open %=play_snd(device\door_start)%
+
+[ph_door@open]
+locked = false
+closed = false
+tip_open = 
+tip_close = close_this_door
+on_use = ph_door@closed %=play_snd(device\door_closing)%
+

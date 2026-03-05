@@ -1,0 +1,16 @@
+[logic]
+active = ph_idle@idle
+
+[ph_idle@idle]
+on_info = {+docent_secret_room_info -x12_secret_flash_have} ph_idle@work, nil
+
+[ph_idle@work]
+tips = komp_flash_in
+on_use = {=check_for_flash} %=flash_set_status% ph_idle@idle2
+
+[ph_idle@idle2]
+on_info = {=get_flash_ready} ph_idle@work2
+
+[ph_idle@work2]
+tips = komp_flash_out
+on_use = {!check_for_flash} %=flash_set_status% nil

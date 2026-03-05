@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+
+<article id="val_dolg_commander_dinamit" name="val_dolg_commander_dinamit_name" article_type="journal" group="enc_task"><text>tex_val_dolg_commander_dinamit</text></article>
+<article id="lost_lebedev_aver" name="lost_lebedev_aver_name" article_type="journal" group="enc_task"><text>tex_lost_lebedev_aver</text></article>
+<article id="ivar_radar_on" name="ivar_radar_on_name" article_type="journal" group="enc_task"><text>tex_ivar_radar_on</text></article>
+<article id="ivar_north" name="ivar_north_name" article_type="journal" group="enc_task"><text>tex_ivar_north</text></article>
+<article id="rad_find_group" name="rad_find_group_name" article_type="journal" group="enc_task"><text>tex_rad_find_group</text></article>
+<article id="rad_mission" name="rad_mission_name" article_type="journal" group="enc_task"><text>tex_rad_mission</text></article>
+<article id="rad_izm_not" name="rad_izm_not_name" article_type="journal" group="enc_task"><text>tex_rad_izm_not</text></article>
+<article id="petrenko_tesla_job" name="petrenko_tesla_job_name" article_type="journal" group="enc_task"><text>tex_petrenko_tesla_job</text></article>
+<article id="tesla_path" name="tesla_path_name" article_type="journal" group="enc_task"><text>tex_tesla_path</text></article>
+<article id="petrenko_tesla" name="petrenko_tesla_name" article_type="journal" group="enc_task"><text>tex_petrenko_tesla</text></article>
+<article id="rygyi_find_habar" name="rygyi_find_habar_name" article_type="journal" group="enc_task"><text>tex_rygyi_find_habar</text></article>
+<article id="ignat_holodec" name="ignat_holodec_name" article_type="journal" group="enc_task"><text>tex_ignat_holodec</text></article>
+<article id="marsh_new_theme" name="marsh_new_theme_name" article_type="journal" group="enc_task"><text>tex_marsh_new_theme</text></article>
+<article id="mil_trader_teleport" name="mil_trader_teleport_name" article_type="journal" group="enc_task"><text>tex_mil_trader_teleport</text></article>
+<article id="mil_max_teleport" name="mil_max_teleport_name" article_type="journal" group="enc_task"><text>tex_mil_max_teleport</text></article>
+<article id="ecolog_find_item_aver" name="ecolog_find_item_aver_name" article_type="journal" group="enc_task"><text>tex_ecolog_find_item_aver</text></article>
+<article id="voronin_killzombi" name="voronin_killzombi_name" article_type="journal" group="enc_task"><text>tex_voronin_killzombi</text></article>
+<article id="psih_food" name="psih_food_name" article_type="journal" group="enc_task"><text>tex_psih_food</text></article>
+<article id="personal_things" name="personal_things_name" article_type="journal" group="enc_task"><text>tex_personal_things</text></article>
+<article id="mil_Svoboda_1plan" name="mil_Svoboda_1plan_name" article_type="journal" group="enc_task"><text>tex_mil_Svoboda_1plan</text></article>
+<article id="mil_Svoboda_2plan" name="mil_Svoboda_2plan_name" article_type="journal" group="enc_task"><text>tex_mil_Svoboda_2plan</text></article>
+<article id="mil_Svoboda_3plan" name="mil_Svoboda_3plan_name" article_type="journal" group="enc_task"><text>tex_mil_Svoboda_3plan</text></article>
+<article id="volkodav_radar" name="volkodav_radar_name" article_type="journal" group="enc_task"><text>tex_volkodav_radar</text></article>
+<article id="flame_reload_receipt" name="flame_reload_receipt_name" article_type="journal" group="enc_task"><text>tex_flame_reload_receipt</text></article>
+<article id="mil_freedom_case" name="mil_freedom_case_name" article_type="journal" group="enc_task"><text>tex_mil_freedom_case</text></article>
+<article id="rad_izm_pribor" name="rad_izm_pribor_name" article_type="journal" group="enc_task"><text>tex_rad_izm_pribor</text></article>
+<article id="rad_izm_outfit" name="rad_izm_outfit_name" article_type="journal" group="enc_task"><text>tex_rad_izm_outfit</text></article>
+<article id="return_x18" name="return_x18_name" article_type="journal" group="enc_task"><text>tex_return_x18</text></article>
+<article id="agr_fox" name="agr_fox_name" article_type="journal" group="enc_task"><text>tex_agr_fox</text></article>
+<article id="decoder_bar" name="decoder_bar_name" article_type="journal" group="enc_task"><text>tex_decoder_bar</text></article>
+<article id="docent_postmens" name="docent_postmens_name" article_type="journal" group="enc_task"><text>tex_docent_postmens</text></article>
+<article id="sakharov_matveev_dop" name="sakharov_matveev_dop_name" article_type="journal" group="enc_task"><text>tex_sakharov_matveev_dop</text></article>
+<article id="ecolog_find_item_red" name="ecolog_find_item_red_name" article_type="journal" group="enc_task"><text>tex_ecolog_find_item_red</text></article>
+<article id="ecolog_find_item_marsh" name="ecolog_find_item_marsh_name" article_type="journal" group="enc_task"><text>tex_ecolog_find_item_marsh</text></article>
+<article id="post_ecolog_start" name="post_ecolog_start_name" article_type="journal" group="enc_task"><texture x="1750" y="1500" width="50" height="100">ui\ui_icon_equipment</texture><text>tex_post_ecolog_start</text></article>
+<article id="mar_leader_job" name="mar_leader_job_name" article_type="journal" group="enc_task"><text>tex_mar_leader_job</text></article>
+<article id="ivancov_return_cherep" name="ivancov_return_cherep_name" article_type="journal" group="enc_task"><text>tex_ivancov_return_cherep</text></article>
+<article id="volkodav_dt_art" name="volkodav_dt_art_name" article_type="journal" group="enc_task"><text>tex_volkodav_dt_art</text></article>
+<article id="esc_reward_case" name="esc_reward_case_name" article_type="journal" group="enc_task"><text>tex_esc_reward_case</text></article>
+<article id="bar_x16_document" name="bar_x16_document_name" article_type="journal" group="enc_task"><text>tex_bar_x16_document</text></article>
+<article id="greens_flesh_shkura" name="greens_flesh_shkura_name" article_type="journal" group="enc_task"><text>tex_greens_flesh_shkura</text></article>
+<article id="dm_bandits_secret" name="dm_bandits_secret_name" article_type="journal" group="enc_task"><text>tex_dm_bandits_secret</text></article>
+<article id="krysyk_pda" name="krysyk_pda_name" article_type="journal" group="enc_task"><text>tex_krysyk_pda</text></article>
+<article id="barman_help_entres" name="barman_help_entres_name" article_type="journal" group="enc_task"><text>tex_barman_help_entres</text></article>
+<article id="kulinar_help_entres" name="kulinar_help_entres_name" article_type="journal" group="enc_task"><text>tex_kulinar_help_entres</text></article>
+<article id="bandit_krisyk_start" name="bandit_krisyk_start_name" article_type="journal" group="enc_task"><texture x="300" y="650" width="100" height="50">ui\ui_icon_equipment</texture><text>tex_bandit_krisyk_start</text></article>
+<article id="sak_military_stalker" name="sak_military_stalker_name" article_type="journal" group="enc_task"><text>tex_sak_military_stalker</text></article>
+<article id="bar_hunter_toz" name="bar_hunter_toz_name" article_type="journal" group="enc_task"><text>tex_bar_hunter_toz</text></article>
+<article id="volk_petruha_more" name="volk_petruha_more_name" article_type="journal" group="enc_task"><text>tex_volk_petruha_more</text></article>
+<article id="volk_petruha" name="volk_petruha_name" article_type="journal" group="enc_task"><text>tex_volk_petruha</text></article>
+<article id="first_deep_raid" name="first_deep_raid_name" article_type="journal" group="enc_task"><text>tex_first_deep_raid</text></article>
+<article id="agr_krot_band" name="agr_krot_band_name" article_type="journal" group="enc_task"><text>tex_agr_krot_band</text></article>
+<!-- -->
+<article id="meelofon_code1" name="meelofon_code_name" article_type="journal" group="kodes"><text>tex_meelofon_code1</text></article>
+<article id="meelofon_code2" name="meelofon_code_name" article_type="journal" group="kodes"><text>tex_meelofon_code2</text></article>
+<article id="meelofon_code3" name="meelofon_code_name" article_type="journal" group="kodes"><text>tex_meelofon_code3</text></article>
+<article id="meelofon_code4" name="meelofon_code_name" article_type="journal" group="kodes"><text>tex_meelofon_code4</text></article>
+<article id="meelofon_code5" name="meelofon_code_name" article_type="journal" group="kodes"><text>tex_meelofon_code5</text></article>
+<article id="meelofon_code6" name="meelofon_code_name" article_type="journal" group="kodes"><text>tex_meelofon_code6</text></article>
+<article id="meelofon_code7" name="meelofon_code_name" article_type="journal" group="kodes"><text>tex_meelofon_code7</text></article>
+<article id="meelofon_code8" name="meelofon_code_name" article_type="journal" group="kodes"><text>tex_meelofon_code8</text></article>
+<article id="meelofon_code9" name="meelofon_code_name" article_type="journal" group="kodes"><text>tex_meelofon_code9</text></article>
+<article id="reminders_main" name="reminders_main" article_type="Journal" group="reminders">
+        <text>reminders_main_text</text>
+</article>
+
+<article id="sl_beginning" name="sl_beginning" article_type="Journal" group="memuars">
+        <text>sl_beginning_text</text>
+    </article> 
+<article id="sl_first_opinions" name="sl_first_opinions" article_type="Journal" group="memuars">
+        <text>sl_first_opinions_text</text>
+    </article>
+<article id="sl_first_deep_raid" name="sl_first_deep_raid" article_type="Journal" group="memuars">
+        <text>sl_first_deep_raid_text</text>
+    </article>
+<article id="agr_journal_krot" name="article_agr_krot_sos_name" article_type="journal" group="memuars">
+		<text>agr_journal_krot</text>
+    </article>
+<article id="agr_journal_cache" name="agr_krot_secret_info_name" article_type="journal" group="memuars">
+		<text>agr_journal_cache</text>
+    </article>
+<article id="journal_before_darklab_documents" name="journal_before_darklab_documents_name" group="memuars" article_type="journal">
+           <text>journal_before_darklab_documents</text>
+    </article>
+<article id="journal_bar_darklab_documents" name="journal_bar_darklab_documents_name" group="memuars" article_type="journal">
+        <text>journal_bar_darklab_documents</text>
+    </article>
+<article id="journal_bar_x16_documents" name="journal_bar_x16_documents_name" group="memuars" article_type="journal">
+        <text>journal_bar_x16_documents</text>
+    </article>
+<article id="journal_before_vasilyev_pda" name="journal_before_vasilyev_pda_name" group="memuars" article_type="journal">
+        <text>journal_before_vasilyev_pda</text>
+    </article>
+<article id="journal_klyk_help" name="klyk_help_name" group="memuars" article_type="journal">
+        <text>tex_klyk_help</text>
+    </article>
+<article id="strelok_spots" name="strelok_spots_name" article_type="journal" group="memuars">
+	    <text>tex_strelok_spots</text>
+    </article>
+<article id="journal_after_kill_brain" name="journal_after_kill_brain_name" group="memuars" article_type="journal">
+        <text>journal_after_kill_brain</text>
+    </article>
+<article id="journal_before_radar_task" name="journal_before_radar_task_name" group="memuars" article_type="journal">
+        <text>journal_before_radar_task</text>
+    </article>
+<article id="journal_doctor_dream" name="journal_doctor_dream_name" article_type="journal" group="memuars">
+	    <text>journal_doctor_dream_text</text>
+    </article>
+<article id="journal_barier" name="journal_barier_name" article_type="journal" group="memuars">
+	    <text>journal_barier_text</text>
+    </article>
+<article id="journal_radar" name="journal_radar_name" article_type="journal" group="memuars">
+	    <text>journal_radar_text</text>
+    </article>
+<article id="journal_rad_mission" name="journal_rad_mission_name" article_type="journal" group="memuars">
+	    <text>journal_rad_mission_text</text>
+    </article>
+<article id="journal_ivar" name="journal_ivar_name" article_type="journal" group="memuars">
+	    <text>journal_ivar_text</text>
+    </article>
+<article id="journal_monolit" name="journal_monolit_name" article_type="journal" group="memuars">
+	    <text>journal_monolit_text</text>
+    </article>

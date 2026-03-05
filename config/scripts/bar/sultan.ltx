@@ -1,0 +1,22 @@
+[logic]
+active = walker@sultan_way
+combat_ignore = combat_ignore
+
+[walker@sultan_way]
+path_walk = sultan_way
+path_look = sultan_look
+meet = meet
+combat_ignore_cond = {!actor_enemy} always
+
+[meet]
+meet_state = 5|ward
+meet_state_wpn 	= 5|ward
+victim = actor
+victim_wpn = actor
+use	= true
+use_wpn	= false
+abuse = false
+meet_dialog	= sultan_start_dialog
+
+[combat_ignore]
+combat_ignore_cond = always

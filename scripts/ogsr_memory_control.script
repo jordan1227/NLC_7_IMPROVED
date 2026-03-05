@@ -1,0 +1,56 @@
+-- KRodin: Этот скрипт периодически проверяет кол-во используемой луаджитом памяти.
+-- При достижении определённого значения, пишет в лог предупреждение, что где-то происходит утечка.
+-- Особенно актуально для x64 луаджита, т.к. для него, из-за его особенностей,
+-- при запуске игры выделяется 128 мб памяти, и соотв. больше этого кол-ва он использовать не сможет, и начнутся разнообразные вылеты.
+-- В одном моде встретил настолько дикие утечки, что под впечатлением решил такой скрипт написать.
+
+local enabled = true --Включен ли скрипт?
+local MEMORY_WARNING_AFTER = 50000 --Пусть будет 50мб. По моим наблюдениям, скрипты больше этого не потребляли никогда.
+local MEMORY_CHECK_INTERVAL = 60000
+
+local minv = 0
+local maxv = 0
+
+class "exec_periodic"
+function exec_periodic:__init(fun, time)
+	self.call_func = fun
+	self.time = time
+	self.call = level.add_call(self, self.condition, function() end)
+end
+function exec_periodic:condition()
+	self.call_func()
+	self.call:set_pause(self.time)
+	return false
+end
+
+
+function attach()
+	if not enabled then return end
+	if not is_debug_mode then return end
+	--
+	this.exec_periodic(
+		function()
+			if device().precache_frame > 1 or not app_ready() then return end
+			local memuse = collectgarbage("count")
+			if minv == 0 then minv = memuse end
+			local pref = "##"
+			if minv > memuse then
+				minv = memuse
+				pref = "-- DECREASE"
+			end
+			if maxv < memuse then
+				maxv = memuse
+				pref = "!! INCREASE "
+			end
+			log3(pref.."[%s] LUAJIT MEMORY USAGE: [%d KB], MIN|MAX: [%d|%d KB]", script_name():upper(), memuse, minv, maxv)
+			--[=[if memuse > MEMORY_WARNING_AFTER then --С переходом на LuaJIT 2.1 - не нужно.
+				collectgarbage("collect")
+				memuse = collectgarbage("count")
+				if memuse > MEMORY_WARNING_AFTER then
+					log3("!![%s] MEMORY LEAK FOUND! LUAJIT MEMORY USAGE: [%d KB]", script_name():upper(), memuse)
+				end
+			end]=]
+		end,
+		MEMORY_CHECK_INTERVAL
+	)
+end

@@ -1,0 +1,168 @@
+local torch_mode = "near"
+local upgraded_torch = false
+
+function attach(sm)
+    sm:subscribe({signal = "on_save", fun = this.on_save})
+    sm:subscribe({signal = "on_first_update", fun = this.on_first_update})
+	sm:subscribe({signal = "on_update", fun = this.update})
+	sm:subscribe({signal = "on_before_switch_torch", fun = this.switch_torch})
+	-- sm:subscribe({signal = "inv_drag_drop", fun = this.inv_drag_drop})
+	-- sm:subscribe({signal = "on_actor_before_use", fun = this.on_use})
+end
+
+local process_switch
+function switch_torch()
+	local torch = db.actor:alive() and db.actor:item_in_slot(9)
+	if not (torch and torch:is_torch()) then return end
+	torch = get_torch_obj(torch)
+	torch.disable_switch = false
+	local sw_mode = torch.switch_mode
+
+	if db.actor:active_item() and not sw_mode then torch_snd() return end
+
+	if db.actor:active_item() and sw_mode then
+		torch_switch_mode()
+		torch.disable_switch = true
+		torch_snd()
+		return
+	end
+
+	if process_switch then
+		process_switch = nil
+		return
+	end
+
+	local detector = db.actor:item_in_slot(8)
+	local torch_anm_sec = "switch_torch"
+	local anim = "anm_show"
+	if detector and get_actor_obj():IsDetectorActive() then
+		torch_anm_sec = get_string(detector:section(), "hud")
+		anim = "anm_headlamp_on"
+	end
+	local torch_anm_time_1 = game.get_motion_length(torch_anm_sec, anim, 1)
+	torch.disable_switch = true
+	level.only_allow_movekeys(true)
+	level.set_actor_allow_ladder(false)
+	game.play_hud_motion(db.actor:active_item() and 1 or 2, torch_anm_sec, anim, false, 1)
+	-- level.add_cam_effector("camera_effects\\weapon\\headflash.anm", 7538, false, "", 0, false)
+	dsh.timeout(torch_anm_time_1 * 0.5, function()
+		torch_snd()
+		if sw_mode then
+			torch_switch_mode()
+		else
+			process_switch = true
+			torch_switch()
+		end
+		dsh.timeout(torch_anm_time_1, function()
+			level.only_allow_movekeys(false)
+			level.set_actor_allow_ladder(true)
+		end)
+	end)
+end
+
+function torch_switch()
+	local torch = db.actor:alive() and db.actor:item_in_slot(9)
+	if torch and torch:is_torch() then
+		torch = get_torch_obj(torch)
+		torch:switch(true)
+	end
+end
+
+function torch_switch_mode()
+	local torch = db.actor:alive() and db.actor:item_in_slot(9)
+	if torch and torch:is_torch() then
+		torch = get_torch_obj(torch)
+		if torch_mode == "near" then
+			set_far_mode(torch)
+		else
+			set_near_mode(torch)
+		end
+	end
+end
+
+function torch_snd()
+	if not process_switch then
+		local snd = "device\\light_on"
+		xr_sound.get_safe_sound_object(snd):play(db.actor, 0, sound_object.s2d)
+	end
+end
+
+function set_near_mode(torch)
+    torch_mode = "near"
+	if upgraded_torch then
+		torch:set_range(30)
+		torch:set_angle(math.rad(90))
+	else
+		torch:set_range(20)
+		torch:set_angle(math.rad(80))
+	end
+end
+
+function set_far_mode(torch)
+    torch_mode = "far"
+	if upgraded_torch then
+		torch:set_range(70)
+		torch:set_angle(math.rad(55))
+	else
+		torch:set_range(50)
+		torch:set_angle(math.rad(45))
+	end
+end
+
+function on_save()
+    set_value(script_name() .. ".save_torch_mode", torch_mode)
+end
+
+function on_first_update()
+    local var = get_value(script_name() .. ".save_torch_mode")
+    if not var then return end
+    local torch = db.actor:item_in_slot(9)
+    if torch and torch:is_torch() then torch = get_torch_obj(torch) end
+    if not torch then return end
+    if var == "far" then
+        set_far_mode(torch)
+    else
+        set_near_mode(torch)
+    end
+	torch_mode = var
+	upgraded_torch = get_value("upgraded_torch",false)
+    -- log3("[%s]: Loading torch mode: [%s]", script_name(), tostring(var))
+end
+
+local lvl = level.name()
+function update()
+	ogse_signals.get_mgr():reschedule(1000)
+	local torch = db.actor:item_in_slot(9)
+	if torch and torch:is_torch() then
+		torch_obj = get_torch_obj(torch)
+        local upd_cond = torch:condition()
+		if torch_obj.on then
+			local step = 0.00025
+			if torch_mode == "far" then
+				step = step * 2
+			end
+			if lvl == "aver" then -- Manool: в Туманной Чаще в 5 раз быстрее
+				step = step * 5
+			end
+			if not upgraded_torch then
+				step = step * 0.75 -- Sn: начальный фонарик чуть дольше держит заряд
+			end
+            upd_cond = upd_cond - step
+			torch:set_condition(upd_cond)
+		end
+		if upgraded_torch then
+			torch_obj:set_brightness((upd_cond < 0.5) and upd_cond or 1)
+		else
+			upd_cond = upd_cond - 0.15
+			if upd_cond < 0 then
+				upd_cond = 0
+			end
+			torch_obj:set_brightness((upd_cond < 0.6) and upd_cond or 1)
+		end
+	end
+end
+
+function set_upgraded_torch()
+	set_value("upgraded_torch",true)
+	upgraded_torch = true
+end

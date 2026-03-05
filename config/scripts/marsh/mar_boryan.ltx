@@ -1,0 +1,31 @@
+[logic]
+active = walker@day
+on_death = death
+danger = danger_condition
+
+[walker@day]
+path_walk = mar_boryan_walk
+path_look = mar_boryan_look
+meet = meet@boryan
+danger = danger_condition
+
+[meet@boryan]
+meet_state = 4 | wait
+meet_state_wpn = 4 | claim
+victim = 4 | actor
+victim_wpn = 4 | actor
+use = true
+use_wpn = false
+abuse = false
+meet_dialog = mar_boryan_start_dialog
+
+[danger_condition]
+ignore_distance = 1
+ignore_types = corpse
+ignore_distance_sound = 3
+danger_inertion_time_sound = 1000
+danger_inertion_time_ricochet = 1000
+ignore_distance_corpse = 3
+
+[death]
+on_info = %+mar_boryan_umer%

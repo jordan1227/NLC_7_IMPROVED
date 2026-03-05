@@ -1,0 +1,13 @@
+[logic]
+active = {-pump_x12_on} ph_idle@idle0, nil
+
+[ph_idle@idle0]
+tips = no_supply
+on_info = {+zub_pump_info +x12_pump_on} ph_idle@idle1
+
+[ph_idle@idle1]
+tips = pump_start
+on_use = %=sak.actor_hide_weapon()% ph_idle@idle2_1
+
+[ph_idle@idle2_1]
+on_timer = 1000| nil %+pump_x12_on%

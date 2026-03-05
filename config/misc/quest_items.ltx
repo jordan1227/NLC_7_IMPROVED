@@ -1,0 +1,495 @@
+[quest_tools]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 				= "devices\quest_items\quest_tools"
+class				= II_ATTCH
+cform				= skeleton
+visual				= new_item\safe_container.ogf
+radius				= 1
+quest_item			= true
+description		 = gun_tools_desc
+inv_name			= gun_tools_name
+inv_name_short		= gun_tools_name
+inv_weight			= 15
+icon_group                  = 3
+inv_grid_width     = 2
+inv_grid_height    = 2
+inv_grid_x         = 6
+inv_grid_y         = 0
+cost				= 0
+
+watcher_act.bad_item = true
+
+[quest_case_01]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 				= "devices\quest_items\quest_case_01"
+class				= II_ATTCH
+cform				= skeleton
+visual				= new_item\safe_container.ogf
+radius				= 1
+quest_item			= false
+description		 = item_case_esc_desc
+inv_name			= item_case_esc_name
+inv_name_short		= item_case_esc_name
+inv_weight			= 8.6
+inv_grid_width		= 2
+inv_grid_height		= 2
+inv_grid_x			= 10
+inv_grid_y			= 0
+cost				= 5000
+
+watcher_act.bad_item = true
+
+[same_quest_case]:quest_case_01
+description		 = same_case_esc_desc
+inv_name			= same_case_esc_name
+inv_name_short		= same_case_esc_name
+inv_weight			= 8.6
+cost				= 1000
+
+[dynamite]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 				= "devices\quest_items\dynamite"
+class				= II_ATTCH
+cform				= skeleton
+visual				= physics\box\expl_dinamit.ogf
+radius				= 1
+quest_item			= false
+description		 	= item_dynamite_esc_desc
+inv_name			= item_dynamite_esc_name
+inv_name_short		= item_dynamite_esc_name
+inv_weight			= 23
+inv_grid_width		= 2
+inv_grid_height		= 2
+inv_grid_x			= 10
+inv_grid_y			= 2
+cost				= 100000
+
+watcher_act.bad_item = true
+
+[esc_wounded_flash]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 				= "devices\quest_items\esc_wounded_flash"
+class				= II_ATTCH
+cform				= skeleton
+visual				= equipments\item_minipda.ogf
+radius				= 1
+quest_item			= false
+description		 	= item_flash_esc_desc
+inv_name			= item_flash_esc_name
+inv_name_short		= item_flash_esc_name
+inv_weight			= 0.06
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 9
+inv_grid_y			= 13
+cost				= 0
+
+watcher_act.bad_item = true
+
+[gunslinger_flash]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 				= "devices\quest_items\gunslinger_flash"
+class				= II_ATTCH
+cform				= skeleton
+visual				= new_item\flash_02.ogf
+radius				= 1
+quest_item			= false
+description		 	= item_flash_gslinger_agro_desc
+inv_name			= item_flash_gslinger_agro_name
+inv_name_short		= item_flash_gslinger_agro_name
+inv_weight			= 0.06
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 9
+inv_grid_y			= 11
+cost				= 0
+
+watcher_act.bad_item = true
+
+[zub_flash]:gunslinger_flash
+description		 	= zub_flash_desc
+inv_name			= zub_flash_name
+inv_name_short		= zub_flash_name
+
+[x16_flash]:gunslinger_flash
+description		 	= x16_flash_desc
+inv_name			= x16_flash_name
+inv_name_short		= x16_flash_name
+
+[psy_scan_data_flash]:gunslinger_flash
+description		 	= psy_scan_data_flash_desc
+inv_name			= psy_scan_data_flash_name
+inv_name_short		= psy_scan_data_flash_name
+
+[x12_secret_flash]:psy_scan_data_flash
+description		 	= x12_secret_flash_desc
+inv_name			= x12_secret_flash_name
+inv_name_short		= x12_secret_flash_name
+
+[quest_case_02]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 				= "devices\quest_items\quest_case_02"
+class				= II_ATTCH
+cform				= skeleton
+visual		 		= equipments\item_dipl.ogf
+radius				= 1
+quest_item			= false
+can_trade			= true ; false
+description		 	= item_quest_case_02_desc
+inv_name			= item_quest_case_02_name
+inv_name_short		= item_quest_case_02_name
+inv_weight			= 4
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 8
+inv_grid_y			= 12
+cost				= 0
+
+watcher_act.bad_item = true
+
+[bar_lucky_pda]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 				= "devices\quest_items\bar_lucky_pda"
+class				= II_ATTCH
+cform				= skeleton
+visual				= dynamics\devices\dev_pda\dev_pda
+radius				= 1
+quest_item			= false
+description			= item_pda_lucky_desc
+inv_name			= item_pda_lucky_name
+inv_name_short		= item_pda_lucky_name
+inv_weight			= 0.3
+icon_group      	= 7
+inv_grid_width      = 2
+inv_grid_height     = 1
+inv_grid_x          = 72
+inv_grid_y          = 36
+cost				= 0
+
+watcher_act.bad_item = true
+
+[kruglov_pda]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 				= "devices\quest_items\kruglov_pda"
+class				= II_ATTCH
+cform				= skeleton
+visual				= equipments\item_minipda.ogf
+radius				= 1
+quest_item			= false
+description			= item_flash_eco_rost_desc
+inv_name			= item_flash_eco_rost_name
+inv_name_short		= item_flash_eco_rost_name
+inv_weight			= 0.3
+icon_group      	= 7
+inv_grid_width      = 2
+inv_grid_height     = 1
+inv_grid_x          = 72
+inv_grid_y          = 36
+cost				= 10000
+
+watcher_act.bad_item = true
+
+
+[lab_x16_documents]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 				= "devices\quest_items\yan_x16_documents"
+
+class				= II_ATTCH
+cform				= skeleton
+visual				= equipments\item_document_1.ogf
+radius				= 1
+
+quest_item			= false
+
+description			= item_doc_x16_desc
+
+inv_name			= item_doc_x16_name
+inv_name_short		= item_doc_x16_name
+inv_weight			= 0.13
+
+inv_grid_width    	= 2
+inv_grid_height  	= 1
+inv_grid_x      	= 10
+inv_grid_y      	= 4
+cost				= 500
+
+ph_heavy = true ; used_by_tele = false
+watcher_act.bad_item = true
+				
+[war_document]:lab_x16_documents
+description			= war_document_desc
+inv_name			= war_document_name
+inv_name_short		= war_document_name
+
+[x18_document]:war_document
+description			= x18_document_desc
+
+[bun_document]:war_document
+
+[marsh_document]:war_document
+
+[kruglov_flash]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 				= "devices\quest_items\kruglov_flash"
+$prefetch 			= 32
+class				= D_SIMDET
+cform				= skeleton
+visual				= equipments\item_datchik3.ogf
+radius				= 10
+quest_item			= false
+ef_detector_type	= 1
+
+description			= item_detector_yantar_desc
+inv_name			= item_detector_yantar_name
+inv_name_short		= item_detector_yantar_name
+inv_weight			= 1.5
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 7
+inv_grid_y			= 19
+cost				= 1500
+
+attach_angle_offset		= -0.160570,-1.425061,-0.361283
+attach_position_offset	= 0.160570,-0.060214,0.020071
+attach_bone_name		= bip01_l_hand
+auto_attach				= false
+
+watcher_act.bad_item = true
+
+[dar_document2]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 				= "devices\quest_items\dar_document2"
+class				= II_ATTCH
+cform				= skeleton
+visual				= equipments\item_document_1.ogf
+radius				= 1
+quest_item			= false
+description			= item_doc_x18_desc
+inv_name			= item_doc_x18p2_name
+inv_name_short		= item_doc_x18p2_name
+inv_weight			= 0.26
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 10
+inv_grid_y			= 4
+cost				= 1000
+
+ph_heavy = true
+watcher_act.bad_item = true
+
+[dar_document3]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 				= "devices\quest_items\dar_document3"
+class				= II_ATTCH
+cform				= skeleton
+visual				= equipments\item_document_1.ogf
+radius				= 1
+quest_item			= false
+description			= item_doc_x18_desc
+inv_name			= item_doc_x18p3_name
+inv_name_short		= item_doc_x18p3_name
+inv_weight			= 0.23
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 10
+inv_grid_y			= 4
+cost				= 1000
+
+ph_heavy = true
+watcher_act.bad_item = true
+
+[dar_document4]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 				= "devices\quest_items\dar_document4"
+class				= II_ATTCH
+cform				= skeleton
+visual				= new_item\documents_4.ogf
+radius				= 1
+quest_item			= false
+description			= item_doc_x18_desc
+inv_name			= item_doc_x18p4_name
+inv_name_short		= item_doc_x18p4_name
+inv_weight			= 0.3
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 9
+inv_grid_y			= 8
+cost				= 100
+
+ph_heavy = true ; used_by_tele = false
+watcher_act.bad_item = true
+
+[x10_document1]:dar_document4
+description			= item_doc_x10p1_desc
+inv_name			= item_doc_x10p1_name
+inv_name_short		= item_doc_x10p1_name
+
+[x10_document2]:dar_document4
+description			= item_doc_x10p2_desc
+inv_name			= item_doc_x10p2_name
+inv_name_short		= item_doc_x10p2_name
+
+[dar_document5]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 				= "devices\quest_items\dar_document5"
+class				= II_ATTCH
+cform				= skeleton
+visual				= equipments\item_document_1.ogf
+radius				= 1
+quest_item			= false
+description			= item_doc_x18_desc
+inv_name			= item_doc_x18p5_name
+inv_name_short		= item_doc_x18p5_name
+inv_weight			= 0.2
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 10
+inv_grid_y			= 4
+cost				= 1000
+
+ph_heavy = true ; used_by_tele = false
+watcher_act.bad_item = true
+
+[marsh_tuzla_document]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 				= "devices\quest_items\dar_document5"
+class				= II_ATTCH
+cform				= skeleton
+visual				= equipments\item_document_1.ogf
+radius				= 1
+quest_item			= false
+description			= marsh_tuzla_document_desc
+inv_name			= marsh_tuzla_document
+inv_name_short		= marsh_tuzla_document
+inv_weight			= 0
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 10
+inv_grid_y			= 4
+cost				= 0
+
+ph_heavy = true
+watcher_act.bad_item = true
+
+[decoder]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 				= "devices\quest_items\decoder"
+class				= II_ATTCH
+cform				= skeleton
+visual				= equipments\item_decoder.ogf
+radius				= 1
+quest_item			= false
+description			= item_decoder_desc
+inv_name			= item_decoder_name	
+inv_name_short		= item_decoder_name
+inv_weight			= 0
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x          = 10
+inv_grid_y          = 9
+cost				= 50
+
+ph_heavy = true ; used_by_tele = false
+watcher_act.bad_item = true
+
+[amk_af_night_star]:af_night_star
+particles			= samples\tut2_pe_with_child
+quest_item			= false
+hit_absorbation_sect = amk_af_night_star_absorbation
+watcher_act.bad_item = true
+
+[amk_af_night_star_absorbation]:af_night_star_absorbation
+
+
+[flame_parts]:identity_immunities
+GroupControlSection    = spawn_group
+discovery_dependency = 
+class				= II_ATTCH
+cform				= skeleton
+visual				= amk\flame_prt_gorelka.ogf
+radius				= 1
+description		    = flame_part_desc
+inv_name		    = item_flame1_name    
+inv_name_short		= item_flame1_name
+inv_weight		    = 0
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x		    = 10
+inv_grid_y		    = 10
+cost				= 50
+
+watcher_act.bad_item = true
+
+[gorelka]:flame_parts
+visual				= amk\flame_prt_gorelka.ogf
+description		    = gorelka_descr
+inv_name		    = gorelka    
+inv_name_short		= gorelka
+inv_weight		    = 1
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x		    = 10
+inv_grid_y		    = 10
+
+[manometr]:flame_parts
+visual				= amk\flame_prt_manometr.ogf
+description		    = manometr_descr
+inv_name		    = manometr
+inv_name_short		= manometr
+inv_weight		    = 1
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x		    = 10
+inv_grid_y		    = 11
+
+[trubka]:flame_parts
+visual				= amk\flame_prt_trubka.ogf
+description		    = trubka_descr
+inv_name		    = trubka
+inv_name_short		= trubka
+inv_weight		    = 0.5
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x		    = 10
+inv_grid_y		    = 12
+
+[mil_crazy_key]:kruglov_pda
+description			= mil_crazy_key_desc
+inv_name			= mil_crazy_key_name
+inv_name_short		= mil_crazy_key_name
+quest_item			= true
+icon_group 			= 3
+inv_grid_width      = 1
+inv_grid_height     = 1
+inv_grid_x          = 12
+inv_grid_y          = 2
+inv_weight			= 0.01
+cost				= 0
+
+[povar_lost_key]:mil_crazy_key
+description			= povar_lost_key_desc
+
+[dog_tag]:mil_crazy_key
+inv_name			= dog_tag_name
+description			= dog_tag_desc
+icon_group         	= 3
+inv_grid_width     	= 2
+inv_grid_height    	= 1
+inv_grid_x         	= 13
+inv_grid_y         	= 3

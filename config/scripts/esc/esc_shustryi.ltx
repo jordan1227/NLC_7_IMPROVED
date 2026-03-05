@@ -1,0 +1,132 @@
+[logic]
+active = walker
+combat_ignore = combat_ignore
+on_death = death@shustryi
+
+[walker]
+path_walk = esc_lager_prisoner_walk
+path_look = esc_lager_prisoner_look
+combat_ignore_cond = always
+def_state_campering = prisoner
+on_info = {+esc_kill_bandits_quest_kill} remark@esc_lager_help
+on_info2 = {+shustriy_move_out} walker6
+on_info3 = {+atp_bandits_open_fire} walker2
+on_info4 = {+atp_bandit_leader_ok} walker4
+on_info5 = {+atp_bandit_pda_done} walker5
+show_spot = false 
+meet = no_meet
+danger = danger_condition@shustryi1
+
+[walker2]
+path_walk = esc_lager_prisoner_walk
+path_look = esc_lager_prisoner_look
+combat_ignore_cond = always
+def_state_campering = prisoner
+on_info = {+esc_kill_bandits_quest_kill} remark@esc_lager_help
+on_info2 = {+shustriy_move_out} walker6
+meet = no_meet
+show_spot = false 
+danger = danger_condition@shustryi1
+
+[walker4]
+path_walk = esc_lager_prisoner_walk
+path_look = esc_lager_prisoner_look
+combat_ignore_cond = always
+def_state_campering = prisoner
+on_info = {+esc_kill_bandits_quest_kill} remark@esc_lager_help
+on_info2 = {+shustriy_move_out} walker6
+on_info3 = {+atp_bandits_open_fire} walker2
+
+meet = meet@prisoner
+show_spot = false 
+danger = danger_condition@shustryi1
+
+[walker5]
+path_walk = esc_lager_prisoner_walk
+path_look = esc_lager_prisoner_look
+combat_ignore_cond = always
+def_state_campering = prisoner
+on_info = {+shustriy_move_out} walker6
+on_info2 = {+esc_kill_bandits_quest_kill} remark@esc_lager_help
+on_timer = 90000| %=sak.esc_shustryi_stalker()%
+on_actor_dist_ge_nvis = 50 | %=sak.esc_shustryi_stalker()%
+meet = meet@prisoner
+show_spot = false 
+danger = danger_condition@shustryi1
+
+[remark@esc_lager_help]
+snd = esc_shustryi_help
+anim = prisoner
+meet = no_meet
+target = esc_lager_prisoner_look, 0
+on_actor_dist_le = 5| remark@esc_lager_prisoner
+combat_ignore_cond = always
+danger = danger_condition@shustryi1
+on_signal = sound_end| remark@esc_shustryi_wait
+on_info = {+shustriy_move_out} walker6
+show_spot = false 
+
+[remark@esc_shustryi_wait]
+anim = prisoner
+meet = no_meet
+target = esc_lager_prisoner_look, 0
+on_actor_dist_le = 5| remark@esc_lager_prisoner
+combat_ignore_cond = always
+danger = danger_condition@shustryi1
+on_timer = 10000| remark@esc_lager_help
+on_info = {+shustriy_move_out} walker6
+show_spot = false 
+
+[remark@esc_lager_prisoner]
+anim = wait
+anim_reset = false
+target = actor
+snd = esc_shustryi_thanks
+on_info = {+shustriy_move_out} walker6
+on_signal = sound_end| remark@wait_player_at_lager
+combat_ignore_cond = always
+meet = meet@no_meet
+danger = danger_condition@shustryi1
+show_spot = true 
+
+[remark@wait_player_at_lager]
+anim = wait
+anim_reset = false
+target = actor
+meet = meet@friend
+danger = danger_condition@shustryi1
+on_info = {+shustriy_move_out} walker6
+show_spot = true
+
+[walker6]
+path_walk = shustryi_walk
+;path_look = shustryi_look
+def_state_moving1 = sprint
+def_state_moving2 = sprint
+def_state_moving3 = sprint
+online = true
+on_signal = at_esc_lager| %+shustriy_go_lager% sleeper@esc_lager
+meet = no_meet
+danger = danger_condition@shustryi1
+show_spot = true
+
+[sleeper@esc_lager]
+path_main = esc_lager_sleep4
+meet = meet@esc_lager
+danger = danger_condition@shustryi1
+show_spot = true
+
+[meet@prisoner]
+victim = 5 | actor
+victim_wpn = 5 | actor
+meet_dialog = esc_shustryi_prisoner
+use = true
+
+[meet@esc_lager]
+meet_dialog = escape_shustryi_start
+
+[death@shustryi]
+on_death = %+esc_shustryi_umer%
+
+[danger_condition@shustryi1]
+ignore_distance = 0

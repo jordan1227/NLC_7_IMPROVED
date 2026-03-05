@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+<string id="st_title"><text>NLC-7 "Я - Меченный" - это модификация игры "STALKER - Shadow of Chernobyl" от компании GSC</text></string>
+<string id="st_author"><text>Автор и разработчик всего проекта NLC 6-7</text></string>
+<string id="st_sak"><text>Александр Соков (Сяк)</text></string>
+<string id="st_project_lead"><text>Над проектом долго и плодотворно работали:</text></string>
+<string id="st_alpet_vergas"><text>Александр Петров (alpet) \n \nСергей Бондарев (Vergas)</text></string>
+<string id="st_other"><text>А также:</text></string>
+<string id="st_other_names_1"><text>Alkseur \nDance_of_Shadow \nDimOriN \nivar \nKolmogor \nKostya_V \nMulleR \nRock`n_Roll \nSerafim-12</text></string>
+<string id="st_other_names_2"><text>SOB \nSpartakAMK \nWawka \nWhisper \nzayaz \nгриг \nИМХО9000 \nМонгол \nПСЕВДО-S.T.A.L.K.E.R.</text></string>
+<string id="st_another"><text>Принимали непосредственное участие в работе, разработке, доработке, первичном тестировании, а также давали идеи, советы, предложения и вдохновляли автора:</text></string>
+<string id="st_another_names_1"><text>a185 \nakaund \nBlack Hawk \nblooderden \nbrusnik \nDamage \nGrayCat \nGrisli \nHemyl \nkha0s \nKhorn</text></string>
+<string id="st_another_names_2"><text>Kot Markiz \nKotobegemott \nMari \nMAV \nMisch_toptun \nn6260 \nNelson \nphancop  \nPulse \nRUS_D \nScarface</text></string>
+<string id="st_another_names_3"><text>serega-22 \nShepard \nStep \nTAYLI \nVIRrusR \nwaylander \nZVER \nДар \nРуся \nСедой</text></string>
+<string id="st_testers"><text>А также многочисленные тестеры первой волны закрытого бета-тестирования:</text></string>
+<string id="st_testers_name_1"><text>79515456427 \nAlcvanar \nAlexBess \nAndrey \nArsen \nAsproRoker \nastralpiligrim \nBeadDed \nBOL4OK \nBordax \nCD \ncop_lex \nDarwin \nDen_Avatar \nDron099 \nds5018 \nender</text></string>
+<string id="st_testers_name_2"><text>Faustgad \nFrags \nginciunas \ngleb27 \nHolod \nHuNter_32R \nIllusioner \nJacob \nJIleToH \nkamatozZ \nki1243ka \nkilolife \nKpecm \nkrasherwares \nKripT \nKroh \nlagotsi</text></string>
+<string id="st_testers_name_3"><text>MAB \nmacroforator \nMade-in-USSR \nmain_battery \nMaslina_Shtick \nmaxander60 \nmiranon \nMohock \nMozart \nNapoleon1 \nnikmar42 \nNoreiN \noperator \npauk \nperekat \nPetrenka \npsionik1113</text></string>
+<string id="st_testers_name_4"><text>-R-V-S- \nReign_of_Monolith \nrenii \nrocknrollsoldier \nrothmans777 \nRussula \nRygiy \nSan_Sania \nScarface \nseryi-34 \nShnaps \nSleepless \nSOLYAR1S \nSparrow \nSSSR \nSuhar</text></string>
+<string id="st_testers_name_5"><text>Tuxuu \nUgrum-75 \nvinaigrette \nvovan123 \nvut112 \nvvdok \nwellew \nWlad777 \nXIII \nzu1 \nАтмосферный \nжестик \nКарлан \nКошевой \nМаньяк \nЧистякоff \nШВАК</text></string>
+<string id="st_other_gamers"><text>И другие тестеры и игроки.</text></string>
+<string id="st_anater_one"><text>Свои фантазии, исправления и добавления без согласования с автором \nвнёс</text></string>
+<string id="st_anater_one_name"><text>mikelik</text></string>
+<string id="st_end_1"><text>Стоит особо поблагодарить бывшую компанию GSC и бывшую команду АМК.</text></string>
+<string id="st_end_2"><text>А также: \n \n \nAI-Pack от xStream \nSkyGRAPHICS-MOD v2.0 RC4.1 от Sky4CE \nФотозона от Argus \nФотоживность от Argus и Domestos \nStories revival mod v. 0.6 от Red75 \nStalker`s sound remake v.4.0 от MulleR и Монгол \nКонтейнеры для артефактов от ARC-team \nБьющиеся лампочки от macron1 \nЗаминированные тайники от frag \nПогодный мод для АМК от  NightVz \nАмбиент из ААО 1.8 \nArsenal mod от Dester</text></string>
+<string id="st_end_3"><text>Сборку NLC 3.9.1 для вас подготовили: Sn1ck, waylander, Оружейник</text></string>
+<string id="st_improved_end_1"><text>\n Над версией NLC Improved работали: \n \nManool - перенос на OGSR, движок, конфиги, скрипты \nSn1ck - движок, конфиги, скрипты, квесты \nВоскресенский - работа над локациями \nVeNoMMaNs - работа над локациями \nwaylander - конфиги, иконки, доработка погоды \n \n \n Большое спасибо: \n \nРазработчикам OGSR Engine: xrSimpodin, dsh2dsh, joye-ramone и другим \nРазработчикам Improved weapon pack: ROOZBAN, _V_O_IN_, Valerok, Misery, OldSerpskiStalker, Вячеслав Майнов \nРазработчику CGIM 2: Жора Цементов \nИспользованы работы авторов: dsh, alpet, naxac, PavelBlend, moof1x, KD, Sleep \nИспользованы наработки из модов: OGSR GA, DSH mod, Anomaly</text></string>
+<string id="st_improved_end_2"><text>Активные участники первых тестов NLC Improved: \n \n4etkiu \nChapa \nEnclavezzz \nmaximusantares \nmemeconductor \nNeon \npaxaneva999№79 \npxint. \nRahh \nRaremetaller \nSleep \nTost \nValdmarTonnes \nДимедрол \nИлья \nСергей \nХромыйДiд</text></string>
+<string id="st_end_4"><text>Просим прощения, \nесли кто-то был незаслуженно забыт.</text></string>
+</string_table>

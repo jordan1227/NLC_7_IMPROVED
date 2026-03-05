@@ -1,0 +1,237 @@
+[wpn_saiga12c_m1]:wpn_saiga12c
+GroupControlSection					= spawn_group
+discovery_dependency 				= 
+$spawn								= "weapons\uniq\wpn_saiga12c_m1"
+$npc								= on	
+$prefetch							= 8
+scheduled							= off
+cform								= skeleton
+
+min_radius          				= 0
+max_radius          				= 50
+
+description							= enc_wpn-saiga12c_m1
+dialog_description        			= desc_dialog_wpn-saiga12c_m1
+
+
+ef_main_weapon_type					= 2
+ef_weapon_type						= 6
+
+holder_range_modifier				= 1.0
+holder_fov_modifier					= 1.0 
+
+cost								= 20000
+weapon_class						= shotgun
+
+ammo_limit		 					= 120
+ammo_current		 				= 96
+ammo_elapsed		 				= 8
+
+f_mode								= 1
+
+ammo_mag_size		 				= 10 ; 8
+ammo_class							= ammo_12x70_buck,ammo_12x76_dart,ammo_12x76_zhekan
+
+hand_dependence			 			= 1
+
+slot 				 				= 2
+animation_slot		 				= 2
+
+single_handed						= 1
+
+inv_name	        				= wpn-saiga12c_m1
+inv_name_short						= wpn-saiga12c_m1
+inv_weight							= 3.85
+inv_grid_height                                    = 2
+inv_grid_width                                     = 6
+inv_grid_x                                         = 62
+inv_grid_y                                         = 4
+
+fire_dispersion_base				= 0.44
+control_inertion_factor				= 1.3f
+
+
+cam_relax_speed						= 5.5
+cam_dispersion						= 1.9
+cam_dispersion_inc					= 1.9
+cam_dispertion_frac					= 0.8
+cam_max_angle						= 30
+cam_max_angle_horz					= 10
+cam_step_angle_horz					= 1.7
+
+fire_dispersion_condition_factor 	= 2.5
+misfire_probability 				= 0.005
+misfire_condition_k					= 0.50
+condition_shot_dec 					= 0.00055
+
+direction                			= 0, 0, 1
+fire_point             				=  0,0.216,0.71
+
+flame_particles						= 
+smoke_particles		   				= amik\weapons\data\smoke_particles\smokeshoot_1
+grenade_flame_particles				= weapons\generic_weapon01
+
+shell_point		 					= 0,0.216,0.174
+shell_dir		 					= 0.0, 0.0, 0.4
+;shell_particles	 				= weapons\arsenal_shells1
+
+rpm_empty_click 	 		= 100
+
+PDM_disp_base 				= 1.0
+PDM_disp_vel_factor 		= 0.7
+PDM_disp_accel_factor 		= 0.7
+PDM_crouch					= 1.0
+PDM_crouch_no_acc			= 1.0
+
+;--------ttc------------------------------------
+hit_power        					= 1.15
+hit_impulse      					= 1
+hit_type 							= fire_wound
+
+fire_distance            			= 50
+bullet_speed						= 250
+rpm                      			= 250
+
+use_aim_bullet						= false
+time_to_aim							= 1.0	
+
+hud                      			= wpn_saiga12c_m1_hud
+normal                   			= 0, 1, 0
+
+visual                   	= dynamics\weapons\wpn_saiga12\wpn_saiga12m
+
+light_color		 			= 0.6,0.5,0.3
+light_range		 			= 3.0
+light_var_color		 		= 0.05
+light_var_range		 		= 0.5
+light_time 		 			= 0.2
+
+ph_mass			 			= 10
+
+;----------addons----------------------------------
+scope_status						= 2
+silencer_status						= 0
+grenade_launcher_status				= 0
+scope_x					      		= 89
+scope_y								= -15
+zoom_enabled						= true
+ 
+scope_zoom_factor = 90
+
+scope_mode 							= 3
+scope_name 							= wpn_addon_eotech
+scope_names 					= ac10632, wpn_addon_eotech, microt1, specter
+
+scope_respawn_ac10632 = wpn_saiga12m_ac10632
+scope_respawn_wpn_addon_eotech = wpn_saiga12m_eot
+scope_respawn_microt1 = wpn_saiga12m_microt1
+scope_respawn_specter = wpn_saiga12m_specter
+
+snd_razgruzka						= weapons\razgruzka\ammo_1
+
+
+silencer_smoke_particles 	= weapons\generic_shoot_00
+silencer_light_color		= 0.6,0.5,0.3
+silencer_light_range		= 0.01
+silencer_light_var_color	= 0.05
+silencer_light_var_range	= 0.5
+silencer_light_time 		= 0.2
+ 
+[wpn_saiga12c_m1_hud]:wpn_saiga12c_hud
+aim_hud_offset_pos = -0.064500,0.030500,-0.09
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.064500,0.030500,-0.09
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+fire_point										   = 0,0.004400,0.27
+anm_firemode                    				   = saiga12_firemode
+
+anm_firemode_aim = saiga12_firemode
+anm_firemode_empty = saiga12_firemode
+anm_firemode_aim_empty = saiga12_firemode
+
+item_visual                                        = dynamics\weapons\wpn_saiga12\wpn_saiga12m_hud.ogf
+
+[wpn_saiga12m_ac10632]:wpn_saiga12c_m1
+$spawn                                             = "weapons\wpn_saiga12m_ac10632"
+hud													= wpn_saiga12m_ac10632_hud
+scope_x         = 81
+scope_y         = -16
+visual												= dynamics\weapons\wpn_saiga12\wpn_saiga12m_ac10632.ogf
+
+scope_respawn = wpn_saiga12c_m1
+scope_name = ac10632
+
+[wpn_saiga12m_ac10632_hud]:wpn_saiga12c_m1_hud
+item_visual            	 							= dynamics\weapons\wpn_saiga12\wpn_saiga12m_ac10632_hud.ogf
+
+aim_hud_offset_pos = -0.064500,-0.001500,-0.07
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.064500,-0.001500,-0.07
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+
+[wpn_saiga12m_eot]:wpn_saiga12c_m1
+$spawn                                             = "weapons\wpn_saiga12m_eot"
+hud													= wpn_saiga12m_eot_hud
+scope_x         = 83
+scope_y         = -16
+visual												= dynamics\weapons\wpn_saiga12\wpn_saiga12m_eot.ogf
+
+scope_respawn = wpn_saiga12c_m1
+scope_name = wpn_addon_eotech
+
+[wpn_saiga12m_eot_hud]:wpn_saiga12c_m1_hud
+item_visual            	 							= dynamics\weapons\wpn_saiga12\wpn_saiga12m_eot_hud.ogf
+aim_hud_offset_pos = -0.064500,-0.005000,-0.07
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.064500,-0.005000,-0.07
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+
+[wpn_saiga12m_microt1]:wpn_saiga12c_m1
+$spawn                                             = "weapons\wpn_saiga12m_microt1"
+hud													= wpn_saiga12m_microt1_hud
+scope_x         = 87
+scope_y         = -14
+visual												= dynamics\weapons\wpn_saiga12\wpn_saiga12m_micro-t1.ogf
+
+scope_respawn = wpn_saiga12c_m1
+scope_name = microt1
+
+[wpn_saiga12m_microt1_hud]:wpn_saiga12c_m1_hud
+item_visual            	 							= dynamics\weapons\wpn_saiga12\wpn_saiga12m_micro-t1_hud.ogf
+
+aim_hud_offset_pos = -0.064000,-0.005500,-0.07
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+
+aim_hud_offset_pos_16x9 = -0.064000,-0.005500,-0.07
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+
+[wpn_saiga12m_specter]:wpn_saiga12c_m1
+$spawn                                             = "weapons\wpn_saiga12m_specter"
+hud													= wpn_saiga12m_specter_hud
+scope_x                     = 85		; offset in inventory icon
+scope_y                     = -17
+visual												= dynamics\weapons\wpn_saiga12\wpn_saiga12m_specter
+
+3d_reticle_size = 5.4
+3dss_gen_zoom_enable = true
+
+scope_respawn = wpn_saiga12c_m1
+scope_name = specter
+
+[wpn_saiga12m_specter_hud]:wpn_saiga12c_m1_hud
+item_visual            	 							= dynamics\weapons\wpn_saiga12\wpn_saiga12m_specter_hud
+
+aim_hud_offset_pos = -0.0645,-0.003,-0.1265
+aim_hud_offset_rot = 0.003,-0.0005,0
+aim_hud_offset_pos_16x9 = -0.0645,-0.003,-0.1265
+aim_hud_offset_rot_16x9 = 0.003,-0.0005,0
+
+use_alt_aim_zoom = true
+alt_aim_hud_offset_pos = -0.064525,-0.027575,-0.064455
+alt_aim_hud_offset_rot = 0.000000,0.000000,0.000000
+alt_aim_hud_offset_pos_16x9 = -0.064525,-0.027575,-0.064455
+alt_aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000

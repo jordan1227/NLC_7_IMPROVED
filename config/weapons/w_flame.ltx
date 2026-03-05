@@ -1,0 +1,185 @@
+;Flamethrower
+[wpn_flame]:weapon_immunities
+GroupControlSection			= spawn_group
+discovery_dependency		= 
+$spawn              		= "weapons\flame"
+$npc						= on				
+$prefetch 					= 8
+scheduled					= off
+cform               		= skeleton
+class               		= WP_LR300
+min_radius          		= 30
+max_radius          		= 100
+description					= wpn-flame_readme
+
+default_to_ruck				= false
+		
+ef_main_weapon_type			= 2
+ef_weapon_type				= 6
+	
+holder_range_modifier		= 1.0
+holder_fov_modifier			= 0.7 
+	
+cost						= 30000
+weapon_class				= assault_rifle	
+		
+ammo_limit					= 210
+ammo_elapsed				= 30
+		
+ammo_mag_size				= 200
+fire_modes					= -1
+f_mode						= 2
+	
+ammo_class					= ammo_flame
+	
+hand_dependence				= 2
+single_handed				= 0
+		
+slot 						= 2
+animation_slot				= 2
+	
+inv_name	        		= wpn-flame_name
+inv_name_short				= wpn-flame_name
+inv_weight					= 5
+icon_group              	= 7
+inv_grid_width     = 5
+inv_grid_height    = 2
+inv_grid_x         = 54
+inv_grid_y         = 31
+
+weapon_type					= heavy
+heavy_ammo					= ammo
+
+fire_dispersion_base		= 2.0 ; 30.0
+disp_rate                   = 1.6
+control_inertion_factor		= 1.55f
+
+cam_relax_speed         	= 5	
+cam_dispersion          	= 0.001	
+cam_dispersion_inc			= 0.00001	
+cam_dispertion_frac			= 0.00001
+cam_max_angle				= 0.00001	    
+cam_max_angle_horz			= 0.01	
+cam_step_angle_horz			= 1.1	
+
+fire_dispersion_condition_factor = 5	    
+misfire_probability 		= 0.0001
+misfire_condition_k			= 0.50
+condition_shot_dec 			= 0.00000005
+
+fire_point             		=  0,0.3,0.9	
+
+flame_particles				= amk\firebat
+smoke_particles				= 
+grenade_flame_particles		= weapons\generic_weapon01
+	
+shell_point		 			= 0.00, 0.262, 0.189
+shell_particles	 			= 
+
+PDM_disp_base 				= 1.7
+PDM_disp_vel_factor 		= 2.0
+PDM_disp_accel_factor 		= 3.0
+PDM_crouch					= 1.1
+PDM_crouch_no_acc			= 0.5
+
+hit_power                	= 1
+hit_impulse		 			= 0
+hit_type 					= burn 
+
+fire_distance            	= 5 ; 1.0
+bullet_speed				= 460 ; 0.1
+rpm                      	= 650 ; 300
+
+use_aim_bullet				= false
+time_to_aim					= 1.0	
+
+hud                      	= wpn_flame_hud
+
+position				= -0.026, -0.1 ,0
+orientation				= 0, 0, 0	
+
+strap_position			= -0.26,-0.11,0.15
+strap_orientation		= -15,-9,110
+
+visual         		        = dynamics\weapons\wpn_flamer\wpn_flamer
+
+light_color					= 0.6,0.5,0.3
+light_range					= 5
+light_var_color				= 0.05						
+light_var_range				= 0.5
+light_time 					= 0.2						
+
+ph_mass						= 5
+
+scope_status				= 0
+silencer_status				= 0
+grenade_launcher_status		= 0
+
+zoom_enabled				= false
+
+snd_draw				= weapons\generic_draw
+snd_holster				= weapons\generic_holster
+snd_shoot				= weapons\flamer\flamer_shoot
+snd_shoot1				= weapons\flamer\flamer_shoot_2
+snd_shoot2				= weapons\flamer\flamer_shoot_3
+snd_shoot3				= weapons\flamer\flamer_shoot_4
+snd_empty				= weapons\gen_empty, 0.5
+snd_reload				= weapons\flamer\flamer_reload, 0.7	
+snd_shoot_grenade		= weapons\gen_grenshoot
+snd_reload_grenade		= weapons\gen_grenload, 1.0, 0.8
+snd_switch				= weapons\groza_switch, 1.0, 0.5
+
+[wpn_flame_hud]:hud_base
+zoom_hide_crosshair        = false
+attach_place_idx        = 0
+item_visual                = dynamics\weapons\wpn_flamer\wpn_flamer_hud
+
+hands_position    = -0.010000,-0.270000,-0.051000
+hands_orientation = -0.420000,-0.230000,0.000000
+
+hands_position_16x9    = -0.010000,-0.270000,-0.051000
+hands_orientation_16x9 = -0.420000,-0.230000,0.000000
+
+shell_point                = 0.017,0.054,0.17
+shell_dir               = 0.0, 1.0, 0.0
+shell_bone                = wpn_body
+
+fire_point				  		= 0.0,0.015569,0.813101
+fire_bone                 		= wpn_body
+fire_point2              	 	= 0.0,0.0,0.0
+fire_bone2               	 	= wpn_body
+
+anm_show						= lancew_flamer_draw
+anm_hide                		= lancew_flamer_holster
+anm_idle                		= lancew_flamer_idle
+anm_idle_sprint         		= lancew_flamer_sprint
+anm_idle_moving         		= lancew_flamer_moving
+anm_shots               		= lancew_flamer_shoot, shoot
+anm_reload              		= lancew_flamer_reload, reload
+anm_idle_aim            		= lancew_flamer_idle_aim
+anm_bore                		= lancew_flamer_no_reload
+
+
+
+;----------Broken Flamethrower----------------------------------------------------------
+[flamethrower_bad]: wpn_flame
+
+inv_grid_width     = 4
+inv_grid_x         = 56
+inv_grid_y         = 33
+description		   = flamethrower_bad_descr
+inv_name		   = item_flamethrower_bad_name    
+inv_name_short	   = item_flamethrower_bad_name
+
+ammo_mag_size	   = 0
+rpm                = 0
+; visual         	   = weapons\flamethrower\wpn_flame_brk.ogf
+; hud                = wpn_flame_brk_hud
+snd_draw		   = weapons\rg6\rg6_draw
+snd_holster		   = weapons\shotgun_holster
+
+; [wpn_flame_brk_hud]: wpn_flame_hud
+
+; visual         	   = weapons\flamethrower\wpn_flame_brk_hud.ogf
+; anim_draw		   = draw_fast
+; anim_holster	   = holster_fast

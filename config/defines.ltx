@@ -1,0 +1,131 @@
+[sect_identity_immunities]
+burn_immunity			= 1.0
+strike_immunity			= 1.0
+shock_immunity			= 1.0
+wound_immunity			= 1.0
+wound_2_immunity		= 1.0
+radiation_immunity		= 1.0
+telepatic_immunity		= 1.0
+chemical_burn_immunity	= 1.0
+explosion_immunity		= 1.0
+fire_wound_immunity		= 1.0
+
+[identity_immunities]
+immunities_sect				= sect_identity_immunities
+use_aim_bullet				= false
+hit_probability_gd_novice	= 0.40
+hit_probability_gd_stalker	= 0.50
+hit_probability_gd_veteran	= 0.60
+hit_probability_gd_master	= 0.70
+
+[weapon_immunities]:identity_immunities
+default_to_ruck = false
+zoom_offset_fix = 0
+keep_visual = true
+icon_group = 7
+scope_zoom_factor = 90 ; 60
+zoom_enabled = true
+normal = 0,1,0
+strap_bone0 = bip01_spine2
+strap_bone1 = bip01_spine1
+direction = 0,0,1
+kill_msg_x = 0
+kill_msg_y = 0
+kill_msg_width = 0
+kill_msg_height = 0
+scope_x = 0
+scope_y = 0
+silencer_x = 0
+silencer_y = 0
+grenade_launcher_x = 0
+grenade_launcher_y = 0
+scope_status = 0
+silencer_status = 0
+grenade_launcher_status = 0
+
+ironsight_zoom_factor = 80
+
+snd_fire_modes  = weapons\firemode ;звук переключения режимов огня
+snd_zoom_change = weapons\zoom_change, 0.2 ;звук при изменении зума
+
+jump_aim_hud_offset_pos                  = 0.0, 0.015, 0.01
+jump_aim_hud_offset_rot                  = 0.0, 1.25, -1.5
+
+fall_aim_hud_offset_pos                  = 0.0, 0.015, -0.01
+fall_aim_hud_offset_rot                  = 0.0, -1.25, 1.5
+
+jump_aim_transition_time = 0.6
+
+[base_wpn_shotgun]
+;Имена текстур пуль прописанных в модели, которые будут заменяться
+bullet_textures_in_model = wpn\wpn_bullet1, wpn\wpn_bullet1_blue ;, wpn\wpn_bullet1_green
+;Пары "название секции патронов, текстура для пуль из этой секции"
+bullet_textures_for_ammos = ammo_12x70_buck, wpn\wpn_bullet1, ammo_12x76_zhekan, wpn\wpn_bullet1_green, ammo_12x76_dart, wpn\wpn_bullet1_blue
+
+[common_ph_friction_params_on_npc_death]
+
+; Эта секция общая для мутантов и сталкеров, т.ч. тут самое место всунуть исключения детектора аномалий.
+Anomaly_Detect_Ignore = Z_RADIO
+
+ph_skeleton_airr_lin_factor   = 2.0
+ph_skeleton_airr_ang_factor   = 0.0
+ph_skeleton_hinger_factor1    = 1.0
+ph_skeleton_ddelay	     	  = 15.0
+ph_skel_fatal_impulse_factor  = 6.0
+ph_after_death_velocity_factor= 0.75
+ph_skel_shot_up_factor        = 0.25
+
+ph_skeleton_skin_friction_start	= 0.0
+ph_skeleton_skin_friction_end	= 2.0
+ph_skeleton_skin_ddelay			= 6.0
+ph_skeleton_skin_ddelay_after_wound = 2.0
+ph_pelvis_factor_low_pose_detect =0.3
+ph_character_have_wounded_state = false
+
+[monster_base]:common_ph_friction_params_on_npc_death
+actor_hit_effect = effector_monster_hit
+
+[custom_keyboard_action]
+new_inventory=kNEW_INVENTORY
+mask_control=kMASK_CONTROL
+new_quicksave=kNEW_QUICKSAVE
+name_save=kNAME_SAVE
+new_quickload=kNEW_QUICKLOAD
+opn_flask=kOPN_FLASK
+inv_cb=kINV_CB
+use_antirad=kUSE_ANTIRAD
+use_energy=kUSE_ENERGY
+use_info=kUSE_INFO
+opn_nz=kOPN_NZ
+quick_slot_1=kQUICK_SLOT_1
+quick_slot_2=kQUICK_SLOT_2
+quick_slot_3=kQUICK_SLOT_3
+quick_slot_4=kQUICK_SLOT_4
+watch=kWATCH
+
+[hud_base]
+item_position = 0,0,0
+item_position_16x9 = 0,0,0
+item_orientation = 0,0,0
+item_orientation_16x9 = 0,0,0
+aim_hud_offset_pos = 0,0,0
+aim_hud_offset_pos_16x9 = 0,0,0
+aim_hud_offset_rot = 0,0,0
+aim_hud_offset_rot_16x9 = 0,0,0
+gl_hud_offset_pos = 0,0,0
+gl_hud_offset_pos_16x9 = 0,0,0
+gl_hud_offset_rot = 0,0,0
+gl_hud_offset_rot_16x9 = 0,0,0
+lean_hud_offset_pos = 0,0,0
+lean_hud_offset_rot = 0,0,0
+zoom_hide_crosshair = true
+
+lock_time_end_anm_headlamp_on = 0.5
+lock_time_end_anm_headlamp_on_g = 0.5
+lock_time_end_anm_headlamp_on_w_gl = 0.5
+lock_time_end_anm_headlamp_on_empty = 0.5
+lock_time_end_anm_headlamp_on_jammed = 0.5
+
+lock_time_end_anm_headlamp_on_0 = 0.5
+lock_time_end_anm_headlamp_on_1 = 0.5
+lock_time_end_anm_headlamp_on_2 = 0.5

@@ -1,0 +1,2590 @@
+#include "amk_items.ltx"
+#include "arc.ltx"
+
+#include "items\anim_items.ltx"
+; #include "items\anim_items\anm_harvest.ltx"
+#include "items\anim_items\anm_medkit.ltx"
+#include "items\anim_items\anm_bread.ltx"
+; #include "items\anim_items\anm_biotik.ltx"
+#include "items\anim_items\anm_kolbasa.ltx"
+#include "items\anim_items\anm_drug_booster.ltx"
+#include "items\anim_items\anm_antirad.ltx"
+#include "items\anim_items\anm_vodka.ltx"
+#include "items\anim_items\anm_conserva.ltx"
+#include "items\anim_items\anm_energy_drink.ltx"
+; #include "items\anim_items\anm_voda.ltx"
+#include "items\anim_items\anm_bints.ltx"
+#include "items\anim_items\anm_tabletki.ltx"
+; #include "items\anim_items\anm_fastknife.ltx"
+; #include "items\anim_items\anm_fastgrenade.ltx"
+#include "items\anim_items\anm_torch.ltx"
+; #include "items\anim_items\anm_meat.ltx"
+; #include "items\anim_items\anm_mask.ltx"
+; #include "items\anim_items\anm_helmet.ltx"
+; #include "items\anim_items\anm_snickers.ltx"
+; #include "items\anim_items\anm_flyaga.ltx"
+; #include "items\anim_items\anm_flyaga1.ltx"
+; #include "items\anim_items\anm_toolkit.ltx"
+; #include "items\anim_items\anm_inventory.ltx"
+; #include "items\anim_items\anm_stimulator.ltx"
+; #include "items\anim_items\anm_fastbolt.ltx"
+
+[bread_a]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency	=
+$spawn					= "food and drugs\bread_a"
+cform                   = skeleton
+class					= II_ATTCH
+visual                  = weapons\bred\bred.ogf
+cost					= 20
+inv_name				= food_bread_rad
+inv_name_short			= food_bread_rad
+description				= enc_food_bread_rad
+inv_weight				= .15
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x				= 6
+inv_grid_y				= 0
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset	= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0
+angle_offset			 = 1.570790,1.570790,3.92699
+
+[bread]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 				= "food and drugs\bread"
+class				= II_FOOD
+cform				= skeleton
+visual	= weapons\bred\bred
+description					= enc_equipment_food_bread1
+inv_name					= Bread
+inv_name_short				= Bread
+inv_weight					= 0.125	;0.2
+
+slot = 13,14,15,16
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 6
+inv_grid_y			= 0
+cost						= 100
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset	= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0
+angle_offset			 = 1.570790,1.570790,3.92699
+
+
+eat_health = 0.0
+eat_satiety = 0
+eat_power = 0
+eat_radiation = 0
+wounds_heal_perc = 0
+eat_alcohol		= -0.02
+eat_portions_num = -1
+
+; slot				= 4
+animation_slot		= 4
+
+
+hud = bread_use
+inv_show_condition      = true
+
+[kolbasa]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 				= "food and drugs\kolbasa"
+$prefetch 			= 8
+class				= II_FOOD
+cform				= skeleton
+visual	= weapons\kolbasa\kolbasa.ogf
+description					= enc_equipment_food_kolbasa1
+
+inv_name					= Kolbasa
+inv_name_short				= Kolbasa
+inv_weight					= 0.25
+
+slot = 13,14,15,16
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x					= 6
+inv_grid_y					= 1
+cost						= 200
+
+attach_angle_offset		= 0.440521, 1.378287, -0.644026
+attach_position_offset	= 0.104196, -0.010821, 0.076969
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0
+angle_offset			 = 1.570790,1.570790,3.92699
+
+
+eat_health = 0.0
+eat_satiety = 0
+eat_power = 0
+eat_radiation = 0
+wounds_heal_perc = 0
+eat_alcohol		= -0.05
+eat_portions_num = -1
+
+; slot				= 4
+animation_slot		= 4
+
+
+hud = kolbasa_use
+inv_show_condition      = true
+
+[green_kolbasa]:kolbasa
+visual	= new_item\item_kolbasa_hunt.ogf
+description			= enc_green_kolbasa
+inv_name			= green_kolbasa
+inv_name_short		= green_kolbasa
+inv_weight			= 0.15
+
+inv_grid_x			= 6
+inv_grid_y			= 2
+cost				= 100
+eat_health 			= 0.0
+eat_satiety 		= 0
+
+hud = kolbasa_green_use
+
+[suhpay]:kolbasa
+visual	= new_item\suxpayok.ogf
+description			= suhpay_desc
+inv_name			= suhpay_name
+inv_name_short		= suhpay_name
+inv_weight			= 0.9
+inv_grid_width		= 2
+
+inv_grid_x         = 74
+inv_grid_y         = 36
+icon_group = 7
+cost				= 1000
+slot =
+eat_health 			= 0
+eat_portions_num 	= 3
+eat_satiety 		= 0
+; hud = wpn_vodka_hud
+hud_fov = 0.85
+hud = mre_use
+
+eat_portions_influence = true
+
+[kolbasa_a]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency	=
+$spawn				= "food and drugs\kolbasa_a"
+cform               = skeleton
+class				= II_ATTCH
+visual              = weapons\kolbasa\kolbasa.ogf
+cost				= 50
+inv_name			= Kolbasa
+inv_name_short		= Kolbasa
+inv_weight			= .5
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 6
+inv_grid_y			= 1
+
+attach_angle_offset	= 0.440521, 1.378287, -0.644026
+attach_position_offset= 0.104196, -0.010821, 0.076969
+attach_bone_name	= bip01_r_hand
+auto_attach			= false
+
+
+bone_name			= bip01_r_hand
+position_offset		= 0.0,0.0,0.0
+angle_offset		= 1.570790,1.570790,3.92699
+
+[conserva]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 				= "food and drugs\conserva"
+
+class				= II_FOOD
+cform				= skeleton
+visual	= food\conserv1.ogf
+description					= enc_equipment_food_conserva1
+
+inv_name					= Conserva
+inv_name_short				= Conserva
+inv_weight					= 0.6
+
+slot = 13,14,15,16
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x                               = 19
+inv_grid_y                               = 1
+icon_group = 7
+cost						= 500
+
+
+eat_health = 0
+eat_satiety = 0
+eat_power = 0
+eat_radiation = 0
+wounds_heal_perc = 0
+eat_alcohol		= -0.1
+eat_portions_num = -1
+
+; slot				= 4
+animation_slot		= 4
+
+
+hud = conserva_use
+
+attach_angle_offset		= 0.440521, 1.378287, -0.644026
+attach_position_offset	= 0.104196, -0.010821, 0.076969
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0
+angle_offset			 = 1.570790,1.570790,3.92699
+inv_show_condition      = true
+
+[conserva_tm]:conserva
+inv_name					= Conserva_tm
+inv_name_short				= Conserva_tm
+description				= enc_equipment_food_conserva_tm
+icon_group				= 2
+inv_grid_width     = 1
+inv_grid_height    = 1
+inv_grid_x         = 40
+inv_grid_y         = 4
+
+[vodka_a]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency	=
+$spawn					= "food and drugs\vodka_a"
+cform                   = skeleton
+class					= II_ATTCH
+visual                  = weapons\vodka\vodka
+cost					= 100
+inv_name				= vodka_rad
+inv_name_short			= vodka_rad
+description				= vodka_rad_descr
+inv_weight				= .5
+inv_grid_width			= 1
+inv_grid_height			= 2
+inv_grid_x				= 6
+inv_grid_y				= 4
+
+attach_angle_offset		= 0.000000, 0.000000, 0.000000
+attach_position_offset	= 0.087266, -0.078540, 0.052360
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0
+angle_offset			 = 1.570790,1.570790,3.92699
+
+[vodka]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 				= "food and drugs\vodka"
+
+class				= II_BOTTL
+cform				= skeleton
+visual	= weapons\vodka\vodka
+description					= enc_equipment_food_vodka1
+
+ef_weapon_type		= 0
+
+inv_name					= Vodka
+inv_name_short				= Vodka
+inv_weight					= 0.5
+
+inv_grid_width		= 1
+inv_grid_height		= 2
+inv_grid_x					= 6
+inv_grid_y					= 4
+cost						= 500
+
+attach_angle_offset		= 0.000000, 0.000000, 0.000000
+attach_position_offset	= 0.087266, -0.078540, 0.052360
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0
+angle_offset			 = 1.570790,1.570790,3.92699
+
+; slot				= 4
+
+
+eat_health		= -0.1
+eat_satiety		= -0.15
+eat_power		= 0
+eat_radiation	= -0.1
+eat_alcohol		= 0.2
+wounds_heal_perc 	= 0
+eat_portions_num 	= -1
+
+; slot				= 4
+animation_slot		= 4
+
+hud = vodka_use
+
+break_particles		= explosions\explosion_bottle
+break_sound			= material\bottle\collide\bottle_break_1
+
+
+[guitar_a]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency	=
+$spawn					= "food and drugs\guitar_a"
+cform                   = skeleton
+class					= II_ATTCH
+visual                  = Equipments\item_guitar.ogf
+description			    = guitar_desc
+cost					= 35
+inv_name				= guitar
+inv_name_short			= guitar
+inv_weight				= 0
+inv_grid_width			= 0
+inv_grid_height			= 0
+inv_grid_x				= 0
+inv_grid_y				= 0
+attach_angle_offset		= -1.651084, -1.341824, 1.200789
+attach_position_offset	= 0.077492, -0.030020, 0.090059
+attach_bone_name		= bip01_l_hand
+auto_attach				= false
+
+[harmonica_a]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency	=
+$spawn					= "food and drugs\harmonica_a"
+cform                   = skeleton
+class					= II_ATTCH
+visual                  = Equipments\item_harmonica.ogf
+cost					= 350
+inv_name				= harmonica_b
+inv_name_short			= harmonica_b
+inv_weight				= 0.35
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x              = 6
+inv_grid_y              = 6
+attach_angle_offset		= 0.000000, -1.204452, -1.262921
+attach_position_offset	= 0.081856, -0.035081, 0.011694
+attach_bone_name		= bip01_l_hand
+auto_attach				= false
+
+[antirad]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 			= "food and drugs\antirad"
+$prefetch 		= 32
+class			= II_ANTIR
+cform           = skeleton
+visual          = equipments\item_antirad.ogf
+description		= enc_equipment_medi_antirad1
+
+inv_name					= Antirad
+inv_name_short				= Antirad
+inv_weight					= 0.1
+
+slot = 13,14,15,16
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x					= 6
+inv_grid_y					= 7
+cost						= 1000
+
+post_eff			= 4
+mr_time				= 1
+mr_eat_health		= 0
+eat_health 			= 0.0
+eat_satiety 		= -0.10
+eat_power 			= 0
+mr_eat_power		= -0.10
+eat_radiation 		= 0
+mr_eat_radiation	= -1
+
+wounds_heal_perc 	= 0
+eat_portions_num 	= 1
+
+animation_slot		= 4
+
+
+hud = antirad_use
+
+
+[medkit]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 				= "food and drugs\medkit"
+$prefetch 			= 8
+class				= II_MEDKI
+cform				= skeleton
+visual	= equipments\item_aptechka.ogf
+description					= enc_equipment_medi_medkit1
+inv_name					= Medkit
+inv_name_short				= Medkit
+inv_weight					= 0.3
+
+slot = 13,14,15,16
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x					= 6
+inv_grid_y					= 8
+cost						= 1000
+snd_razgruzka		= weapons\razgruzka\medkit
+
+post_eff			= 1
+mr_time				= 4
+mr_eat_health		= 0.3
+eat_health			= 0
+eat_satiety			= 0
+eat_power			= -0.1
+mr_eat_power		= -0.05
+eat_radiation		= 0
+mr_eat_radiation	= -0.1
+
+wounds_heal_perc	= 0.1
+eat_portions_num	= 1
+eat_max_power		= 0.1
+
+animation_slot		= 4
+
+
+hud = medkit_use
+
+[medkit_npc]:medkit
+eat_health			= 1
+inv_weight			= 0
+inv_grid_width		= 0
+inv_grid_height		= 0
+
+[medkit_army]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 				= "food and drugs\medkit_army"
+$prefetch 			= 8
+class				= II_MEDKI
+cform				= skeleton
+visual	= equipments\item_aptechka3.ogf
+description					= enc_equipment_medi_medkit2
+inv_name					= Medkit_army
+inv_name_short				= Medkit_army
+inv_weight					= 0.4
+
+slot = 13,14,15,16
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 6
+inv_grid_y			= 9
+cost				= 1500
+snd_razgruzka		= weapons\razgruzka\medkit
+
+post_eff			= 5
+mr_time				= 3
+mr_eat_health		= 0.6
+eat_health			= 0
+eat_satiety			= 0
+eat_power			= -0.1
+mr_eat_power		= -0.05
+eat_radiation		= 0
+mr_eat_radiation	= -0.1
+
+wounds_heal_perc	= 0.2
+eat_portions_num	= 1
+eat_max_power		= 0.1
+
+animation_slot		= 4
+
+
+hud = medkit_use_army
+
+[medkit_scientic]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 				= "food and drugs\medkit_scientic"
+$prefetch 			= 8
+class				= II_MEDKI
+cform				= skeleton
+visual	= equipments\item_aptechka2.ogf
+description					= enc_equipment_medi_medkit3
+inv_name					= Medkit_scientific
+inv_name_short				= Medkit_scientific
+inv_weight					= 0.5
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 5
+inv_grid_y			= 18
+cost				= 3000
+snd_razgruzka		= weapons\razgruzka\medkit
+
+post_eff			= 6
+mr_time				= 2
+mr_eat_health		= 1
+eat_health			= 0
+eat_satiety			= 0
+eat_power			= -0.1
+mr_eat_power		= -0.05
+eat_radiation		= 0
+mr_eat_radiation	= -0.5
+wounds_heal_perc	= 0.3
+eat_portions_num	= 1
+eat_max_power		= 0.1
+animation_slot		= 4
+hud = medkit_use_scientic
+
+
+[energy_drink]:vodka
+$spawn 					= "food and drugs\energy_drink"
+inv_name				= energy_drink_name
+inv_name_short			= energy_drink_short_name
+visual					= equipments\drink_stalker.ogf
+description				= enc_equipment_energydrink
+cost					= 250
+slot                    = 13,14,15,16
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x				= 6
+inv_grid_y				= 10
+inv_weight				= 0.3
+post_eff				= 7
+mr_time					= 2
+mr_eat_health			= 0
+eat_health				= 0
+eat_satiety				= 0
+eat_power				= 0
+mr_eat_power			= 1.0
+eat_alcohol				= -0.5
+eat_radiation			= 0
+mr_eat_radiation		= 0
+wounds_heal_perc		= 0
+eat_portions_num		= 1
+eat_max_power			= 0.2
+attach_angle_offset		= 0.000000, 0.000000, 0.000000
+attach_position_offset	= 0.087266, -0.078540, 0.052360
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+hud = energy_drink_use
+
+[energy_drink_new]:energy_drink
+post_eff				= 7
+cost					= 500
+mr_time					= 6
+mr_eat_power			= 3.0
+
+[bandage]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency 	=
+$spawn 					= "food and drugs\bandage"
+$prefetch 				= 8
+class					= II_BANDG
+cform					= skeleton
+visual					= equipments\item_bandage.ogf
+description				= enc_equipment_medi_bandage1
+inv_name				= bandage
+inv_name_short			= bandage
+inv_weight				= 0.05
+slot                    = 13,14,15,16
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x                               = 17
+inv_grid_y                               = 1
+icon_group = 7
+cost					= 50
+snd_razgruzka			= weapons\razgruzka\medkit
+post_eff				= 3
+mr_time					= 0.01
+mr_eat_health			= 0
+eat_health 				= 0.025
+eat_satiety 			= 0
+eat_power 				= 0
+mr_eat_power 			= 0
+eat_radiation 			= 0.0
+mr_eat_radiation		= 0
+wounds_heal_perc 		= 0.7
+eat_portions_num 		= 1
+animation_slot			= 4
+hud = bandage_use
+
+[sleeping_pill]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 			= "food and drugs\antirad"
+
+class			= II_ANTIR
+cform			= skeleton
+visual			= dynamics\equipments\medical\drug_psy_blockade
+
+ef_weapon_type	= 0
+
+inv_name		= sleeping_pill_name
+inv_name_short	= sleeping_pill_name
+description		= sleeping_pill_desc
+inv_weight		= 0.01
+
+icon_group 		= 7
+inv_grid_width  = 1
+inv_grid_height = 1
+inv_grid_x      = 4
+inv_grid_y      = 2
+cost			= 1000
+
+animation_slot	= 4
+
+eat_health		= -0.05
+eat_satiety		= 0
+eat_power		= 0
+eat_radiation	= 0
+eat_alcohol		= 0
+wounds_heal_perc = 0
+eat_portions_num = 3
+
+hud 			 = drug_psy_blockade_use
+
+[binocular_a]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency	=
+$spawn					= "devices\binocular_a"
+cform                   = skeleton
+class					= II_ATTCH
+visual                  = weapons\binoculars\wpn_binoculars.ogf
+cost					= 0
+inv_name				= "binocular"
+inv_name_short			= "binocular"
+inv_weight				= 0.5
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 5
+inv_grid_y				= 19
+attach_angle_offset		= 3.080506,-1.493053,-1.202040
+attach_position_offset	= 0.080000,0.021273,0.100000
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[device_pda]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency	=
+$spawn 					= "devices\pda"
+$prefetch 				= 16
+class					= D_PDA
+cform					= skeleton
+visual					= dynamics\devices\dev_pda\dev_pda
+description				= enc_equipment_device_pda2
+radius					= 40
+slot					= 7
+
+inv_name				= exs_pda
+inv_name_short			= exs_pda
+inv_weight				= 0.5
+
+icon_group              = 7
+inv_grid_width          = 2
+inv_grid_height         = 1
+inv_grid_x              = 70
+inv_grid_y              = 36
+cost					= 400
+attach_angle_offset		= 3.080506,-1.493053,-1.202040
+attach_position_offset	= 0.080000,0.021273,0.100000
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+default_to_ruck			= false
+quest_item              = true
+
+hud                                                = pda_hud
+animation_slot                                     = 2
+joystick_bone                                      = joystick
+snd_btn_press                                      = device\pda\pda_btn_press
+snd_btn_release                                    = device\pda\pda_btn_release
+snd_draw                             	           = device\pda\pda_draw
+snd_draw_empty							 		   = device\pda\pda_draw_empty
+snd_holster                          	 		   = device\pda\pda_holster
+snd_holster_empty                      	 		   = device\pda\pda_holster_empty
+snd_empty								 		   = device\pda\pda_dead
+screen_on_delay							 		   = 0.7
+screen_off_delay						 		   = 0.5
+thumb_rot_x										   = 1
+thumb_rot_y										   = -0.1
+
+hud_fov = 0.51
+
+;script_binding      							   = bind_pda.init // если чё, раскомментировать при НИ
+active_time									   	   = 168
+
+[pda_hud]:hud_base
+inertion_offset_LRUD                               = 0.02,  0.02,  0.02, 0.02
+
+attach_place_idx                                   = 0
+item_visual                                        = dynamics\devices\dev_pda\dev_pda_hud.ogf
+hands_position                                     = -0.005,-0.11,0.1
+hands_position_16x9                                = -0.005,-0.11,0.1
+hands_orientation                                  = 0,0,0
+hands_orientation_16x9                             = 0,0,0
+
+aim_hud_offset_pos		                           = 0.001,-0.069,-0.19
+aim_hud_offset_rot		                           = -0.4,0,0.01
+gl_hud_offset_pos			                       = 0,0,0
+gl_hud_offset_rot			                       = 0,0,0
+
+aim_hud_offset_pos_16x9		                       = 0.001,-0.069,-0.19
+aim_hud_offset_rot_16x9		                       = -0.4,0,0.01
+gl_hud_offset_pos_16x9		                       = 0,0,0
+gl_hud_offset_rot_16x9			                   = 0,0,0
+
+pitch_offset_right						           = 0
+pitch_offset_up							           = 0
+pitch_offset_forward					           = 0
+
+item_position                                      = 0,0,0
+item_orientation                                   = 0,0,0
+
+anm_show                                 		   = 3d_pda_hands_draw
+anm_show_empty							 		   = 3d_pda_hands_draw_empty
+anm_idle                                 		   = 3d_pda_hands_idle
+anm_hide                                 		   = 3d_pda_hands_holster
+anm_hide_empty                           		   = 3d_pda_hands_holster_empty
+anm_idle_aim                             		   = 3d_pda_hands_idle_aim
+anm_idle_moving                          		   = 3d_pda_hands_walk_new
+anm_idle_sprint                          		   = 3d_pda_hands_run_new
+anm_empty								 		   = 3d_pda_hands_dead
+
+[device_torch]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency 	=
+$spawn					= "devices\torch"
+$prefetch 				= 32
+class					= TORCH_S
+cform					= skeleton
+visual					= equipments\light_night.ogf
+description				= enc_equipment_devic_device-torch1
+cost					= 100
+inv_name				= device-torch
+inv_name_short			= device-torch
+inv_weight				= 0.35
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 5
+inv_grid_y				= 19
+
+can_trade				= true
+
+position				= 0.35,0.25,0.0
+light_trace_bone		= cone_bone
+attach_angle_offset		= 0, -3.14, 1.6
+attach_position_offset	= 0.115, 0.00, 0.07
+attach_bone_name		= bip01_head
+auto_attach				= false
+default_to_ruck			= false
+slot					= 9
+
+snd_torch_on  			= device\light_on
+snd_torch_off 			= device\light_off
+
+night_vision				                       = on
+night_vision_texture		                       = wpn\wpn_night
+night_vision_effector		                       = postprocess_night
+
+snd_night_vision_on			                       = weapons\nv_start
+snd_night_vision_off		                       = weapons\nv_off
+snd_night_vision_idle		                       = weapons\nv_loop
+snd_night_vision_broken		                       = weapons\nv_off
+
+night_vision_recharge_time			               = 6		;(c) ????? ??????? ????????????
+night_vision_recharge_time_min		               = 2		;(c) ???. ????? ??????? ????????????, ????? ???????? ???-?? ??? ????? ????????
+night_vision_discharge_time			               = 20	;(c) ????? ???????? (??????) ?????????? ????? ?????? ???????
+disabled_maps						               = ai_test,ai_test2, andy_test_
+inv_show_condition      = true
+
+[device_night_vision]
+pnv_color = 0.2, 0.8, 0.6    ;Цвет
+
+r_pnv_alfa_vignete = 1.      ;Режим прозрачности виньетки, как он выглядит уже не помню
+r_pnv_gain_current = 2.      ;Какая то яркость (вроде хеми)
+r_pnv_gain_offset = 1.       ;Вроде дополнительная яркость ярких элементов
+r_pnv_glitch = 0.            ;Интенсивность помех (лажа на самом деле)
+r_pnv_mode = 2               ;Режим работы пнв 0-выкл, 1-вкл пнв, 2-вкл тепловизор, 3-вкл не цветной тепловизор
+r_pnv_noise = 0.05           ;Шум
+r_pnv_num_tubes = 4.         ;Режим виньетки 1-круг по центру, 2-2 круга по центру со смещением, 3 - пусто, 4-3 круга по центру со смещением
+r_pnv_position = 100.        ;Координаты по вертикали
+r_pnv_radius = 0.5           ;Радиус виньетки
+r_pnv_scanlines = 0.05       ;Горизонтальные полосы
+r_pnv_scintillation = 1 ;0.998  ;Интенсивность крупных точек шума
+r_pnv_size_vignet = 0.1      ;Вроде как сатурация виньетки
+r_pnv_washout_thresh = 0.1   ;0.02  ;Засвет источников света
+
+heat_fade_distance = 13, 20, 0, 0
+heat_vision_blurring = 1, 1, 1.1, 1.1
+heat_vision_steps = -0.5, 0, 0, 1
+
+; зеленый плохого качества
+[bad_nvd]:device_night_vision
+pnv_color                                = 0.66, 1, 0.45
+r_pnv_mode                               = 0
+r_pnv_gain_current                       = 1
+r_pnv_noise                              = 0.3
+r_pnv_scanlines                          = 4
+r_pnv_num_tubes                          = 2; 1
+
+; синий с помехами
+[good_nvd]:device_night_vision
+pnv_color                                = 0.28, 0.28, 0.6
+r_pnv_mode                               = 0
+r_pnv_gain_current                       = 1.1
+r_pnv_noise                              = 0.2
+r_pnv_scanlines                          = 1.4
+r_pnv_num_tubes                          = 2
+
+; белый с помехами
+[elite_nvd]:device_night_vision
+pnv_color                                = 0.96, 0.96, 0.96
+r_pnv_mode                               = 0
+r_pnv_gain_current                       = 1.2
+r_pnv_noise                              = 0.01
+r_pnv_scanlines                          = 0.8
+r_pnv_num_tubes                          = 4
+r_pnv_size_vignet                        = 0
+
+[detector_simple]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency 	=
+$spawn 					= "devices\detector_simple"
+$prefetch 				= 32
+class					= D_SIMDET
+cform					= skeleton
+visual					= equipments\item_datchik1.ogf
+description				= enc_detector_simple
+radius					= 8
+buzzer_radius			= 1.5
+noise					= zone_mosquito_bald
+buzzer					= zone_mosquito_bald
+; slot					= 12,13,14,15,8
+slot                    = 13,14,15,16,8
+ef_detector_type		= 1
+
+inv_name				= detector_simple_name
+inv_name_short			= detector_simple_name
+inv_weight				= 0.35
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x				= 7
+inv_grid_y				= 17
+cost					= 2000
+default_to_ruck			= true
+auto_attach				= false
+
+zone_class_1			= zone_radioactive
+zone_sound_1_			= detectors\geiger_1
+zone_sound_1_1			= detectors\geiger_2
+zone_sound_1_2			= detectors\geiger_3
+zone_sound_1_3			= detectors\geiger_4
+zone_sound_1_4			= detectors\geiger_5
+zone_sound_1_5			= detectors\geiger_6
+zone_sound_1_6			= detectors\geiger_1
+zone_sound_1_7			= detectors\geiger_1
+zone_sound_1_8			= detectors\geiger_1
+zone_min_freq_1			= 1
+zone_max_freq_1			= 20
+detect_actor_radiation  = true
+
+[detector_advances]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 					= "devices\detector_advanced"
+$prefetch 				= 32
+class					= D_SIMDET
+cform					= skeleton
+visual					= equipments\item_datchik2.ogf
+description				= enc_detector_advances
+radius					= 8
+buzzer_radius			= 1.5
+noise					= zone_mosquito_bald
+buzzer					= zone_mosquito_bald
+; slot					= 12,13,14,15,8
+slot                    = 13,14,15,16,8
+ef_detector_type		= 1
+
+inv_name				= detector_advances_name
+inv_name_short			= detector_advances_name
+inv_weight				= 0.5
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x				= 7
+inv_grid_y				= 18
+cost					= 10000
+default_to_ruck			= true
+auto_attach				= false
+
+zone_class_1			= zone_mosquito_bald
+zone_sound_1_			= detectors\DA-2_beep1
+zone_min_freq_1			= 0.1
+zone_max_freq_1			= 40
+
+zone_class_2			= zone_mincer
+zone_sound_2_			= detectors\DA-2_beep1
+zone_min_freq_2			= 0.1
+zone_max_freq_2			= 20
+
+zone_class_3			= zone_radioactive
+zone_sound_3_			= detectors\geiger_1
+zone_sound_3_1			= detectors\geiger_2
+zone_sound_3_2			= detectors\geiger_3
+zone_sound_3_3			= detectors\geiger_4
+zone_sound_3_4			= detectors\geiger_5
+zone_sound_3_5			= detectors\geiger_6
+zone_sound_3_6			= detectors\geiger_1
+zone_sound_3_7			= detectors\geiger_1
+zone_sound_3_8			= detectors\geiger_1
+zone_min_freq_3			= 1
+zone_max_freq_3			= 20
+
+zone_class_4			= zone_gravi_zone
+zone_sound_4_			= detectors\DA-2_beep1
+zone_min_freq_4			= 0.5
+zone_max_freq_4			= 30
+detect_actor_radiation  = true
+
+[detector_elite]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 					= "devices\detector_elite"
+$prefetch 				= 32
+class					= D_SIMDET
+cform					= skeleton
+visual					= equipments\item_datchik3.ogf
+description				= enc_detector_elite
+radius					= 8
+buzzer_radius			= 1.5
+noise					= zone_mosquito_bald
+buzzer					= zone_mosquito_bald
+; slot					= 12,13,14,15,8
+slot                    = 13,14,15,16,8
+ef_detector_type		= 1
+
+inv_name				= detector_elite_name
+inv_name_short			= detector_elite_name
+inv_weight				= 0.5
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x				= 7
+inv_grid_y				= 19
+cost					= 15000
+default_to_ruck			= true
+auto_attach				= false
+
+;Трамплин
+zone_class_1			= zone_mosquito_bald
+zone_sound_1_			= detectors\DA-2_beep1
+zone_min_freq_1			= 0.1
+zone_max_freq_1			= 40
+zone_map_location_1 	= anomaly_zone_location
+
+;Карусель
+zone_class_2			= zone_mincer
+zone_sound_2_			= detectors\DA-2_beep1
+zone_min_freq_2			= 0.1
+zone_max_freq_2			= 20
+zone_map_location_2 	= anomaly_zone_location
+
+;Очаг радиоактивности
+zone_class_3			= zone_radioactive
+zone_sound_3_			= detectors\geiger_1
+zone_sound_3_1			= detectors\geiger_2
+zone_sound_3_2			= detectors\geiger_3
+zone_sound_3_3			= detectors\geiger_4
+zone_sound_3_4			= detectors\geiger_5
+zone_sound_3_5			= detectors\geiger_6
+zone_sound_3_6			= detectors\geiger_1
+zone_sound_3_7			= detectors\geiger_1
+zone_sound_3_8			= detectors\geiger_1
+zone_min_freq_3			= 1
+zone_max_freq_3			= 20
+;zone_map_location_3 	= anomaly_zone_location
+
+;Воронка
+zone_class_4			= zone_gravi_zone
+zone_sound_4_			= detectors\DA-2_beep1
+zone_min_freq_4			= 0.5
+zone_max_freq_4			= 30
+zone_map_location_4 	= anomaly_zone_location
+
+;Электра
+zone_class_5        	= zone_witches_galantine
+zone_sound_5_        	= detectors\DA-2_beep1
+zone_min_freq_5        	= 0.1
+zone_max_freq_5        	= 30
+zone_map_location_5     = anomaly_zone_location
+
+;Жарка
+zone_class_6        	= zone_zharka_static
+zone_sound_6_       	= detectors\DA-2_beep1
+zone_min_freq_6        	= 0.1
+zone_max_freq_6        	= 30
+zone_map_location_6     = anomaly_zone_location
+
+;Снежка
+zone_class_7        	= zone_ice
+zone_sound_7_        	= detectors\DA-2_beep1
+zone_min_freq_7        	= 0.1
+zone_max_freq_7        	= 30
+zone_map_location_7     = anomaly_zone_location
+
+attach_angle_offset		= -0.160570,-1.425061,-0.361283
+attach_position_offset	= 0.160570,-0.060214,0.020071
+attach_bone_name		= bip01_l_hand
+detect_actor_radiation  = true
+
+[detector_sakbuzz_simple]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 					= "devices\detector_sakbuzz_simple"
+$prefetch 				= 32
+class					= D_SIMDET
+cform					= skeleton
+visual					= equipments\detector_1.ogf
+description				= enc_detector_sakbuzz_simple
+radius					= 8
+buzzer_radius			= 1.5
+noise					= zone_mosquito_bald
+buzzer					= zone_mosquito_bald
+ef_detector_type		= 1
+; slot					= 12,13,14,15,8
+slot                    = 13,14,15,16,8
+inv_name				= detector_sakbuzz_simple_name
+inv_name_short			= detector_sakbuzz_simple_name
+inv_weight				= 0.3
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x				= 7
+inv_grid_y				= 1
+cost					= 4000
+default_to_ruck			= true
+auto_attach				= false
+
+;sakbuzz
+zone_class_1        	= zone_sakbuzz
+zone_sound_1_        	= detectors\art_beep1
+zone_min_freq_1        	= 0.5
+zone_max_freq_1        	= 30
+
+zone_class_2			= zone_radioactive
+zone_sound_2_			= detectors\geiger_1
+zone_sound_2_1			= detectors\geiger_2
+zone_sound_2_2			= detectors\geiger_3
+zone_sound_2_3			= detectors\geiger_4
+zone_sound_2_4			= detectors\geiger_5
+zone_sound_2_5			= detectors\geiger_6
+zone_sound_2_6			= detectors\geiger_1
+zone_sound_2_7			= detectors\geiger_1
+zone_sound_2_8			= detectors\geiger_1
+zone_min_freq_2			= 1
+zone_max_freq_2			= 20
+detect_actor_radiation  = true
+
+[detector_sakbuzz_elite]:detector_elite
+description				= enc_detector_sakbuzz_elite
+inv_name				= detector_sakbuzz_elite_name
+inv_name_short			= detector_sakbuzz_elite_name
+inv_weight				= 0.5
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x				= 7
+inv_grid_y				= 0
+cost					= 20000
+
+;Кисель
+zone_class_8        	= zone_sakbuzz
+zone_sound_8_        	= detectors\art_beep1
+zone_min_freq_8        	= 0.5
+zone_max_freq_8        	= 30
+zone_map_location_8     = anomaly_sakbuzz_location
+
+[detector_simple_fake]:detector_simple
+inv_grid_width			= 0
+inv_grid_height			= 0
+cost					= 0
+slot					= 8
+zone_sound_1_			= $no_sound
+zone_sound_1_1			= $no_sound
+zone_sound_1_2			= $no_sound
+zone_sound_1_3			= $no_sound
+zone_sound_1_4			= $no_sound
+zone_sound_1_5			= $no_sound
+zone_sound_1_6			= $no_sound
+zone_sound_1_7			= $no_sound
+zone_sound_1_8			= $no_sound
+
+[detector_simple_cop]:identity_immunities
+GroupControlSection                      = spawn_group
+$spawn                                   = "devices\detector_simple"
+$prefetch                                = 32
+class                                    = DET_SIMP
+cform                                    = skeleton
+visual                                   = dynamics\devices\dev_detector_1\dev_detector_1.ogf
+
+icon_group = 7
+default_to_ruck			= true
+
+hud                                      = detector_simple_cop_hud
+animation_slot                           = 7
+zoom_rotate_time 						 = 0.3
+sprint_start_time 						 = 0.025
+
+zone_sound_1_			= detectors\geiger_1
+zone_sound_1_1			= detectors\geiger_2
+zone_sound_1_2			= detectors\geiger_3
+zone_sound_1_3			= detectors\geiger_4
+zone_sound_1_4			= detectors\geiger_5
+zone_sound_1_5			= detectors\geiger_6
+zone_sound_1_6			= detectors\geiger_1
+zone_sound_1_7			= detectors\geiger_1
+zone_sound_1_8			= detectors\geiger_1
+
+zone_sound_2_			= detectors\DA-2_beep1
+
+inv_name                                 = st_detector1
+inv_name_short                           = st_detector1
+description                              = st_detector1_descr
+
+slot                                     = 8,13
+ef_detector_type                         = 1
+inv_weight                               = 0.5
+
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 2
+inv_grid_y                               = 5
+cost                                     = 3000
+
+af_radius                                = 17.5
+af_vis_radius                            = 3
+
+af_class_1                               = af_cristall
+af_sound_1_                              = detectors\art_beep1
+af_freq_1                                = 0.05, 2
+
+af_class_2                               = af_fireball
+af_sound_2_                              = detectors\art_beep1
+af_freq_2                                = 0.05, 2
+
+af_class_3                               = af_medusa
+af_sound_3_                              = detectors\art_beep1
+af_freq_3                                = 0.05, 2
+
+af_class_4                               = af_cristall_flower
+af_sound_4_                              = detectors\art_beep1
+af_freq_4                                = 0.05, 2
+
+af_class_5                               = af_blood
+af_sound_5_                              = detectors\art_beep1
+af_freq_5                                = 0.05, 2
+
+af_class_6                               = af_mincer_meat
+af_sound_6_                              = detectors\art_beep1
+af_freq_6                                = 0.05, 2
+
+af_class_7                               = af_electra_sparkler
+af_sound_7_                              = detectors\art_beep1
+af_freq_7                                = 0.05, 2
+
+af_class_8                               = af_electra_flash
+af_sound_8_                              = detectors\art_beep1
+af_freq_8                                = 0.05, 2
+
+af_class_9                               = af_quest_b14_twisted
+af_sound_9_                              = detectors\art_beep1
+af_freq_9                                = 0.05, 2
+
+af_class_10                              = jup_b1_half_artifact
+af_sound_10_                             = detectors\art_beep1
+af_freq_10                               = 0.05, 2
+
+af_class_11                              = af_drops
+af_sound_11_                             = detectors\art_beep1
+af_freq_11                               = 0.05, 2
+
+af_class_12                              = af_ameba_slime
+af_sound_12_                             = detectors\art_beep1
+af_freq_12                               = 0.05, 2
+
+af_class_13                              = af_rusty_thorn
+af_sound_13_                             = detectors\art_beep1
+af_freq_13                               = 0.05, 2
+
+af_class_14							     = af_fonar
+af_sound_14_						     = detectors\art_beep1
+af_freq_14							     = 0.05, 2
+
+af_class_15							     = af_thorn
+af_sound_15_						     = detectors\art_beep1
+af_freq_15							     = 0.05, 2
+
+af_class_16							     = af_dummy_glassbeads
+af_sound_16_						     = detectors\art_beep1
+af_freq_16							     = 0.05, 2
+
+af_class_17							     = amk_snezhok
+af_sound_17_						     = detectors\art_beep1
+af_freq_17							     = 0.05, 2
+
+attach_angle_offset                      = -1.303,-1.493,-1.202
+attach_position_offset                   = 0.110,-0.019,0.000
+
+attach_bone_name                         = bip01_l_hand
+auto_attach                              = false
+snd_draw                                 = weapons\detector_draw
+snd_holster                              = weapons\detector_hide
+snd_sprint_start						 = weapons\sprint_start
+snd_sprint_end							 = weapons\sprint_end
+snd_sprint_idle							 = weapons\sprint_pistol
+
+snd_gasmask								 = interface\item_usage\base_mask_use
+snd_gasmask1							 = interface\item_usage\base_mask_use1
+snd_gasmask2							 = interface\item_usage\base_mask_use2
+snd_gasmask3							 = interface\item_usage\base_mask_use3
+snd_gasmask4							 = interface\item_usage\base_mask_use4
+
+snd_switch_device						 = interface\item_usage\base_torch_use
+snd_switch_device1						 = interface\item_usage\base_torch_use1
+snd_switch_device2						 = interface\item_usage\base_torch_use2
+snd_switch_device3						 = interface\item_usage\base_torch_use3
+
+use_device_anims = true
+nightvision_time = 0.3
+
+[detector_base_hud]:hud_base
+attach_place_idx                         = 1
+
+hands_position							 = 0.023100,-0.064000,-0.061300
+hands_orientation						 = 0.0,0.0,0.0
+hands_position_16x9						 = 0.023100,-0.064000,-0.061300
+hands_orientation_16x9					 = 0.0,0.0,0.0
+
+aim_hud_offset_pos						 = 0,0,0
+aim_hud_offset_pos_16x9					 = 0,0,0
+aim_hud_offset_rot						 = 0,0,0
+aim_hud_offset_rot_16x9					 = 0,0,0
+
+gl_hud_offset_pos                        = 0,0,0
+gl_hud_offset_rot                        = 0,0,0
+
+lean_hud_offset_pos                      = 0,0,0
+lean_hud_offset_rot                      = 0,0,0
+
+[detector_simple_cop_hud]:detector_base_hud
+aim_hud_offset_pos						 = -0.044000,-0.028600,0.025300
+aim_hud_offset_pos_16x9					 = -0.044000,-0.028600,0.025300
+aim_hud_offset_rot						 = 0,0,0
+aim_hud_offset_rot_16x9					 = 0,0,0
+
+item_visual                              = dynamics\devices\dev_detector_1\dev_detector_1_hud
+
+fire_point                               = 0,0,-0.05
+fire_bone                                = light_bone_2
+fire_point2                              = 0,0,0
+fire_bone2                               = light_bone_1
+
+item_position							 = 0,0,0
+item_orientation						 = 0,0,0
+
+hands_position							 = 0.023100,-0.064000,-0.061300
+hands_orientation						 = 0.0,0.0,0.0
+hands_position_16x9						 = 0.023100,-0.064000,-0.061300
+hands_orientation_16x9					 = 0.0,0.0,0.0
+
+anm_show								 = dev_detector_1_draw
+anm_show_fast							 = dev_detector_1_draw_quick
+anm_hide								 = dev_detector_1_holster
+anm_hide_fast							 = dev_detector_1_holster_quick
+anm_idle								 = dev_detector_1_idle
+anm_idle_moving							 = dev_detector_1_idle_moving
+anm_idle_moving_slow 					 = dev_detector_1_slow, dev_detector_1_idle_moving
+anm_idle_moving_crouch 					 = dev_detector_1_slow_down, dev_detector_1_idle_moving
+anm_idle_sprint							 = dev_detector_1_idle_sprint
+anm_idle_sprint_start           		         = dev_detector_1_idle_sprint_start
+anm_idle_sprint_end             		         = dev_detector_1_idle_sprint_end
+
+anm_show_16x9			  				 = dev_detector_1_draw
+anm_show_fast_16x9		  				 = dev_detector_1_draw_quick
+anm_hide_16x9			  				 = dev_detector_1_holster
+anm_hide_fast_16x9		  				 = dev_detector_1_holster_quick
+anm_idle_16x9			  				 = dev_detector_1_idle
+anm_idle_moving_16x9		    		 = dev_detector_1_idle_moving
+anm_idle_moving_slow_16x9 	   			 = dev_detector_1_slow, dev_detector_1_idle_moving
+anm_idle_moving_crouch_16x9 			 = dev_detector_1_slow_down, dev_detector_1_idle_moving
+anm_idle_sprint_16x9		  			 = dev_detector_1_idle_sprint 
+anm_idle_sprint_start_16x9      		         = dev_detector_1_idle_sprint_start
+anm_idle_sprint_end_16x9        		         = dev_detector_1_idle_sprint_end
+
+anm_aim_start							 = dev_detector_1_aim_start
+anm_aim_end								 = dev_detector_1_aim_end
+anm_idle_aim							 = dev_detector_1_aim
+anm_idle_aim_moving						 = dev_detector_1_aim_walk
+anm_shots_aim							 = dev_detector_1_aim_shoot
+anm_shots								 = dev_detector_1_shoot
+anm_empty_fire_aim						 = dev_detector_1_aim
+anm_empty_fire							 = dev_detector_1_shoot
+anm_firemode							 = dev_detector_1_firemode
+anm_firemode_aim						 = dev_detector_1_aim
+anm_hand_draw							 = dev_detector_1_hand_draw
+anm_hand_hide							 = dev_detector_1_hand_hide
+anm_bolt_start							 = dev_detector_1_bolt_start
+anm_bolt_idle							 = dev_detector_1_bolt_idle
+anm_bolt_end							 = dev_detector_1_bolt_end
+anm_knife_1								 = dev_detector_1_knife_kick_1
+anm_knife_2								 = dev_detector_1_knife_kick_2
+
+anm_aim_start_16x9						 = dev_detector_1_aim_start
+anm_aim_end_16x9						 = dev_detector_1_aim_end
+anm_idle_aim_16x9						 = dev_detector_1_aim
+anm_idle_aim_moving_16x9				 = dev_detector_1_aim_walk
+anm_shots_aim_16x9						 = dev_detector_1_aim_shoot
+anm_shots_16x9							 = dev_detector_1_shoot
+anm_empty_fire_aim_16x9					 = dev_detector_1_aim
+anm_empty_fire_16x9						 = dev_detector_1_shoot
+anm_firemode_16x9						 = dev_detector_1_firemode
+anm_firemode_aim_16x9					 = dev_detector_1_aim
+anm_hand_draw_16x9						 = dev_detector_1_hand_draw
+anm_hand_hide_16x9						 = dev_detector_1_hand_hide
+anm_bolt_start_16x9						 = dev_detector_1_bolt_start
+anm_bolt_idle_16x9						 = dev_detector_1_bolt_idle
+anm_bolt_end_16x9						 = dev_detector_1_bolt_end
+anm_knife_1_16x9						 = dev_detector_1_knife_kick_1
+anm_knife_2_16x9						 = dev_detector_1_knife_kick_2
+
+anm_headlamp_on                        	 = dev_detector_1_headflash
+; anm_gasmask                              = dev_detector_1_clear
+
+anm_headlamp_on_16x9                   	 = dev_detector_1_headflash
+; anm_gasmask_16x9                         = dev_detector_1_clear
+
+flash_light_range                        = 0.1
+onoff_light_range                        = 0.1
+
+[detector_advanced_cop]:detector_simple_cop
+$spawn                                   = "devices\detector_advanced"
+class                                    = DET_ADVA
+visual                                   = dynamics\devices\dev_detector_2\dev_detector_2.ogf
+
+inv_name                                 = st_detector2
+inv_name_short                           = st_detector2
+description                              = st_detector2_descr
+
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 3
+inv_grid_y                               = 5
+cost                                     = 7500
+hud                                      = detector_advanced_cop_hud
+
+af_radius                                = 22.5
+af_vis_radius                            = 4
+
+af_class_18                              = af_skull_miser
+af_sound_18_                             = detectors\art_beep1
+af_freq_18                               = 0.05, 2
+
+af_class_19                              = af_night_star
+af_sound_19_                             = detectors\art_beep1
+af_freq_19                               = 0.05, 2
+
+af_class_20                              = af_vyvert
+af_sound_20_                             = detectors\art_beep1
+af_freq_20                               = 0.05, 2
+
+af_class_21                              = af_soul
+af_sound_21_                             = detectors\art_beep1
+af_freq_21                               = 0.05, 2
+
+af_class_22                              = af_fuzz_kolobok
+af_sound_22_                             = detectors\art_beep1
+af_freq_22                               = 0.05, 2
+
+af_class_23                              = af_electra_moonlight
+af_sound_23_                             = detectors\art_beep1
+af_freq_23                               = 0.05, 2
+
+af_class_24                              = af_dummy_battery
+af_sound_24_                             = detectors\art_beep1
+af_freq_24                               = 0.05, 2
+
+af_class_25                              = af_dummy_spring
+af_sound_25_                             = detectors\art_beep1
+af_freq_25                               = 0.05, 2
+
+af_class_26                              = af_ameba_slug
+af_sound_26_                             = detectors\art_beep1
+af_freq_26                               = 0.05, 2
+
+af_class_27                              = af_rusty_kristall
+af_sound_27_                             = detectors\art_beep1
+af_freq_27                               = 0.05, 2
+
+af_class_28							     = af_cocoon
+af_sound_28_						     = detectors\art_beep1
+af_freq_28							     = 0.05, 2
+
+af_class_29								 = af_repei
+af_sound_29_							 = detectors\art_beep1
+af_freq_29								 = 0.05, 2
+
+af_class_30								 = af_fountain
+af_sound_30_							 = detectors\art_beep1
+af_freq_30								 = 0.05, 2
+
+af_class_31								 = af_generator
+af_sound_31_							 = detectors\art_beep1
+af_freq_31								 = 0.05, 2
+
+af_class_32								 = af_tapeworm
+af_sound_32_							 = detectors\art_beep1
+af_freq_32								 = 0.05, 2
+
+af_class_33								 = af_zelonka
+af_sound_33_							 = detectors\art_beep1
+af_freq_33								 = 0.05, 2
+
+af_class_34								 = af_kashtan
+af_sound_34_							 = detectors\art_beep1
+af_freq_34								 = 0.05, 2
+
+af_class_35								 = amk_yoyo
+af_sound_35_							 = detectors\art_beep1
+af_freq_35								 = 0.05, 2
+
+af_class_36								 = amk_ice_s
+af_sound_36_							 = detectors\art_beep1
+af_freq_36								 = 0.05, 2
+
+af_class_37								 = af_plenka
+af_sound_37_							 = detectors\art_beep1
+af_freq_37								 = 0.05, 2
+
+af_class_38								 = amk_cristal_drops
+af_sound_38_							 = detectors\art_beep1
+af_freq_38								 = 0.05, 2
+
+af_class_39								 = af_mincer_izumrud
+af_sound_39_							 = detectors\art_beep1
+af_freq_39								 = 0.05, 2
+
+af_class_40								 = amk_grib_sapfir
+af_sound_40_							 = detectors\art_beep1
+af_freq_40								 = 0.05, 2
+
+[detector_advanced_cop_hud]:detector_base_hud
+aim_hud_offset_pos						 = -0.052800,0.000000,0.014300
+aim_hud_offset_pos_16x9					 = -0.052800,0.000000,0.014300
+aim_hud_offset_rot						 = 0,0,0
+aim_hud_offset_rot_16x9					 = 0,0,0
+
+item_visual                              = dynamics\devices\dev_detector_2\dev_detector_2_hud
+
+item_position							 = 0,0,0
+item_orientation						 = 0,0,0
+
+hands_position							 = 0.029700,-0.095900,-0.037100
+hands_orientation						 = 0.0,0.0,0.0
+hands_position_16x9						 = 0.029700,-0.095900,-0.037100
+hands_orientation_16x9					 = 0.0,0.0,0.0
+
+anm_show								 = dev_detector_2_draw
+anm_show_fast							 = dev_detector_2_draw_quick
+anm_hide								 = dev_detector_2_holster
+anm_hide_fast							 = dev_detector_2_holster_quick
+anm_idle								 = dev_detector_2_idle
+anm_idle_slow           				 = dev_detector_2_idle
+anm_idle_moving							 = dev_detector_2_moving
+anm_idle_moving_slow 					 = dev_detector_2_slow, dev_detector_2_moving
+anm_idle_moving_crouch 					 = dev_detector_2_slow_down, dev_detector_2_moving
+anm_idle_sprint_start					     = dev_detector_2_sprint_start
+anm_idle_sprint					         = dev_detector_2_sprint
+anm_idle_sprint_end					         = dev_detector_2_sprint_end
+
+anm_show_16x9							 = dev_detector_2_draw
+anm_show_fast_16x9						 = dev_detector_2_draw_quick
+anm_hide_16x9							 = dev_detector_2_holster
+anm_hide_fast_16x9						 = dev_detector_2_holster_quick
+anm_idle_16x9							 = dev_detector_2_idle
+anm_idle_moving_16x9					 = dev_detector_2_moving
+anm_idle_moving_slow_16x9 				 = dev_detector_2_slow, dev_detector_2_moving
+anm_idle_moving_crouch_16x9 			 = dev_detector_2_slow_down, dev_detector_2_moving
+anm_idle_sprint_start_16x9					 = dev_detector_2_sprint_start
+anm_idle_sprint_16x9					 = dev_detector_2_sprint
+anm_idle_sprint_end_16x9					     = dev_detector_2_sprint_end
+
+
+anm_aim_start							 = dev_detector_2_aim_start
+anm_aim_end								 = dev_detector_2_aim_end
+anm_idle_aim							 = dev_detector_2_aim
+anm_idle_aim_moving						 = dev_detector_2_aim_walk
+anm_shots_aim							 = dev_detector_2_aim_shoot
+anm_shots								 = dev_detector_2_shoot
+anm_empty_fire_aim						 = dev_detector_2_aim
+anm_empty_fire							 = dev_detector_2_shoot
+anm_firemode							 = dev_detector_2_firemode
+anm_firemode_aim						 = dev_detector_2_aim
+anm_hand_draw							 = dev_detector_2_hand_draw
+anm_hand_hide							 = dev_detector_2_hand_hide
+anm_bolt_start							 = dev_detector_2_bolt_start
+anm_bolt_idle							 = dev_detector_2_bolt_idle
+anm_bolt_end							 = dev_detector_2_bolt_end
+anm_knife_1								 = dev_detector_2_knife_kick_1
+anm_knife_2								 = dev_detector_2_knife_kick_2
+
+anm_aim_start_16x9						 = dev_detector_2_aim_start
+anm_aim_end_16x9						 = dev_detector_2_aim_end
+anm_idle_aim_16x9						 = dev_detector_2_aim
+anm_idle_aim_moving_16x9				 = dev_detector_2_aim_walk
+anm_shots_aim_16x9						 = dev_detector_2_aim_shoot
+anm_shots_16x9							 = dev_detector_2_shoot
+anm_empty_fire_aim_16x9					 = dev_detector_2_aim
+anm_empty_fire_16x9						 = dev_detector_2_shoot
+anm_firemode_16x9						 = dev_detector_2_firemode
+anm_firemode_aim_16x9					 = dev_detector_2_aim
+anm_hand_draw_16x9						 = dev_detector_2_hand_draw
+anm_hand_hide_16x9						 = dev_detector_2_hand_hide
+anm_bolt_start_16x9						 = dev_detector_2_bolt_start
+anm_bolt_idle_16x9						 = dev_detector_2_bolt_idle
+anm_bolt_end_16x9						 = dev_detector_2_bolt_end
+anm_knife_1_16x9						 = dev_detector_2_knife_kick_1
+anm_knife_2_16x9						 = dev_detector_2_knife_kick_2
+
+anm_headlamp_on                        	 = dev_detector_2_headflash
+; anm_gasmask                              = dev_detector_2_clear
+
+anm_headlamp_on_16x9                   	 = dev_detector_2_headflash
+; anm_gasmask_16x9                         = dev_detector_2_clear
+
+[detector_elite_cop]:detector_advanced_cop
+$spawn                                   = "devices\detector_elite"
+class                                    = DET_ELIT
+visual                                   = dynamics\devices\dev_detector_3\dev_detector_3.ogf
+inv_name                                 = st_detector3
+inv_name_short                           = st_detector3
+description                              = st_detector3_descr
+hud                                      = detector_elite_cop_hud
+
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 4
+inv_grid_y                               = 5
+cost                                     = 35000
+
+; elite x="0.00096" y="0.0035"
+ui_p                                     = -0.02904,-0.0389,0.00605
+ui_r									 = 0,0,0
+
+af_radius                                = 27.5
+af_vis_radius                            = 5
+
+af_class_41                              = af_eye
+af_sound_41_                             = detectors\art_beep1
+af_freq_41                               = 0.05, 2
+
+af_class_42                              = af_fire
+af_sound_42_                             = detectors\art_beep1
+af_freq_42                               = 0.05, 2
+
+af_class_43                              = af_gravi
+af_sound_43_                             = detectors\art_beep1
+af_freq_43                               = 0.05, 2
+
+af_class_44                              = af_gold_fish
+af_sound_44_                             = detectors\art_beep1
+af_freq_44                               = 0.05, 2
+
+af_class_45                              = af_baloon
+af_sound_45_                             = detectors\art_beep1
+af_freq_45                               = 0.05, 2
+
+af_class_46                              = af_glass
+af_sound_46_                             = detectors\art_beep1
+af_freq_46                               = 0.05, 2
+
+af_class_47                              = af_dummy_dummy
+af_sound_47_                             = detectors\art_beep1
+af_freq_47                               = 0.05, 2
+
+af_class_48                              = af_ice
+af_sound_48_                             = detectors\art_beep1
+af_freq_48                               = 0.05, 2
+
+af_class_49                              = af_ameba_mica
+af_sound_49_                             = detectors\art_beep1
+af_freq_49                               = 0.05, 2
+
+af_class_50                              = af_rusty_sea
+af_sound_50_                             = detectors\art_beep1
+af_freq_50                               = 0.05, 2
+
+af_class_51								 = af_cell
+af_sound_51_							 = detectors\art_beep1
+af_freq_51								 = 0.05, 2
+
+af_class_52								 = af_spaika
+af_sound_52_							 = detectors\art_beep1
+af_freq_52								 = 0.05, 2
+
+af_class_53								 = af_fire_loop
+af_sound_53_							 = detectors\art_beep1
+af_freq_53								 = 0.05, 2
+
+af_class_54								 = af_kislushka
+af_sound_54_							 = detectors\art_beep1
+af_freq_54								 = 0.05, 2
+
+af_class_55								 = af_ball
+af_sound_55_							 = detectors\art_beep1
+af_freq_55								 = 0.05, 2
+
+af_class_56								 = af_elektron
+af_sound_56_							 = detectors\art_beep1
+af_freq_56								 = 0.05, 2
+
+af_class_57								 = af_setka
+af_sound_57_							 = detectors\art_beep1
+af_freq_57								 = 0.05, 2
+
+af_class_58								 = af_gauss
+af_sound_58_							 = detectors\art_beep1
+af_freq_58								 = 0.05, 2
+
+af_class_59								 = af_medallion
+af_sound_59_							 = detectors\art_beep1
+af_freq_59								 = 0.05, 2
+
+af_class_60								 = af_moh
+af_sound_60_							 = detectors\art_beep1
+af_freq_60								 = 0.05, 2
+
+af_class_61								 = amk_bud_bright
+af_sound_61_							 = detectors\art_beep1
+af_freq_61								 = 0.05, 2
+
+af_class_62								 = af_atom
+af_sound_62_							 = detectors\art_beep1
+af_freq_62								 = 0.05, 2
+
+af_class_63								 = af_star_phantom
+af_sound_63_							 = detectors\art_beep1
+af_freq_63								 = 0.05, 2
+
+af_class_64								 = af_bat
+af_sound_64_							 = detectors\art_beep1
+af_freq_64								 = 0.05, 2
+
+af_class_65								 = af_sun
+af_sound_65_							 = detectors\art_beep1
+af_freq_65								 = 0.05, 2
+
+af_class_66								 = af_peas
+af_sound_66_							 = detectors\art_beep1
+af_freq_66								 = 0.05, 2
+
+af_class_67								 = af_ear
+af_sound_67_							 = detectors\art_beep1
+af_freq_67								 = 0.05, 2
+
+af_class_68								 = af_chelust
+af_sound_68_							 = detectors\art_beep1
+af_freq_68								 = 0.05, 2
+
+[detector_elite_cop_hud]:detector_base_hud
+aim_hud_offset_pos						 = -0.051700,-0.028600,0.049500
+aim_hud_offset_pos_16x9					 = -0.051700,-0.028600,0.049500
+aim_hud_offset_rot						 = 0,0,0
+aim_hud_offset_rot_16x9					 = 0,0,0
+
+item_visual                              = dynamics\devices\dev_detector_3\dev_detector_3_hud
+
+item_position							 = 0,0,0
+item_orientation						 = 0,0,0
+
+hands_position							 = 0.023100,-0.069500,-0.061300
+hands_orientation						 = 0.0,0.0,0.0
+hands_position_16x9						 = 0.023100,-0.069500,-0.061300
+hands_orientation_16x9					 = 0.0,0.0,0.0
+
+anm_show								 = veles_draw
+anm_show_fast							 = veles_draw_fast	;_quick
+anm_hide								 = veles_hide
+anm_hide_fast							 = veles_hide_fast
+anm_idle								 = veles_idle
+anm_idle_moving							 = veles_walk
+anm_idle_moving_slow 					 = veles_slow, veles_walk
+anm_idle_moving_crouch 					 = veles_slow_down, veles_walk
+anm_idle_sprint_start					     = veles_sprint_start
+anm_idle_sprint					         = veles_sprint
+anm_idle_sprint_end					         = veles_sprint_end
+
+anm_show_16x9							 = veles_draw
+anm_show_fast_16x9						 = veles_draw_fast	;_quick
+anm_hide_16x9							 = veles_hide
+anm_hide_fast_16x9						 = veles_hide_fast
+anm_idle_16x9							 = veles_idle
+anm_idle_moving_16x9					 = veles_walk
+anm_idle_moving_slow_16x9   			 = veles_slow, veles_walk
+anm_idle_moving_crouch_16x9 			 = veles_slow_down, veles_walk
+anm_idle_sprint_start_16x9					 = veles_sprint_start
+anm_idle_sprint_16x9					 = veles_sprint
+anm_idle_sprint_end_16x9					     = veles_sprint_end
+
+
+anm_aim_start							 = veles_aim_start
+anm_aim_end								 = veles_aim_end
+anm_idle_aim							 = veles_aim
+anm_idle_aim_moving						 = veles_aim_walk
+anm_shots_aim							 = veles_aim_shoot
+anm_shots								 = veles_shoot
+anm_empty_fire_aim						 = veles_aim
+anm_empty_fire							 = veles_shoot
+anm_firemode							 = veles_firemode
+anm_firemode_aim						 = veles_aim
+anm_hand_draw							 = veles_hand_draw
+anm_hand_hide							 = veles_hand_hide
+anm_bolt_start							 = veles_bolt_start
+anm_bolt_idle							 = veles_bolt_idle
+anm_bolt_end							 = veles_bolt_end
+anm_knife_1								 = veles_knife_kick_1
+anm_knife_2								 = veles_knife_kick_2
+
+anm_aim_start_16x9						 = veles_aim_start
+anm_aim_end_16x9						 = veles_aim_end
+anm_idle_aim_16x9						 = veles_aim
+anm_idle_aim_moving_16x9				 = veles_aim_walk
+anm_shots_aim_16x9						 = veles_aim_shoot
+anm_shots_16x9							 = veles_shoot
+anm_empty_fire_aim_16x9					 = veles_aim
+anm_empty_fire_16x9						 = veles_shoot
+anm_firemode_16x9						 = veles_firemode
+anm_firemode_aim_16x9					 = veles_aim
+anm_hand_draw_16x9						 = veles_hand_draw
+anm_hand_hide_16x9						 = veles_hand_hide
+anm_bolt_start_16x9						 = veles_bolt_start
+anm_bolt_idle_16x9						 = veles_bolt_idle
+anm_bolt_end_16x9						 = veles_bolt_end
+anm_knife_1_16x9						 = veles_knife_kick_1
+anm_knife_2_16x9						 = veles_knife_kick_2
+
+anm_headlamp_on                        	 = veles_headflash
+; anm_gasmask                              = veles_clear
+
+anm_headlamp_on_16x9                   	 = veles_headflash
+; anm_gasmask_16x9                         = veles_clear
+
+[detector_scientific_cop]:detector_elite_cop
+$spawn                                   = "devices\detector_scientific"
+class                                    = DET_SCIE
+visual                                   = dynamics\devices\dev_detector_4\dev_detector_4.ogf
+inv_name                                 = st_detector4
+inv_name_short                           = st_detector4
+description                              = st_detector4_descr
+hud                                      = detector_scientific_cop_hud
+
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 5
+inv_grid_y                               = 5
+cost                                     = 75000
+
+; elite x="0.00096" y="0.0035"
+ui_p                                     = -0.02904,-0.0389,0.00605
+ui_r									 = 0,0,0
+
+af_radius                                = 30
+af_vis_radius                            = 6
+
+af_class_69                              = af_oasis_heart
+af_sound_69_                             = detectors\art_beep1
+af_freq_69                               = 0.05, 2
+
+af_class_70                              = af_dummy_pellicle
+af_sound_70_                             = detectors\art_beep1
+af_freq_70                               = 0.05, 2
+
+af_class_71								 = af_wish
+af_sound_71_							 = detectors\art_beep1
+af_freq_71								 = 0.05, 2
+
+af_class_72								 = af_signet
+af_sound_72_							 = detectors\art_beep1
+af_freq_72								 = 0.05, 2
+
+af_class_73								 = af_lighthouse
+af_sound_73_							 = detectors\art_beep1
+af_freq_73								 = 0.05, 2
+
+af_class_74								 = af_zhelch
+af_sound_74_							 = detectors\art_beep1
+af_freq_74								 = 0.05, 2
+
+af_class_75								 = af_sandstone
+af_sound_75_							 = detectors\art_beep1
+af_freq_75								 = 0.05, 2
+
+af_class_76								 = af_black_angel
+af_sound_76_							 = detectors\art_beep1
+af_freq_76								 = 0.05, 2
+
+af_class_77								 = af_grapes
+af_sound_77_							 = detectors\art_beep1
+af_freq_77								 = 0.05, 2
+
+af_class_78								 = af_serofim
+af_sound_78_							 = detectors\art_beep1
+af_freq_78								 = 0.05, 2
+
+af_class_79								 = af_kogot
+af_sound_79_							 = detectors\art_beep1
+af_freq_79								 = 0.05, 2
+
+af_class_80								 = af_geliy
+af_sound_80_							 = detectors\art_beep1
+af_freq_80								 = 0.05, 2
+
+af_class_81								 = af_agimlet
+af_sound_81_							 = detectors\art_beep1
+af_freq_81								 = 0.05, 2
+
+af_class_82								 = af_dragon_eye
+af_sound_82_							 = detectors\art_beep1
+af_freq_82								 = 0.05, 2
+
+af_class_83								 = af_monolith
+af_sound_83_							 = detectors\art_beep1
+af_freq_83								 = 0.05, 2
+
+af_class_84								 = af_black
+af_sound_84_							 = detectors\art_beep1
+af_freq_84								 = 0.05, 2
+
+af_class_85								 = af_izumrud
+af_sound_85_							 = detectors\art_beep1
+af_freq_85								 = 0.05, 2
+
+af_class_86								 = af_vaselisk
+af_sound_86_							 = detectors\art_beep1
+af_freq_86								 = 0.05, 2
+
+af_class_87                              = af_compass
+af_sound_87_                             = detectors\art_beep1
+af_freq_87                               = 0.05, 2
+
+af_class_all = true
+af_sound_all_ = detectors\art_beep1
+af_freq_all = 0.05, 2
+
+; zone_class_1                             = zone_mine_acidic_weak
+; zone_class_2                             = zone_mine_acidic_average
+; zone_class_3                             = zone_mine_acidic_strong
+
+; zone_class_4                             = zone_mine_electric_weak
+; zone_class_5                             = zone_mine_electric_average
+; zone_class_6                             = zone_mine_electric_strong
+
+; zone_class_7                             = zone_mine_gravitational_weak
+; zone_class_8                             = zone_mine_gravitational_average
+; zone_class_9                             = zone_mine_gravitational_strong
+
+; zone_class_10                            = zone_mine_thermal_weak
+; zone_class_11                            = zone_mine_thermal_average
+; zone_class_12                            = zone_mine_thermal_strong
+
+; zone_class_13                            = zone_mine_steam_weak
+; zone_class_14                            = zone_mine_steam_average
+; zone_class_15                            = zone_mine_steam_strong
+
+; zone_class_16                            = zone_mine_acidic_big
+
+; zone_class_17                            = zone_mine_chemical_weak
+; zone_class_18                            = zone_mine_chemical_average
+; zone_class_19                            = zone_mine_chemical_strong
+
+; zone_class_20                            = zone_buzz_weak
+; zone_class_21                            = zone_buzz_average
+; zone_class_22                            = zone_buzz_strong
+
+; zone_class_23                            = zone_mine_static_weak
+; zone_class_24                            = zone_mine_static_average
+; zone_class_25                            = zone_mine_static_strong
+
+; zone_class_26                            = zone_witches_galantine_weak
+; zone_class_27                            = zone_witches_galantine_average
+; zone_class_28                            = zone_witches_galantine_strong
+
+; zone_class_29                            = zone_mine_gravitational_big
+
+; zone_class_30                            = zone_gravi_zone
+
+; zone_class_31                            = zone_zharka_static_weak
+; zone_class_32                            = zone_zharka_static_average
+; zone_class_33                            = zone_zharka_static_strong
+
+; zone_class_34                            = zone_mosquito_bald
+; zone_class_35                            = zone_mosquito_bald_weak
+; zone_class_36                            = zone_mosquito_bald_weak_noart
+; zone_class_37                            = zone_mosquito_bald_average
+; zone_class_38                            = zone_mosquito_bald_strong
+; zone_class_39                            = zone_mosquito_bald_strong_noart
+
+; zone_freq_1                              = 0.05, 2
+; zone_freq_2                              = 0.05, 2
+; zone_freq_3                              = 0.05, 2
+; zone_freq_4                              = 0.05, 2
+; zone_freq_5                              = 0.05, 2
+; zone_freq_6                              = 0.05, 2
+; zone_freq_7                              = 0.05, 2
+; zone_freq_8                              = 0.05, 2
+; zone_freq_9                              = 0.05, 2
+; zone_freq_10                             = 0.05, 2
+; zone_freq_11                             = 0.05, 2
+; zone_freq_12                             = 0.05, 2
+; zone_freq_13                             = 0.05, 2
+; zone_freq_14                             = 0.05, 2
+; zone_freq_15                             = 0.05, 2
+; zone_freq_16                             = 0.05, 2
+; zone_freq_17                             = 0.05, 2
+; zone_freq_18                             = 0.05, 2
+; zone_freq_19                             = 0.05, 2
+; zone_freq_20                             = 0.05, 2
+; zone_freq_21                             = 0.05, 2
+; zone_freq_22                             = 0.05, 2
+; zone_freq_23                             = 0.05, 2
+; zone_freq_24                             = 0.05, 2
+; zone_freq_25                             = 0.05, 2
+; zone_freq_26                             = 0.05, 2
+; zone_freq_27                             = 0.05, 2
+; zone_freq_28                             = 0.05, 2
+; zone_freq_29                             = 0.05, 2
+; zone_freq_30                             = 0.05, 2
+; zone_freq_31                             = 0.05, 2
+; zone_freq_32                             = 0.05, 2
+; zone_freq_33                             = 0.05, 2
+
+; zone_freq_34                             = 0.05, 2
+; zone_freq_35                             = 0.05, 2
+; zone_freq_36                             = 0.05, 2
+; zone_freq_37                             = 0.05, 2
+; zone_freq_38                             = 0.05, 2
+; zone_freq_39                             = 0.05, 2
+
+det_discharge_step_act = 0.000004
+det_discharge_step_pas = 0.000002
+
+[detector_scientific_cop_hud]:detector_base_hud
+aim_hud_offset_pos						 = -0.051700,-0.028600,0.049500
+aim_hud_offset_pos_16x9					 = -0.051700,-0.028600,0.049500
+aim_hud_offset_rot						 = 0,0,0
+aim_hud_offset_rot_16x9					 = 0,0,0
+
+item_visual                              = dynamics\devices\dev_detector_4\dev_detector_4_hud
+
+item_position							 = 0,0,0
+item_orientation						 = 0,0,0
+
+hands_position							 = 0.023100,-0.069500,-0.061300
+hands_orientation						 = 0.0,0.0,0.0
+hands_position_16x9						 = 0.023100,-0.069500,-0.061300
+hands_orientation_16x9					 = 0.0,0.0,0.0
+
+anm_show								 = veles_draw
+anm_show_fast							 = veles_draw_fast	;_quick
+anm_hide								 = veles_hide
+anm_hide_fast							 = veles_hide_fast
+anm_idle								 = veles_idle
+anm_idle_moving							 = veles_walk
+anm_idle_moving_slow 					 = veles_slow, veles_walk
+anm_idle_moving_crouch 					 = veles_slow_down, veles_walk
+anm_idle_sprint_start					     = veles_sprint_start
+anm_idle_sprint					         = veles_sprint
+anm_idle_sprint_end					         = veles_sprint_end
+
+anm_show_16x9							 = veles_draw
+anm_show_fast_16x9						 = veles_draw_fast	;_quick
+anm_hide_16x9							 = veles_hide
+anm_hide_fast_16x9						 = veles_hide_fast
+anm_idle_16x9							 = veles_idle
+anm_idle_moving_16x9					 = veles_walk
+anm_idle_moving_slow_16x9   			 = veles_slow, veles_walk
+anm_idle_moving_crouch_16x9 			 = veles_slow_down, veles_walk
+;anm_idle_sprint_16x9					 = veles_sprint
+
+anm_idle_sprint_start_16x9					 = veles_sprint_start
+anm_idle_sprint_16x9					 = veles_sprint
+anm_idle_sprint_end_16x9					     = veles_sprint_end
+
+anm_aim_start							 = veles_aim_start
+anm_aim_end								 = veles_aim_end
+anm_idle_aim							 = veles_aim
+anm_idle_aim_moving						 = veles_aim_walk
+anm_shots_aim							 = veles_aim_shoot
+anm_shots								 = veles_shoot
+anm_empty_fire_aim						 = veles_aim
+anm_empty_fire							 = veles_shoot
+anm_firemode							 = veles_firemode
+anm_firemode_aim						 = veles_aim
+anm_hand_draw							 = veles_hand_draw
+anm_hand_hide							 = veles_hand_hide
+anm_lefthand_detector_art_upgr_wpn_throw_begin = veles_bolt_start
+anm_lefthand_detector_art_upgr_wpn_throw_idle = veles_bolt_idle
+anm_lefthand_detector_art_upgr_wpn_throw_end = veles_bolt_end
+
+anm_lefthand_detector_art_upgr_wpn_attack = veles_knife_kick_1
+anm_lefthand_detector_art_upgr_wpn_attack2 = veles_knife_kick_2
+
+anm_aim_start_16x9						 = veles_aim_start
+anm_aim_end_16x9						 = veles_aim_end
+anm_idle_aim_16x9						 = veles_aim
+anm_idle_aim_moving_16x9				 = veles_aim_walk
+anm_shots_aim_16x9						 = veles_aim_shoot
+anm_shots_16x9							 = veles_shoot
+anm_empty_fire_aim_16x9					 = veles_aim
+anm_empty_fire_16x9						 = veles_shoot
+anm_firemode_16x9						 = veles_firemode
+anm_firemode_aim_16x9					 = veles_aim
+anm_hand_draw_16x9						 = veles_hand_draw
+anm_hand_hide_16x9						 = veles_hand_hide
+anm_lefthand_detector_art_upgr_wpn_throw_begin_16x9 = veles_bolt_start
+anm_lefthand_detector_art_upgr_wpn_throw_idle_16x9 = veles_bolt_idle
+anm_lefthand_detector_art_upgr_wpn_throw_end_16x9 = veles_bolt_end
+
+anm_lefthand_detector_art_upgr_wpn_attack_16x9 = veles_knife_kick_1
+anm_lefthand_detector_art_upgr_wpn_attack2_16x9 = veles_knife_kick_2
+
+anm_headlamp_on                        	 = veles_headflash
+; anm_gasmask                              = veles_clear
+
+anm_headlamp_on_16x9                   	 = veles_headflash
+; anm_gasmask_16x9                         = veles_clear
+
+anm_lefthand_detector_art_upgr_wpn_headlamp_on = veles_headflash
+anm_lefthand_detector_art_upgr_wpn_headlamp_on_jammed = veles_headflash
+anm_lefthand_detector_art_upgr_wpn_headlamp_on_empty = veles_headflash
+anm_lefthand_detector_art_upgr_wpn_headlamp_off = veles_headflash
+anm_lefthand_detector_art_upgr_wpn_headlamp_off_jammed = veles_headflash
+anm_lefthand_detector_art_upgr_wpn_headlamp_off_empty = veles_headflash
+anm_lefthand_detector_art_upgr_wpn_headlamp_on_16x9 = veles_headflash
+anm_lefthand_detector_art_upgr_wpn_headlamp_on_jammed_16x9 = veles_headflash
+anm_lefthand_detector_art_upgr_wpn_headlamp_on_empty_16x9 = veles_headflash
+anm_lefthand_detector_art_upgr_wpn_headlamp_off_16x9 = veles_headflash
+anm_lefthand_detector_art_upgr_wpn_headlamp_off_jammed_16x9 = veles_headflash
+anm_lefthand_detector_art_upgr_wpn_headlamp_off_empty_16x9 = veles_headflash
+
+[detector_art]:detector_simple
+visual					= equipments\detector_3.ogf
+inv_name				= detector_art_name
+inv_name_short			= detector_art_name
+description				= detector_art_descr
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x				= 7
+inv_grid_y				= 3
+slot					= 8,13
+cost					= 0
+
+[detector_art_upgr]:detector_scientific_cop
+inv_name				= detector_art_upgr_name
+inv_name_short			= detector_art_upgr_name
+description				= detector_art_upgr_descr
+slot					= 8,13
+af_radius               = 33
+cost					= 0
+
+;;;;;;;
+;;	OTHERS
+;;;;;;;
+[wpn_vodka_hud]:identity_immunities
+fire_point              = 0.0, 0.0, 0.06
+fire_bone               = bip01_head
+orientation             = 0, 0, 0
+position                = 0, 0, 0
+visual                  = weapons\vodka\vodka_hud.ogf
+
+anim_idle				= vodka_2
+anim_show				= vodka_1
+anim_hide				= vodka_4
+anim_play				= vodka_5
+anim_prepare			= vodka_5
+anim_eat				= vodka_3
+
+[matches]:bread_a
+class                   = II_ATTCH
+visual					= new_item\item_spichki.ogf
+description				= matches_desc
+inv_name				= matches
+inv_name_short			= matches
+inv_weight				= 0.05
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x				= 7
+inv_grid_y				= 5
+cost					= 500
+; eat_health = 0
+; eat_satiety = 0
+; eat_power = 0
+; eat_radiation = 0
+; wounds_heal_perc = 0
+; eat_portions_num = 5
+
+[treasure_seif]:matras
+visual          = physics\box\seif_01
+description  = enc_amk_ruksak
+inv_name   = amk_ruksak
+inv_name_short  = amk_ruksak_s
+
+inv_grid_width  = 3
+inv_grid_height  = 3
+inv_grid_x   = 9
+inv_grid_y   = 35
+
+[inventory_seif]:matras
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 				= "amk_mod_matras\inventory seif"
+class				= O_INVBOX
+cform				= skeleton
+visual	= physics\box\seif_01
+script_binding      = bind_physic_object.init
+
+[m_inventory_seif]:inventory_seif
+visual = physics\box\seif_01
+radius = 1
+
+[m_repair_boxoutfit]:inventory_seif
+visual	= dynamics\equipment_cache\equipment_rucksack_01_case.ogf
+radius = 0
+
+[minigame_thimble]:inventory_seif
+visual	= physics\equipment_cache\equipment_rucksack_01_case.ogf
+tips = minigame_treasure
+radius = 0
+
+[repair_itemoutfit]:amk_metka
+description		= repair_itemoutfit_desc
+inv_name		= repair_itemoutfit_name
+inv_name_short	= repair_itemoutfit_name
+inv_weight		= 0.25
+inv_grid_width	= 3
+inv_grid_height	= 2
+inv_grid_x		= 6
+inv_grid_y		= 13
+
+[repair_itemoutfit_feik]:repair_itemoutfit
+visual 			= new_item\item_remk_outf.ogf
+class			= II_ATTCH
+description		= repair_itemoutfit_feik_desc
+inv_grid_height = 1
+inv_grid_width = 2
+inv_grid_x = 7
+inv_grid_y = 11
+cost	   = 1000
+
+
+[repair_item_weapon]:amk_metka
+description		= repair_item_weapon_desc
+inv_name		= repair_item_weapon_name
+inv_name_short	= repair_item_weapon_name
+inv_weight		= 0.25
+inv_grid_width	= 3
+inv_grid_height	= 2
+inv_grid_x		= 6
+inv_grid_y		= 15
+
+[repair_item_weapon_feik]:repair_item_weapon
+visual 			= new_item\item_remk_wpn.ogf
+class			= II_ATTCH
+description		= repair_item_weapon_feik_desc
+inv_grid_height = 1
+inv_grid_width = 2
+inv_grid_x = 7
+inv_grid_y = 10
+cost	   = 1000
+
+
+[closer_box]:amk_metka
+description		= closer_box_desc
+inv_name		= closer_box_name
+inv_name_short	= closer_box_name
+inv_grid_width	= 1
+inv_grid_height	= 2
+inv_grid_x		= 7
+inv_grid_y		= 8
+inv_weight		= 0
+
+[container]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 				= "devices\cointainer"
+class				= O_CONTNR
+cform				= skeleton
+cost        = 5000
+inv_weight			= 3	;0.2
+script_binding      = bind_physic_object.init
+
+visual 			= equipments\item_rukzak.ogf
+description  = enc_amk_ruksak
+inv_name   = amk_ruksak
+inv_name_short  = amk_ruksak_s
+inv_grid_width  = 2
+inv_grid_height  = 3
+inv_grid_x   = 12
+inv_grid_y   = 32
+radius = 1
+
+[rucksack]:container
+visual 			= equipments\item_rukzak.ogf
+description  = enc_amk_ruksak
+inv_name   = amk_ruksak
+inv_name_short  = amk_ruksak_s
+inv_weight		= 1.5
+
+inv_grid_width  = 2
+inv_grid_height  = 3
+inv_grid_x   = 8
+inv_grid_y   = 17
+manual_ungrouping = true
+
+; Теневой инвентарь, который всегда находится у ГГ в инвентаре
+[shadow_inventory]:container
+visual 			= equipments\item_rukzak.ogf
+description  = shadow_inv_desc
+inv_weight 	 = 0.01
+inv_name   = shadow_inv
+inv_name_short  = shadow_inv_s
+inv_grid_width  = 0
+inv_grid_height  = 0
+quest_item   = true
+
+ph_heavy = true
+[shadow_inventory2]:shadow_inventory
+
+[inventory_box]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 				= "devices\inventory box"
+class				= O_INVBOX
+cform				= skeleton
+inv_name			= ArtefactMerger
+inv_name_short		= AfMerger
+inv_weight			= 3	;0.2
+visual				= physics\box\expl_dinamit.ogf
+script_binding      = bind_physic_object.init
+
+[inventory_box_ruck]:inventory_box
+visual = equipments\item_rukzak.ogf
+custom_data = scripts\treasure_inventory_box.ltx
+
+[rukzak_inventory_box]:inventory_box
+visual 			= equipments\item_rukzak.ogf
+
+[marsh_inventory_box]:inventory_box
+visual 			= physics\box\konteyner_01.ogf
+
+[vasilev_suit]:inventory_box
+visual = equipments\ecolog_suit
+
+[boar_body]:inventory_box
+visual = physics\equipment_cache\equipment_box_01_case_no
+
+[banka]:matras
+visual	= physics\decor\bottle_bar_1.ogf
+description					= enc_banka
+inv_name					= banka
+inv_name_short				= banka
+inv_weight					= 0.5
+icon_group          = 0
+inv_grid_width		= 2
+inv_grid_height		= 2
+inv_grid_x					= 8
+inv_grid_y					= 0
+cost						= 50
+eat_health 			= 0
+eat_satiety 		= 0
+eat_power 			= 0
+eat_radiation 		= 0
+wounds_heal_perc 	= 0
+eat_alcohol			= 0
+eat_portions_num 	= 1
+
+[banka_full]:banka
+visual				= new_item\banka_studnia.ogf
+class 				= II_ATTCH
+inv_name			= banka_full
+inv_name_short		= banka_full
+description			= enc_banka_full
+quest_item			= false
+inv_weight			= 4.5
+inv_grid_y			= 2
+cost				= 1500
+
+[upir_quest_banka]:banka_full
+description					= upir_quest_banka_name_desc
+cost 						= 0
+
+watcher_act.bad_item 		= true
+
+[acid_banka]:banka_full
+description					= enc_acid_banka
+inv_name					= acid_banka
+inv_name_short				= acid_banka
+inv_grid_width     = 2
+inv_grid_height    = 2
+inv_grid_x         = 8
+inv_grid_y         = 4
+cost 			   = 0
+
+watcher_act.bad_item 		= true
+
+[mixture]:vodka
+visual	= new_item\drug_booster
+description					= mixture_desc
+inv_name					= mixture
+inv_name_short				= mixture
+inv_weight					= 0.15
+inv_grid_height		= 1
+inv_grid_x					= 9
+inv_grid_y					= 16
+cost						= 500
+
+watcher_act.bad_item 		= true
+
+eat_health			= 0
+eat_satiety			= 0
+eat_alcohol			= 0
+eat_power			= 0
+eat_radiation		= 0
+wounds_heal_perc 	= 0
+eat_portions_num 	= 1
+hud = drug_booster_use
+
+[drag_cat_eyes]:antirad
+visual				= new_item\drug_radioprotector.ogf
+description			= drag_cat_eyes_descr
+inv_name			= drag_cat_eyes
+inv_name_short		= drag_cat_eyes
+inv_weight			= 0.05
+inv_grid_width		= 1
+inv_grid_height		= 1
+icon_group = 7
+inv_grid_x                               = 5
+inv_grid_y                               = 2
+cost				= 800
+hud = drug_radioprotector_use
+
+[batt_torch]:identity_immunities
+visual				= new_item\duracell.ogf
+class 				= II_ATTCH
+cform           	= skeleton
+inv_weight			= 0.1
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 9
+inv_grid_y			= 14
+;eat_health			= 0
+;eat_satiety			= 0
+;eat_power			= 0
+;eat_radiation		= 0
+;wounds_heal_perc	= 0
+description			= enc_item_battery_05
+inv_name_short		= item_battery_05
+inv_name			= item_battery_05
+cost				= 300
+;hud = wpn_vodka_hud
+
+[sak_resiver_yantar]:antirad
+description			= sak_resiver_yantar_desc
+inv_name			= sak_resiver_yantar_name
+inv_name_short		= sak_resiver_yantar_name
+visual				= new_item\skaner_n1_static
+inv_weight			= 15
+inv_grid_width      = 2
+inv_grid_height     = 2
+inv_grid_x          = 7
+inv_grid_y          = 6
+cost				= 5000
+slot =
+
+eat_health			= 0
+eat_satiety			= 0
+eat_power			= 0
+eat_radiation		= 0
+wounds_heal_perc	= 0
+
+hud					= no_hud
+
+watcher_act.bad_item 		= true
+
+[sak_resiver2_yantar]:sak_resiver_yantar
+visual				= new_item\skaner_n2_static
+
+[scanner_artefact]:antirad
+description			= scanner_artefact_desc
+inv_name			= scanner_artefact
+inv_name_short		= scanner_artefact
+visual				= new_item\scanner_artefact.ogf
+inv_weight			= 9.5
+inv_grid_width		= 1
+inv_grid_height		= 2
+inv_grid_x			= 8
+inv_grid_y			= 8
+cost				= 1000
+slot =
+
+eat_health			= 0
+eat_satiety			= 0
+eat_power			= 0
+eat_radiation		= 0
+wounds_heal_perc	= 0
+
+hud					= no_hud
+
+watcher_act.bad_item 		= true
+
+[aver_monolith_scanner]:scanner_artefact
+description			= aver_monolith_scanner_desc
+inv_name			= aver_monolith_scanner_name
+inv_name_short		= aver_monolith_scanner_name
+
+[rastopka_immunities]
+burn_immunity			      = 1.0
+strike_immunity			    = 0.0
+shock_immunity			    = 0.0
+wound_immunity			    = 0.0
+wound_2_immunity		    = 0.0
+radiation_immunity		  = 0.0
+telepatic_immunity		  = 0.0
+chemical_burn_immunity	= 0.0
+explosion_immunity	  	= 0.1
+fire_wound_immunity		  = 0.001
+
+
+[rastopka]:identity_immunities
+GroupControlSection = spawn_group
+$spawn          = "physics\rastopka"
+$prefetch       = 16
+visual          = new_item\rastopka.ogf
+class           = II_EXPLO
+
+immunities_sect = rastopka_immunities
+
+cform           = skeleton
+remove_time     = 1
+inv_name        = Rastopka_wood
+inv_name_short  =
+description			= rastopka_desc
+inv_weight      = 1.5
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x	   	= 9
+inv_grid_y	  	= 9
+
+can_take        = false
+cost            = 1000
+
+
+
+blast           = 0.001
+blast_r         = 0.1
+blast_impulse   = 0
+blast_impulse_factor = 0
+frags             = 1
+frags_r           = 0.1
+frag_hit          = 0.01
+frag_hit_impulse  = 0.1
+
+condition_to_explode	= -55
+time_to_explode			  = 10.0
+set_timer_particles		= vehiclefx\exhaust_1
+
+hit_type_blast		= burn
+hit_type_frag		  = burn
+
+up_throw_factor		= 1.0
+hit_break_threthhold = 1
+collision_break_threthhold  = 2000.f
+immunity_factor       = 1.3
+
+wm_size			= 0.1
+
+explode_particles	= amk\flame
+
+light_color		= 1.9,1.2,0.5
+light_range		= 30.0
+light_time 		= 1
+fragment_speed		= 1
+explode_duration	= 0
+snd_explode = ambient\kampfire
+wallmark_section	= explosion_marks
+
+[medkit_scientic_razgr]:medkit_scientic
+icon_group					= 2
+inv_grid_x					= 3
+inv_grid_y					= 6
+inv_grid_width				= 1
+inv_grid_height				= 1									   
+
+[manool_test_section]:medkit
+class = II_ATTCH
+
+[mask_repair_kit]:matras
+visual = physics\box\box_metall_01.ogf
+inv_name   = mask_repair_kit_name
+inv_name_short  = mask_repair_kit_name
+description  = mask_repair_kit_desc
+inv_grid_width     = 2
+inv_grid_height    = 1
+inv_grid_x         = 10
+inv_grid_y         = 2
+icon_group = 3
+manual_ungrouping = true
+
+[pda_chip_rad]:matras
+visual 				= equipments\item_battery_02.ogf
+inv_name   			= pda_chip_name
+inv_name_short  	= pda_chip_name
+description  		= pda_chip_rad_desc
+inv_weight			= 0.1
+inv_grid_width      = 1
+inv_grid_height     = 1
+inv_grid_x          = 13
+inv_grid_y          = 2
+icon_group 			= 3
+cost				= 4000
+
+[pda_chip_spot]:pda_chip_rad
+description  		= pda_chip_spot_desc
+inv_grid_x          = 14
+cost				= 10000
+
+[pda_chip_cook]:pda_chip_rad
+description  		= pda_chip_cook_desc
+inv_grid_x          = 15
+cost				= 50000
+
+[pda_chip_hack]:pda_chip_rad
+description  		= pda_chip_hack_desc
+inv_grid_x          = 15
+inv_grid_y          = 3
+cost				= 50000

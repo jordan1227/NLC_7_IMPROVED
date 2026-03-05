@@ -1,0 +1,4 @@
+
+function add(name, func, delay, fast)
+    dsh.timeout(delay, function() loadstring(func)() end)
+end

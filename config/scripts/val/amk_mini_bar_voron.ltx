@@ -1,0 +1,25 @@
+[logic]
+active = walker
+on_death = death@voron
+
+[walker]
+path_walk = dt_voron_walk_way
+path_look = dt_voron_way_look
+meet = meet
+target = actor
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 1
+ignore_types = grenade, corpse, sound
+
+[meet]
+use = true
+use_wpn = false
+abuse = true
+meet_talk_enabled = true
+meet_dialog = voron_hello_dialog
+target = actor
+
+[death@voron]
+on_death = %+voron_umer%

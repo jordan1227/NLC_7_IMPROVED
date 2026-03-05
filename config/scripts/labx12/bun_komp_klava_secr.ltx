@@ -1,0 +1,15 @@
+[logic]
+active = ph_idle@idle
+
+[ph_idle@idle]
+tips = comp_enter
+on_use = %=sak.actor_hide_weapon()% ph_idle@idle2
+
+[ph_idle@idle2]
+on_timer = 800| %=sak.bun_klava_sound()% ph_idle@idle3
+
+[ph_idle@idle3]
+on_timer = 1900| %=sak.bun_comp_enter()% ph_idle@idle4
+
+[ph_idle@idle4]
+on_timer = 500| %=sak.restore_weap()% ph_idle@idle

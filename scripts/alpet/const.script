@@ -1,0 +1,207 @@
+level_vertices = {
+	l01_escape = 595499,
+	l02_garbage = 382663,
+	l03_agroprom = 437421,
+	l03u_agr_underground = 4932,
+	l04_darkvalley = 390125,
+	l04u_labx18 = 7581,
+	l05_bar = 99539,
+	l06_rostok = 67713,
+	l08_yantar = 141471,
+	l08u_brainlab = 8008,
+	l07_military = 418268,
+	l10_radar = 227189,
+	l11_pripyat = 261219,
+	l12_stancia = 477923,
+	l12u_sarcofag = 10672,
+	l12u_control_monolith = 3982,
+	l12_stancia_2 = 264577,
+	l10u_bunker = 8821,
+	atp_for_test22 = 0,
+	peshera = 0,
+	puzir = 0,
+	aver = 1788845,
+	av_peshera = 172637,
+	limansk = 61524,
+	hospital = 7865,
+	generators = 752337,
+	warlab = 7776,
+	red_forest = 166431,
+	lost_village = 49127,
+	marsh = 528961,
+	labx8 = 6856,
+	labx10 = 13420,
+	deadcity = 389616,
+	k01_darkscape = 1085863,
+	l12_stancia_new = 412194,
+	l12_stancia_2_new = 608126
+}
+
+level_number = {
+	l01_escape = 1,
+	l02_garbage = 2,
+	l03_agroprom = 3,
+	l03u_agr_underground = 4,
+	l04_darkvalley = 5,
+	l04u_labx18 = 6,
+	l05_bar = 7,
+	l06_rostok = 8,
+	l08_yantar = 9,
+	l08u_brainlab = 10,
+	l07_military = 11,
+	l10_radar = 13,
+	l11_pripyat = 14,
+	l12_stancia = 15,
+	l12u_sarcofag = 16,
+	l12u_control_monolith = 17,
+	l12_stancia_2 = 19,
+	l10u_bunker = 20,
+	atp_for_test22 = 22,
+	peshera = 23,
+	puzir = 24,
+	aver = 25,
+	av_peshera = 26,
+	limansk = 27,
+	hospital = 28,
+	generators = 29,
+	warlab = 30,
+	red_forest = 31,
+	lost_village = 32,
+	marsh = 33,
+	labx8 = 34,
+	labx10 = 35,
+	deadcity = 36,
+	k01_darkscape = 37,
+	l12_stancia_new = 38,
+	l12_stancia_2_new = 39,
+	total = 39
+}
+
+game_vertices = {
+	l01_escape = {0, 251},
+	l02_garbage = {252, 415},
+	l03_agroprom = {416, 702},
+	l03u_agr_underground = {703, 810},
+	l04_darkvalley = {811, 1108},
+	l04u_labx18 = {1109, 1167},
+	l05_bar = {1168, 1307},
+	l06_rostok = {1308, 1437},
+	l08_yantar = {1438, 1528},
+	l08u_brainlab = {1529, 1544},
+	l07_military = {1545, 1861},
+	l10_radar = {1862, 2116},
+	l11_pripyat = {2117, 2272},
+	l12_stancia = {2273, 2401},
+	l12u_sarcofag = {2402, 2466},
+	l12u_control_monolith = {2467, 2516},
+	l12_stancia_2 = {2517, 2660},
+	l10u_bunker = {2661, 2791},
+	atp_for_test22 = {2792, 2861},
+	peshera = {2862, 2880},
+	puzir = {2881, 2885},
+	aver = {2886, 2908},
+	av_peshera = {2909, 2987},
+	limansk = {2988, 3027},
+	hospital = {3028, 3075},
+	generators = {3076, 3152},
+	warlab = {3153, 3223},
+	red_forest = {3224, 3323},
+	lost_village = {3324, 3336},
+	marsh = {3337, 3581},
+	labx8 = {3582, 3607},
+	labx10 = {3608, 3729},
+	deadcity = {3730, 3930},
+	k01_darkscape = {3931, 4174},
+	l12_stancia_new = {4175, 4289},
+	l12_stancia_2_new = {4290, 4543}
+}
+
+ground_levels = {
+	l01_escape = true,
+	l02_garbage = true,
+	l03_agroprom = true,
+	l03u_agr_underground = false,
+	l04_darkvalley = true,
+	l04u_labx18 = false,
+	l05_bar = true,
+	l06_rostok = true,
+	l08_yantar = true,
+	l08u_brainlab = false,
+	l07_military = true,
+	l10_radar = true,
+	l11_pripyat = true,
+	l12_stancia = false,
+	l12u_sarcofag = false,
+	l12u_control_monolith = false,
+	l12_stancia_2 = false,
+	l10u_bunker = false,
+	atp_for_test22 = true,
+	peshera = false,
+	puzir = false,
+	aver = true,
+	av_peshera = false,
+	limansk = true,
+	hospital = true,
+	generators = true,
+	warlab = false,
+	red_forest = true,
+	lost_village = true,
+	marsh = true,
+	labx8 = false,
+	labx10 = false,
+	deadcity = true,
+	k01_darkscape = true,
+	l12_stancia_new = true,
+	l12_stancia_2_new = false
+}
+
+function best_game_vertex(pos, lname)
+	if lname == nil then
+		lname = level.name()
+	end
+
+	local gv_range = game_vertices[lname]
+	local best = 1
+	local min_dist = 100000
+	local gg = game_graph()
+	for test = gv_range[1], gv_range[2] do
+		local gpt = gg:vertex(test):level_point()
+		local dist = gpt:distance_to(pos)
+
+		if dist < min_dist then
+			min_dist = dist
+			best = test
+		end
+	end
+	return best
+end
+
+function level_gv_range()
+	return game_vertices[level.name()]
+end
+
+function random_level_point(lname)
+	if lname == nil then
+		lname = level.name()
+	end
+
+	local lv_count = level_vertices[lname]
+
+	if lv_count == 0 or underground(lname) then
+		return nil, nil
+	end
+	lvid = lua_random(1, lv_count)
+
+	return lvid, level.vertex_position(lvid)
+end
+
+function underground(lname)
+	if nil == lname then
+		abort("lname == nil")
+	end
+	if ground_levels[lname] ~= nil then
+		return not ground_levels[lname]
+	else
+		abort("Not set const.ground_levels for " .. lname)
+	end
+end

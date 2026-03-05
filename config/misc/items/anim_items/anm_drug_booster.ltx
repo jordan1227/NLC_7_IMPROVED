@@ -1,0 +1,89 @@
+[drug_booster_use]:animator_base
+item_attached							 = true
+item_visual             				 = dynamics\weapons\wpn_eat\drinks\wpn_drug_booster_hud.ogf
+
+hands_orientation						 = 0.000000,0.000000,0.000000
+hands_orientation_16x9					 = 0.000000,0.000000,0.000000
+hands_position              			 = 0.000000,-0.002900,0.063350
+hands_position_16x9         			 = 0.000000,-0.002900,0.063350
+
+lookout_hud_offset_pos_left 			= 0.01,0.01,0				; Смещение позиции от бедра
+lookout_hud_offset_rot_left 			= 0,0,0						; Смещение ротации от бедра	
+
+lookout_hud_offset_pos_right 			= 0.01,-0.005,0					; Смещение позиции от бедра
+lookout_hud_offset_rot_right 			= 0,0,0					; Смещение ротации от бедра
+
+inertion_offset_LRUD					= 0.007, 0.007, 0.007, 0.007 	; Пределы смещения при инерции от бедра (лево / право / верх / низ)
+inertion_offset_z						= -0.001					; Пределы смещения при инерции от бедра (назад)
+inertion_origin_offset 					= -0.01						; Фактор влияния инерции на положение ствола от бедра (чем меньше, тем маштабней инерция)
+inertion_origin_speed 					= 7.0						; Время инерции положения ствола от бедра (больше - быстрее)
+inertion_tendto_speed					= 0.4						; Модификатор силы инерции от бедра (больше - чувствительней)
+inertion_tendto_ret_speed				= 4							; Модификатор силы отката инерции от бедра (больше - быстрее)
+inertion_min_angle						= 0							; Минимальная сила наклона, необходимая для старта инерции от бедра
+
+crouch_hud_offset_pos 					= 0,0,0				; Смещение позиции в присяде от бедра
+crouch_hud_offset_rot 					= 0,0,0					; Смещение ротации в присяде от бедра
+
+crouch_up_inert_pos						= 0,0,0
+crouch_up_inert_rot						= 0,0,0
+crouch_up_inert_time					= 5
+crouch_slow_up_inert_pos				        = 0,0,0
+crouch_slow_up_inert_rot				        = 0,0,0
+crouch_slow_up_inert_time				= 5
+crouch_factor							   = 1
+
+crouch_down_inert_pos					        = 0,0,0
+crouch_down_inert_rot					        = 0,0,0
+crouch_down_inert_time					= 6
+crouch_slow_down_inert_pos				        = 0,0,0
+crouch_slow_down_inert_rot				        = 0,0,0
+crouch_slow_down_inert_time				= 6
+crouch_slow_factor						   = 1
+
+hud_move_jump_offset_pos                 = 0,0,0
+hud_move_jump_offset_rot                 = 0,0,0
+hud_move_jump_time                         = 4
+
+
+hud_move_fall_offset_pos                = 0,0,0
+hud_move_fall_offset_rot                = 0,0,0
+hud_move_fall_time                         = 4
+
+
+hud_move_landing_offset_pos             = 0,0,0
+hud_move_landing_offset_rot             = 0,0,0
+hud_move_landing_time                    = 7
+
+
+hud_move_landing2_offset_pos            = 0,0,0
+hud_move_landing2_offset_rot            = 0,0,0
+hud_move_landing2_time                     = 10
+
+nearwall_transition_time				= 6.5						; Время смещения
+nearwall_hud_offset_pos					= 0,0,0	    		; Смещение позиции
+nearwall_hud_offset_rot					= 0,0,0					; Смещение ротации
+nearwall_collide_pos					= -0.01
+move_forward_hud_offset_pos 			= 0,0,0					; Смещение позиции от бедра
+move_back_hud_offset_pos 				= 0,0,0					; Смещение позиции от бедра
+pitch_offset_right 						= 0						; Насколько сильно ствол смещается вбок при вертикальных поворотах камеры
+pitch_offset_up 						= 0				; Насколько сильно ствол поднимается \ опускается при вертикальных поворотах камеры
+pitch_offset_forward 					= 0					; Насколько сильно ствол приближается \ отдаляется при вертикальных поворотах камеры
+
+sound_1   								 = interface\item_usage\hercules_use
+
+anm_show								 = hercules, hercules_hud
+
+dof                                      = 0.0, 0.5, 5, 6.5
+
+disable_ui_input						 = true
+
+right_lua_callback						 = animator_callbacks.spawn_trash
+trash_object                             = drug_booster_trash
+
+hide_gasmask						 	 = true
+
+[drug_booster_trash]:trash_base
+visual                        			 = dynamics\equipments\medical\drug_booster_trash.ogf
+throw_dir = left
+;throw_impulse_z = 60
+throw_impulse_z = 5.0

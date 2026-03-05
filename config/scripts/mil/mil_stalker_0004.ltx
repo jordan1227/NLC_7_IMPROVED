@@ -1,0 +1,16 @@
+[logic]
+active = walker
+
+[walker]
+path_walk = mil_stalker_rest_way
+path_look = mil_stalker_rest_look
+meet = meet@stalker_rest
+danger = danger_condition
+show_spot = false
+
+[meet@stalker_rest]
+meet_state = sit
+meet_dialog = mil_stalker_rest_dialog
+
+[danger_condition]
+ignore_distance = 2

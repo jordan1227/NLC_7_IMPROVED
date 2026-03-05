@@ -1,0 +1,131 @@
+;*****************************************************************
+; Yantar Petrenko 
+;*****************************************************************
+
+[logic@yan_dolg_petrenko]
+active = walker@yan_dolg_petrenko
+on_death = death@yan_dolg_petrenko
+
+[death@yan_dolg_petrenko]
+on_info = %+petrenko_dead%
+
+[walker@yan_dolg_petrenko]
+path_walk = walk
+path_look = look
+meet = meet@yan_dolg_petrenko
+danger = danger_condition@yan_dolg_petrenko
+
+[meet@yan_dolg_petrenko]
+use = true
+use_wpn = true
+meet_talk_enabled = true
+victim = 3|actor
+victim_wpn = 3|actor
+
+[danger_condition@yan_dolg_petrenko]
+ignore_distance = 0
+
+;*****************************************************************
+; Yantar zombies
+;*****************************************************************
+[logic@yantar_zombies_kamp1]
+active = kamp@yantar_zombies_kamp1
+
+[kamp@yantar_zombies_kamp1]
+center_point = kamp_1_task
+
+
+[logic@yantar_zombies_kamp2]
+active = kamp@yantar_zombies_kamp2
+
+[kamp@yantar_zombies_kamp2]
+center_point = kamp_2_task
+
+
+[logic@yantar_zombies_kamp3]
+active = kamp@yantar_zombies_kamp3
+
+[kamp@yantar_zombies_kamp3]
+center_point = kamp_3_task
+
+[logic@yantar_zombies_kamp4]
+active = kamp@yantar_zombies_kamp4
+
+[kamp@yantar_zombies_kamp4]
+center_point = kamp_4_task
+
+[logic@yantar_zombies_walker]
+active = walker@yantar_zombies_walker
+
+[walker@yantar_zombies_walker]
+path_walk = walker_walk	
+sound_idle = state
+;****************************************************
+;Yantar scientist
+;***************************************************
+
+[logic@semenov_walker]
+active = walker@semenov_talk
+on_death = death@scientist
+combat_ignore = combat_ignore
+meet = meet@scientist
+
+[walker@semenov_talk]
+path_walk = bunker_walk
+path_look = bunker_look
+combat_ignore_cond = always
+danger = danger_condition@1
+meet = meet@scientist
+
+[meet@scientist]
+meet_state 		= 1 | wait
+meet_state_wpn 	= 1 | wait
+victim 			= 2 | actor
+victim_wpn 		= 2 | actor
+use             = true
+use_wpn         = true
+
+[death@scientist]
+on_info = %+yan_scientist_die%  
+
+[danger_condition@1]
+ignore_distance      			 = 0
+ignore_distance_grenade 		 = 1
+ignore_distance_corpse  		 = 0
+ignore_distance_hit     		 = 1
+ignore_distance_sound   		 = 0 
+danger_inertion_time_grenade 	 = 1
+danger_inertion_time_corpse   	 = 1
+danger_inertion_time_hit 		 = 1
+danger_inertion_time_sound 		 = 1
+danger_inertion_time_ricochet 	 = 1
+
+;========================================================
+; Tonnel Snorks
+;========================================================
+
+[logic@yan_tonnel_snork_home_1]
+active = mob_home@yan_tonnel_snork_home_1
+
+[mob_home@yan_tonnel_snork_home_1]
+path_home = home_1
+home_min_radius = 20
+home_max_radius = 40
+
+[logic@yan_tonnel_snork_home_2]
+active = mob_home@yan_tonnel_snork_home_2
+
+[mob_home@yan_tonnel_snork_home_2]
+path_home = home_2
+home_min_radius = 20
+home_max_radius = 40
+
+[logic@yan_tonnel_snork_home_3]
+active = mob_home@yan_tonnel_snork_home_3
+
+[mob_home@yan_tonnel_snork_home_3]
+path_home = home_3
+home_min_radius = 15
+home_max_radius = 30
+
+

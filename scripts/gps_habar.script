@@ -1,0 +1,665 @@
+--[[
+
+File:	gps_habar.script
+Copyright by Idler(and AMK TEAM 2007-2008 местами :)
+rev: 11/10/08.01
+]]
+
+local max_comments_strings_on_screen = 40
+local labels = {}
+local items_in_box = {}
+local activity_time = 0
+local warning_cond = 0
+local gps_habar_on = true
+local is_show_quantity = true
+local is_set_label_on_npc = true
+local is_show_health = false
+local is_warning_on_death = false
+local is_color_and_sort_list = true
+local initialized = false
+
+local is_gps_update_in_process = false -- для устранения коллизий при "on_actor_update"
+
+function trim(s)
+	return(string.gsub(s, "^%s*(.-)%s*$", "%1"))
+end
+
+function toboolean(_str)
+	if string.find(string.lower(_str), "true",1,true) or _str=="1" then
+		return true
+	end
+	
+	return false
+end
+
+function send_tip(news_text, header, timeout, showtime, sender, sound)
+	if not news_text or db.actor:has_info("pda_is_broken") then return end
+	if not header then header="GPS" end
+	if not timeout then timeout = 0 end
+	if not showtime then showtime = 5 end
+	local player = nil
+	if xr_sound and xr_sound.get_safe_sound_object then
+	player = xr_sound.get_safe_sound_object([[device\pda\pda_tip]]) 
+	end
+	if player and player.play and db and db.actor then
+	player:play(db.actor, timeout, sound_object.s2d)
+	end
+	if db and db.actor and db.actor.give_game_news then
+	local x = 0
+	local y = 706
+	local news_text = "%c[255,160,160,160]"..header.."\\n".."%c[default]"..news_text
+	db.actor:give_game_news(news_text, "ui\\ui_iconsTotal", Frect():set(x,y,83,47), timeout*1000, showtime*1000)
+	end
+	return true
+end
+
+function IsHuman(object, class_id)
+	return IsStalker(object, class_id)
+end
+
+function IsGameObject(obj)
+	local bResult = false
+	if (obj and obj.fov) then
+		bResult = true
+	end
+	return bResult
+end
+
+function get_inventory_box_id(obj)
+	if not obj then
+		return
+	end
+	local aobj = alife():object(obj:id())
+	if aobj and aobj.parent_id then
+		return aobj.parent_id
+	end
+end
+
+function get_health(npc)
+	if npc then
+		if IsGameObject(npc) then
+			return npc.health
+		elseif npc.health then
+			return npc:health()
+		else return 1
+		end
+	end
+	return nil
+end
+
+function get_health_str(npc)
+	if get_health(npc) <= 0 then
+		return string.lower(game.translate_string("st_game_over"))
+	end
+	return game.translate_string("is_alive")
+end
+
+function is_find_item(boxId, itemId)
+	if boxId and itemId and items_in_box and items_in_box[boxId] then
+		for i, v in pairs(items_in_box[boxId]) do
+			if v.id==itemId then
+				return true
+			end
+		end
+	end
+	return false
+end
+
+function insert_item(boxId, item)
+	if boxId and boxId~=0 and boxId~=BAD_OBJ_ID and item then
+		if not is_find_item(boxId, item.id) then 
+			if not items_in_box[boxId] then items_in_box[boxId] = {} end
+			table.insert(items_in_box[boxId], {id = item.id, name=item:name()})
+			--ODS("[~T/~B]. добавляем в таблицу [" .. boxId .. "] предмет:" .. item:name())
+		end
+	end
+end
+
+function remove_item(boxId, item)
+	if boxId and item then
+		local itemId = item.id
+		if itemId and items_in_box[boxId] then
+			for i, v in pairs(items_in_box[boxId]) do
+				if v.id==itemId then
+				   table.remove(items_in_box[boxId], i)
+				end
+			end
+		end
+	end
+end
+
+function get_gps_count(boxId)
+	if not boxId then
+		return 0
+	end
+	if boxId==0 or boxId==BAD_OBJ_ID then 
+		return 0 
+	end
+	local locObj
+	local gps_count = 0
+	local gps_id = -1
+	if items_in_box[boxId] then
+		for i, v in pairs(items_in_box[boxId]) do
+			locObj = alife():object(v.id)
+			if locObj and locObj:section_name() and locObj:section_name()=="amk_metka" then
+				local ii = locObj:get_inventory_item()
+				gps_count = gps_count + 1
+				if gps_id == -1 and ii and ii.item_condition > 0 then
+					gps_id = v.id
+				end
+			end
+		end
+	end
+	return gps_count, gps_id
+end
+
+function load_items()
+	local pt = profile_timer()
+	pt:start()
+
+	local owner_list, ids_box, ids_st = {}, {}, {}
+	local added = 0
+
+	for id, obj in alife():objects() do
+		local sect = obj and obj:section_name()
+		local pid = obj and obj.parent_id
+
+		if string.find(sect, "inventory_box", 1) then
+			ids_box[id] = obj
+			goto SKIP_TO_NEXT
+		end
+		if pid < BAD_OBJ_ID then
+			local t = owner_list[pid] or {}
+			table.insert(t, obj)
+			owner_list[pid] = t
+			added = added + 1
+			goto SKIP_TO_NEXT
+		end
+		if IsStalker(obj) then
+			ids_st[id] = obj
+			goto SKIP_TO_NEXT
+		end
+
+		:: SKIP_TO_NEXT ::
+	end
+	added = 0
+
+	items_in_box = {}
+
+	for id_box, _ in pairs(ids_box) do
+		local tmp = {}
+		local objs = owner_list[id_box] or {}
+		for a, aobj in ipairs(objs) do
+			table.insert(tmp, {id = aobj.id, name = aobj:name()})
+			added = added + 1
+		end
+		items_in_box[id_box] = tmp
+	end
+
+	for id_st, _ in pairs(ids_st) do
+		local tmp = {}
+		local objs = owner_list[id_st] or {}
+		for a, aobj in ipairs(objs) do
+			table.insert(tmp, {id = aobj.id, name = aobj:name()})
+			added = added + 1
+		end
+		items_in_box[id_st] = tmp
+	end
+
+	pt:stop()
+	log2("[%s.load_items]: %d objects added in %.2fms", script_name(), added, pt:time() / 1000)
+end
+
+gps_habar.load_items = load_items
+
+function get_local_time(gtime)
+	gdays = math.floor(gtime / 24);
+	ghours = gtime - gdays*24;
+	local res = ""
+	if gdays > 0 then
+		res = tostring(gdays) .. game.translate_string("ui_st_days").." "
+	end
+	if ghours > 0 then
+		res = res .. tostring(ghours) .. game.translate_string("ui_st_hours")
+	end
+	return trim(res)
+end
+
+function get_npc_name(box)
+	if box then
+		if news_main then
+			return tostring(news_main.get_npc_name(box))
+		elseif m_amk_news then
+			return tostring(m_amk_news.get_npc_name(box))
+		end
+	end
+	return "\""..game.translate_string("gross_merc_name").."\""
+end
+
+function get_npc_presentation(box)
+	if box then
+		if news_main then
+			return tostring(news_main.get_npc_name(box) .. "(" .. game.translate_string(news_main.get_npc_community(box)) .. ", " .. game.translate_string(news_main.get_npc_rank(box)))
+		elseif m_amk_news then
+			return tostring(m_amk_news.get_npc_name(box) .. "(" .. game.translate_string(m_amk_news.get_npc_community(box)) .. ", " .. game.translate_string(m_amk_news.get_npc_rank(box)))
+		end
+	end
+	return get_npc_name(box)
+end
+
+function remove_all_spots(boxId)
+	if boxId then
+		amk.remove_spot_from_map(boxId, "habar_location")
+		amk.remove_spot_from_map(boxId, "habar_clear_location")
+		amk.remove_spot_from_map(boxId, "habar_location_w")
+		amk.remove_spot_from_map(boxId, "habar_clear_location_w")
+		amk.remove_spot_from_map(boxId, "gps_stalker")
+	end
+end
+
+function remove_label(boxId)
+	if boxId then
+		labels[boxId] = nil
+	end
+end
+
+function reinit_box(boxId)
+	if not boxId or boxId==0 or boxId==BAD_OBJ_ID or not items_in_box then
+		return
+	end
+	if items_in_box[boxId] then
+		local aobj
+		for i, v in pairs(items_in_box[boxId]) do
+			if v.id then
+				aobj = alife():object(v.id)
+				if not aobj then
+					table.remove(items_in_box[boxId], i)
+				elseif aobj.parent_id~=boxId then
+					table.remove(items_in_box[boxId], i)
+				end
+			end
+		end
+	end
+end
+
+function update_gps(item, box, boxId)
+	if not gps_habar_on then return end
+	is_gps_update_in_process = true
+	if not boxId then
+		if box then
+			boxId = box:id()
+		else
+			boxId = get_inventory_box_id(item)
+		end
+	end
+	if boxId then
+		box = alife():object(boxId)
+	end
+	if not boxId then
+		is_gps_update_in_process = false
+		return
+	end
+	if not box then
+		local aobj = server_obj(boxId)
+		if aobj == nil then
+			remove_label(boxId)
+		end
+		is_gps_update_in_process = false
+		return
+	end
+	if boxId==0 or boxId==BAD_OBJ_ID or box:clsid()==CLID_TRADER then 
+		is_gps_update_in_process = false
+		return
+	end
+	if IsHuman(box) then
+		update_gps_stalker(box, boxId)
+	else
+		update_gps_habar(boxId)
+	end
+	is_gps_update_in_process = false
+end
+
+function update_gps_stalker(box, boxId)
+	local gps_count, gps_id = get_gps_count(boxId)
+	local is_save_table = false
+	if gps_count > 0 and gps_id ~= -1 then
+		local fl_send_tip_msg = false
+		local text_metki = ""
+		local cur_minutes = timers.Get_Game_Minutes()
+		if not labels[boxId] then
+			fl_send_tip_msg = true -- надо сообщить что ставим новую метку
+			labels[boxId] = {last_upd = cur_minutes, item_id = gps_id, is_warned = 0}
+			set_value("gps_labels",labels)
+			is_save_table = true
+		end
+		local npc_name = get_npc_name(box)
+		local aobj = alife():object(boxId)
+		if is_warning_on_death and aobj and get_health(aobj) <= 0 and labels[boxId].is_warned == 0 then
+			labels[boxId].is_warned = 1
+			is_save_table = true
+			send_tip(string.format(game.translate_string("update_gps_stalker_1"),npc_name), nil, nil, 5)
+		end
+		local text_health = ""
+		if is_show_health then
+			text_health = ", " .. get_health_str(box)
+		end
+		text_metki = get_npc_presentation(box) .. text_health .. ")."
+		
+		local location = "gps_stalker"
+		if fl_send_tip_msg then
+			send_tip(game.translate_string("update_gps_stalker_2").." " .. get_npc_name(box), nil, nil, 5)
+		end
+		remove_all_spots(boxId)
+		amk.add_spot_on_map(boxId, location, text_metki)
+	else
+		remove_all_spots(boxId)
+		remove_label(boxId)
+		is_save_table = true
+	end
+	if is_save_table then
+		set_value("gps_labels",labels)
+	end
+end
+
+function correct_name( inv_name )
+	if inv_name then
+		if     strposx( inv_name, game.translate_string("lname_stalker_444") ) then return trim( string.gsub( inv_name, game.translate_string("lname_stalker_444"), game.translate_string("gps_correct_name_1") ) )
+		elseif strposx( inv_name, game.translate_string("gps_correct_name_2") ) then return trim( string.gsub( inv_name, game.translate_string("gps_correct_name_2"), game.translate_string("gps_correct_name_3") ) )
+		elseif strposx( inv_name, game.translate_string("gps_correct_name_4") ) then return trim( string.gsub( inv_name, game.translate_string("gps_correct_name_4"), game.translate_string("gps_correct_name_3") ) )
+		elseif strposx( inv_name, game.translate_string("Antirad")) then return game.translate_string("gps_correct_name_5")
+		elseif strposx( inv_name, game.translate_string("exo_outfit_name")) then return trim( string.gsub( inv_name, game.translate_string("exo_outfit_name"), game.translate_string("gps_correct_name_6") ) )
+		elseif strposx( inv_name, game.translate_string("Conserva")) then return game.translate_string("gps_correct_name_7")
+		elseif strposx( inv_name, game.translate_string("gps_correct_name_8")) then return game.translate_string("gps_correct_name_8")
+		elseif strposx( inv_name, game.translate_string("gps_correct_name_9")) then return game.translate_string("gps_correct_name_9")
+		elseif strposx( inv_name, game.translate_string("gps_correct_name_10")) or strposx(inv_name, game.translate_string("gps_correct_name_11")) then return game.translate_string("gps_correct_name_11")
+		end
+	else
+		return ""
+	end
+	return inv_name
+end
+
+function get_color( secName )
+	if not secName or string.len( secName ) == 0 then return "%c[default]" end
+	local lsecName = string.lower( secName )
+	if 	   strposx( lsecName, "repair_" )		 then return "%c[255,0,255,255]"      -- ремнаборы и ремящик
+	elseif strposx( lsecName, "wpn_" ) 			 then return "%c[255,255,130,0]"      -- пухи
+	elseif strposx( lsecName, "grenade_" ) or
+		   strposx( lsecName, "_m209" ) or
+		   strposx( lsecName, "_vog" )           then return "%c[250,200,140,120]"    -- гранаты
+	elseif strposx( lsecName, "ammo_" )          then return "%c[250,180,180,100]"    -- патроны
+	elseif strposx( lsecName, "af_") or
+		   strposx( lsecName, "art_box")	     then return "%c[255,255,70,150]"     -- артефакты и контейнеры
+	elseif strposx( lsecName, "outfit" ) or
+		   strposx( lsecName, "exoskeleton" ) 	 then return "%c[230,250,230,0]"      -- бронька
+	elseif strposx( lsecName, "pda" ) or
+		   strposx( lsecName, "flash" )  		 then return "%c[230,180,150,250]"    -- ПДА и флешки
+ 	elseif strposx( lsecName, "medkit" ) or
+		   strposx( lsecName, "antirad" ) or
+		   strposx( lsecName, "bandage" ) 		 then return "%c[255,1,230,80]"       -- медицина
+    elseif strposx( lsecName, "mutant_" )        then return "%c[255,70,150,250]"     -- запчасти
+	end
+	return "%c[default]"
+end
+
+function update_gps_habar(boxId)
+	local gps_count, gps_id = get_gps_count(boxId)
+	if gps_count > 0 and gps_id ~= -1 then
+		local fl_send_tip_msg = false
+		local text_metki = ""
+		local cur_minutes = timers.Get_Game_Minutes()
+		if not labels[boxId] then
+			fl_send_tip_msg = true
+			labels[boxId] = {last_upd = cur_minutes, item_id = gps_id, is_warned = 0}
+			set_value("gps_labels",labels)
+		end
+		if items_in_box[boxId] then
+			local secName, invName, locObj
+			local itemsbox = {}
+			local is_yes
+			for i, v in pairs(items_in_box[boxId]) do
+				locObj = alife():object(v.id)
+				if locObj and locObj:section_name() then
+					secName = locObj:section_name()
+					if not system_ini():r_string(secName, "inv_name") then invName = "Хрень" 
+					else
+					invName = correct_name(game.translate_string(system_ini():r_string(secName, "inv_name")))
+					end
+					is_yes = false
+					for k, kk in pairs(itemsbox) do
+						if kk.sn==secName then
+							kk.cnt = kk.cnt + 1
+							is_yes = true
+							break
+						end
+					end
+					if not is_yes then
+						table.insert(itemsbox, {sn = secName, inv = invName, cnt = 1, clr = get_color(secName)})
+					end
+				end
+			end
+			table.sort(	itemsbox, 
+						function(a,b)
+							if a.clr == b.clr then -- Manool: если цвет одинаковый, то сортировка по имени
+								return (a.inv < b.inv)
+							else
+								return (a.clr > b.clr)
+							end
+						end
+			)
+			if table.getn(itemsbox)==1 and itemsbox[1].sn=="amk_metka" and itemsbox[1].cnt==1 then
+			else
+				local is_one_item_on_string = true
+				if table.getn(itemsbox) > max_comments_strings_on_screen then
+					is_one_item_on_string = false
+				end
+				for i, v in pairs(itemsbox) do
+					if not (v.sn=="amk_metka" and v.cnt==1) then
+						if is_color_and_sort_list and is_one_item_on_string then
+							if text_metki~="" then 
+								text_metki = text_metki.."\\n"
+							end
+							text_metki = text_metki .. v.clr .. v.inv
+						else
+							if text_metki~="" then 
+								text_metki = text_metki .. v.clr .. ", "
+							end
+							text_metki = text_metki .. v.inv
+						end
+						
+						if is_show_quantity and ( v.cnt > 1 ) then 
+							text_metki = text_metki .. "(" .. tostring(v.cnt) .. ")" 
+						end
+					end
+				end
+			end
+		end
+		local is_warning = false
+		local gps = server_obj(gps_id)
+		local ii = gps and gps:get_inventory_item()
+
+		if ii and ii.item_condition <= warning_cond then
+			is_warning = true
+		end
+		if text_metki=="" then
+			if fl_send_tip_msg then
+				send_tip(game.translate_string("gps_1"), nil, nil, 5)
+			end
+			if is_warning then
+				location = "habar_clear_location_w"
+			else
+				location = "habar_clear_location"
+			end
+			
+			text_metki = game.translate_string("gps_2")
+		else
+			text_metki = text_metki .. "."
+			if fl_send_tip_msg then
+				send_tip(game.translate_string("gps_3"), nil, nil, 5)
+			end
+			if is_warning then
+				location = "habar_location_w"
+			else
+				location = "habar_location"
+			end
+		end
+		remove_all_spots(boxId)
+		amk.add_spot_on_map(boxId, location, text_metki)
+	else
+		remove_all_spots(boxId)
+		remove_label(boxId)
+		set_value("gps_labels",labels)
+	end
+end
+
+function update_gps_state()
+	local aobj, lvname
+
+	if gps_habar_on then
+		for i, v in pairs(labels) do
+			local cur_minutes = timers.Get_Game_Minutes()
+			local last_upd = v.last_upd
+			local delta_time = cur_minutes - last_upd
+			-- log2("update_gps_state delta_time [%d]",delta_time)
+			if delta_time < 1 then
+				break
+			end
+			local gps = server_obj(v.item_id)
+			if not gps then
+				remove_all_spots(i)
+				remove_label(i)
+				break
+			end
+			local ii = gps and gps:get_inventory_item()
+			local c_gps = client_obj(gps.id)
+			local cur_cond
+			-- log2("update_gps_state called for [%s]",gps:name())
+			if c_gps then
+				cur_cond = c_gps:condition()
+				-- log2("update_gps_state online gps found! condition [%.5f]",cur_cond)
+			else
+				cur_cond = ii.item_condition
+				-- log2("update_gps_state offline gps found! condition [%.5f]",cur_cond)
+			end
+			
+			local cond_dec = delta_time / activity_time
+			local new_cond = cur_cond - cond_dec
+			-- log2("update_gps_state new_cond [%.5f]",new_cond)
+			if new_cond < 0 then
+				new_cond = 0
+			end
+			if c_gps then
+				c_gps:set_condition(new_cond)
+			else
+				ii.item_condition = new_cond
+			end
+			v.last_upd = cur_minutes
+			
+			if new_cond > 0 and new_cond <= warning_cond and v.is_warned == 0 then
+				aobj = alife():object(i)
+				lvname = ""
+				if aobj then
+					lvname = news_data.level_name[alife():level_name(game_graph():vertex(aobj.m_game_vertex_id):level_id())][2]
+				end
+				v.is_warned = 1
+				send_tip(string.format(game.translate_string("gps_4"),lvname), nil, nil, 5) 
+			end
+			if new_cond == 0 then
+				aobj = alife():object(i)
+				lvname = ""
+				if aobj then
+					lvname = news_data.level_name[alife():level_name(game_graph():vertex(aobj.m_game_vertex_id):level_id())][2]
+				end
+				send_tip(string.format(game.translate_string("gps_5"),lvname), nil, nil, 5)
+				remove_all_spots(i)
+				remove_label(i)
+			else
+				if not is_gps_update_in_process then
+					update_gps(nil, nil, i)
+				end
+			end	
+		end
+		set_value("gps_labels",labels)
+	end
+end
+
+function show_dlg_dots_npc(obj)
+	if not obj or not is_set_label_on_npc then
+		return
+	end
+	local secName = obj:section()
+	local boxId = get_inventory_box_id(obj)
+	if not boxId or boxId==0 or boxId==BAD_OBJ_ID or not secName or secName~="amk_metka" then
+		return
+	end
+	local box = alife():object(boxId)
+	if not box then 
+		return
+	end
+	if not IsHuman(box) or labels[boxId] then
+		return
+	end
+	local spwn=ui_gps_trade.gps_trade(get_hud(), boxId)
+	level.start_stop_menu(spwn,true)
+end
+
+function on_game_loading()
+    bind_stalker.log_init_stage("gps_habar.on_game_loading")  
+	local gps_ini = ini_file("misc\\gps_habar.ltx")
+	activity_time          = tonumber(gps_ini:r_string("amk_metka", "activity_time")) * 60
+	warning_cond           = tonumber(gps_ini:r_string("amk_metka", "warning_cond")) / 100
+	gps_habar_on           = toboolean(gps_ini:r_string("amk_metka", "gps_habar_on"))
+	is_show_quantity       = toboolean(gps_ini:r_string("amk_metka", "show_quantity"))
+	is_color_and_sort_list = toboolean(gps_ini:r_string("amk_metka", "color_and_sort_list"))
+	is_set_label_on_npc    = toboolean(gps_ini:r_string("amk_metka", "set_label_on_npc"))
+	is_show_health         = toboolean(gps_ini:r_string("amk_metka", "show_health"))
+    is_warning_on_death    = toboolean(gps_ini:r_string("amk_metka", "warning_on_death"))
+	local temp = get_value("gps_labels", {})
+	-- log2("on_game_loading: dumping tabl labels:\n%s",tostring_all(temp, " | "))
+	for k,v in pairs(temp) do
+		labels[tonumber(k)] = v
+	end
+    bind_stalker.log_init_stage("gps_habar.on_game_loading#2") 
+	load_items()
+	initialized = true
+end
+
+function on_item_take(item)
+	local sec = item and item:section()
+	if sec=="amk_metka" then
+		for i, v in pairs(labels) do
+			reinit_box(i)
+			update_gps(nil, nil, i)
+		end
+	elseif sec =="rucksack" then
+		local id = item:id()
+		for k,_ in pairs(labels) do
+			if id == k then
+				remove_all_spots(k)
+				remove_label(k)
+			end
+		end
+	end
+end
+
+function on_item_take_from_box(box, item)
+	if item and item:id() and box and box:id() then
+		remove_item(box:id(), alife():object(item:id()))
+	end
+	update_gps(item, box, nil)
+end
+
+function on_item_drop(obj)
+	if obj and obj:id() then
+		local box_id=get_inventory_box_id(obj)
+		insert_item(box_id, alife():object(obj:id()))
+	end
+	show_dlg_dots_npc(obj)
+	update_gps(obj, nil, nil)
+end
+
+function on_actor_update(delta)
+	if initialized then
+		update_gps_state()
+	end
+end

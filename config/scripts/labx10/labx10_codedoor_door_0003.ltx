@@ -1,0 +1,16 @@
+[logic]
+active = ph_door@locked
+
+[ph_door@locked]
+locked = false
+closed = false
+on_info = {+labx10_code_door3_unlocked} ph_door@closed
+
+[ph_door@closed]
+locked = true
+closed = true
+on_info = {+labx10_button2_door_unlocked} ph_door@open
+
+[ph_door@open]
+locked = false
+closed = false

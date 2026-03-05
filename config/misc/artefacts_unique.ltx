@@ -1,0 +1,1005 @@
+[mfake_af_medus_new]:identity_immunities
+class						= II_ATTCH
+cform						= skeleton
+radius						= 1
+visual						= dinamics\artefacts\af_fire.ogf
+description					= af_medusa_new_desc
+inv_name					= af_medusa_new
+inv_name_short				= af_medusa_new
+inv_grid_width				= 1
+inv_grid_height				= 1
+inv_weight					= 0.88
+inv_grid_x					= 3
+inv_grid_y					= 13
+cost						= 15000
+
+[mfake_af_dummy_buliz]:identity_immunities
+class						= II_ATTCH
+cform						= skeleton
+radius						= 1
+visual						= physics\anomaly\artefact_electra1.ogf  
+description					= artifact_buliz
+inv_name					= af_dummy_buliz
+inv_name_short				= af_dummy_buliz
+inv_weight					= 1.18
+inv_grid_x					= 1
+inv_grid_y					= 9
+inv_grid_width				= 1
+inv_grid_height				= 1
+cost						= 40000
+
+[af_dummy_green_medusa]:af_base
+$spawn						= "artifacts\moscito medusa"
+art_mama					= voronka
+hit_type					= strike
+$prefetch 					= 64
+cform						= skeleton
+class						= ARTEFACT
+visual						= physics\anomaly\artefact_blackdrip_green.ogf  
+description					= af_green_medusa
+inv_name					= af_medusa
+inv_name_short				= 
+inv_weight					= 2.16
+inv_grid_x					= 3
+inv_grid_y					= 4
+cost						= 50000
+jump_height					= .5
+particles					= anomaly2\artefact\artefact_ameba
+lights_enabled				= true 
+trail_light_color			= 0.1, 0.3, 0.3
+trail_light_range			= 1.5
+hit_absorbation_sect		= af_dummy_green_medusa_absorbation
+artefact_activation_seq		= af_activation_bold
+
+[af_dummy_green_medusa_absorbation]:absorbation_fake
+
+fire_wound_immunity			= 0.7
+
+[af_dummy_green_medusa_fake]:af_dummy_green_medusa
+hit_absorbation_sect		=  af_dummy_green_medusa_fake_absorbation	
+[af_dummy_green_medusa_fake_absorbation]:absorbation_fake
+
+[af_dummy_green_vyvert]:af_base
+$spawn						= "artifacts\gravy vyvert"
+art_mama					= holodec
+hit_type					= fire_wound
+$prefetch 					= 64
+cform						= skeleton
+class						= ARTEFACT
+visual						= physics\anomaly\artefact_gravy1_green.ogf  
+description					= af_green_vyvert
+inv_name					= af_vyvert
+inv_name_short				= 
+inv_weight					= 2.25
+inv_grid_x					= 3
+inv_grid_y					= 5
+cost						= 50000
+jump_height					= .3
+particles					= anomaly2\artefact\artefact_ameba
+lights_enabled				= true
+trail_light_color			= 0.1, 0.3, 0.3
+trail_light_range			= 1.5
+artefact_activation_seq		= af_activation_gravi
+hit_absorbation_sect		= af_dummy_green_vyvert_absorbation
+
+[af_dummy_green_vyvert_absorbation]:absorbation_fake
+
+wound_immunity				= 0.7
+
+[af_dummy_green_vyvert_fake]:af_dummy_green_vyvert
+hit_absorbation_sect		=  af_dummy_green_vyvert_fake_absorbation	
+[af_dummy_green_vyvert_fake_absorbation]:absorbation_fake
+
+
+[af_dummy_green_blood]:af_base
+$spawn						= "artifacts\mincer blood"
+art_mama					= holodec
+hit_type					= explosion
+$prefetch 					= 64
+cform						= skeleton
+class						= ARTEFACT
+visual						= physics\anomaly\artefact_myasorubka5.ogf
+description					= af_green_blood
+inv_name					= af_blood
+inv_name_short				= 
+inv_weight					= 2.29
+inv_grid_x					= 3
+inv_grid_y					= 6
+cost						= 50000
+jump_height					= .01
+particles					= anomaly2\artefact\artefact_ameba
+lights_enabled				= true
+trail_light_color			= 0.1, 0.3, 0.3
+trail_light_range			= 1.5
+artefact_activation_seq		= af_activation_mincer
+hit_absorbation_sect		= af_dummy_green_blood_absorbation
+
+[af_dummy_green_blood_absorbation]:absorbation_fake
+
+radiation_immunity			= 0.7
+
+[af_dummy_green_blood_fake]:af_dummy_green_blood
+hit_absorbation_sect		=  af_dummy_green_blood_fake_absorbation	
+[af_dummy_green_blood_fake_absorbation]:absorbation_fake
+
+[af_red_dummy_spring]:af_base
+$spawn 						= "artifacts\dummy spring"
+art_mama					= pustishka
+hit_type					= telepatic
+$npc						= on
+cform						= skeleton
+class						= ARTEFACT
+visual						= physics\anomaly\artefact_pustishkaR.ogf
+description					= artifact_red_dummy_spring_desc
+inv_name					= af_dummy_spring
+inv_name_short				= 
+inv_weight					= 4.15
+inv_grid_x					= 3
+inv_grid_y					= 7
+cost						= 100000
+jump_height					= .2
+lights_enabled				= true	
+trail_light_color			= 0.1,0.02,0.04
+trail_light_range			= 1
+
+add_jump_speed			    = 0.8
+
+hit_absorbation_sect		= af_red_dummy_spring_absorbation
+[af_red_dummy_spring_absorbation]:absorbation_fake
+
+strike_immunity 			= 0.65
+fire_wound_immunity			= 0.65
+
+[af_red_dummy_spring_fake]:af_red_dummy_spring
+hit_absorbation_sect		= af_red_fake_spring_fake_absorbation
+[af_red_dummy_spring_fake_absorbation]:absorbation_fake
+
+
+[af_red_dummy_battery]:af_base
+$spawn 						= "artifacts\dummy battery"
+art_mama					= pustishka
+hit_type					= shock
+$npc						= on
+cform						= skeleton
+class						= ARTEFACT
+visual						= physics\anomaly\artefact_batteryR.ogf
+description					= af_red_dummy_battery
+inv_name					= af_dummy_battery
+inv_name_short				= 
+inv_weight					= 4.29
+inv_grid_x					= 3
+inv_grid_y					= 8
+jump_height					= .2
+cost						= 100000
+particles					= anomaly2\artefact\artefact_gravi
+lights_enabled				= true	
+trail_light_color			= 0.1,0.02,0.04
+trail_light_range			= 1
+
+hit_absorbation_sect		= af_red_dummy_battery_absorbation
+[af_red_dummy_battery_absorbation]:absorbation_fake
+
+shock_immunity				= 0.65
+wound_immunity				= 0.65
+radiation_immunity 			= 0.65
+
+[af_red_dummy_battery_fake]:af_red_dummy_battery
+hit_absorbation_sect		= af_red_dummy_battery_fake_absorbation
+[af_red_dummy_battery_fake_absorbation]:absorbation_fake
+
+
+[af_red_dummy_pellicle]:af_base
+$spawn 						= "artifacts\dummy pellicle"
+art_mama					= pustishka
+hit_type					= radiation
+$npc						= on
+cform						= skeleton
+class						= ARTEFACT
+visual						= physics\anomaly\artefact_plenkaR.ogf
+description					= af_pellicle_red
+inv_name					= af_pellicle
+inv_name_short				= 
+inv_weight					= 4.56
+inv_grid_x					= 3
+inv_grid_y					= 9
+jump_height					= .2
+cost						= 100000
+particles					= anomaly2\artefact\artefact_ameba
+lights_enabled				= true	
+trail_light_color			= 0.1,0.02,0.04
+trail_light_range			= 1
+
+hit_absorbation_sect		= af_red_dummy_pellicle_absorbation
+[af_red_dummy_pellicle_absorbation]:absorbation_fake
+
+chemical_burn_immunity		= 0.65
+explosion_immunity 			= 0.65
+telepatic_immunity 			= 0.65
+
+[af_red_dummy_pellicle_fake]:af_red_dummy_pellicle
+hit_absorbation_sect		= af_red_dummy_pellicle_fake_absorbation
+[af_red_dummy_pellicle_fake_absorbation]:absorbation_fake
+
+[af_compass]:af_base
+GroupControlSection			= spawn_group
+$spawn 						= "artifacts\af_compass"
+art_mama 					= pustishka	
+hit_type 					= explosion
+$npc						= on
+cform						= skeleton
+class						= ARTEFACT
+visual						= dinamics\artefacts\af_compass.ogf
+description					= af_compass_desc
+inv_name					= af_compass
+inv_name_short				= 
+inv_weight					= 2.66
+inv_grid_x					= 3
+inv_grid_y					= 11
+cost						= 130000
+jump_height					= .2
+particles					= anomaly2\artefact\artefact_electra
+lights_enabled 				= false
+power_restore_speed 		= 0.012
+satiety_restore_speed = -0.00027225
+add_satiety				    = 50
+reduce_satiety			    = 1
+hit_absorbation_sect 		= af_compass_absorbation
+[af_compass_absorbation]:absorbation_fake
+
+[fake_compass]:af_compass
+inv_weight 					= 0
+
+[af_compass_dyn1d]:af_compass
+cost						= 70000
+power_restore_speed 		= 0.008
+satiety_restore_speed = -0.0001782
+add_satiety				    = 50
+hit_absorbation_sect 		= af_compass_dyn1d_absorbation
+[af_compass_dyn1d_absorbation]:absorbation_fake
+
+
+[af_compass_dyn2d]:af_compass
+cost						= 90000
+power_restore_speed 		= 0.009
+satiety_restore_speed = -0.00020295
+add_satiety				    = 50
+hit_absorbation_sect 		= af_compass_dyn2d_absorbation
+[af_compass_dyn2d_absorbation]:absorbation_fake
+
+
+[af_compass_dyn3d]:af_compass
+cost						= 110000
+power_restore_speed 		= 0.01
+satiety_restore_speed = -0.00022275
+add_satiety				    = 50
+hit_absorbation_sect 		= af_compass_dyn3d_absorbation
+[af_compass_dyn3d_absorbation]:absorbation_fake
+
+
+[af_compass_dyn4d]:af_compass
+hit_absorbation_sect 		= af_compass_dyn4d_absorbation
+[af_compass_dyn4d_absorbation]:absorbation_fake
+
+[af_compass_dyn5d]:af_compass
+description					= af_compass_dyn5d_desc
+cost						= 150000
+power_restore_speed 		= 0.015
+satiety_restore_speed = 0.0
+add_satiety				    = 1
+hit_absorbation_sect 		= af_compass_dyn5d_absorbation
+[af_compass_dyn5d_absorbation]:absorbation_fake
+
+
+[af_compass_dyn6d]:af_compass
+description					= af_compass_dyn6d_desc
+power_restore_speed         = 0.0
+satiety_restore_speed = 0.0
+cost						= 7000
+hit_absorbation_sect 		= af_compass_dyn6d_absorbation
+[af_compass_dyn6d_absorbation]:absorbation_fake
+
+
+[af_crist_new]:af_base
+$spawn 						= "artifacts\af_crist_new"
+art_mama					= pustishka	
+hit_type					= radiation
+$npc						= on
+cform						= skeleton
+class						= ARTEFACT
+visual						= dinamics\artefacts\af_cristall_new.ogf
+description					= af_crist_new_desc
+inv_name					= af_crist_new
+inv_name_short				= af_crist_new
+inv_weight					= 1.49
+inv_grid_x					= 3
+inv_grid_y					= 12
+cost						= 45000
+jump_height					= .2
+particles					= anomaly2\artefact\artefact_puxx
+lights_enabled				= false
+radiation_restore_speed		= -0.0008
+power_restore_speed			= -0.005
+hit_absorbation_sect		= af_crist_new_absorbation
+
+[af_crist_new_absorbation]:absorbation_fake
+burn_immunity				= 1.35
+radiation_immunity			= 0.65
+
+
+[af_medus_new]:af_base
+$spawn 						= "artifacts\af_medus_new"
+art_mama 					= pustishka	
+hit_type 					= telepatic
+cform						= skeleton
+class						= ARTEFACT
+$npc						= on
+visual						= physics\anomaly\sap\gorgona.ogf
+description					= af_medusa_new_desc
+inv_name					= af_medusa_new
+inv_name_short				= 
+inv_weight					= 0.88
+inv_grid_x					= 3
+inv_grid_y					= 13
+cost						= 20000
+jump_height					= .2
+particles					= anomaly2\artefact\artefact_puxx
+lights_enabled				= false
+hit_absorbation_sect		= af_medus_new_absorbation
+artefact_activation_seq		= af_activation_bold
+
+[af_medus_new_absorbation]:absorbation_fake
+chemical_burn_immunity		= 0.90
+
+[af_battery]:af_base
+$spawn						= "artifacts\af_battery"
+art_mama					= tramplin
+hit_type					= fire_wound
+$prefetch 					= 64
+cform						= skeleton
+class						= ARTEFACT
+visual						= dinamics\artefacts\af_battery.ogf
+description					= artifact_battery_desc
+inv_name					= af_battery
+inv_name_short				= 
+inv_weight					= 1.85
+inv_grid_x					= 3
+inv_grid_y					= 14
+cost						= 70000
+jump_height					= .5
+add_jump_speed				= 1.0
+particles					= anomaly2\artefact\artefact_gravi
+lights_enabled				= false
+hit_absorbation_sect		= af_battery_absorbation
+artefact_activation_seq		= af_activation_bold
+
+[af_battery_absorbation]:absorbation_fake
+wound_immunity				= 1.30
+
+[af_flower_new]:af_base
+$spawn						= "artifacts\af_flower_new"
+art_mama					= pustishka
+hit_type					= explosion
+$prefetch 					= 64
+cform						= skeleton
+class						= ARTEFACT
+visual						= dinamics\artefacts\af_cristall_flower_new.ogf
+description					= af_flower_new_desc
+inv_name					= af_flower_new
+inv_name_short				= 
+inv_weight					= 1.69
+inv_grid_x					= 3
+inv_grid_y					= 15
+cost						= 35000
+jump_height					= .5
+particles					= anomaly2\artefact\artefact_gravi
+lights_enabled				= false
+add_satiety					= 1
+reduce_satiety				= 100
+satiety_restore_speed = 0.0000792
+artefact_activation_seq = af_activation_bold
+hit_absorbation_sect		= af_flower_new_absorbation
+[af_flower_new_absorbation]:absorbation_fake
+radiation_immunity			= 1.35
+telepatic_immunity			= 0.65
+
+
+[af_dummy_dummy_new]:af_base
+$spawn 						= "artifacts\af_dummy_dummy_new"
+art_mama					= elektra
+hit_type					= telepatic
+$prefetch 					= 64
+cform						= skeleton
+class						= ARTEFACT
+visual						= dinamics\artefacts\af_dummy_dummy_new.ogf
+description					= af_dummy_dummy_new_desc
+inv_name					= af-dummy-dummy-new
+inv_name_short				= 
+inv_weight					= 1.65
+inv_grid_x					= 3
+inv_grid_y					= 16
+cost						= 70000
+jump_height					= .1
+particles					= anomaly2\artefact\artefact_ameba
+lights_enabled				= false
+hit_absorbation_sect		= af_dummy_dummy_new_absorbation
+artefact_activation_seq = af_activation_bold
+[af_dummy_dummy_new_absorbation]:absorbation_fake
+shock_immunity				= 0.50
+
+[af_dummy_dummy_new_fake]:af_dummy_dummy_new
+hit_absorbation_sect		= af_dummy_dummy_new_fake_absorbation
+[af_dummy_dummy_new_fake_absorbation]:absorbation_fake
+
+
+[af_glassbeads]:af_base
+$spawn 						= "artifacts\af_glassbeads"
+art_mama					= pustishka				;аномалия-родитель
+hit_type					= burn
+$prefetch 					= 64
+cform						= skeleton
+class						= ARTEFACT
+visual						= dinamics\artefacts\af_glassbeads.ogf
+description					= af_glassbeads_desc
+inv_name					= af-glassbeads
+inv_name_short				= 
+inv_weight					= 2.36
+inv_grid_x					= 3
+inv_grid_y					= 17
+cost						= 80000
+jump_height					= .5
+power_restore_speed			= -0.003
+particles					= anomaly2\artefact\artefact_electra
+lights_enabled				= false
+hit_absorbation_sect		= af_glassbeads_absorbation
+artefact_activation_seq		= af_activation_bold
+
+[af_glassbeads_absorbation]:absorbation_fake
+shock_immunity				= 0.70
+fire_wound_immunity			= 0.70
+
+[af_glassbeads_dyn1d]:af_glassbeads
+cost						= 60000
+power_restore_speed			= -0.005
+hit_absorbation_sect		= af_glassbeads_dyn1d_absorbation
+[af_glassbeads_dyn1d_absorbation]:af_glassbeads_absorbation
+shock_immunity				= 0.8
+fire_wound_immunity			= 0.8
+
+[af_glassbeads_dyn2d]:af_glassbeads
+cost						= 70000
+power_restore_speed			= -0.004
+hit_absorbation_sect		= af_glassbeads_dyn2d_absorbation
+[af_glassbeads_dyn2d_absorbation]:af_glassbeads_absorbation
+shock_immunity				= 0.75
+fire_wound_immunity			= 0.75
+
+[af_glassbeads_dyn3d]:af_glassbeads
+cost						= 80000
+hit_absorbation_sect		= af_glassbeads_dyn3d_absorbation
+[af_glassbeads_dyn3d_absorbation]:af_glassbeads_absorbation
+
+[af_glassbeads_dyn4d]:af_glassbeads
+cost						= 90000
+power_restore_speed			= -0.002
+hit_absorbation_sect		= af_glassbeads_dyn4d_absorbation
+[af_glassbeads_dyn4d_absorbation]:af_glassbeads_absorbation
+shock_immunity				= 0.65
+fire_wound_immunity			= 0.65
+
+[af_glassbeads_dyn5d]:af_glassbeads
+description					= af_glassbeads_desc_5
+cost						= 120000
+power_restore_speed			= 0.005
+satiety_restore_speed = -0.00011385
+add_satiety				    = 40
+reduce_satiety			    = 1
+hit_absorbation_sect		= af_glassbeads_dyn5d_absorbation
+[af_glassbeads_dyn5d_absorbation]:af_glassbeads_absorbation
+shock_immunity				= 0.6
+fire_wound_immunity			= 0.6
+
+[af_glassbeads_dyn6d]:af_glassbeads
+description					= af_glassbeads_desc_6
+cost						= 7000
+power_restore_speed			= 0.0
+hit_absorbation_sect		= af_glassbeads_dyn6d_absorbation
+[af_glassbeads_dyn6d_absorbation]:absorbation_fake
+
+
+[af_eye]:af_base
+$spawn						= "artifacts\af_eye"
+art_mama					= holodec
+hit_type					= chemical_burn
+$prefetch 					= 64
+cform						= skeleton
+class						= ARTEFACT
+visual						= dinamics\artefacts\af_eye.ogf
+description					= af_eye_desc
+inv_name					= af-eye
+inv_name_short				= 
+inv_weight					= 1.51
+inv_grid_x					= 3
+inv_grid_y					= 18
+cost						= 50000
+jump_height					= .5
+particles					= anomaly2\artefact\artefact_ameba
+lights_enabled				= false
+health_restore_speed		= 0.0
+radiation_restore_speed		= 0.0
+satiety_restore_speed		= 0.0
+power_restore_speed			= -0.002
+bleeding_restore_speed		= 0.0
+additional_inventory_weight2	= 8
+hit_absorbation_sect		= af_eye_absorbation
+artefact_activation_seq		= af_activation_bold
+
+[af_eye_absorbation]:absorbation_fake
+chemical_burn_immunity		= 1.50
+explosion_immunity			= 0.70
+
+[af_eye_dyn1d]:af_eye
+cost						= 30000
+description					= af_eye_desc_1
+power_restore_speed			= -0.006
+additional_inventory_weight2				= 4
+hit_absorbation_sect		= af_eye_dyn1d_absorbation
+[af_eye_dyn1d_absorbation]:absorbation_fake
+chemical_burn_immunity		= 2.0
+explosion_immunity			= 0.80
+
+[af_eye_dyn2d]:af_eye
+cost						= 40000
+power_restore_speed			= -0.004
+description					= af_eye_desc_2
+additional_inventory_weight2				= 6
+hit_absorbation_sect		= af_eye_dyn2d_absorbation
+[af_eye_dyn2d_absorbation]:af_eye_absorbation
+chemical_burn_immunity		= 1.75
+explosion_immunity			= 0.75		
+
+[af_eye_dyn3d]:af_eye
+hit_absorbation_sect		= af_eye_dyn3d_absorbation
+[af_eye_dyn3d_absorbation]:af_eye_absorbation
+
+[af_eye_dyn4d]:af_eye
+power_restore_speed			= -0.001
+cost						= 60000
+description					= af_eye_desc_4
+additional_inventory_weight2				= 10
+hit_absorbation_sect		= af_eye_dyn4d_absorbation
+[af_eye_dyn4d_absorbation]:af_eye_absorbation
+chemical_burn_immunity		= 1.25
+explosion_immunity			= 0.65
+
+[af_eye_dyn5d]:af_eye
+power_restore_speed			= 0.0
+cost						= 80000
+description					= af_eye_desc_5
+additional_inventory_weight2				= 12
+hit_absorbation_sect		= af_eye_dyn5d_absorbation
+[af_eye_dyn5d_absorbation]:af_eye_absorbation
+chemical_burn_immunity		= 1.0
+explosion_immunity			= 0.6
+
+[af_eye_dyn6d]:af_eye
+description					= af_eye_desc_6
+cost						= 6000
+power_restore_speed			= 0.0
+additional_inventory_weight2				= 0.0
+hit_absorbation_sect		= af_eye_dyn6d_absorbation
+[af_eye_dyn6d_absorbation]:absorbation_fake
+
+[af_ice]:af_base
+$spawn 						= "artifacts\af_ice"
+$npc						= on
+cform						= skeleton
+class						= ARTEFACT
+visual						= dinamics\artefacts\af_ice.ogf
+description					= af_ice_desc
+inv_name					= af_ice
+inv_name_short				= 
+inv_weight					= 0.95
+inv_grid_x					= 3
+inv_grid_y					= 19
+cost						= 50000
+jump_height					= .1
+particles					= anomaly2\artefact\artefact_electra
+lights_enabled				= false
+hit_absorbation_sect		= af_ice_absorbation
+[af_ice_absorbation]:absorbation_fake
+burn_immunity 		       =  0.75
+chemical_burn_immunity     =  0.75
+shock_immunity				= 1.30
+
+[af_ice_dyn1d]:af_ice
+cost						= 30000
+hit_absorbation_sect		= af_ice_dyn1d_absorbation
+[af_ice_dyn1d_absorbation]:af_ice_absorbation
+burn_immunity 		       =  0.85
+chemical_burn_immunity     =  0.85
+shock_immunity				= 1.5
+
+
+[af_ice_dyn2d]:af_ice
+cost						= 40000
+hit_absorbation_sect		= af_ice_dyn2d_absorbation
+[af_ice_dyn2d_absorbation]:af_ice_absorbation
+burn_immunity 		       =  0.80
+chemical_burn_immunity     =  0.80
+shock_immunity				= 1.4
+
+[af_ice_dyn3d]:af_ice
+hit_absorbation_sect		= af_ice_dyn3d_absorbation
+[af_ice_dyn3d_absorbation]:af_ice_absorbation
+
+[af_ice_dyn4d]:af_ice
+cost						= 60000
+hit_absorbation_sect		= af_ice_dyn4d_absorbation
+[af_ice_dyn4d_absorbation]:af_ice_absorbation
+burn_immunity 		       =  0.70
+chemical_burn_immunity     =  0.70
+shock_immunity				= 1.2
+
+[af_ice_dyn5d]:af_ice
+cost						= 80000
+hit_absorbation_sect		= af_ice_dyn5d_absorbation
+[af_ice_dyn5d_absorbation]:af_ice_absorbation
+burn_immunity 		       =  0.65
+chemical_burn_immunity     =  0.65
+shock_immunity				= 1.0
+
+[af_ice_dyn6d]:af_ice
+description					= af_ice_desc_6
+cost						= 4000
+hit_absorbation_sect		= af_ice_dyn6d_absorbation
+[af_ice_dyn6d_absorbation]:absorbation_fake
+
+
+[af_baloon]:af_base
+$spawn 						= "artifacts\af_baloon"
+$npc						= on
+cform						= skeleton
+class						= ARTEFACT
+visual						= dinamics\artefacts\af_baloon.ogf
+description					= af_baloon_desc
+inv_name					= af-baloon
+inv_name_short				= 
+inv_weight					= 1.65
+inv_grid_x					= 4
+inv_grid_y					= 0
+cost						= 70000
+jump_height					= .2
+add_satiety				    = 30
+reduce_satiety			    = 1
+bleeding_restore_speed		= 0.0
+particles					= anomaly2\artefact\artefact_electra
+lights_enabled				= false
+hit_absorbation_sect		= af_baloon_absorbation
+
+[af_baloon_absorbation]:absorbation_fake
+
+[af_baloon_dyn1d]:af_baloon
+[af_baloon_dyn1d_absorbation]:absorbation_fake
+
+[af_baloon_dyn2d]:af_baloon
+bleeding_restore_speed		= 0.001
+[af_baloon_dyn2d_absorbation]:absorbation_fake
+
+[af_baloon_dyn3d]:af_baloon
+bleeding_restore_speed		= 0.0015
+[af_baloon_dyn3d_absorbation]:absorbation_fake
+
+[af_baloon_dyn4d]:af_baloon
+bleeding_restore_speed		= 0.0025
+[af_baloon_dyn4d_absorbation]:absorbation_fake
+
+[af_baloon_dyn5d]:af_baloon
+bleeding_restore_speed		= 0.004
+[af_baloon_dyn5d_absorbation]:absorbation_fake
+
+[af_baloon_dyn6d]:af_baloon
+[af_baloon_dyn6d_absorbation]:absorbation_fake
+
+
+[af_dummy_fire]:af_base
+$spawn 						= "artifacts\af_dummy_fire"
+$npc						= on
+art_mama					= garka
+hit_type					= burn
+cform						= skeleton
+class						= ARTEFACT
+visual						= dinamics\artefacts\af_fire.ogf
+description					= af_dummy_fire_desc
+inv_name					= af_dummy_fire
+inv_name_short				= af_dummy_fire
+inv_weight					= 1.66
+inv_grid_x					= 2
+inv_grid_y					= 17
+cost						= 50000
+jump_height					= .2
+particles					= anomaly2\artefact\artefact_zharka
+lights_enabled				= false
+hit_absorbation_sect		= af_dummy_fire_absorbation
+[af_dummy_fire_absorbation]:absorbation_fake
+
+[af_dummy_fire_fake]:af_dummy_fire
+[af_dummy_fire_fake_absorbation]:absorbation_fake
+
+[af_glass_new]:af_base
+$spawn 						= "artifacts\af_glass"
+$npc						= on
+cform						= skeleton
+class						= ARTEFACT
+visual						= dinamics\artefacts\af_glass.ogf
+description					= af_glass_desc
+inv_name					= af_glass
+inv_name_short				= 
+inv_weight					= 0.59
+inv_grid_x					= 4
+inv_grid_y					= 1
+cost						= 15000
+jump_height					= .2
+particles					= anomaly2\artefact\artefact_mincer 
+lights_enabled				= false
+hit_absorbation_sect		= af_glass_new_absorbation
+
+[af_glass_new_absorbation]:absorbation_fake
+fire_wound_immunity 	= 0.90
+
+
+[af_star_new]:af_base
+$spawn 						= "artifacts\af_star_new"
+$npc						= on
+cform						= skeleton
+class						= ARTEFACT
+visual						= dinamics\artefacts\af_night_star_new.ogf
+description					= af-night_star_new_desc
+inv_name					= af-night_star_new
+inv_name_short				= 
+inv_weight					= 1.52
+inv_grid_x					= 4
+inv_grid_y					= 2
+cost						= 50000
+jump_height					= .2
+add_air_param				= 10
+particles					= anomaly2\artefact\artefact_ameba
+lights_enabled				= false
+power_restore_speed			= 0.007
+satiety_restore_speed = -0.0001584
+add_satiety				    = 60
+reduce_satiety			    = 1
+hit_absorbation_sect		= af_star_new_absorbation
+[af_star_new_absorbation]:absorbation_fake
+strike_immunity				= 0.7
+burn_immunity				= 1.3
+shock_immunity				= 1.3
+
+
+[af_electra_flash_new]:af_base
+$spawn 						= "artifacts\af_electra_flash_new"
+$prefetch 					= 64
+cform						= skeleton
+class						= ARTEFACT
+visual						= dinamics\artefacts\af_electra_flash_new.ogf
+description					= af_electra_flash_new_desc
+inv_name					= af_electra_flash_new
+inv_name_short				= 
+inv_weight					= 0.63
+inv_grid_x					= 0
+inv_grid_y					= 15
+cost						= 15000
+jump_height					= .5
+particles					= anomaly2\artefact\artefact_electra
+lights_enabled				= false
+hit_absorbation_sect		= af_electra_flash_new_absorbation
+artefact_activation_seq 	= af_activation_bold
+
+[af_electra_flash_new_absorbation]:absorbation_fake
+explosion_immunity 			= 0.90
+
+[af_electra_moonlight_new]:af_base
+$spawn 						= "artifacts\af_electra_moonlight_new"
+$prefetch 					= 64
+cform						= skeleton
+class						= ARTEFACT
+visual						= dinamics\artefacts\af_electra_moonlight_new.ogf
+description					= af_electra_moonlight_new_desc
+inv_name					= af_electra_moonlight_new
+inv_name_short				= 
+inv_weight					= 1.19
+inv_grid_x					= 4
+inv_grid_y					= 3
+cost						= 15000
+jump_height					= .5
+particles					= anomaly2\artefact\artefact_electra
+lights_enabled				= false
+hit_absorbation_sect		= af_electra_moonlight_new_absorbation
+artefact_activation_seq 	= af_activation_bold
+
+[af_electra_moonlight_new_absorbation]:absorbation_fake
+burn_immunity 				= 0.90
+
+[af_electra_sparkler_new]:af_base
+$spawn 						= "artifacts\af_dummy_sparkler"
+$prefetch 					= 64
+cform						= skeleton
+class						= ARTEFACT
+visual						= dinamics\artefacts\af_electra_sparkler_new.ogf
+description					= af_electra_sparkler_new_desc
+inv_name					= af_electra_sparkler_new
+inv_name_short				= 
+inv_weight					= 1.26
+inv_grid_x					= 0
+inv_grid_y					= 13
+cost						= 15000
+jump_height					= .0
+particles					= anomaly2\artefact\artefact_electra
+lights_enabled				= false
+hit_absorbation_sect		= af_electra_sparkler_new_absorbation
+artefact_activation_seq 	= af_activation_mincer
+
+[af_electra_sparkler_new_absorbation]:absorbation_fake
+shock_immunity				= 0.90
+
+
+[af_sul_new]:af_base
+$spawn 						= "artifacts\af_sul_new"
+$prefetch 					= 64
+cform						= skeleton
+class						= ARTEFACT
+visual						= dinamics\artefacts\af_soul_new.ogf
+description					= artifact_af-soul_new
+inv_name					= af-sul-new
+inv_name_short				= af-sul-new
+inv_weight					= 1.23
+inv_grid_x					= 0
+inv_grid_y					= 14
+cost						= 50000
+jump_height					= .5
+particles					= anomaly2\artefact\artefact_gravi
+lights_enabled				= false
+additional_inventory_weight2				= 13
+power_restore_speed 		= 0.0055
+satiety_restore_speed = -0.00012375
+add_satiety				    = 45
+reduce_satiety			    = 1
+artefact_activation_seq 	= af_activation_bold
+hit_absorbation_sect		= af_sul_new_absorbation
+[af_sul_new_absorbation]:absorbation_fake
+strike_immunity				= 1.2
+wound_immunity				= 1.2
+
+[af_sul_new_dyn1d]:af_sul_new
+description					= af_sul_new_desc_1
+cost						= 25000
+additional_inventory_weight2				= 11
+power_restore_speed 		= 0.0045
+satiety_restore_speed = -0.000099
+add_satiety				    = 35
+reduce_satiety			    = 1
+hit_absorbation_sect		= af_sul_new_dyn1d_absorbation
+[af_sul_new_dyn1d_absorbation]:af_sul_new_absorbation
+strike_immunity				= 1.4
+wound_immunity				= 1.4
+
+[af_sul_new_dyn2d]:af_sul_new
+description					= af_sul_new_desc_2
+cost						= 35000
+additional_inventory_weight2				= 12
+power_restore_speed 		= 0.005
+satiety_restore_speed = -0.00011385
+add_satiety				    = 40
+reduce_satiety			    = 1
+hit_absorbation_sect		= af_sul_new_dyn2d_absorbation
+[af_sul_new_dyn2d_absorbation]:af_sul_new_absorbation
+strike_immunity				= 1.3
+wound_immunity				= 1.3
+
+[af_sul_new_dyn3d]:af_sul_new
+hit_absorbation_sect		= af_sul_new_dyn3d_absorbation
+[af_sul_new_dyn3d_absorbation]:af_sul_new_absorbation
+
+[af_sul_new_dyn4d]:af_sul_new
+description					= af_sul_new_desc_4
+cost						= 65000
+additional_inventory_weight2				= 14
+power_restore_speed 		= 0.006
+satiety_restore_speed = -0.00013365
+add_satiety				    = 50
+reduce_satiety			    = 1
+hit_absorbation_sect		= af_sul_new_dyn4d_absorbation
+[af_sul_new_dyn4d_absorbation]:af_sul_new_absorbation
+strike_immunity				= 1.1
+wound_immunity				= 1.1
+
+[af_sul_new_dyn5d]:af_sul_new
+description					= af_sul_new_desc_5
+cost						= 80000
+additional_inventory_weight2				= 15
+power_restore_speed 		= 0.0065
+satiety_restore_speed = -0.0001485
+add_satiety				    = 55
+reduce_satiety			    = 1
+hit_absorbation_sect		= af_sul_new_dyn5d_absorbation
+[af_sul_new_dyn5d_absorbation]:af_sul_new_absorbation
+strike_immunity				= 1.0
+wound_immunity				= 1.0
+
+[af_sul_new_dyn6d]:af_sul_new
+description					= af_sul_new_desc_6
+cost						= 4000
+additional_inventory_weight2				= 0.0
+power_restore_speed 		= 0.0
+hit_absorbation_sect		= af_sul_new_dyn6d_absorbation
+[af_sul_new_dyn6d_absorbation]:absorbation_fake
+
+
+
+[af_electra_blue_new]:af_base
+$spawn 						= "artifacts\af_electra_blue"
+$prefetch 					= 64
+cform						= skeleton
+class						= ARTEFACT
+visual						= dinamics\artefacts\af_electra_blue.ogf
+description					= af_electra_blue_desc
+inv_name					= af_electra_blue
+inv_name_short				= 
+inv_weight					= 1.56
+inv_grid_x					= 4
+inv_grid_y					= 4
+cost						= 15000
+jump_height					= .5
+particles					= anomaly2\artefact\artefact_gravi
+lights_enabled				= false
+hit_absorbation_sect		= af_electra_blue_new_absorbation
+artefact_activation_seq 	= af_activation_bold
+
+[af_electra_blue_new_absorbation]:absorbation_fake
+telepatic_immunity 			= 0.90
+
+[af_dummy_black_tip]:af_base
+GroupControlSection			= spawn_group
+$spawn						= "artifacts\af_dummy_tip"
+$prefetch 					= 64
+cform						= skeleton
+class						= ARTEFACT
+visual						= dinamics\artefacts\af_black_tip.ogf
+description					= af_dummy_black_tip_desc
+inv_name					= af_dummy_black_tip
+inv_name_short				= 
+inv_weight					= 2.36
+inv_grid_x					= 4
+inv_grid_y					= 5
+cost						= 1000
+jump_height					= .0
+belt						= false
+particles					= 
+lights_enabled				= false
+hit_absorbation_sect		= af_dummy_black_tip_absorbation
+artefact_activation_seq = af_activation_bold
+
+watcher_act.bad_item = true
+
+[af_dummy_black_tip_absorbation]:absorbation_fake
+
+[af_dummy_black_tip_fake]:af_dummy_black_tip
+[af_dummy_black_tip_fake_absorbation]:absorbation_fake
+
+[af_full_akkum]:af_base
+visual						= new_item\akkumuliator_2.ogf
+description					= enc_item_battery_03
+inv_name_short				= item_battery_03
+inv_name					= item_battery_03
+inv_weight					= 1.05
+inv_grid_width				= 1
+inv_grid_height				= 1
+inv_grid_x					= 4
+inv_grid_y					= 6
+cost						= 5000
+slot						= 10 ;11
+belt						= false
+default_to_ruck				= true
+auto_attach					= false
+bind_det_arts.ignore        = true
+hit_absorbation_sect		= af_full_akkum_absorbation
+[af_full_akkum_absorbation]:absorbation_fake

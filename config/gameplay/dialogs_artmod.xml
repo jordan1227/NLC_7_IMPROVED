@@ -1,0 +1,6692 @@
+<!-- хвосты Толику  -->
+<dialog id="artmod_111_dialog">
+	<has_info>tutorial_wounded_help</has_info>
+	<dont_has_info>esc_tolik_five_teil_start</dont_has_info>
+	<dont_has_info>esc_tolik_five_teil_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>artmod_111_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>artmod_111_dialog_1</text>					
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>artmod_111_dialog_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>artmod_111_dialog_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>artmod_111_dialog_4</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>artmod_111_dialog_5</text>
+			<next>61</next>
+			<next>62</next>
+		</phrase>
+		<phrase id="61">
+			<text>artmod_111_dialog_61</text>
+			<give_info>esc_tolik_five_teil_start</give_info>
+			<action>dialogs.break_dialog</action>			
+		</phrase>
+		<phrase id="62">
+			<text>artmod_111_dialog_62</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="artmod_112_dialog">
+	<precondition>sak_dialog.five_teil_have</precondition>
+	<has_info>esc_tolik_five_teil_start</has_info>
+	<dont_has_info>esc_tolik_five_teil_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>artmod_112_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>artmod_112_dialog_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+		<precondition>sak_dialog.five_teil_have</precondition>
+			<text>artmod_112_dialog_21</text>
+			<give_info>esc_tolik_five_teil_done</give_info>
+			<action>sak_dialog.give_five_teil</action>
+			<next>3</next>
+		</phrase>
+		<phrase id="22">
+			<text>artmod_112_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+			<text>artmod_112_dialog_3</text>
+			<next>41</next>
+			<next>42</next>		
+		</phrase>
+		<phrase id="41">
+			<text>artmod_112_dialog_41</text>
+			<next>51</next>		
+		</phrase>	
+		<phrase id="51">
+			<text>artmod_112_dialog_51</text>
+			<give_info>info_artmod_ameba_slime_zharka</give_info>
+			<action>sak.info_artmod</action>		
+		</phrase>
+		<phrase id="42">
+			<text>artmod_112_dialog_42</text>
+			<next>52</next>		
+		</phrase>	
+		<phrase id="52">
+			<text>artmod_112_dialog_52</text>
+			<action>sak.create_items("ammo_12x70_buck",5)</action>
+			<action>sak.create_items("medkit",2)</action>		
+		</phrase>	
+	</phrase_list>
+</dialog>
+	
+<dialog id="artmod_11_make_dialog">
+<precondition>sak_artmods.have_info_artmod_11</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_11_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_11_start</dont_has_info>
+		<text>artmod_11_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_11_start</has_info>
+		<text>artmod_11_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_11_have</precondition>
+		<text>artmod_11_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_11</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_11_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_11_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_11_make_dialog_3</text>
+		<action>sak_artmods.artmod_11_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_11_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_11_made_dialog">
+<has_info>artmod_11_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_11_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_11</precondition>
+		<text>artmod_11_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_11</precondition>
+		<text>artmod_11_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_11_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_11_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_11_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_11</action>
+		<action>sak_artmods.clear_ready_time_artmod_11</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_11_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+<!-- new_petruha БМ -->	
+<dialog id="artmod_121_dialog">
+	<has_info>esc_petruha_great</has_info> <!-- диалог именно на атп --> 
+	<dont_has_info>esc_petruha_toz_start</dont_has_info>
+	<dont_has_info>esc_petruha_toz_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>artmod_121_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>artmod_121_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>artmod_121_dialog_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>artmod_121_dialog_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>artmod_121_dialog_4</text>
+			<next>5</next>
+		</phrase>	
+		<phrase id="5">
+			<text>artmod_121_dialog_5</text>
+			<next>61</next>
+			<next>62</next>
+		</phrase>
+		<phrase id="61">
+			<text>artmod_121_dialog_61</text>
+			<next>7</next>
+		</phrase>
+		<phrase id="7">
+			<text>artmod_121_dialog_7</text>
+			<action>mike.petruha_friend_spawn</action>
+			<give_info>esc_petruha_toz_start</give_info>
+		</phrase>	
+		<phrase id="62">
+			<text>artmod_121_dialog_62</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="artmod_122_dialog">
+	<has_info>esc_petruha_toz_start</has_info>
+	<dont_has_info>info_zapiska_petruha_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>artmod_122_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>artmod_122_dialog_1</text>
+			<next>11</next>
+			<next>12</next>
+		</phrase>
+		<phrase id="11">
+		<dont_has_info>info_zapiska_petruha</dont_has_info>  <!-- не нашли -->	
+			<text>artmod_122_dialog_11</text>
+			<next>21</next>
+		</phrase>
+		<phrase id="21">
+			<text>artmod_122_dialog_21</text>
+			<next>22</next>
+		</phrase>
+		<phrase id="22">
+			<text>artmod_122_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="12">
+		<has_info>info_zapiska_petruha</has_info>   <!-- нашли -->	
+			<text>artmod_122_dialog_12</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>artmod_122_dialog_3</text>
+			<next>41</next>
+			<next>42</next>		
+		</phrase>
+		<phrase id="41">
+		<precondition>mike.zapiska_petruha_have</precondition>	
+			<text>artmod_122_dialog_41</text>
+			<action>mike.zapiska_petruha_give</action>		
+			<next>5</next>
+		</phrase>
+		<phrase id="42">
+		<precondition>mike.zapiska_petruha_not_have</precondition>
+			<text>artmod_122_dialog_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>	
+		<phrase id="5">
+			<text>artmod_122_dialog_5</text>
+			<action>mike.petruha_friend_off</action>  <!-- убираем труп -->		
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>artmod_122_dialog_6</text>
+			<next>7</next>
+		</phrase>
+		<phrase id="7">
+			<text>artmod_122_dialog_7</text>
+			<action>sak.create_items("ammo_12x70_buck",3)</action>
+			<give_info>info_zapiska_petruha_done</give_info>		
+			<!--<next>8</next>-->
+		</phrase>
+		<phrase id="8">
+			<text>artmod_122_dialog_8</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>		
+	</phrase_list>
+</dialog>
+<!-- продолжаем про БМ -->
+<dialog id="artmod_123_dialog">
+	<has_info>info_zapiska_petruha_done</has_info>
+	<dont_has_info>esc_petruha_toz_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>artmod_123_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>artmod_123_dialog_1</text>
+			<next>11</next>
+			<next>12</next>		
+		</phrase>	
+		<phrase id="11">
+			<text>artmod_123_dialog_11</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="12">
+		<precondition>sak_dialog.esc_petruha_bm_have</precondition>
+			<text>artmod_123_dialog_12</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>artmod_123_dialog_2</text>
+			<next>21</next>
+			<next>22</next>		
+		</phrase>
+		<phrase id="21">
+			<text>artmod_123_dialog_21</text>
+			<give_info>esc_petruha_toz_done</give_info>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="22">
+			<text>artmod_123_dialog_22</text>
+			<action>sak_dialog.give_esc_petruha_bm</action>		
+			<next>3</next>
+		</phrase>	
+		<phrase id="3">
+			<text>artmod_123_dialog_3</text>
+			<next>31</next>		
+			<next>32</next>
+		</phrase>
+		<phrase id="31">
+			<text>artmod_123_dialog_31</text>
+			<next>41</next>		
+		</phrase>	
+		<phrase id="41">
+			<text>artmod_123_dialog_41</text>
+			<action>sak.create_items("wpn_fort",1)</action>
+			<action>sak.create_items("ammo_9x18_fmj",2)</action>			
+			<action>sak.create_items("ammo_12x70_buck",5)</action>
+			<action>sak.create_items("vodka",2)</action>
+			<give_info>esc_petruha_toz_done</give_info>		
+			<next>4</next>
+		</phrase>
+		<phrase id="32">
+			<text>artmod_123_dialog_32</text>
+			<next>42</next>		
+		</phrase>		
+		<phrase id="42">
+			<text>artmod_123_dialog_42</text>
+			<give_info>info_artmod_gravi_gravi_zone</give_info>
+			<action>sak.info_artmod</action>
+			<give_info>esc_petruha_toz_done</give_info>		
+			<next>4</next>
+		</phrase>		
+		<phrase id="4">
+			<text>artmod_123_dialog_4</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>	
+	</phrase_list>
+</dialog>
+	
+<dialog id="artmod_12_make_dialog">
+<precondition>sak_artmods.have_info_artmod_12</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_12_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_12_start</dont_has_info>
+		<text>artmod_12_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_12_start</has_info>
+		<text>artmod_12_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_12_have</precondition>
+		<text>artmod_12_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_12</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_12_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_12_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_12_make_dialog_3</text>
+		<action>sak_artmods.artmod_12_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_12_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_12_made_dialog">
+<has_info>artmod_12_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_12_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_12</precondition>
+		<text>artmod_12_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_12</precondition>
+		<text>artmod_12_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_12_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_12_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_12_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_12</action>
+		<action>sak_artmods.clear_ready_time_artmod_12</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_12_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_131_dialog">
+	<has_info>esc_shustryi_outfit_done</has_info>
+	<dont_has_info>esc_shustryi_outfit_fail</dont_has_info>
+	<dont_has_info>esc_shustryi_medusa_start</dont_has_info>
+	<dont_has_info>esc_shustryi_medusa_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>artmod_131_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>artmod_131_dialog_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+			<text>artmod_131_dialog_21</text>
+			<give_info>esc_shustryi_medusa_start</give_info>
+			<next>3</next>			
+		</phrase>
+		<phrase id="22">
+			<text>artmod_131_dialog_22</text>
+			<give_info>esc_shustryi_medusa_done</give_info>			
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>artmod_131_dialog_3</text>
+			<next>4</next>
+		</phrase>		
+		<phrase id="4">
+			<text>artmod_131_dialog_4</text>			
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="artmod_132_dialog">
+	<precondition>sak_dialog.esc_shustryi_medusa_have</precondition>
+	<has_info>esc_shustryi_medusa_start</has_info>
+	<dont_has_info>esc_shustryi_medusa_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+		<phrase_list>
+		<phrase id="0">
+			<text>artmod_132_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>artmod_132_dialog_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+		<precondition>sak_dialog.esc_shustryi_medusa_have</precondition>
+			<text>artmod_132_dialog_21</text>
+			<give_info>esc_shustryi_medusa_done</give_info>
+			<action>sak_dialog.give_esc_shustryi_medusa</action>
+			<next>3</next>
+		</phrase>
+		<phrase id="22">
+			<text>artmod_132_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+			<text>artmod_132_dialog_3</text>
+			<next>41</next>
+			<next>42</next>		
+		</phrase>
+		<phrase id="41">
+			<text>artmod_132_dialog_41</text>
+			<next>51</next>		
+		</phrase>	
+		<phrase id="51">
+			<text>artmod_132_dialog_51</text>
+			<give_info>info_artmod_cristall_flower_mincer</give_info>
+			<action>sak.info_artmod</action>		
+		</phrase>
+		<phrase id="42">
+			<text>artmod_132_dialog_42</text>
+			<next>52</next>		
+		</phrase>	
+		<phrase id="52">
+			<text>artmod_132_dialog_52</text>
+			<action>sak.create_items("medkit",5)</action>
+			<action>sak_dialog.take_2500_money</action>		
+		</phrase>	
+	</phrase_list>
+</dialog>
+<!-- shustriy_find_item and artmod_13 -->	
+<dialog id="artmod_13_make_dialog">
+	<has_info>shustriy_find_item_1_done</has_info>
+	<dont_has_info>artmod_13_start</dont_has_info>
+	<dont_has_info>shustriy_find_item_1_not</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>artmod_13_make_dialog_0</text>
+			<next>11</next>
+			<next>12</next>
+		</phrase>
+		<phrase id="11">
+		<dont_has_info>artmod_13_not</dont_has_info>	
+			<text>artmod_13_make_dialog_11</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="12">
+		<has_info>artmod_13_not</has_info>
+			<text>artmod_13_make_dialog_12</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>artmod_13_make_dialog_5</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>	
+		<phrase id="21">
+		<precondition>sak_artmods.artmod_13_have</precondition>
+			<text>artmod_13_make_dialog_21</text>
+			<action>sak_artmods.give_artmod_13</action>
+			<next>3</next>
+		</phrase>
+		<phrase id="22">
+			<text>artmod_13_make_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>	
+		<phrase id="3">
+			<text>artmod_13_make_dialog_3</text>
+			<action>sak_artmods.artmod_13_start_time</action>		
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>artmod_13_make_dialog_4</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="artmod_13_made_dialog">
+	<has_info>artmod_13_start</has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>artmod_13_made_dialog_0</text>
+			<next>11</next>
+			<next>12</next>
+		</phrase>
+		<phrase id="11">
+		<precondition>sak_artmods.is_ready_time_artmod_13</precondition>
+			<text>artmod_13_made_dialog_11</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="12">
+		<precondition>sak_artmods.not_ready_time_artmod_13</precondition>
+			<text>artmod_13_made_dialog_12</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>artmod_13_made_dialog_2</text>
+			<action>dialogs.break_dialog</action>		
+		</phrase>	
+		<phrase id="3">
+			<text>artmod_13_made_dialog_3</text>
+			<action>sak_artmods.clear_ready_time_artmod_13</action>		
+			<next>4</next>		
+		</phrase>	
+		<phrase id="4">
+			<text>artmod_13_made_dialog_4</text>		
+			<action>sak_dialog.take_shustriy_artmod_13</action>
+			<give_info>artmod_13_not</give_info>											 
+			<next>5</next>		
+		</phrase>
+		<phrase id="5">
+			<text>artmod_13_made_dialog_5</text>
+			<action>dialogs.break_dialog</action>				
+		</phrase>
+	</phrase_list>
+</dialog>
+	
+<dialog id="artmod_141_dialog">
+	<has_info>escape_lager_volk_document_done</has_info>
+	<dont_has_info>esc_bridge_vodka_start</dont_has_info>
+	<dont_has_info>esc_bridge_vodka_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>artmod_141_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>artmod_141_dialog_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+			<text>artmod_141_dialog_21</text>
+			<next>3</next>			
+		</phrase>
+		<phrase id="3">
+			<text>artmod_141_dialog_3</text>
+			<give_info>esc_bridge_vodka_start</give_info>
+		</phrase>		
+		<phrase id="22">
+			<text>artmod_141_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+<!--  без рецепта, чисто чтобы бартер открыть -->
+<dialog id="artmod_142_dialog">
+	<precondition>sak_dialog.have_5vodka</precondition>	
+	<has_info>esc_bridge_vodka_start</has_info>
+	<dont_has_info>esc_bridge_vodka_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>artmod_142_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>artmod_142_dialog_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+		<precondition>sak_dialog.have_5vodka</precondition>		
+			<text>artmod_142_dialog_21</text>
+			<action>sak_dialog.give_5vodka</action>
+			<give_info>esc_bridge_vodka_done</give_info>			
+			<next>3</next>			
+		</phrase>
+		<phrase id="22">
+			<text>artmod_142_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>	
+		<phrase id="3">
+			<text>artmod_142_dialog_3</text>
+			<action>sak.create_items("ammo_5.45x39_fmj",3)</action>
+			<action>sak.create_items("medkit",2)</action>			
+			<next>4</next>		
+		</phrase>
+		<phrase id="4">
+			<text>artmod_142_dialog_4</text>
+			<next>5</next>		
+		</phrase>	
+		<phrase id="5">
+			<text>artmod_142_dialog_5</text>
+			<give_info>esc_bridge_pass_on</give_info>		
+		</phrase>		
+	</phrase_list>
+</dialog>
+	
+<dialog id="artmod_14_make_dialog">
+<precondition>sak_artmods.have_info_artmod_14</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_14_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_14_start</dont_has_info>
+		<text>artmod_14_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_14_start</has_info>
+		<text>artmod_14_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_14_have</precondition>
+		<text>artmod_14_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_14</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_14_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_14_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_14_make_dialog_3</text>
+		<action>sak_artmods.artmod_14_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_14_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_14_made_dialog">
+<has_info>artmod_14_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_14_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_14</precondition>
+		<text>artmod_14_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_14</precondition>
+		<text>artmod_14_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_14_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_14_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+		</phrase>
+	<phrase id="3">
+		<text>artmod_14_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_14</action>
+		<action>sak_artmods.clear_ready_time_artmod_14</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_14_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	<!-- 5 записка -->
+<dialog id="artmod_15_make_dialog">
+<precondition>sak_artmods.have_info_artmod_15</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_15_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_15_start</dont_has_info>
+		<text>artmod_15_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_15_start</has_info>
+		<text>artmod_15_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_15_have</precondition>
+		<text>artmod_15_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_15</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_15_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_15_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_15_make_dialog_3</text>
+		<action>sak_artmods.artmod_15_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_15_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_15_made_dialog">
+<has_info>artmod_15_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_15_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_15</precondition>
+		<text>artmod_15_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_15</precondition>
+		<text>artmod_15_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_15_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_15_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_15_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_15</action>
+		<action>sak_artmods.clear_ready_time_artmod_15</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_15_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="fox_medkit_start_dialog">
+	<has_info>agr_fox_ill</has_info>
+	<dont_has_info>esc_fox_medkit_start</dont_has_info>
+	<dont_has_info>esc_fox_medkit_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>fox_medkit_start_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>fox_medkit_start_dialog_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+			<text>fox_medkit_start_dialog_21</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>fox_medkit_start_dialog_3</text>
+			<give_info>esc_fox_medkit_start</give_info>
+		</phrase>		
+		<phrase id="22">
+			<text>fox_medkit_start_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="fox_medkit_done_dialog">
+	<precondition>sak_dialog.esc_fox_medkit_have</precondition>
+	<has_info>esc_fox_medkit_start</has_info>
+	<dont_has_info>esc_fox_medkit_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>fox_medkit_done_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>fox_medkit_done_dialog_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+		<precondition>sak_dialog.esc_fox_medkit_have</precondition>
+			<text>fox_medkit_done_dialog_21</text>
+			<action>sak_dialog.give_esc_fox_medkit</action>
+			<next>3</next>
+		</phrase>
+		<phrase id="22">
+			<text>fox_medkit_done_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+			<text>fox_medkit_done_dialog_3</text>
+			<give_info>esc_fox_medkit_done</give_info>
+			<next>41</next>
+			<next>42</next>	
+			<next>43</next>
+		</phrase>
+		<phrase id="41">
+			<text>fox_medkit_done_dialog_41</text>
+			<next>51</next>		
+		</phrase>
+		<phrase id="42">
+			<text>fox_medkit_done_dialog_42</text>
+			<next>52</next>		
+		</phrase>
+		<phrase id="43">
+			<text>fox_medkit_done_dialog_43</text>
+			<next>53</next>		
+		</phrase>
+		<phrase id="51">
+			<text>fox_medkit_done_dialog_51</text>
+			<give_info>info_artmod_fireball_galant</give_info>
+			<action>sak.info_artmod</action>
+		</phrase>
+		<phrase id="52">
+			<text>fox_medkit_done_dialog_52</text>
+			<action>sak.create_items("af_fireball_dyn1d",1)</action>
+		</phrase>
+		<phrase id="53">
+			<text>fox_medkit_done_dialog_53</text>
+			<action>sak_dialog.fox_reward_toz</action>
+		</phrase>		
+	</phrase_list>
+</dialog>
+	
+<dialog id="artmod_16_make_dialog">
+<precondition>sak_artmods.have_info_artmod_16</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_16_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_16_start</dont_has_info>
+		<text>artmod_16_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_16_start</has_info>
+		<text>artmod_16_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_16_have</precondition>
+		<text>artmod_16_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_16</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_16_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_16_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_16_make_dialog_3</text>
+		<action>sak_artmods.artmod_16_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_16_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_16_made_dialog">
+<has_info>artmod_16_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_16_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_16</precondition>
+		<text>artmod_16_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_16</precondition>
+		<text>artmod_16_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_16_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_16_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_16_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_16</action>
+		<action>sak_artmods.clear_ready_time_artmod_16</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_16_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="yurik_mp5_start_dialog">
+	<has_info>gar_dm_novice_gave_vykup</has_info>
+	<dont_has_info>gar_dram_novice_burer_hand_done</dont_has_info>
+	<dont_has_info>gar_dram_novice_mp5_m1_start</dont_has_info>
+	<dont_has_info>gar_dram_novice_mp5_m1_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>yurik_mp5_start_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>yurik_mp5_start_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>yurik_mp5_start_dialog_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>yurik_mp5_start_dialog_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>yurik_mp5_start_dialog_4</text>
+			<next>5</next>
+		</phrase>	
+		<phrase id="5">
+			<text>yurik_mp5_start_dialog_5</text>
+			<next>51</next>
+			<next>52</next>
+		</phrase>
+		<phrase id="51">
+			<text>yurik_mp5_start_dialog_51</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>yurik_mp5_start_dialog_6</text>
+			<action>sak.post_dialog_exec("doc.add_gar_stalker_mp5()")</action>
+			<give_info>gar_dram_novice_mp5_m1_start</give_info>
+		</phrase>
+		<phrase id="52">
+			<text>yurik_mp5_start_dialog_52</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="yurik_mp5_done_dialog">
+	<precondition>sak_dialog.gar_dram_novice_mp5_m1_have</precondition>
+	<has_info>gar_dram_novice_mp5_m1_start</has_info>
+	<dont_has_info>gar_dram_novice_mp5_m1_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>yurik_mp5_done_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>yurik_mp5_done_dialog_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+		<precondition>sak_dialog.gar_dram_novice_mp5_m1_have</precondition>	
+			<text>yurik_mp5_done_dialog_21</text>
+			<action>sak_dialog.give_gar_dram_novice_mp5_m1</action>		
+			<next>3</next>
+		</phrase>
+		<phrase id="22">
+			<text>yurik_mp5_done_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+			<text>yurik_mp5_done_dialog_3</text>
+			<next>41</next>
+			<next>42</next>		
+		</phrase>
+		<phrase id="41">
+			<text>yurik_mp5_done_dialog_41</text>
+			<next>51</next>		
+		</phrase>	
+		<phrase id="51">
+			<text>yurik_mp5_done_dialog_51</text>
+			<give_info>info_artmod_electra_sparkler_mosquito_bald</give_info>
+			<give_info>gar_dram_novice_mp5_m1_done</give_info>		
+			<action>sak.info_artmod</action>
+		</phrase>
+		<phrase id="42">
+			<text>yurik_mp5_done_dialog_42</text>
+			<next>52</next>		
+		</phrase>	
+		<phrase id="52">
+			<text>yurik_mp5_done_dialog_52</text>
+			<action>doc.gar_dram_novice_prize</action>			
+			<give_info>gar_dram_novice_mp5_m1_done</give_info>		
+		</phrase>	
+	</phrase_list>
+</dialog>
+	
+<dialog id="artmod_21_make_dialog">
+<precondition>sak_artmods.have_info_artmod_21</precondition>
+<has_info>gar_dram_novice_mp5_m1_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_21_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_21_start</dont_has_info>
+		<text>artmod_21_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_21_start</has_info>
+		<text>artmod_21_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_21_have</precondition>
+		<text>artmod_21_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_21</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_21_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_21_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_21_make_dialog_3</text>
+		<action>sak_artmods.artmod_21_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_21_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_21_made_dialog">
+<has_info>artmod_21_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_21_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_21</precondition>
+		<text>artmod_21_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_21</precondition>
+		<text>artmod_21_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_21_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_21_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_21_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_21</action>
+		<action>sak_artmods.clear_ready_time_artmod_21</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_21_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="neumeha_outfit_start_dlg">
+	<has_info>agr_start_scene</has_info> <!-- поршень присутствия на Агро -->
+	<dont_has_info>neumeha_outfit_start</dont_has_info>
+	<dont_has_info>neumeha_outfit_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>neumeha_outfit_start_dlg_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>neumeha_outfit_start_dlg_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>neumeha_outfit_start_dlg_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>neumeha_outfit_start_dlg_3</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<text>neumeha_outfit_start_dlg_41</text>
+			<action>sak_dialog.add_outfit_neumeha</action>
+			<give_info>neumeha_outfit_start</give_info>
+			<next>51</next>
+		</phrase>
+		<phrase id="42">
+			<text>neumeha_outfit_start_dlg_42</text>
+			<give_info>neumeha_outfit_done</give_info>
+			<next>52</next>
+		</phrase>
+		<phrase id="51">
+			<text>neumeha_outfit_start_dlg_51</text>
+		</phrase>
+		<phrase id="52">
+			<text>neumeha_outfit_start_dlg_52</text>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="neumeha_outfit_done_dlg">
+	<has_info>neumeha_outfit_start</has_info>
+	<dont_has_info>neumeha_outfit_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>neumeha_outfit_done_dlg_0</text>
+		<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>neumeha_outfit_done_dlg_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+		<precondition>sak_dialog.cond_items_have("stalker_outfit_m3",1)</precondition>
+			<text>neumeha_outfit_done_dlg_21</text>
+			<action>sak_dialog.give_neumeha_outfit</action>
+			<give_info>neumeha_outfit_done</give_info>
+			<next>31</next>
+		</phrase>
+		<phrase id="22">
+			<text>neumeha_outfit_done_dlg_22</text>
+			<give_info>neumeha_outfit_done</give_info>
+			<next>32</next>
+		</phrase>
+		<phrase id="31">
+			<text>neumeha_outfit_done_dlg_31</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="32">
+			<text>neumeha_outfit_done_dlg_32</text>
+		</phrase>
+		<phrase id="41">
+			<text>neumeha_outfit_done_dlg_41</text>
+			<next>51</next>
+		</phrase>
+		<phrase id="42">
+			<text>neumeha_outfit_done_dlg_42</text>
+			<next>52</next>
+		</phrase>
+		<phrase id="51">
+			<text>neumeha_outfit_done_dlg_51</text>
+			<give_info>info_artmod_rusty_kristall_gravi_zone</give_info>
+			<action>sak.info_artmod</action>
+		</phrase>
+		<phrase id="52">
+			<text>neumeha_outfit_done_dlg_52</text>
+			<action>sak.create_items("grenade_f1",5)</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+	
+<dialog id="artmod_22_make_dialog">
+<precondition>sak_artmods.have_info_artmod_22</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_22_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_22_start</dont_has_info>
+		<text>artmod_22_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_22_start</has_info>
+		<text>artmod_22_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_22_have</precondition>
+		<text>artmod_22_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_22</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_22_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_22_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_22_make_dialog_3</text>
+		<action>sak_artmods.artmod_22_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_22_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_22_made_dialog">
+<has_info>artmod_22_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_22_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_22</precondition>
+		<text>artmod_22_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_22</precondition>
+		<text>artmod_22_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_22_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_22_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_22_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_22</action>
+		<action>sak_artmods.clear_ready_time_artmod_22</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_22_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+	 <!--23 и 24 ПДА и дело-->
+	 
+<dialog id="artmod_23_make_dialog">
+<precondition>sak_artmods.have_info_artmod_23</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_23_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_23_start</dont_has_info>
+		<text>artmod_23_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_23_start</has_info>
+		<text>artmod_23_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_23_have</precondition>
+		<text>artmod_23_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_23</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_23_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_23_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_23_make_dialog_3</text>
+		<action>sak_artmods.artmod_23_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_23_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_23_made_dialog">
+<has_info>artmod_23_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_23_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_23</precondition>
+		<text>artmod_23_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_23</precondition>
+		<text>artmod_23_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_23_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_23_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_23_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_23</action>
+		<action>sak_artmods.clear_ready_time_artmod_23</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_23_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_24_make_dialog">
+<precondition>sak_artmods.have_info_artmod_24</precondition>
+<has_info>agr_rygyi_new_gg</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_24_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_24_start</dont_has_info>
+		<text>artmod_24_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_24_start</has_info>
+		<text>artmod_24_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_24_have</precondition>
+		<text>artmod_24_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_24</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_24_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_24_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_24_make_dialog_3</text>
+		<action>sak_artmods.artmod_24_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_24_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_24_made_dialog">
+<has_info>artmod_24_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_24_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_24</precondition>
+		<text>artmod_24_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_24</precondition>
+		<text>artmod_24_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_24_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_24_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_24_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_24</action>
+		<action>sak_artmods.clear_ready_time_artmod_24</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_24_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_25_make_dialog">
+<precondition>sak_artmods.have_info_artmod_25</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_25_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_25_start</dont_has_info>
+		<text>artmod_25_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_25_start</has_info>
+		<text>artmod_25_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_25_have</precondition>
+		<text>artmod_25_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_25</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_25_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_25_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_25_make_dialog_3</text>
+		<action>sak_artmods.artmod_25_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_25_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_25_made_dialog">
+<has_info>artmod_25_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_25_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_25</precondition>
+		<text>artmod_25_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_25</precondition>
+		<text>artmod_25_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_25_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_25_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_25_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_25</action>
+		<action>sak_artmods.clear_ready_time_artmod_25</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_25_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+	 <!--26 спасенный долговец-->
+	 
+<dialog id="artmod_26_make_dialog">
+<precondition>sak_artmods.have_info_artmod_26</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_26_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_26_start</dont_has_info>
+		<text>artmod_26_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_26_start</has_info>
+		<text>artmod_26_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_26_have</precondition>
+		<text>artmod_26_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_26</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_26_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_26_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_26_make_dialog_3</text>
+		<action>sak_artmods.artmod_26_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_26_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_26_made_dialog">
+<has_info>artmod_26_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_26_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_26</precondition>
+		<text>artmod_26_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_26</precondition>
+		<text>artmod_26_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_26_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_26_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_26_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_26</action>
+		<action>sak_artmods.clear_ready_time_artmod_26</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_26_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	 
+<dialog id="prapor_eyes_start_dialog">
+	<precondition>sak_dialog.prapor_quests_precond</precondition>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<has_info>agroprom_military_case_know</has_info>
+	<has_info>gar_free_pass</has_info>
+	<dont_has_info>gar_dolg_flesh_eye_start</dont_has_info>
+	<dont_has_info>gar_dolg_flesh_eye_done</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>prapor_eyes_start_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>prapor_eyes_start_dialog_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+			<text>prapor_eyes_start_dialog_21</text>
+			<next>3</next>			
+		</phrase>
+		<phrase id="3">
+			<text>prapor_eyes_start_dialog_3</text>
+			<give_info>gar_dolg_flesh_eye_start</give_info>			
+		</phrase>		
+		<phrase id="22">
+			<text>prapor_eyes_start_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+
+<dialog id="prapor_eyes_done_dialog">
+	<precondition>sak_dialog.gar_dolg_flesh_eye_have</precondition>
+	<dont_has_info>gar_dolg_flesh_eye_done</dont_has_info>
+	<has_info>gar_dolg_flesh_eye_start</has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>prapor_eyes_done_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>prapor_eyes_done_dialog_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+		<precondition>sak_dialog.gar_dolg_flesh_eye_have</precondition>
+			<text>prapor_eyes_done_dialog_21</text>
+			<give_info>gar_dolg_flesh_eye_done</give_info>
+			<action>sak_dialog.give_gar_dolg_flesh_eye</action>
+			<next>3</next>
+		</phrase>
+		<phrase id="22">
+			<text>prapor_eyes_done_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+			<text>prapor_eyes_done_dialog_3</text>
+			<next>41</next>
+			<next>42</next>		
+		</phrase>
+		<phrase id="41">
+			<text>prapor_eyes_done_dialog_41</text>
+			<next>51</next>		
+		</phrase>	
+		<phrase id="51">
+			<text>prapor_eyes_done_dialog_51</text>
+			<give_info>info_artmod_ameba_slug_mosquito_bald</give_info>
+			<action>sak.info_artmod</action>
+			<next>6</next>		
+		</phrase>
+		<phrase id="42">
+			<text>prapor_eyes_done_dialog_42</text>
+			<next>52</next>		
+		</phrase>	
+		<phrase id="52">
+			<text>prapor_eyes_done_dialog_52</text>			
+			<action>sak.create_items("grenade_f1",5)</action>
+			<action>sak.create_items("af_ameba_slug_dyn2d",1)</action>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>prapor_eyes_done_dialog_6</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+	
+<!-- new_gar_prapor_courier and artmod_31 -->
+<dialog id="prapor_ameba_slug_cook_dialog">
+	<dont_has_info>artmod_31_start</dont_has_info>
+	<precondition>sak_artmods.have_info_artmod_31</precondition>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>prapor_ameba_slug_cook_dialog_0</text>
+			<next>11</next>
+			<next>12</next>
+			<next>13</next>	
+			<next>14</next>		
+		</phrase>
+		<phrase id="11">
+		<has_info>bar_darklab_document_done</has_info>
+		<dont_has_info>gar_prapor_courier_start</dont_has_info>
+		<dont_has_info>gar_prapor_courier_done</dont_has_info>	
+			<text>prapor_ameba_slug_cook_dialog_11</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="12">
+		<has_info>gar_prapor_courier_done</has_info>		
+			<text>prapor_ameba_slug_cook_dialog_12</text>
+			<next>121</next>		
+		</phrase>
+		<phrase id="13">
+		<has_info>gar_prapor_courier_start</has_info>	
+		<dont_has_info>gar_prapor_courier_done</dont_has_info>	
+			<text>prapor_ameba_slug_cook_dialog_13</text>
+			<next>131</next>
+			<next>132</next>		
+		</phrase>	
+		<phrase id="14">
+		<dont_has_info>bar_darklab_document_done</dont_has_info>			
+			<text>prapor_ameba_slug_cook_dialog_14</text>
+			<next>121</next>		
+		</phrase>	
+		<phrase id="2">
+			<text>prapor_ameba_slug_cook_dialog_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>prapor_ameba_slug_cook_dialog_3</text>
+			<next>4</next>		
+		</phrase>
+		<phrase id="4">
+			<text>prapor_ameba_slug_cook_dialog_4</text>
+			<next>5</next>		
+		</phrase>
+		<phrase id="5">
+			<text>prapor_ameba_slug_cook_dialog_5</text>
+			<next>6</next>		
+		</phrase>
+		<phrase id="6">
+			<text>prapor_ameba_slug_cook_dialog_6</text>
+			<next>7</next>
+		</phrase>
+		<phrase id="7">
+			<text>prapor_ameba_slug_cook_dialog_7</text>
+			<next>81</next>
+			<next>82</next>		
+		</phrase>
+		<phrase id="81">
+			<text>prapor_ameba_slug_cook_dialog_81</text>
+			<next>91</next>		
+		</phrase>
+		<phrase id="82">
+			<text>prapor_ameba_slug_cook_dialog_82</text>
+			<next>92</next>
+		</phrase>
+		<phrase id="91">
+			<text>prapor_ameba_slug_cook_dialog_91</text>
+			<next>10</next>
+		</phrase>
+		<phrase id="10">
+			<text>prapor_ameba_slug_cook_dialog_10</text>
+			<next>101</next>		
+		</phrase>
+		<phrase id="101">
+			<text>prapor_ameba_slug_cook_dialog_101</text>
+			<action>sak_dialog.add_prapor_poshta</action>		
+			<give_info>gar_prapor_courier_start</give_info>
+			<next>102</next>		
+		</phrase>
+		<phrase id="92">
+			<text>prapor_ameba_slug_cook_dialog_92</text>
+			<give_info>gar_prapor_courier_done</give_info>		
+		</phrase>
+		<phrase id="131">
+		<has_info>gar_prapor_courier_poshta_done</has_info>	
+		<precondition>sak_artmods.artmod_31_have</precondition>	
+			<text>prapor_ameba_slug_cook_dialog_131</text>
+			<action>sak_artmods.give_artmod_31</action>		
+			<next>133</next>
+		</phrase>
+		<phrase id="132">
+			<text>prapor_ameba_slug_cook_dialog_132</text>
+			<action>dialogs.break_dialog</action>		
+		</phrase>
+		<phrase id="133">
+			<text>prapor_ameba_slug_cook_dialog_133</text>
+			<action>sak_artmods.artmod_31_start_time</action>
+			<next>134</next>		
+		</phrase>
+		<phrase id="102">
+			<text>prapor_ameba_slug_cook_dialog_102</text>
+			<action>dialogs.break_dialog</action>		
+		</phrase>
+		<phrase id="121">
+			<text>prapor_ameba_slug_cook_dialog_121</text>
+			<action>dialogs.break_dialog</action>		
+		</phrase>
+		<phrase id="134">
+			<text>prapor_ameba_slug_cook_dialog_134</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+<!-- Прапор варит арт -->
+<dialog id="prapor_ameba_slug_cooked_dialog">
+	<has_info>artmod_31_start</has_info>
+	<dont_has_info>gar_prapor_courier_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>prapor_ameba_slug_cooked_dialog_0</text>
+			<next>11</next>
+			<next>12</next>
+		</phrase>
+		<phrase id="11">
+		<precondition>sak_artmods.is_ready_time_artmod_31</precondition>
+			<text>prapor_ameba_slug_cooked_dialog_11</text>			
+			<next>21</next>
+		</phrase>
+		<phrase id="12">
+		<precondition>sak_artmods.not_ready_time_artmod_31</precondition>
+			<text>prapor_ameba_slug_cooked_dialog_12</text>
+			<next>22</next>
+		</phrase>
+		<phrase id="22">
+			<text>prapor_ameba_slug_cooked_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="21">
+			<text>prapor_ameba_slug_cooked_dialog_21</text>		
+			<next>3</next>		
+		</phrase>
+		<phrase id="3">
+			<text>prapor_ameba_slug_cooked_dialog_3</text>
+			<action>sak_artmods.clear_ready_time_artmod_31</action>		
+			<action>sak.create_items("af_ameba_slug_dyn5d",1)</action>
+			<give_info>gar_prapor_courier_done</give_info>										   
+			<next>4</next>		
+		</phrase>	
+		<phrase id="4">
+			<text>prapor_ameba_slug_cooked_dialog_4</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+	
+<dialog id="prapor_jaws_start_dialog">
+	<has_info>bar_darklab_document_gain</has_info>
+	<has_info>gar_dolg_flesh_eye_done</has_info>
+	<dont_has_info>gar_dolg_krovosos_jaw_start</dont_has_info>
+	<dont_has_info>gar_dolg_krovosos_jaw_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>prapor_jaws_start_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>prapor_jaws_start_dialog_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+			<text>prapor_jaws_start_dialog_21</text>
+			<next>3</next>			
+		</phrase>
+		<phrase id="3">
+			<text>prapor_jaws_start_dialog_3</text>
+			<action>sak_dialog.pre_rolled_arts_set({"af_electra_flash"},2,3,nil,1,"prapor_jaws_rew")</action>
+			<give_info>gar_dolg_krovosos_jaw_start</give_info>
+		</phrase>
+		<phrase id="22">
+			<text>prapor_jaws_start_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>		
+	</phrase_list>
+</dialog>
+
+<dialog id="prapor_jaws_done_dialog">
+	<precondition>doc.have_2_mutant_krovosos_jaw</precondition>
+	<dont_has_info>gar_dolg_krovosos_jaw_done</dont_has_info>
+	<has_info>gar_dolg_krovosos_jaw_start</has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>prapor_jaws_done_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>prapor_jaws_done_dialog_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+		<precondition>doc.have_2_mutant_krovosos_jaw</precondition>
+			<text>prapor_jaws_done_dialog_21</text>
+			<give_info>gar_dolg_krovosos_jaw_done</give_info>
+			<action>doc.give_2_mutant_krovosos_jaw</action>
+			<next>3</next>
+		</phrase>
+		<phrase id="22">
+			<text>prapor_jaws_done_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+			<text>prapor_jaws_done_dialog_3</text>
+			<next>41</next>
+			<next>42</next>		
+		</phrase>
+		<phrase id="41">
+			<text>prapor_jaws_done_dialog_41</text>
+			<next>51</next>		
+		</phrase>	
+		<phrase id="51">
+			<text>prapor_jaws_done_dialog_51</text>
+			<give_info>info_artmod_electra_flash_gravi_zone</give_info>
+			<action>sak.info_artmod</action>
+			<next>6</next>		
+		</phrase>
+		<phrase id="42">
+			<text>prapor_jaws_done_dialog_42</text>
+			<next>52</next>		
+		</phrase>	
+		<phrase id="52">
+			<text>prapor_jaws_done_dialog_52</text>
+			<action>sak.create_items("antirad",5)</action>
+			<action>sak_dialog.pre_rolled_arts_give("prapor_jaws_rew")</action>
+			<next>6</next>		
+		</phrase>	
+		<phrase id="6">
+			<text>prapor_jaws_done_dialog_6</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="artmod_32_make_dialog">
+<precondition>sak_artmods.have_info_artmod_32</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_32_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_32_start</dont_has_info>
+		<text>artmod_32_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_32_start</has_info>
+		<text>artmod_32_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_32_have</precondition>
+		<text>artmod_32_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_32</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_32_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_32_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_32_make_dialog_3</text>
+		<action>sak_artmods.artmod_32_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_32_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_32_made_dialog">
+<has_info>artmod_32_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_32_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_32</precondition>
+		<text>artmod_32_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_32</precondition>
+		<text>artmod_32_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_32_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_32_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_32_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_32</action>
+		<action>sak_artmods.clear_ready_time_artmod_32</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_32_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+	<!--33 дело на кордоне   34 ПДА волкодава-->
+	
+<dialog id="artmod_33_make_dialog">
+<precondition>sak_artmods.have_info_artmod_33</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_33_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_33_start</dont_has_info>
+		<text>artmod_33_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_33_start</has_info>
+		<text>artmod_33_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_33_have</precondition>
+		<text>artmod_33_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_33</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_33_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_33_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_33_make_dialog_3</text>
+		<action>sak_artmods.artmod_33_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_33_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_33_made_dialog">
+<has_info>artmod_33_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_33_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_33</precondition>
+		<text>artmod_33_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_33</precondition>
+		<text>artmod_33_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_33_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_33_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_33_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_33</action>
+		<action>sak_artmods.clear_ready_time_artmod_33</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_33_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_34_make_dialog">
+<precondition>sak_artmods.have_info_artmod_34</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_34_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_34_start</dont_has_info>
+		<text>artmod_34_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_34_start</has_info>
+		<text>artmod_34_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_34_have</precondition>
+		<text>artmod_34_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_34</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_34_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_34_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_34_make_dialog_3</text>
+		<action>sak_artmods.artmod_34_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_34_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_34_made_dialog">
+<has_info>artmod_34_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_34_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_34</precondition>
+		<text>artmod_34_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_34</precondition>
+		<text>artmod_34_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_34_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_34_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_34_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_34</action>
+		<action>sak_artmods.clear_ready_time_artmod_34</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_34_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="petrenko_gaussgan_start_dlg">
+	<has_info>yan_x16_documents_gain</has_info>
+	<has_info>bar_dolg_petrenko_electra_flash_done</has_info>
+	<dont_has_info>bar_dolg_petrenko_gaussgan_start</dont_has_info>
+	<dont_has_info>bar_dolg_petrenko_gaussgan_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>petrenko_gaussgan_start_dlg_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>petrenko_gaussgan_start_dlg_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+			<text>petrenko_gaussgan_start_dlg_21</text>
+			<next>31</next>
+			<next>32</next>
+		</phrase>
+		<phrase id="22">
+			<text>petrenko_gaussgan_start_dlg_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="31">
+		<precondition>sak_dialog.gungauss_spawn_aver</precondition>
+			<text>petrenko_gaussgan_start_dlg_31</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="32">
+		<precondition>sak_dialog.gungauss_spawn_td</precondition>
+			<text>petrenko_gaussgan_start_dlg_32</text>
+			<give_info>bar_dolg_petrenko_gaussgan_start</give_info>
+			<action>sak_dialog.add_gungauss</action>
+			<next>42</next>
+		</phrase>
+		<phrase id="4">
+			<text>petrenko_gaussgan_start_dlg_4</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="42">
+			<text>petrenko_gaussgan_start_dlg_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="5">
+			<text>petrenko_gaussgan_start_dlg_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>petrenko_gaussgan_start_dlg_6</text>
+			<next>7</next>
+		</phrase>
+		<phrase id="7">
+			<text>petrenko_gaussgan_start_dlg_7</text>
+			<next>8</next>
+		</phrase>
+		<phrase id="8">
+			<text>petrenko_gaussgan_start_dlg_8</text>
+			<next>9</next>
+		</phrase>
+		<phrase id="9">
+			<text>petrenko_gaussgan_start_dlg_9</text>
+			<next>10</next>
+		</phrase>
+		<phrase id="10">
+			<text>petrenko_gaussgan_start_dlg_10</text>
+			<next>11</next>
+		</phrase>
+		<phrase id="11">
+			<text>petrenko_gaussgan_start_dlg_11</text>
+			<next>12</next>
+		</phrase>
+		<phrase id="12">
+			<text>petrenko_gaussgan_start_dlg_12</text>
+			<next>13</next>
+		</phrase>
+		<phrase id="13">
+			<text>petrenko_gaussgan_start_dlg_13</text>
+			<give_info>bar_dolg_petrenko_gaussgan_start</give_info>		
+			<next>14</next>
+		</phrase>
+		<phrase id="14">
+			<text>petrenko_gaussgan_start_dlg_14</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="petrenko_gaussgan_done_dlg">
+	<precondition>sak_dialog.bar_dolg_petrenko_gaussgan_have</precondition>
+	<dont_has_info>bar_dolg_petrenko_gaussgan_done</dont_has_info>
+	<has_info>bar_dolg_petrenko_gaussgan_start</has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">						  
+			<text>petrenko_gaussgan_done_dlg_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>petrenko_gaussgan_done_dlg_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>petrenko_gaussgan_done_dlg_2</text>
+			<give_info>bar_dolg_petrenko_gaussgan_done</give_info>
+			<action>sak_dialog.give_bar_dolg_petrenko_gaussgan</action>
+			<action>mike.timer_petrenko_mdata</action>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>petrenko_gaussgan_done_dlg_3</text>
+			<give_info>info_artmod_gravi_zharka</give_info>
+			<action>sak_dialog.take_detector_sakbuzz_elite</action>
+			<action>sak.info_artmod</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+	
+<dialog id="artmod_35_make_dialog">
+<precondition>sak_artmods.have_info_artmod_35</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_35_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_35_start</dont_has_info>
+		<text>artmod_35_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_35_start</has_info>
+		<text>artmod_35_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_35_have</precondition>
+		<text>artmod_35_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_35</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_35_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_35_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_35_make_dialog_3</text>
+		<action>sak_artmods.artmod_35_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_35_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_35_made_dialog">
+<has_info>artmod_35_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_35_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_35</precondition>
+		<text>artmod_35_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_35</precondition>
+		<text>artmod_35_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_35_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_35_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_35_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_35</action>
+		<action>sak_artmods.clear_ready_time_artmod_35</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_35_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+	<!--36 ПДА на радаре-->
+	
+<dialog id="artmod_36_make_dialog">
+<precondition>sak_artmods.have_info_artmod_36</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_36_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_36_start</dont_has_info>
+		<text>artmod_36_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_36_start</has_info>
+		<text>artmod_36_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_36_have</precondition>
+		<text>artmod_36_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_36</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_36_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_36_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_36_make_dialog_3</text>
+		<action>sak_artmods.artmod_36_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_36_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_36_made_dialog">
+<has_info>artmod_36_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_36_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_36</precondition>
+		<text>artmod_36_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_36</precondition>
+		<text>artmod_36_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_36_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_36_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_36_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_36</action>
+		<action>sak_artmods.clear_ready_time_artmod_36</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_36_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_411_dialog">
+	<has_info>escape_trader_case_have</has_info> <!-- чтобы солдатик точно там был -->
+	<has_info>mil_lukash_find_dinamit_start</has_info>												
+	<dont_has_info>mil_Svoboda_trader_outfit_done</dont_has_info>
+	<dont_has_info>mil_Svoboda_trader_outfit_start</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>artmod_411_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>artmod_411_dialog_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+		<precondition>sak_dialog.have_any_x_art("b",true)</precondition>
+			<text>artmod_411_dialog_21</text>
+			<action>sak_dialog.transfer_any_x_art("b")</action>
+			<action>sak_dialog.pre_rolled_arts_set("b",5,5,nil,1,"shinkar_outfit_rew")</action>
+			<give_info>mil_Svoboda_trader_outfit_start</give_info>			
+			<next>31</next>
+		</phrase>
+		<phrase id="22">
+			<text>artmod_411_dialog_22</text>
+			<next>32</next>
+		</phrase>
+		<phrase id="31">
+			<text>artmod_411_dialog_31</text>
+		</phrase>
+		<phrase id="32">
+			<text>artmod_411_dialog_32</text>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="artmod_412_dialog">
+	<precondition>sak.have_items_count("soldier_outfit",2)</precondition>
+	<dont_has_info>mil_Svoboda_trader_outfit_done</dont_has_info>
+	<has_info>mil_Svoboda_trader_outfit_start</has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>artmod_412_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>artmod_412_dialog_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+			<text>artmod_412_dialog_21</text>
+			<give_info>mil_Svoboda_trader_outfit_done</give_info>
+			<action>sak_inventory.release_actor_items("soldier_outfit",2)</action>
+			<next>31</next>
+		</phrase>
+		<phrase id="22">
+			<text>artmod_412_dialog_22</text>
+			<next>32</next>
+		</phrase>
+		<phrase id="32">
+			<text>artmod_412_dialog_32</text>		
+		</phrase>
+		<phrase id="31">
+			<text>artmod_412_dialog_31</text>
+			<next>41</next>
+			<next>42</next>
+			<next>43</next>			
+		</phrase>
+		<phrase id="41">
+			<text>artmod_412_dialog_41</text>
+			<next>51</next>		
+		</phrase>	
+		<phrase id="51">
+			<text>artmod_412_dialog_51</text>
+			<give_info>info_artmod_cristall_mosquito_bald</give_info>
+			<action>sak.info_artmod</action>
+		</phrase>
+		<phrase id="42">
+			<text>artmod_412_dialog_42</text>
+			<next>52</next>		
+		</phrase>	
+		<phrase id="52">
+			<text>artmod_412_dialog_52</text>
+			<action>sak_dialog.pre_rolled_arts_give("shinkar_outfit_rew")</action>
+		</phrase>		
+		<phrase id="43">
+			<text>artmod_412_dialog_43</text>
+			<next>53</next>		
+		</phrase>	
+		<phrase id="53">
+			<text>artmod_412_dialog_53</text>
+			<action>sak.create_items("soldier_outfit",1)</action> <!-- награда гравиком -->
+		</phrase>	
+	</phrase_list>
+</dialog>
+<!-- private_blockpost_outfit -->
+<dialog id="sidor_gravibronik_dialog">
+	<has_info>mil_Svoboda_trader_outfit_start</has_info>
+	<dont_has_info>info_trader_outfit</dont_has_info>
+	<dont_has_info>info_trader_outfit_fail</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>sidor_gravibronik_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>sidor_gravibronik_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>sidor_gravibronik_dialog_2</text>			
+			<next>31</next>
+			<next>32</next>			
+		</phrase>
+		<phrase id="31">
+			<has_info>private_blockpost_case_ok</has_info> <!-- чтобы солдатик точно там был -->		
+			<text>sidor_gravibronik_dialog_31</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="32">
+			<dont_has_info>private_blockpost_case_ok</dont_has_info>		
+			<text>sidor_gravibronik_dialog_32</text>
+			<give_info>info_trader_outfit_fail</give_info>
+			<next>7</next>			
+		</phrase>
+		<phrase id="7">
+			<text>sidor_gravibronik_dialog_7</text>
+		    <action>dialogs.break_dialog</action>			
+		</phrase>		
+		<phrase id="4">
+			<text>sidor_gravibronik_dialog_4</text>
+			<next>5</next>
+		</phrase>		
+		<phrase id="5">
+			<text>sidor_gravibronik_dialog_5</text>
+			<give_info>info_trader_outfit</give_info>			
+			<next>6</next>			
+		</phrase>
+		<phrase id="6">
+			<text>sidor_gravibronik_dialog_6</text>
+		    <action>dialogs.break_dialog</action>			
+		</phrase>
+	</phrase_list>
+</dialog>
+	
+<dialog id="artmod_41_make_dialog">
+<precondition>sak_artmods.have_info_artmod_41</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_41_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_41_start</dont_has_info>
+		<text>artmod_41_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_41_start</has_info>
+		<text>artmod_41_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_41_have</precondition>
+		<text>artmod_41_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_41</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_41_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_41_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_41_make_dialog_3</text>
+		<action>sak_artmods.artmod_41_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_41_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_41_made_dialog">
+<has_info>artmod_41_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_41_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_41</precondition>
+		<text>artmod_41_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_41</precondition>
+		<text>artmod_41_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_41_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_41_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_41_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_41</action>
+		<action>sak_artmods.clear_ready_time_artmod_41</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_41_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+
+<dialog id="artmod_421_dialog">				
+	<has_info>val_escort_got_reward</has_info>
+	<dont_has_info>val_pula_ammo_start</dont_has_info>
+	<dont_has_info>val_pula_ammo_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">	
+			<text>artmod_421_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>artmod_421_dialog_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+			<text>artmod_421_dialog_21</text>
+			<give_info>val_pula_ammo_start</give_info>
+			<action>sak_dialog.take_val_pula_ammo</action>
+			<next>3</next>			
+		</phrase>
+		<phrase id="22">
+			<text>artmod_421_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+			<text>artmod_421_dialog_3</text>
+		</phrase>		
+	</phrase_list>
+</dialog>
+	
+<dialog id="artmod_422_dialog">
+	<precondition>sak_dialog.val_pula_ammo_have</precondition>
+	<dont_has_info>val_pula_ammo_done</dont_has_info>
+	<has_info>val_pula_ammo_start</has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>artmod_422_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>artmod_422_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>artmod_422_dialog_2</text>
+			<action>sak_dialog.give_gar_hellcar_ammo</action>			
+			<give_info>val_pula_ammo_done</give_info>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>artmod_422_dialog_3</text>
+			<next>41</next>
+			<next>42</next>
+			<next>43</next>
+		</phrase>
+		<phrase id="41">
+			<text>artmod_422_dialog_41</text>
+			<next>51</next>		
+		</phrase>
+		<phrase id="42">
+			<text>artmod_422_dialog_42</text>
+			<next>52</next>		
+		</phrase>
+		<phrase id="43">
+			<text>artmod_422_dialog_43</text>
+			<next>53</next>		
+		</phrase>
+		<phrase id="51">
+			<text>artmod_422_dialog_51</text>
+			<give_info>info_artmod_night_star_gravi_zone</give_info>
+			<action>sak.info_artmod</action>
+			<next>6</next>			
+		</phrase>
+		<phrase id="52">
+			<text>artmod_422_dialog_52</text>
+			<action>sak_dialog.bes_night_star_prize</action>
+			<next>6</next>			
+		</phrase>
+		<phrase id="53">
+			<text>artmod_422_dialog_53</text>
+			<action>sak.create_items("wpn_ak47",1)</action>
+			<next>6</next>			
+		</phrase>
+		<phrase id="6">
+			<text>artmod_422_dialog_6</text>
+			<action>dialogs.break_dialog</action>			
+		</phrase>		
+	</phrase_list>
+</dialog>
+	
+<dialog id="artmod_42_make_dialog">
+<precondition>sak_artmods.have_info_artmod_42</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_42_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_42_start</dont_has_info>
+		<text>artmod_42_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_42_start</has_info>
+		<text>artmod_42_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_42_have</precondition>
+		<text>artmod_42_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_42</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_42_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_42_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_42_make_dialog_3</text>
+		<action>sak_artmods.artmod_42_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_42_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_42_made_dialog">
+<has_info>artmod_42_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_42_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_42</precondition>
+		<text>artmod_42_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_42</precondition>
+		<text>artmod_42_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_42_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_42_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_42_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_42</action>
+		<action>sak_artmods.clear_ready_time_artmod_42</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_42_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_431_dialog">
+	<has_info>mil_fblockpost_quest_complete</has_info>
+	<dont_has_info>mil_Svoboda_trader_ammo_start</dont_has_info>
+	<dont_has_info>mil_Svoboda_trader_ammo_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>artmod_431_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>artmod_431_dialog_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+			<text>artmod_431_dialog_21</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>artmod_431_dialog_3</text>
+			<action>sak.create_items("inventory_sakbox_mil_svoboda",1)</action>
+			<give_info>mil_Svoboda_trader_ammo_start</give_info>		
+		</phrase>	
+		<phrase id="22">
+			<text>artmod_431_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="artmod_432_dialog">
+	<precondition>sak.have_items_count("bochonok_vine",1)</precondition>
+	<has_info>mil_Svoboda_trader_ammo_start</has_info>
+	<dont_has_info>mil_Svoboda_trader_ammo_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>artmod_432_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>artmod_432_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>artmod_432_dialog_2</text>
+			<action>sak_inventory.release_actor_items("bochonok_vine", 1)</action>
+			<next>3</next>
+		</phrase>
+		<phrase id="22">
+			<text>artmod_432_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+			<text>artmod_432_dialog_3</text>
+			<next>41</next>
+			<next>42</next>		
+		</phrase>
+		<phrase id="41">
+			<text>artmod_432_dialog_41</text>
+			<next>51</next>		
+		</phrase>	
+		<phrase id="51">
+			<text>artmod_432_dialog_51</text>
+			<give_info>mil_Svoboda_trader_ammo_done</give_info>		
+			<give_info>info_artmod_electra_moonlight_mincer</give_info>
+			<action>sak.info_artmod</action>
+		</phrase>
+		<phrase id="42">
+			<text>artmod_432_dialog_42</text>
+			<next>52</next>		
+		</phrase>	
+		<phrase id="52">
+			<text>artmod_432_dialog_52</text>
+			<action>sak.create_items("ammo_5.56x45_ss190",10)</action>
+			<action>sak_dialog.take_10000_money</action>
+			<give_info>mil_Svoboda_trader_ammo_done</give_info>		
+		</phrase>	
+	</phrase_list>
+</dialog>
+	
+<dialog id="artmod_433_dialog">
+	<precondition>sak.have_items_count("inventory_sakbox_mil_svoboda",1)</precondition>
+	<has_info>mil_Svoboda_trader_ammo_start</has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>artmod_433_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>artmod_433_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>artmod_433_dialog_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>artmod_433_dialog_3</text>
+			<next>4</next>			
+		</phrase>
+		<phrase id="4">		
+			<text>artmod_433_dialog_4</text>
+			<action>sak_inventory.release_actor_items("inventory_sakbox_mil_svoboda",1)</action>			
+			<next>5</next>			
+		</phrase>
+		<phrase id="5">
+			<text>artmod_433_dialog_5</text>
+			<action>sak.create_items("bochonok_vine",1)</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+	
+<dialog id="artmod_43_make_dialog">
+<precondition>sak_artmods.have_info_artmod_43</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_43_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_43_start</dont_has_info>
+		<text>artmod_43_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_43_start</has_info>
+		<text>artmod_43_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_43_have</precondition>
+		<text>artmod_43_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_43</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_43_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_43_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_43_make_dialog_3</text>
+		<action>sak_artmods.artmod_43_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_43_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_43_made_dialog">
+<has_info>artmod_43_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_43_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_43</precondition>
+		<text>artmod_43_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_43</precondition>
+		<text>artmod_43_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_43_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_43_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_43_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_43</action>
+		<action>sak_artmods.clear_ready_time_artmod_43</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_43_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+	<!--44 Стукач-->
+	
+<dialog id="artmod_44_make_dialog">
+<precondition>sak_artmods.have_info_artmod_44</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_44_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_44_start</dont_has_info>
+		<text>artmod_44_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_44_start</has_info>
+		<text>artmod_44_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_44_have</precondition>
+		<text>artmod_44_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_44</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_44_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_44_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_44_make_dialog_3</text>
+		<action>sak_artmods.artmod_44_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_44_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_44_made_dialog">
+<has_info>artmod_44_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_44_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_44</precondition>
+		<text>artmod_44_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_44</precondition>
+		<text>artmod_44_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_44_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_44_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_44_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_44</action>
+		<action>sak_artmods.clear_ready_time_artmod_44</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_44_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+
+<dialog id="artmod_45_make_dialog">
+<precondition>sak_artmods.have_info_artmod_45</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_45_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_45_start</dont_has_info>
+		<text>artmod_45_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_45_start</has_info>
+		<text>artmod_45_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_45_have</precondition>
+		<text>artmod_45_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_45</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_45_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_45_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_45_make_dialog_3</text>
+		<action>sak_artmods.artmod_45_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_45_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_45_made_dialog">
+<has_info>artmod_45_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_45_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_45</precondition>
+		<text>artmod_45_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_45</precondition>
+		<text>artmod_45_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_45_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_45_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_45_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_45</action>
+		<action>sak_artmods.clear_ready_time_artmod_45</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_45_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="luber_pda_start_dlg">
+	<has_info>val_escort_help_prisoner_task</has_info>
+	<dont_has_info>val_escort_PDA_start</dont_has_info>
+	<dont_has_info>val_escort_PDA_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>luber_pda_start_dlg_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>luber_pda_start_dlg_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+			<text>luber_pda_start_dlg_21</text>
+			<give_info>val_escort_PDA_start</give_info>
+			<next>3</next>			
+		</phrase>
+		<phrase id="22">
+			<text>luber_pda_start_dlg_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+			<text>luber_pda_start_dlg_3</text>
+		</phrase>		
+	</phrase_list>
+</dialog>
+	
+<dialog id="luber_pda_done_dlg">
+	<precondition>sak_dialog.val_escort_PDA_have</precondition>
+	<has_info>val_escort_PDA_start</has_info>
+	<dont_has_info>val_escort_PDA_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>luber_pda_done_dlg_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>luber_pda_done_dlg_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+		<precondition>sak_dialog.val_escort_PDA_have</precondition>
+			<text>luber_pda_done_dlg_21</text>
+			<give_info>val_escort_PDA_done</give_info>
+			<action>sak_dialog.give_val_escort_PDA</action>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>luber_pda_done_dlg_3</text>
+			<action>sak_dialog.luber_ammunition</action>
+		</phrase>
+		<phrase id="22">
+			<text>luber_pda_done_dlg_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>		
+	</phrase_list>
+</dialog>
+	
+<dialog id="artmod_46_make_dialog">
+<precondition>sak_artmods.have_info_artmod_46</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_46_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_46_start</dont_has_info>
+		<text>artmod_46_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_46_start</has_info>
+		<text>artmod_46_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_46_have</precondition>
+		<text>artmod_46_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_46</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_46_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_46_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_46_make_dialog_3</text>
+		<action>sak_artmods.artmod_46_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_46_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_46_made_dialog">
+<has_info>artmod_46_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_46_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_46</precondition>
+		<text>artmod_46_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_46</precondition>
+		<text>artmod_46_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_46_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_46_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_46_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_46</action>
+		<action>sak_artmods.clear_ready_time_artmod_46</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_46_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_51_make_dialog">
+<precondition>sak_artmods.have_info_artmod_51</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_51_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_51_start</dont_has_info>
+		<text>artmod_51_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_51_start</has_info>
+		<text>artmod_51_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_51_have</precondition>
+		<text>artmod_51_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_51</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_51_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_51_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_51_make_dialog_3</text>
+		<action>sak_artmods.artmod_51_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_51_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_51_made_dialog">
+<has_info>artmod_51_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_51_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_51</precondition>
+		<text>artmod_51_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_51</precondition>
+		<text>artmod_51_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_51_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_51_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_51_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_51</action>
+		<action>sak_artmods.clear_ready_time_artmod_51</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_51_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+
+<dialog id="artmod_52_make_dialog">
+<precondition>sak_artmods.have_info_artmod_52</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_52_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_52_start</dont_has_info>
+		<text>artmod_52_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_52_start</has_info>
+		<text>artmod_52_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_52_have</precondition>
+		<text>artmod_52_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_52</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_52_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_52_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_52_make_dialog_3</text>
+		<action>sak_artmods.artmod_52_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_52_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_52_made_dialog">
+<has_info>artmod_52_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_52_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_52</precondition>
+		<text>artmod_52_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_52</precondition>
+		<text>artmod_52_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_52_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_52_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_52_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_52</action>
+		<action>sak_artmods.clear_ready_time_artmod_52</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_52_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+
+<dialog id="artmod_53_make_dialog">
+<precondition>sak_artmods.have_info_artmod_53</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_53_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_53_start</dont_has_info>
+		<text>artmod_53_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_53_start</has_info>
+		<text>artmod_53_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_53_have</precondition>
+		<text>artmod_53_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_53</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_53_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_53_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_53_make_dialog_3</text>
+		<action>sak_artmods.artmod_53_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_53_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_53_made_dialog">
+<has_info>artmod_53_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_53_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_53</precondition>
+		<text>artmod_53_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_53</precondition>
+		<text>artmod_53_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_53_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_53_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_53_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_53</action>
+		<action>sak_artmods.clear_ready_time_artmod_53</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_53_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+<!-- Семёнов - декодер -->	
+<dialog id="artmod_541_dialog"> 
+	<dont_has_info>yan_kruglov_decoder_start</dont_has_info>
+	<dont_has_info>yan_kruglov_decoder_done</dont_has_info>
+	<has_info>assistant_out</has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>artmod_541_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>artmod_541_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>artmod_541_dialog_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>artmod_541_dialog_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>artmod_541_dialog_4</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>artmod_541_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>artmod_541_dialog_6</text>
+			<next>7</next>
+		</phrase>
+		<phrase id="7">
+			<text>artmod_541_dialog_7</text>
+			<next>8</next>
+		</phrase>
+		<phrase id="8">
+			<text>artmod_541_dialog_8</text>
+			<next>9</next>
+		</phrase>
+		<phrase id="9">
+			<text>artmod_541_dialog_9</text>
+			<next>10</next>
+		</phrase>
+		<phrase id="10">
+			<text>artmod_541_dialog_10</text>
+			<give_info>yan_kruglov_decoder_start</give_info>
+			<action>sak.add_decoder</action>
+			<next>11</next>
+		</phrase>
+		<phrase id="11">
+			<text>artmod_541_dialog_11</text>
+			<next>12</next>
+		</phrase>
+		<phrase id="12">
+			<text>artmod_541_dialog_12</text>
+			<next>13</next>
+		</phrase>
+		<phrase id="13">
+			<text>artmod_541_dialog_13</text>
+			<next>14</next>
+		</phrase>
+		<phrase id="14">
+			<text>artmod_541_dialog_14</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="artmod_542_dialog">
+	<precondition>sak.have_items_count("decoder1",1)</precondition>
+	<has_info>yan_kruglov_decoder_start</has_info>
+	<dont_has_info>yan_kruglov_decoder_done</dont_has_info>	
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>artmod_542_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>artmod_542_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>artmod_542_dialog_2</text>
+			<action>sak_inventory.release_actor_items("decoder1",1)</action>
+			<give_info>yan_kruglov_decoder_done</give_info>			
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>artmod_542_dialog_3</text>
+			<next>41</next>
+			<next>42</next>			
+		</phrase>
+		<phrase id="41">
+			<text>artmod_542_dialog_41</text>
+			<next>51</next>
+		</phrase>		
+		<phrase id="51">
+			<text>artmod_542_dialog_51</text>
+			<give_info>info_artmod_gold_fish_buzz</give_info>
+			<action>sak.info_artmod</action>
+			<action>sak.create_items("medkit_scientic",5)</action>
+		</phrase>
+		<phrase id="42">
+			<text>artmod_542_dialog_42</text>
+			<next>52</next>
+		</phrase>		
+		<phrase id="52">
+			<text>artmod_542_dialog_52</text>
+			<action>sak.create_items("af_gold_fish_dyn2d",1)</action>
+			<action>sak.create_items("medkit_scientic",5)</action>
+		</phrase>		
+	</phrase_list>
+</dialog>
+	
+<dialog id="artmod_54_make_dialog">
+<precondition>sak_artmods.have_info_artmod_54</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_54_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_54_start</dont_has_info>
+		<text>artmod_54_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_54_start</has_info>
+		<text>artmod_54_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_54_have</precondition>
+		<text>artmod_54_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_54</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_54_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_54_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_54_make_dialog_3</text>
+		<action>sak_artmods.artmod_54_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_54_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_54_made_dialog">
+<has_info>artmod_54_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_54_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_54</precondition>
+		<text>artmod_54_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_54</precondition>
+		<text>artmod_54_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_54_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_54_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_54_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_54</action>
+		<action>sak_artmods.clear_ready_time_artmod_54</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_54_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="petrenko_electra_flash_start_dlg">
+	<has_info>bar_darklab_document_gain</has_info>
+	<dont_has_info>bar_dolg_petrenko_electra_flash_start</dont_has_info>
+	<dont_has_info>bar_dolg_petrenko_electra_flash_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>petrenko_electra_flash_start_dlg_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>petrenko_electra_flash_start_dlg_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+			<text>petrenko_electra_flash_start_dlg_21</text>
+			<give_info>bar_dolg_petrenko_electra_flash_start</give_info>
+			<next>3</next>			
+		</phrase>
+		<phrase id="22">
+			<text>petrenko_electra_flash_start_dlg_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+			<text>petrenko_electra_flash_start_dlg_3</text>
+		</phrase>		
+	</phrase_list>
+</dialog>
+
+<dialog id="petrenko_electra_flash_done_dlg">
+	<precondition>sak_dialog.bar_dolg_petrenko_electra_flash_have</precondition>
+	<dont_has_info>bar_dolg_petrenko_electra_flash_done</dont_has_info>
+	<has_info>bar_dolg_petrenko_electra_flash_start</has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<action>dialogs.no_trade_trader</action>							  
+			<text>petrenko_electra_flash_done_dlg_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>petrenko_electra_flash_done_dlg_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+		<precondition>sak_dialog.bar_dolg_petrenko_electra_flash_have</precondition>
+			<text>petrenko_electra_flash_done_dlg_21</text>
+			<give_info>bar_dolg_petrenko_electra_flash_done</give_info>
+			<action>sak_dialog.give_bar_dolg_petrenko_electra_flash</action>
+			<next>3</next>
+		</phrase>
+		<phrase id="22">
+			<text>petrenko_electra_flash_done_dlg_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+			<text>petrenko_electra_flash_done_dlg_3</text>
+			<next>41</next>
+			<next>42</next>		
+		</phrase>
+		<phrase id="41">
+			<text>petrenko_electra_flash_done_dlg_41</text>
+			<next>51</next>		
+		</phrase>
+		<phrase id="42">
+			<text>petrenko_electra_flash_done_dlg_42</text>
+			<next>52</next>		
+		</phrase>
+		<phrase id="51">
+			<text>petrenko_electra_flash_done_dlg_51</text>
+			<give_info>info_artmod_electra_moonlight_zharka</give_info>
+			<give_info>info_red_pellicle</give_info>		
+			<action>sak.info_artmod</action>
+		</phrase>	
+		<phrase id="52">
+			<text>petrenko_electra_flash_done_dlg_52</text>
+			<action>sak.create_items("wpn_addon_1p78",1)</action>
+			<give_info>info_red_pellicle</give_info>
+			<action>sak.info_artmod</action>		
+		</phrase>	
+	</phrase_list>
+</dialog>
+	
+<dialog id="artmod_55_make_dialog">
+<precondition>sak_artmods.have_info_artmod_55</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_55_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_55_start</dont_has_info>
+		<text>artmod_55_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_55_start</has_info>
+		<text>artmod_55_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_55_have</precondition>
+		<text>artmod_55_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_55</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_55_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_55_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_55_make_dialog_3</text>
+		<action>sak_artmods.artmod_55_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_55_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_55_made_dialog">
+<has_info>artmod_55_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_55_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_55</precondition>
+		<text>artmod_55_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_55</precondition>
+		<text>artmod_55_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_55_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_55_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_55_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_55</action>
+		<action>sak_artmods.clear_ready_time_artmod_55</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_55_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_56_make_dialog">
+<precondition>sak_artmods.have_info_artmod_56</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_56_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_56_start</dont_has_info>
+		<text>artmod_56_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_56_start</has_info>
+		<text>artmod_56_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_56_have</precondition>
+		<text>artmod_56_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_56</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_56_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_56_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_56_make_dialog_3</text>
+		<action>sak_artmods.artmod_56_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_56_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_56_made_dialog">
+<has_info>artmod_56_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_56_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_56</precondition>
+		<text>artmod_56_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_56</precondition>
+		<text>artmod_56_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_56_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_56_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_56_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_56</action>
+		<action>sak_artmods.clear_ready_time_artmod_56</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_56_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_61_make_dialog">
+<precondition>sak_artmods.have_info_artmod_61</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_61_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_61_start</dont_has_info>
+		<text>artmod_61_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_61_start</has_info>
+		<text>artmod_61_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_61_have</precondition>
+		<text>artmod_61_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_61</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_61_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_61_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_61_make_dialog_3</text>
+		<action>sak_artmods.artmod_61_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_61_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_61_made_dialog">
+<has_info>artmod_61_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_61_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_61</precondition>
+		<text>artmod_61_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_61</precondition>
+		<text>artmod_61_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_61_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_61_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_61_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_61</action>
+		<action>sak_artmods.clear_ready_time_artmod_61</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_61_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_62_make_dialog">
+<precondition>sak_artmods.have_info_artmod_62</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_62_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_62_start</dont_has_info>
+		<text>artmod_62_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_62_start</has_info>
+		<text>artmod_62_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_62_have</precondition>
+		<text>artmod_62_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_62</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_62_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_62_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_62_make_dialog_3</text>
+		<action>sak_artmods.artmod_62_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_62_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_62_made_dialog">
+<has_info>artmod_62_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_62_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_62</precondition>
+		<text>artmod_62_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_62</precondition>
+		<text>artmod_62_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_62_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_62_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_62_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_62</action>
+		<action>sak_artmods.clear_ready_time_artmod_62</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_62_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_63_make_dialog">
+<precondition>sak_artmods.have_info_artmod_63</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_63_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_63_start</dont_has_info>
+		<text>artmod_63_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_63_start</has_info>
+		<text>artmod_63_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_63_have</precondition>
+		<text>artmod_63_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_63</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_63_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_63_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_63_make_dialog_3</text>
+		<action>sak_artmods.artmod_63_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_63_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_63_made_dialog">
+<has_info>artmod_63_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_63_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_63</precondition>
+		<text>artmod_63_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_63</precondition>
+		<text>artmod_63_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_63_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_63_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_63_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_63</action>
+		<action>sak_artmods.clear_ready_time_artmod_63</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_63_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+<!-- Семёнов кейс -->	
+<dialog id="artmod_641_dialog">
+	<has_info>yan_kruglov_decoder_done</has_info>
+	<dont_has_info>yan_kruglov_art_start</dont_has_info>
+	<dont_has_info>yan_kruglov_art_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>artmod_641_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>artmod_641_dialog_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+			<text>artmod_641_dialog_21</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="22">
+			<text>artmod_641_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+			<text>artmod_641_dialog_3</text>
+			<action>sak.create_items("inventory_sakbox_yan_kruglov",1)</action>
+			<give_info>yan_kruglov_art_start</give_info>
+		</phrase>		
+	</phrase_list>
+</dialog>
+
+<dialog id="artmod_642_dialog">
+	<precondition>sak.have_items_count("quest_manycase_01_kruglov",1)</precondition>
+	<dont_has_info>yan_kruglov_art_done</dont_has_info>
+	<has_info>yan_kruglov_art_start</has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>artmod_642_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>artmod_642_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>artmod_642_dialog_2</text>
+			<give_info>yan_kruglov_art_done</give_info>
+			<action>sak_inventory.release_actor_items("quest_manycase_01_kruglov",1)</action>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>artmod_642_dialog_3</text>
+			<next>41</next>			
+			<next>42</next>
+		</phrase>		
+		<phrase id="41">
+			<text>artmod_642_dialog_41</text>
+			<next>51</next>
+		</phrase>
+		<phrase id="51">
+			<text>artmod_642_dialog_51</text>
+			<give_info>info_artmod_fuzz_kolobok_buzz</give_info>
+			<action>sak.info_artmod</action>
+			<action>sak.create_items("medkit_scientic",2)</action>
+			<action>sak.create_items("antirad",2)</action>
+		</phrase>
+		<phrase id="42">
+			<text>artmod_642_dialog_42</text>
+			<next>52</next>
+		</phrase>
+		<phrase id="52">
+			<text>artmod_642_dialog_52</text>
+			<action>sak_dialog.take_kolobok_new</action>
+			<action>sak.create_items("medkit_scientic",3)</action>
+		</phrase>		
+	</phrase_list>
+</dialog>
+	
+<dialog id="artmod_643_dialog">
+	<precondition>sak.have_items_count("inventory_sakbox_yan_kruglov",1)</precondition>
+	<dont_has_info>yan_kruglov_art_done</dont_has_info>
+	<has_info>yan_kruglov_art_start</has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>artmod_643_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>artmod_643_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>artmod_643_dialog_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>artmod_643_dialog_3</text>
+			<action>sak_inventory.release_actor_items("inventory_sakbox_yan_kruglov",1)</action>
+			<action>sak.create_items("quest_manycase_01_kruglov",1)</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+	
+<dialog id="artmod_64_make_dialog">
+<precondition>sak_artmods.have_info_artmod_64</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_64_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_64_start</dont_has_info>
+		<text>artmod_64_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_64_start</has_info>
+		<text>artmod_64_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_64_have</precondition>
+		<text>artmod_64_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_64</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_64_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_64_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_64_make_dialog_3</text>
+		<action>sak_artmods.artmod_64_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_64_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_64_made_dialog">
+<has_info>artmod_64_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_64_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_64</precondition>
+		<text>artmod_64_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_64</precondition>
+		<text>artmod_64_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_64_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_64_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_64_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_64</action>
+		<action>sak_artmods.clear_ready_time_artmod_64</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_64_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="petrenko_exo_yan_start_dlg">
+	<has_info>yan_kill_brain_done</has_info>
+	<dont_has_info>bar_dolg_petrenko_exo_start</dont_has_info>
+	<dont_has_info>bar_dolg_petrenko_exo_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>petrenko_exo_yan_start_dlg_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>petrenko_exo_yan_start_dlg_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+			<text>petrenko_exo_yan_start_dlg_21</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="22">
+			<text>petrenko_exo_yan_start_dlg_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+			<text>petrenko_exo_yan_start_dlg_3</text>
+			<action>sak.create_items("inventory_sakbox_dolg_petrenko",1)</action>
+			<give_info>bar_dolg_petrenko_exo_start</give_info>
+		</phrase>		
+	</phrase_list>
+</dialog>
+
+<dialog id="petrenko_exo_yan_done_dlg">
+	<precondition>sak.have_items_count("exo_outfit_m1",2)</precondition>
+	<has_info>bar_dolg_petrenko_exo_start</has_info>
+	<dont_has_info>bar_dolg_petrenko_exo_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>petrenko_exo_yan_done_dlg_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>petrenko_exo_yan_done_dlg_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+			<text>petrenko_exo_yan_done_dlg_21</text>
+			<give_info>bar_dolg_petrenko_exo_done</give_info>
+			<action>sak_inventory.release_actor_items("exo_outfit_m1",2)</action>
+			<next>3</next>
+		</phrase>
+		<phrase id="22">
+			<text>petrenko_exo_yan_done_dlg_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+			<text>petrenko_exo_yan_done_dlg_3</text>
+			<action>sak.create_items("wpn_ak108",1)</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="sakharov_exo_yan_dialog">
+	<precondition>sak.have_items_count("inventory_sakbox_dolg_petrenko",1)</precondition>
+	<has_info>bar_dolg_petrenko_exo_start</has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>sakharov_exo_yan_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>sakharov_exo_yan_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>sakharov_exo_yan_dialog_2</text>
+			<action>sak_inventory.release_actor_items("inventory_sakbox_dolg_petrenko",1)</action>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>sakharov_exo_yan_dialog_3</text>
+			<action>sak.create_items("exo_outfit_m1",2)</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+	
+<dialog id="artmod_66_make_dialog">
+<precondition>sak_artmods.have_info_artmod_66</precondition>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_66_make_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>artmod_66_start</dont_has_info>
+		<text>artmod_66_make_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>artmod_66_start</has_info>
+		<text>artmod_66_make_dialog_12</text>
+		<next>23</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_artmods.artmod_66_have</precondition>
+		<text>artmod_66_make_dialog_21</text>
+		<action>sak_artmods.give_artmod_66</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_66_make_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="23">
+		<text>artmod_66_make_dialog_23</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_66_make_dialog_3</text>
+		<action>sak_artmods.artmod_66_start_time</action>
+		<next>31</next>
+	</phrase>
+	<phrase id="31">
+		<text>artmod_66_make_dialog_31</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="artmod_66_made_dialog">
+<has_info>artmod_66_start</has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>artmod_66_made_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<precondition>sak_artmods.is_ready_time_artmod_66</precondition>
+		<text>artmod_66_made_dialog_11</text>
+		<next>21</next>
+		<next>22</next>
+	</phrase>
+	<phrase id="12">
+	<precondition>sak_artmods.not_ready_time_artmod_66</precondition>
+		<text>artmod_66_made_dialog_12</text>
+		<next>6</next>
+	</phrase>
+	<phrase id="21">
+	<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<text>artmod_66_made_dialog_21</text>
+		<action>sak_dialog.transfer_any_x_art("a")</action>
+		<next>3</next>
+	</phrase>
+	<phrase id="22">
+		<text>artmod_66_made_dialog_22</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+	<phrase id="3">
+		<text>artmod_66_made_dialog_3</text>
+		<action>sak_artmods.take_artmod_66</action>
+		<action>sak_artmods.clear_ready_time_artmod_66</action>
+	</phrase>
+	<phrase id="6">
+		<text>artmod_66_made_dialog_6</text>
+		<action>dialogs.break_dialog</action>
+	</phrase>
+</phrase_list>
+</dialog>
+	
+<dialog id="prapor_tails_start_dialog">
+	<has_info>gar_dolg_krovosos_jaw_done</has_info>
+	<dont_has_info>gar_dolg_psevdodog_tail_start</dont_has_info>
+	<dont_has_info>gar_dolg_psevdodog_tail_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>prapor_tails_start_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>prapor_tails_start_dialog_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+			<text>prapor_tails_start_dialog_21</text>
+			<next>3</next>			
+		</phrase>
+		<phrase id="3">
+			<text>prapor_tails_start_dialog_3</text>
+			<give_info>gar_dolg_psevdodog_tail_start</give_info>
+		</phrase>		
+		<phrase id="22">
+			<text>prapor_tails_start_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="prapor_tails_done_dialog">
+	<precondition>sak_dialog.gar_dolg_psevdodog_tail_have</precondition>
+	<dont_has_info>gar_dolg_psevdodog_tail_done</dont_has_info>
+	<has_info>gar_dolg_psevdodog_tail_start</has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>prapor_tails_done_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>prapor_tails_done_dialog_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+		<precondition>sak_dialog.gar_dolg_psevdodog_tail_have</precondition>
+			<text>prapor_tails_done_dialog_21</text>
+			<give_info>gar_dolg_psevdodog_tail_done</give_info>
+			<action>sak_dialog.give_gar_dolg_psevdodog_tail</action>
+			<next>3</next>
+		</phrase>
+		<phrase id="22">
+			<text>prapor_tails_done_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+			<text>prapor_tails_done_dialog_3</text>
+			<next>41</next>
+			<next>42</next>		
+		</phrase>
+		<phrase id="41">
+			<text>prapor_tails_done_dialog_41</text>
+			<next>51</next>		
+		</phrase>	
+		<phrase id="51">
+			<text>prapor_tails_done_dialog_51</text>
+			<action>sak_dialog.take_glassbeads_new</action>
+			<next>6</next>		
+		</phrase>
+		<phrase id="42">
+			<text>prapor_tails_done_dialog_42</text>
+			<next>52</next>		
+		</phrase>	
+		<phrase id="52">
+			<text>prapor_tails_done_dialog_52</text>
+			<action>sak.create_items("ammo_5.45x39_ap",20)</action>
+			<next>6</next>		
+		</phrase>	
+		<phrase id="6">
+			<text>prapor_tails_done_dialog_6</text>
+			<action>dialogs.break_dialog</action>		
+		</phrase>
+	</phrase_list>
+</dialog>
+<!-- Юрик часть мутанта	-->
+<dialog id="yurik_burer_hand_start_dialog">
+	<has_info>gar_dram_novice_mp5_m1_done</has_info>
+	<dont_has_info>gar_dram_novice_burer_hand_start</dont_has_info>
+	<dont_has_info>gar_dram_novice_burer_hand_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>yurik_burer_hand_start_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>yurik_burer_hand_start_dialog_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+			<text>yurik_burer_hand_start_dialog_21</text>
+			<next>3</next>			
+		</phrase>
+		<phrase id="22">
+			<text>yurik_burer_hand_start_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+			<text>yurik_burer_hand_start_dialog_3</text>
+			<give_info>gar_dram_novice_burer_hand_start</give_info>			
+		</phrase>		
+	</phrase_list>
+</dialog>
+
+<dialog id="yurik_burer_hand_done_dialog">
+	<precondition>sak_dialog.have_gar_dram_novice_mutant_hand</precondition>
+	<has_info>gar_dram_novice_burer_hand_start</has_info>
+	<dont_has_info>gar_dram_novice_burer_hand_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>yurik_burer_hand_done_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>yurik_burer_hand_done_dialog_1</text>
+			<next>21</next>
+			<next>22</next>
+			<next>23</next>
+			<next>24</next>		
+			<next>25</next>
+		</phrase>
+		<phrase id="21">
+		<precondition>sak_dialog.have_1_mutant_burer_hand</precondition>
+			<text>yurik_burer_hand_done_dialog_21</text>
+			<give_info>gar_dram_novice_burer_hand_done</give_info>
+			<action>sak_dialog.give_1_mutant_burer_hand</action>
+			<next>3</next>
+		</phrase>
+		<phrase id="22">
+		<precondition>sak_dialog.have_1_mutant_krovosos_jaw</precondition>
+			<text>yurik_burer_hand_done_dialog_22</text>
+			<give_info>gar_dram_novice_burer_hand_done</give_info>
+			<action>sak_dialog.give_1_mutant_krovosos_jaw</action>
+			<next>3</next>
+		</phrase>
+		<phrase id="23">
+		<precondition>sak_dialog.have_1_mutant_chimera_kogot</precondition>
+			<text>yurik_burer_hand_done_dialog_23</text>
+			<give_info>gar_dram_novice_burer_hand_done</give_info>
+			<action>sak_dialog.give_1_mutant_chimera_kogot</action>
+			<next>3</next>
+		</phrase>
+		<phrase id="24">	
+		<precondition>sak_dialog.have_1_mutant_hand_kontroler</precondition>
+			<text>yurik_burer_hand_done_dialog_24</text>
+			<give_info>gar_dram_novice_burer_hand_done</give_info>
+			<action>sak_dialog.give_1_mutant_hand_kontroler</action>
+			<next>3</next>
+		</phrase>	
+		<phrase id="25">
+			<text>yurik_burer_hand_done_dialog_25</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+			<text>yurik_burer_hand_done_dialog_3</text>
+			<action>doc.add_dram_novice_art_new</action>
+			<next>4</next>		
+		</phrase>
+		<phrase id="4">
+			<text>yurik_burer_hand_done_dialog_4</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>	
+	</phrase_list>
+</dialog>
+<!-- Пличко арт -->	
+<dialog id="plichko_td_art_start">
+	<dont_has_info>bar_dolg_base_guard_art_start</dont_has_info>
+	<dont_has_info>bar_dolg_base_guard_art_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>plichko_td_art_start_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>plichko_td_art_start_dialog_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+			<text>plichko_td_art_start_dialog_21</text>
+			<give_info>bar_dolg_base_guard_art_start</give_info>
+			<next>31</next>
+			<next>32</next>
+			<next>33</next>
+		</phrase>
+		<phrase id="22">
+			<text>plichko_td_art_start_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="31">
+		<precondition>sak_dialog.rand_game_1</precondition>
+			<text>plichko_td_art_start_dialog_31</text>
+			<action>sak_dialog.add_plichko_td_art(1)</action>
+			<next>4</next>
+		</phrase>
+		<phrase id="32">
+		<precondition>sak_dialog.rand_game_2</precondition>
+			<text>plichko_td_art_start_dialog_32</text>
+			<action>sak_dialog.add_plichko_td_art(2)</action>
+			<next>4</next>
+		</phrase>
+		<phrase id="33">
+		<precondition>sak_dialog.rand_game_3</precondition>
+			<text>plichko_td_art_start_dialog_33</text>
+			<action>sak_dialog.add_plichko_td_art(3)</action>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>plichko_td_art_start_dialog_4</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="plichko_td_art_done">
+	<precondition>doc.plichko_unknown_have</precondition>
+	<dont_has_info>bar_dolg_base_guard_art_done</dont_has_info>
+	<has_info>bar_dolg_base_guard_art_start</has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>plichko_td_art_done_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>plichko_td_art_done_dialog_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+		<precondition>doc.plichko_unknown_have</precondition>
+			<text>plichko_td_art_done_dialog_21</text>
+			<give_info>bar_dolg_base_guard_art_done</give_info>
+			<action>doc.give_plichko_unknown</action>
+			<next>3</next>
+		</phrase>
+		<phrase id="22">
+			<text>plichko_td_art_done_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+			<text>plichko_td_art_done_dialog_3</text>
+			<action>doc.add_plichko_gift</action>
+			<give_info>bar_dolg_base_pass</give_info>
+			<give_info>bar_dolg_community_leader</give_info>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="plichko_art_back_dialog">
+<has_info>bar_dolg_base_guard_art_done</has_info>
+<has_info>mdata_yes_resept_info</has_info>
+<dont_has_info>bar_dolg_green_art_done</dont_has_info>
+<precondition>dialogs.is_not_wounded</precondition>
+<phrase_list>
+	<phrase id="0">
+		<text>plichko_art_back_dialog_0</text>
+		<next>11</next>
+		<next>12</next>
+	</phrase>
+	<phrase id="11">
+	<dont_has_info>bar_dolg_green_art_info</dont_has_info>
+		<text>plichko_art_back_dialog_11</text>
+		<give_info>bar_dolg_green_art_info</give_info>
+		<next>2</next>
+	</phrase>
+	<phrase id="12">
+	<has_info>bar_dolg_green_art_info</has_info>
+		<text>plichko_art_back_dialog_12</text>
+		<next>41</next>
+		<next>42</next>
+	</phrase>
+	<phrase id="2">
+		<text>plichko_art_back_dialog_2</text>
+		<next>3</next>
+	</phrase>
+	<phrase id="3">
+		<text>plichko_art_back_dialog_3</text>
+		<next>41</next>
+		<next>42</next>
+	</phrase>
+	<phrase id="41">
+	<precondition>sak_dialog.have_cheque</precondition>
+		<text>plichko_art_back_dialog_42</text>
+		<action>sak_inventory.release_actor_items("bearer_cheque",1)</action>
+		<next>51</next>
+	</phrase>
+	<phrase id="51">
+		<text>plichko_art_back_dialog_52</text>
+		<action>doc.take_plichko_unknown</action>
+		<give_info>bar_dolg_green_art_done</give_info>
+	</phrase>
+	<phrase id="42">
+		<text>plichko_art_back_dialog_41</text>
+		<next>52</next>
+	</phrase>
+	<phrase id="52">
+		<text>plichko_art_back_dialog_51</text>
+	</phrase>
+</phrase_list>
+</dialog>
+<!-- new_Luber  -->	
+<dialog id="luber_medicine_start_dialog">
+	<has_info>val_escort_PDA_done</has_info>
+	<has_info>marsh_provodnik_life</has_info>
+	<has_info>gar_dolg_flesh_eye_done</has_info>	
+	<dont_has_info>luber_medicine_start</dont_has_info>
+	<dont_has_info>luber_medicine_boryan_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>luber_medicine_start_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>luber_medicine_start_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>luber_medicine_start_dialog_2</text>
+			<next>3</next>
+		</phrase>		
+		<phrase id="3">
+			<text>luber_medicine_start_dialog_3</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<text>luber_medicine_start_dialog_41</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>luber_medicine_start_dialog_5</text>
+			<give_info>luber_medicine_start</give_info>
+		</phrase>		
+		<phrase id="42">
+			<text>luber_medicine_start_dialog_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+<!-- new_Boryan -->
+<dialog id="luber_medicine_boryan_start_dlg">
+	<has_info>luber_medicine_start</has_info>
+	<dont_has_info>luber_medicine_boryan_start</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>luber_medicine_boryan_start_dlg_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>luber_medicine_boryan_start_dlg_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>luber_medicine_boryan_start_dlg_2</text>
+			<next>3</next>
+		</phrase>		
+		<phrase id="3">
+			<text>luber_medicine_boryan_start_dlg_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>luber_medicine_boryan_start_dlg_4</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>luber_medicine_boryan_start_dlg_5</text>
+			<next>6</next>			
+		</phrase>		
+		<phrase id="6">
+			<text>luber_medicine_boryan_start_dlg_6</text>
+			<next>7</next>			
+		</phrase>
+		<phrase id="7">
+			<text>luber_medicine_boryan_start_dlg_7</text>
+			<give_info>luber_medicine_boryan_start</give_info>			
+		</phrase>		
+	</phrase_list>
+</dialog>
+
+<dialog id="luber_medicine_boryan_done_dlg">
+	<precondition>sak.have_items_count("banka_full",6)</precondition>
+	<has_info>luber_medicine_boryan_start</has_info>
+	<dont_has_info>luber_medicine_boryan_done</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>luber_medicine_boryan_done_dlg_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>luber_medicine_boryan_done_dlg_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>luber_medicine_boryan_done_dlg_2</text>
+			<action>sak_inventory.release_actor_items("banka_full",6)</action>			
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>luber_medicine_boryan_done_dlg_3</text>
+			<action>sak.create_items("boryan_kul",3)</action>
+			<action>sak.create_items("medkit_scientic",2)</action>
+			<action>sak.create_items("antirad",2)</action>			
+			<give_info>luber_medicine_boryan_done</give_info>			
+			<next>4</next>		
+		</phrase>
+		<phrase id="4">
+			<text>luber_medicine_boryan_done_dlg_4</text>
+			<action>dialogs.break_dialog</action>			
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="luber_medicine_done_dialog">
+	<precondition>sak.have_items_count("boryan_kul",3)</precondition>
+	<has_info>luber_medicine_start</has_info>
+	<has_info>luber_medicine_boryan_done</has_info>	
+	<dont_has_info>luber_medicine_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>luber_medicine_done_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>luber_medicine_done_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>luber_medicine_done_dialog_2</text>
+			<action>sak_inventory.release_actor_items("boryan_kul",3)</action>			
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>luber_medicine_done_dialog_3</text>
+			<next>41</next>
+			<next>42</next>
+			<next>43</next>
+		</phrase>
+		<phrase id="41">
+			<text>luber_medicine_done_dialog_41</text>
+			<next>51</next>			
+		</phrase>
+		<phrase id="42">
+			<text>luber_medicine_done_dialog_42</text>
+			<next>52</next>			
+		</phrase>
+		<phrase id="43">
+			<text>luber_medicine_done_dialog_43</text>
+			<next>53</next>			
+		</phrase>
+		<phrase id="51">
+			<text>luber_medicine_done_dialog_51</text>
+			<give_info>info_artmod_electra_moonlight_galant</give_info>
+			<action>sak.info_artmod</action>
+			<give_info>luber_medicine_done</give_info>			
+		</phrase>
+		<phrase id="52">
+			<text>luber_medicine_done_dialog_52</text>
+			<action>sak_dialog.add_luber_soul</action>
+			<action>sak.create_items("ammo_7.62x39_ap",6)</action>
+			<give_info>luber_medicine_done</give_info>			
+		</phrase>
+		<phrase id="53">
+			<text>luber_medicine_done_dialog_53</text>
+			<action>sak.create_items("wpn_addon_grenade_launcher",1)</action>
+			<give_info>luber_medicine_done</give_info>			
+		</phrase>
+	</phrase_list>
+</dialog>
+<!-- см. agr_desertir_food_shema_dialog -->	
+<dialog id="artmod_841_dialog">
+	<has_info>agr_desertir_way_done_info</has_info>
+	<dont_has_info>ratcatcher_order_start</dont_has_info>
+	<dont_has_info>ratcatcher_order_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>artmod_841_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>artmod_841_dialog_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+			<text>artmod_841_dialog_21</text>
+			<next>3</next>		
+		</phrase>
+		<phrase id="3">
+			<text>artmod_841_dialog_3</text>
+			<give_info>ratcatcher_order_start</give_info>
+		</phrase>	
+		<phrase id="22">
+			<text>artmod_841_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="artmod_842_dialog">
+	<precondition>sak.have_items_count("rad_document7",1)</precondition>
+	<has_info>ratcatcher_order_start</has_info>	
+	<dont_has_info>ratcatcher_order_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>artmod_842_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>artmod_842_dialog_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+			<text>artmod_842_dialog_21</text>
+			<give_info>ratcatcher_order_done</give_info>
+			<action>sak_inventory.release_actor_items("rad_document7",1)</action>		
+			<next>31</next>
+			<next>32</next>			
+		</phrase>
+		<phrase id="22">
+			<text>artmod_842_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="31">
+		<has_info>volkodav_dt_shema_have</has_info>		
+			<text>artmod_842_dialog_31</text>
+			<action>sak.create_items("wpn_addon_1p78",1)</action>
+			<action>sak.create_items("medkit_army",5)</action>											   
+		</phrase>
+		<phrase id="32">
+		<dont_has_info>volkodav_dt_shema_have</dont_has_info>		
+			<text>artmod_842_dialog_32</text>
+			<action>sak.create_items("wpn_addon_1p78",1)</action>			
+		</phrase>		
+	</phrase_list>
+</dialog>
+<!-- Волк доки -->	
+<dialog id="artmod_861_dialog">
+	<has_info>kvest_art_done</has_info>
+	<dont_has_info>escape_lager_volk_document_start</dont_has_info>
+	<dont_has_info>escape_lager_volk_document_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>artmod_861_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>artmod_861_dialog_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+			<text>artmod_861_dialog_21</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>artmod_861_dialog_3</text>
+			<action>sak.add_document_wolf</action>		
+			<action>sak_dialog.take_conserva</action>
+			<give_info>escape_lager_volk_document_start</give_info>		
+		</phrase>
+		<phrase id="22">
+			<text>artmod_861_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="artmod_862_dialog">
+	<precondition>sak_dialog.escape_lager_volk_document_have</precondition>
+	<has_info>escape_lager_volk_document_start</has_info>
+	<dont_has_info>escape_lager_volk_document_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>artmod_862_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>artmod_862_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>artmod_862_dialog_2</text>
+			<give_info>escape_lager_volk_document_done</give_info>
+			<action>sak_dialog.give_sescape_lager_volk_document</action>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>artmod_862_dialog_3</text>
+			<action>sak_dialog.take_sescape_lager_volk_ak</action>
+			<action>sak.create_items("ammo_5.45x39_fmj",2)</action>
+			<action>sak_dialog.add_pb_volk</action>		
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="artmod_862_sidor_dialog">
+	<precondition>sak_dialog.escape_lager_volk_document_have</precondition>
+	<has_info>esc_wolf_dead</has_info>
+	<has_info>escape_lager_volk_document_start</has_info>
+	<dont_has_info>escape_lager_volk_document_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>artmod_862_sidor_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>artmod_862_sidor_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>artmod_862_sidor_dialog_2</text>
+			<give_info>escape_lager_volk_document_done</give_info>
+			<action>sak_dialog.give_sescape_lager_volk_document</action>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>artmod_862_sidor_dialog_3</text>
+			<action>sak_dialog.take_sescape_lager_volk_ak</action>
+			<action>sak.create_items("ammo_5.45x39_fmj",2)</action>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>artmod_862_sidor_dialog_4</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="artmod_863_dialog">
+	<precondition>sak_dialog.escape_lager_volk_document_not_have</precondition>
+	<has_info>escape_lager_volk_document_start</has_info>
+	<has_info>esc_volk_docs_on</has_info>
+	<dont_has_info>escape_lager_volk_document_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>artmod_863_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>artmod_863_dialog_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+			<text>artmod_863_dialog_21</text>
+			<give_info>escape_lager_volk_document_done</give_info>
+			<give_info>volk_document_refuse</give_info>
+			<next>3</next>
+		</phrase>
+		<phrase id="22">
+			<text>artmod_863_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+			<text>artmod_863_dialog_3</text>
+		</phrase>
+	</phrase_list>
+</dialog>
+<!-- Волк рация -->	
+<dialog id="artmod_871_dialog">
+	<has_info>info_way113a</has_info>
+	<has_info>val_raid_start</has_info>
+	<dont_has_info>esc_vagon_wounded_umer</dont_has_info>
+	<dont_has_info>mil_volk_resiver_start</dont_has_info>
+	<dont_has_info>mil_volk_resiver_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>artmod_871_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>artmod_871_dialog_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+			<text>artmod_871_dialog_21</text>
+			<give_info>mil_volk_resiver_start</give_info>
+		</phrase>
+		<phrase id="22">
+			<text>artmod_871_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="artmod_872_dialog">
+	<has_info>mil_volk_resiver_start</has_info>
+	<dont_has_info>mil_volk_resiver_2have</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>artmod_872_dialog_0</text>
+			<next>1</next>	
+		</phrase>
+		<phrase id="1">	
+			<text>artmod_872_dialog_1</text>
+			<next>21</next>
+			<next>22</next>		
+		</phrase>
+		<phrase id="21">
+			<text>artmod_872_dialog_21</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>	
+		<phrase id="22">
+		<precondition>sak_dialog.mil_volk_resiver_have</precondition>	
+			<text>artmod_872_dialog_22</text>
+			<action>sak_dialog.give_mil_volk_resiver</action>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>artmod_872_dialog_3</text>
+			<next>41</next>
+			<next>42</next>		
+		</phrase>
+		<phrase id="41">
+			<text>artmod_872_dialog_41</text>
+			<next>51</next>		
+		</phrase>	
+		<phrase id="51">
+			<text>artmod_872_dialog_51</text>
+			<action>sak_dialog.add_voron_find_item_3_done</action>		
+			<give_info>mil_volk_resiver_2have</give_info>
+			<give_info>mil_volk_resiver_done</give_info>
+		</phrase>
+		<phrase id="42">
+			<text>artmod_872_dialog_42</text>
+			<next>52</next>		
+		</phrase>	
+		<phrase id="52">
+			<text>artmod_872_dialog_52</text>
+			<action>sak.create_items("af_gravi_dyn5d",1)</action>
+			<give_info>mil_volk_resiver_2have</give_info>
+			<give_info>mil_volk_resiver_done</give_info>
+		</phrase>	
+	</phrase_list>
+</dialog>
+	
+<dialog id="artmod_873_dialog">
+	<has_info>mil_volk_resiver_start</has_info>
+	<dont_has_info>mil_volk_resiver_1have</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>artmod_873_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>artmod_873_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>artmod_873_dialog_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>artmod_873_dialog_3</text>
+			<give_info>mil_volk_resiver_1have</give_info>
+			<action>sak.add_resiver</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="volk_petruha_start">
+	<has_info>val_raid_start</has_info>
+	<has_info>esc_petruha_toz_done</has_info>
+	<dont_has_info>esc_ranger_umer</dont_has_info> <!-- если петруха не умер -->
+	<dont_has_info>info_volk_petruha_start</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>volk_petruha_start_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>volk_petruha_start_1</text>
+			<next>2</next>
+		</phrase>
+			<phrase id="2">
+			<text>volk_petruha_start_2</text>
+			<next>3</next>
+		</phrase>
+	    <phrase id="3">
+			<text>volk_petruha_start_3</text>
+			<next>4</next>
+		</phrase>
+	    <phrase id="4">
+			<text>volk_petruha_start_4</text>
+			<next>5</next>
+		</phrase>
+	    <phrase id="5">
+			<text>volk_petruha_start_5</text>
+			<give_info>info_volk_petruha_start</give_info>		
+			<next>6</next>
+		</phrase>
+	    <phrase id="6">
+			<text>volk_petruha_start_6</text>
+			<action>dialogs.break_dialog</action>		
+		</phrase>
+	</phrase_list>
+</dialog>
+<!-- igor.doc -->
+<dialog id="volk_simbion_start">
+	<has_info>petruha_info_treasure</has_info>
+	<dont_has_info>info_volk_simbion_start</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+    <phrase_list>
+		<phrase id="0">
+			<text>volk_simbion_start_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>volk_simbion_start_1</text>
+			<next>2</next>
+		</phrase>
+	    <phrase id="2">
+			<text>volk_simbion_start_2</text>
+			<next>3</next>
+		</phrase>
+	    <phrase id="3">
+			<text>volk_simbion_start_3</text>
+			<next>4</next>
+		</phrase>
+	    <phrase id="4">
+			<text>volk_simbion_start_4</text>
+			<next>5</next>
+		</phrase>
+	    <phrase id="5">
+			<text>volk_simbion_start_5</text>
+			<next>6</next>
+		</phrase>
+	    <phrase id="6">
+			<text>volk_simbion_start_6</text>
+			<next>7</next>
+		</phrase>
+	    <phrase id="7">
+			<text>volk_simbion_start_7</text>
+			<next>8</next>
+		</phrase>
+	    <phrase id="8">
+			<text>volk_simbion_start_8</text>
+			<next>9</next>
+		</phrase>
+	    <phrase id="9">
+			<text>volk_simbion_start_9</text>
+			<give_info>info_volk_simbion_start</give_info>
+			<next>10</next>
+		</phrase>
+	    <phrase id="10">
+			<text>volk_simbion_start_10</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="volk_simbion_treasure">
+	<has_info>info_volk_simbion_start</has_info>
+	<has_info>info_volk_treasure_yes</has_info>
+	<dont_has_info>info_volk_simbion_treasure</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>volk_simbion_treasure_0</text>
+			<next>1</next>
+		</phrase>
+        <phrase id="1">
+			<text>volk_simbion_treasure_1</text>
+			<next>2</next>
+		</phrase>
+	    <phrase id="2">
+			<text>volk_simbion_treasure_2</text>
+			<next>3</next>
+		</phrase>
+	    <phrase id="3">
+			<text>volk_simbion_treasure_3</text>
+			<next>4</next>
+		</phrase>
+	    <phrase id="4">
+			<text>volk_simbion_treasure_4</text>
+			<next>5</next>
+		</phrase>
+	    <phrase id="5">
+			<text>volk_simbion_treasure_5</text>
+			<next>6</next>
+		</phrase>
+	    <phrase id="6">
+			<text>volk_simbion_treasure_6</text>
+			<next>7</next>
+		</phrase>
+	    <phrase id="7">
+			<text>volk_simbion_treasure_7</text>
+			<give_info>info_volk_simbion_treasure</give_info>
+			<next>8</next>
+		</phrase>
+	    <phrase id="8">
+			<text>volk_simbion_treasure_8</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="volk_simbion_give">
+	<has_info>info_volk_simbion_treasure</has_info>
+	<dont_has_info>info_volk_simbion_give</dont_has_info>
+	<precondition>sak_artmods.artmod_84_have</precondition>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+				<text>volk_simbion_give_0</text>
+			<next>1</next>
+		</phrase>
+        <phrase id="1">
+			<text>volk_simbion_give_1</text>
+			<next>2</next>
+		</phrase>
+	    <phrase id="2">
+			<text>volk_simbion_give_2</text>
+			<next>3</next>
+		</phrase>
+	    <phrase id="3">
+			<text>volk_simbion_give_3</text>
+			<next>4</next>
+		</phrase>
+	    <phrase id="4">
+			<text>volk_simbion_give_4</text>
+			<next>5</next>
+		</phrase>
+	    <phrase id="5">
+			<text>volk_simbion_give_5</text>
+			<next>51</next>
+		</phrase>
+	    <phrase id="51">
+			<text>volk_simbion_give_51</text>
+			<next>52</next>
+		</phrase>
+	    <phrase id="52">
+			<text>volk_simbion_give_52</text>
+			<next>53</next>
+		</phrase>
+	    <phrase id="53">
+			<text>volk_simbion_give_53</text>
+			<next>54</next>
+		</phrase>
+	    <phrase id="54">
+			<text>volk_simbion_give_54</text>
+			<next>61</next>
+			<next>62</next>
+		</phrase>
+	    <phrase id="61">
+		<dont_has_info>info_artmod_recipt_simbion</dont_has_info>
+			<text>volk_simbion_give_61</text>
+			<next>71</next>
+		</phrase>
+		<phrase id="62">
+		<has_info>info_artmod_recipt_simbion</has_info>
+			<text>volk_simbion_give_62</text>
+			<next>72</next>
+		</phrase>
+	    <phrase id="71">
+			<text>volk_simbion_give_71</text>
+			<next>811</next>
+			<next>812</next>
+		</phrase>
+		<phrase id="72">
+			<text>volk_simbion_give_72</text>
+			<next>821</next>
+			<next>822</next>
+		</phrase>
+	    <phrase id="811">
+		<precondition>sak_dialog.volk_zapiska_yes</precondition>
+			<text>volk_simbion_give_811</text>
+			<action>mike.give_volk_set</action>
+			<action>sak_inventory.release_actor_items("zapiska_volk2",1)</action>
+			<next>921</next>
+		</phrase>
+		<phrase id="812">
+		<precondition>sak_dialog.volk_zapiska_no</precondition>
+			<text>volk_simbion_give_812</text>
+			<action>mike.give_volk_set</action>
+			<next>922</next>
+		</phrase>
+		<phrase id="821">
+		<precondition>sak_dialog.volk_zapiska_yes</precondition>
+			<text>volk_simbion_give_821</text>
+			<action>mike.give_volk_set</action>
+			<action>sak_inventory.release_actor_items("zapiska_volk2",1)</action>
+			<next>921</next>
+		</phrase>
+		<phrase id="822">
+		<precondition>sak_dialog.volk_zapiska_no</precondition>
+			<text>volk_simbion_give_822</text>
+			<action>mike.give_volk_set</action>
+			<next>922</next>
+		</phrase>
+		<phrase id="921">
+			<text>volk_simbion_give_921</text>
+			<action>sak.create_items("vodka",3)</action>
+			<give_info>info_volk_simbion_give</give_info>			
+			<action>sak.create_items("ammo_7.62x39_ap",10)</action>		
+		</phrase>
+		<phrase id="922">
+			<text>volk_simbion_give_922</text>
+			<give_info>info_volk_simbion_give</give_info>			
+			<action>sak.create_items("ammo_7.62x39_ap",10)</action>		
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="volk_simbion_final">
+	<has_info>info_artmod_recipt_simbion</has_info>
+	<has_info>info_volk_simbion_give</has_info>
+	<dont_has_info>info_volk_simbion_final</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>volk_simbion_final_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>volk_simbion_final_1</text>
+			<next>2</next>
+		</phrase>
+			<phrase id="2">
+			<text>volk_simbion_final_2</text>
+			<next>3</next>
+		</phrase>
+	    <phrase id="3">
+			<text>volk_simbion_final_3</text>
+			<next>4</next>
+		</phrase>
+	    <phrase id="4">
+			<text>volk_simbion_final_4</text>
+			<next>5</next>
+		</phrase>
+	    <phrase id="5">
+			<text>volk_simbion_final_5</text>
+			<next>6</next>
+		</phrase>
+	    <phrase id="6">
+			<text>volk_simbion_final_6</text>
+			<next>7</next>
+		</phrase>
+	    <phrase id="7">
+			<text>volk_simbion_final_7</text>
+			<next>8</next>
+		</phrase>
+	    <phrase id="8">
+			<text>volk_simbion_final_8</text>
+			<next>9</next>
+		</phrase>
+	    <phrase id="9">
+			<text>volk_simbion_final_9</text>
+			<next>10</next>
+		</phrase>
+	    <phrase id="10">
+			<text>volk_simbion_final_10</text>
+			<next>11</next>
+		</phrase>
+	    <phrase id="11">
+			<text>volk_simbion_final_11</text>
+			<next>12</next>
+		</phrase>
+	    <phrase id="12">
+			<text>volk_simbion_final_12</text>
+			<next>13</next>
+		</phrase>
+	    <phrase id="13">
+			<text>volk_simbion_final_13</text>
+			<action>oxyr.add_volk_woodbox</action>
+			<give_info>info_volk_simbion_final</give_info>		
+			<next>14</next>		
+		</phrase>		
+	    <phrase id="14">
+			<text>volk_simbion_final_14</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+<!-- ecolog_apparat -->
+<dialog id="ecolog_apparat_start">
+	<has_info>kruglov_flash_done</has_info>
+	<has_info>yan_find_boloto_start</has_info>
+	<dont_has_info>info_ecolog_apparat_start</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>ecolog_apparat_start_0</text>
+			<next>1</next>
+		</phrase>
+        <phrase id="1">
+			<text>ecolog_apparat_start_1</text>
+			<next>2</next>
+		</phrase>
+	    <phrase id="2">
+			<text>ecolog_apparat_start_2</text>
+			<next>3</next>
+		</phrase>
+	    <phrase id="3">
+			<text>ecolog_apparat_start_3</text>
+			<next>4</next>
+		</phrase>
+	    <phrase id="4">
+			<text>ecolog_apparat_start_4</text>
+			<next>5</next>
+		</phrase>
+	    <phrase id="5">
+			<text>ecolog_apparat_start_5</text>
+			<next>6</next>
+		</phrase>
+	    <phrase id="6">
+			<text>ecolog_apparat_start_6</text>
+			<next>7</next>
+		</phrase>
+	    <phrase id="7">
+			<text>ecolog_apparat_start_7</text>
+			<next>8</next>
+		</phrase>
+	    <phrase id="8">
+			<text>ecolog_apparat_start_8</text>
+			<next>9</next>
+		</phrase>
+		<phrase id="9">
+			<text>ecolog_apparat_start_9</text>		
+			<next>10</next>
+		</phrase>
+	    <phrase id="10">
+			<text>ecolog_apparat_start_10</text>
+			<next>11</next>
+		</phrase>		
+		<phrase id="11">
+			<text>ecolog_apparat_start_11</text>
+			<next>12</next>		
+		</phrase>
+	    <phrase id="12">
+			<text>ecolog_apparat_start_12</text>		
+			<next>13</next>
+		</phrase>
+	    <phrase id="13">
+			<text>ecolog_apparat_start_13</text>		
+			<next>14</next>
+		</phrase>
+	    <phrase id="14">
+			<text>ecolog_apparat_start_14</text>		
+			<next>15</next>
+		</phrase>	
+	    <phrase id="15">
+			<text>ecolog_apparat_start_15</text>
+			<give_info>info_ecolog_apparat_start</give_info>		
+			<next>16</next>		
+		</phrase>
+	    <phrase id="16">
+			<text>ecolog_apparat_start_16</text>		
+			<action>dialogs.break_dialog</action>		
+		</phrase>	
+	</phrase_list>
+</dialog>
+<!-- bolota -->
+<dialog id="ecolog_apparat_bolota">
+	<precondition>sak.marsh_level_have</precondition>
+	<has_info>info_ecolog_apparat_start</has_info>
+	<dont_has_info>ecolog_find_item_4_start</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>ecolog_apparat_bolota_0</text>
+			<next>1</next>	
+		</phrase>
+		<phrase id="1">
+			<text>ecolog_apparat_bolota_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+			<text>ecolog_apparat_bolota_21</text>
+			<action>dialogs.break_dialog</action>		
+		</phrase>
+		<phrase id="22">	
+			<text>ecolog_apparat_bolota_22</text>
+			<next>3</next>	
+		</phrase>
+		<phrase id="3">
+			<text>ecolog_apparat_bolota_3</text>
+			<give_info>ecolog_find_item_4_start</give_info>		
+			<next>4</next>		
+		</phrase>
+		<phrase id="4">
+			<text>ecolog_apparat_bolota_4</text>
+			<action>dialogs.break_dialog</action>		
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="ecolog_apparat_bolota_done">
+	<precondition>sak_dialog.have_4_marsh_cart</precondition>
+	<has_info>ecolog_find_item_4_start</has_info>
+	<dont_has_info>info_ecolog_apparat_bolota_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>ecolog_apparat_bolota_done_0</text>
+			<next>1</next>		
+		</phrase>
+		<phrase id="1">
+			<text>ecolog_apparat_bolota_done_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>ecolog_apparat_bolota_done_2</text>
+			<action>sak_dialog.give_4_marsh_cart</action>		
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>ecolog_apparat_bolota_done_3</text>
+			<action>mike.add_nagrad_saharov</action>
+			<give_info>info_amk_recipt_dummy_fire</give_info>			
+			<action>sak.info_amk_received</action>		
+			<next>4</next>		
+		</phrase>
+		<phrase id="4">	
+			<text>ecolog_apparat_bolota_done_4</text>
+			<next>5</next>	
+		</phrase>
+		<phrase id="5">
+			<text>ecolog_apparat_bolota_done_5</text>
+			<give_info>info_ecolog_apparat_bolota_done</give_info>
+			<next>6</next>		
+		</phrase>
+		<phrase id="6">
+			<text>ecolog_apparat_bolota_done_6</text>
+			<action>dialogs.break_dialog</action>		
+		</phrase>	
+	</phrase_list>
+</dialog>
+<!-- aver -->
+<dialog id="ecolog_apparat_aver">
+	<has_info>info_ecolog_apparat_bolota_done</has_info>
+	<dont_has_info>ecolog_find_item_3_start</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>ecolog_apparat_aver_0</text>
+			<next>1</next>		
+		</phrase>
+		<phrase id="1">
+			<text>ecolog_apparat_aver_1</text>
+			<next>21</next>
+			<next>22</next>		
+		</phrase>
+		<phrase id="21">
+			<text>ecolog_apparat_aver_21</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>ecolog_apparat_aver_3</text>
+			<give_info>ecolog_find_item_3_start</give_info>		
+			<next>4</next>		
+		</phrase>
+		<phrase id="4">	
+			<text>ecolog_apparat_aver_4</text>
+			<action>dialogs.break_dialog</action>		
+		</phrase>
+		<phrase id="22">
+			<text>ecolog_apparat_aver_22</text>
+			<action>dialogs.break_dialog</action>		
+		</phrase>			
+	</phrase_list>
+</dialog>	
+
+<dialog id="ecolog_apparat_aver_done">
+	<precondition>sak_dialog.have_3_aver_cart</precondition>
+	<has_info>ecolog_find_item_3_start</has_info>
+	<dont_has_info>info_ecolog_apparat_aver_done</dont_has_info>
+	<dont_has_info>yan_gg_psy_scan_done</dont_has_info> <!-- чтоб не было пересечений диалогов с веткой альтернативного финала -->
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>ecolog_apparat_aver_done_0</text>
+			<action>sak_dialog.give_3_aver_cart</action>		
+			<next>1</next>		
+		</phrase>
+		<phrase id="1">
+			<text>ecolog_apparat_aver_done_1</text>
+			<give_info>info_amk_recipt_dummy_bright</give_info>			
+			<action>sak.info_amk_received</action>		
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>ecolog_apparat_aver_done_2</text>		
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>ecolog_apparat_aver_done_3</text>
+			<give_info>info_ecolog_apparat_aver_done</give_info>		
+			<action>mike.add_nagrad_saharov</action>		
+			<next>4</next>		
+		</phrase>
+		<phrase id="4">	
+			<text>ecolog_apparat_aver_done_4</text>
+			<next>5</next>	
+		</phrase>
+		<phrase id="5">
+			<text>ecolog_apparat_aver_done_5</text>
+			<next>6</next>		
+		</phrase>
+		<phrase id="6">
+			<text>ecolog_apparat_aver_done_6</text>
+			<action>dialogs.break_dialog</action>				
+		</phrase>	
+	</phrase_list>
+</dialog>
+<!-- red_forest -->
+<dialog id="ecolog_apparat_rf">
+	<precondition>sak.red_forest_level_have</precondition>
+	<has_info>info_ecolog_apparat_aver_done</has_info>
+	<dont_has_info>ecolog_find_item_5_start</dont_has_info>
+	<dont_has_info>yan_gg_psy_scan_done</dont_has_info> <!-- чтоб не было пересечений диалогов с веткой альтернативного финала -->
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>ecolog_apparat_rf_0</text>
+			<next>1</next>		
+		</phrase>
+		<phrase id="1">
+			<text>ecolog_apparat_rf_1</text>
+			<next>21</next>
+			<next>22</next>		
+		</phrase>
+		<phrase id="21">
+			<text>ecolog_apparat_rf_21</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>ecolog_apparat_rf_4</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>ecolog_apparat_rf_5</text>
+			<next>6</next>
+		</phrase>	
+		<phrase id="6">
+			<text>ecolog_apparat_rf_6</text>		
+			<give_info>ecolog_find_item_5_start</give_info>		
+			<next>7</next>		
+		</phrase>
+		<phrase id="7">	
+			<text>ecolog_apparat_rf_7</text>
+			<action>dialogs.break_dialog</action>		
+		</phrase>
+		<phrase id="22">
+			<text>ecolog_apparat_rf_22</text>
+			<action>dialogs.break_dialog</action>		
+		</phrase>			
+	</phrase_list>
+</dialog>	
+
+<dialog id="ecolog_apparat_rf_done">
+	<precondition>sak_dialog.have_2_red_cart</precondition>
+	<has_info>ecolog_find_item_5_start</has_info>
+	<dont_has_info>info_ecolog_apparat_rf_done</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>ecolog_apparat_rf_done_0</text>
+			<action>sak_dialog.give_2_red_cart</action>		
+			<next>1</next>		
+		</phrase>
+		<phrase id="1">
+			<text>ecolog_apparat_rf_done_1</text>
+			<give_info>info_amk_recipt_dummy_moon</give_info>			
+			<action>sak.info_amk_received</action>		
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>ecolog_apparat_rf_done_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>ecolog_apparat_rf_done_3</text>		
+			<action>mike.add_nagrad_saharov</action>		
+			<action>sak_dialog.take_eye_kruglov</action>
+			<give_info>info_ecolog_apparat_rf_done</give_info>
+			<give_info>info_kruglov_art_chan_yes</give_info>			
+			<next>4</next>		
+		</phrase>
+		<phrase id="4">	
+			<text>ecolog_apparat_rf_done_4</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>	
+	</phrase_list>
+</dialog>
+<!-- shustriy_find_item and artmod_13 -->
+<dialog id="shustriy_find_item_start">
+	<precondition>sak_dialog.is_bar</precondition>
+	<has_info>price_ara</has_info>
+	<dont_has_info>esc_shustryi_outfit_fail</dont_has_info>
+	<dont_has_info>shustriy_find_item_1_start</dont_has_info>
+	<dont_has_info>shustriy_find_item_1_not</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>shustriy_find_item_start_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">	
+			<text>shustriy_find_item_start_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>shustriy_find_item_start_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>shustriy_find_item_start_3</text>
+			<next>41</next>
+			<next>42</next>		
+		</phrase>
+		<phrase id="41">
+			<text>shustriy_find_item_start_41</text>
+			<next>51</next>		
+		</phrase>
+		<phrase id="51">
+			<text>shustriy_find_item_start_51</text>
+			<give_info>shustriy_find_item_1_not</give_info>		
+		</phrase>
+		<phrase id="42">
+			<text>shustriy_find_item_start_42</text>
+			<next>52</next>
+		</phrase>
+		<phrase id="52">
+			<text>shustriy_find_item_start_52</text>
+			<give_info>shustriy_find_item_1_start</give_info>		
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="shustriy_find_item_done">
+	<precondition>sak_dialog.shustryi_outfit_have</precondition>
+	<has_info>shustriy_find_item_1_start</has_info>
+	<dont_has_info>shustriy_find_item_1_done</dont_has_info>
+	<dont_has_info>shustriy_find_item_1_not</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>shustriy_find_item_done_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">	
+			<text>shustriy_find_item_done_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>shustriy_find_item_done_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">	
+			<text>shustriy_find_item_done_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>shustriy_find_item_done_4</text>
+			<next>5</next>
+		</phrase>	
+		<phrase id="5">
+			<text>shustriy_find_item_done_5</text>
+			<next>61</next>
+			<next>62</next>		
+		</phrase>
+		<phrase id="61">
+			<text>shustriy_find_item_done_61</text>
+			<action>sak_dialog.give_shustryi_outfit</action>		
+			<next>71</next>		
+		</phrase>
+		<phrase id="71">
+			<text>shustriy_find_item_done_71</text>
+			<give_info>shustriy_find_item_1_done</give_info>		
+		</phrase>
+		<phrase id="62">
+			<text>shustriy_find_item_done_62</text>
+			<next>72</next>
+		</phrase>
+		<phrase id="72">
+			<text>shustriy_find_item_done_72</text>
+			<give_info>shustriy_find_item_1_not</give_info>		
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="sidor_artmod_31_reward_dialog">
+	<precondition>sak_dialog.af_unknown_5_new_have</precondition>
+	<has_info>gar_prapor_courier_start</has_info>
+	<dont_has_info>sidor_artmod_31_reward_info</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>sidor_artmod_31_reward_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">	
+			<text>sidor_artmod_31_reward_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>sidor_artmod_31_reward_dialog_2</text>
+			<action>sak_dialog.give_af_unknown_5_new</action>		
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>sidor_artmod_31_reward_dialog_3</text>
+			<action>sak_dialog.add_sidor_med</action>
+			<give_info>sidor_artmod_31_reward_info</give_info>		
+			<next>4</next>
+		</phrase>
+		<phrase id="4">	
+			<text>sidor_artmod_31_reward_dialog_4</text>
+			<action>dialogs.break_dialog</action>		
+		</phrase>	
+	</phrase_list>
+</dialog>
+
+<dialog id="pahom_artmod_31_reward_dialog">
+	<precondition>sak_dialog.have_10_mutant_boar_leg</precondition>
+	<has_info>gar_prapor_courier_start</has_info>
+	<dont_has_info>pahom_artmod_31_reward_info</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>pahom_artmod_31_reward_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">	
+			<text>pahom_artmod_31_reward_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>pahom_artmod_31_reward_dialog_2</text>
+			<action>sak_dialog.give_10_mutant_boar_leg</action>		
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>pahom_artmod_31_reward_dialog_3</text>
+			<action>sak.create_items("ammo_12x70_buck",3)</action>
+			<give_info>pahom_artmod_31_reward_info</give_info>		
+			<next>4</next>
+		</phrase>
+		<phrase id="4">	
+			<text>pahom_artmod_31_reward_dialog_4</text>
+			<action>dialogs.break_dialog</action>		
+		</phrase>	
+	</phrase_list>
+</dialog>
+
+<dialog id="ignat_artmod_31_reward_dialog">
+	<precondition>sak_dialog.have_20_mutant_dog_tail</precondition>
+	<has_info>gar_prapor_courier_start</has_info>
+	<dont_has_info>ignat_artmod_31_reward_info</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>ignat_artmod_31_reward_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">	
+			<text>ignat_artmod_31_reward_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>ignat_artmod_31_reward_dialog_2</text>
+			<action>sak_dialog.give_20_mutant_dog_tail</action>		
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>ignat_artmod_31_reward_dialog_3</text>
+			<action>sak_dialog.add_greens_2kolbasa</action>
+			<give_info>ignat_artmod_31_reward_info</give_info>		
+			<next>4</next>
+		</phrase>
+		<phrase id="4">	
+			<text>ignat_artmod_31_reward_dialog_4</text>
+			<action>dialogs.break_dialog</action>		
+		</phrase>	
+	</phrase_list>
+</dialog>
+<!-- rad_cart -->
+<dialog id="gar_prapor_courier_dialog">
+	<has_info>yan_kill_brain_done</has_info>
+	<dont_has_info>gar_prapor_courier_info</dont_has_info>
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>gar_prapor_courier_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">	
+			<text>gar_prapor_courier_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>gar_prapor_courier_dialog_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>gar_prapor_courier_dialog_3</text>
+			<next>41</next>
+			<next>42</next>		
+		</phrase>
+		<phrase id="41">
+			<text>gar_prapor_courier_dialog_41</text>
+			<next>5</next>		
+		</phrase>
+		<phrase id="5">
+			<text>gar_prapor_courier_dialog_5</text>
+			<action>sak_dialog.add_3rad_cart</action>		
+			<give_info>gar_prapor_courier_info</give_info>				
+		</phrase>	
+	</phrase_list>
+</dialog>
+
+<dialog id="gar_prapor_courier_dlg">
+	<precondition>sak_dialog.have_3_card</precondition>
+	<has_info>gar_prapor_courier_info</has_info>
+	<dont_has_info>gar_prapor_courier_dlg_info</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>gar_prapor_courier_dlg_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">	
+			<text>gar_prapor_courier_dlg_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">	
+			<text>gar_prapor_courier_dlg_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">	
+			<text>gar_prapor_courier_dlg_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">	
+			<text>gar_prapor_courier_dlg_4</text>
+			<next>5</next>		
+		</phrase>	
+		<phrase id="5">
+			<text>gar_prapor_courier_dlg_5</text>
+			<action>sak_dialog.add_nagrad_pahom</action>
+			<give_info>gar_prapor_courier_dlg_info</give_info>		
+			<next>6</next>
+		</phrase>	
+		<phrase id="6">
+			<text>gar_prapor_courier_dlg_6</text>
+			<action>dialogs.break_dialog</action>		
+		</phrase>
+	</phrase_list>
+</dialog>

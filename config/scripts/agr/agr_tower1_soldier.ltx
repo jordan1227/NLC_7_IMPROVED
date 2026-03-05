@@ -1,0 +1,18 @@
+[logic]
+active = camper
+on_hit = hit
+on_death = death
+
+[death]
+on_info = {=killed_by_actor -agr_nii_helicopter_atack} %+agr_sniper_killed_1 +agr_nii_helicopter_atack +sherstuk_enemy%, %+agr_sniper_killed_1%
+
+[camper]
+path_look = agr_tower1_look
+path_walk = agr_tower1_stand
+radius = 1
+sniper = true
+def_state_campering = threat_na
+def_state_campering_fire = threat_fire
+
+[hit]
+on_info = {=hit_by_actor} %+agr_mil_fire +agr_nii_sniper_hit%, %+agr_nii_sniper_hit%

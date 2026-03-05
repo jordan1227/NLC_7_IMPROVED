@@ -1,0 +1,262 @@
+;HK MP5 9x18
+[wpn_mp5_m1]:wpn_mp5
+$spawn						= "weapons\uniq\wpn_mp5_m1"
+inv_name					= wpn-mp5_m1
+inv_name_short				= wpn-mp5_m1
+description					= enc_weapons1_wpn-mp5_m1
+
+default_to_ruck				= false
+
+ammo_class					= ammo_9x18_fmj, ammo_9x18_pmm
+cost						= 3500
+; ammo_mag_size				= 32
+fire_modes					= 1, -1
+
+inv_weight							= 1.8
+
+control_inertion_factor		= 1.05f
+fire_dispersion_base		= 0.35
+
+cam_relax_speed        		= 2.0
+cam_dispersion         		= 0.5
+cam_dispersion_inc			= 0.25
+cam_dispertion_frac			= 1.0
+
+misfire_probability 		= 0.005
+misfire_condition_k			= 0.05
+condition_shot_dec 			= 0.0002
+
+fire_dispersion_condition_factor = 3
+
+shell_particles	 			= amik\weapons\9x18\9x18_r_02
+
+hit_power        			= 1.0
+hit_impulse		 			= 1.1
+
+
+fire_distance      			= 60
+bullet_speed				= 255
+rpm                 		= 700
+
+scope_respawn_ac10632 = wpn_mp5_m1_ac10632
+scope_respawn_wpn_addon_eotech = wpn_mp5_m1_eot
+scope_respawn_microt1 = wpn_mp5_m1_microt1
+scope_respawn_specter = wpn_mp5_m1_specter
+
+
+[wpn_mp5_m1_ac10632]:wpn_mp5_m1
+scope_name = ac10632
+scope_respawn = wpn_mp5_m1
+hud = wpn_mp5_m1_ac10632_hud
+[wpn_mp5_m1_ac10632_hud]:wpn_mp5_ac10632_hud
+
+[wpn_mp5_m1_eot]:wpn_mp5_m1
+scope_name = wpn_addon_eotech
+scope_respawn = wpn_mp5_m1
+hud = wpn_mp5_m1_eot_hud
+[wpn_mp5_m1_eot_hud]:wpn_mp5_eot_hud
+
+[wpn_mp5_m1_microt1]:wpn_mp5_m1
+scope_name = microt1
+scope_respawn = wpn_mp5_m1
+hud = wpn_mp5_m1_microt1_hud
+[wpn_mp5_m1_microt1_hud]:wpn_mp5_microt1_hud
+
+[wpn_mp5_m1_specter]:wpn_mp5_m1
+scope_name = specter
+scope_respawn = wpn_mp5_m1
+hud = wpn_mp5_m1_specter_hud
+[wpn_mp5_m1_specter_hud]:wpn_mp5_specter_hud
+
+
+;MP5K
+[wpn_mp5_m2]:wpn_mp5
+$spawn						= "weapons\uniq\wpn_mp5_m2"
+inv_name					= wpn-mp5_m2
+inv_name_short				= wpn-mp5_m2
+description					= enc_weapons1_wpn-mp5_m2
+
+default_to_ruck				= false
+shell_particles	 			=
+
+cost						= 8500
+ammo_mag_size				= 30
+
+fire_dispersion_base		= 0.33
+condition_shot_dec 			= 0.00025
+
+position                                           = -0.026, -0.125, -0.03
+
+strap_orientation                                  = -10,-5,10
+strap_position                                     = -0.16,-0.36,0.15
+
+inv_weight							= 1.8
+inv_grid_height                                    = 2
+inv_grid_width                                     = 6
+inv_grid_x                                         = 73
+inv_grid_y                                         = 6
+
+fire_distance      			= 100
+hit_power        			= 1.05
+bullet_speed				= 290
+
+scope_status				= 2
+silencer_status				= 2
+grenade_launcher_status		= 0
+scope_mode 					= 3
+
+scope_name 					= wpn_addon_eotech
+scope_names 					= ac10632, wpn_addon_eotech, microt1
+
+scope_respawn_ac10632 = wpn_sr2m_ac10632
+scope_respawn_wpn_addon_eotech = wpn_sr2m_eot
+scope_respawn_microt1 = wpn_sr2m_microt1
+
+scope_zoom_factor = 90
+
+scope_x                                            = 47
+scope_y                                            = 0
+
+
+silencer_name  				= wpn_addon_sil_9_p
+silencer_x                  = 180		; offset in inventory icon
+silencer_y                  = 11
+silencer_x_offset			= -1
+silencer_y_offset			= 0
+
+hud  						= wpn_mp5_m2_hud
+
+visual                  	= dynamics\weapons\wpn_sr2m\wpn_sr2m
+
+snd_draw                                           = weapons\p90\p90_draw
+snd_empty                                          = weapons\p90\p90_empty, 0.5
+snd_holster                                        = weapons\p90\p90_hide
+snd_reload                                         = weapons\sr2m\sr2m_reload
+snd_reload_empty                                   = weapons\sr2m\sr2m_reload_empty
+snd_reload_jammed                                 = weapons\sr2m\sr2m_misfire
+snd_firemode                                       = weapons\l85\l85_firemode
+snd_sprint_idle								   	   = weapons\sprint_assault
+
+[wpn_mp5_m2_hud]:hud_base
+aim_hud_offset_pos = -0.068500,0.029000,-0.09
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.068500,0.029000,-0.09
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+anm_bore                                           = sr2m_idle_aim
+anm_hide                                           = sr2m_holster
+anm_idle                                           = sr2m_idle
+anm_idle_aim                                       = sr2m_idle_aim
+anm_idle_moving_slow                               = sr2m_moving_slow
+anm_idle_moving                                    = sr2m_moving
+anm_idle_aim_moving		 						   = sr2m_moving_aim
+anm_idle_moving_crouch                             = sr2m_crouch
+
+anm_reload                                         = sr2m_reload, reload
+anm_reload_empty                                   = sr2m_reload_empty, reload_empty
+anm_reload_jammed								   = sr2m_misfire, misfire
+anm_firemode		                               = sr2m_firemode
+
+anm_firemode_aim = sr2m_firemode
+anm_firemode_empty = sr2m_firemode
+anm_firemode_aim_empty = sr2m_firemode
+
+anm_shots                                          = sr2m_shoot, shoot
+anm_show                                           = sr2m_draw
+anm_shots_when_aim				   				   = sr2m_shoot_aim, shoot
+
+anm_idle_sprint_start         						   = sr2m_sprint_start
+anm_idle_sprint         						   = sr2m_sprint
+anm_idle_sprint_end         						   	   = sr2m_sprint_end
+anm_idle_sprint_end_jammed = sr2m_sprint_end
+anm_idle_sprint_start_jammed = sr2m_sprint_start
+anm_idle_sprint_end_empty = sr2m_sprint_end
+anm_idle_sprint_start_empty = sr2m_sprint_start
+
+anm_headlamp_on                                = sr2m_flash
+; anm_gasmask                                      = sr2m_clear
+
+anm_headlamp_on_empty                                = sr2m_flash
+; anm_gasmask_empty                                      = sr2m_clear
+
+attach_place_idx                                   = 0
+fire_bone                                          = muzzle
+fire_bone2                                         = muzzle
+fire_point                                         = 0.000000,0.000000,0.070000
+fire_point2                                        = 0,0,0
+gl_hud_offset_pos                                  = 0,0,0
+gl_hud_offset_pos_16x9                             = 0,0,0
+gl_hud_offset_rot                                  = 0,0,0
+gl_hud_offset_rot_16x9                             = 0,0,0
+hands_position									   = -0.048025,-0.163000,-0.281103
+hands_position_16x9								   = -0.048025,-0.163000,-0.281103
+hands_orientation								   = 0,0,0
+hands_orientation_16x9							   = 0,0,0
+item_orientation                                   = 0,0,0
+item_position                                      = 0,0,0
+item_visual                                        = dynamics\weapons\wpn_sr2m\wpn_sr2m_hud.ogf
+lean_hud_offset_pos                                = 0,0,0
+lean_hud_offset_rot                                = 0,0,0
+shell_bone                                         = wpn_body
+shell_dir                                          = 0.0, 1.0, 0.0
+shell_point                                        = 0,0.03,-0.02
+
+
+[wpn_sr2m_ac10632]:wpn_mp5_m2
+$spawn             			= "weapons\wpn_sr2m_ac10632"
+visual					= dynamics\weapons\wpn_sr2m\wpn_sr2m_ac10632.ogf
+hud					= wpn_sr2m_ac10632_hud
+scope_x                                      = 81
+scope_y                                      = -13
+
+scope_respawn = wpn_mp5_m2
+scope_name = ac10632
+
+[wpn_sr2m_ac10632_hud]:wpn_mp5_m2_hud
+item_visual            	 		= dynamics\weapons\wpn_sr2m\wpn_sr2m_ac10632_hud.ogf
+
+aim_hud_offset_pos = -0.068500,0.000000,-0.07
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+
+aim_hud_offset_pos_16x9 = -0.068500,0.000000,-0.07
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+
+[wpn_sr2m_eot]:wpn_mp5_m2
+$spawn					= "weapons\wpn_sr2m_eot"
+visual					= dynamics\weapons\wpn_sr2m\wpn_sr2m_eot.ogf
+hud					= wpn_sr2m_eot_hud
+scope_x                                      = 89
+scope_y                                      = -14
+
+scope_respawn = wpn_mp5_m2
+scope_name = wpn_addon_eotech
+
+[wpn_sr2m_eot_hud]:wpn_mp5_m2_hud
+item_visual				= dynamics\weapons\wpn_sr2m\wpn_sr2m_eot_hud.ogf
+
+aim_hud_offset_pos = -0.068500,-0.003000,-0.07
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+
+aim_hud_offset_pos_16x9 = -0.068500,-0.003000,-0.07
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+
+[wpn_sr2m_microt1]:wpn_mp5_m2
+$spawn					= "weapons\wpn_sr2m_microt1"
+visual					= dynamics\weapons\wpn_sr2m\wpn_sr2m_micro-t1.ogf
+hud					= wpn_sr2m_microt1_hud
+scope_x                                      = 89
+scope_y                                      = -14
+
+scope_respawn = wpn_mp5_m2
+scope_name = microt1
+
+[wpn_sr2m_microt1_hud]:wpn_mp5_m2_hud
+item_visual				= dynamics\weapons\wpn_sr2m\wpn_sr2m_micro-t1_hud.ogf
+
+aim_hud_offset_pos = -0.068500,-0.004000,-0.07
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+
+aim_hud_offset_pos_16x9 = -0.068500,-0.004000,-0.07
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000

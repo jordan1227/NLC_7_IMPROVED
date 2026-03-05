@@ -1,0 +1,19 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = mob_home
+on_death = mob_death
+
+[mob_home]
+path_home = marsh_cats1
+home_min_radius = 20
+home_max_radius = 80
+aggressive_home
+on_signal = sig_attacked | mob_combat
+
+[mob_combat]
+on_timer = 10000 | mob_home
+
+[mob_death]
+on_info = %+marsh_controller1_dead =doc.remove_marsh_controller_spot(crlc_big)%

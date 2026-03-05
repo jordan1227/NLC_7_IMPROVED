@@ -1,0 +1,84 @@
+function attach(sm)
+	sm:subscribe({signal = "on_monster_update", fun = this.on_monster_update})
+end
+
+local polters_on_fire = {}
+
+function on_monster_hit(obj, amount, local_direction, who, bone_index)
+	if not obj or not obj:alive() then return end
+	local weap = who:item_in_slot(2)
+	if weap and weap:section() == 'wpn_flame' then
+		if polters_on_fire[obj:id()] == nil then
+			polters_on_fire[obj:id()] = setup_particles(obj,120)
+			local bobj = obj:get_base_monster()
+			local pobj = obj:get_poltergeist()
+			if bobj then
+				bobj:enable_aura(CBaseMonster.ePsyTypeAura,false)
+				bobj:enable_aura(CBaseMonster.eFireTypeAura,false)
+			end
+			if pobj then
+				pobj:enable_ability(false)
+			end
+			-- log2("%s was hit at %d",obj:name(),polters_on_fire[obj:id()].upd_time)
+		end
+	end
+end
+
+function on_monster_update(obj, delta)
+	if not obj or obj:clsid() ~= CLID_POLTERGEIST then return end
+	if polters_on_fire[obj:id()] == nil then return end
+	local ticks = polters_on_fire[obj:id()].ticks
+	ticks = ticks - 1
+	polters_on_fire[obj:id()].ticks = ticks
+	local p_f = polters_on_fire[obj:id()].particle_fire
+	local p_s = polters_on_fire[obj:id()].particle_smoke
+	local pos = upd_pos(obj)
+	p_f.pos = pos
+	pos.y = pos.y + 0.1
+	p_s.pos = pos
+	
+	if ticks <= 0 then
+		p_f.particle:stop()
+		p_s.particle:stop()
+		polters_on_fire[obj:id()] = nil
+		return
+	elseif ticks <= 20 then
+		obj:kill(db.actor)
+		p_f.particle:stop()
+	end
+	if ticks % 10 == 0 then
+		p_f.particle:stop()
+		p_s.particle:stop()
+		polters_on_fire[obj:id()] = setup_particles(obj,ticks)
+	else
+		p_f:update(delta)
+	end
+	-- log2("update for %s at %d ticks %d",obj:name(),polters_on_fire[obj:id()].upd_time + delta,ticks)
+	-- polters_on_fire[obj:id()].upd_time = time_global()
+end
+
+function setup_particles(obj,ticks)
+	-- log2("setup_particles called with ticks %d",ticks)
+	local tbl = {}
+	-- tbl.upd_time = time_global()
+	local params = { obj = obj, particle = "amk\\flame", looped = true }
+	params.pos = upd_pos(obj)
+	local pobj = amk_particle.amk_particle(params)
+	tbl.particle_fire = pobj
+	params.particle = "explosions\\expl_car_smoke_small"
+	params.pos.y = params.pos.y + 0.1
+	tbl.particle_smoke = amk_particle.amk_particle(params)
+	tbl.ticks = ticks or 120
+	return tbl
+end
+
+function upd_pos(obj)
+	local p = obj and obj:bone_position("bip01_head")
+	if p then
+		p.y = p.y + 0.6
+	else
+		p = sak.v3f(0,0,0)
+	end
+	return p
+end
+

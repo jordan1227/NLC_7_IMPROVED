@@ -1,0 +1,561 @@
+--[[
+–азгрузка v 3.0
+Vergas
+© NLC-6.0
+]]--
+
+class "pouch_dialog" (CUIScriptDialog)
+
+local inv_items = {}        --информаци€ дл€ подсумка (что положить)
+local inv_items_heavy = {}      --информаци€ дл€ подсумка (что положить в €чейку т€жолого оружи€)
+local pouch_content = {}    --информаци€ по содержимому подсумка (что лежит)
+
+local click  = 0      -- если 0, то по кнопке не кликали, иначе равен номеру клика 1 
+local old_click = 0    -- если 0, то по кнопкам не кликали, иначе равен номеру кнопки предыдущего клика
+local button = 0
+
+function pouch_dialog:__init(owner) super()
+  self.owner = owner
+  self:InitControls()
+  self:InitCallBacks()
+end
+
+function pouch_dialog:DbgDetachChild(wnd, ctx)       
+    if wnd then        
+       local wname = wnd:WindowName() or 'nil'
+       -- wprintf(" deleting window~C0D %s~C07 (~C0A%s~C07), context =~C0F %s~C07", FormatPtr(wnd), wname, ctx or 'nil')
+       self:DetachChild(wnd)
+    end   
+end
+
+function pouch_dialog:InitControls()
+    ODS("================================================ подсумок открывается =========================== ")
+  -- ѕоложение и размеры окна
+  self:Init(196,0,632,489)
+  -- файл-описатель элементов
+  local xml = CScriptXmlInit()
+  xml:ParseFile("ui_cheat_podsumok.xml")
+  
+  xml:InitStatic("background_0", self)     
+  xml:InitStatic("background", self)       --—обственно рамка
+  xml:InitStatic("background_2", self)     --надпись ѕќƒ—”ћќ 
+
+
+  self:Register(xml:Init3tButton("btn_stop", self),"btn_stop")    --  нопка ¬ыкл
+  self:Register(xml:Init3tButton("btn_empty", self),"btn_empty")    --  нопка ¬ыгрузить
+  self:Register(xml:Init3tButton("btn_left_1", self),"btn_left_1")  --  нопка прокрутки слотов влево
+  self:Register(xml:Init3tButton("btn_right_1", self),"btn_right_1")  --  нопка прокрутки слотов вправо
+  self:Register(xml:Init3tButton("btn_left_2", self),"btn_left_2")  --  нопка прокрутки т€жолого влево
+  self:Register(xml:Init3tButton("btn_right_2", self),"btn_right_2")  --  нопка прокрутки т€жолого вправо
+  self:Register(xml:Init3tButton("btn_1", self),"btn_1")        --  нопка 1 
+  self:Register(xml:Init3tButton("btn_2", self),"btn_2")        --  нопка 2 
+  self:Register(xml:Init3tButton("btn_3", self),"btn_3")        --  нопка 3 
+  self:Register(xml:Init3tButton("btn_4", self),"btn_4")        --  нопка 4 
+  self:Register(xml:Init3tButton("btn_5", self),"btn_5")        --  нопка 5  (т€желое)
+  
+  --собираю борохло по рюкзаку
+  local src_items = razgruzka.inventory_items( {"detector"} )  
+  --выдел€ю боеприпасы т€желого оружи€(короче, сортирую)  
+  for sect, count in src_items:pairs() do
+      local rec = razgruzka.make_record(sect, count)
+      if razgruzka.is_ammo_heavy(sect) then
+         table.insert(inv_items_heavy, rec) 
+      else  
+         table.insert(inv_items, rec)
+      end
+  end
+  
+  -- ќпредел€ю информацию по содержимому подсумка
+  razgruzka.update_avail_items() -- боеприпасы могли быть потрачены
+  pouch_content = razgruzka.load_pouch_content("ui_cheat_podsumok")
+  
+  --≈сли надо, добавл€ю в таблицы записи-пустышки
+  if table.getn(inv_items) < 4 then
+     inv_items = razgruzka.add_nope_records(inv_items,4)
+  end
+
+  -- wprintf(" inv_items: ")
+  -- dump_table(inv_items)
+
+  if table.getn(inv_items_heavy) == 0 then
+     inv_items_heavy = razgruzka.add_nope_records(inv_items_heavy, 1)
+  end
+  
+  -- расставл€ю иконки на кнопки
+  self:reset_windows()
+  
+  --  нопка 5
+  if inv_items_heavy[1].sect ~= "?" then
+    self:set_btn_n(5)  
+  end
+  
+  --  нопка 6: подсумок
+  if pouch_content(1).sect ~= "?" then
+    self:set_btn_n(6)
+  end
+end
+
+function pouch_dialog:InitCallBacks()
+  self:AddCallback("btn_stop", ui_events.BUTTON_CLICKED, self.btn_stop, self)     --  нопка ¬ыкл
+  self:AddCallback("btn_empty", ui_events.BUTTON_CLICKED, self.btn_empty, self)     --  нопка ¬ыгрузить
+  self:AddCallback("btn_left_1", ui_events.BUTTON_CLICKED, self.btn_left_1, self)    --  нопка прокрутки слотов влево
+  self:AddCallback("btn_right_1", ui_events.BUTTON_CLICKED, self.btn_right_1, self)  --  нопка прокрутки слотов влево
+  self:AddCallback("btn_left_2", ui_events.BUTTON_CLICKED, self.btn_left_2, self)    --  нопка прокрутки т€жолого влево
+  self:AddCallback("btn_right_2", ui_events.BUTTON_CLICKED, self.btn_right_2, self)  --  нопка прокрутки т€жолого влево
+  self:AddCallback("btn_1", ui_events.BUTTON_CLICKED, self.btn_1, self)         --  нопка 1 
+  self:AddCallback("btn_2", ui_events.BUTTON_CLICKED, self.btn_2, self)         --  нопка 2 
+  self:AddCallback("btn_3", ui_events.BUTTON_CLICKED, self.btn_3, self)         --  нопка 3 
+  self:AddCallback("btn_4", ui_events.BUTTON_CLICKED, self.btn_4, self)         --  нопка 4 
+  self:AddCallback("btn_5", ui_events.BUTTON_CLICKED, self.btn_5, self)         --  нопка 5
+end
+
+function pouch_dialog:OnKeyboard(dik, keyboard_action)
+  CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
+  if keyboard_action == ui_events.WINDOW_KEY_PRESSED then
+    -- на выход повесим Esc
+    if dik == DIK_keys.DIK_ESCAPE then
+     self:btn_stop()
+    elseif dik == DIK_keys.DIK_A then
+     self:btn_left()
+    elseif dik == DIK_keys.DIK_D then
+     self:btn_right()
+    end
+  end
+  return true
+end
+
+function pouch_dialog:btn_left()
+  if clik == 0 then
+    self:btn_left_1()
+  else
+    if button < 5 then
+      self:btn_left_1()
+    else
+      self:btn_left_2()
+    end
+  end
+end
+
+function pouch_dialog:btn_right()
+  if clik == 0 then
+    self:btn_right_1()
+  else
+    if button < 5 then
+      self:btn_right_1()
+    else
+      self:btn_right_2()
+    end
+  end
+end
+
+function pouch_dialog:CloseDialog()
+  pouch_content = nil
+  inv_items = {}
+  inv_items_heavy = {}
+  -- снимаю запрет на подмену инвентар€
+  bind_stalker.restore_weapon()        --восстанавливаю руки и оружие на худе
+  used_items.set_get_flag_use_gadget(1,true)
+  self:GetHolder():start_stop_menu (self,true)
+  vergas_lib.s_play(vergas_lib.set_pr_from_config_str("podsumok","snd_deselect"),1)
+  razgruzka.open_inv_raz_pod = false
+  CUIScriptDialog.CloseDialog(self)
+  self:ClearCallbacks()
+end
+
+function pouch_dialog:btn_stop()                --  нопка ¬ыкл
+	click  = 0       
+	old_click = 0    
+	self:permission_quit()    --восстанавливаю содержимое подсумка и инвнтар€
+	self:del_windows(1, 6)
+	self:del_windows_colour()
+	self:CloseDialog()
+end
+
+function pouch_dialog:permission_quit()
+   --сохрон€ю наполн€емость подсумка в переменной
+  pouch_content:save()
+  razgruzka.close_inventory()    
+end
+-------------------------------------------------------------------------
+--расстановка иконок и количества на кнопках
+-------------------------------------------------------------------------
+function load_record(tbl, index) -- универсальна€ загрузка пары "секци€, количество"
+ local rec = tbl[index]
+ if rec.sect ~= nil then
+    return rec.sect, rec.count 
+ else
+    for sect, count in pairs(rec) do
+      return sect, count
+    end
+ end   
+ return "?", 0
+end
+
+
+
+function pouch_dialog:set_btn_n(btn_num)
+    self:del_windows(btn_num, btn_num)
+    
+    local rects = { }
+    rects[1] = 
+      {
+        { 82+24,352,33,33  },
+        { 154+24,352,33,33 },
+        { 231+24,352,33,33 },
+        { 308+24,352,33,33 },
+        { 430+33,352,33,33 },
+        { 269+33,281,33,33 }
+        
+      }
+    rects[2] =   
+      {
+        { 82+8,352,66,33 },    -- 1
+        { 154+8,352,66,33 },   -- 2
+        { 231+8,352,66,33 },   -- 3
+        { 308+8,352,66,33 },   -- 4
+        { 430+16,352,66,33 },  -- 5
+        { 269+16,281,66,33 }   -- 6 
+      }      
+    rects[3] = 
+      {
+         {}, 
+         {},
+         {},
+         {},
+         { 430,352,99,33 },
+         { 269,281,99,33 }
+      }
+    
+
+    --расставл€ет иконки на худе подсумка    
+  
+    local info_t = inv_items 
+    local n_rec = btn_num
+    
+    if btn_num == 5 then
+       info_t = inv_items_heavy
+       n_rec  = 1
+    elseif btn_num == 6 then
+       info_t = pouch_content(true)
+       n_rec = 1
+    end
+    
+    local sect, count = load_record(info_t, n_rec)
+  if count == 0 then return end 
+  -- иконка
+  local ik_t = vergas_lib.set_pr_from_config(sect,"inv_grid_width")
+  local rlist = rects[ik_t]
+  local rect = { 0, 0, 1, 1 }
+  if rlist then rect = rlist[btn_num] end
+  return self:add_static("btn_"..tostring(btn_num), rect, count, nil, "", sect)    
+end
+
+-------------------------------------------------------------------------
+--работа кнопок зар€дки подсумка
+-------------------------------------------------------------------------
+function pouch_dialog:btn_n(btn_num)
+	local info_t = inv_items 
+	local n_rec = btn_num
+	   
+	if btn_num == 5 then
+		info_t = inv_items_heavy
+		n_rec  = 1
+	elseif btn_num == 6 then
+		info_t = pouch_content(true)
+		n_rec = 1
+	end
+
+	local names = { "ui_btn_4", "ui_btn_5", "ui_btn_5", "ui_btn_6" }
+	local rects =   
+	  {
+		{ 82,352,71,33 },   
+		{ 154,352,76,33 },
+		{ 231,352,76,33 },
+		{ 308,352,71,33 },                   
+	  }
+
+	local sect, count = load_record(info_t, n_rec)
+	if count == 0 then return end
+
+	self:set_click(btn_num)
+	if click == 1 then            -- первый клик
+		-- подсвечиваю кнопку
+		self:set_static_colour( rects[btn_num], names[btn_num] )
+		self:set_btn_n(btn_num)
+	else                  -- второй клик
+		self:del_windows_colour()
+		old_click = 0
+		-- процедура загрузки боеприпасов в подсумок
+		self:take_in_podsumok(btn_num)
+		self:set_btn_n(btn_num)
+	end
+end
+
+
+function pouch_dialog:btn_1()            --  нопка 1
+  button = 1
+   self:btn_n(1)
+end
+
+function pouch_dialog:btn_2()            --  нопка 2
+   button = 2
+   self:btn_n(2)
+end
+
+function pouch_dialog:btn_3()            --  нопка 3
+   button = 3
+   self:btn_n(3)
+end
+
+function pouch_dialog:btn_4()            --  нопка 4 
+   button = 4
+   self:btn_n(4) 
+end
+
+function pouch_dialog:btn_5()            -- “€желое оружие
+	local sect, count = load_record(inv_items_heavy, 1)
+	button = 5
+	if count ~= 0 then
+		self:set_click(5)
+		if click == 1 then            	-- первый клик
+			--подсвечиваю кнопку
+			self:set_static_colour( {405,352,143,33} ,"ui_btn_3")
+			self:set_btn_n(5)
+		else                  			-- второй клик
+			self:del_windows_colour()
+			old_click = 0
+			self:take_in_podsumok(5)
+			self:del_windows(5, 5)
+			self:set_btn_n(5)
+		end
+	end
+end
+
+
+function pouch_dialog:set_click(j)
+	--”бираю запрет на зар€дку т€жолого оружи€
+
+	if old_click == 0 then    -- по кнопкам не кликали
+		click = 1        -- кнопка j превый клик
+	elseif old_click == j  then  -- кнопка j уже кликнута
+		click = 2        -- кнопка j второй клик
+	elseif (old_click ~= j) and (old_click ~= 0)  then   -- кликали по другой кнопке
+		click = 1
+	end
+
+	old_click = j
+end
+
+function pouch_dialog:set_static_colour(rect, textr)
+  self:del_windows_colour()
+  self:add_static("wnd_colour", rect, "", textr)
+end
+
+-------------------------------------------------------------------------
+--работа кнопок прокрутки
+-------------------------------------------------------------------------
+
+function pouch_dialog:btn_left_1()                -- нопка прокрутки слотов влево
+	self:del_windows_colour(2)
+	inv_items = razgruzka.list_step_left(inv_items,4)
+	vergas_lib.s_play(vergas_lib.set_pr_from_config_str("podsumok","snd_scroll"),1)
+	self:reset_windows()
+end
+
+function pouch_dialog:btn_right_1()              -- нопка прокрутки слотов вправо
+	self:del_windows_colour(2)
+	inv_items = razgruzka.list_step_right(inv_items,4)
+	vergas_lib.s_play(vergas_lib.set_pr_from_config_str("podsumok","snd_scroll"),1)
+	self:reset_windows()
+end
+
+function pouch_dialog:btn_left_2()                -- нопка прокрутки слотов влево (т€желое)
+	self:del_windows_colour(2)
+	inv_items_heavy = razgruzka.list_step_left(inv_items_heavy,1)
+	vergas_lib.s_play(vergas_lib.set_pr_from_config_str("podsumok","snd_scroll_heavy"),1)
+	self:set_btn_n(5)
+end
+
+function pouch_dialog:btn_right_2()              -- нопка прокрутки слотов вправо (т€желое)
+	self:del_windows_colour(2)
+	inv_items_heavy = razgruzka.list_step_right(inv_items_heavy,1)
+	vergas_lib.s_play(vergas_lib.set_pr_from_config_str("podsumok","snd_scroll_heavy"),1)
+	self:set_btn_n(5)
+end
+
+-------------------------------------------------------------------------
+--функции перемещени€ хабара 
+-------------------------------------------------------------------------
+function pouch_dialog:sound_for_item(sect, play, suffix)
+   local sound = false
+   if sect:sub (1 , 4) == "ammo" then
+    if razgruzka.is_ammo_gren(sect) then
+      --подствольные гранаты
+      sound = vergas_lib.set_pr_from_config_str("podsumok","snd_ammo-grenade_"..suffix)
+    else
+      -- просто патроны
+      sound = vergas_lib.set_pr_from_config_str("podsumok","snd_ammo_"..suffix)
+    end
+  elseif razgruzka.is_medical(sect) then
+    --медицина
+    sound = vergas_lib.set_pr_from_config_str("podsumok","snd_medkit_"..suffix)
+  elseif razgruzka.is_grenade(sect) then
+    --гранаты
+    sound = vergas_lib.set_pr_from_config_str("podsumok","snd_grenade_"..suffix)
+   end
+   if sound and play then
+      vergas_lib.s_play(sound, 1)   
+   end
+   
+   return sound
+end
+
+function pouch_dialog:take_in_podsumok(btn, alt_t)
+  local max_mag = 0
+  local take_max = 0
+    local take_from = inv_items  
+
+    local src_rec = {}
+    
+  -- и засовываю
+  if btn < 5 then --обычное оружие        
+        src_rec = inv_items[btn]    
+    else           --т€жeлое оружие
+        src_rec = inv_items_heavy[1]       
+  end
+    
+    if src_rec == nil then
+       wprintf("~C0C #ERROR:~C07 can't take nil, btn = %d ", btn)  
+       return 
+    end
+         
+    local sect = src_rec.sect 
+  if sect==nil or sect == "?" or string.find(sect, "^detector") then return end
+    
+    wprintf(" trying take~C0A %s~C07 into podsumok ", sect)
+    
+  --определ€ю состо€ние подсумка(а есть ли что там?)
+    local dest_rec = pouch_content(1) 
+  if dest_rec.sect ~= "?" then
+    --в подсумке что-то есть
+    if dest_rec.sect ~= src_rec.sect then
+      --пытаюсь засунуть не то, что уже лежит
+            wprintf("~C04 #REJECT: cannot put item with section ~=~C0E %s~C07 ", src_rec.sect)
+      return
+    end
+    max_mag = razgruzka.get_capacity_pouch(dest_rec.sect)
+    if dest_rec.count == max_mag then
+      --подсумок заполнен
+            wprintf("~C04 #REJECT: maximum count achieved =~C0D %d~C07 ", dest_rec.count)
+      return
+    end  
+    --определ€ю, сколько можно засунуть
+    if max_mag > dest_rec.count then
+       take_max = max_mag - dest_rec.count
+    end
+  else
+    take_max = razgruzka.get_capacity_pouch(src_rec.sect)
+    
+    if take_max == 0 then
+           wprintf("~C04 #REJECT: cannot put this item ~C07")
+       --это нельз€ положить
+       return
+    end
+  end
+  
+    local rec = src_rec    
+  local rbx = pouch_content(1)
+    
+    rbx.sect = rec.sect
+        
+  if  rec.count >= take_max then
+    rbx.count = rbx.count + take_max
+    rec.count = rec.count - take_max
+  else
+    rbx.count = rbx.count + rec.count
+    rec.count = 0 
+  end
+  if rbx.count == 0 then
+     rbx.sect = "?"
+  end
+  
+  --играю звук
+    self:sound_for_item(rbx.sect, true, "load") 
+  --обновл€ю иконку 
+  self:set_btn_n(6)
+end
+
+function pouch_dialog:btn_empty()          --  нопка ¬ыгрузить из подсумка
+	if not vergas_rucksack.have() then return end
+	local rec = pouch_content(1)
+	local sect = rec.sect
+
+	if sect == "?" then
+		--в подсумке пусто и выбрасывать нечего
+		return
+	end
+
+	--определ€ю: т€желое вынаю или нет
+	local heavy_tmp = vergas_lib.str_explode("|",vergas_lib.set_pr_from_config_str("razgruzka","heavy_weapon_ammo"),true)
+	local flag = false
+
+	if table.getn(heavy_tmp) ~= 0 then
+		for j = 1, table.getn(heavy_tmp) do
+			if heavy_tmp[j] == sect then
+				flag = true
+			end
+		end
+	end
+
+	if flag then
+		--т€желое вынаю
+		inv_items_heavy = razgruzka.reset_records(inv_items_heavy, sect, rec.count)
+		--обновл€ю иконку 
+		self:set_btn_n(5)
+	else
+		--обычное на выброс пошло
+		inv_items = razgruzka.reset_records(inv_items, sect, rec.count)
+		-- расставл€ю иконки на кнопки
+		self:reset_windows()
+	end
+	--играю звук
+	self:sound_for_item(sect, true, "reload")  
+	rec.sect = "?"
+	rec.count = 0
+	--обновл€ю иконку 
+	self:set_btn_n(6)
+end
+-------------------------------------------------------------------------
+--функции общего назначени€
+-------------------------------------------------------------------------
+function pouch_dialog:reset_windows()  
+  self:del_windows(1, 4)
+  for i = 1, 4 do  
+     if inv_items[i].sect ~= "?" then
+         self:set_btn_n(i)
+     end
+    end 
+  
+end
+
+function pouch_dialog:del_windows(from, to)  --убираю объ€вленные статики
+    for i = from, to do 
+        self:remove_static("btn_"..tostring(i))   
+  end  
+end
+
+function pouch_dialog:del_windows_colour(param)
+    self:remove_static("wnd_colour")  
+  
+  if param == 2 then
+    click  = 0       
+    old_click = 0
+  end
+end
+
+function pouch_dialog:del_windows_colour_2()
+  if self:remove_static("wnd_colour") then        
+    click  = 0       
+    old_click = 0
+  end
+end

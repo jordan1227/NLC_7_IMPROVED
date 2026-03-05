@@ -1,0 +1,265 @@
+; Remington 870 (FD)
+[wpn_mp153]:weapon_immunities,base_wpn_shotgun
+GroupControlSection			= spawn_group
+discovery_dependency 		= 
+$spawn                   	= "weapons\mp153"
+$npc			 			= on
+$prefetch 		 			= 8
+scheduled                	= off
+cform                    	= skeleton
+class                    	= W_SHOTGN
+min_radius               	= 0
+max_radius               	= 50
+
+ef_main_weapon_type			= 1
+ef_weapon_type				= 7
+
+holder_range_modifier		= 1.0
+holder_fov_modifier			= 0.7
+
+tri_state_reload			= on
+
+cost					 	= 22000
+weapon_class			 	= shotgun
+
+ammo_limit		 			= 60
+ammo_current		 		= 11
+ammo_elapsed		 		= 0
+
+ammo_mag_size		 		= 11
+ammo_class		 			= ammo_12x70_buck,ammo_12x76_dart,ammo_12x76_zhekan
+
+fire_dispersion_base		= 0.4
+control_inertion_factor		= 1.35f
+
+cam_relax_speed				= 6.5
+cam_dispersion				= 2.2
+cam_dispersion_inc			= 2.2
+cam_dispertion_frac			= 0.8
+cam_max_angle				= 30
+cam_max_angle_horz			= 10
+cam_step_angle_horz			= 1.3
+
+fire_dispersion_condition_factor = 2.2
+misfire_probability 		= 0.004
+misfire_condition_k			= 0.3
+condition_shot_dec 			= 0.0005
+
+hand_dependence 	 		= 1
+single_handed				= 0
+
+slot 				 		= 2
+animation_slot		 		= 9
+
+inv_name					= wpn-winchester_m1
+inv_name_short				= wpn-winchester_m1
+description					= enc_weapons1_wpn-winchester_m1
+
+default_to_ruck				= false
+
+inv_weight					= 3.7
+
+inv_grid_height                                    = 2
+inv_grid_width                                     = 6
+inv_grid_x                                         = 54
+inv_grid_y                                         = 8
+
+direction                	= 0, 0, 1
+shell_point				 	= 0.0, 0.180, 0.647
+fire_point               	= 0.0, 0.158, 0.647
+fire_point2              	= 0.0, 0.158, 0.647
+
+flame_particles		   		= 
+smoke_particles		   		= amik\weapons\data\smoke_particles\smokeshoot_1
+
+PDM_disp_base 				= 2.0
+PDM_disp_vel_factor 		= 3.0
+PDM_disp_accel_factor 		= 5.0
+PDM_crouch					= 1.9
+PDM_crouch_no_acc			= 0.7
+
+hit_power        			= 1.5 ; 1.25
+hit_impulse      			= 1
+hit_type 					= fire_wound
+
+fire_distance            	= 60
+bullet_speed			 	= 260
+rpm                      	= 90 ; 240
+
+use_aim_bullet				= false
+time_to_aim					= 1.0
+
+hud                      	= wpn_winchester_m1_hud
+normal                   	= 0, 1, 0
+position                 	= -0.024, -0.100, 0.0
+orientation              	= 0, 0, 0 
+
+strap_orientation                                  = -15,-9,110
+strap_position                                     = -0.26,-0.10,0.05
+
+startup_ammo             	= 10
+visual 						= dynamics\weapons\wpn_winchester1300\wpn_winchester1300_trapper.ogf
+
+light_color		 			= 0.6,0.5,0.3
+light_range		 			= 6.0
+light_var_color		 		= 0.05
+light_var_range		 		= 0.5
+light_time 		 			= 0.2
+
+ph_mass			 			= 3
+
+scope_status				= 2
+silencer_status				= 0
+grenade_launcher_status		= 0
+
+scope_name = wpn_addon_eotech
+scope_names = ac10632, wpn_addon_eotech, microt1
+
+scope_respawn_ac10632 = wpn_wincheaster1300_trapper_ac10632
+scope_respawn_wpn_addon_eotech = wpn_wincheaster1300_trapper_eot
+scope_respawn_microt1 = wpn_wincheaster1300_trapper_microt1
+
+
+scope_mode 					= 3
+scope_name 					= wpn_addon_eotech
+
+scope_zoom_factor = 90
+
+scope_x                     = 70		; offset in inventory icon
+scope_y                     = -3
+silencer_x                  = 0		; offset in inventory icon
+silencer_y                  = 0
+grenade_launcher_x          = 0		; offset in inventory icon
+grenade_launcher_y          = 0
+
+snd_shoot					= weapons\mossberg\m590_muzzle_mono_m590_d
+snd_shoot_duplet			= weapons\mossberg\m590_muzzle_mono_m590_d
+
+snd_bore                                           = weapons\generic_draw
+snd_draw                                           = weapons\shotgun_draw
+snd_empty                                          = weapons\spas12\spas12_empty, 0.5
+snd_holster                                        = weapons\shotgun_holster
+snd_add_cartridge                                  = weapons\mossberg\mossberg_reload
+snd_add_cartridge_empty                            = weapons\mossberg\mossberg_reload_empty
+snd_open_weapon                                    = weapons\mp133\mp133_reload_start
+snd_close_weapon                                   = weapons\mp133\mp133_reload_end
+snd_reload                                         = weapons\mossberg\mossberg_reload
+snd_reload_jammed                                 = weapons\mossberg\mossberg_misfire
+snd_sprint_idle								   	   = weapons\sprint_assault
+
+[wpn_winchester_m1_hud]:hud_base
+
+aim_hud_offset_pos = -0.063000,0.028000,-0.09
+aim_hud_offset_rot = -0.020500,0.000000,0.000000
+
+aim_hud_offset_pos_16x9 = -0.063000,0.028000,-0.09
+aim_hud_offset_rot_16x9 = -0.020500,0.000000,0.000000
+
+
+fire_bone      									   = muzzle
+fire_point2										   = 0,0,0
+fire_bone2										   = muzzle
+
+;shell_point										   = -50,-50,-50
+shell_point										   = 0.01,0.01,-0.04
+shell_dir       								   = 0,1,0
+shell_bone										   = wpn_body
+
+lock_time_end_anm_add_cartridge = 0.001
+lock_time_end_anm_add_cartridge_empty = 0.001
+anm_open_empty                                     = m870_reload_empty_start, idle
+anm_add_cartridge_empty                            = m870_reload_empty, reload_empty
+anm_close_empty                                    = m870_reload_end, idle
+anm_open                                           = m870_reload_start, idle
+anm_add_cartridge                                  = m870_reload, reload
+anm_close                                          = m870_reload_end, idle
+anm_reload_jammed				   				   = m870_misfire, misfire
+anm_bore                                           = m870_idle
+anm_hide                                           = m870_holster
+anm_idle                                           = m870_idle
+anm_idle_aim                                       = m870_idle_aim
+anm_idle_moving_slow                               = m870_moving_slow
+anm_idle_moving                                    = m870_moving
+anm_idle_moving_crouch                             = m870_crouch
+anm_idle_aim_moving             				   = m870_moving_aim
+anm_shots                                          = m870_shoot
+anm_show                                           = m870_draw
+anm_shots_when_aim                                 = m870_shoot_aim
+
+anm_idle_sprint_start         						   = m870_sprint_start
+anm_idle_sprint         						   = m870_sprint
+anm_idle_sprint_end         						   	   = m870_sprint_end
+anm_idle_sprint_end_jammed = m870_sprint_end
+anm_idle_sprint_start_jammed = m870_sprint_start
+
+anm_idle_sprint_end_empty = m870_sprint_end
+anm_idle_sprint_start_empty = m870_sprint_start
+
+anm_headlamp_on                                  = m870_flash
+; anm_gasmask                                        = m870_clear
+
+anm_headlamp_on_empty                                  = m870_flash
+; anm_gasmask_empty                                        = m870_clear
+
+fire_point										   = 0.000000,0.000000,0.182399
+item_visual                                        = dynamics\weapons\wpn_winchester1300\wpn_winchester1300_trapper_hud
+hands_position_16x9								   = 0.063125,0.050025,-0.153674
+hands_orientation_16x9							   = 0.000000,0.000000,0.000000
+hands_position									   = 0.063125,0.050025,-0.153674
+hands_orientation								   = 0.000000,0.000000,0.000000
+
+
+[wpn_wincheaster1300_trapper_ac10632]:wpn_mp153
+$spawn             			= "weapons\wpn_wincheaster1300_trapper_ac10632"
+visual					= dynamics\weapons\wpn_winchester1300\wpn_winchester1300_trapper_ac10632.ogf
+hud					= wpn_winchester1300_trapper_ac10632_hud
+scope_x                                      = 90
+scope_y                                      = -1
+
+scope_respawn = wpn_mp153
+scope_name = ac10632
+
+[wpn_winchester1300_trapper_ac10632_hud]:wpn_winchester_m1_hud
+item_visual            	 		= dynamics\weapons\wpn_winchester1300\wpn_winchester1300_trapper_ac10632_hud.ogf
+aim_hud_offset_pos = -0.063000,0.005500,-0.07
+aim_hud_offset_rot = -0.020500,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.063000,0.005500,-0.07
+aim_hud_offset_rot_16x9 = -0.020500,0.000000,0.000000
+
+
+[wpn_wincheaster1300_trapper_eot]:wpn_mp153
+$spawn             			= "weapons\wpn_wincheaster1300_trapper_eot"
+hud					= wpn_winchester1300_trapper_eot_hud
+visual					= dynamics\weapons\wpn_winchester1300\wpn_winchester1300_trapper_eot.ogf
+scope_x                                      = 94
+scope_y                                      = -1
+
+scope_respawn = wpn_mp153
+scope_name = wpn_addon_eotech
+
+[wpn_winchester1300_trapper_eot_hud]:wpn_winchester_m1_hud
+item_visual                		= dynamics\weapons\wpn_winchester1300\wpn_winchester1300_trapper_eot_hud.ogf
+aim_hud_offset_pos = -0.063000,0.003000,-0.07
+aim_hud_offset_rot = -0.020500,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.063000,0.003000,-0.07
+aim_hud_offset_rot_16x9 = -0.020500,0.000000,0.000000
+
+
+[wpn_wincheaster1300_trapper_microt1]:wpn_mp153
+$spawn             			= "weapons\wpn_wincheaster1300_trapper_microt1"
+hud					= wpn_winchester1300_trapper_microt1_hud
+visual					= dynamics\weapons\wpn_winchester1300\wpn_winchester1300_trapper_micro-t1.ogf
+scope_x                                      = 94
+scope_y                                      = -1
+
+scope_respawn = wpn_mp153
+scope_name = microt1
+
+[wpn_winchester1300_trapper_microt1_hud]:wpn_winchester_m1_hud
+item_visual                		= dynamics\weapons\wpn_winchester1300\wpn_winchester1300_trapper_micro-t1_hud.ogf
+
+aim_hud_offset_pos = -0.063000,0.002000,-0.07
+aim_hud_offset_rot = -0.020500,0.000000,0.000000
+
+aim_hud_offset_pos_16x9 = -0.063000,0.002000,-0.07
+aim_hud_offset_rot_16x9 = -0.020500,0.000000,0.000000

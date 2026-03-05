@@ -1,0 +1,125 @@
+function init(obj)
+	local b = upg_outfit_binder(obj)
+	obj:bind_object(b)
+end
+
+---------------------------------------------------------------------------------------------
+-- Порядок загрузки:
+-- reload
+-- reinit
+-- load
+-- net_spawn
+---------------------------------------------------------------------------------------------
+class "upg_outfit_binder"(object_binder)
+function upg_outfit_binder:__init(obj) super(obj)
+end
+
+function upg_outfit_binder:reload(section)
+	object_binder.reload(self, section)
+end
+
+function upg_outfit_binder:net_spawn(sobj)
+	if not object_binder.net_spawn(self, sobj) then return false end
+	return true
+end
+
+function upg_outfit_binder:update(delta)
+	object_binder.update(self, delta)
+
+	self.time = time_global()
+	if not self.timer then self.timer = 0 end
+	if self.timer < self.time then
+		-- local pt = profile_timer()
+		-- pt:start()
+
+		local parent = self.object:parent()
+		if parent and parent:is_actor() then
+			update_outfit(self.object, is_upgraded(self.object))
+		end
+
+		-- pt:stop()
+		-- log2("[%s.update]: [%s] Time: %.2fms (%s)", script_name(), self.object:name(), pt:time() / 1000, pt:time())
+		self.timer = self.time + 12000
+	end
+end
+
+function is_upgraded(obj)
+	local sobj = obj and obj:get_alife_object()
+	local end_time = sobj and get_end_time(sobj)
+	return end_time and end_time > timers.Get_Game_Minutes()
+end
+
+function get_end_time(sobj)
+	local ini = sobj and sobj:spawn_ini()
+	return ini and ini:section_exist("upg") and get_u32("upg", "t", 0, ini) or 0
+end
+
+function set_end_time(sobj, time)
+	local ini = sobj and sobj:spawn_ini()
+	if ini then
+		ini.readonly = false
+		ini:w_u32("upg", "t", time)
+		sobj:save_spawn_ini()
+	end
+end
+
+-- Manool: на сколько процентов увеличить статы костюма
+add_precent = 20
+local coeff = 1 + (add_precent / 100)
+
+local s_stats = {
+	"burn_protection",
+	"chemical_burn_protection",
+	"fire_wound_protection",
+	"explosion_protection",
+	"radiation_protection",
+	"shock_protection",
+	"strike_protection",
+	"telepatic_protection",
+	"wound_protection"
+}
+
+-- Manool: кэширование параметров для оптимизации
+local g_cache = {}
+function preload_params(sect)
+	if g_cache[sect] == nil then
+		local t = {}
+		t.protection = {}
+		for _, k in ipairs(s_stats) do
+			t.protection[k] = get_float(sect, k, 0)
+		end
+		t.aiw = get_float(sect, "additional_inventory_weight", 0)
+		t.aiw2 = get_float(sect, "additional_inventory_weight2", 0)
+		t.pwr_loss = get_float(sect, "power_loss", 0)
+		g_cache[sect] = t
+	end
+	return g_cache[sect]
+end
+
+local g_diff = tonumber(level.get_game_difficulty())
+function update_outfit(obj, bool_upg)
+	local outfit, sect, cond = obj:get_outfit(), obj:section(), obj:condition()
+
+	local t_def = preload_params(sect)
+	-- log3("t_def = %s", t_def)
+
+	if bool_upg then
+		for k, v in pairs(t_def.protection) do
+			v = v * coeff
+			if v > 0.95 then v = 0.95 end
+			outfit[k] = v
+		end
+		outfit.hit_power_coef = 0.25
+		set_outfit_additional_inventory_weight(obj, math.ceil(t_def.aiw * coeff * cond))
+		set_outfit_additional_inventory_weight2(obj, math.ceil(t_def.aiw2 * coeff * cond))
+		-- if g_diff >= 3 then outfit.power_loss = (t_def.pwr_loss * 1.2) end -- Manool: штраф к power_loss при намазке
+	else
+		for k, v in pairs(t_def.protection) do
+			outfit[k] = v
+		end
+		outfit.hit_power_coef = 1
+		set_outfit_additional_inventory_weight(obj, math.ceil(t_def.aiw * cond))
+		set_outfit_additional_inventory_weight2(obj, math.ceil(t_def.aiw2 * cond))
+		outfit.power_loss = t_def.pwr_loss
+	end
+end

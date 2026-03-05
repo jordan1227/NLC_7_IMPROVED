@@ -1,0 +1,131 @@
+function r_shape(packet)
+	local s
+	local st = {}
+	st.count = packet:r_u8()
+	st.shapes = {}
+	for i=1, st.count do
+		s = {}
+		s.type = packet:r_u8()
+		if s.type == 0 then
+			s.center = packet:r_vec3()
+			s.radius = packet:r_float()
+		else
+			s.axis_x = packet:r_vec3()
+			s.axis_y = packet:r_vec3()
+			s.axis_z = packet:r_vec3()
+			s.offset = packet:r_vec3()
+		end
+		st.shapes[i] = s
+	end
+	return st
+end
+
+function w_shape(packet, st)
+	local s
+	packet:w_u8(st.count)
+	for i=1, st.count do
+		s = st.shapes[i]
+		packet:w_u8(s.type)
+		if s.type == 0 then
+			packet:w_vec3(s.center)
+			packet:w_float(s.radius)
+		else
+			packet:w_vec3(s.axis_x)
+			packet:w_vec3(s.axis_y)
+			packet:w_vec3(s.axis_z)
+			packet:w_vec3(s.offset)
+		end
+	end
+end
+
+function rewrite_restrictor(se_obj, custom, radius)
+	local packet = net_packet()
+	se_obj:STATE_Write(packet)
+	local game_vertex_id	= packet:r_u16()
+	local distance		= packet:r_float()
+	local direct_control	= packet:r_s32()
+	local level_vertex_id	= packet:r_s32()
+	local object_flags		= packet:r_s32()
+	local custom_data		= packet:r_stringZ()
+	local story_id		= packet:r_s32()
+	local spawn_story_id	= packet:r_s32()
+	local shape		= r_shape(packet)
+	local restrictor_type	= packet:r_u8()
+
+	custom_data = custom
+	shape = {}
+	shape.count = 1
+	shape.shapes = {}
+	shape.shapes[1] = {}
+	shape.shapes[1].type = 0
+	shape.shapes[1].center = vector():set(0,0,0)
+	shape.shapes[1].radius = radius
+
+	packet:w_u16(game_vertex_id)
+	packet:w_float(distance)
+	packet:w_s32(direct_control)
+	packet:w_s32(level_vertex_id)
+	packet:w_s32(object_flags)
+	packet:w_stringZ(custom_data)
+	packet:w_s32(story_id)
+	packet:w_s32(spawn_story_id)
+	w_shape(packet, shape)
+	packet:w_u8(restrictor_type)
+	se_obj:STATE_Read(packet, packet:w_tell() - packet:r_tell())
+end
+
+
+function dv_lab_rest()
+	local se_obj = alife():create( "space_restrictor", 
+		vector():set( 122.5996798039551, -2.871056556702, -256.276153564453 ), 
+		319419, 812 
+	)
+	local custom = "[logic]\n"..
+	"active = sr_idle\n"..
+	"[sr_idle]\n"..
+	"on_actor_inside = nil %=kotovod.lab_info%"
+	rewrite_restrictor( se_obj, custom, 2.0 )
+end
+
+function test()
+	local se_obj = alife():create( "space_restrictor", 
+		vector():set( -205.584686279297, -20.046098709106, -147.933776855469 ),
+		47192, 61
+	)
+	local custom = "[logic]\n"..
+	"active = sr_idle\n"..
+	"[sr_idle]\n"..
+	"on_actor_inside = sr_timer\n"..
+	"[sr_timer]\n"..
+	"type = dec\n"..
+	"start_value = 3600000\n"..
+	"argb = 255,255,255,255\n"..
+	"on_value = 0 | nil\n"
+	rewrite_restrictor( se_obj, custom, 16.0 )
+end
+
+function rad_prohod_restr() 
+    local obj = alife():create("space_restrictor",vector():set(563.60,-42.75,176.10),197290,1905)
+    local custom = "[logic]\ncfg = scripts\\rad\\rad_prohod_restr.ltx"
+	kotovod_restrictors.rewrite_restrictor(obj, custom, 10.0) 
+end
+
+function dt_mns_restr()
+	local res = g_sim:create("space_restrictor",vector():set(31.3242,-0.6369,140.5923),67363,1412)
+    local custom = "[logic]\ncfg = scripts\\ros\\dt_mns_restr.ltx"	
+	kotovod_restrictors.rewrite_restrictor(res, custom, 15.0)
+end
+
+function aver_merc_restr()
+	local res = g_sim:create("space_restrictor",vector():set(-365.9754,52.9509,389.1824),238975,2887)
+	local custom = "[logic]\nactive = sr_idle@idle\n[sr_idle@idle]\non_info = {+mil_trader_aver_start_info} sr_idle@work\n[sr_idle@work]\non_actor_inside = {+mil_trader_aver_have} nil %=sak.spawn_aver_mercs()%"
+	kotovod_restrictors.rewrite_restrictor(res, custom, 1.0)
+	sak.aver_merc_items(res.id)
+end
+
+function x12_zaval_restr()
+	local res = g_sim:create("space_restrictor",vector():set(-19.8053,-9.5570,-51.7900),3531,2664)
+	local custom = "[logic]\nactive = sr_idle@work\n[sr_idle@work]\non_actor_inside = {-x12_mercs_fire} nil %=sak.x12_zaval_msg() +mil_mercs_fire +x12_mercs_fire%"
+	set_value("x12_zaval_restr_id", res.id)
+	kotovod_restrictors.rewrite_restrictor(res, custom, 5.0)
+end

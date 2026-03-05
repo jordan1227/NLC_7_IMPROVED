@@ -1,0 +1,8 @@
+[logic]
+active = sr_idle
+
+[sr_idle]
+on_actor_inside = %+gg_in_hos_junkman =sak_dialog.out_all_money% sr_idle2
+
+[sr_idle2]
+on_actor_outside = %-gg_in_hos_junkman =sak_dialog.in_all_money% sr_idle

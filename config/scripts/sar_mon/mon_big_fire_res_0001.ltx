@@ -1,0 +1,9 @@
+[logic]
+active = sr_idle@wait
+ 
+[sr_idle@wait]
+on_actor_inside = {+mon_gas_on} nil, sr_idle@work
+ 
+[sr_idle@work]
+on_actor_inside = {-mon_gas_on} nil %=aes_kill_actor%
+on_info = {+mon_gas_on} nil

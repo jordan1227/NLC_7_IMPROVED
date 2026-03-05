@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<game_dialogs>
+
+	<dialog id="mil_screw_flamethrower">
+		<precondition>sak_dialog.flamethrower_bad_have</precondition>	
+		<dont_has_info>flamethrower_quest_start</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>mil_screw_flamethrower_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>mil_screw_flamethrower_1</text>
+				<next>21</next>
+				<next>22</next>
+			</phrase>
+			<phrase id="21">
+			<precondition>sak_dialog.flamethrower_bad_have</precondition>
+				<text>mil_screw_flamethrower_21</text>
+				<action>sak_dialog.give_bad_flamethrower</action>
+				<next>31</next>
+			</phrase>
+			<phrase id="31">
+				<text>mil_screw_flamethrower_31</text>
+				<action>sak_dialog.pre_rolled_arts_give("screw_flamethrower_rew")</action>
+			</phrase>
+			<phrase id="22">
+				<text>mil_screw_flamethrower_22</text>
+				<next>32</next>
+			</phrase>
+			<phrase id="32">
+				<text>mil_screw_flamethrower_32</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>mil_screw_flamethrower_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>mil_screw_flamethrower_5</text>
+				<next>6</next>
+			</phrase>
+			<phrase id="6">
+				<text>mil_screw_flamethrower_6</text>
+				<next>7</next>
+			</phrase>
+			<phrase id="7">
+				<text>mil_screw_flamethrower_7</text>
+				<give_info>flamethrower_quest_start</give_info>
+				<action>sak_dialog.spawn_gorelka</action>
+				<next>8</next>
+			</phrase>
+			<phrase id="8">
+				<text>mil_screw_flamethrower_8</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	
+	<dialog id="escape_trader_flamethrower_dialog">
+		<has_info>flamethrower_quest_start</has_info>
+		<dont_has_info>flamethrower_sidor_tambovskiy</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>escape_trader_flamethrower_dialog_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>escape_trader_flamethrower_dialog_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>escape_trader_flamethrower_dialog_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>escape_trader_flamethrower_dialog_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>escape_trader_flamethrower_dialog_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<action>sak_dialog.spawn_tambovskiy</action>
+				<give_info>flamethrower_sidor_tambovskiy</give_info>
+				<text>escape_trader_flamethrower_dialog_5</text>
+				<next>6</next>
+			</phrase>
+			<phrase id="6">
+				<text>escape_trader_flamethrower_dialog_6</text>
+				<next>7</next>
+			</phrase>
+			<phrase id="7">
+				<text>escape_trader_flamethrower_dialog_7</text>
+				<next>8</next>
+			</phrase>
+			<phrase id="8">
+				<text>escape_trader_flamethrower_dialog_8</text>
+				<next>9</next>
+			</phrase>
+			<phrase id="9">
+				<text>escape_trader_flamethrower_dialog_9</text>
+			</phrase>
+		</phrase_list>
+	</dialog>
+
+	<dialog id="gar_flamethrower_dialog">
+		<phrase_list>
+			<phrase id="0">
+				<action>dialogs.no_trade_trader</action>
+				<text></text>
+				<next>100</next>
+				<next>200</next>
+				<next>300</next>
+			</phrase>
+			<phrase id="100">
+				<dont_has_info>flamethrower_repair_start</dont_has_info>
+				<dont_has_info>flamethrower_tambovskiy_dialog</dont_has_info>
+				<next>101</next>
+			</phrase>
+			<phrase id="200">
+				<dont_has_info>flamethrower_repair_start</dont_has_info>
+				<has_info>flamethrower_tambovskiy_dialog</has_info>
+				<next>201</next>
+			</phrase>
+			<phrase id="300">
+				<has_info>flamethrower_repair_start</has_info>
+				<next>301</next>
+			</phrase>
+			<phrase id="101">
+				<text>gar_flamethrower_dialog_101</text>
+				<next>102</next>
+			</phrase>
+			<phrase id="102">
+				<text>gar_flamethrower_dialog_102</text>
+				<next>103</next>
+			</phrase>
+			<phrase id="103">
+				<text>gar_flamethrower_dialog_103</text>
+				<give_info>flamethrower_tambovskiy_dialog</give_info>
+				<next>1041</next>
+				<next>1042</next>
+			</phrase>
+			<phrase id="1041">
+				<text>gar_flamethrower_dialog_1041</text>
+				<next>1051</next>
+			</phrase>
+			<phrase id="1051">
+				<text>gar_flamethrower_dialog_1051</text>
+			</phrase>
+			<phrase id="1042">
+			<precondition>sak_dialog.cond_items_have("af_full_akkum",2,0.5)</precondition>
+				<text>gar_flamethrower_dialog_1042</text>
+				<action>sak_dialog.cond_items_have("af_full_akkum",2,0.5,true)</action>
+				<next>1052</next>
+			</phrase>
+			<phrase id="1052">
+				<text>gar_flamethrower_dialog_1052</text>
+				<action>sak.create_items("trubka",1)</action>
+			</phrase>
+			<phrase id="201">
+				<text>gar_flamethrower_dialog_201</text>
+				<next>2021</next>
+				<next>2022</next>
+			</phrase>
+			<phrase id="2021">
+				<text>gar_flamethrower_dialog_2021</text>
+				<next>2031</next>
+			</phrase>
+			<phrase id="2031">
+				<text>gar_flamethrower_dialog_2031</text>
+			</phrase>
+			<phrase id="2022">
+			<precondition>sak_dialog.cond_items_have("af_full_akkum",2,0.5)</precondition>
+				<text>gar_flamethrower_dialog_2022</text>
+				<action>sak_dialog.cond_items_have("af_full_akkum",2,0.5,true)</action>
+				<next>2032</next>
+			</phrase>
+			<phrase id="2032">
+				<text>gar_flamethrower_dialog_2032</text>
+				<action>sak.create_items("trubka",1)</action>
+			</phrase>
+			<phrase id="301">
+				<text>gar_flamethrower_dialog_301</text>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	
+	<dialog id="barmen_flamethrower_dialog">
+		<has_info>flamethrower_quest_start</has_info>
+		<dont_has_info>flamethrower_repair_start</dont_has_info>
+		<dont_has_info>flamethrower_quest_gorelka</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>barmen_flamethrower_dialog_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>barmen_flamethrower_dialog_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>barmen_flamethrower_dialog_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>barmen_flamethrower_dialog_3</text>
+				<next>41</next>
+				<next>42</next>
+			</phrase>
+			<phrase id="41">
+				<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+				<text>barmen_flamethrower_dialog_41</text>
+				<action>sak_dialog.transfer_any_x_art("a")</action>
+				<next>51</next>
+			</phrase>
+			<phrase id="51">
+				<text>barmen_flamethrower_dialog_51</text>
+				<give_info>flamethrower_quest_gorelka</give_info>
+				<action>sak_dialog.add_gorelka</action>
+			</phrase>
+			<phrase id="42">
+				<text>barmen_flamethrower_dialog_42</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>			
+		</phrase_list>
+	</dialog>
+	
+	<dialog id="flamethrower_repair_start">
+		<precondition>sak_dialog.flamethrower_bad_have</precondition>
+		<precondition>sak_dialog.have_10vodka</precondition>
+		<precondition>sak_dialog.fireball_have</precondition>
+		<precondition>sak_dialog.have_gorelka</precondition>
+		<precondition>sak_dialog.have_manometr</precondition>
+		<precondition>sak_dialog.have_trubka</precondition>
+		<has_info>flamethrower_quest_start</has_info>
+		<dont_has_info>flamethrower_repair_start</dont_has_info>		
+		<phrase_list>
+			<phrase id="0">
+				<text>flamethrower_repair_start_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>flamethrower_repair_start_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>flamethrower_repair_start_2</text>
+				<action>sak_dialog.give_flamethrower_parts</action>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>flamethrower_repair_start_3</text>
+				<action>sak_dialog.flamethrower_repair_time</action>
+				<give_info>flamethrower_repair_start</give_info>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>flamethrower_repair_start_4</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	
+	<dialog id="flamethrower_repair_done">
+		<has_info>flamethrower_repair_start</has_info>
+		<dont_has_info>flamethrower_repair_done</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>flamethrower_repair_done_0</text>
+				<next>10</next>
+				<next>20</next>
+			</phrase>
+			<phrase id="10">
+			<precondition>sak_dialog.not_ready_time_flamethrower_repair</precondition>
+				<text>flamethrower_repair_done_10</text>
+				<next>11</next>
+			</phrase>
+			<phrase id="11">
+				<text>flamethrower_repair_done_11</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="20">
+			<precondition>sak_dialog.is_ready_time_flamethrower_repair</precondition>
+				<text>flamethrower_repair_done_20</text>
+				<action>sak_dialog.flamethrower_basic</action>				
+				<next>21</next>
+			</phrase>
+			<phrase id="21">
+				<text>flamethrower_repair_done_21</text>
+				<next>22</next>
+			</phrase>
+			<phrase id="22">
+				<text>flamethrower_repair_done_22</text>
+				<next>23</next>
+			</phrase>
+			<phrase id="23">
+				<text>flamethrower_repair_done_23</text>
+				<next>24</next>
+			</phrase>
+			<phrase id="24">
+				<text>flamethrower_repair_done_24</text>
+				<next>251</next>				
+				<next>252</next>
+			</phrase>
+			<phrase id="251">
+				<text>flamethrower_repair_done_251</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>			
+			<phrase id="252">
+			<precondition>sak_dialog.have_any_x_art("c",true)</precondition>
+				<text>flamethrower_repair_done_252</text>
+				<action>sak_dialog.transfer_any_x_art("c")</action>
+				<next>26</next>
+			</phrase>
+			<phrase id="26">
+				<text>flamethrower_repair_done_26</text>
+				<action>sak_dialog.take2_gar_flame</action>
+				<action>sak_dialog.clear_ready_time_flamethrower_repair</action>
+				<give_info>flamethrower_repair_done</give_info>
+				<next>27</next>
+			</phrase>
+			<phrase id="27">
+				<text>flamethrower_repair_done_27</text>
+				<next>28</next>
+			</phrase>
+			<phrase id="28">
+				<text>flamethrower_repair_done_28</text>
+				<next>29</next>
+			</phrase>
+			<phrase id="29">
+				<text>flamethrower_repair_done_29</text>
+				<next>30</next>
+			</phrase>
+			<phrase id="30">
+				<text>flamethrower_repair_done_30</text>
+				<next>31</next>
+			</phrase>
+			<phrase id="31">
+				<text>flamethrower_repair_done_31</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+		</phrase_list>
+	</dialog>
+</game_dialogs>

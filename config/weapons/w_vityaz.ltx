@@ -1,0 +1,338 @@
+;;;;;;;;;;;ÏÏ 19-01 "Âèòÿçü";;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[wpn_pp19]:weapon_immunities
+GroupControlSection			= spawn_group
+discovery_dependency 		= 
+$spawn                  	= "weapons\pp19"
+$npc			 			= on
+$prefetch 		 			= 8
+scheduled               	= off
+cform                   	= skeleton
+class                   	= WP_LR300
+min_radius              	= 0
+max_radius              	= 75
+description					= enc_weapons1_wpn-pp19
+dialog_description		    = desc_dialog_wpn-bizon_m; desc_dialog_wpn-pp19
+
+default_to_ruck				= false
+
+ef_main_weapon_type			= 2
+ef_weapon_type				= 6
+
+holder_range_modifier		= 1.0
+holder_fov_modifier			= 0.7
+weapon_class				= assault_rifle
+
+disable_detector = true
+
+cost						= 8500
+
+ammo_limit		 			= 210
+ammo_current				= 30
+ammo_elapsed		 		= 30
+
+ammo_mag_size		 		= 30
+ammo_class		 			= ammo_9x19_fmj, ammo_9x19_pbp
+fire_modes					= 1, -1
+
+hand_dependence		 		= 1
+single_handed				= 0
+
+inv_name					= wpn-pp19
+inv_name_short				= wpn-pp19
+
+inv_weight					= 2.9
+
+inv_grid_height                          = 2
+inv_grid_width                           = 6
+inv_grid_x                               = 63
+inv_grid_y                               = 0
+
+slot 						= 1,2
+disable_detector = true
+animation_slot				= 2
+
+fire_dispersion_base		= 0.23
+control_inertion_factor		= 1.1f
+
+cam_relax_speed        		= 5.0
+cam_dispersion          	= 0.2
+cam_dispersion_inc			= 0.15
+cam_dispertion_frac			= 0.5
+cam_max_angle				= 30
+cam_max_angle_horz			= 10
+cam_step_angle_horz			= 0.5
+
+fire_dispersion_condition_factor = 2 
+misfire_probability 		= 0.002
+misfire_condition_k			= 0.05
+condition_shot_dec 			= 0.00015
+
+direction               	= 0, 0, 1
+
+fire_point             	=  0.0, 0.220, 0.465
+
+flame_particles				= weapons\generic_weapon05
+smoke_particles         	= weapons\generic_shoot_00
+
+shell_point		 			= 0.0, 0.188, 0.082
+shell_dir		 			= 0.0, 1.0, 0.0
+
+rpm_empty_click 	 		= 200
+
+PDM_disp_base 				= 1.7
+PDM_disp_vel_factor 		= 2.0
+PDM_disp_accel_factor 		= 3.0
+PDM_crouch					= 1.1
+PDM_crouch_no_acc			= 0.5
+
+hit_power        			= 1.2
+hit_impulse		 			= 1.1
+hit_type 					= fire_wound
+
+fire_distance      			= 100
+bullet_speed				= 290
+rpm               			= 700
+
+use_aim_bullet				= false
+time_to_aim					= 1.0	
+
+hud                     	= wpn_pp19_hud
+normal                  	= 0, 1, 0
+position         	        = -0.026,-0.215,0
+orientation      	        = 0,0,0
+
+strap_orientation                        = -10,-5,10
+strap_position                           = -0.16,-0.36,0.15
+
+startup_ammo           		= 1000
+visual                   	= dynamics\weapons\wpn_vityaz\wpn_vityaz
+
+light_color		 			= 0.6,0.5,0.3
+light_range		 			= 5
+light_var_color		 		= 0.05
+light_var_range		 		= 0.1
+light_time 		 			= 0.2
+
+ph_mass			 			= 3
+
+scope_status				= 2
+silencer_status				= 2
+grenade_launcher_status		= 0
+scope_mode 					= 3
+scope_name 					= wpn_addon_eotech
+
+scope_zoom_factor = 90
+
+scope_names 					= ac10632, wpn_addon_eotech, microt1, specter
+
+scope_respawn_ac10632 = wpn_vityaz_ac10632
+scope_respawn_wpn_addon_eotech = wpn_vityaz_eot
+scope_respawn_microt1 = wpn_vityaz_microt1
+scope_respawn_specter = wpn_vityaz_specter
+
+silencer_name  				= wpn_addon_sil_9_p
+scope_x                     = 91		; offset in inventory icon
+scope_y                     = -7
+silencer_x                  = 199		; offset in inventory icon
+silencer_y                  = 9
+silencer_x_offset			= -1
+silencer_y_offset			= 0
+grenade_launcher_x          = 0		; offset in inventory icon
+grenade_launcher_y          = 0
+silencer_smoke_particles 	= weapons\generic_shoot_00
+
+silencer_light_color		= 0.6,0.5,0.3
+silencer_light_range		= 0.01
+silencer_light_var_color	= 0.05
+silencer_light_var_range	= 0.5
+silencer_light_time 		= 0.2
+
+snd_shoot					= weapons\vityaz\pp1901_muzzle_mono
+snd_shoot1					= weapons\vityaz\pp1901_muzzle_mono1
+snd_silncer_shot			= weapons\vityaz\pp1901_silencer_mono
+
+snd_bore                                           = weapons\generic_draw
+snd_draw                                           = weapons\vityaz\vityaz_draw
+snd_empty                                          = weapons\ak_empty, 0.5
+snd_holster                                        = weapons\vityaz\vityaz_hide
+snd_reload                                         = weapons\vityaz\vityaz_reload
+snd_reload_empty                                   = weapons\vityaz\vityaz_reload_empty
+snd_reload_jammed                                 = weapons\vityaz\vityaz_misfire
+snd_sprint_idle								   	   = weapons\sprint_assault
+
+[wpn_pp19_hud]:hud_base
+aim_hud_offset_pos = -0.065000,0.028000,-0.09
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.065000,0.028000,-0.09
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+anm_bore                                 = vityaz_idle_aim
+anm_show                                 = vityaz_draw
+anm_hide                                 = vityaz_hide
+anm_idle                                 = vityaz_idle
+anm_idle_aim           			         = vityaz_idle_aim
+anm_idle_aim_moving                      = vityaz_aim_walk
+anm_idle_moving_slow                     = vityaz_walk_slow
+anm_idle_moving                          = vityaz_walk
+anm_idle_moving_crouch                   = vityaz_walk_slow_down
+anm_reload                               = vityaz_reload, reload
+anm_reload_empty                         = vityaz_reload_empty, reload_empty
+anm_reload_jammed                       = vityaz_revival, misfire
+anm_shots                                = vityaz_shoot, shoot
+anm_shots_when_aim                       = vityaz_aim_shoot, shoot
+anm_firemode                             = vityaz_firemode
+
+anm_firemode_aim = vityaz_firemode
+anm_firemode_empty = vityaz_firemode
+anm_firemode_aim_empty = vityaz_firemode
+
+anm_idle_sprint_start         				 = vityaz_sprint_start
+anm_idle_sprint         				 = vityaz_sprint
+anm_idle_sprint_end         					 = vityaz_sprint_end
+anm_idle_sprint_end_jammed = vityaz_sprint_end
+anm_idle_sprint_start_jammed = vityaz_sprint_start
+anm_idle_sprint_end_empty = vityaz_sprint_end
+anm_idle_sprint_start_empty = vityaz_sprint_start
+
+anm_headlamp_on                        = vityaz_flash
+anm_gasmask                              = vityaz_clear
+
+anm_headlamp_on_empty                        = vityaz_flash
+anm_gasmask_empty                              = vityaz_clear
+
+attach_place_idx                         = 0
+fire_bone                                = wpn_body
+fire_bone2                               = wpn_body
+fire_point                               = 0.000000,-0.006600,0.344700
+fire_point2                              = 0,0,0
+gl_hud_offset_pos                        = 0,0,0
+gl_hud_offset_pos_16x9                   = 0,0,0
+gl_hud_offset_rot                        = 0,0,0
+gl_hud_offset_rot_16x9                   = 0,0,0
+hands_position                           = -0.026625,0.018275,-0.200324
+hands_position_16x9                      = -0.026625,0.018275,-0.200324
+hands_orientation                        = 0,0,0
+hands_orientation_16x9                   = 0,0,0
+item_orientation                         = 0,0,0
+item_position                            = 0,0,0
+item_visual                              = dynamics\weapons\wpn_vityaz\wpn_vityaz_hud.ogf
+lean_hud_offset_pos                      = 0,0,0
+lean_hud_offset_rot                      = 0,0,0
+shell_bone                               = wpn_body
+shell_dir                                = 0.0, 1.0, 0.0
+shell_point                              = 0,0.02,0.05
+zoom_hide_crosshair                      = true
+
+; anim_aim_start                           = aim_start_bizon, 1.11, 1, 0.14, 0.15
+; anim_aim_idle                            = aim_idle_bizon, 1, 1, 0.2, 0.2
+; anim_aim_end                             = aim_end_bizon, 1.18, 1, 0.14, 0.15
+
+[wpn_vityaz_ac10632]:wpn_pp19
+$spawn                                   = "weapons\wpn_vityaz_ac10632"
+hud                                      = wpn_vityaz_ac10632_hud
+visual                                   = dynamics\weapons\wpn_vityaz\wpn_vityaz_ac10632.ogf
+scope_x                                  = 101
+scope_y                                  = -14
+
+scope_respawn = wpn_pp19
+scope_name = ac10632
+
+[wpn_vityaz_ac10632_hud]:wpn_pp19_hud
+item_visual                              = dynamics\weapons\wpn_vityaz\wpn_vityaz_ac10632_hud.ogf
+
+aim_hud_offset_pos = -0.065000,0.002500,-0.07
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.065000,0.002500,-0.07
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+
+
+; anim_aim_start                           = aim_start_bizon_scope, 1.05, 1, 0.14, 0.15
+; anim_aim_idle                            = aim_idle_bizon_scope, 1, 1, 0.2, 0.2
+; anim_aim_end                             = aim_end_bizon_scope, 1.03, 1, 0.14, 0.15
+
+[wpn_vityaz_eot]:wpn_pp19
+$spawn                                   = "weapons\wpn_vityaz_eot"
+hud                                      = wpn_vityaz_eot_hud
+visual                                   = dynamics\weapons\wpn_vityaz\wpn_vityaz_eot.ogf
+scope_x                                  = 101
+scope_y                                  = -14
+
+scope_respawn = wpn_pp19
+scope_name = wpn_addon_eotech
+
+[wpn_vityaz_eot_hud]:wpn_pp19_hud
+item_visual                              = dynamics\weapons\wpn_vityaz\wpn_vityaz_eot_hud.ogf
+
+aim_hud_offset_pos = -0.065000,0.000000,-0.07
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+
+aim_hud_offset_pos_16x9 = -0.065000,0.000000,-0.07
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+; aim_hud_offset_pos_16x9                  = 0.006000,-0.008700,0.000000
+; aim_hud_offset_pos                       = 0.006000,-0.008700,0.000000
+; aim_hud_offset_rot_16x9                  = 0,0,0
+; aim_hud_offset_rot                       = 0,0,0
+
+; anim_aim_start                           = aim_start_bizon_scope, 1.05, 1, 0.14, 0.15
+; anim_aim_idle                            = aim_idle_bizon_scope, 1, 1, 0.2, 0.2
+; anim_aim_end                             = aim_end_bizon_scope, 1.03, 1, 0.14, 0.15
+
+[wpn_vityaz_microt1]:wpn_pp19
+$spawn                                   = "weapons\wpn_vityaz_micro-t1"
+hud                                      = wpn_vityaz_microt1_hud
+visual                                   = dynamics\weapons\wpn_vityaz\wpn_vityaz_micro-t1.ogf
+scope_x                                  = 96
+scope_y                                  = -14
+
+scope_respawn = wpn_pp19
+scope_name = microt1
+
+[wpn_vityaz_microt1_hud]:wpn_pp19_hud
+item_visual                              = dynamics\weapons\wpn_vityaz\wpn_vityaz_micro-t1_hud.ogf
+
+aim_hud_offset_pos = -0.065000,-0.001500,-0.07
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+
+aim_hud_offset_pos_16x9 = -0.065000,-0.001500,-0.07
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+
+; anim_aim_start                           = aim_start_bizon_scope, 1.05, 1, 0.14, 0.15
+; anim_aim_idle                            = aim_idle_bizon_scope, 1, 1, 0.2, 0.2
+; anim_aim_end                             = aim_end_bizon_scope, 1.03, 1, 0.14, 0.15
+
+
+[wpn_vityaz_specter]:wpn_pp19
+$spawn					= "weapons\wpn_vityaz_specter"
+visual					= dynamics\weapons\wpn_vityaz\wpn_vityaz_specter.ogf
+hud					= wpn_vityaz_specter_hud
+scope_x                                      = 84
+scope_y                                      = -17
+
+3d_reticle_size = 5.2
+3dss_gen_zoom_enable = true
+
+scope_respawn = wpn_pp19
+scope_name = specter
+
+[wpn_vityaz_specter_hud]:wpn_pp19_hud
+item_visual				= dynamics\weapons\wpn_vityaz\wpn_vityaz_specter_hud.ogf
+
+anm_shots_when_aim					= vityaz_shoot_scope, shoot
+
+aim_hud_offset_pos = -0.0655,-0.001,-0.0820001
+aim_hud_offset_rot = 0.005,-0.0025,0
+aim_hud_offset_pos_16x9 = -0.0655,-0.001,-0.0820001
+aim_hud_offset_rot_16x9 = 0.005,-0.0025,0
+
+use_alt_aim_zoom = true
+alt_aim_hud_offset_pos = -0.065525,-0.026575,-0.022955
+alt_aim_hud_offset_rot = 0.000000,0.000000,0.000000
+alt_aim_hud_offset_pos_16x9 = -0.065525,-0.026575,-0.022955
+alt_aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+; anim_aim_start                           = aim_start_bizon_scope, 1.05, 1, 0.14, 0.15
+; anim_aim_idle                            = aim_idle_bizon_scope, 1, 1, 0.2, 0.2
+; anim_aim_end                             = aim_end_bizon_scope, 1.03, 1, 0.14, 0.15

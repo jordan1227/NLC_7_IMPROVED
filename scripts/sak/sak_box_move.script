@@ -1,0 +1,29 @@
+function OnActorSave()
+	local soActor = g_sim:actor()
+	local idGv = soActor and soActor.m_game_vertex_id
+	local idMap = idGv and game_graph():valid_vertex_id(idGv) and game_graph():vertex(idGv):level_id()
+	
+	local sMapNow,idMapNow = db.sMapNow,db.idMapNow
+	if idMap and idMap ~= idMapNow then
+	local sMapNew=g_sim:level_name(idMap)
+		db.tMapNew = {map=idMap, pos=soActor.position, lv=soActor.m_level_vertex_id, gv=idGv}
+		move_nap(sMapNow,sMapNew)
+	end
+end
+
+function move_nap(sMapNow,sMapNew)
+	local nap=g_sim:story_object(story_ids.assistant2)
+	local actor=db.actor
+	if nap and actor:has_info("assistant_go_to_mil") then
+		local obj=g_sim:object(nap.id)
+		local act_pos=actor:position()
+		if obj and obj.position:distance_to(act_pos)<25 and db.tMapNew then 
+			local pk = get_netpk(obj)
+			local data = pk:get()
+			data.level_vertex_id, data.game_vertex_id = db.tMapNew.lv, db.tMapNew.gv
+			pk:set(data)
+			obj.m_level_vertex_id, obj.m_game_vertex_id = db.tMapNew.lv, db.tMapNew.gv
+			obj.position = sak.v3f(db.tMapNew.pos.x+1, db.tMapNew.pos.y, db.tMapNew.pos.z+1)
+		end
+	end
+end

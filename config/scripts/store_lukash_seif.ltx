@@ -1,0 +1,11 @@
+[logic]
+active = ph_idle@idle
+
+[ph_idle@idle]
+nonscript_usable = false
+on_info = {+open_mil_seif} ph_idle@enable
+
+[ph_idle@enable]
+nonscript_usable = true
+tips = st_search_my_seif
+on_use = {+l07_military_prot_out} %+l07_military_prot_out_info%

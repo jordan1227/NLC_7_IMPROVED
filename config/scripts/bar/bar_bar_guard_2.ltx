@@ -1,0 +1,27 @@
+[logic]
+active = walker
+on_death = death@gorik_death
+
+[death@gorik_death]
+on_info = {=killed_by_actor} %=sak.gg_bandit() +gorik_death%, %+gorik_death%
+
+[walker]
+path_walk = bar_bar_guard_walk
+path_look = bar_bar_guard_look
+meet = meet@bar_guard_2
+danger = danger_condition
+
+
+[meet@bar_guard_2]
+meet_state = 5 | guard@bar_guard_prohodi
+meet_state_wpn = 5 | guard@bar_guard_prohodi
+victim 			= 5 | actor
+victim_wpn = 5 | actor
+use			= false
+use_wpn		    = false
+abuse               = false
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_grenade = 10
+ignore_types = corpse

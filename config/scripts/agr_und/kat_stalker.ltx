@@ -1,0 +1,15 @@
+[logic]
+active = remark@anim
+combat_ignore = combat_ignore
+
+[remark@idle]
+anim = wait
+on_info = {+agr_doc_wakeup} remark@anim
+combat_ignore_cond = always
+meet = no_meet
+
+[remark@anim]
+anim = doctor_wakeup
+combat_ignore_cond = always
+on_signal = anim_end | %+doktor_in_les_go -agr_doc_wakeup%
+meet = no_meet

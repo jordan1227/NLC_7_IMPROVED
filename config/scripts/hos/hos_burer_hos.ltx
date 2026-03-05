@@ -1,0 +1,17 @@
+[logic]
+active = mob_home
+on_death = death
+
+[mob_home]
+path_home = hos_burer_hos
+home_min_radius = 20
+home_max_radius = 40
+aggressive_home
+on_timer = 23500 | mob_combat %=bar_arena_hit%
+on_signal = sig_attacked | mob_combat
+
+[mob_combat]
+on_timer = 30000 | mob_home
+
+[death]
+on_info = {=killed_by_actor} %+burer_hos_dead%, %+burer_hos_off%

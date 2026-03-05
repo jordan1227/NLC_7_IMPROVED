@@ -1,0 +1,240 @@
+function get_next_random( vname, ... )
+	local args = { ... }
+	local min, max
+	if table.getn( args ) == 1 then
+		min, max = 1, args[ 1 ]
+	elseif table.getn( args ) > 1 then
+		min, max = unpack( args )
+	end
+	if min and max and min == max then return min end
+	local nums = get_value( vname, {} )
+	while table.getn( nums ) < 100 do
+		table.insert( nums, lua_random() )
+	end
+	local cur_num = tonumber( table.remove( nums, 1 ) )
+	table.insert( nums, lua_random() )
+	set_value( vname, nums )
+	if table.getn( args ) > 0 then
+		cur_num = min + round( cur_num * ( max - min ) )
+	end
+	return cur_num
+end
+
+function create_candle( pos, lvid, gvid, vis )
+	if vis then
+		local sobj = alife():create( "my_candle_custom", pos, lvid, gvid )
+		local pk   = get_netpk( sobj, 1 )
+		ASSERT( pk and pk:isOk(), "can't read netpacket of %s", sobj:name() )
+		local data = pk:get()
+		data.visual_name = vis
+		data.custom_data = "[logic]\nactive = ph_idle@idle\n[ph_idle@idle]\ntips = candle\non_use = {=actor_has_matches()} %=sak.candle_on()% ph_idle@idle2, ph_idle@idle3 %=sak.info_no_matches()\n[ph_idle@idle2]\non_timer = 7000|ph_idle@idle\n[ph_idle@idle3]\non_timer = 10000|ph_idle@idle\n[collide]\nignore_static\n"
+		data.physic_type = 3
+		data.mass        = 10
+		data.fixed_bones = "link"
+		pk:set( data )
+		--sobj = alife():object( sobj.id )
+		--sobj:used_ai_locations( false )
+	end
+end
+
+
+class "condition_timer" ( ogse_qt.quick_timer )
+function condition_timer:__init( fun1, fun2, fun3 )
+  self.fun1 = fun1
+  self.fun2 = fun2
+  self.fun3 = fun3
+end
+function condition_timer:condition()
+  return self.fun1( self )
+end
+function condition_timer:action()
+  self.fun2( self )
+end
+function condition_timer:update()
+  if self.fun3 then self.fun3( self ) end
+end
+
+function wait_condition( ... )
+  local t = condition_timer( ... )
+  local d = debug.getinfo( 2, "S" )
+  if d then
+    t:set_script_name( d.source )
+  end
+  t:start()
+  return t
+end
+
+
+function exec_periodic( freq, f, ... )
+  local args = { ... }
+  local t = wait_condition(
+    function() return false end,
+    function() end,
+    function( timer )
+      if freq then timer:reschedule( freq ) end
+      f( timer, unpack( args ) )
+    end
+  )
+  local d = debug.getinfo( 2, "S" )
+  if d then
+    t:set_script_name( d.source )
+  end
+  return t
+end
+
+
+class "timeout_timer" ( ogse_qt.quick_timer )
+function timeout_timer:__init( delay, fun, ... ) super( delay )
+  self.fun  = fun
+  self.args = { ... }
+end
+function timeout_timer:taction()
+  self.fun( unpack( self.args ) )
+end
+
+function timeout( ... )
+  local t = timeout_timer( ... )
+  local d = debug.getinfo( 2, "S" )
+  if d then
+    t:set_script_name( d.source )
+  end
+  t:start()
+  return t
+end
+
+
+function make_quicksave()
+  if not ogse_campfire.check_near_en_flame() then return end
+  local cnt = get_value( "dsh.next_quicksave", 0 )
+  if cnt == 9 then
+    cnt = 1
+  else
+    cnt = cnt + 1
+  end
+  set_value( "dsh.next_quicksave", cnt )
+  local next_save = safe_file_name( string.format( "%s_quicksave_%u", user_name(), cnt ) )
+  cmd( "save", next_save )
+end
+
+
+local max_symbols = 60
+function safe_file_name( fname ) --Вырезаем неподдерживаемые FS символы и пробелы по краям.
+  fname = fname:clear():gsub( '[%(%)]*', "" ):trim()
+  if fname:len() > max_symbols then
+    fname = fname:sub( 1, ( max_symbols - 2 ) ) .. "..."
+  end
+  return fname
+end
+
+
+function spawn_anomaly(section, pos, lv, gv, shape)
+  local sobj = alife():create(section, pos, lv, gv)
+  local pk = get_netpk(sobj, 1)
+  ASSERT((pk and pk:isOk()), "can't read netpacket of %s", sobj:name())
+  local data = pk:get()
+  if shape.shtype == 0 then
+      data.shapes:addSphere(shape.radius, vector():set(unpack(shape.center)))
+  else
+      data.shapes:addBox(
+          vector():set(unpack(shape.v1)),
+          vector():set(unpack(shape.v2)),
+          vector():set(unpack(shape.v3)),
+          vector():set(unpack(shape.offset))
+      )
+  end
+  pk:set(data)
+  return sobj
+end
+
+-- http://www.amk-team.ru/forum/topic/6185-skriptovanie/?do=findComment&comment=1127456
+-- http://www.amk-team.ru/forum/topic/6185-skriptovanie/?do=findComment&comment=1127526
+function is_actor_looking_to_pos( pos, radius )
+--[=[
+  local k = vector():sub( pos, device().cam_pos )
+  local b = k:dotproduct( device().cam_dir )
+  local c = k:dotproduct( k ) - radius * radius
+  local d = b * b - c
+  return d >= 0
+--]=]
+  return level.is_ray_intersect_sphere(
+    device().cam_pos, device().cam_dir, pos, radius
+  ) >= 0
+end
+
+
+local ini_file_cache = {}
+function cached_ini_file( fname )
+  if not ini_file_cache[ fname ] then
+    ini_file_cache[ fname ] = ini_file( fname )
+  end
+  return ini_file_cache[ fname ]
+end
+
+function get_item_icon(s)
+  return Frect():set(
+    get_u32(s, "inv_grid_x")*50,
+    get_u32(s, "inv_grid_y")*50,
+    get_u32(s, "inv_grid_width")*50,
+    get_u32(s, "inv_grid_height")*50)
+end
+
+function get_ui_icon_equipment_name( sect )
+  local icon_group = get_u32( sect, "icon_group", 0 )
+  if icon_group > 0 then
+    return string.format( "ui\\ui_icon_equipment_%d", icon_group )
+  end
+  return "ui\\ui_icon_equipment"
+end
+
+
+function backup_autosave( prev_lname )
+  local last_save = alife().loaded_save_name
+  if not string.find( last_save, "_autosave.sav" ) then return end
+  local lc_save = string.format(
+    game.translate_string( "backup_autosave" ),
+    timers.Get_Game_Days(),
+    level.get_time_hours(),
+    game.translate_string( prev_lname ),
+    game.translate_string( level.name() )
+  )
+  -- Manool: у некоторых файлов с кавычками бьётся формат!
+  lc_save  = string.clear(  lc_save )
+  lc_save  = remove_quotes( lc_save )
+  local f  = getFS()
+  last_save = f:update_path( "$game_saves$", last_save )
+  lc_save   = f:update_path( "$game_saves$", dsh.safe_file_name( lc_save ) )
+  if f:exist( lc_save ) then
+    f:file_delete( lc_save )
+  end
+  f:file_copy( last_save, lc_save )
+end
+
+
+function remove_quotes( s )
+  local rq = string.gsub( s, "[«»\"\']", "" )
+  return rq
+end
+
+
+function strip_quotes( s )
+  local sq = string.gsub( s, "^%s*[«»\"\']+%s*(.+)%s*[«»\"\']+%s*$", "%1" )
+  return sq
+end
+
+
+function get_talk_item_icon( sect )
+  local icon = CIconParams( sect )
+  local texture, rect
+  if icon.icon_name then
+    texture, rect = get_texture_info( icon.icon_name )
+  else
+    texture = dsh.get_ui_icon_equipment_name( sect )
+    rect    = icon:original_rect()
+    rect.x2 = rect.x2 - rect.x1
+    rect.y2 = rect.y2 - rect.y1
+  end
+  return {
+    texture, rect,
+    ( "ico_item_" .. icon.grid_width .. "_" .. icon.grid_height )
+  }
+end

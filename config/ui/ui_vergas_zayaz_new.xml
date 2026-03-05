@@ -1,0 +1,167 @@
+<ui_texture>
+
+	<file_name>ui\ui_vergas_zayaz_new</file_name>
+	<texture id="ui_podsumok_back_new" x="0" y="640" width="632" height="489" />
+	<texture id="ui_podsumok_back_glass_new" x="0" y="1483" width="386" height="126" />	
+	<texture id="ui_podsumok_btn_blank_new" x="0" y="0" width="50" height="50" stretch="1"/>		<!-- нопка пуста€-->
+	
+	<texture id="ui_razgruzka_skull_norm_new" x="632" y="75" width="35" height="35" />
+
+	<texture id="ui_razgruzka_back_new" x="0" y="0" width="632" height="640" />
+	<texture id="ui_razgruzka_back_glass_new" x="0" y="1130" width="386" height="349" />
+	<texture id="ui_razgruzka_btn_empty_e_new" x="632" y="0" width="72" height="22" />	<!--  нопка # стандарт   выложить всЄ из разгрузки-->
+	<texture id="ui_razgruzka_btn_empty_t_new" x="632" y="25" width="72" height="22" />	<!--  нопка # наведенна€   выложить всЄ из разгрузки-->
+	<texture id="ui_razgruzka_btn_empty_h_new" x="632" y="50" width="72" height="22" />	<!--  нопка # нажата€ выложить всЄ из разгрузки-->
+	
+	<texture id="ui_razgruzka_btn_exit_e_new" x="704" y="0" width="72" height="22" />	<!--  нопка X стандарт  закрыть меню разгрузки-->
+	<texture id="ui_razgruzka_btn_exit_t_new" x="704" y="25" width="72" height="22" />	<!--  нопка X наведенна€  закрыть меню разгрузки-->
+	<texture id="ui_razgruzka_btn_exit_h_new" x="704" y="50" width="72" height="22" />	<!--  нопка X нажата€  закрыть меню разгрузки-->
+	
+	<texture id="ui_razgruzka_btn_empty2_e_new" x="781" y="39" width="12" height="12" />	<!--  нопка #2 стандарт  выложить из слота-->
+	<texture id="ui_razgruzka_btn_empty2_t_new" x="795" y="39" width="12" height="12" />	<!--  нопка #2 наведенна€  выложить из слота-->
+	<texture id="ui_razgruzka_btn_empty2_h_new" x="809" y="39" width="12" height="12" />	<!--  нопка #2 нажата€  выложить из слота-->
+
+	<texture id="ui_razgruzka_btn_left_e_new" x="821" y="0" width="10" height="38" />		<!--  нопка < стандарт  перемотка патронов влево-->
+	<texture id="ui_razgruzka_btn_left_t_new" x="845" y="0" width="10" height="38" />		<!--  нопка < наведенна€ перемотка патронов влево -->
+	<texture id="ui_razgruzka_btn_left_h_new" x="869" y="0" width="10" height="38" />		<!--  нопка < нажата€  перемотка патронов влево-->
+	
+	<texture id="ui_razgruzka_btn_right_e_new" x="833" y="0" width="10" height="38" />	<!--  нопка > стандарт  перемотка патронов вправо-->
+	<texture id="ui_razgruzka_btn_right_t_new" x="858" y="0" width="10" height="38" />	<!--  нопка > наведенна€  перемотка патронов вправо-->
+	<texture id="ui_razgruzka_btn_right_h_new" x="882" y="0" width="10" height="38" />	<!--  нопка > нажата€  перемотка патронов вправо-->
+
+	<texture id="ui_razgruzka_btn_up1_e_new" x="893" y="0" width="38" height="10" />		<!--  нопка ^1 стандарт  перемотка левой стороны слотов вверх-->
+	<texture id="ui_razgruzka_btn_up1_t_new" x="893" y="24" width="38" height="10" />		<!--  нопка ^1 наведенна€  перемотка левой стороны слотов вверх-->
+	<texture id="ui_razgruzka_btn_up1_h_new" x="893" y="48" width="38" height="10" />		<!--  нопка ^1 нажата€  перемотка левой стороны слотов вверх-->
+	
+	<texture id="ui_razgruzka_btn_down1_e_new" x="893" y="12" width="38" height="10" />	<!--  нопка V1 стандарт перемотка левой стороны слотов вниз -->
+	<texture id="ui_razgruzka_btn_down1_t_new" x="893" y="36" width="38" height="10" />	<!--  нопка V1 наведенна€ перемотка левой стороны слотов вниз -->
+	<texture id="ui_razgruzka_btn_down1_h_new" x="893" y="60" width="38" height="10" />	<!--  нопка V1 нажата€ перемотка левой стороны слотов вниз -->
+
+	<texture id="ui_razgruzka_btn_up2_e_new" x="935" y="0" width="38" height="10" />		<!--  нопка ^2 стандарт  перемотка правой стороны слотов в ерх -->
+	<texture id="ui_razgruzka_btn_up2_t_new" x="935" y="24" width="38" height="10" />		<!--  нопка ^2 наведенна€ перемотка правой стороны слотов вверх -->
+	<texture id="ui_razgruzka_btn_up2_h_new" x="935" y="48" width="38" height="10" />		<!--  нопка ^2 нажата€ перемотка правой стороны слотов вверх -->
+	
+	<texture id="ui_razgruzka_btn_down2_e_new" x="935" y="12" width="38" height="10" />	<!--  нопка V2 стандарт  перемотка правой стороны слотов вниз-->
+	<texture id="ui_razgruzka_btn_down2_t_new" x="935" y="36" width="38" height="10" />	<!--  нопка V2 наведенна€  перемотка правой стороны слотов вниз-->
+	<texture id="ui_razgruzka_btn_down2_h_new" x="935" y="60" width="38" height="10" />	<!--  нопка V2 нажата€  перемотка правой стороны слотов вниз -->
+
+	<texture id="ui_btn_1_new" x="633" y="76" width="71" height="33" />  <!-- влючЄнна€ зелЄна€ кнопка выбранного барахла подсумок ?   -->
+	<texture id="ui_btn_2_new" x="705" y="76" width="71" height="33" />  <!-- влючЄнна€ зелЄна€ кнопка выбранного барахла подсумок ? -->
+	<texture id="ui_btn_3_new" x="777" y="76" width="143" height="33" />  <!-- влючЄнна€ зелЄна€ кнопка выбранного большого барахла граната дл€ –√ƒ?  -->
+	<texture id="ui_btn_4_new" x="633" y="110" width="71" height="33" />  <!-- влючЄнна€ зелЄна€ кнопка выбранного типа патронов право-лево слот 1   -->
+	<texture id="ui_btn_5_new" x="705" y="110" width="76" height="33" />  <!-- влючЄнна€ зелЄна€ кнопка выбранного типа патронов право-лево слот 2  -->
+	<texture id="ui_btn_6_new" x="782" y="110" width="71" height="33" />  <!-- влючЄнна€ зелЄна€ кнопка выбранного типа патронов право-лево слот 3  -->
+	<texture id="ui_btn_7_new" x="633" y="144" width="33" height="39" />  <!-- влючЄнна€ зелЄна€ кнопка выбранного типа подстольных гранат верх -->
+	<texture id="ui_btn_8_new" x="633" y="184" width="33" height="39" />  <!-- влючЄнна€ зелЄна€ кнопка выбранного типа подстольных гранат середина -->
+	<texture id="ui_btn_9_new" x="633" y="228" width="33" height="43" />  <!-- влючЄнна€ зелЄна€ кнопка выбранного типа подстольных гранат низ  -->
+	<texture id="ui_btn_10_new" x="667" y="144" width="33" height="39" />  <!-- влючЄнна€ зелЄна€ кнопка выбранного типа гранат или медицины верх  -->
+	<texture id="ui_btn_11_new" x="667" y="184" width="33" height="39" />  <!-- влючЄнна€ зелЄна€ кнопка выбранного типа гранат или медицины низ -->
+	<texture id="ui_?_new" x="633" y="76" width="71" height="33" />
+	<texture id="ui_btn_14_new" x="702" y="143" width="33" height="39" />  <!-- влючЄнна€ зелЄна€ кнопка выбранного декодера -->
+
+<!--ѕанель "похлопать по карманам" -->
+	
+	<texture id="ui_razgruzka_info_new" x="0" y="1630" width="115" height="310" />
+
+<!--—умка на по€с-->
+
+	<texture id="ui_bag_on_belt_back_new" x="714" y="188" width="526" height="418" />
+	<texture id="ui_bag_on_belt_back_quickly_new" x="714" y="625" width="526" height="344" />
+	
+<!--„ехол под фл€жку-->
+
+	<texture id="ui_cover_under_flask_new" x="450" y="1477" width="527" height="548" />
+	<texture id="ui_cover_under_flask_quickly_new" x="1005" y="1518" width="528" height="414" />
+	<texture id="ui_flzhka_without_cover_new" x="1447" y="149" width="38" height="58" />
+	<texture id="ui_cover_without_flask_new" x="1495" y="142" width="68" height="63" />
+	<texture id="ui_flask_army" x="1581_new" y="147" width="41" height="60" stretch="1"/>
+	
+	<texture id="ui_flask_btn_arrow_left_e_new" x="3" y="1947" width="10" height="86" stretch="1"/>
+	<texture id="ui_flask_btn_arrow_left_h_new" x="27" y="1947" width="10" height="86" stretch="1"/>
+	<texture id="ui_flask_btn_arrow_left_t_new" x="51" y="1947" width="10" height="86" stretch="1"/>
+
+	<texture id="ui_flask_btn_arrow_right_e_new" x="15" y="1947" width="10" height="86" stretch="1"/>
+	<texture id="ui_flask_btn_arrow_right_h_new" x="39" y="1947" width="10" height="86" stretch="1"/>
+	<texture id="ui_flask_btn_arrow_right_t_new" x="63" y="1947" width="10" height="86" stretch="1"/>
+	
+	<texture id="ui_water_pictogram_0_new" x="1445" y="244" width="25" height="25" />
+	<texture id="ui_water_pictogram_1_new" x="1473" y="244" width="25" height="25" />
+	<texture id="ui_water_pictogram_2_new" x="1501" y="244" width="25" height="25" />
+	<texture id="ui_water_pictogram_3_new" x="1529" y="244" width="25" height="25" />
+	<texture id="ui_water_pictogram_4_new" x="1557" y="244" width="25" height="25" />
+
+	<texture id="ui_water_pictogram_yellow_0_new" x="1585" y="244" width="25" height="25" />
+	<texture id="ui_water_pictogram_yellow_1_new" x="1613" y="244" width="25" height="25" />
+	<texture id="ui_water_pictogram_yellow_2_new" x="1640" y="244" width="25" height="25" />
+	<texture id="ui_water_pictogram_yellow_3_new" x="1668" y="244" width="25" height="25" />
+	<texture id="ui_water_pictogram_yellow_4_new" x="1696" y="244" width="25" height="25" />
+
+	<texture id="ui_flask_btn_empty_e_new" x="682" y="1042" width="71" height="18" />	<!-- нопка # стандарт-->
+	<texture id="ui_flask_btn_empty_h_new" x="682" y="1067" width="71" height="18" />	<!-- нопка # наведенна€-->
+	<texture id="ui_flask_btn_empty_t_new" x="682" y="1092" width="71" height="18" />	<!-- нопка # нажата€-->
+	
+	<texture id="ui_flask_btn_pour_e_new" x="753" y="1042" width="59" height="18" />	<!-- нопка # стандарт-->
+	<texture id="ui_flask_btn_pour_h_new" x="753" y="1067" width="59" height="18" />	<!-- нопка # наведенна€-->
+	<texture id="ui_flask_btn_pour_t_new" x="753" y="1092" width="59" height="18" />	<!-- нопка # нажата€-->
+
+	<texture id="ui_flask_btn_stop_e_new" x="812" y="1042" width="71" height="18" />	<!-- нопка # стандарт-->
+	<texture id="ui_flask_btn_stop_h_new" x="812" y="1067" width="71" height="18" />	<!-- нопка # наведенна€-->
+	<texture id="ui_flask_btn_stop_t_new" x="812" y="1092" width="71" height="18" />	<!-- нопка # нажата€-->
+	
+	<texture id="ui_flask_btn_stop_quickly_e_new" x="1269" y="1938" width="64" height="23" />	<!-- нопка # стандарт-->
+	<texture id="ui_flask_btn_stop_quickly_h_new" x="1269" y="1968" width="64" height="23" />	<!-- нопка # наведенна€-->
+	<texture id="ui_flask_btn_stop_quickly_t_new" x="1269" y="1999" width="64" height="23" />	<!-- нопка # нажата€-->
+
+	<texture id="ui_flask_btn_wash_quickly_e_new" x="1205" y="1938" width="64" height="23" />	<!-- нопка # стандарт-->
+	<texture id="ui_flask_btn_wash_quickly_h_new" x="1205" y="1968" width="64" height="23" />	<!-- нопка # наведенна€-->
+	<texture id="ui_flask_btn_wash_quickly_t_new" x="1205" y="1999" width="64" height="23" />	<!-- нопка # нажата€-->
+
+	<texture id="ui_flask_btn_wash_e_new" x="1205" y="1938" width="62" height="23" />	<!-- нопка # стандарт-->
+	<texture id="ui_flask_btn_wash_h_new" x="1205" y="1968" width="62" height="23" />	<!-- нопка # наведенна€-->
+	<texture id="ui_flask_btn_wash_t_new" x="1205" y="1999" width="62" height="23" />	<!-- нопка # нажата€-->
+	
+<!-- нопки —нар€жени€-->
+
+	<texture id="ui_rykzack_back_glass_new" x="1051" y="1130" width="386" height="349" />
+
+	<texture id="ui_inv_buttons_raz_m_new" x="1262" y="80" width="79" height="77" />
+	<texture id="ui_inv_buttons_pod_m_new" x="1301" y="172" width="31" height="33" />
+	<texture id="ui_inv_buttons_sum_m_new" x="1312" y="228" width="36" height="42" />
+	<texture id="ui_inv_buttons_ruk_m_new" x="1071" y="0" width="87" height="85" />
+	<texture id="ui_sleep_buttons_bag_m_new" x="1410" y="0" width="63" height="61" />
+	<texture id="ui_inv_buttons_wpn_m_new" x="1460" y="93" width="102" height="27" />
+	<texture id="ui_inv_buttons_belt_m_new" x="1344" y="135" width="94" height="32" />
+	<texture id="ui_inv_buttons_eat_m_new" x="1391" y="167" width="47" height="43" />
+	<texture id="ui_inv_buttons_fl_m_new" x="1412" y="227" width="32" height="43" />
+	
+	<texture id="ui_inv_buttons_raz_b_new" x="1262" y="2" width="79" height="77" />
+	<texture id="ui_inv_buttons_pod_b_new" x="1269" y="172" width="31" height="33" />
+	<texture id="ui_inv_buttons_sum_b_new" x="1269" y="229" width="36" height="42" />
+	<texture id="ui_inv_buttons_ruk_b_new" x="982" y="0" width="87" height="85" />
+	<texture id="ui_sleep_buttons_bag_b_new" x="1342" y="0" width="66" height="61" />
+	<texture id="ui_inv_buttons_wpn_b_new" x="1460" y="61" width="102" height="28" />
+	<texture id="ui_inv_buttons_belt_b_new" x="1344" y="103" width="94" height="32" />	
+	<texture id="ui_inv_buttons_eat_b_new" x="1344" y="167" width="47" height="43" />
+	<texture id="ui_inv_buttons_fl_b_new" x="1372" y="227" width="32" height="43" />
+	
+	<texture id="ui_inv_buttons_exit_e_new" x="1175" y="3" width="80" height="18" />	
+	<texture id="ui_inv_buttons_exit_t_new" x="1175" y="28" width="80" height="18" />	
+	<texture id="ui_inv_buttons_exit_h_new" x="1175" y="53" width="80" height="18" />	
+	<texture id="ui_inv_buttons_back_new" x="1320" y="286" width="531" height="721" />	
+
+<!--меню сна-->
+	
+	<texture id="ui_sleeping_bag_menu_new" x="447" y="1133" width="530" height="344" />
+	<texture id="ui_sleep_background_darck_new" x="840" y="48" width="17" height="18" />
+	<texture id="ui_sleep_background_ok_esc_new" x="934" y="99" width="142" height="18" />
+	
+	<texture id="ui_sleep_btn_ok_e_new" x="934" y="99" width="71" height="18" />
+	<texture id="ui_sleep_btn_ok_t_new" x="934" y="124" width="71" height="18" />
+	<texture id="ui_sleep_btn_ok_h_new" x="934" y="149" width="71" height="18" />
+
+	<texture id="ui_sleep_btn_esc_e_new" x="1005" y="99" width="71" height="18" />
+	<texture id="ui_sleep_btn_esc_t_new" x="1005" y="124" width="71" height="18" />
+	<texture id="ui_sleep_btn_esc_h_new" x="1005" y="149" width="71" height="18" />
+	
+	
+</ui_texture>

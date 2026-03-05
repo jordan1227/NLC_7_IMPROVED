@@ -1,0 +1,37 @@
+[logic]
+active = walker@mil_dying
+on_death = death@mil_dying
+
+[walker@mil_dying]
+path_walk = mil_dying_walk
+path_look = mil_dying_look
+meet = meet@mil_dying
+help_dialog = mil_dying_start_dialog
+wounded = wounded@mil_dying
+danger = danger_condition@mil_dying
+show_spot = false 
+
+[danger_condition@mil_dying]
+ignore_distance = 0
+
+[wounded@mil_dying]
+hp_state = 30|help_me@help|29|wounded_heavy@help_heavy
+hp_state_see = 30|wounded@help_see|29|wounded_heavy@help_heavy
+hp_victim = 30|nil|10|nil
+hp_cover = 30|true|29|false
+hp_fight = 30|true|29|false
+syndata = wounded@help
+help_dialog = mil_dying_start_dialog
+
+[meet@mil_dying]
+use = true
+use_wpn = true
+abuse = true
+meet_talk_enabled = true
+meet_state = 4|sit_knee
+meet_state_wpn = 4|sit_knee
+target = actor
+meet_dialog	= mil_dying_start_dialog
+
+[death@mil_dying]
+on_death = %+mil_dying_umer%

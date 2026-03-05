@@ -1,0 +1,16 @@
+[logic]
+active = ph_idle
+on_hit = hit
+
+[hit]
+on_info = %+mil_matugalnik_off%
+
+[ph_idle]
+on_info = {+mil_freedom_under_attack} ph_sound@alarm
+on_info2 = {+mil_matugalnik_off} nil
+
+[ph_sound@alarm]
+snd = siren
+on_info = {-mil_freedom_under_attack} ph_idle
+on_info2 = {+mil_matugalnik_off} nil
+looped = true

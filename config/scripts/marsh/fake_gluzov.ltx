@@ -1,0 +1,39 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@look_gigant
+danger = danger_condition
+combat_ignore = combat_ignore@gig_watch
+
+[walker@look_gigant]
+path_walk = marsh_botan_look_gigant_way
+path_look = marsh_botan_look_gigant_look
+on_actor_dist_ge_nvis = 50 | %=sak.gluzov_return%
+meet = meet@marsh_end
+combat_ignore_cond = {=fighting_dist_ge(2) =fighting_gigant}
+danger = danger_condition@marsh_end
+
+[meet@marsh_end]
+use = true
+use_wpn = true
+meet_talk_enabled = true
+meet_dialog	= gluzov_hutor_start_dialog
+
+[combat_ignore@gig_watch]
+combat_ignore_cond = {=fighting_dist_ge(2) =fighting_gigant}
+
+[danger_condition]
+ignore_distance_corpse = 0
+ignore_distance_sound = 0
+ignore_distance = 0
+danger_inertion_time_grenade = 0
+danger_inertion_time_hit = 4000
+danger_inertion_time_ricochet = 0
+danger_inertion_time_corpse = 0
+danger_inertion_time_sound = 0
+
+[danger_condition@marsh_end]
+ignore_distance_corpse = 0
+ignore_distance_sound = 0
+ignore_distance = 1

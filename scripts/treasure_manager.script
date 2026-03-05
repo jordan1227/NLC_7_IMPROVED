@@ -1,0 +1,256 @@
+local treasure_manager = nil
+
+function parse_spawns(line)
+	if line==nil then
+		return {}
+	end
+	local t = se_respawn.parse_names(line)
+	local n = table.getn(t)
+	local ret_table = {}
+	local k = 1
+	while k <= n do
+		local spawn = {}
+		spawn.section = t[k]
+		if t[k+1]~=nil then
+			local p = tonumber(t[k+1])
+			if p then
+				spawn.count = p
+				k = k + 2
+			else
+				spawn.count = 1
+				k = k + 1
+			end
+		else
+			spawn.count = 1
+			k = k + 1
+		end
+		table.insert(ret_table, spawn)
+	end
+	return ret_table
+end
+
+class "CTreasure"
+function CTreasure:__init()
+    
+	self.ini = ini_file("misc\\treasure_manager.ltx") 
+	if not self.ini:section_exist("list") then
+		abort("There is no section [list] in treasure_manager.ltx")
+	end
+	local n = self.ini:line_count("list")
+	local id, value = "",""
+	local r_trs_item = get_value("r_treas_items", 1)
+	self.treasure_info = {}
+	for i=0,n-1 do
+		result, id, value	= self.ini:r_line("list",i,"","")
+		self.treasure_info[id] = {}
+		self.treasure_info[id].rnd 			= utils.cfg_get_number(self.ini, id, "random_treasure", nil, false, 1)
+		self.treasure_info[id].target		= utils.cfg_get_number(self.ini, id, "target", nil, true)
+		self.treasure_info[id].name			= utils.cfg_get_string(self.ini, id, "name", nil, true, "")
+		self.treasure_info[id].description	= utils.cfg_get_string(self.ini, id, "description"..r_trs_item, nil, true, "")
+		self.treasure_info[id].items		= parse_spawns(utils.cfg_get_string(self.ini, id, "items"..r_trs_item, nil, true, ""))
+		local community	= parse_names(utils.cfg_get_string(self.ini, id, "community"..r_trs_item, nil, false, "", "stalker"))
+		self.treasure_info[id].community = {}
+		for k,v in pairs(community) do
+			self.treasure_info[id].community[v] = true
+		end
+		if self.treasure_info[id].items==nil then
+			abort("cant find 'items' in %s", id)
+		end
+		self.treasure_info[id].condlist		= xr_logic.parse_condlist(db.actor, "treasure_manager", "condlist", utils.cfg_get_string(self.ini, id, "condlist", nil, false, "", ""))
+		self.treasure_info[id].active = false
+		self.treasure_info[id].done = false
+	end
+	self.treasure_by_target = {}
+	for k,v in pairs(self.treasure_info) do
+		self.treasure_by_target[v.target] = k	
+	end
+	self.ini:release()
+	self.ini = nil
+end
+
+function CTreasure:use(npc)
+	local shron
+	local comm
+	local avail = {}
+	for k,v in pairs(self.treasure_info) do
+		if v.done==false and v.active==false then
+			local treasure_prob = xr_logic.pick_section_from_condlist(db.actor, npc, v.condlist)
+			if treasure_prob=="" or treasure_prob==nil then
+				treasure_prob = 5
+			end
+			if tonumber(treasure_prob) > 0 and v.rnd == 1 then
+				table.insert(avail,k)
+			end
+		end
+	end
+	local treas_rnd = dsh.get_next_random("pda_treas_rnd", 1, 100) / 100
+	-- log2("CTreasure:use treas_rnd [%.3f] #avail [%d]",treas_rnd,#avail)
+	if #avail == 0 or treas_rnd < 0.65 then
+		shron = 0
+		return shron
+	end
+	shron = avail[dsh.get_next_random("pda_treas_rnd", 1, #avail)]
+	self.treasure_info[shron].active = true
+	-- log2("CTreasure:use returned shron [%s]",shron)
+	return shron
+end
+
+function CTreasure:check()
+	for k,v in pairs(self.treasure_info) do
+		self:give_treasure(k)
+	end
+end
+
+function CTreasure:give_treasure(k)
+	local v = self.treasure_info[k]
+	-- временная отладка
+	if not v then
+		if type(k) == "table" then -- каким-то боком таблица попала, распечатать
+			log3("k = %s", k)
+		else -- что-то другое, распечатаем в виде строки
+			log2("k = %s", tostring(k))
+		end
+		log3("self.treasure_info = %s", self.treasure_info) -- на всякий случай, распечатаем ещё и эту таблицу
+		-- дальше будет вылет...
+	end
+	--
+	local obj = alife():story_object(v.target)
+	if obj ~= nil and self.treasure_info[k].done ~= true then
+		sak.send_treasure(v.name)
+		local text = "%c[255,238,155,23]"..game.translate_string(v.name).."\\n".."%c[default]"..game.translate_string(v.description)
+		local spot=lua_random(1,4)
+			level.map_add_object_spot_ser(obj.id, "crlc_big_treasure"..spot, text)
+		for kk,vv in pairs(v.items) do
+			for i = 1,vv.count do
+				local outcome = vv.section
+				if vv.section == "art4" then
+					outcome = sak_dialog.table_capsule[dsh.get_next_random( "rnd_treas_dyn", 8, 13 )]
+				elseif vv.section == "art3" then
+					outcome = sak_dialog.table_capsule[dsh.get_next_random( "rnd_treas_dyn", 1, 7 )]
+					outcome = add_rnd_dyn(outcome)
+				elseif vv.section == "art2" then
+					outcome = sak_dialog.table_bart[dsh.get_next_random( "rnd_treas_dyn", 1, 7 )]
+					outcome = add_rnd_dyn(outcome)
+				elseif vv.section == "art1" then
+					outcome = sak_dialog.table_aart[dsh.get_next_random( "rnd_treas_dyn", 1, 7 )]
+					outcome = add_rnd_dyn(outcome)
+				end
+				alife():create( outcome, obj.position, obj.m_level_vertex_id, obj.m_game_vertex_id, obj.id )
+			end
+		end
+		self.treasure_info[k].active = true
+		self.treasure_info[k].done = true
+		sak.obj_off_on(obj)
+	end
+end
+
+function CTreasure:treasure_empty(box, box_story_id)
+	local k = self.treasure_by_target[box_story_id]
+	if k==nil or self.treasure_info[k]==nil then 
+		return
+	end
+	self.treasure_info[k].active = false
+	if self.treasure_info[k].rnd==1 then
+		self.treasure_info[k].done = false
+	end
+end
+
+function CTreasure:save(p)
+	amk_offline_alife.save(p)
+	local t, active_cnt, done_cnt = {}, 0, 0
+	for k,v in pairs(self.treasure_info) do
+		if v.active or v.done then
+			table.insert(t, {v.target, v.active, v.done})
+			if v.active then active_cnt = active_cnt + 1 end
+			if v.done then done_cnt = done_cnt + 1 end
+		end
+	end
+	set_value("treasure_manager.data", t)
+	log2("[%s.CTreasure:save]: active|done: %s|%s", script_name(), active_cnt, done_cnt)
+end
+
+function CTreasure:load(p)
+	amk_offline_alife.load(p)
+	local data = get_value("treasure_manager.data")
+	if not data then return end
+	local active_cnt, done_cnt = 0, 0
+	for _, t in ipairs(data) do
+		local id, active, done = t[1], t[2], t[3]
+		local k = self.treasure_by_target[id]
+		local info = self.treasure_info[k]
+		info.active = active
+		info.done = done
+		if active then active_cnt = active_cnt + 1 end
+		if done then done_cnt = done_cnt + 1 end
+	end
+	log2("[%s.CTreasure:load]: active|done: %s|%s", script_name(), active_cnt, done_cnt)
+end
+
+function get_treasure_manager()
+	if treasure_manager==nil then
+		treasure_manager = CTreasure()
+	end
+	return treasure_manager
+end
+
+function add_rnd_dyn(sec)
+	local r = dsh.get_next_random( "rnd_treas_dyn", 1, 4 )
+	local res = sec.."_dyn"..tostring(r).."d"
+	return res
+end
+
+function take_item_from_box(box, box_story_id)
+	local story_id = box:story_id()
+	if story_id==nil then
+		return
+	end
+	get_treasure_manager():treasure_empty(box, box_story_id)
+end
+
+function save(p)
+	get_treasure_manager():save(p)
+end
+function load(p)
+	get_treasure_manager():load(p)
+end
+function clear_treasure_manager()
+	treasure_manager = nil
+end
+
+function CTreasure:dialog(npc)
+	local avail = {}
+	local tr_sum = 0
+	for k,v in pairs(self.treasure_info) do
+		if v.done==false and v.active==false and v.community[npc:character_community()]==true then
+			local treasure_prob = xr_logic.pick_section_from_condlist(db.actor, npc, v.condlist)
+			if treasure_prob=="" or treasure_prob==nil then
+				treasure_prob = 0
+			end
+			if tonumber(treasure_prob) >= 0 and
+			v.community[npc:character_community()]==true and
+			v.active==false
+			then
+				if tonumber(treasure_prob)==100 then
+					self:give_treasure(k)
+				else
+					table.insert(avail, {k = k, prob = treasure_prob})
+					tr_sum = tr_sum + treasure_prob
+				end
+			end
+		end
+	end
+	if tr_sum==0 then
+		return
+	end
+	local tr_w = lua_random(tr_sum)
+	for k,v in pairs(avail) do
+		tr_w = tr_w - v.prob
+		if tr_w <= 0 then
+			self:give_treasure(v.k)
+			local t = get_value("npc_trs", {})
+			t[npc:id()] = v.k
+			set_value("npc_trs", t)
+			break
+		end
+	end
+end

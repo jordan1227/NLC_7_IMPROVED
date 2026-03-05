@@ -1,0 +1,243 @@
+;MG36
+[wpn_g36c]:wpn_g36
+$spawn								= "weapons\mg36"
+class								= WP_LR300
+description							= enc_weapons1_wpn-g36c
+min_radius							= 0
+max_radius							= 150
+
+dialog_description		    		= desc_dialog_wpn-g36c
+
+inv_name							= wpn-g36c
+inv_name_short						= g36c
+
+inv_weight							= 4.1
+inv_grid_height                                    = 2
+inv_grid_width                                     = 7
+inv_grid_x                                         = 54
+inv_grid_y                                         = 6
+
+
+default_to_ruck						= false
+
+
+slot								= 2
+
+ammo_mag_size						= 100
+ammo_class							= ammo_5.56x45_mg
+fire_modes							= 1, -1
+
+fire_dispersion_base				= 0.15
+control_inertion_factor				= 1.45f
+
+cost								= 35000
+
+cam_relax_speed						= 6.0	
+cam_dispersion						= 0.2	
+cam_dispersion_inc					= 0.1
+cam_dispertion_frac					= 0.6
+cam_max_angle						= 15.0	
+cam_max_angle_horz					= 7.5
+cam_step_angle_horz					= 0.1
+
+PDM_disp_base 						= 2.0
+PDM_disp_vel_factor 				= 2.5
+PDM_disp_accel_factor 				= 3.5
+PDM_crouch							= 1.6
+PDM_crouch_no_acc					= 0.64
+
+position                                           = -0.026, -0.132, -0.02
+
+visual                  			= dynamics\weapons\wpn_g36\wpn_g36_nimble
+hud                      			= wpn_g36c_hud
+
+weapon_type					        = heavy
+heavy_ammo					        = ammo
+
+hit_power							= 1.35
+hit_impulse							= 1
+hit_type							= fire_wound
+
+fire_distance						= 200
+bullet_speed						= 700
+rpm									= 750
+
+
+scope_status						= 2
+silencer_status						= 2
+grenade_launcher_status				= 0
+scope_mode 							= 3
+
+zoom_enabled						= true
+scope_zoom_factor	    			= 60
+
+scope_name 							= wpn_addon_eotech
+scope_names 							= ac10632, wpn_addon_eotech, microt1, specter
+
+scope_respawn_ac10632 = wpn_g36_nimble_ac10632
+scope_respawn_wpn_addon_eotech = wpn_g36_nimble_eot
+scope_respawn_microt1 = wpn_g36_nimble_microt1
+scope_respawn_specter = wpn_g36_nimble_specter
+
+scope_zoom_factor = 90
+
+silencer_name  						= wpn_addon_sil_556_ar
+scope_x                     = 77		; offset in inventory icon
+scope_y                     = -16
+silencer_x                  = 252		; offset in inventory icon
+silencer_y                  = 26
+silencer_x_offset			= -3
+silencer_y_offset			= 0
+grenade_launcher_x          = 0		; offset in inventory icon
+grenade_launcher_y          = 0
+
+snd_reload                                         = weapons\g36\mg36_reload
+snd_reload_empty                                   = weapons\g36\mg36_reload_empty
+
+[wpn_g36c_hud]:wpn_g36_hud
+aim_hud_offset_pos = -0.063500,0.009000,-0.09
+aim_hud_offset_rot = -0.018950,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.063500,0.009000,-0.09
+aim_hud_offset_rot_16x9 = -0.018950,0.000000,0.000000
+
+anm_bore                                           = mg36_idle_aim
+anm_bore_empty                                     = mg36_idle_aim, idle_empty
+anm_hide                                           = mg36_holster
+anm_hide_empty                                     = mg36_holster, idle_empty
+anm_idle                                           = mg36_idle
+anm_idle_empty                                     = mg36_idle, idle_empty
+anm_idle_aim                                       = mg36_idle_aim
+anm_idle_aim_empty                                 = mg36_idle_aim, idle_empty
+anm_idle_moving_slow                               = mg36_moving_slow
+anm_idle_moving_slow_empty                         = mg36_moving_slow, idle_empty
+anm_idle_moving                                    = mg36_moving
+anm_idle_moving_empty                              = mg36_moving, idle_empty
+anm_idle_moving_crouch                             = mg36_crouch
+anm_idle_moving_crouch_empty                       = mg36_crouch, idle_empty
+anm_idle_aim_moving                                = mg36_moving_aim
+anm_idle_aim_moving_empty                          = mg36_moving_aim, idle_empty
+anm_reload                                         = mg36_reload, reload
+anm_reload_empty                                   = mg36_reload_empty, reload_empty
+anm_reload_jammed								   = mg36_misfire, misfire
+anm_firemode                					   = mg36_firemode
+anm_firemode_empty                				   = mg36_firemode, idle_empty
+
+anm_firemode_aim = mg36_misfire, misfire
+anm_firemode_empty = mg36_firemode, idle_empty
+anm_firemode_aim_empty = mg36_firemode, idle_empty
+
+anm_shots                                          = mg36_shoot, shoot
+anm_shots_last                                     = mg36_shoot, idle_empty
+anm_shots_when_aim								   = mg36_shoot_aim, shoot
+anm_shots_when_aim_last                            = mg36_shoot_aim, idle_empty
+anm_show                                           = mg36_draw
+anm_show_empty                                     = mg36_draw, idle_empty
+
+anm_idle_sprint_start         						   = mg36_sprint_start
+anm_idle_sprint         						   = mg36_sprint
+anm_idle_sprint_end         						   	   = mg36_sprint_end
+
+anm_idle_sprint_start_empty         					   = mg36_sprint_start, idle_empty
+anm_idle_sprint_empty         					   = mg36_sprint, idle_empty
+anm_idle_sprint_end_empty         					   = mg36_sprint_end, idle_empty
+
+anm_idle_sprint_start_jammed      = mg36_sprint_start
+anm_idle_sprint_end_jammed       = mg36_sprint_end
+
+anm_headlamp_on                                = mg36_flash
+; anm_gasmask                                      = mg36_clear
+
+anm_headlamp_on_empty                          = mg36_flash, idle_empty
+; anm_gasmask_empty                                = mg36_clear, idle_empty
+
+fire_bone                                          = muzzle
+fire_bone2                                         = muzzle
+fire_point                                         = 0,0,0
+fire_point2                                        = 0,0,0
+
+item_visual                                        = dynamics\weapons\wpn_g36\wpn_g36_nimble_hud.ogf
+
+
+;--------------------------------------------------------------------
+
+[wpn_g36_nimble_ac10632]:wpn_g36c
+$spawn                                             = "weapons\wpn_g36_nimble_ac10632"
+scope_x                                      	   = 86
+scope_y                                      	   = -7
+hud                                                = wpn_g36_nimble_ac10632_hud
+visual                                             = dynamics\weapons\wpn_g36\wpn_g36_nimble_ac10632.ogf
+
+scope_name = ac10632
+scope_respawn = wpn_g36c
+
+[wpn_g36_nimble_ac10632_hud]:wpn_g36c_hud
+item_visual                                        = dynamics\weapons\wpn_g36\wpn_g36_nimble_ac10632_hud.ogf
+aim_hud_offset_pos = -0.063000,-0.012000,-0.07
+aim_hud_offset_rot = -0.018950,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.063000,-0.012000,-0.07
+aim_hud_offset_rot_16x9 = -0.018950,0.000000,0.000000
+
+
+[wpn_g36_nimble_eot]:wpn_g36c
+$spawn                                             = "weapons\wpn_g36_nimble_eot"
+scope_x                                      	   = 93
+scope_y                                      	   = -7
+hud                                                = wpn_g36_nimble_eot_hud
+visual                                             = dynamics\weapons\wpn_g36\wpn_g36_nimble_eot.ogf
+
+scope_name = wpn_addon_eotech
+scope_respawn = wpn_g36c
+
+[wpn_g36_nimble_eot_hud]:wpn_g36c_hud
+item_visual                                        = dynamics\weapons\wpn_g36\wpn_g36_nimble_eot_hud.ogf
+aim_hud_offset_pos = -0.063500,-0.016000,-0.07
+aim_hud_offset_rot = -0.018950,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.063500,-0.016000,-0.07
+aim_hud_offset_rot_16x9 = -0.018950,0.000000,0.000000
+
+
+[wpn_g36_nimble_microt1]:wpn_g36c
+$spawn                                             = "weapons\wpn_g36_nimble_microt1"
+scope_x                                     	   = 90
+scope_y                                     	   = -6
+hud                                                = wpn_g36_nimble_microt1_hud
+visual                                             = dynamics\weapons\wpn_g36\wpn_g36_nimble_micro-t1.ogf
+
+scope_name = microt1
+scope_respawn = wpn_g36c
+
+[wpn_g36_nimble_microt1_hud]:wpn_g36c_hud
+item_visual                                        = dynamics\weapons\wpn_g36\wpn_g36_nimble_micro-t1_hud.ogf
+aim_hud_offset_pos = -0.063500,-0.017500,-0.07
+aim_hud_offset_rot = -0.018950,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.063500,-0.017500,-0.07
+aim_hud_offset_rot_16x9 = -0.018950,0.000000,0.000000
+
+
+[wpn_g36_nimble_specter]:wpn_g36c
+$spawn										 	   = "weapons\wpn_g36_nimble_specter"
+visual										 	   = dynamics\weapons\wpn_g36\wpn_g36_nimble_specter.ogf
+hud											 	   = wpn_g36_nimble_specter_hud
+scope_x                                      	   = 76
+scope_y                                      	   = -9
+3d_reticle_size = 5
+3dss_gen_zoom_enable = true
+
+scope_name = specter
+scope_respawn = wpn_g36c
+
+[wpn_g36_nimble_specter_hud]:wpn_g36c_hud
+item_visual										   = dynamics\weapons\wpn_g36\wpn_g36_nimble_specter_hud.ogf
+anm_shots_when_aim								   = mg36_shoot_scope, shoot
+anm_shots_when_aim_last                            = mg36_shoot_scope, idle_empty
+
+aim_hud_offset_pos = -0.063,-0.0127,-0.0855001
+aim_hud_offset_rot = 0.004,-0.0035,0
+aim_hud_offset_pos_16x9 = -0.063,-0.0127,-0.0855001
+aim_hud_offset_rot_16x9 = 0.004,-0.0035,0
+
+use_alt_aim_zoom = true
+alt_aim_hud_offset_pos = -0.063025,-0.039575,-0.05
+alt_aim_hud_offset_rot = 0.000000,0.000000,0.000000
+alt_aim_hud_offset_pos_16x9 = -0.063025,-0.039575,-0.05
+alt_aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000

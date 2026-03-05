@@ -1,0 +1,5218 @@
+<?xml version="1.0" encoding="windows-1251"  ?>
+<game_dialogs>
+#include "gameplay\sak_dalogs_esc_gar.xml"
+#include "gameplay\sak_dalogs_agr_dv.xml"
+#include "gameplay\sak_dialogs_dead_gen_prip.xml"
+#include "gameplay\dialogs_artmod.xml"
+#include "gameplay\sak_dalogs_bar_yan.xml"
+#include "gameplay\sak_dalogs_mil_rad.xml"
+#include "gameplay\sak_dalogs_lim_atp.xml"
+#include "gameplay\kill_stalker_dlg.xml"
+#include "gameplay\vergas_dialogs.xml"
+#include "gameplay\mike_dialogs_new_story.xml"
+#include "gameplay\doc_dialogs_new.xml"
+#include "gameplay\dialogs_story.xml"
+
+<dialog id="bandit_treasure_1_dialog">
+<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>bandit_treasure_1_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>bandit_treasure_1_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>bandit_treasure_1_dialog_2</text>
+			<next>3</next>
+			<next>31</next>
+		</phrase>		
+		<phrase id="31">
+		<precondition>sak_dialog.not_ready_time_to_treasure</precondition>
+			<text>bandit_treasure_1_dialog_31</text>
+			<next>91</next>
+		</phrase>
+		<phrase id="91">
+			<text>bandit_treasure_1_dialog_91</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+		<precondition>sak_dialog.is_ready_time_to_treasure</precondition>
+			<text>bandit_treasure_1_dialog_3</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<precondition>sak_dialog.have_vodka</precondition>
+			<text>bandit_treasure_1_dialog_41</text>
+			<action>sak.drink_vodka</action>
+			<action>sak_dialog.starts_treasure_time</action>
+			<next>5</next>
+		</phrase>
+		<phrase id="42">
+			<text>bandit_treasure_1_dialog_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="5">
+			<text>bandit_treasure_1_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>bandit_treasure_1_dialog_6</text>
+			<action>sak.have_trasure</action>
+			<next>71</next>
+			<next>73</next>
+		</phrase>
+		<phrase id="71">
+			<has_info>have_sak_treasure</has_info>
+			<text>bandit_treasure_1_dialog_71</text>
+			<action>sak.take_trasure</action>
+			<next>81</next>
+		</phrase>
+		<phrase id="73">
+		<dont_has_info>have_sak_treasure</dont_has_info>
+			<text>bandit_treasure_1_dialog_73</text>
+			<next>82</next>
+		</phrase>
+		<phrase id="81">
+			<text>bandit_treasure_1_dialog_81</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="82">
+			<text>bandit_treasure_1_dialog_82</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="bandit_treasure_2_dialog">
+<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>bandit_treasure_2_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>bandit_treasure_2_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>bandit_treasure_2_dialog_2</text>
+			<next>3</next>
+			<next>31</next>
+		</phrase>
+		<phrase id="31">
+		<precondition>sak_dialog.not_ready_time_to_treasure</precondition>
+			<text>bandit_treasure_2_dialog_31</text>
+			<next>91</next>
+		</phrase>
+		<phrase id="91">
+			<text>bandit_treasure_2_dialog_91</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+		<precondition>sak_dialog.is_ready_time_to_treasure</precondition>
+			<text>bandit_treasure_2_dialog_3</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<precondition>sak_dialog.have_vodka</precondition>
+			<text>bandit_treasure_2_dialog_41</text>
+			<action>sak.drink_vodka</action>
+			<action>sak_dialog.starts_treasure_time</action>
+			<next>5</next>
+		</phrase>
+		<phrase id="42">
+			<text>bandit_treasure_2_dialog_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="5">
+			<text>bandit_treasure_2_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>bandit_treasure_2_dialog_6</text>
+			<action>sak.have_trasure</action>
+			<next>71</next>
+			<next>73</next>
+		</phrase>
+		<phrase id="71">
+			<has_info>have_sak_treasure</has_info>
+			<text>bandit_treasure_2_dialog_71</text>
+			<action>sak.take_trasure</action>
+			<next>81</next>
+		</phrase>
+		<phrase id="73">
+		<dont_has_info>have_sak_treasure</dont_has_info>
+			<text>bandit_treasure_2_dialog_73</text>
+			<next>82</next>
+		</phrase>
+		<phrase id="81">
+			<text>bandit_treasure_2_dialog_81</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="82">
+			<text>bandit_treasure_2_dialog_82</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="bandit_treasure_3_dialog">
+<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>bandit_treasure_3_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>bandit_treasure_3_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>bandit_treasure_3_dialog_2</text>
+			<next>3</next>
+			<next>31</next>
+		</phrase>
+		<phrase id="31">
+		<precondition>sak_dialog.not_ready_time_to_treasure</precondition>
+			<text>bandit_treasure_3_dialog_31</text>
+			<next>91</next>
+		</phrase>
+		<phrase id="91">
+			<text>bandit_treasure_3_dialog_91</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+		<precondition>sak_dialog.is_ready_time_to_treasure</precondition>
+			<text>bandit_treasure_3_dialog_3</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<precondition>sak_dialog.have_vodka</precondition>
+			<text>bandit_treasure_3_dialog_41</text>
+			<action>sak.drink_vodka</action>
+			<action>sak_dialog.starts_treasure_time</action>
+			<next>5</next>
+		</phrase>
+		<phrase id="42">
+			<text>bandit_treasure_3_dialog_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="5">
+			<text>bandit_treasure_3_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>bandit_treasure_3_dialog_6</text>
+			<action>sak.have_trasure</action>
+			<next>71</next>
+			<next>73</next>
+		</phrase>
+		<phrase id="71">
+			<has_info>have_sak_treasure</has_info>
+			<text>bandit_treasure_3_dialog_71</text>
+			<action>sak.take_trasure</action>
+			<next>81</next>
+		</phrase>
+		<phrase id="73">
+		<dont_has_info>have_sak_treasure</dont_has_info>
+			<text>bandit_treasure_3_dialog_73</text>
+			<next>82</next>
+		</phrase>
+		<phrase id="81">
+			<text>bandit_treasure_3_dialog_81</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="82">
+			<text>bandit_treasure_3_dialog_82</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="bandit_treasure_4_dialog">
+<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>bandit_treasure_4_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>bandit_treasure_4_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>bandit_treasure_4_dialog_2</text>
+			<next>3</next>
+			<next>31</next>
+		</phrase>
+		<phrase id="31">
+		<precondition>sak_dialog.not_ready_time_to_treasure</precondition>
+			<text>bandit_treasure_4_dialog_31</text>
+			<next>91</next>
+		</phrase>
+		<phrase id="91">
+			<text>bandit_treasure_4_dialog_91</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+		<precondition>sak_dialog.is_ready_time_to_treasure</precondition>
+			<text>bandit_treasure_4_dialog_3</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<precondition>sak_dialog.have_vodka</precondition>
+			<text>bandit_treasure_4_dialog_41</text>
+			<action>sak.drink_vodka</action>
+			<action>sak_dialog.starts_treasure_time</action>
+			<next>5</next>
+		</phrase>
+		<phrase id="42">
+			<text>bandit_treasure_4_dialog_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="5">
+			<text>bandit_treasure_4_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>bandit_treasure_4_dialog_6</text>
+			<action>sak.have_trasure</action>
+			<next>71</next>
+			<next>73</next>
+		</phrase>
+		<phrase id="71">
+			<has_info>have_sak_treasure</has_info>
+			<text>bandit_treasure_4_dialog_71</text>
+			<action>sak.take_trasure</action>
+			<next>81</next>
+		</phrase>
+		<phrase id="73">
+		<dont_has_info>have_sak_treasure</dont_has_info>
+			<text>bandit_treasure_4_dialog_73</text>
+			<next>82</next>
+		</phrase>
+		<phrase id="81">
+			<text>bandit_treasure_4_dialog_81</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="82">
+			<text>bandit_treasure_4_dialog_82</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="neitral_treasure_1_dialog">
+<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>neitral_treasure_1_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>neitral_treasure_1_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>neitral_treasure_1_dialog_2</text>
+			<next>3</next>
+			<next>31</next>
+		</phrase>
+		<phrase id="31">
+		<precondition>sak_dialog.not_ready_time_to_treasure</precondition>
+			<text>neitral_treasure_1_dialog_31</text>
+			<next>91</next>
+		</phrase>
+		<phrase id="91">
+			<text>neitral_treasure_1_dialog_91</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+		<precondition>sak_dialog.is_ready_time_to_treasure</precondition>
+			<text>neitral_treasure_1_dialog_3</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<precondition>sak_dialog.have_vodka</precondition>
+			<text>neitral_treasure_1_dialog_41</text>
+			<action>sak.drink_vodka</action>
+			<action>sak_dialog.starts_treasure_time</action>
+			<next>5</next>
+		</phrase>
+		<phrase id="42">
+			<text>neitral_treasure_1_dialog_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="5">
+			<text>neitral_treasure_1_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>neitral_treasure_1_dialog_6</text>
+			<action>sak.have_trasure</action>
+			<next>71</next>
+			<next>73</next>
+		</phrase>
+		<phrase id="71">
+			<has_info>have_sak_treasure</has_info>
+			<text>neitral_treasure_1_dialog_71</text>
+			<action>sak.take_trasure</action>
+			<next>81</next>
+		</phrase>
+		<phrase id="73">
+		<dont_has_info>have_sak_treasure</dont_has_info>
+			<text>neitral_treasure_1_dialog_73</text>
+			<next>82</next>
+		</phrase>
+		<phrase id="81">
+			<text>neitral_treasure_1_dialog_81</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="82">
+			<text>neitral_treasure_1_dialog_82</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="neitral_treasure_2_dialog">
+<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>neitral_treasure_2_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>neitral_treasure_2_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>neitral_treasure_2_dialog_2</text>
+			<next>3</next>
+			<next>31</next>
+		</phrase>
+		<phrase id="31">
+		<precondition>sak_dialog.not_ready_time_to_treasure</precondition>
+			<text>neitral_treasure_2_dialog_31</text>
+			<next>91</next>
+		</phrase>
+		<phrase id="91">
+			<text>neitral_treasure_2_dialog_91</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+		<precondition>sak_dialog.is_ready_time_to_treasure</precondition>
+			<text>neitral_treasure_2_dialog_3</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<precondition>sak_dialog.have_vodka</precondition>
+			<text>neitral_treasure_2_dialog_41</text>
+			<action>sak.drink_vodka</action>
+			<action>sak_dialog.starts_treasure_time</action>
+			<next>5</next>
+		</phrase>
+		<phrase id="42">
+			<text>neitral_treasure_2_dialog_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="5">
+			<text>neitral_treasure_2_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>neitral_treasure_2_dialog_6</text>
+			<action>sak.have_trasure</action>
+			<next>71</next>
+			<next>73</next>
+		</phrase>
+		<phrase id="71">
+			<has_info>have_sak_treasure</has_info>
+			<text>neitral_treasure_2_dialog_71</text>
+			<action>sak.take_trasure</action>
+			<next>81</next>
+		</phrase>
+		<phrase id="73">
+		<dont_has_info>have_sak_treasure</dont_has_info>
+			<text>neitral_treasure_2_dialog_73</text>
+			<next>82</next>
+		</phrase>
+		<phrase id="81">
+			<text>neitral_treasure_2_dialog_81</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="82">
+			<text>neitral_treasure_2_dialog_82</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="neitral_treasure_3_dialog">
+<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>neitral_treasure_3_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>neitral_treasure_3_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>neitral_treasure_3_dialog_2</text>
+			<next>3</next>
+			<next>31</next>
+		</phrase>
+		<phrase id="31">
+		<precondition>sak_dialog.not_ready_time_to_treasure</precondition>
+			<text>neitral_treasure_3_dialog_31</text>
+			<next>91</next>
+		</phrase>
+		<phrase id="91">
+			<text>neitral_treasure_3_dialog_91</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+		<precondition>sak_dialog.is_ready_time_to_treasure</precondition>
+			<text>neitral_treasure_3_dialog_3</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<precondition>sak_dialog.have_vodka</precondition>
+			<text>neitral_treasure_3_dialog_41</text>
+			<action>sak.drink_vodka</action>
+			<action>sak_dialog.starts_treasure_time</action>
+			<next>5</next>
+		</phrase>
+		<phrase id="42">
+			<text>neitral_treasure_3_dialog_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="5">
+			<text>neitral_treasure_3_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>neitral_treasure_3_dialog_6</text>
+			<action>sak.have_trasure</action>
+			<next>71</next>
+			<next>73</next>
+		</phrase>
+		<phrase id="71">
+			<has_info>have_sak_treasure</has_info>
+			<text>neitral_treasure_3_dialog_71</text>
+			<action>sak.take_trasure</action>
+			<next>81</next>
+		</phrase>
+		<phrase id="73">
+		<dont_has_info>have_sak_treasure</dont_has_info>
+			<text>neitral_treasure_3_dialog_73</text>
+			<next>82</next>
+		</phrase>
+		<phrase id="81">
+			<text>neitral_treasure_3_dialog_81</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="82">
+			<text>neitral_treasure_3_dialog_82</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="neitral_treasure_4_dialog">
+<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>neitral_treasure_4_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>neitral_treasure_4_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>neitral_treasure_4_dialog_2</text>
+			<next>3</next>
+			<next>31</next>
+		</phrase>
+		<phrase id="31">
+		<precondition>sak_dialog.not_ready_time_to_treasure</precondition>
+			<text>neitral_treasure_4_dialog_31</text>
+			<next>91</next>
+		</phrase>
+		<phrase id="91">
+			<text>neitral_treasure_4_dialog_91</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+		<precondition>sak_dialog.is_ready_time_to_treasure</precondition>
+			<text>neitral_treasure_4_dialog_3</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<precondition>sak_dialog.have_vodka</precondition>
+			<text>neitral_treasure_4_dialog_41</text>
+			<action>sak.drink_vodka</action>
+			<action>sak_dialog.starts_treasure_time</action>
+			<next>5</next>
+		</phrase>
+		<phrase id="42">
+			<text>neitral_treasure_4_dialog_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="5">
+			<text>neitral_treasure_4_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>neitral_treasure_4_dialog_6</text>
+			<action>sak.have_trasure</action>
+			<next>71</next>
+			<next>73</next>
+		</phrase>
+		<phrase id="71">
+			<has_info>have_sak_treasure</has_info>
+			<text>neitral_treasure_4_dialog_71</text>
+			<action>sak.take_trasure</action>
+			<next>81</next>
+		</phrase>
+		<phrase id="73">
+		<dont_has_info>have_sak_treasure</dont_has_info>
+			<text>neitral_treasure_4_dialog_73</text>
+			<next>82</next>
+		</phrase>
+		<phrase id="81">
+			<text>neitral_treasure_4_dialog_81</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="82">
+			<text>neitral_treasure_4_dialog_82</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="dolg_garb_treasure_1_dialog">
+<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>dolg_garb_treasure_1_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>dolg_garb_treasure_1_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>dolg_garb_treasure_1_dialog_2</text>
+			<next>3</next>
+			<next>31</next>
+		</phrase>
+		<phrase id="31">
+		<precondition>sak_dialog.not_ready_time_to_treasure</precondition>
+			<text>dolg_garb_treasure_1_dialog_31</text>
+			<next>91</next>
+		</phrase>
+		<phrase id="91">
+			<text>dolg_garb_treasure_1_dialog_91</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+		<precondition>sak_dialog.is_ready_time_to_treasure</precondition>
+			<text>dolg_garb_treasure_1_dialog_3</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<precondition>sak_dialog.have_vodka</precondition>
+			<text>dolg_garb_treasure_1_dialog_41</text>
+			<action>sak.drink_vodka</action>
+			<action>sak_dialog.starts_treasure_time</action>
+			<next>5</next>
+		</phrase>
+		<phrase id="42">
+			<text>dolg_garb_treasure_1_dialog_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="5">
+			<text>dolg_garb_treasure_1_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>dolg_garb_treasure_1_dialog_6</text>
+			<action>sak.have_trasure</action>
+			<next>71</next>
+			<next>73</next>
+		</phrase>
+		<phrase id="71">
+			<has_info>have_sak_treasure</has_info>
+			<text>dolg_garb_treasure_1_dialog_71</text>
+			<action>sak.take_trasure</action>
+			<next>81</next>
+		</phrase>
+		<phrase id="73">
+		<dont_has_info>have_sak_treasure</dont_has_info>
+			<text>dolg_garb_treasure_1_dialog_73</text>
+			<next>82</next>
+		</phrase>
+		<phrase id="81">
+			<text>dolg_garb_treasure_1_dialog_81</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="82">
+			<text>dolg_garb_treasure_1_dialog_82</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="dolg_garb_treasure_2_dialog">
+<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>dolg_garb_treasure_2_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>dolg_garb_treasure_2_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>dolg_garb_treasure_2_dialog_2</text>
+			<next>3</next>
+			<next>31</next>
+		</phrase>
+		<phrase id="31">
+		<precondition>sak_dialog.not_ready_time_to_treasure</precondition>
+			<text>dolg_garb_treasure_2_dialog_31</text>
+			<next>91</next>
+		</phrase>
+		<phrase id="91">
+			<text>dolg_garb_treasure_2_dialog_91</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+		<precondition>sak_dialog.is_ready_time_to_treasure</precondition>
+			<text>dolg_garb_treasure_2_dialog_3</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<precondition>sak_dialog.have_vodka</precondition>
+			<text>dolg_garb_treasure_2_dialog_41</text>
+			<action>sak.drink_vodka</action>
+			<action>sak_dialog.starts_treasure_time</action>
+			<next>5</next>
+		</phrase>
+		<phrase id="42">
+			<text>dolg_garb_treasure_2_dialog_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="5">
+			<text>dolg_garb_treasure_2_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>dolg_garb_treasure_2_dialog_6</text>
+			<action>sak.have_trasure</action>
+			<next>71</next>
+			<next>73</next>
+		</phrase>
+		<phrase id="71">
+			<has_info>have_sak_treasure</has_info>
+			<text>dolg_garb_treasure_2_dialog_71</text>
+			<action>sak.take_trasure</action>
+			<next>81</next>
+		</phrase>
+		<phrase id="73">
+		<dont_has_info>have_sak_treasure</dont_has_info>
+			<text>dolg_garb_treasure_2_dialog_73</text>
+			<next>82</next>
+		</phrase>
+		<phrase id="81">
+			<text>dolg_garb_treasure_2_dialog_81</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="82">
+			<text>dolg_garb_treasure_2_dialog_82</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="dolg_garb_treasure_3_dialog">
+<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>dolg_garb_treasure_3_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>dolg_garb_treasure_3_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>dolg_garb_treasure_3_dialog_2</text>
+			<next>3</next>
+			<next>31</next>
+		</phrase>
+		<phrase id="31">
+		<precondition>sak_dialog.not_ready_time_to_treasure</precondition>
+			<text>dolg_garb_treasure_3_dialog_31</text>
+			<next>91</next>
+		</phrase>
+		<phrase id="91">
+			<text>dolg_garb_treasure_3_dialog_91</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+		<precondition>sak_dialog.is_ready_time_to_treasure</precondition>
+			<text>dolg_garb_treasure_3_dialog_3</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<precondition>sak_dialog.have_vodka</precondition>
+			<text>dolg_garb_treasure_3_dialog_41</text>
+			<action>sak.drink_vodka</action>
+			<action>sak_dialog.starts_treasure_time</action>
+			<next>5</next>
+		</phrase>
+		<phrase id="42">
+			<text>dolg_garb_treasure_3_dialog_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="5">
+			<text>dolg_garb_treasure_3_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>dolg_garb_treasure_3_dialog_6</text>
+			<action>sak.have_trasure</action>
+			<next>71</next>
+			<next>73</next>
+		</phrase>
+		<phrase id="71">
+			<has_info>have_sak_treasure</has_info>
+			<text>dolg_garb_treasure_3_dialog_71</text>
+			<action>sak.take_trasure</action>
+			<next>81</next>
+		</phrase>
+		<phrase id="73">
+		<dont_has_info>have_sak_treasure</dont_has_info>
+			<text>dolg_garb_treasure_3_dialog_73</text>
+			<next>82</next>
+		</phrase>
+		<phrase id="81">
+			<text>dolg_garb_treasure_3_dialog_81</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="82">
+			<text>dolg_garb_treasure_3_dialog_82</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="dolg_garb_treasure_4_dialog">
+<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>dolg_garb_treasure_4_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>dolg_garb_treasure_4_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>dolg_garb_treasure_4_dialog_2</text>
+			<next>3</next>
+			<next>31</next>
+		</phrase>
+		<phrase id="31">
+		<precondition>sak_dialog.not_ready_time_to_treasure</precondition>
+			<text>dolg_garb_treasure_4_dialog_31</text>
+			<next>91</next>
+		</phrase>
+		<phrase id="91">
+			<text>dolg_garb_treasure_4_dialog_91</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+		<precondition>sak_dialog.is_ready_time_to_treasure</precondition>
+			<text>dolg_garb_treasure_4_dialog_3</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<precondition>sak_dialog.have_vodka</precondition>
+			<text>dolg_garb_treasure_4_dialog_41</text>
+			<action>sak.drink_vodka</action>
+			<action>sak_dialog.starts_treasure_time</action>
+			<next>5</next>
+		</phrase>
+		<phrase id="42">
+			<text>dolg_garb_treasure_4_dialog_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="5">
+			<text>dolg_garb_treasure_4_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>dolg_garb_treasure_4_dialog_6</text>
+			<action>sak.have_trasure</action>
+			<next>71</next>
+			<next>73</next>
+		</phrase>
+		<phrase id="71">
+			<has_info>have_sak_treasure</has_info>
+			<text>dolg_garb_treasure_4_dialog_71</text>
+			<action>sak.take_trasure</action>
+			<next>81</next>
+		</phrase>
+		<phrase id="73">
+		<dont_has_info>have_sak_treasure</dont_has_info>
+			<text>dolg_garb_treasure_4_dialog_73</text>
+			<next>82</next>
+		</phrase>
+		<phrase id="81">
+			<text>dolg_garb_treasure_4_dialog_81</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="82">
+			<text>dolg_garb_treasure_4_dialog_82</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="stalk_garb_treasure_1_dialog">
+<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>stalk_garb_treasure_1_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>stalk_garb_treasure_1_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>stalk_garb_treasure_1_dialog_2</text>
+			<next>3</next>
+			<next>31</next>
+		</phrase>
+		<phrase id="31">
+		<precondition>sak_dialog.not_ready_time_to_treasure</precondition>
+			<text>stalk_garb_treasure_1_dialog_31</text>
+			<next>91</next>
+		</phrase>
+		<phrase id="91">
+			<text>stalk_garb_treasure_1_dialog_91</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+		<precondition>sak_dialog.is_ready_time_to_treasure</precondition>
+			<text>stalk_garb_treasure_1_dialog_3</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<precondition>sak_dialog.have_vodka</precondition>
+			<text>stalk_garb_treasure_1_dialog_41</text>
+			<action>sak.drink_vodka</action>
+			<action>sak_dialog.starts_treasure_time</action>
+			<next>5</next>
+		</phrase>
+		<phrase id="42">
+			<text>stalk_garb_treasure_1_dialog_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="5">
+			<text>stalk_garb_treasure_1_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>stalk_garb_treasure_1_dialog_6</text>
+			<action>sak.have_trasure</action>
+			<next>71</next>
+			<next>73</next>
+		</phrase>
+		<phrase id="71">
+			<has_info>have_sak_treasure</has_info>
+			<text>stalk_garb_treasure_1_dialog_71</text>
+			<action>sak.take_trasure</action>
+			<next>81</next>
+		</phrase>
+		<phrase id="73">
+		<dont_has_info>have_sak_treasure</dont_has_info>
+			<text>stalk_garb_treasure_1_dialog_73</text>
+			<next>82</next>
+		</phrase>
+		<phrase id="81">
+			<text>stalk_garb_treasure_1_dialog_81</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="82">
+			<text>stalk_garb_treasure_1_dialog_82</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="stalk_garb_treasure_2_dialog">
+<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>stalk_garb_treasure_2_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>stalk_garb_treasure_2_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>stalk_garb_treasure_2_dialog_2</text>
+			<next>3</next>
+			<next>31</next>
+		</phrase>
+		<phrase id="31">
+		<precondition>sak_dialog.not_ready_time_to_treasure</precondition>
+			<text>stalk_garb_treasure_2_dialog_31</text>
+			<next>91</next>
+		</phrase>
+		<phrase id="91">
+			<text>stalk_garb_treasure_2_dialog_91</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+		<precondition>sak_dialog.is_ready_time_to_treasure</precondition>
+			<text>stalk_garb_treasure_2_dialog_3</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<precondition>sak_dialog.have_vodka</precondition>
+			<text>stalk_garb_treasure_2_dialog_41</text>
+			<action>sak.drink_vodka</action>
+			<action>sak_dialog.starts_treasure_time</action>
+			<next>5</next>
+		</phrase>
+		<phrase id="42">
+			<text>stalk_garb_treasure_2_dialog_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="5">
+			<text>stalk_garb_treasure_2_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>stalk_garb_treasure_2_dialog_6</text>
+			<action>sak.have_trasure</action>
+			<next>71</next>
+			<next>73</next>
+		</phrase>
+		<phrase id="71">
+			<has_info>have_sak_treasure</has_info>
+			<text>stalk_garb_treasure_2_dialog_71</text>
+			<action>sak.take_trasure</action>
+			<next>81</next>
+		</phrase>
+		<phrase id="73">
+		<dont_has_info>have_sak_treasure</dont_has_info>
+			<text>stalk_garb_treasure_2_dialog_73</text>
+			<next>82</next>
+		</phrase>
+		<phrase id="81">
+			<text>stalk_garb_treasure_2_dialog_81</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="82">
+			<text>stalk_garb_treasure_2_dialog_82</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="stalk_garb_treasure_3_dialog">
+<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>stalk_garb_treasure_3_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>stalk_garb_treasure_3_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>stalk_garb_treasure_3_dialog_2</text>
+			<next>3</next>
+			<next>31</next>
+		</phrase>
+		<phrase id="31">
+		<precondition>sak_dialog.not_ready_time_to_treasure</precondition>
+			<text>stalk_garb_treasure_3_dialog_31</text>
+			<next>91</next>
+		</phrase>
+		<phrase id="91">
+			<text>stalk_garb_treasure_3_dialog_91</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+		<precondition>sak_dialog.is_ready_time_to_treasure</precondition>
+			<text>stalk_garb_treasure_3_dialog_3</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<precondition>sak_dialog.have_vodka</precondition>
+			<text>stalk_garb_treasure_3_dialog_41</text>
+			<action>sak.drink_vodka</action>
+			<action>sak_dialog.starts_treasure_time</action>
+			<next>5</next>
+		</phrase>
+		<phrase id="42">
+			<text>stalk_garb_treasure_3_dialog_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="5">
+			<text>stalk_garb_treasure_3_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>stalk_garb_treasure_3_dialog_6</text>
+			<action>sak.have_trasure</action>
+			<next>71</next>
+			<next>73</next>
+		</phrase>
+		<phrase id="71">
+			<has_info>have_sak_treasure</has_info>
+			<text>stalk_garb_treasure_3_dialog_71</text>
+			<action>sak.take_trasure</action>
+			<next>81</next>
+		</phrase>
+		<phrase id="73">
+		<dont_has_info>have_sak_treasure</dont_has_info>
+			<text>stalk_garb_treasure_3_dialog_73</text>
+			<next>82</next>
+		</phrase>
+		<phrase id="81">
+			<text>stalk_garb_treasure_3_dialog_81</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="82">
+			<text>stalk_garb_treasure_3_dialog_82</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="stalk_garb_treasure_4_dialog">
+<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>stalk_garb_treasure_4_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>stalk_garb_treasure_4_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>stalk_garb_treasure_4_dialog_2</text>
+			<next>3</next>
+			<next>31</next>
+		</phrase>
+		<phrase id="31">
+		<precondition>sak_dialog.not_ready_time_to_treasure</precondition>
+			<text>stalk_garb_treasure_4_dialog_31</text>
+			<next>91</next>
+		</phrase>
+		<phrase id="91">
+			<text>stalk_garb_treasure_4_dialog_91</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+		<precondition>sak_dialog.is_ready_time_to_treasure</precondition>
+			<text>stalk_garb_treasure_4_dialog_3</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<precondition>sak_dialog.have_vodka</precondition>
+			<text>stalk_garb_treasure_4_dialog_41</text>
+			<action>sak.drink_vodka</action>
+			<action>sak_dialog.starts_treasure_time</action>
+			<next>5</next>
+		</phrase>
+		<phrase id="42">
+			<text>stalk_garb_treasure_4_dialog_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="5">
+			<text>stalk_garb_treasure_4_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>stalk_garb_treasure_4_dialog_6</text>
+			<action>sak.have_trasure</action>
+			<next>71</next>
+			<next>73</next>
+		</phrase>
+		<phrase id="71">
+			<has_info>have_sak_treasure</has_info>
+			<text>stalk_garb_treasure_4_dialog_71</text>
+			<action>sak.take_trasure</action>
+			<next>81</next>
+		</phrase>
+		<phrase id="73">
+		<dont_has_info>have_sak_treasure</dont_has_info>
+			<text>stalk_garb_treasure_4_dialog_73</text>
+			<next>82</next>
+		</phrase>
+		<phrase id="81">
+			<text>stalk_garb_treasure_4_dialog_81</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="82">
+			<text>stalk_garb_treasure_4_dialog_82</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="stalk_bar_treasure_1_dialog">
+<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>stalk_bar_treasure_1_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>stalk_bar_treasure_1_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>stalk_bar_treasure_1_dialog_2</text>
+			<next>3</next>
+			<next>31</next>
+		</phrase>
+		<phrase id="31">
+		<precondition>sak_dialog.not_ready_time_to_treasure</precondition>
+			<text>stalk_bar_treasure_1_dialog_31</text>
+			<next>91</next>
+		</phrase>
+		<phrase id="91">
+			<text>stalk_bar_treasure_1_dialog_91</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+		<precondition>sak_dialog.is_ready_time_to_treasure</precondition>
+			<text>stalk_bar_treasure_1_dialog_3</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<precondition>sak_dialog.have_vodka</precondition>
+			<text>stalk_bar_treasure_1_dialog_41</text>
+			<action>sak.drink_vodka</action>
+			<action>sak_dialog.starts_treasure_time</action>
+			<next>5</next>
+		</phrase>
+		<phrase id="42">
+			<text>stalk_bar_treasure_1_dialog_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="5">
+			<text>stalk_bar_treasure_1_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>stalk_bar_treasure_1_dialog_6</text>
+			<action>sak.have_trasure</action>
+			<next>71</next>
+			<next>73</next>
+		</phrase>
+		<phrase id="71">
+			<has_info>have_sak_treasure</has_info>
+			<text>stalk_bar_treasure_1_dialog_71</text>
+			<action>sak.take_trasure</action>
+			<next>81</next>
+		</phrase>
+		<phrase id="73">
+		<dont_has_info>have_sak_treasure</dont_has_info>
+			<text>stalk_bar_treasure_1_dialog_73</text>
+			<next>82</next>
+		</phrase>
+		<phrase id="81">
+			<text>stalk_bar_treasure_1_dialog_81</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="82">
+			<text>stalk_bar_treasure_1_dialog_82</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="stalk_bar_treasure_2_dialog">
+<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>stalk_bar_treasure_2_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>stalk_bar_treasure_2_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>stalk_bar_treasure_2_dialog_2</text>
+			<next>3</next>
+			<next>31</next>
+		</phrase>
+		<phrase id="31">
+		<precondition>sak_dialog.not_ready_time_to_treasure</precondition>
+			<text>stalk_bar_treasure_2_dialog_31</text>
+			<next>91</next>
+		</phrase>
+		<phrase id="91">
+			<text>stalk_bar_treasure_2_dialog_91</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+		<precondition>sak_dialog.is_ready_time_to_treasure</precondition>
+			<text>stalk_bar_treasure_2_dialog_3</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<precondition>sak_dialog.have_vodka</precondition>
+			<text>stalk_bar_treasure_2_dialog_41</text>
+			<action>sak.drink_vodka</action>
+			<action>sak_dialog.starts_treasure_time</action>
+			<next>5</next>
+		</phrase>
+		<phrase id="42">
+			<text>stalk_bar_treasure_2_dialog_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="5">
+			<text>stalk_bar_treasure_2_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>stalk_bar_treasure_2_dialog_6</text>
+			<action>sak.have_trasure</action>
+			<next>71</next>
+			<next>73</next>
+		</phrase>
+		<phrase id="71">
+			<has_info>have_sak_treasure</has_info>
+			<text>stalk_bar_treasure_2_dialog_71</text>
+			<action>sak.take_trasure</action>
+			<next>81</next>
+		</phrase>
+		<phrase id="73">
+		<dont_has_info>have_sak_treasure</dont_has_info>
+			<text>stalk_bar_treasure_2_dialog_73</text>
+			<next>82</next>
+		</phrase>
+		<phrase id="81">
+			<text>stalk_bar_treasure_2_dialog_81</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="82">
+			<text>stalk_bar_treasure_2_dialog_82</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="stalk_bar_treasure_3_dialog">
+<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>stalk_bar_treasure_3_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>stalk_bar_treasure_3_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>stalk_bar_treasure_3_dialog_2</text>
+			<next>3</next>
+			<next>31</next>
+		</phrase>
+		<phrase id="31">
+		<precondition>sak_dialog.not_ready_time_to_treasure</precondition>
+			<text>stalk_bar_treasure_3_dialog_31</text>
+			<next>91</next>
+		</phrase>
+		<phrase id="91">
+			<text>stalk_bar_treasure_3_dialog_91</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+		<precondition>sak_dialog.is_ready_time_to_treasure</precondition>
+			<text>stalk_bar_treasure_3_dialog_3</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<precondition>sak_dialog.have_vodka</precondition>
+			<text>stalk_bar_treasure_3_dialog_41</text>
+			<action>sak.drink_vodka</action>
+			<action>sak_dialog.starts_treasure_time</action>
+			<next>5</next>
+		</phrase>
+		<phrase id="42">
+			<text>stalk_bar_treasure_3_dialog_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="5">
+			<text>stalk_bar_treasure_3_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>stalk_bar_treasure_3_dialog_6</text>
+			<action>sak.have_trasure</action>
+			<next>71</next>
+			<next>73</next>
+		</phrase>
+		<phrase id="71">
+			<has_info>have_sak_treasure</has_info>
+			<text>stalk_bar_treasure_3_dialog_71</text>
+			<action>sak.take_trasure</action>
+			<next>81</next>
+		</phrase>
+		<phrase id="73">
+		<dont_has_info>have_sak_treasure</dont_has_info>
+			<text>stalk_bar_treasure_3_dialog_73</text>
+			<next>82</next>
+		</phrase>
+		<phrase id="81">
+			<text>stalk_bar_treasure_3_dialog_81</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="82">
+			<text>stalk_bar_treasure_3_dialog_82</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="stalk_bar_treasure_4_dialog">
+<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>stalk_bar_treasure_4_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>stalk_bar_treasure_4_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>stalk_bar_treasure_4_dialog_2</text>
+			<next>3</next>
+			<next>31</next>
+		</phrase>
+		<phrase id="31">
+		<precondition>sak_dialog.not_ready_time_to_treasure</precondition>
+			<text>stalk_bar_treasure_4_dialog_31</text>
+			<next>91</next>
+		</phrase>
+		<phrase id="91">
+			<text>stalk_bar_treasure_4_dialog_91</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+		<precondition>sak_dialog.is_ready_time_to_treasure</precondition>
+			<text>stalk_bar_treasure_4_dialog_3</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<precondition>sak_dialog.have_vodka</precondition>
+			<text>stalk_bar_treasure_4_dialog_41</text>
+			<action>sak.drink_vodka</action>
+			<action>sak_dialog.starts_treasure_time</action>
+			<next>5</next>
+		</phrase>
+		<phrase id="42">
+			<text>stalk_bar_treasure_4_dialog_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="5">
+			<text>stalk_bar_treasure_4_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>stalk_bar_treasure_4_dialog_6</text>
+			<action>sak.have_trasure</action>
+			<next>71</next>
+			<next>73</next>
+		</phrase>
+		<phrase id="71">
+			<has_info>have_sak_treasure</has_info>
+			<text>stalk_bar_treasure_4_dialog_71</text>
+			<action>sak.take_trasure</action>
+			<next>81</next>
+		</phrase>
+		<phrase id="73">
+		<dont_has_info>have_sak_treasure</dont_has_info>
+			<text>stalk_bar_treasure_4_dialog_73</text>
+			<next>82</next>
+		</phrase>
+		<phrase id="81">
+			<text>stalk_bar_treasure_4_dialog_81</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="82">
+			<text>stalk_bar_treasure_4_dialog_82</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="freedom_1_dialog">
+<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>freedom_1_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>freedom_1_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>freedom_1_dialog_2</text>
+			<next>3</next>
+			<next>31</next>
+		</phrase>
+		<phrase id="31">
+		<precondition>sak_dialog.not_ready_time_to_treasure</precondition>
+			<text>freedom_1_dialog_31</text>
+			<next>91</next>
+		</phrase>
+		<phrase id="91">
+			<text>freedom_1_dialog_91</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+		<precondition>sak_dialog.is_ready_time_to_treasure</precondition>
+			<text>freedom_1_dialog_3</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<precondition>sak_dialog.have_vodka</precondition>
+			<text>freedom_1_dialog_41</text>
+			<action>sak.drink_vodka</action>
+			<action>sak_dialog.starts_treasure_time</action>
+			<next>5</next>
+		</phrase>
+		<phrase id="42">
+			<text>freedom_1_dialog_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="5">
+			<text>freedom_1_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>freedom_1_dialog_6</text>
+			<action>sak.have_trasure</action>
+			<next>71</next>
+			<next>73</next>
+		</phrase>
+		<phrase id="71">
+			<has_info>have_sak_treasure</has_info>
+			<text>freedom_1_dialog_71</text>
+			<action>sak.take_trasure</action>
+			<next>81</next>
+		</phrase>
+		<phrase id="73">
+		<dont_has_info>have_sak_treasure</dont_has_info>
+			<text>freedom_1_dialog_73</text>
+			<next>82</next>
+		</phrase>
+		<phrase id="81">
+			<text>freedom_1_dialog_81</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="82">
+			<text>freedom_1_dialog_82</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="freedom_2_dialog">
+<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>freedom_2_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>freedom_2_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>freedom_2_dialog_2</text>
+			<next>3</next>
+			<next>31</next>
+		</phrase>
+		<phrase id="31">
+		<precondition>sak_dialog.not_ready_time_to_treasure</precondition>
+			<text>freedom_2_dialog_31</text>
+			<next>91</next>
+		</phrase>
+		<phrase id="91">
+			<text>freedom_2_dialog_91</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+		<precondition>sak_dialog.is_ready_time_to_treasure</precondition>
+			<text>freedom_2_dialog_3</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<precondition>sak_dialog.have_vodka</precondition>
+			<text>freedom_2_dialog_41</text>
+			<action>sak.drink_vodka</action>
+			<action>sak_dialog.starts_treasure_time</action>
+			<next>5</next>
+		</phrase>
+		<phrase id="42">
+			<text>freedom_2_dialog_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="5">
+			<text>freedom_2_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>freedom_2_dialog_6</text>
+			<action>sak.have_trasure</action>
+			<next>71</next>
+			<next>73</next>
+		</phrase>
+		<phrase id="71">
+			<has_info>have_sak_treasure</has_info>
+			<text>freedom_2_dialog_71</text>
+			<action>sak.take_trasure</action>
+			<next>81</next>
+		</phrase>
+		<phrase id="73">
+		<dont_has_info>have_sak_treasure</dont_has_info>
+			<text>freedom_2_dialog_73</text>
+			<next>82</next>
+		</phrase>
+		<phrase id="81">
+			<text>freedom_2_dialog_81</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="82">
+			<text>freedom_2_dialog_82</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="freedom_3_dialog">
+<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>freedom_3_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>freedom_3_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>freedom_3_dialog_2</text>
+			<next>3</next>
+			<next>31</next>
+		</phrase>
+		<phrase id="31">
+		<precondition>sak_dialog.not_ready_time_to_treasure</precondition>
+			<text>freedom_3_dialog_31</text>
+			<next>91</next>
+		</phrase>
+		<phrase id="91">
+			<text>freedom_3_dialog_91</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+		<precondition>sak_dialog.is_ready_time_to_treasure</precondition>
+			<text>freedom_3_dialog_3</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<precondition>sak_dialog.have_vodka</precondition>
+			<text>freedom_3_dialog_41</text>
+			<action>sak.drink_vodka</action>
+			<action>sak_dialog.starts_treasure_time</action>
+			<next>5</next>
+		</phrase>
+		<phrase id="42">
+			<text>freedom_3_dialog_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="5">
+			<text>freedom_3_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>freedom_3_dialog_6</text>
+			<action>sak.have_trasure</action>
+			<next>71</next>
+			<next>73</next>
+		</phrase>
+		<phrase id="71">
+			<has_info>have_sak_treasure</has_info>
+			<text>freedom_3_dialog_71</text>
+			<action>sak.take_trasure</action>
+			<next>81</next>
+		</phrase>
+		<phrase id="73">
+		<dont_has_info>have_sak_treasure</dont_has_info>
+			<text>freedom_3_dialog_73</text>
+			<next>82</next>
+		</phrase>
+		<phrase id="81">
+			<text>freedom_3_dialog_81</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="82">
+			<text>freedom_3_dialog_82</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="freedom_4_dialog">
+<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>freedom_4_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>freedom_4_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>freedom_4_dialog_2</text>
+			<next>3</next>
+			<next>31</next>
+		</phrase>
+		<phrase id="31">
+		<precondition>sak_dialog.not_ready_time_to_treasure</precondition>
+			<text>freedom_4_dialog_31</text>
+			<next>91</next>
+		</phrase>
+		<phrase id="91">
+			<text>freedom_4_dialog_91</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+		<precondition>sak_dialog.is_ready_time_to_treasure</precondition>
+			<text>freedom_4_dialog_3</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<precondition>sak_dialog.have_vodka</precondition>
+			<text>freedom_4_dialog_41</text>
+			<action>sak.drink_vodka</action>
+			<action>sak_dialog.starts_treasure_time</action>
+			<next>5</next>
+		</phrase>
+		<phrase id="42">
+			<text>freedom_4_dialog_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="5">
+			<text>freedom_4_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>freedom_4_dialog_6</text>
+			<action>sak.have_trasure</action>
+			<next>71</next>
+			<next>73</next>
+		</phrase>
+		<phrase id="71">
+			<has_info>have_sak_treasure</has_info>
+			<text>freedom_4_dialog_71</text>
+			<action>sak.take_trasure</action>
+			<next>81</next>
+		</phrase>
+		<phrase id="73">
+		<dont_has_info>have_sak_treasure</dont_has_info>
+			<text>freedom_4_dialog_73</text>
+			<next>82</next>
+		</phrase>
+		<phrase id="81">
+			<text>freedom_4_dialog_81</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="82">
+			<text>freedom_4_dialog_82</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="dolgovazyi_repair">
+	<precondition>dialogs.is_not_wounded</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>dolgovazyi_repair_0</text>
+			<next>11</next>
+			<next>12</next>
+			<next>13</next>
+			<next>14</next>
+		</phrase>
+		<phrase id="11">
+		<precondition>sak_dialog.dolgovazyi_not_dolg_for_case</precondition>
+		<dont_has_info>repair_starting</dont_has_info>
+			<text>dolgovazyi_repair_11</text>
+			<next>211</next>
+			<next>212</next>
+			<next>213</next>
+		</phrase>
+		<phrase id="12">
+		<has_info>repair_starting</has_info>
+			<text>dolgovazyi_repair_12</text>
+			<next>22</next>
+		</phrase>
+		<phrase id="13">
+		<dont_has_info>repair_starting</dont_has_info>
+		<has_info>dolgovjazyi_blockpost_case_shurup</has_info>
+			<text>dolgovazyi_repair_13</text>
+			<next>23</next>
+		</phrase>
+		<phrase id="14">
+		<dont_has_info>repair_starting</dont_has_info>
+		<has_info>dolgovjazyi_blockpost_case_bulyznik</has_info>
+			<text>dolgovazyi_repair_14</text>
+			<next>24</next>
+		</phrase>
+		<phrase id="211">
+		<precondition>sak_dialog.sak_repair_precond</precondition>
+			<text>dolgovazyi_repair_211</text>
+			<next>311</next>
+			<next>312</next>
+			<next>313</next>
+			<next>314</next>
+		</phrase>
+		<phrase id="212">
+		<precondition>sak_dialog.repair_mask_precond</precondition>
+			<text>dolgovazyi_repair_212</text>
+			<next>32</next>
+		</phrase>
+		<phrase id="213">
+			<text>dolgovazyi_repair_213</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="22">
+			<text>dolgovazyi_repair_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="23">
+			<text>dolgovazyi_repair_23</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="24">
+			<text>dolgovazyi_repair_24</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="311">
+		<precondition>sak_dialog.dolgovazyi_repair_precond</precondition>
+		<precondition>sak_dialog.vergas_not_plash_precond</precondition>
+		<precondition>sak_dialog.vergas_not_q_precond</precondition>
+			<text>dolgovazyi_repair_311</text>
+			<action>sak_dialog.repair_costs</action>
+			<next>4111</next>
+			<next>4112</next>
+		</phrase>
+		<phrase id="312">
+		<precondition>sak_dialog.dolgovazyi_not_repair_precond</precondition>
+		<precondition>sak_dialog.vergas_not_plash_precond</precondition>
+		<precondition>sak_dialog.vergas_not_q_precond</precondition>
+			<text>dolgovazyi_repair_312</text>
+			<next>412</next>
+		</phrase>
+		<phrase id="313">
+		<precondition>sak_dialog.vergas_plash_precond</precondition>
+		<precondition>sak_dialog.vergas_not_q_precond</precondition>
+			<text>dolgovazyi_repair_313</text>
+			<next>413</next>
+		</phrase>
+		<phrase id="314">
+		<precondition>sak_dialog.vergas_q_precond</precondition>
+			<text>dolgovazyi_repair_314</text>
+			<next>414</next>
+		</phrase>
+		<phrase id="32">
+			<text>dolgovazyi_repair_32</text>
+			<action>sak_dialog.uniform_repair_cost("mask", r_dolgovjaz)</action>
+			<next>421</next>
+			<next>422</next>
+		</phrase>
+		<phrase id="4111">
+		<precondition>sak_dialog.sak_check_money_s6</precondition>
+			<text>dolgovazyi_repair_4111</text>
+			<action>sak_dialog.sak_repair_armor_s6</action>
+			<next>5</next>
+		</phrase>
+		<phrase id="4112">
+			<text>dolgovazyi_repair_4112</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="412">
+			<text>dolgovazyi_repair_412</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="413">
+			<text>dolgovazyi_repair_413</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="414">
+			<text>dolgovazyi_repair_414</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="421">
+		<precondition>sak_dialog.uniform_check_money("mask")</precondition>
+			<text>dolgovazyi_repair_421</text>
+			<action>sak_dialog.uniform_repair_start("mask", r_dolgovjaz)</action>
+			<next>5</next>
+		</phrase>
+		<phrase id="422">
+			<text>dolgovazyi_repair_422</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="5">
+			<text>dolgovazyi_repair_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>dolgovazyi_repair_6</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="dolgovazyi_repair_end">
+	<precondition>dialogs.is_not_wounded</precondition>
+	<has_info>repair_starting</has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>dolgovazyi_repair_end_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>dolgovazyi_repair_end_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+		<precondition>sak_dialog.is_mask_in_repair(r_dolgovjaz)</precondition>
+			<text>dolgovazyi_repair_end_21</text>
+			<next>31</next>
+			<next>32</next>
+		</phrase>
+		<phrase id="22">
+		<precondition>sak_dialog.is_armor_in_repair(r_dolgovjaz)</precondition>
+			<text>dolgovazyi_repair_end_22</text>
+			<next>31</next>
+			<next>32</next>
+		</phrase>
+		<phrase id="31">
+		<precondition>sak_dialog.is_ready_repair</precondition>
+			<text>dolgovazyi_repair_end_31</text>
+			<action>sak_dialog.take_repair_wpn</action>
+			<action>sak_dialog.clear_time_repair</action>
+			<give_info>repair_end</give_info>
+			<next>41</next>
+		</phrase>
+		<phrase id="32">
+		<precondition>sak_dialog.not_ready_repair</precondition>
+			<text>dolgovazyi_repair_end_32</text>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<text>dolgovazyi_repair_end_41</text>
+			<action>sak.post_dialog_exec("sak_dialog.clear_repair_vars()")</action>
+			<next>411</next>
+			<next>412</next>
+			<next>413</next>
+		</phrase>
+		<phrase id="42">
+			<text>dolgovazyi_repair_end_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="411">
+		<precondition>sak_dialog.need_additional_repair_mask</precondition>
+			<text>dolgovazyi_repair_end_411</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="412">
+		<precondition>sak_dialog.need_additional_repair_armor</precondition>
+			<text>dolgovazyi_repair_end_412</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="413">
+		<precondition>sak_dialog.no_additional_repair</precondition>
+			<text>dolgovazyi_repair_end_413</text>
+		</phrase>
+		<phrase id="5">
+			<text>dolgovazyi_repair_end_5</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+	
+<!-- Бартер Сидора -->
+	<dialog id="trade_dialog_sidor"> 
+		<phrase_list>
+			<phrase id="0">
+				<text>trade_dialog_sidor_0</text>
+				<action>dialogs.no_trade</action>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>trade_dialog_sidor_1</text>
+				<action>sak_dialog.info_price_sidor</action>	<!-- Информация в ПДА -->		                
+				<next>2</next>
+				<next>3</next>
+				<next>4</next>
+				<next>5</next>
+			</phrase>
+			<phrase id="2">
+				<text>trade_dialog_sidor_2</text>
+				<next>211</next>
+				<next>212</next>
+			</phrase>
+			<phrase id="3">
+				<text>trade_dialog_sidor_3</text>
+				<next>31</next>
+			</phrase>
+			<phrase id="30">
+				<text>trade_dialog_sidor_30</text>
+				<next>31</next>
+			</phrase>
+			<phrase id="4">
+				<text>trade_dialog_sidor_4</text>
+				<next>41</next>
+			</phrase>
+			<phrase id="40">
+				<text>trade_dialog_sidor_40</text>
+				<next>41</next>
+			</phrase>
+			<phrase id="5">
+				<text>trade_dialog_sidor_5</text>
+				<next>51</next>
+			</phrase>
+			<phrase id="50">
+				<text>trade_dialog_sidor_50</text>
+				<next>51</next>
+			</phrase>
+			<phrase id="211">
+			<dont_has_info>sidor_dinamit_find_done_info</dont_has_info>
+				<text>trade_dialog_sidor_211</text>
+				<next>22</next>
+				<next>23</next>
+				<next>24</next>
+				<next>54</next>
+			</phrase>
+			<phrase id="212">
+			<has_info>sidor_dinamit_find_done_info</has_info>
+				<text>trade_dialog_sidor_212</text>
+				<next>22</next>
+				<next>23</next>
+				<next>24</next>
+				<next>26</next>
+				<next>54</next>
+			</phrase>
+			<phrase id="22">
+				<text>trade_dialog_sidor_22</text>
+				<next>222</next>
+			</phrase>
+			<phrase id="222">
+				<text>trade_dialog_sidor_222</text>
+				<next>221</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="23">			
+				<text>trade_dialog_sidor_23</text>
+				<next>232</next>
+			</phrase>
+			<phrase id="232">
+				<text>trade_dialog_sidor_232</text>
+				<next>231</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="221">
+			<precondition>sak_dialog.cond_items_have("a",1,0.90)</precondition>
+				<text>trade_dialog_sidor_221</text>
+				<action>sak_dialog.cond_items_have("a",1,0.90,true)</action>
+				<action>sak.create_items("ammo_12x70_buck",5)</action>
+			</phrase>
+			<phrase id="231">
+			<precondition>sak_dialog.cond_items_have("a",1,0.90)</precondition>
+				<text>trade_dialog_sidor_231</text>
+				<action>sak_dialog.cond_items_have("a",1,0.90,true)</action>
+				<action>sak.create_items("ammo_12x76_dart",3)</action>
+			</phrase>
+			<phrase id="24">
+				<text>trade_dialog_sidor_24</text>
+				<next>242</next>
+			</phrase>
+			<phrase id="242">
+				<text>trade_dialog_sidor_242</text>
+				<next>241</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="241">
+			<precondition>sak_dialog.cond_items_have("a",1,0.90)</precondition>
+				<text>trade_dialog_sidor_241</text>
+				<action>sak_dialog.cond_items_have("a",1,0.90,true)</action>
+				<action>sak.create_items("ammo_12x76_zhekan",2)</action>
+			</phrase>
+			<phrase id="26">			
+				<text>trade_dialog_sidor_26</text>
+				<next>262</next>
+			</phrase>
+			<phrase id="262">
+				<text>trade_dialog_sidor_262</text>
+				<next>261</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="261">
+			<precondition>sak_dialog.cond_items_have("d",1,0.90)</precondition>
+				<text>trade_dialog_sidor_251</text>
+				<action>sak_dialog.cond_items_have("d",1,0.90,true)</action>
+				<action>sak_dialog.add_sidor_dinamit</action>
+				<next>263</next>
+			</phrase>
+			<phrase id="263">
+				<text>trade_dialog_sidor_263</text>
+			</phrase>
+			<phrase id="31">
+				<text>trade_dialog_sidor_31</text>
+				<next>32</next>
+				<next>32001</next>
+				<next>33</next>
+				<next>54</next>
+			</phrase>
+			<phrase id="32">
+				<text>trade_dialog_sidor_32</text>
+				<next>322</next>
+			</phrase>
+			<phrase id="322">
+				<text>trade_dialog_sidor_322</text>
+				<next>321</next>
+				<next>323</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="32001">
+				<text>trade_dialog_sidor_32001</text>
+				<next>32202</next>
+			</phrase>
+			<phrase id="32202">
+				<text>trade_dialog_sidor_32202</text>
+				<next>32103</next>
+				<next>32304</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="33">
+				<text>trade_dialog_sidor_33</text>
+				<next>332</next>
+			</phrase>
+			<phrase id="332">
+				<text>trade_dialog_sidor_332</text>
+				<next>331</next>
+				<next>333</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="321">
+			<precondition>sak_dialog.cond_items_have("a",2,0.90)</precondition>
+				<text>trade_dialog_sidor_321</text>
+				<action>sak_dialog.cond_items_have("a",2,0.90,true)</action>
+				<action>sak.create_items("wpn_toz34",1)</action>
+			</phrase>
+			<phrase id="323">
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+				<text>trade_dialog_sidor_323</text>
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak.create_items("wpn_toz34",1)</action>
+			</phrase>
+			<phrase id="32103">
+			<precondition>sak_dialog.cond_items_have("a",2,0.90)</precondition>
+				<text>trade_dialog_sidor_32103</text>
+				<action>sak_dialog.cond_items_have("a",2,0.90,true)</action>
+				<action>sak.create_items("wpn_bm16_full",1)</action>
+			</phrase>
+			<phrase id="32304">
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+				<text>trade_dialog_sidor_32304</text>
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak.create_items("wpn_bm16_full",1)</action>
+			</phrase>
+			<phrase id="331">
+			<precondition>sak_dialog.cond_items_have("b",2,0.90)</precondition>
+				<text>trade_dialog_sidor_331</text>
+				<action>sak_dialog.cond_items_have("b",2,0.90,true)</action>
+				<action>sak.create_items("wpn_wincheaster1300",1)</action>
+			</phrase>
+			<phrase id="333">
+			<precondition>sak_dialog.cond_items_have("a",4,0.90)</precondition>
+				<text>trade_dialog_sidor_333</text>
+				<action>sak_dialog.cond_items_have("a",4,0.90,true)</action>
+				<action>sak.create_items("wpn_wincheaster1300",1)</action>
+			</phrase>
+			<phrase id="41">
+				<text>trade_dialog_sidor_41</text>
+				<next>42</next>
+				<next>43</next>
+				<next>44</next>
+				<next>54</next>
+			</phrase>
+			<phrase id="42">			
+				<text>trade_dialog_sidor_42</text>
+				<next>422</next>
+			</phrase>
+			<phrase id="422">
+				<text>trade_dialog_sidor_422</text>
+				<next>421</next>
+				<next>423</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="421">
+			<precondition>sak_dialog.cond_items_have("a",1,0.90)</precondition>
+				<text>trade_dialog_sidor_421</text>
+				<action>sak_dialog.cond_items_have("a",1,0.90,true)</action>
+				<action>sak.create_items("medkit",5)</action>
+			</phrase>
+			<phrase id="423">
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+				<text>trade_dialog_sidor_423</text>
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak.create_items("medkit",10)</action>
+			</phrase>
+			<phrase id="43">
+				<text>trade_dialog_sidor_43</text>
+				<next>432</next>
+			</phrase>
+			<phrase id="432">
+				<text>trade_dialog_sidor_432</text>
+				<next>431</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="431">
+			<precondition>sak_dialog.cond_items_have("a",1,0.90)</precondition>
+				<text>trade_dialog_sidor_431</text>
+				<action>sak_dialog.cond_items_have("a",1,0.90,true)</action>
+				<action>sak.create_items("vodka",3)</action>
+			</phrase>			
+			<phrase id="44">
+				<text>trade_dialog_sidor_44</text>
+				<next>442</next>
+			</phrase>
+			<phrase id="442">
+				<text>trade_dialog_sidor_442</text>
+				<next>4411</next>
+				<next>4412</next>
+				<next>4413</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="4411">
+			<precondition>sak_dialog.cond_items_have("a",1,0.90)</precondition>
+				<text>trade_dialog_sidor_4411</text>
+				<action>sak_dialog.cond_items_have("a",1,0.90,true)</action>
+				<action>sak.create_items("antirad",2)</action>
+			</phrase>
+			<phrase id="4412">
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+				<text>trade_dialog_sidor_4412</text>
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak.create_items("antirad",5)</action>
+			</phrase>
+			<phrase id="4413">
+			<precondition>sak_dialog.cond_items_have("c",1,0.90)</precondition>
+				<text>trade_dialog_sidor_4413</text>
+				<action>sak_dialog.cond_items_have("c",1,0.90,true)</action>
+				<action>sak.create_items("antirad",15)</action>
+			</phrase>
+			<phrase id="51">
+				<text>trade_dialog_sidor_51</text>
+				<next>52</next>
+				<next>53</next>
+				<next>57</next>
+				<next>54</next>
+			</phrase>
+			<phrase id="52">			
+				<text>trade_dialog_sidor_52</text>
+				<next>522</next>
+			</phrase>
+			<phrase id="522">
+				<text>trade_dialog_sidor_522</text>
+				<next>521</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="53">			
+				<text>trade_dialog_sidor_53</text>
+				<next>532</next>
+			</phrase>
+			<phrase id="532">
+				<text>trade_dialog_sidor_532</text>
+				<next>531</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="54">
+				<text>trade_dialog_sidor_54</text>
+			</phrase>
+			<phrase id="666">
+				<text>trade_dialog_sidor_666</text>
+			</phrase>
+			<phrase id="521">
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+				<text>trade_dialog_sidor_521</text>
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak.create_items("repair_itemoutfit_feik",5)</action>
+			</phrase>
+			<phrase id="531">
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+				<text>trade_dialog_sidor_531</text>
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak.create_items("repair_item_weapon_feik",5)</action>
+			</phrase>
+			<phrase id="57">			
+				<text>trade_dialog_sidor_57</text>
+				<next>572</next>
+			</phrase>
+			<phrase id="572">
+				<text>trade_dialog_sidor_572</text>
+				<next>571</next>				
+				<next>666</next>
+			</phrase>
+			<phrase id="571">
+			<precondition>sak_dialog.cond_items_have("a",2,0.90)</precondition>
+				<text>trade_dialog_sidor_571</text>
+				<action>sak_dialog.cond_items_have("a",2,0.90,true)</action>
+				<action>sak_dialog.add_repair_box</action>
+			</phrase>
+		</phrase_list>
+	</dialog>
+<!-- Бартер Бармена -->	
+	<dialog id="trade_dialog_barman"> 
+		<phrase_list>
+			<phrase id="0">
+				<text>trade_dialog_barman_0</text>
+				<action>dialogs.no_trade</action>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>trade_dialog_barman_1</text>
+				<action>sak_dialog.info_price_barman</action>
+				<next>2</next>
+				<next>3</next>
+				<next>4</next>
+				<next>5</next>
+			</phrase>
+			<phrase id="2">
+				<text>trade_dialog_barman_2</text>
+				<next>21</next>
+			</phrase>
+			<phrase id="20">
+				<text>trade_dialog_barman_20</text>
+				<next>21</next>
+			</phrase>
+			<phrase id="3">
+				<text>trade_dialog_barman_3</text>
+				<next>31</next>
+			</phrase>
+			<phrase id="30">
+				<text>trade_dialog_barman_30</text>
+				<next>31</next>
+			</phrase>
+			<phrase id="4">
+				<text>trade_dialog_barman_4</text>
+				<next>41</next>
+			</phrase>
+			<phrase id="40">
+				<text>trade_dialog_barman_40</text>
+				<next>41</next>
+			</phrase>
+			<phrase id="5">
+				<text>trade_dialog_barman_5</text>
+				<next>51</next>
+			</phrase>
+			<phrase id="50">
+				<text>trade_dialog_barman_50</text>
+				<next>51</next>
+			</phrase>
+			<phrase id="21">
+				<text>trade_dialog_barman_21</text>
+				<next>25</next>
+				<next>26</next>
+				<next>27</next>
+				<next>28</next>
+				<next>54</next>
+			</phrase>
+			<phrase id="25">
+				<text>trade_dialog_barman_25</text>
+				<next>252</next>
+			</phrase>
+			<phrase id="252">
+				<text>trade_dialog_barman_252</text>
+				<next>251</next>
+                <next>666</next>
+			</phrase>
+			<phrase id="26">
+			<text>trade_dialog_barman_26</text>
+				<next>262</next>
+			</phrase>
+			<phrase id="262">
+				<text>trade_dialog_barman_262</text>
+				<next>261</next>
+				<next>2611</next>
+				<next>26111</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="251">
+			<precondition>sak_dialog.cond_items_have("a",1,0.90)</precondition>
+				<text>trade_dialog_barman_251</text>
+				<action>sak_dialog.cond_items_have("a",1,0.90,true)</action>
+				<action>sak.create_items("ammo_9x33_hp",3)</action> 
+			</phrase>
+			<phrase id="261">
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+				<text>trade_dialog_barman_261</text>
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak.create_items("ammo_12x70_buck",9)</action> 
+			</phrase>
+			<phrase id="2611">
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+				<text>trade_dialog_barman_2611</text>
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak.create_items("ammo_12x76_dart",6)</action> 
+			</phrase>
+			<phrase id="26111">
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+				<text>trade_dialog_barman_26111</text>
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak.create_items("ammo_12x76_zhekan",4)</action> 
+			</phrase>
+			<phrase id="27">
+			    <text>trade_dialog_barman_27</text>
+			    <next>271</next> 
+			</phrase>	
+			<phrase id="271">
+			<text>trade_dialog_barman_271</text>
+			    <next>272</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="272">
+			<precondition>sak_dialog.cond_items_have("a",1,0.90)</precondition>
+				<text>trade_dialog_barman_272</text>
+				<action>sak_dialog.cond_items_have("a",1,0.90,true)</action>
+				<action>sak.create_items("ammo_m209",4)</action> 
+			</phrase>
+			<phrase id="28">
+				<text>trade_dialog_barman_28</text>
+				<next>282</next>
+			</phrase>
+			<phrase id="282">
+			<text>trade_dialog_barman_282</text>
+			    <next>281</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="281">
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+				<text>trade_dialog_barman_281</text>
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak.create_items("wpn_addon_sil_glock",1)</action>
+			</phrase>
+			<phrase id="31">
+				<text>trade_dialog_barman_31</text>
+			    <next>32</next>
+				<next>33</next>
+				<next>34</next>
+				<next>35</next>
+				<next>54</next>
+			</phrase>
+			<phrase id="32">			
+				<text>trade_dialog_barman_32</text>
+				<next>322</next>
+			</phrase>
+			<phrase id="322">
+				<text>trade_dialog_barman_322</text>
+				<next>321</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="33">
+				<text>trade_dialog_barman_33</text>
+				<next>332</next>
+			</phrase>
+			<phrase id="332">
+				<text>trade_dialog_barman_332</text>
+				<next>331</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="34">			
+				<text>trade_dialog_barman_34</text>
+				<next>342</next>
+			</phrase>
+			<phrase id="342">
+				<text>trade_dialog_barman_342</text>
+				<next>341</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="35">			
+				<text>trade_dialog_barman_35</text>
+				<next>352</next>
+			</phrase>
+			<phrase id="352">
+				<text>trade_dialog_barman_352</text>
+				<next>351</next>
+				<next>3511</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="321">
+			<precondition>sak_dialog.cond_items_have("a",3,0.90)</precondition>
+				<text>trade_dialog_barman_321</text>
+				<action>sak_dialog.cond_items_have("a",3,0.90,true)</action>
+				<action>sak.create_items("wpn_glock",1)</action>
+			</phrase>
+			<phrase id="331">
+			<precondition>sak_dialog.cond_items_have("c",1,0.90)</precondition>
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+				<text>trade_dialog_barman_331</text>
+				<action>sak_dialog.cond_items_have("c",1,0.90,true)</action>
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak.create_items("wpn_glock_m1",1)</action>
+			</phrase>
+			<phrase id="341">
+			<precondition>sak_dialog.cond_items_have("c",1,0.90)</precondition>
+				<text>trade_dialog_barman_341</text>
+				<action>sak_dialog.cond_items_have("c",1,0.90,true)</action>
+				<action>sak.create_items("wpn_glock_m2",1)</action>
+			</phrase>
+			<phrase id="351">
+			<precondition>sak_dialog.cond_items_have("b",4,0.90)</precondition>
+				<text>trade_dialog_barman_351</text>
+				<action>sak_dialog.cond_items_have("b",4,0.90,true)</action>
+				<action>sak.create_items("wpn_winchester_m1",1)</action>
+			</phrase>
+			<phrase id="3511">
+			<precondition>sak_dialog.cond_items_have("c",1,0.90)</precondition>
+			<precondition>sak_dialog.cond_items_have("a",1,0.90)</precondition>
+				<text>trade_dialog_barman_3511</text>
+				<action>sak_dialog.cond_items_have("c",1,0.90,true)</action>
+				<action>sak_dialog.cond_items_have("a",1,0.90,true)</action>
+				<action>sak.create_items("wpn_winchester_m1",1)</action>
+			</phrase>
+			<phrase id="41">
+				<text>trade_dialog_barman_41</text>
+				<next>42</next>
+				<next>43</next>
+				<next>44</next>
+				<next>54</next>
+			</phrase>
+			<phrase id="42">			
+				<text>trade_dialog_barman_42</text>
+				<next>422</next>
+			</phrase>
+			<phrase id="422">
+				<text>trade_dialog_barman_422</text>
+				<next>421</next>
+				<next>441</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="43">			
+				<text>trade_dialog_barman_43</text>
+				<next>432</next>
+			</phrase>
+			<phrase id="432">
+				<text>trade_dialog_barman_432</text>
+				<next>431</next>
+				<next>451</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="421">
+			<precondition>sak_dialog.cond_items_have("a",1,0.90)</precondition>
+				<text>trade_dialog_barman_421</text>
+				<action>sak_dialog.cond_items_have("a",1,0.90,true)</action>
+				<action>sak.create_items("medkit",4)</action>
+			</phrase>
+			<phrase id="441">
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+				<text>trade_dialog_barman_441</text>
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak.create_items("medkit",10)</action>
+			</phrase>
+			<phrase id="431">
+			<precondition>sak_dialog.cond_items_have("a",1,0.90)</precondition>
+				<text>trade_dialog_barman_431</text>
+				<action>sak_dialog.cond_items_have("a",1,0.90,true)</action>
+				<action>sak.create_items("vodka",2)</action>
+			</phrase>
+			<phrase id="451">
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+				<text>trade_dialog_barman_451</text>
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak.create_items("vodka",7)</action>
+			</phrase>
+			<phrase id="44">
+				<text>trade_dialog_barman_44</text>
+				<next>442</next>
+			</phrase>
+			<phrase id="442">
+				<text>trade_dialog_barman_442</text>
+				<next>4411</next>
+				<next>4412</next>
+				<next>4413</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="4411">
+			<precondition>sak_dialog.cond_items_have("a",1,0.90)</precondition>
+				<text>trade_dialog_barman_4411</text>
+				<action>sak_dialog.cond_items_have("a",1,0.90,true)</action>
+				<action>sak.create_items("antirad",1)</action>
+			</phrase>
+			<phrase id="4412">
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+				<text>trade_dialog_barman_4412</text>
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak.create_items("antirad",4)</action>
+			</phrase>
+			<phrase id="4413">
+			<precondition>sak_dialog.cond_items_have("c",1,0.90)</precondition>
+				<text>trade_dialog_barman_4413</text>
+				<action>sak_dialog.cond_items_have("c",1,0.90,true)</action>
+				<action>sak.create_items("antirad",10)</action>
+			</phrase>
+			<phrase id="51">
+				<text>trade_dialog_barman_51</text>
+				<next>52</next>
+				<next>53</next>
+				<next>57</next>
+				<next>54</next>
+			</phrase>
+			<phrase id="52">			
+				<text>trade_dialog_barman_52</text>
+				<next>522</next>
+			</phrase>
+			<phrase id="522">
+				<text>trade_dialog_barman_522</text>
+				<next>521</next>
+				<next>541</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="53">			
+				<text>trade_dialog_barman_53</text>
+				<next>532</next>
+			</phrase>
+			<phrase id="532">
+				<text>trade_dialog_barman_532</text>
+				<next>531</next>
+				<next>551</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="57">			
+				<text>trade_dialog_barman_57</text>
+				<next>572</next>
+			</phrase>
+			<phrase id="572">
+				<text>trade_dialog_barman_572</text>
+				<next>571</next>				
+				<next>666</next>
+			</phrase>
+			<phrase id="54">
+				<text>trade_dialog_barman_54</text>
+			</phrase>
+			<phrase id="666">
+				<text>trade_dialog_barman_666</text>
+			</phrase>
+			<phrase id="521">
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+				<text>trade_dialog_barman_521</text>
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak.create_items("repair_itemoutfit_feik",3)</action>
+			</phrase>
+			<phrase id="541">
+			<precondition>sak_dialog.cond_items_have("a",1,0.90)</precondition>
+				<text>trade_dialog_barman_541</text>
+				<action>sak_dialog.cond_items_have("a",1,0.90,true)</action>
+				<action>sak.create_items("repair_itemoutfit_feik",1)</action>
+			</phrase>
+			<phrase id="531">
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+				<text>trade_dialog_barman_531</text>
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak.create_items("repair_item_weapon_feik",3)</action>
+			</phrase>
+			<phrase id="551">
+			<precondition>sak_dialog.cond_items_have("a",1,0.90)</precondition>
+				<text>trade_dialog_barman_551</text>
+				<action>sak_dialog.cond_items_have("a",1,0.90,true)</action>
+				<action>sak.create_items("repair_item_weapon_feik",1)</action>
+			</phrase>
+			<phrase id="571">
+			<precondition>sak_dialog.gg_3_aart_have</precondition>
+				<text>trade_dialog_barman_571</text>
+				<action>sak_dialog.give_3_aart</action>
+				<action>sak_dialog.add_repair_box</action>
+			</phrase>
+		</phrase_list>
+	</dialog>
+<!-- Бартер Петренко -->	
+	<dialog id="trade_dialog_petrenko"> 
+	<precondition>dialogs.is_not_wounded</precondition>
+	<precondition>sak_dialog.is_bar</precondition>	
+		<phrase_list>
+			<phrase id="0">
+				<text>trade_dialog_petrenko_0</text>
+				<action>dialogs.no_trade</action>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>trade_dialog_petrenko_1</text>
+				<action>sak_dialog.info_price_petrenko</action>
+				<next>2</next>
+				<next>3</next>
+				<next>4</next>
+				<next>5</next>
+				<next>6</next>
+			</phrase>
+			<phrase id="2">
+				<text>trade_dialog_petrenko_2</text>
+				<next>21</next>
+			</phrase>
+			<phrase id="3">
+				<text>trade_dialog_petrenko_3</text>
+				<next>31</next>
+			</phrase>
+			<phrase id="4">
+				<text>trade_dialog_petrenko_4</text>
+				<next>41</next>
+			</phrase>
+			<phrase id="5">
+				<text>trade_dialog_petrenko_5</text>
+				<next>51</next>
+			</phrase>
+			<phrase id="21">
+				<text>trade_dialog_petrenko_21</text>
+				<next>221</next>
+				<next>222</next>
+				<next>223</next>
+				<next>224</next>
+				<next>225</next>
+				<next>6</next>
+			</phrase>
+			<phrase id="31">
+				<text>trade_dialog_petrenko_31</text>
+				<next>321</next>
+				<next>322</next>
+				<next>323</next>
+				<next>323_2</next>
+				<next>6</next>
+			</phrase>
+			<phrase id="41">
+				<text>trade_dialog_petrenko_41</text>
+				<next>42</next>
+				<next>6</next>
+			</phrase>
+			<phrase id="51">
+				<text>trade_dialog_petrenko_51</text>
+				<next>521</next>
+				<next>521_2</next>
+				<next>521_3</next>
+                <next>522</next>
+				<next>523</next>
+			    <next>524</next>
+				<next>525</next>
+			</phrase>
+			<phrase id="221">
+				<text>trade_dialog_petrenko_221</text>
+				<next>231</next>
+			</phrase>
+			<phrase id="222">
+				<text>trade_dialog_petrenko_222</text>
+				<next>232</next>
+			</phrase>
+			<phrase id="223">
+				<text>trade_dialog_petrenko_223</text>
+				<next>233</next>
+			</phrase>
+			<phrase id="224">
+				<text>trade_dialog_petrenko_224</text>
+				<next>234</next>
+			</phrase>
+			<phrase id="225">
+				<text>trade_dialog_petrenko_225</text>
+				<next>235</next>
+			</phrase>
+			<phrase id="321">
+				<text>trade_dialog_petrenko_321</text>
+				<next>331</next>
+			</phrase>
+			<phrase id="322">
+				<text>trade_dialog_petrenko_322</text>
+				<next>332</next>
+			</phrase>
+			<phrase id="323">
+				<text>trade_dialog_petrenko_323</text>
+				<next>333</next>
+			</phrase>
+			<phrase id="323_2">
+				<text>trade_dialog_petrenko_323_2</text>
+				<next>333_2</next>
+			</phrase>
+			<phrase id="42">
+				<text>trade_dialog_petrenko_42</text>
+				<next>43</next>
+			</phrase>
+			<phrase id="521">
+				<text>trade_dialog_petrenko_521</text>
+				<next>531</next>
+			</phrase>
+			<phrase id="521_2">
+				<text>trade_dialog_petrenko_521_2</text>
+				<next>531_2</next>
+			</phrase>
+			<phrase id="521_3">
+				<text>trade_dialog_petrenko_521_3</text>
+				<next>531_3</next>
+			</phrase>
+			 <phrase id="522">
+				<text>trade_dialog_petrenko_522</text>
+				<next>532</next>
+			</phrase>
+			<phrase id="523">
+				<text>trade_dialog_petrenko_523</text>
+				<next>533</next>
+		     </phrase>
+			 <phrase id="524">
+				<text>trade_dialog_petrenko_524</text>
+				<next>534</next>
+			</phrase>
+			<phrase id="525">
+				<text>trade_dialog_petrenko_525</text>
+				<next>5351</next>
+				<next>5352</next>
+			</phrase>
+			<phrase id="231">
+				<text>trade_dialog_petrenko_231</text>
+				<next>2311</next>
+				<next>2312</next>
+				<next>2313</next>
+				<next>61</next>
+			</phrase>
+			<phrase id="232">
+				<text>trade_dialog_petrenko_232</text>
+				<next>2321</next>
+				<next>61</next>
+			</phrase>
+			<phrase id="233">
+				<text>trade_dialog_petrenko_233</text>
+				<next>2331</next>
+				<next>61</next>
+			</phrase>
+			<phrase id="234">
+				<text>trade_dialog_petrenko_234</text>
+				<next>2341</next>
+				<next>2342</next>
+				<next>2343</next>
+                <next>61</next>
+			</phrase>
+			<phrase id="235">
+				<text>trade_dialog_petrenko_235</text>
+				<next>2351</next>
+				<next>61</next>
+			</phrase>
+			<phrase id="331">
+				<text>trade_dialog_petrenko_331</text>
+				<next>3311</next>
+				<next>61</next>
+			</phrase>
+			<phrase id="332">
+				<text>trade_dialog_petrenko_332</text>
+				<next>3321</next>
+				<next>61</next>
+			</phrase>
+			<phrase id="333">
+				<text>trade_dialog_petrenko_333</text>
+				<next>3331</next>
+				<next>61</next>
+			</phrase>
+			<phrase id="333_2">
+				<text>trade_dialog_petrenko_333_2</text>
+				<next>3331_2</next>
+				<next>61</next>
+			</phrase>
+			<phrase id="43">
+				<text>trade_dialog_petrenko_43</text>
+				<next>441</next>
+				<next>442</next>
+				<next>61</next>
+			</phrase>
+			<phrase id="531">
+				<text>trade_dialog_petrenko_531</text>
+                <next>5311</next>
+				<next>61</next>
+			</phrase>
+			<phrase id="531_2">
+				<text>trade_dialog_petrenko_531</text>
+                <next>5311_2</next>
+				<next>61</next>
+			</phrase>
+			<phrase id="531_3">
+				<text>trade_dialog_petrenko_531</text>
+                <next>5311_3</next>
+				<next>61</next>
+			</phrase>
+			<phrase id="532">
+				<text>trade_dialog_petrenko_532</text>
+				<next>5321</next>
+				<next>61</next>
+			</phrase>
+			<phrase id="533">
+				<text>trade_dialog_petrenko_532</text>		<!-- не ошибка -->
+				<next>5331</next>
+				<next>61</next>
+			</phrase>
+			<phrase id="534">
+				<text>trade_dialog_petrenko_532</text>		<!-- не ошибка -->
+				<next>5341</next>
+				<next>61</next>
+			</phrase>
+			<phrase id="5351">
+			<dont_has_info>petrenko_sil_buy</dont_has_info>
+				<text>trade_dialog_petrenko_5351</text>
+				<next>5361</next>
+				<next>61</next>
+			</phrase>
+			<phrase id="5352">
+			<has_info>petrenko_sil_buy</has_info>
+				<text>trade_dialog_petrenko_5352</text>
+				<next>5362</next>
+			</phrase>
+			<phrase id="2311">
+			<precondition>sak_dialog.cond_items_have("a",1,0.90)</precondition>
+				<text>trade_dialog_petrenko_2311</text>
+				<action>sak_dialog.cond_items_have("a",1,0.90,true)</action>
+				<action>sak.create_items("ammo_7.62x54_7h1",3)</action> 
+			</phrase>
+			<phrase id="2312">
+			<precondition>sak_dialog.cond_items_have("a",1,0.90)</precondition>
+				<text>trade_dialog_petrenko_2312</text>
+				<action>sak_dialog.cond_items_have("a",1,0.90,true)</action>
+				<action>sak.create_items("ammo_7.62x54_7h14",2)</action> 
+			</phrase>
+			<phrase id="2313">
+			<precondition>sak_dialog.cond_items_have("a",1,0.90)</precondition>
+				<text>trade_dialog_petrenko_2313</text>
+				<action>sak_dialog.cond_items_have("a",1,0.90,true)</action>
+				<action>sak.create_items("ammo_7.62x54_ap",1)</action> 
+			</phrase>
+			<phrase id="2321">
+			<precondition>sak_dialog.cond_items_have("a",1,0.90)</precondition>
+				<text>trade_dialog_petrenko_2321</text>
+				<action>sak_dialog.cond_items_have("a",1,0.90,true)</action>
+				<action>sak.create_items("ammo_vog-25",4)</action>	
+			</phrase>
+			<phrase id="2331">
+			<precondition>sak_dialog.cond_items_have("a",1,0.90)</precondition>
+				<text>trade_dialog_petrenko_2331</text>
+				<action>sak_dialog.cond_items_have("a",1,0.90,true)</action>
+				<action>sak.create_items("ammo_7.62x39_fmj",4)</action>	
+			</phrase>
+			<phrase id="2341">
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+				<text>trade_dialog_petrenko_2341</text>
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak.create_items("ammo_9x39_pab9",5)</action> 
+			</phrase>
+			<phrase id="2342">
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+				<text>trade_dialog_petrenko_2342</text>
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak.create_items("ammo_9x39_sp5",4)</action>
+			</phrase>
+			<phrase id="2343">
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+				<text>trade_dialog_petrenko_2343</text>
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak.create_items("ammo_9x39_ap",3)</action>
+			</phrase>
+			<phrase id="2351">
+			<precondition>sak_dialog.cond_items_have("a",1,0.90)</precondition>
+				<text>trade_dialog_petrenko_2351</text>
+				<action>sak_dialog.cond_items_have("a",1,0.90,true)</action>
+				<action>sak.create_items("ammo_5.45x39_fmj",5)</action>
+			</phrase>
+			<phrase id="3311">
+			<precondition>sak_dialog.cond_items_have("c",1,0.90)</precondition>
+				<text>trade_dialog_petrenko_3311</text>
+				<action>sak_dialog.cond_items_have("c",1,0.90,true)</action>
+				<action>sak.create_items("wpn_pp19",1)</action>
+			</phrase>
+			<phrase id="3321">
+			<precondition>sak_dialog.cond_items_have("c",2,0.90)</precondition>
+				<text>trade_dialog_petrenko_3321</text>
+				<action>sak_dialog.cond_items_have("c",2,0.90,true)</action>
+				<action>sak.create_items("wpn_aek971",1)</action>
+			</phrase>
+			<phrase id="3331">
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+			<precondition>sak_dialog.cond_items_have("c",1,0.90)</precondition>
+				<text>trade_dialog_petrenko_3331</text>
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak_dialog.cond_items_have("c",1,0.90,true)</action>
+				<action>sak.create_items("wpn_vintorez",1)</action>
+			</phrase>
+			<phrase id="3331_2">
+			<precondition>sak_dialog.cond_items_have("b",2,0.90)</precondition>
+			<precondition>sak_dialog.cond_items_have("c",1,0.90)</precondition>
+				<text>trade_dialog_petrenko_3331</text>
+				<action>sak_dialog.cond_items_have("b",2,0.90,true)</action>
+				<action>sak_dialog.cond_items_have("c",1,0.90,true)</action>
+				<action>sak.create_items("wpn_val",1)</action>
+			</phrase>
+			<phrase id="441">
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+				<text>trade_dialog_petrenko_441</text>
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak.create_items("medkit_army",3)</action>
+			</phrase>
+			<phrase id="442">
+			<precondition>sak_dialog.cond_items_have("a",2,0.90)</precondition>
+				<text>trade_dialog_petrenko_442</text>
+				<action>sak_dialog.cond_items_have("a",2,0.90,true)</action>
+				<action>sak.create_items("medkit_army",3)</action>
+			</phrase>
+			<phrase id="5311">
+			<precondition>sak_dialog.cond_items_have("b",2,0.90)</precondition>
+				<text>trade_dialog_petrenko_5311</text>
+				<action>sak_dialog.cond_items_have("b",2,0.90,true)</action>
+				<action>sak.create_items("wpn_addon_cobra",1)</action>
+			</phrase>
+			<phrase id="5311_2">
+			<precondition>sak_dialog.cond_items_have("b",2,0.90)</precondition>
+				<text>trade_dialog_petrenko_5311</text>
+				<action>sak_dialog.cond_items_have("b",2,0.90,true)</action>
+				<action>sak.create_items("rakurs",1)</action>
+			</phrase>
+			<phrase id="5311_3">
+			<precondition>sak_dialog.cond_items_have("b",2,0.90)</precondition>
+				<text>trade_dialog_petrenko_5311</text>
+				<action>sak_dialog.cond_items_have("b",2,0.90,true)</action>
+				<action>sak.create_items("okp",1)</action>
+			</phrase>
+			<phrase id="5321">
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+				<text>trade_dialog_petrenko_5321</text>
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak.create_items("wpn_addon_sil_762_sr1",1)</action>
+			</phrase>
+			<phrase id="5331">
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+				<text>trade_dialog_petrenko_5321</text>									<!-- не ошибка -->
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak.create_items("wpn_addon_sil_545_ar",1)</action>
+			</phrase>
+			<phrase id="5341">
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+				<text>trade_dialog_petrenko_5321</text>									<!-- не ошибка -->
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak.create_items("wpn_addon_sil_762_ar",1)</action>
+			</phrase>
+			<phrase id="5361">
+			<precondition>sak_dialog.cond_items_have("c",1,0.90)</precondition>
+				<text>trade_dialog_petrenko_5361</text>
+				<action>sak_dialog.cond_items_have("c",1,0.90,true)</action>
+				<!-- <action>sak.create_items("wpn_addon_sil_vsk",1)</action> Manool: теперь тут вместо глушителя ПГ к Грозе -->
+				<action>sak.create_items("wpn_addon_grenade_launcher_groza",1)</action>
+				<give_info>petrenko_sil_buy</give_info>
+			</phrase>
+			<phrase id="5362">
+				<text>trade_dialog_petrenko_5362</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="6">
+				<text>trade_dialog_petrenko_6</text>
+			</phrase>
+			<phrase id="61">
+				<text>trade_dialog_petrenko_61</text>
+			</phrase>
+		</phrase_list>
+	</dialog>
+<!-- Бартер Скряга -->	
+	<dialog id="trade_dialog_skraga"> 
+	<precondition>dialogs.is_not_wounded</precondition>
+		<phrase_list>
+			<phrase id="0">
+				<text>trade_dialog_skraga_0</text>
+				<action>dialogs.no_trade</action>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>trade_dialog_skraga_1</text>
+				<action>sak_dialog.info_price_scraga</action>
+				<next>2</next>
+				<next>3</next>
+				<next>4</next>
+				<next>5</next>
+				<next>6</next>
+			</phrase>
+			<phrase id="2">
+				<text>trade_dialog_skraga_2</text>
+				<next>21</next>
+			</phrase>
+			<phrase id="20">
+				<text>trade_dialog_skraga_20</text>
+				<next>21</next>
+			</phrase>
+			<phrase id="3">
+				<text>trade_dialog_skraga_3</text>
+				<next>31</next>
+				<next>311</next>
+			</phrase>
+			<phrase id="30">
+				<text>trade_dialog_skraga_30</text>
+				<next>31</next>
+			</phrase>
+			<phrase id="4">
+				<text>trade_dialog_skraga_4</text>
+				<next>41</next>
+			</phrase>
+			<phrase id="40">
+				<text>trade_dialog_skraga_40</text>
+				<next>41</next>
+			</phrase>
+			<phrase id="5">
+				<text>trade_dialog_skraga_5</text>
+				<next>51</next>
+			</phrase>
+			<phrase id="50">
+				<text>trade_dialog_skraga_50</text>
+				<next>51</next>
+			</phrase>
+			<phrase id="6">
+				<text>trade_dialog_skraga_6</text>
+				<next>61</next>
+			</phrase>
+			<phrase id="60">
+				<text>trade_dialog_skraga_60</text>
+				<next>61</next>
+			</phrase>
+			<phrase id="21">
+				<text>trade_dialog_skraga_21</text>
+				<next>22</next>
+				<next>23</next>
+				<next>24</next>
+			    <next>25</next>
+                <next>26</next>
+				<next>54</next>
+			</phrase>
+			<phrase id="22">			
+				<text>trade_dialog_skraga_22</text>
+				<next>222</next>
+			</phrase>
+			<phrase id="222">
+				<text>trade_dialog_skraga_222</text>
+				<next>221</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="23">			
+				<text>trade_dialog_skraga_23</text>
+				<next>232</next>
+			</phrase>
+			<phrase id="232">
+				<text>trade_dialog_skraga_232</text>
+				<next>231</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="221">
+			<precondition>sak_dialog.cond_items_have("a",1,0.90)</precondition>
+				<text>trade_dialog_skraga_221</text>
+				<action>sak_dialog.cond_items_have("a",1,0.90,true)</action>
+				<action>sak.create_items("ammo_5.56x45_ss190",5)</action>
+			</phrase>
+			<phrase id="231">
+			<precondition>sak_dialog.cond_items_have("a",1,0.90)</precondition>
+				<text>trade_dialog_skraga_231</text>
+				<action>sak_dialog.cond_items_have("a",1,0.90,true)</action>
+				<action>sak.create_items("grenade_f1",3)</action>
+			</phrase>
+			<phrase id="24">			
+				<text>trade_dialog_skraga_24</text>
+				<next>242</next>
+			</phrase>
+			<phrase id="242">
+				<text>trade_dialog_skraga_242</text>
+				<next>241</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="241">
+			<precondition>sak_dialog.cond_items_have("a",1,0.90)</precondition>
+				<text>trade_dialog_skraga_241</text>
+				<action>sak_dialog.cond_items_have("a",1,0.90,true)</action>
+				<action>sak.create_items("ammo_m209",4)</action>
+			</phrase>
+			<phrase id="25">
+				<text>trade_dialog_skraga_25</text>
+				<next>252</next>
+			</phrase>
+			<phrase id="252">
+				<text>trade_dialog_skraga_252</text>
+				<next>251</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="251">
+			<precondition>sak_dialog.cond_items_have("a",1,0.90)</precondition>
+				<text>trade_dialog_skraga_251</text>
+				<action>sak_dialog.cond_items_have("a",1,0.90,true)</action>
+				<action>sak.create_items("ammo_5.56x45_mg",1)</action>
+			</phrase>
+      	<phrase id="26">
+				<text>trade_dialog_skraga_26</text>
+				<next>262</next>
+			</phrase>
+			<phrase id="262">
+				<text>trade_dialog_skraga_262</text>
+				<next>261</next>
+				<next>666</next>
+			</phrase>
+      	<phrase id="261">
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+				<text>trade_dialog_skraga_261</text>
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak.create_items("ammo_7.62x51_fmj",4)</action>
+			</phrase>
+			<phrase id="31">
+			<dont_has_info>drunk_dolg_story_done</dont_has_info>
+				<text>trade_dialog_skraga_31</text>
+				<next>33</next>
+				<next>34</next>
+				<next>35</next>
+				<next>54</next>
+			</phrase>
+			<phrase id="311">
+			<has_info>drunk_dolg_story_done</has_info>
+				<text>trade_dialog_skraga_311</text>
+				<next>32</next>
+				<next>33</next>
+				<next>34</next>
+				<next>35</next>
+				<next>54</next>
+			</phrase>
+			<phrase id="32">			
+				<text>trade_dialog_skraga_32</text>
+				<next>322</next>
+			</phrase>
+			<phrase id="322">
+				<text>trade_dialog_skraga_322</text>
+				<next>321</next>
+				<next>3211</next>
+				<next>3212</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="33">			
+				<text>trade_dialog_skraga_33</text>
+				<next>332</next>
+			</phrase>
+			<phrase id="332">
+				<text>trade_dialog_skraga_332</text>
+				<next>331</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="34">			
+				<text>trade_dialog_skraga_34</text>
+				<next>342</next>
+			</phrase>
+			<phrase id="342">
+				<text>trade_dialog_skraga_342</text>
+				<next>341</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="35">			
+				<text>trade_dialog_skraga_35</text>
+				<next>352</next>
+			</phrase>
+			<phrase id="352">
+				<text>trade_dialog_skraga_352</text>
+				<next>351</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="321">
+			<precondition>sak_dialog.cond_items_have("b",5,0.90)</precondition>
+				<text>trade_dialog_skraga_321</text>
+				<action>sak_dialog.cond_items_have("b",5,0.90,true)</action>
+				<action>sak.create_items("wpn_spas12_m1",1)</action>
+			</phrase>
+			<phrase id="3211">
+			<precondition>sak_dialog.cond_items_have("c",2,0.90)</precondition>
+				<text>trade_dialog_skraga_3211</text>
+				<action>sak_dialog.cond_items_have("c",2,0.90,true)</action>
+				<action>sak.create_items("wpn_spas12_m1",1)</action>
+			</phrase>
+			<phrase id="3212">
+			<precondition>sak_dialog.cond_items_have("d",1,0.90)</precondition>
+				<text>trade_dialog_skraga_3212</text>
+				<action>sak_dialog.cond_items_have("d",1,0.90,true)</action>
+				<action>sak.create_items("wpn_spas12_m1",1)</action>
+			</phrase>
+			<phrase id="331">
+			<precondition>sak_dialog.cond_items_have("b",3,0.90)</precondition>
+				<text>trade_dialog_skraga_331</text>
+				<action>sak_dialog.cond_items_have("b",3,0.90,true)</action>
+				<action>sak.create_items("wpn_usp",1)</action>
+			</phrase>
+			<phrase id="341">
+			<precondition>sak_dialog.cond_items_have("c",1,0.90)</precondition>
+				<text>trade_dialog_skraga_341</text>
+				<action>sak_dialog.cond_items_have("c",1,0.90,true)</action>
+				<action>sak.create_items("wpn_beretta93",1)</action>
+			</phrase>
+			<phrase id="351">
+			<precondition>sak_dialog.cond_items_have("b",2,0.90)</precondition>
+				<text>trade_dialog_skraga_351</text>
+				<action>sak_dialog.cond_items_have("b",2,0.90,true)</action>
+				<action>sak.create_items("wpn_colt1911",1)</action>
+			</phrase>
+			<phrase id="41">
+				<text>trade_dialog_skraga_41</text>
+				<next>42</next>
+				<next>43</next>
+				<next>54</next>
+			</phrase>
+			<phrase id="42">			
+				<text>trade_dialog_skraga_42</text>
+				<next>422</next>
+			</phrase>
+			<phrase id="422">
+				<text>trade_dialog_skraga_422</text>
+				<next>421</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="43">			
+				<text>trade_dialog_skraga_43</text>
+				<next>432</next>
+			</phrase>
+			<phrase id="432">
+				<text>trade_dialog_skraga_432</text>
+				<next>431</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="421">
+			<precondition>sak_dialog.cond_items_have("a",1,0.90)</precondition>
+				<text>trade_dialog_skraga_421</text>
+				<action>sak_dialog.cond_items_have("a",1,0.90,true)</action>
+				<action>sak.create_items("medkit_army",2)</action>
+			</phrase>
+			<phrase id="431">
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+				<text>trade_dialog_skraga_421</text>
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak.create_items("antirad",5)</action>
+			</phrase>
+			<phrase id="51">
+				<text>trade_dialog_skraga_51</text>
+				<next>52</next>
+				<next>53</next>
+				<next>54</next>
+			</phrase>
+			<phrase id="52">			
+				<text>trade_dialog_skraga_52</text>
+				<next>522</next>
+			</phrase>
+			<phrase id="522">
+				<text>trade_dialog_skraga_522</text>
+				<next>521</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="53">			
+				<text>trade_dialog_skraga_53</text>
+				<next>532</next>
+			</phrase>
+			<phrase id="532">
+				<text>trade_dialog_skraga_532</text>
+				<next>531</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="54">
+				<text>trade_dialog_skraga_54</text>
+			</phrase>
+			<phrase id="666">
+				<text>trade_dialog_skraga_666</text>
+			</phrase>
+			<phrase id="521">
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+				<text>trade_dialog_skraga_521</text>
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak.create_items("repair_itemoutfit_feik",4)</action>
+			</phrase>
+			<phrase id="531">
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+				<text>trade_dialog_skraga_531</text>
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak.create_items("repair_item_weapon_feik",4)</action>
+			</phrase>
+            <phrase id="61">
+				<text>trade_dialog_skraga_61</text>
+				<next>62</next>
+				<next>63</next>
+			    <next>64</next>
+			    <next>65</next>
+				<next>54</next>
+			</phrase>
+			<phrase id="62">			
+				<text>trade_dialog_skraga_62</text>
+				<next>622</next>
+			</phrase>
+			<phrase id="622">
+				<text>trade_dialog_skraga_622</text>
+				<next>621</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="63">			
+				<text>trade_dialog_skraga_63</text>
+				<next>632</next>
+			</phrase>
+			<phrase id="632">
+				<text>trade_dialog_skraga_632</text>
+				<next>631</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="64">			
+				<text>trade_dialog_skraga_64</text>
+				<next>642</next>
+			</phrase>
+			<phrase id="642">
+				<text>trade_dialog_skraga_642</text>
+				<next>641</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="65">			
+				<text>trade_dialog_skraga_65</text>
+				<next>652</next>
+			</phrase>
+			<phrase id="652">
+				<text>trade_dialog_skraga_652</text>
+				<next>651</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="621">
+			<precondition>sak_dialog.cond_items_have("c",1,0.90)</precondition>
+				<text>trade_dialog_skraga_621</text>
+				<action>sak_dialog.cond_items_have("c",1,0.90,true)</action>
+				<action>sak.create_items("ammo_8.6x70",5)</action>
+			</phrase>
+			<phrase id="631">
+			<precondition>sak_dialog.cond_items_have("c",1,0.90)</precondition>
+				<text>trade_dialog_skraga_631</text>
+				<action>sak_dialog.cond_items_have("c",1,0.90,true)</action>
+				<action>sak.create_items("ammo_8.6x70_ap",3)</action>
+			</phrase>
+			<phrase id="641">
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+				<text>trade_dialog_skraga_641</text>
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak.create_items("wpn_addon_sil_556_ar",1)</action>
+			</phrase>
+			<phrase id="651">
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+				<text>trade_dialog_skraga_651</text>
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak.create_items("wpn_addon_sil_762_sr2",1)</action>
+			</phrase>
+		</phrase_list>
+	</dialog>
+<!-- Бартер Шерстюк -->	
+	<dialog id="trade_dialog_sherstyk"> 
+	<precondition>dialogs.is_not_wounded</precondition>
+	<has_info>agr_mil_dumenko_gg</has_info>									 
+		<phrase_list>
+			<phrase id="0">
+				<text>trade_dialog_sherstyk_0</text>
+				<action>dialogs.no_trade</action>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>trade_dialog_sherstyk_1</text>
+				<action>sak_dialog.info_price_sherstuk</action>
+				<next>2</next>
+				<next>3</next>
+				<next>4</next>
+				<next>5</next>
+			</phrase>
+			<phrase id="2">
+				<text>trade_dialog_sherstyk_2</text>
+				<next>21</next>
+			</phrase>
+			<phrase id="3">
+				<text>trade_dialog_sherstyk_3</text>
+				<next>31</next>
+			</phrase>
+			<phrase id="4">
+				<text>trade_dialog_sherstyk_4</text>
+				<next>41</next>
+			</phrase>
+			<phrase id="5">
+			<precondition>sak_dialog.not_have_razgruzka</precondition>
+				<text>trade_dialog_sherstyk_5</text>
+				<next>50</next>
+			</phrase>
+			<phrase id="20">
+				<text>trade_dialog_sherstyk_20</text>
+				<next>21</next>
+			</phrase>
+			<phrase id="30">
+				<text>trade_dialog_sherstyk_30</text>
+				<next>31</next>
+			</phrase>
+			<phrase id="40">
+				<text>trade_dialog_sherstyk_40</text>
+				<next>41</next>
+			</phrase>
+			<phrase id="50">
+				<text>trade_dialog_sherstyk_50</text>
+				<next>51</next>
+				<next>52</next>
+			</phrase>
+			<phrase id="21">
+				<text>trade_dialog_sherstyk_21</text>
+				<next>22</next>
+				<next>23</next>
+				<next>24</next>
+				<next>25</next>
+				<next>55</next>
+				<next>56</next>
+				<next>54</next>
+			</phrase>
+			<phrase id="22">			
+				<text>trade_dialog_sherstyk_22</text>
+				<next>222</next>
+			</phrase>
+			<phrase id="222">
+				<text>trade_dialog_sherstyk_222</text>
+				<next>221</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="23">			
+				<text>trade_dialog_sherstyk_23</text>
+				<next>232</next>
+			</phrase>
+			<phrase id="232">
+				<text>trade_dialog_sherstyk_232</text>
+				<action>sak_dialog.text_sher_vodka</action>
+				<next>231</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="221">
+			<precondition>sak.have_items_count("vodka",3)</precondition>
+				<text>trade_dialog_sherstyk_221</text>
+				<action>sak_inventory.release_actor_items("vodka",3)</action>
+				<action>sak.create_items("ammo_5.45x39_fmj",5)</action>
+			</phrase>
+			<phrase id="231">
+			<precondition>sak_dialog.have_kuz_vodka</precondition>
+				<text>trade_dialog_sherstyk_231</text>
+				<action>sak_dialog.give_kuz_vodka</action>
+				<action>sak.create_items("grenade_f1",1)</action>
+			</phrase>
+			<phrase id="24">			
+				<text>trade_dialog_sherstyk_24</text>
+				<next>242</next>
+			</phrase>
+			<phrase id="242">
+				<text>trade_dialog_sherstyk_242</text>
+				<next>241</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="241">
+			<precondition>sak.have_items_count("vodka",6)</precondition>
+				<text>trade_dialog_sherstyk_241</text>
+				<action>sak_inventory.release_actor_items("vodka",6)</action>
+				<action>sak.create_items("ammo_7.62x54r",1)</action>
+			</phrase>
+			<phrase id="25">			
+				<text>trade_dialog_sherstyk_25</text>
+				<next>252</next>
+			</phrase>
+			<phrase id="252">
+				<text>trade_dialog_sherstyk_252</text>
+				<action>sak_dialog.text_rgo_vodka</action>
+				<next>251</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="251">
+			<precondition>sak_dialog.have_rgo_vodka</precondition>
+				<text>trade_dialog_sherstyk_251</text>
+				<action>sak_dialog.give_rgo_vodka</action>
+				<action>sak.create_items("grenade_rgo",1)</action>
+			</phrase>
+			<phrase id="55">			
+				<text>trade_dialog_sherstyk_55</text>
+				<next>552</next>
+			</phrase>
+			<phrase id="552">
+				<text>trade_dialog_sherstyk_552</text>
+				<next>551</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="551">
+			<precondition>sak.have_items_count("vodka",4)</precondition>
+				<text>trade_dialog_sherstyk_551</text>
+				<action>sak_inventory.release_actor_items("vodka",4)</action>
+				<action>sak.create_items("ammo_7.62x39_fmj",4)</action>
+			</phrase>
+			<phrase id="56">			
+				<text>trade_dialog_sherstyk_56</text>
+				<next>562</next>
+			</phrase>
+			<phrase id="562">
+				<text>trade_dialog_sherstyk_562</text>
+				<next>561</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="561">
+			<precondition>sak.have_items_count("vodka",2)</precondition>
+				<text>trade_dialog_sherstyk_561</text>
+				<action>sak_inventory.release_actor_items("vodka",2)</action>
+				<action>sak.create_items("ammo_7.62x39_mg",1)</action>
+			</phrase>
+			<phrase id="31">
+				<text>trade_dialog_sherstyk_31</text>
+				<next>32</next>
+				<next>3222</next>
+				<next>33</next>
+				<next>34</next>
+				<next>54</next>
+			</phrase>
+			<phrase id="32">
+				<text>trade_dialog_sherstyk_32</text>
+				<next>322</next>
+				<next>3221</next>
+			</phrase>
+			<phrase id="3222">
+				<text>trade_dialog_sherstyk_3222</text>
+				<next>3223</next>
+				<next>3224</next>
+			</phrase>
+			<phrase id="322">
+			<precondition>sak_dialog.may_month</precondition>
+				<text>trade_dialog_sherstyk_322</text>
+				<next>321</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="3221">
+			<precondition>sak_dialog.not_may_month</precondition>
+				<text>trade_dialog_sherstyk_3221</text>
+				<next>3211</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="3223">
+			<precondition>sak_dialog.may_month</precondition>
+				<text>trade_dialog_sherstyk_3223</text>
+				<next>3225</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="3224">
+			<precondition>sak_dialog.not_may_month</precondition>
+				<text>trade_dialog_sherstyk_3224</text>
+				<next>3226</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="33">
+			<text>trade_dialog_sherstyk_33</text>
+				<next>332</next>
+				<next>3321</next>
+			</phrase>
+			<phrase id="332">
+			<precondition>sak_dialog.may_month</precondition>
+				<text>trade_dialog_sherstyk_332</text>
+				<next>331</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="3321">
+			<precondition>sak_dialog.not_may_month</precondition>
+				<text>trade_dialog_sherstyk_3321</text>
+				<next>3311</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="321">
+			<precondition>sak.have_items_count("vodka",8)</precondition>
+				<text>trade_dialog_sherstyk_321</text>
+				<action>sak_inventory.release_actor_items("vodka",8)</action>
+				<action>sak.create_items("wpn_walther",1)</action>
+			</phrase>
+			<phrase id="3211">
+			<precondition>sak.have_items_count("vodka",15)</precondition>
+				<text>trade_dialog_sherstyk_331</text>
+				<action>sak_inventory.release_actor_items("vodka",15)</action>
+				<action>sak.create_items("wpn_walther",1)</action>
+			</phrase>
+			<phrase id="3225">
+			<precondition>sak.have_items_count("vodka",10)</precondition>
+				<text>trade_dialog_sherstyk_3225</text>
+				<action>sak_inventory.release_actor_items("vodka",10)</action>
+				<action>sak.create_items("wpn_fort_m1",1)</action>
+			</phrase>
+			<phrase id="3226">
+			<precondition>sak.have_items_count("vodka",15)</precondition>
+				<text>trade_dialog_sherstyk_3226</text>
+				<action>sak_inventory.release_actor_items("vodka",15)</action>
+				<action>sak.create_items("wpn_fort_m1",1)</action>
+			</phrase>
+			<phrase id="331">
+			<precondition>sak.have_items_count("vodka",20)</precondition>
+				<text>trade_dialog_sherstyk_331</text>
+				<action>sak_inventory.release_actor_items("vodka",20)</action>
+				<action>sak.create_items("wpn_rpk74",1)</action>
+			</phrase>
+			<phrase id="3311">
+			<precondition>sak.have_items_count("vodka",40)</precondition>
+				<text>trade_dialog_sherstyk_3311</text>
+				<action>sak_inventory.release_actor_items("vodka",40)</action>
+				<action>sak.create_items("wpn_rpk74",1)</action>
+			</phrase>
+			<phrase id="34">
+				<text>trade_dialog_sherstyk_34</text>
+				<next>341</next>
+				<next>342</next>
+			</phrase>
+			<phrase id="341">
+			<precondition>sak_dialog.may_month</precondition>
+				<text>trade_dialog_sherstyk_341</text>
+				<next>3411</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="342">
+			<precondition>sak_dialog.not_may_month</precondition>
+				<text>trade_dialog_sherstyk_342</text>
+				<next>3412</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="3411">
+			<precondition>sak.have_items_count("vodka",15)</precondition>
+				<text>trade_dialog_sherstyk_3411</text>
+				<action>sak_inventory.release_actor_items("vodka",15)</action>
+				<action>sak.create_items("wpn_akm",1)</action>
+			</phrase>
+			<phrase id="3412">
+			<precondition>sak.have_items_count("vodka",20)</precondition>
+				<text>trade_dialog_sherstyk_3411</text>
+				<action>sak_inventory.release_actor_items("vodka",20)</action>
+				<action>sak.create_items("wpn_akm",1)</action>
+			</phrase>
+			<phrase id="41">
+				<text>trade_dialog_sherstyk_41</text>
+				<next>42</next>
+				<next>43</next>
+				<next>54</next>
+			</phrase>
+			<phrase id="43">
+				<text>trade_dialog_sherstyk_43</text>
+				<next>102</next>
+				<next>1020</next>
+				<next>1022</next>
+			</phrase>
+			<phrase id="42">
+				<text>trade_dialog_sherstyk_42</text>
+				<next>422</next>
+				<next>4221</next>
+			</phrase>
+			<phrase id="422">
+			<precondition>sak_dialog.may_month</precondition>
+				<text>trade_dialog_sherstyk_422</text>
+				<next>421</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="421">
+			<precondition>sak.have_items_count("vodka",1)</precondition>
+				<text>trade_dialog_sherstyk_421</text>
+				<action>sak_inventory.release_actor_items("vodka",1)</action>
+				<action>sak.create_items("medkit_army",1)</action>
+			</phrase>
+			<phrase id="4221">
+			<precondition>sak_dialog.not_may_month</precondition>
+				<text>trade_dialog_sherstyk_4221</text>
+				<next>4211</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="4211">
+			<precondition>sak.have_items_count("vodka",2)</precondition>
+				<text>trade_dialog_sherstyk_421</text>
+				<action>sak_inventory.release_actor_items("vodka",2)</action>
+				<action>sak.create_items("medkit_army",1)</action>
+			</phrase>
+			<phrase id="51">
+			<precondition>sak.have_items_count("vodka",20)</precondition>
+			<precondition>sak_dialog.have_razgruzka_new</precondition>
+				<text>trade_dialog_sherstyk_51</text>
+				<action>sak_inventory.release_actor_items("vodka",20)</action>
+				<action>sak_dialog.razgruzka_new_away</action>
+				<next>511</next>
+			</phrase>
+			<phrase id="52">
+				<text>trade_dialog_sherstyk_52</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="511">
+				<text>trade_dialog_sherstyk_511</text>
+				<action>sak_dialog.add_razgruzka</action>
+			</phrase>
+			<phrase id="102">
+			<precondition>sak_dialog.may_month</precondition>
+				<text>trade_dialog_sherstyk_102</text>
+				<next>101</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="101">
+			<precondition>sak.have_items_count("vodka",1)</precondition>
+				<text>trade_dialog_sherstyk_101</text>
+				<action>sak_inventory.release_actor_items("vodka",1)</action>
+				<action>sak.create_items("suhpay",1)</action>
+			</phrase>
+			<phrase id="1020">
+			<precondition>sak_dialog.not_may_month</precondition>
+				<text>trade_dialog_sherstyk_1020</text>
+				<next>1021</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="1021">
+			<precondition>sak.have_items_count("vodka",2)</precondition>
+				<text>trade_dialog_sherstyk_421</text>
+				<action>sak_inventory.release_actor_items("vodka",2)</action>
+				<action>sak.create_items("suhpay",1)</action>
+			</phrase>
+			<phrase id="1022">
+			<precondition>sak_dialog.not_may_2month</precondition>
+				<text>trade_dialog_sherstyk_1022</text>
+				<next>1023</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="1023">
+			<precondition>sak.have_items_count("vodka",3)</precondition>
+				<text>trade_dialog_sherstyk_421</text>
+				<action>sak_inventory.release_actor_items("vodka",3)</action>
+				<action>sak.create_items("suhpay",1)</action>
+			</phrase>			
+			<phrase id="54">
+				<text>trade_dialog_sherstyk_54</text>
+			</phrase>
+			<phrase id="666">
+				<text>trade_dialog_sherstyk_666</text>
+			</phrase>
+		</phrase_list>
+	</dialog>
+<!-- Бартер Жила -->	
+	<dialog id="trade_dialog_jlob">
+	<precondition>dialogs.is_not_wounded</precondition>
+	<has_info>news_dv_seif</has_info>
+	<dont_has_info>news_dv_seif_no</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>trade_dialog_jlob_0</text>
+				<action>dialogs.no_trade</action>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>trade_dialog_jlob_1</text>
+				<action>sak_dialog.info_price_jila</action>
+				<next>2</next>
+				<next>3</next>
+				<next>4</next>
+				<next>5</next>
+				<next>6</next>
+			</phrase>
+			<phrase id="2">
+				<text>trade_dialog_jlob_2</text>
+				<next>21</next>
+			</phrase>
+			<phrase id="20">
+				<text>trade_dialog_jlob_20</text>
+				<next>21</next>
+			</phrase>
+			<phrase id="3">
+				<text>trade_dialog_jlob_3</text>
+				<next>31</next>
+			</phrase>
+			<phrase id="30">
+				<text>trade_dialog_jlob_30</text>
+				<next>31</next>
+			</phrase>
+			<phrase id="4">
+				<text>trade_dialog_jlob_4</text>
+				<next>41</next>
+			</phrase>
+			<phrase id="40">
+				<text>trade_dialog_jlob_40</text>
+				<next>41</next>
+			</phrase>
+			<phrase id="5">
+				<text>trade_dialog_jlob_5</text>
+				<next>51</next>
+			</phrase>
+			<phrase id="50">
+				<text>trade_dialog_jlob_50</text>
+				<next>51</next>
+			</phrase>
+			<phrase id="6">
+			<precondition>sak_dialog.bandit_pda_trading</precondition> <!-- сначала поработаем на Борова -->			
+				<text>trade_dialog_jlob_6</text>
+				<next>61</next>
+			</phrase>
+			<phrase id="60">
+				<text>trade_dialog_jlob_60</text>
+				<next>61</next>
+			</phrase>
+			<phrase id="21">
+				<text>trade_dialog_jlob_21</text>
+				<next>22</next>
+				<next>23</next>
+				<next>24</next>
+				<next>25</next>
+				<next>54</next>
+			</phrase>
+			<phrase id="22">			
+				<text>trade_dialog_jlob_22</text>
+				<next>222</next>
+			</phrase>
+			<phrase id="222">
+				<text>trade_dialog_jlob_222</text>
+				<next>221</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="23">			
+				<text>trade_dialog_jlob_23</text>
+				<next>232</next>
+			</phrase>
+			<phrase id="232">
+				<text>trade_dialog_jlob_232</text>
+				<next>231</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="221">
+			<precondition>sak.have_items_count("conserva",5)</precondition>
+				<text>trade_dialog_jlob_221</text>
+				<action>sak_inventory.release_actor_items("conserva",5)</action>
+				<action>sak.create_items("ammo_5.45x39_fmj",5)</action>
+			</phrase>
+			<phrase id="231">
+			<precondition>sak_dialog.drink2_have</precondition>
+				<text>trade_dialog_jlob_231</text>
+				<action>sak_dialog.give_2drink</action>
+				<action>sak.create_items("grenade_rgd5",1)</action>
+			</phrase>
+			<phrase id="24">			
+				<text>trade_dialog_jlob_24</text>
+				<next>242</next>
+			</phrase>
+			<phrase id="242">
+				<text>trade_dialog_jlob_242</text>
+				<next>241</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="25">			
+				<text>trade_dialog_jlob_25</text>
+				<next>252</next>
+			</phrase>
+			<phrase id="252">
+				<text>trade_dialog_jlob_252</text>
+				<next>251</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="241">
+			<precondition>sak_dialog.drink3_have</precondition>
+				<text>trade_dialog_jlob_241</text>
+				<action>sak_dialog.give_3drink</action>
+				<action>sak.create_items("ammo_9x19_fmj",2)</action>
+			</phrase>
+			<phrase id="251">
+			<precondition>sak_dialog.drink_have</precondition>
+			<precondition>sak.have_items_count("conserva",1)</precondition>
+				<text>trade_dialog_jlob_251</text>
+				<action>sak_dialog.give_drink</action>
+				<action>sak_inventory.release_actor_items("conserva",1)</action>
+				<action>sak.create_items("grenade_f1",1)</action> 
+			</phrase>
+			<phrase id="31">
+				<text>trade_dialog_jlob_31</text>
+				<next>32</next>
+				<next>33</next>
+				<next>34</next>
+                <next>35</next>
+                <next>36</next>				
+				<next>54</next>
+			</phrase>
+			<phrase id="32">			
+				<text>trade_dialog_jlob_32</text>
+				<next>322</next>
+			</phrase>
+			<phrase id="322">
+				<text>trade_dialog_jlob_322</text>
+				<next>321</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="33">			
+				<text>trade_dialog_jlob_33</text>
+				<next>332</next>
+			</phrase>
+			<phrase id="332">
+				<text>trade_dialog_jlob_332</text>
+				<next>331</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="34">			
+				<text>trade_dialog_jlob_34</text>
+				<next>342</next>
+			</phrase>
+			<phrase id="342">
+				<text>trade_dialog_jlob_342</text>
+				<next>341</next>
+				<next>666</next>
+			</phrase>
+            <phrase id="35">			
+				<text>trade_dialog_jlob_35</text>
+				<next>352</next>
+			</phrase>
+			<phrase id="352">
+				<text>trade_dialog_jlob_352</text>
+				<next>351</next>
+				<next>666</next>
+			</phrase>
+            <phrase id="36">			
+				<text>trade_dialog_jlob_36</text>
+				<next>362</next>
+			</phrase>
+			<phrase id="362">
+				<text>trade_dialog_jlob_362</text>
+				<next>361</next>
+				<next>666</next>
+			</phrase>			
+			<phrase id="321">
+			<precondition>sak.have_items_count("conserva",15)</precondition>
+				<text>trade_dialog_jlob_321</text>
+				<action>sak_inventory.release_actor_items("conserva",15)</action>
+				<action>sak.create_items("wpn_mp5_m2",1)</action>
+			</phrase>
+			<phrase id="331">
+			<precondition>sak_dialog.cond_items_have("suhpay",20,0.99)</precondition>
+				<text>trade_dialog_jlob_331</text>
+				<action>sak_dialog.cond_items_have("suhpay",20,0.99,true)</action>
+				<action>sak.create_items("wpn_bizon",1)</action>
+			</phrase>
+			<phrase id="341">
+			<precondition>sak_dialog.cond_items_have("suhpay",10,0.99)</precondition>
+				<text>trade_dialog_jlob_341</text>
+				<action>sak_dialog.cond_items_have("suhpay",10,0.99,true)</action>
+				<action>sak.create_items("wpn_sig220",1)</action>
+			</phrase>
+            <phrase id="351">
+			<precondition>sak_dialog.cond_items_have("green_kolbasa",8,0.75)</precondition>
+				<text>trade_dialog_jlob_351</text>
+				<action>sak_dialog.cond_items_have("green_kolbasa",8,0.75,true)</action>
+				<action>sak.create_items("wpn_ak47",1)</action>
+			</phrase>
+            <phrase id="361">
+			<precondition>sak_dialog.cond_items_have("green_kolbasa",5,0.75)</precondition>
+				<text>trade_dialog_jlob_361</text>
+				<action>sak_dialog.cond_items_have("green_kolbasa",5,0.75,true)</action>
+				<action>sak.create_items("wpn_addon_sil_9_p",1)</action>
+			</phrase>						
+			<phrase id="41">
+				<text>trade_dialog_jlob_41</text>
+				<next>42</next>
+				<next>43</next>
+				<next>54</next>
+			</phrase>
+			<phrase id="42">			
+				<text>trade_dialog_jlob_42</text>
+				<next>422</next>
+			</phrase>
+			<phrase id="422">
+				<text>trade_dialog_jlob_422</text>
+				<next>421</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="43">			
+				<text>trade_dialog_jlob_43</text>
+				<next>432</next>
+			</phrase>
+			<phrase id="432">
+				<text>trade_dialog_jlob_432</text>
+				<next>431</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="421">
+			<precondition>sak_dialog.cond_items_have("green_kolbasa",2,0.75)</precondition>
+				<text>trade_dialog_jlob_421</text>
+				<action>sak_dialog.cond_items_have("green_kolbasa",2,0.75,true)</action>
+				<action>sak.create_items("medkit",1)</action>
+			</phrase>
+			<phrase id="431">
+			<precondition>sak.have_items_count("conserva",4)</precondition>
+				<text>trade_dialog_jlob_431</text>
+				<action>sak_inventory.release_actor_items("conserva",4)</action>
+				<action>sak.create_items("vodka",1)</action>
+			</phrase>
+			<phrase id="51">
+				<text>trade_dialog_jlob_51</text>
+				<next>52</next>
+				<next>53</next>
+				<next>54</next>
+			</phrase>
+			<phrase id="52">			
+				<text>trade_dialog_jlob_52</text>
+				<next>522</next>
+			</phrase>
+			<phrase id="522">
+				<text>trade_dialog_jlob_522</text>
+				<next>521</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="53">
+				<text>trade_dialog_jlob_53</text>
+				<next>532</next>
+			</phrase>
+			<phrase id="532">
+				<text>trade_dialog_jlob_532</text>
+				<next>531</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="54">
+				<text>trade_dialog_jlob_54</text>
+			</phrase>
+			<phrase id="666">
+				<text>trade_dialog_jlob_666</text>
+			</phrase>
+			<phrase id="521">
+			<precondition>sak_dialog.drink3_have</precondition>
+				<text>trade_dialog_jlob_521</text>
+				<action>sak_dialog.give_3drink</action>
+				<action>sak.create_items("repair_itemoutfit_feik",1)</action>
+			</phrase>
+			<phrase id="531">
+			<precondition>sak_dialog.cond_items_have("suhpay",1,0.99)</precondition>
+				<text>trade_dialog_jlob_531</text>
+				<action>sak_dialog.cond_items_have("suhpay",1,0.99,true)</action>
+				<action>sak.create_items("repair_item_weapon_feik",2)</action>
+			</phrase>
+			<phrase id="61">
+				<text>trade_dialog_jlob_61</text>
+				<next>62</next>
+				<next>64</next>
+			</phrase>
+			<phrase id="62">
+				<text>trade_dialog_jlob_62</text>
+				<next>622</next>
+			</phrase>
+			<phrase id="622">
+				<text>trade_dialog_jlob_622</text>
+				<next>621</next>
+				<next>641</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="64">
+				<text>trade_dialog_jlob_64</text>
+			</phrase>
+			<phrase id="621">
+			<precondition>sak.have_items_count("conserva",10)</precondition>
+				<text>trade_dialog_jlob_621</text>
+				<action>sak_inventory.release_actor_items("conserva",10)</action>
+				<action>mike.add_1_pda_npc</action>
+			</phrase>
+			<phrase id="641">
+			<precondition>sak_dialog.cond_items_have("green_kolbasa",5,0.90)</precondition>
+				<text>trade_dialog_jlob_641</text>
+				<action>sak_dialog.cond_items_have("green_kolbasa",5,0.90,true)</action>
+				<action>mike.add_1_pda_npc</action>
+			</phrase>
+		</phrase_list>
+	</dialog>
+<!-- Бартер Кузнецов -->	
+	<dialog id="trade_dialog_kuznezov"> 
+	<precondition>dialogs.is_not_wounded</precondition>
+	<has_info>esc_bridge_vodka_done</has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>trade_dialog_kuznezov_0</text>
+				<action>dialogs.no_trade</action>
+				<next>11</next>
+				<next>12</next>
+			</phrase>
+			<phrase id="11">
+				<dont_has_info>kuzn_no_trade</dont_has_info>
+				<text>trade_dialog_kuznezov_1</text>
+				<action>sak_dialog.info_price_kuznezov</action>				
+				<next>2</next>
+				<next>3</next>
+				<next>4</next>
+				<next>5</next>
+			</phrase>
+			<phrase id="12">
+				<has_info>kuzn_no_trade</has_info>
+				<text>trade_dialog_kuznezov_12</text>
+				<next>13</next>
+			</phrase>
+			<phrase id="13">
+				<text>trade_dialog_kuznezov_13</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="2">
+				<text>trade_dialog_kuznezov_2</text>
+				<next>21</next>
+			</phrase>
+			<phrase id="3">
+				<text>trade_dialog_kuznezov_3</text>
+				<next>31</next>
+			</phrase>
+			<phrase id="4">
+				<text>trade_dialog_kuznezov_4</text>
+				<next>41</next>
+			</phrase>
+			<phrase id="5">
+			<precondition>sak_dialog.not_have_razgruzka</precondition>
+			<precondition>sak_dialog.have_razgruzka_new</precondition>
+				<text>trade_dialog_kuznezov_5</text>
+				<next>51</next>
+				<next>52</next>
+			</phrase>
+			<phrase id="20">
+				<text>trade_dialog_kuznezov_20</text>
+				<next>21</next>
+			</phrase>
+			<phrase id="30">
+				<text>trade_dialog_kuznezov_30</text>
+				<next>31</next>
+			</phrase>
+			<phrase id="40">
+				<text>trade_dialog_kuznezov_40</text>
+				<next>41</next>
+			</phrase>
+			<phrase id="51">
+			<precondition>sak_dialog.kuz_razgruzka_precond_yes</precondition>
+				<text>trade_dialog_kuznezov_51</text>
+				<next>511</next>
+				<next>512</next>
+			</phrase>
+			<phrase id="52">
+			<precondition>sak_dialog.kuz_razgruzka_precond_no</precondition>
+				<text>trade_dialog_kuznezov_52</text>
+				<next>521</next>
+			</phrase>
+			<phrase id="21">
+				<text>trade_dialog_kuznezov_21</text>
+				<next>22</next>
+				<next>23</next>
+				<next>24</next>
+				<next>25</next>
+				<next>54</next>
+			</phrase>
+			<phrase id="22">
+				<text>trade_dialog_kuznezov_22</text>
+				<next>222</next>
+			</phrase>
+			<phrase id="222">
+				<text>trade_dialog_kuznezov_222</text>
+				<next>221</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="23">
+				<text>trade_dialog_kuznezov_23</text>
+				<next>232</next>
+			</phrase>
+			<phrase id="232">
+				<text>trade_dialog_kuznezov_232</text>
+				<next>231</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="221">
+			<precondition>sak.have_items_count("vodka",4)</precondition>
+				<text>trade_dialog_kuznezov_221</text>
+				<action>sak_inventory.release_actor_items("vodka",4)</action>
+				<action>sak.create_items("ammo_5.45x39_fmj",5)</action>
+			</phrase>
+			<phrase id="231">
+			<precondition>sak.have_items_count("vodka",1)</precondition>
+				<text>trade_dialog_kuznezov_231</text>
+				<action>sak_inventory.release_actor_items("vodka",1)</action>
+				<action>sak.create_items("grenade_rgd5",2)</action>
+			</phrase>
+			<phrase id="24">
+				<text>trade_dialog_kuznezov_24</text>
+				<next>242</next>
+			</phrase>
+			<phrase id="242">
+				<text>trade_dialog_kuznezov_242</text>
+				<next>241</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="241">
+			<precondition>sak.have_items_count("vodka",5)</precondition>
+				<text>trade_dialog_kuznezov_241</text>
+				<action>sak_inventory.release_actor_items("vodka",5)</action>
+				<action>sak.create_items("ammo_7.62x39_fmj",4)</action>
+			</phrase>
+			<phrase id="25">			
+				<text>trade_dialog_kuznezov_25</text>
+				<next>252</next>
+			</phrase>
+			<phrase id="252">
+				<text>trade_dialog_kuznezov_252</text>
+				<action>sak_dialog.text_rgo_vodka</action>
+				<next>251</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="251">
+			<precondition>sak_dialog.have_rgo_vodka</precondition>
+				<text>trade_dialog_kuznezov_251</text>
+				<action>sak_dialog.give_rgo_vodka</action>
+				<action>sak.create_items("grenade_rgo",1)</action>
+			</phrase>
+			<phrase id="31">
+				<text>trade_dialog_kuznezov_31</text>
+				<next>32</next>
+				<next>54</next>
+			</phrase>
+			<phrase id="32">
+				<text>trade_dialog_kuznezov_32</text>
+				<next>322</next>
+			</phrase>
+			<phrase id="322">
+				<text>trade_dialog_kuznezov_322</text>
+				<next>321</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="321">
+			<precondition>sak.have_items_count("vodka",10)</precondition>
+				<text>trade_dialog_kuznezov_321</text>
+				<action>sak_inventory.release_actor_items("vodka",10)</action>
+				<action>sak.create_items("wpn_ak74",1)</action>
+			</phrase>
+			<phrase id="41">
+				<text>trade_dialog_kuznezov_41</text>
+				<next>42</next>
+				<next>54</next>
+			</phrase>
+			<phrase id="42">
+				<text>trade_dialog_kuznezov_42</text>
+				<next>422</next>
+			</phrase>
+			<phrase id="422">
+				<text>trade_dialog_kuznezov_422</text>
+				<action>sak_dialog.text_kuz_vodka</action>
+				<next>421</next>
+				<next>666</next>
+			</phrase>
+			<phrase id="421">
+			<precondition>sak_dialog.have_kuz_vodka</precondition>
+				<text>trade_dialog_kuznezov_421</text>
+				<action>sak_dialog.give_kuz_vodka</action>
+				<action>sak.create_items("medkit",2)</action>
+			</phrase>
+			<phrase id="511">
+			<precondition>sak_dialog.sak.have_items_count("vodka",20)</precondition>
+			<precondition>sak_dialog.have_razgruzka_new</precondition>
+				<text>trade_dialog_kuznezov_511</text>
+				<action>sak_inventory.release_actor_items("vodka",20)</action>
+				<action>sak_dialog.razgruzka_new_away</action>
+				<next>5111</next>
+			</phrase>
+			<phrase id="512">
+				<text>trade_dialog_kuznezov_512</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="5111">
+				<text>trade_dialog_kuznezov_5111</text>
+				<action>sak_dialog.add_razgruzka</action>
+			</phrase>
+			<phrase id="521">
+				<text>trade_dialog_kuznezov_521</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="54">
+				<text>trade_dialog_kuznezov_54</text>
+			</phrase>
+			<phrase id="666">
+				<text>trade_dialog_kuznezov_666</text>
+				<next>667</next>
+			</phrase>
+			<phrase id="667">
+				<text>trade_dialog_kuznezov_667</text>
+			</phrase>
+		</phrase_list>
+	</dialog>
+<!-- Обмен модификатов у Сидоровича -->
+<dialog id="sidor_modart_order_dialog">
+	<precondition>sak_rand_nagrad.have_any_cond_modart</precondition>
+	<phrase_list>
+		<phrase id="0">
+			<text>sidor_modart_order_dialog_0</text>
+			<give_info>price_artm_esc</give_info>		<!-- Информация в ПДА -->
+			<next>1</next>
+			<next>91</next>
+		</phrase>
+		<phrase id="1">
+		<dont_has_info>transfer_amkart_need</dont_has_info>	<!-- Заказ не сделан. Если заказ сделан, но не забран, см. секцию 91 -->
+			<text>sidor_modart_order_dialog_1</text>
+			<next>201</next>	<!-- Выбор артефакта -->
+			<next>202</next>
+			<next>203</next>
+			<next>204</next>
+			<next>299</next>	<!-- Отказ от обмена -->
+		</phrase>
+		<phrase id="201">
+		<precondition>sak_dialog.cond_items_have("m1",1)</precondition>
+			<text>sidor_modart_order_dialog_201</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="202">
+		<precondition>sak_dialog.cond_items_have("m2",1)</precondition>
+			<text>sidor_modart_order_dialog_202</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="203">
+		<precondition>sak_dialog.cond_items_have("m3",1)</precondition>
+			<text>sidor_modart_order_dialog_203</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="204">
+		<precondition>sak_dialog.cond_items_have("m4",1)</precondition>
+			<text>sidor_modart_order_dialog_204</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="299">
+			<text>sidor_modart_order_dialog_299</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+			<text>sidor_modart_order_dialog_3</text>
+			<next>301</next>	<!-- Выбор награды за модификат -->
+			<next>302</next>
+			<next>303</next>
+			<next>304</next>
+			<next>305</next>
+			<next>306</next>
+			<next>307</next>
+			<next>308</next>
+			<next>309</next>
+			<next>99</next>		<!-- Отказ от обмена -->
+		</phrase>
+		<phrase id="301">
+			<text>sidor_modart_order_dialog_301</text>
+			<action>sak_rand_nagrad.save_modart_order(1)</action>
+			<next>71</next>
+		</phrase>
+		<phrase id="302">
+			<text>sidor_modart_order_dialog_302</text>
+			<action>sak_rand_nagrad.save_modart_order(2)</action>
+			<next>71</next>
+		</phrase>
+		<phrase id="303">
+			<text>sidor_modart_order_dialog_303</text>
+			<action>sak_rand_nagrad.save_modart_order(3)</action>
+			<next>71</next>
+		</phrase>
+		<phrase id="304">
+			<text>sidor_modart_order_dialog_304</text>
+			<action>sak_rand_nagrad.save_modart_order(4)</action>
+			<next>71</next>
+		</phrase>
+		<phrase id="305">
+			<text>sidor_modart_order_dialog_305</text>
+			<action>sak_rand_nagrad.save_modart_order(5)</action>
+			<next>71</next>
+		</phrase>
+		<phrase id="306">
+			<text>sidor_modart_order_dialog_306</text>
+			<action>sak_rand_nagrad.save_modart_order(6)</action>
+			<next>71</next>
+		</phrase>
+		<phrase id="307">
+			<text>sidor_modart_order_dialog_307</text>
+			<action>sak_rand_nagrad.save_modart_order(7)</action>
+			<next>71</next>
+		</phrase>
+		<phrase id="308">
+			<text>sidor_modart_order_dialog_308</text>
+			<action>sak_rand_nagrad.save_modart_order(8)</action>
+			<next>71</next>
+		</phrase>
+		<phrase id="309">
+			<text>sidor_modart_order_dialog_309</text>
+			<action>sak_rand_nagrad.save_modart_order(9)</action>
+			<next>71</next>
+		</phrase>
+		<phrase id="4">
+			<text>sidor_modart_order_dialog_4</text>
+			<next>401</next>	<!-- Выбор награды за мезомодификат -->
+			<next>402</next>
+			<next>403</next>
+			<next>404</next>
+			<next>405</next>
+			<next>406</next>
+			<next>407</next>
+			<next>99</next>		<!-- Отказ от обмена -->
+		</phrase>
+		<phrase id="401">
+			<text>sidor_modart_order_dialog_401</text>
+			<action>sak_rand_nagrad.save_modart_order(10)</action>
+			<next>72</next>
+		</phrase>
+		<phrase id="402">
+			<text>sidor_modart_order_dialog_402</text>
+			<action>sak_rand_nagrad.save_modart_order(11)</action>
+			<next>72</next>
+		</phrase>
+		<phrase id="403">
+			<text>sidor_modart_order_dialog_403</text>
+			<action>sak_rand_nagrad.save_modart_order(12)</action>
+			<next>72</next>
+		</phrase>
+		<phrase id="404">
+			<text>sidor_modart_order_dialog_404</text>
+			<action>sak_rand_nagrad.save_modart_order(13)</action>
+			<next>72</next>
+		</phrase>
+		<phrase id="405">
+			<text>sidor_modart_order_dialog_405</text>
+			<action>sak_rand_nagrad.save_modart_order(14)</action>
+			<next>72</next>
+		</phrase>
+		<phrase id="406">
+			<text>sidor_modart_order_dialog_406</text>
+			<action>sak_rand_nagrad.save_modart_order(15)</action>
+			<next>72</next>
+		</phrase>
+		<phrase id="407">
+			<text>sidor_modart_order_dialog_407</text>
+			<action>sak_rand_nagrad.save_modart_order(16)</action>
+			<next>72</next>
+		</phrase>
+		<phrase id="5">
+			<text>sidor_modart_order_dialog_5</text>
+			<next>501</next>	<!-- Выбор награды за гипермодификат -->
+			<next>502</next>
+			<next>503</next>
+			<next>504</next>
+			<next>505</next>
+			<next>506</next>
+			<next>507</next>
+			<next>99</next>		<!-- Отказ от обмена -->
+		</phrase>
+		<phrase id="501">
+			<text>sidor_modart_order_dialog_501</text>
+			<action>sak_rand_nagrad.save_modart_order(17)</action>
+			<next>73</next>
+		</phrase>
+		<phrase id="502">
+			<text>sidor_modart_order_dialog_502</text>
+			<action>sak_rand_nagrad.save_modart_order(18)</action>
+			<next>73</next>
+		</phrase>
+		<phrase id="503">
+			<text>sidor_modart_order_dialog_503</text>
+			<action>sak_rand_nagrad.save_modart_order(19)</action>
+			<next>73</next>
+		</phrase>
+		<phrase id="504">
+			<text>sidor_modart_order_dialog_504</text>
+			<action>sak_rand_nagrad.save_modart_order(20)</action>
+			<next>73</next>
+		</phrase>
+		<phrase id="505">
+			<text>sidor_modart_order_dialog_505</text>
+			<action>sak_rand_nagrad.save_modart_order(21)</action>
+			<next>73</next>
+		</phrase>
+		<phrase id="506">
+			<text>sidor_modart_order_dialog_506</text>
+			<action>sak_rand_nagrad.save_modart_order(22)</action>
+			<next>73</next>
+		</phrase>
+		<phrase id="507">
+			<text>sidor_modart_order_dialog_507</text>
+			<action>sak_rand_nagrad.save_modart_order(23)</action>
+			<next>73</next>
+		</phrase>
+		<phrase id="6">
+			<text>sidor_modart_order_dialog_6</text>
+			<next>601</next>	<!-- Выбор награды за абсолют -->
+			<next>602</next>
+			<next>603</next>
+			<next>604</next>
+			<next>605</next>
+			<next>606</next>
+			<next>99</next>		<!-- Отказ от обмена -->
+		</phrase>
+		<phrase id="601">
+			<text>sidor_modart_order_dialog_601</text>
+			<action>sak_rand_nagrad.save_modart_order(24)</action>
+			<next>74</next>
+		</phrase>
+		<phrase id="602">
+			<text>sidor_modart_order_dialog_602</text>
+			<action>sak_rand_nagrad.save_modart_order(25)</action>
+			<next>74</next>
+		</phrase>
+		<phrase id="603">
+			<text>sidor_modart_order_dialog_603</text>
+			<action>sak_rand_nagrad.save_modart_order(26)</action>
+			<next>74</next>
+		</phrase>
+		<phrase id="604">
+			<text>sidor_modart_order_dialog_604</text>
+			<action>sak_rand_nagrad.save_modart_order(27)</action>
+			<next>74</next>
+		</phrase>
+		<phrase id="605">
+			<text>sidor_modart_order_dialog_605</text>
+			<action>sak_rand_nagrad.save_modart_order(28)</action>
+			<next>74</next>
+		</phrase>
+		<phrase id="606">
+			<text>sidor_modart_order_dialog_606</text>
+			<action>sak_rand_nagrad.save_modart_order(29)</action>
+			<next>74</next>
+		</phrase>
+		<phrase id="99">
+			<text>sidor_modart_order_dialog_99</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="71">
+			<text>sidor_modart_order_dialog_7</text>
+			<next>81</next>
+		</phrase>
+		<phrase id="72">
+			<text>sidor_modart_order_dialog_7</text>
+			<next>82</next>
+		</phrase>
+		<phrase id="73">
+			<text>sidor_modart_order_dialog_7</text>
+			<next>83</next>
+		</phrase>
+		<phrase id="74">
+			<text>sidor_modart_order_dialog_7</text>
+			<next>84</next>
+		</phrase>
+		<phrase id="81">
+			<text>sidor_modart_order_dialog_8</text>
+			<action>sak_dialog.cond_items_have("m1",1,nil,true)</action>
+			<give_info>transfer_amkart_need</give_info>	<!-- Ставим поршень, что заказ сделан. У военных на Болотах будет диалог получения заказа-->
+			<next>85</next>
+			<next>86</next>
+		</phrase>
+		<phrase id="82">
+			<text>sidor_modart_order_dialog_8</text>
+			<action>sak_dialog.cond_items_have("m2",1,nil,true)</action>
+			<give_info>transfer_amkart_need</give_info>	
+			<next>85</next>
+			<next>86</next>
+		</phrase>
+		<phrase id="83">
+			<text>sidor_modart_order_dialog_8</text>
+			<action>sak_dialog.cond_items_have("m3",1,nil,true)</action>
+			<give_info>transfer_amkart_need</give_info>	
+			<next>85</next>
+			<next>86</next>
+		</phrase>
+		<phrase id="84">
+			<text>sidor_modart_order_dialog_8</text>
+			<action>sak_dialog.cond_items_have("m4",1,nil,true)</action>
+			<give_info>transfer_amkart_need</give_info>	
+			<next>85</next>
+			<next>86</next>
+		</phrase>
+		<phrase id="85">
+		<dont_has_info>transfer_amkart_not_first_time</dont_has_info>	<!-- Заказ первый раз, Сидор будет объяснять как его забрать -->
+			<text>sidor_modart_order_dialog_85</text>
+			<next>851</next>
+		</phrase>
+		<phrase id="86">
+		<has_info>transfer_amkart_not_first_time</has_info>				<!-- Делается не первый заказ. Сидор не будет объяснять где его забирать -->
+			<text>sidor_modart_order_dialog_86</text>
+			<next>861</next>
+		</phrase>
+		<phrase id="851">
+			<text>sidor_modart_order_dialog_851</text>
+			<next>852</next>
+		</phrase>
+		<phrase id="861">
+			<text>sidor_modart_order_dialog_861</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="852">
+			<text>sidor_modart_order_dialog_852</text>
+			<next>853</next>
+		</phrase>
+		<phrase id="853">
+			<text>sidor_modart_order_dialog_853</text>
+			<next>854</next>
+		</phrase>
+		<phrase id="854">
+			<text>sidor_modart_order_dialog_854</text>
+			<give_info>transfer_amkart_not_first_time</give_info>		<!-- Ставим поршень, что первый заказ сделан. Больше Сидор объяснять где его забирать не будет -->
+			<next>855</next>
+		</phrase>
+		<phrase id="855">
+			<text>sidor_modart_order_dialog_855</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="91">
+		<has_info>transfer_amkart_need</has_info>
+			<text>sidor_modart_order_dialog_91</text>
+			<next>92</next>
+		</phrase>
+		<phrase id="92">
+			<text>sidor_modart_order_dialog_92</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+	
+	<dialog id="art_exchanger_dialog_start">
+	<precondition>dialogs.is_not_wounded</precondition>
+		<phrase_list>
+			<phrase id="0">
+				<text></text>
+				<next>100</next>
+				<next>200</next>
+			</phrase>
+			<phrase id="100">
+				<text></text>
+				<dont_has_info>art_exchanger_met</dont_has_info>
+				<next>101</next>
+			</phrase>
+			<phrase id="200">
+				<text></text>
+				<has_info>art_exchanger_met</has_info>
+				<next>201</next>
+			</phrase>
+			<phrase id="101">
+				<text>art_exchanger_dialog_start_101</text>
+				<action>dialogs.no_trade_trader</action>
+				<next>102</next>
+			</phrase>
+			<phrase id="102">
+				<text>art_exchanger_dialog_start_102</text>
+				<next>103</next>
+			</phrase>
+			<phrase id="103">
+				<text>art_exchanger_dialog_start_103</text>
+				<next>104</next>
+			</phrase>
+			<phrase id="104">
+				<text>art_exchanger_dialog_start_104</text>
+				<next>105</next>
+			</phrase>
+			<phrase id="105">
+				<text>art_exchanger_dialog_start_105</text>
+				<give_info>art_exchanger_met</give_info>
+				<next>106</next>
+			</phrase>
+			<phrase id="106">
+				<text>art_exchanger_dialog_start_106</text>
+				<next>107</next>
+			</phrase>
+			<phrase id="107">
+				<text>art_exchanger_dialog_start_107</text>
+			</phrase>
+			<phrase id="201">
+				<text>art_exchanger_dialog_start_201</text>
+				<action>dialogs.no_trade_trader</action>
+				<next>202</next>
+			</phrase>
+			<phrase id="202">
+				<text>art_exchanger_dialog_start_202</text>
+				<next>203</next>
+			</phrase>
+			<phrase id="203">
+				<text>art_exchanger_dialog_start_203</text>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	
+<dialog id="kruglov_art_exchange_dlg">
+	<precondition>dialogs.is_not_wounded</precondition>
+	<has_info>info_kruglov_art_chan_yes</has_info>	
+	<has_info>kruglov_flash_done</has_info>
+		<phrase_list>
+			<phrase id="0">
+			<text>kruglov_art_exchange_dlg_0</text>
+				<next>100</next>
+				<next>200</next>
+			</phrase>
+			<phrase id="100">
+			<precondition>sak_rand_nagrad.art_exchange_prec_yes</precondition>
+				<text>kruglov_art_exchange_dlg_100</text>
+				<next>111</next>
+				<next>112</next>
+				<next>113</next>
+			</phrase>
+			<phrase id="200">
+			<precondition>sak_rand_nagrad.art_exchange_prec_no</precondition>
+				<text>kruglov_art_exchange_dlg_200</text>
+			</phrase>
+			<phrase id="111">
+			<precondition>sak_rand_nagrad.art_exchange_good_art_prec</precondition>
+				<text>kruglov_art_exchange_dlg_111</text>
+				<action>sak_rand_nagrad.art_exchange_good_art_give</action>
+				<next>21</next>
+			</phrase>
+			<phrase id="112">
+			<precondition>sak_dialog.cond_items_have("b",1,0.16)</precondition>
+				<text>kruglov_art_exchange_dlg_112</text>
+				<action>sak_dialog.cond_items_have("b",1,0.16,true)</action>
+				<next>22</next>
+			</phrase>
+			<phrase id="113">
+				<text>kruglov_art_exchange_dlg_113</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="21">
+				<text>kruglov_art_exchange_dlg_21</text>
+				<next>211</next>
+				<next>212</next>
+				<next>213</next>
+				<next>214</next>
+				<next>215</next>
+				<next>216</next>
+				<next>217</next>
+			</phrase>
+			<phrase id="22">
+				<text>kruglov_art_exchange_dlg_22</text>
+				<action>sak_rand_nagrad.art_exchange_rnd_arts</action>
+				<next>32</next>
+			</phrase>
+			<phrase id="211">
+				<text>kruglov_art_exchange_dlg_211</text>
+				<action>sak_rand_nagrad.art_exchange_set_art(1)</action>
+				<next>3</next>
+				<next>4</next>
+			</phrase>
+			<phrase id="212">
+				<text>kruglov_art_exchange_dlg_212</text>
+				<action>sak_rand_nagrad.art_exchange_set_art(2)</action>
+				<next>3</next>
+				<next>4</next>
+			</phrase>
+			<phrase id="213">
+				<text>kruglov_art_exchange_dlg_213</text>
+				<action>sak_rand_nagrad.art_exchange_set_art(3)</action>
+				<next>3</next>
+				<next>4</next>
+			</phrase>
+			<phrase id="214">
+				<text>kruglov_art_exchange_dlg_214</text>
+				<action>sak_rand_nagrad.art_exchange_set_art(4)</action>
+				<next>3</next>
+				<next>4</next>
+			</phrase>
+			<phrase id="215">
+				<text>kruglov_art_exchange_dlg_215</text>
+				<action>sak_rand_nagrad.art_exchange_set_art(5)</action>
+				<next>3</next>
+				<next>4</next>
+			</phrase>
+			<phrase id="216">
+				<text>kruglov_art_exchange_dlg_216</text>
+				<action>sak_rand_nagrad.art_exchange_set_art(6)</action>
+				<next>3</next>
+				<next>4</next>
+			</phrase>
+			<phrase id="217">
+				<text>kruglov_art_exchange_dlg_217</text>
+				<action>sak_rand_nagrad.art_exchange_set_art(7)</action>
+				<next>3</next>
+				<next>4</next>
+			</phrase>
+			<phrase id="3">
+			<precondition>sak_rand_nagrad.art_exchange_1trade</precondition>
+				<text>kruglov_art_exchange_dlg_3</text>
+				<action>sak_rand_nagrad.art_exchange_give_art(false)</action>
+				<next>211</next>
+				<next>212</next>
+				<next>213</next>
+				<next>214</next>
+				<next>215</next>
+				<next>216</next>
+				<next>217</next>
+			</phrase>
+			<phrase id="4">
+			<precondition>sak_rand_nagrad.art_exchange_2trade</precondition>
+				<text>kruglov_art_exchange_dlg_4</text>
+				<action>sak_rand_nagrad.art_exchange_give_art(true)</action>
+				<next>32</next>
+			</phrase>
+			<phrase id="32">
+				<text>kruglov_art_exchange_dlg_32</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+		</phrase_list>
+</dialog>
+
+ <!-- Бартер Ара -->
+<!-- new -->
+	<dialog id="trade_dialog_mercs_ara">
+		<dont_has_info>volkodav_killed_by_actor</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>trade_dialog_mercs_ara_0</text>
+				<action>dialogs.no_trade</action>
+				<next>100</next>
+			</phrase>
+			<phrase id="100">
+				<text>trade_dialog_mercs_ara_100</text>
+				<action>sak_dialog.info_price_ara</action>	<!-- Информация в ПДА -->
+				<next>211</next>
+				<next>222</next>
+				<next>233</next>
+				<next>244</next>
+				<next>250</next> <!-- отказ -->				
+			</phrase>
+			<phrase id="150">
+				<text>trade_dialog_mercs_ara_150</text>
+				<next>100</next>				
+			</phrase>			
+			<phrase id="250">
+				<text>trade_dialog_mercs_ara_250</text>
+				<action>dialogs.break_dialog</action>				
+			</phrase>			
+<!-- оружие прицелы глушитель -->			
+            <phrase id="211">
+				<text>trade_dialog_mercs_ara_211</text>
+				<next>311</next>
+			</phrase>
+			<phrase id="311">
+				<text>trade_dialog_mercs_ara_311</text>
+				<next>410</next>
+				<!-- <next>411</next> Manool: этот прицел уже не задействован -->
+				<next>412</next>
+				<next>413</next>
+				<next>414</next>
+				<next>415</next>
+				<next>416</next>
+				<next>417</next> <!-- отказ -->				
+			</phrase>
+            <phrase id="410">
+			<precondition>sak_dialog.pda10_have</precondition>			
+				<text>trade_dialog_mercs_ara_410</text>
+				<action>sak_dialog.give_10pda</action>				
+				<next>510</next>
+			</phrase>
+			<phrase id="510">
+				<text>trade_dialog_mercs_ara_510</text>
+				<action>sak.create_items("wpn_sig550",1)</action>				
+				<next>150</next>
+				<next>250</next>				
+			</phrase>				
+			<phrase id="411">
+			<precondition>sak.have_items_count("device_pda_npc",8)</precondition>
+				<text>trade_dialog_mercs_ara_411</text>
+				<action>sak_inventory.release_actor_items("device_pda_npc",8,true)</action>
+				<next>511</next>
+			</phrase>
+			<phrase id="511">
+				<text>trade_dialog_mercs_ara_511</text>
+				<action>sak.create_items("wpn_addon_g36l",1)</action>				
+				<next>150</next>
+				<next>250</next>				
+			</phrase>	
+			<phrase id="412">
+			<precondition>sak_dialog.pda10_have</precondition>			
+				<text>trade_dialog_mercs_ara_412</text>
+				<action>sak_dialog.give_10pda</action>				
+				<next>512</next>
+			</phrase>
+			<phrase id="512">
+				<text>trade_dialog_mercs_ara_512</text>
+				<action>sak.create_items("wpn_addon_eotech",1)</action>				
+				<next>150</next>
+				<next>250</next>				
+			</phrase>			
+			<phrase id="413">
+			<precondition>sak_dialog.pda20_have</precondition>			
+				<text>trade_dialog_mercs_ara_413</text>
+				<action>sak_dialog.give_20pda</action>				
+				<next>513</next>
+			</phrase>
+			<phrase id="513">
+				<text>trade_dialog_mercs_ara_513</text>
+				<action>sak.create_items("wpn_m16a4",1)</action>				
+				<next>150</next>
+				<next>250</next>				
+			</phrase>
+			<phrase id="414">
+			<precondition>sak_dialog.pda10_have</precondition>			
+				<text>trade_dialog_mercs_ara_414</text>
+				<action>sak_dialog.give_10pda</action>				
+				<next>514</next>
+			</phrase>
+			<phrase id="514">
+				<text>trade_dialog_mercs_ara_514</text>
+				<action>sak.create_items("wpn_g36",1)</action>				
+				<next>150</next>
+				<next>250</next>				
+			</phrase>
+			<phrase id="415">
+			<precondition>sak.have_items_count("device_pda_npc",8)</precondition>
+				<text>trade_dialog_mercs_ara_415</text>
+				<action>sak_inventory.release_actor_items("device_pda_npc",8,true)</action>
+				<next>515</next>
+			</phrase>
+			<phrase id="515">
+				<text>trade_dialog_mercs_ara_515</text>
+				<action>sak.create_items("wpn_addon_grenade_launcher_ag36",1)</action>				
+				<next>150</next>
+				<next>250</next>				
+			</phrase>
+			<phrase id="416">
+			<precondition>sak.have_items_count("device_pda_npc",4)</precondition>
+				<text>trade_dialog_mercs_ara_416</text>
+				<action>sak_inventory.release_actor_items("device_pda_npc",4,true)</action>
+				<next>516</next>
+			</phrase>
+			<phrase id="516">
+				<text>trade_dialog_mercs_ara_516</text>
+				<action>sak.create_items("wpn_addon_sil_45_p",1)</action>				
+				<next>150</next>
+				<next>250</next>				
+			</phrase>
+			<phrase id="417">
+				<text>trade_dialog_mercs_ara_417</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+<!-- патроны гранаты -->
+			<phrase id="222">
+				<text>trade_dialog_mercs_ara_222</text>
+				<next>322</next>
+			</phrase>
+			<phrase id="322">
+				<text>trade_dialog_mercs_ara_322</text>			
+				<next>421</next>
+				<next>422</next>
+				<next>423</next>
+				<next>424</next> <!-- отказ -->				
+			</phrase>
+			<phrase id="421">
+			<precondition>sak_dialog.pda_have</precondition>			
+				<text>trade_dialog_mercs_ara_421</text>
+				<action>sak_dialog.give_pda</action>				
+				<next>521</next>
+			</phrase>
+			<phrase id="521">
+				<text>trade_dialog_mercs_ara_521</text>
+				<action>sak_dialog.add_100_ammo_556x45_ss190</action>				
+				<next>150</next>
+				<next>250</next>				
+			</phrase>			
+			<phrase id="422">
+			<precondition>sak.have_items_count("device_pda_npc",4)</precondition>
+				<text>trade_dialog_mercs_ara_422</text>
+				<action>sak_inventory.release_actor_items("device_pda_npc",4,true)</action>
+				<next>522</next>
+			</phrase>
+			<phrase id="522">
+				<text>trade_dialog_mercs_ara_522</text>
+				<action>sak.create_items("ammo_7.62x51_ap",2)</action>				
+				<next>150</next>
+				<next>250</next>				
+			</phrase>			
+			<phrase id="423">
+			<precondition>sak_dialog.pda3_have</precondition>			
+				<text>trade_dialog_mercs_ara_423</text>
+				<action>sak_dialog.give_3pda</action>				
+				<next>523</next>
+			</phrase>
+			<phrase id="523">
+				<text>trade_dialog_mercs_ara_523</text>
+				<action>sak.create_items("ammo_m209",10)</action>				
+				<next>150</next>
+				<next>250</next>				
+			</phrase>
+			<phrase id="424">
+				<text>trade_dialog_mercs_ara_424</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+<!-- аптечки антирады -->
+			<phrase id="233">
+				<text>trade_dialog_mercs_ara_233</text>
+				<next>333</next>
+			</phrase>
+			<phrase id="333">
+				<text>trade_dialog_mercs_ara_333</text>			
+				<next>431</next>
+				<next>432</next>
+				<next>433</next> <!-- отказ -->			
+			</phrase>
+			<phrase id="431">
+			<precondition>sak_dialog.pda_have</precondition>			
+				<text>trade_dialog_mercs_ara_431</text>
+				<action>sak_dialog.give_pda</action>				
+				<next>531</next>
+			</phrase>
+			<phrase id="531">
+				<text>trade_dialog_mercs_ara_531</text>
+				<action>sak.create_items("medkit_scientic",1)</action>				
+				<next>150</next>
+				<next>250</next>				
+			</phrase>			
+			<phrase id="432">
+			<precondition>sak_dialog.pda_have</precondition>			
+				<text>trade_dialog_mercs_ara_432</text>
+				<action>sak_dialog.give_pda</action>				
+				<next>532</next>
+			</phrase>
+			<phrase id="532">
+				<text>trade_dialog_mercs_ara_532</text>
+				<action>sak.create_items("antirad",3)</action>				
+				<next>150</next>
+				<next>250</next>				
+			</phrase>
+			<phrase id="433">
+				<text>trade_dialog_mercs_ara_433</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+<!-- броня -->
+			<phrase id="244">
+				<text>trade_dialog_mercs_ara_244</text>
+				<next>344</next>
+			</phrase>
+			<phrase id="344">
+				<text>trade_dialog_mercs_ara_344</text>
+				<next>442</next>
+				<next>443</next> <!-- отказ -->			
+			</phrase>
+			<phrase id="442">
+			<precondition>sak_dialog.pda10_have</precondition>			
+				<text>trade_dialog_mercs_ara_442</text>
+				<action>sak_dialog.give_10pda</action>				
+				<next>542</next>
+			</phrase>
+			<phrase id="542">
+				<text>trade_dialog_mercs_ara_542</text>
+				<action>sak.create_items("killer_gaz_outfit_m1",1)</action>				
+				<next>150</next>
+				<next>250</next>				
+			</phrase>
+			<phrase id="443">
+				<text>trade_dialog_mercs_ara_443</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+		</phrase_list>
+	</dialog>
+<!-- ara_exo_trade -->
+<dialog id="ara_exo_dialog_start">
+	<precondition>dialogs.is_not_wounded</precondition>
+	<has_info>bar_deactivate_radar_start</has_info>
+	<dont_has_info>ara_exo_new</dont_has_info>
+	<dont_has_info>volkodav_killed_by_actor</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>ara_exo_dialog_start_0</text>
+			<action>dialogs.no_trade</action>			
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>ara_exo_dialog_start_1</text>			
+			<next>2</next>			
+		</phrase>
+		<phrase id="2">
+			<text>ara_exo_dialog_start_2</text>			
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>ara_exo_dialog_start_3</text>			
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>ara_exo_dialog_start_4</text>			
+			<next>5</next>			
+		</phrase>
+		<phrase id="5">
+			<text>ara_exo_dialog_start_5</text>			
+			<next>61</next>
+			<next>62</next>			
+		</phrase>
+		<phrase id="61">
+			<text>ara_exo_dialog_start_61</text>
+			<next>71</next>
+		</phrase>		
+		<phrase id="71">
+			<text>ara_exo_dialog_start_71</text>
+		</phrase>
+		<phrase id="62">
+		<has_info>info_artmod_glassbeads_ice</has_info>		
+			<text>ara_exo_dialog_start_62</text>			
+			<next>72</next>
+		</phrase>		
+		<phrase id="72">
+			<text>ara_exo_dialog_start_72</text>
+			<action>sak_dialog.timer_ara_exo</action>			
+			<give_info>ara_exo_new</give_info>
+		</phrase>
+	</phrase_list>
+</dialog>		
+
+<dialog id="ara_exo_dialog_done">
+	<precondition>dialogs.is_not_wounded</precondition>
+	<precondition>sak.have_items_count("af_glassbeads",1)</precondition>		
+	<has_info>ara_exo_new</has_info>
+	<has_info>ara_exo_message</has_info>		
+	<dont_has_info>ara_exo_new_done</dont_has_info>
+	<phrase_list>	
+		<phrase id="0">		
+			<text>ara_exo_dialog_done_0</text>
+			<action>dialogs.no_trade</action>			
+			<next>1</next>
+		</phrase>
+		<phrase id="1">		
+			<text>ara_exo_dialog_done_1</text>
+			<next>2</next>			
+		</phrase>
+		<phrase id="2">
+			<text>ara_exo_dialog_done_2</text>
+			<action>sak_inventory.release_actor_items("af_glassbeads",1)</action>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>ara_exo_dialog_done_3</text>
+			<action>sak_dialog.add_killer_blue_exoskeleton</action>
+			<give_info>ara_exo_new_done</give_info>
+		</phrase>		
+	</phrase_list>
+</dialog>	
+</game_dialogs>

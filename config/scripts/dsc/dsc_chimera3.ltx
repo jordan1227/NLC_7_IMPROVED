@@ -1,0 +1,19 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = mob_home
+on_death = mob_death
+
+[mob_home]
+path_home = dsc_cats2
+home_min_radius = 20
+home_max_radius = 80
+aggressive_home
+on_signal = sig_attacked | mob_combat
+
+[mob_combat]
+on_timer = 10000 | mob_home
+
+[mob_death]
+on_info = %+dsc_chimera3_dead =doc.remove_dsc_chimera_spot(crlc_big)%

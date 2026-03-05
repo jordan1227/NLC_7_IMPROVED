@@ -1,0 +1,25 @@
+[logic]
+active = walker
+on_death = death
+
+[walker]
+path_walk = lost_mikhas_walk
+path_look = lost_mikhas_look
+meet = meet
+danger = danger_condition
+
+[meet]
+meet_state = 2| wait
+meet_state_wpn = 5| guard
+victim 			= 2| actor
+victim_wpn = 5| actor
+use			= true
+use_wpn		= false
+abuse   = true
+meet_dialog	= lost_lebedev_pda_dialog
+
+[danger_condition]
+ignore_distance = 2
+
+[death]
+on_death = %+lost_mikhas_umer%

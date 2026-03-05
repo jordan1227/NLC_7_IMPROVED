@@ -1,0 +1,970 @@
+-- -*- mode: lua; encoding: windows-1251 -*-
+local cell_size = 25 -- размер иконки в описании свойств предмета
+local vert_interval = 1 -- параметр vert_interval в скролле
+local subscribed = false
+local shift_show_descr = 700
+local kScreen = math.min((1024 / 768) / (device().width / device().height), 1)
+
+local IsBlocked = false
+local BlockUIDescr = function(b)
+	if b == nil then
+		return IsBlocked
+	else
+		IsBlocked = b
+	end
+end
+
+local function get_actual_cost(obj) -- костыль для расчета реально цеты айтема в окне торговли. не лутшее решение но в целом пойдет
+    local trade_wnd = level.get_trade_wnd()
+    if trade_wnd and trade_wnd:IsShown() then
+        local b_buying = obj:parent() and obj:parent():id() == db.actor:id()
+        local trader = level:get_second_talker()
+        if trader then
+			local cur_price = trader:calculate_item_price(obj, b_buying)
+            return string.format("%.0f", cur_price)
+        end
+    end
+	local cond, cost = obj:condition(), obj:cost()
+	if cond < 0.999 then
+		return string.format("%.0f | %.0f", cost * cond, cost)
+	else
+		return string.format("%.0f", cost)
+	end
+end
+
+-- Предметы, для которых дополнительное описание не пишем
+local forbidden_items = {
+	["wpn_binoc"] = true,
+	["amk_metka"] = true,
+	["sleeping_pill"] = true,
+	["repair_itemoutfit"] = true,
+	["repair_item_weapon"] = true,
+}
+local forbidden_items_props = {
+	["ammo_5.45x39_merc"] = true,
+	["ammo_5.56x45_merc"] = true,
+}
+
+-- Параметры актёра, по которым считаются некоторые параметры артефактов или костюмов
+conditions = {
+	-- bleeding_restore_speed = sys_ini:r_float("actor_condition", "bleeding_v"),
+	bleeding_restore_speed = sys_ini:r_float("actor_condition", "wound_incarnation_v"),
+	health_restore_speed = sys_ini:r_float("actor_condition", "satiety_health_v"),
+	power_restore_speed = sys_ini:r_float("actor_condition", "satiety_power_v") * 100,
+	satiety_restore_speed = sys_ini:r_float("actor_condition", "satiety_v"),
+	-- thirst_restore_speed = sys_ini:r_float("actor_condition", "thirst_v"),
+	radiation_restore_speed = sys_ini:r_float("actor_condition", "radiation_v") * 100,
+	psy_health_restore_speed = sys_ini:r_float("actor_condition", "psy_health_v")
+}
+
+-- параметры костюмов и артов
+conditions_params = {
+	{prop = "health_restore_speed", text = translate("ui_inv_health"), tex = "health"},
+	{prop = "bleeding_restore_speed", text = translate("ui_inv_bleeding"), tex = "bleeding"},
+	{prop = "satiety_restore_speed", text = translate("ui_inv_satiety"), tex = "satiety"},
+	{prop = "thirst_restore_speed", text = translate("ui_inv_thirst"), tex = "thirst"},
+	{prop = "power_restore_speed", text = translate("ui_inv_endurance"), tex = "power"},
+	{prop = "radiation_restore_speed", text = translate("ui_inv_outfit_radiation_protection"), tex = "radiation_2", unit = translate("ui_inv_st_ki")},
+	{prop = "psy_health_restore_speed", text = translate("ui_inv_psy_health"), tex = "psy_health"}
+}
+
+-- Типы хитов и соответствующие им текстуры и названия
+hit_types = {
+	{prop = "burn", text = translate("ui_inv_outfit_burn_protection")},
+	{prop = "shock", text = translate("ui_inv_outfit_shock_protection")},
+	{prop = "strike", text = translate("ui_inv_outfit_strike_protection")},
+	{prop = "wound", text = translate("ui_inv_outfit_wound_protection")},
+	{prop = "radiation", text = translate("ui_inv_outfit_radiation_protection")},
+	{prop = "telepatic", text = translate("ui_inv_outfit_telepatic_protection")},
+	{prop = "chemical_burn", text = translate("ui_inv_outfit_chemical_burn_protection")},
+	{prop = "explosion", text = translate("ui_inv_outfit_explosion_protection")},
+	{prop = "fire_wound", text = translate("ui_inv_outfit_fire_wound_protection")}
+}
+
+-- Параметры еды
+eatable_params = {
+	{prop = "mr_time", text = translate("ui_inv_it_works"), tex = "timer"},
+	{prop = "eat_health", text = translate("ui_inv_health"), tex = "health"},
+	{prop = "wounds_heal_perc", text = translate("ui_inv_bleeding"), tex = "bleeding"},
+	{prop = "eat_psy_health", text = translate("ui_inv_psy_health"), tex = "telepatic"},
+	{prop = "eat_satiety", text = translate("ui_inv_satiety"), tex = "satiety"},
+	{prop = "eat_power", text = translate("ui_inv_endurance"), tex = "power"},
+	{prop = "eat_thirst", text = translate("ui_inv_thirst"), tex = "thirst", dec = true},
+	{prop = "eat_alcohol", text = translate("ui_inv_intoxication"), tex = "alcohol"},
+	{prop = "eat_radiation", text = translate("ui_inv_outfit_radiation_protection"), tex = "radiation_2"},
+	{prop = "eat_radiation_arc", text = translate("ui_inv_outfit_radiation_protection"), tex = "radiation_2", unit = "Р"}
+}
+
+local function need_show_condition(item)
+	return item:condition() < 0.999
+end
+
+local g_xml = CScriptXmlInit()
+g_xml:ParseFile("ui_inv_descr.xml")
+
+--------------------------------------------------------------------------------------------------------
+class "CUIDescriptionWnd"(CUIScriptWnd)
+function CUIDescriptionWnd:__init(st) super()
+	self.owner = level.main_input_receiver() or st
+
+	self.scrollPos = 0
+	self.k_icon = cell_size * kScreen / 50
+	self.itemInFocus = -1
+	self.keypressed = nil
+	self.is_trading = has_alife_info("ui_trade")
+
+	if not subscribed then
+		subscribed = {
+			{signal = "on_cell_item_focus", fun = self.OnItemFocus, self = self},
+			{signal = "on_cell_item_focus_lost", fun = self.OnItemFocusLost, self = self},
+			{signal = "on_key", fun = self.OnKeyPress, self = self},
+			{signal = "on_wheel_rotation", fun = self.OnMouseWheel, self = self},
+			{signal = "on_update", fun = self.OnUpdate, self = self}
+		}
+		local sm = ogse_signals.get_mgr()
+		for _, s in ipairs(subscribed) do
+			sm:subscribe(s)
+		end
+	end
+
+	self:Init(0, 0, 1024, 768)
+	self:SetAutoDelete(true)
+
+	self.xml = g_xml
+
+	self.frame = self.xml:InitFrame("description", st)
+
+	self.inv_name = self.xml:InitStatic("description:inv_name", self.frame)
+
+	self.scroll_v = self.xml:InitScrollView("description:scroll_v", self.frame)
+	self.scroll_height = self.scroll_v:GetHeight()
+	self.descr = self.xml:InitStatic("description:descr_list", nil)
+
+	if self.is_trading then
+		self.cost = self.xml:InitStatic("description:cost_wnd", self.frame)
+	end
+	
+	self.weight_static = self.xml:InitStatic("description:weight_wnd", self.frame)
+
+	self.cond_frame = self.xml:InitStatic("description:frame_condition", self.frame)
+	self.cond_scale = self.xml:InitStatic("description:condition", self.cond_frame)
+	local tex_name = self.cond_scale:GetText()
+	local cond_texture, cond_rect = get_texture_info(tex_name)
+	self.cond_scale:InitTexture(cond_texture)
+	self.max_cond_w = self.cond_scale:GetWidth()
+	self.cond_rect = cond_rect
+
+	self.frame:Show(false)
+end
+
+function CUIDescriptionWnd:__finalize()
+end
+
+function CUIDescriptionWnd:HideDescription()
+	if self.frame:IsShown() then self.frame:Show(false) end
+end
+
+function CUIDescriptionWnd:OnMouseWheel(mode)
+	if not self.frame:IsShown() then return end
+	if self.frame:GetHeight() < 768 then return end
+
+	local n = mode and (mode >= 0) and -40 or 40
+	local mx = self.scroll_v:GetMaxScrollPos()
+	if mx > self.scroll_height then mx = mx - self.scroll_height end
+	self.scrollPos = math.clamp(self.scrollPos + n, 0, mx)
+	self.scroll_v:SetScrollPos(self.scrollPos)
+end
+
+function CUIDescriptionWnd:ShowProps(tbl)
+	local st
+	for i, t in ipairs(tbl) do
+		st = self.xml:InitStatic("props", self.scroll_v)
+		st.icon = self.xml:InitStatic("props:prop_texture", st)
+		st.icon:InitTexture("ui_inv_icon_" .. t[1])
+		st.text = self.xml:InitStatic("props:prop_text", st)
+		st.text:SetText(t[2])
+		if t[3] then
+			st.text_2 = self.xml:InitStatic("props:prop_text_2", st)
+			st.text_2:SetText(t[3])
+		end
+		if t[4] then
+			st.text_3 = self.xml:InitStatic("props:prop_text_3", st)
+			st.text_3:SetText(t[4])
+		end
+		if t[5] then
+			st.text_4 = self.xml:InitStatic("props:prop_text_4", st)
+			st.text_4:SetText(t[5])
+		end
+		self.addH = self.addH + st:GetHeight() + vert_interval
+	end
+end
+
+function CUIDescriptionWnd:ShowPropFromIni(sect, icon, text, text_color, complex)
+	local st = self.xml:InitStatic("props_ini", self.scroll_v)
+	st:SetHeight(cell_size)
+
+	local ww = 0
+	if icon then
+		ww = cell_size * 2
+		local www = icon.grid_width * 50
+
+		local w = www * self.k_icon
+
+		st.icon = CUIStatic()
+		st:AttachChild(st.icon)
+		CIconParams(sect):set_shader(st.icon)
+
+		st.icon:Init((ww - w) / 2, 0, w, cell_size)
+	end
+
+	ww = ww + 1
+	st.text = CUIStatic()
+	st:AttachChild(st.text)
+	st.text:Init(ww, 0, st:GetWidth() - ww, cell_size)
+	st.text:SetTextComplexMode(complex or false)
+	st.text:SetTextY((cell_size / 2) - 8)
+	st.text:SetTextST(text)
+	if text_color then
+		st.text:SetTextColor(unpack(text_color))
+	else
+		st.text:SetTextColor(255, 160, 160, 160)
+	end
+
+	self.addH = self.addH + cell_size + vert_interval
+end
+
+local function sep_string(s)
+return " \\n \\n "..s.." \n "
+end
+
+function get_add_out_desc(item)
+	local txt = ""
+	local sobj = server_obj(item:id())
+	local ini = sobj and sobj:spawn_ini()
+	local ms = vergas_masks.get_mask_config(item:section())
+	local m_cond = ms and (ms ~= "?") and vergas_masks.get_mask_condition(item:id())
+	if m_cond then txt = txt.."\\n%c[255,255,140,0]"..string.format("%s: %s%%", translate("ui_inv_outfit_mask_cond"), m_cond) end
+
+	local end_time = bind_upg_outfit.get_end_time(sobj)
+	if end_time and end_time > timers.Get_Game_Minutes() then
+		end_time = end_time - timers.Get_Game_Minutes()
+		local days = math.floor(end_time / 60 / 24)
+		txt = txt .. "\\n \\n%c[255,159,28,239]" .. string.format(translate("ui_inv_outfit_upg"), bind_upg_outfit.add_precent)
+		if days >= 1 then 
+			txt = txt .. "\\n" .. string.format(translate("ui_inv_outfit_upg_time_left"),
+				days, engine_callbacks.declension(days, game.translate_string("st_t_day_1"), game.translate_string("st_t_day_2"), game.translate_string("st_t_day_3"))
+			)
+		else
+			txt = txt .. "\\n" .. translate("ui_inv_outfit_less_day")
+		end
+	end
+	return txt
+end
+
+function CUIDescriptionWnd:ShowDescription(item)
+	if (item == nil) or BlockUIDescr() then return end
+
+	self.scroll_v:Clear()
+
+	self.item = item
+	self.section = item:section()
+	self.condition = item:condition()
+
+	local is_forbidden = forbidden_items[self.section] or get_bool(self.section, "ui_inv_descr.hide_description", false)
+
+	local inv_name = get_string(self.section, "inv_name", get_string(self.section, "inv_name_short", self.section .. "<NO_NAME!>"))
+
+	self.addH = 0
+
+	local desc_cfg_str = get_string(self.section, "description", self.section .. "<NO_DESCRIPTION!>")
+	local description = translate(desc_cfg_str)
+	
+	-- Sn: чистим описание артов от дублирующих параметров (прыжок, скорость) и цветовых тегов
+	if strpos(desc_cfg_str,"artifact_") then
+		local str_jump = translate("ui_inv_jump_height")
+		local str_speed = translate("ui_inv_move_speed")
+		if strpos(description,str_jump) or strpos(description,str_speed) then
+			description = string.gsub(description,str_jump,"")
+			description = string.gsub(description,str_speed,"")
+			local pos = strpos(description,"[А-ЯЁ]")
+			description = string.sub(description,pos)
+		end
+	end
+	
+	if strpos(description,"$carrying") then
+		local val = get_float(self.section, "additional_inventory_weight2", 0)
+		val = string.format("%.1f", val)
+		description = string.gsub(description,"$carrying",val)
+	end
+
+	-- artefacts
+	if item:is_artefact() then
+		self:ShowAfParams()
+		if string.find(self.section, "_dyn", 1) then
+			local dyn_n, color, color_t = arc_ui_container_common.get_art_lvl_text(self.section)
+			description = color_t .. dyn_n .. "\\n%c[default]" .. description
+		end
+	end
+
+	if get_bool(self.section, "manual_ungrouping", false) then
+		description = description..sep_string(translate("st_ui_ungroup_tip"))
+	end
+	description = description..sep_string(translate("st_ui_group_movement_tip"))
+
+	-- Manool: при стаке контейнеров это не имеет смысла]]
+	if string.find(self.section, "arc_art_box_") then
+		local cs = get_u32(self.section, "container_slots", 0)
+		local arts = arc_ui_container_common.decode_container(self.item:id(), cs)
+		self:ShowPropFromIni(nil, nil, string.format("[%d/%d] %s: %d",
+			#arts, cs, translate("ui_inv_arc_free_slots"), (cs - #arts)), {255, 160, 255, 160}
+		)
+		for _, s in ipairs(arts) do
+			local dan, color, color_t = arc_ui_container_common.get_art_lvl_text(s.sect)
+			if dan:len() > 0 then dan = color_t..dan end
+			self:ShowPropFromIni(s.sect, CIconParams(s.sect), string.format("%s [%d%%] %s",
+				translate(g_inv_name(s.sect)), tonumber((s.cond and s.cond * 100) or 100), dan), nil, true
+			)
+		end
+
+		-- показываем неэкранированную радиацию
+		local iitem = self.item:get_inventory_item()
+		local rad = iitem and iitem.radiation_restore_speed or 0
+		if rad and rad > 0 then
+			self:ShowProps({{"radiation", string.format("%s: %%c[red]+%d %s", translate("ui_inv_outfit_radiation_protection"), math.ceil(rad * 100 / conditions["radiation_restore_speed"]), translate("ui_inv_st_ki"))}})
+		end
+	end
+	--]=]
+ 
+	if self.section == "repair_boxoutfit" then
+		local sobj = self.item:get_alife_object()
+		local rt = string.explode(",", sobj.custom_data or "", true)
+		local repiout, repiweap = tonumber(rt[1] or 0), tonumber(rt[2] or 0)
+		if repiout and repiout > 0 then
+			local s = "repair_itemoutfit"
+			self:ShowPropFromIni(s, CIconParams(s), "   x"..repiout.." "..translate(g_inv_name(s)))
+		end
+		if repiweap and repiweap > 0 then
+			local s = "repair_item_weapon"
+			self:ShowPropFromIni(s, CIconParams(s), "   x"..repiweap.." "..translate(g_inv_name(s)))
+		end
+	end
+	
+	if self.section == "mask_repair_kit" then
+		description = description .. vergas_lib.mask_repair_kit_ui(self.item:id())
+	end
+
+	if item:is_outfit() then
+		description = description .. get_add_out_desc(item)
+	end
+
+	if is_debug_mode then
+		--[=[
+		for i = 1, 500 do
+			description = description .. "a lot of text"
+		end
+		--]=]
+		local sobj = item:get_alife_object()
+
+		local cl_parent = item:parent() and item:parent():id() or "nil"
+		local se_parent = sobj and sobj.parent_id or "nil"
+
+		description = description .. " \\n%c[green]" .. string.format("[%s], [%s], [%s], [%s], [%s], [%s]",
+			self.section, item:name(), item:id(), sobj.level_name, cl_parent, se_parent)
+		local cd = sobj.custom_data
+		if cd and cd ~= "" then description = description .. " \\nCD: [" .. cd .. "]" end -- Manool: иногда нужно глянуть кастомдату
+	end
+
+	local pdacd = (self.section == "device_pda_npc") and vergas_pda.get_pda_cdata(self.item:id())
+	if pdacd then
+		local info = SplitStr(pdacd, '|')
+		local serial = info[4]
+		if serial ~= nil and serial ~= "" then
+			local pda_c = string.sub(serial, 13 , 13)
+			if pda_c ~= "3" then self.dis_cond = true end
+			description = string.format("%%c[255,255,140,0]№ %s (%s) \\n%%c[default]", serial, translate("pda_cond_"..pda_c)) .. description
+		end
+	end
+
+	if self.section == "rucksack" then
+		description = nlc_container.get_item_desc(self.item:id()) .. description
+	end
+
+	local is_matches = (self.section == "matches") and self.item:parent()
+	if is_matches then
+		local total_matches = 0
+		is_matches:iterate_inventory(function(_, obj)
+			if obj and obj:section() == "matches" then
+				local sobj = g_sim:object(obj:id())
+				local ini = sobj:spawn_ini()
+				local cnt = ini:section_exist("use") and get_u32("use", "c", 0, ini) or 0
+				total_matches = total_matches + (5 - cnt)
+			end
+		end)
+		description = string.format("%%c[255,255,140,0]%s: %s\\n%%c[default]%s", translate("total_matches"), total_matches, description)
+	end
+
+	if self.section == "flask_army" then
+		local sobj = item:get_alife_object()
+		local full, cap = 0.8, 0
+		local cd = sobj.custom_data
+		if cd and cd ~= "" then cap = tonumber(cd) end
+		description = string.format("%%c[255,255,140,0]%.1f / %.1f\\n%%c[default]%s", (full / 4) * cap, full, description)
+	end
+
+	self.inv_name:SetTextST(inv_name)
+	self.descr:SetText(description)
+	self.descr:AdjustHeightToText()
+	self.scroll_v:AddWindow(self.descr, true)
+	self.descr:SetAutoDelete(false)
+	self.scroll_v:ScrollToBegin()
+	self.scrollPos = 0
+
+	-- food
+	-- if isEatable(item) then
+	if item:is_eatable_item() and not is_forbidden then
+		self:ShowEatableParams()
+	-- weapon
+	-- elseif isWeapon(item) then
+	elseif item:is_weapon() and not (item:is_knife() or is_forbidden) then
+		self:ShowWeaponParams()
+	-- outfits
+	elseif item:is_outfit() then
+		self:ShowOutfitParams()
+	-- knife
+	elseif item:is_knife() then
+		local d = sys_ini:r_float(self.section, "fire_distance")
+		self:ShowProps({{"fire_distance_knife", string.format("%s: %.2f %s", translate("ui_inv_impact_distance"), d, translate("ui_inv_meters_s"))}})
+
+		local p1, p2 = get_float(self.section, "hit_power", 0), get_float(self.section, "hit_power_2", 0)
+		self:ShowProps({{"hit_power", string.format("%s: %.2f | %.2f", translate("ui_inv_impact_force_damage_dealt"), p1, p2)}})
+	-- scope
+	elseif item:is_scope() or item:is_binoculars() then
+		local zf = get_float(self.section, "scope_zoom_factor", 0)
+		-- zf = device().fov / (zf * 0.75)
+		zf = 67.5 / (zf * 0.75)
+		self:ShowProps({{"scope", string.format("x%.1f", zf)}})
+	-- grenade
+	elseif item:is_grenade() and not is_forbidden then
+		local fr = sys_ini:r_float(self.section, "frags_r")
+		local br = sys_ini:r_float(self.section, "blast_r")
+		self:ShowProps({{"explosion", string.format("%s: %.1f %s", translate("ui_inv_dangerous_radius"), (fr + br) / 2, translate("ui_inv_meters_s"))}})
+	-- ammo
+	elseif item:is_ammo() and not is_forbidden then
+		local kh = sys_ini:r_float(self.section, "k_hit")
+		local bs = sys_ini:r_float(self.section, "buck_shot")
+		if bs == 0 then bs = 1 end
+		self:ShowProps({{"explosion", string.format("%s: %.2f ", translate("ui_inv_ammo_damage"), (kh * bs))}})
+	end
+
+	if self.is_trading then
+		self.cost:SetText(string.format("%s: %s %s", translate("st_base_cost_2"), get_actual_cost(item), translate("ui_st_money_descr")))
+	end
+	
+	self.weight_static:SetText(string.format("%s: %.2f %s", translate("st_weigth"), item:get_weight(), translate("ui_inv_s_kg")))
+
+	if need_show_condition(item) and not self.dis_cond then
+		self.cond_scale:SetWidth(self.max_cond_w * self.condition)
+		self.cond_scale:SetOriginalRect(
+			self.cond_rect.x1,
+			self.cond_rect.y1,
+			self.cond_rect.x2 * self.condition,
+			self.cond_rect.y2
+		)
+		local g = math.min(self.condition * 510, 255)
+		local r = math.min((1 - self.condition) * 510, 255)
+		self.cond_scale:SetColor(GetARGB(255, r, g, 0))
+		self.cond_scale:SetText(string.format("%s: %.1f%%", translate("st_condition_2"), self.condition * 100))
+		self.cond_frame:Show(true)
+	else
+		self.cond_frame:Show(false)
+	end
+
+	local hh = self.descr:GetHeight() + self.addH
+	if hh < 678 then
+		self.frame:SetHeight(hh + 90)
+		self.scroll_work = nil
+	else
+		self.frame:SetHeight(768)
+		self.scroll_work = true
+	end
+
+	local cr = self.owner:GetMousePosX()
+	if cr >= 512 then
+		cr = cr - self.frame:GetWidth()
+	else
+		cr = cr + 40
+	end
+
+	self.frame:SetWndPos(cr, math.min(self.owner:GetMousePosY(), 768 - self.frame:GetHeight()))
+
+	self.frame:Show(true)
+end
+
+-- Показываем параметры съедобных предметов
+function CUIDescriptionWnd:ShowEatableParams()
+	local params = {}
+	local val, txt = 0, ""
+	local vergas_med = false
+	local heal_time = 0
+	for i, t in ipairs(eatable_params) do
+		if vergas_medical_elastic.med[self.section] and t.prop ~= "mr_time" then
+			vergas_med = (self.section ~= "bandage")
+			val = get_float(self.section, ( vergas_med and "mr_" .. t.prop or t.prop), 0)			
+		else
+			val = get_float(self.section, t.prop, 0)
+		end
+
+		if val == 0 and t.prop == "eat_satiety" and allcore_hide.food_data[self.section] then
+			val = allcore_hide.food_data[self.section][1]
+		end
+		if t.prop == "mr_time" then
+			if val >= 1 then 
+				heal_time = val
+			else
+				val = 0
+			end
+		end
+
+		if val ~= 0 then
+			-- txt = t.text .. " "
+			txt = ""
+			if t.prop == "wounds_heal_perc" then
+				txt = txt .. (val > 0 and "%c[green]" or "%c[red]+")
+				val = -val
+			elseif t.prop == "eat_alcohol" or t.prop == "eat_radiation" or t.prop == "eat_radiation_arc" then
+				txt = txt .. (val > 0 and "%c[red]+" or "%c[green]")
+				if t.prop == "eat_radiation_arc" then
+					val = val / 100
+				end
+			else
+				txt = txt .. (val > 0 and "%c[green]+" or "%c[red]")
+			end
+			if vergas_med or t.prop == "mr_time" then
+				local coef = 1
+				if t.prop ~="mr_time" then
+					-- Sn: здесь нужно добавлять коэфф. из init_treatment()
+					coef = 7 / (3 + level.get_game_difficulty())
+					val = val * coef
+				end
+				if t.prop =="eat_health" then
+					txt = txt .. string.format("%.1f %s", val * 100 / heal_time, translate("ui_inv_unit_min"))
+				elseif t.prop =="eat_radiation" then
+					txt = txt .. string.format("%.1f %s", val * 10 / heal_time, translate("ui_inv_roentgen_min"))
+				elseif t.prop =="eat_power" then
+					-- Sn: delta_power в init_treatment() считается не за одну секунду, а за 0.33
+					-- отсюда и необходимость домножить переменную на 3, чтобы получить требуемое значение
+					txt = txt .. string.format("%d %s", val * 100 * 3 / heal_time, translate("ui_inv_unit_min"))
+				else
+					txt = string.sub(txt, 1, string.len(txt) - 1) .. val .. (val == 1 and " "..translate("ui_inv_minute_1") or " "..translate("ui_inv_minute_2"))
+				end
+			else
+				txt = txt .. string.format("%d", val * 100) .. (t.unit or "%")
+			end
+			table.insert(params, {t.tex, t.text, txt})
+		end
+	end
+
+	if #params > 0 then
+		self:ShowProps(params)
+	end
+end
+
+-- Показываем описание оружия
+function CUIDescriptionWnd:ShowWeaponParams()
+	self.xml:InitStatic("props", self.scroll_v)
+
+	local clr
+	local st = self.xml:InitStatic("props", self.scroll_v)
+
+	local stH = st:GetHeight() + vert_interval
+	self.addH = self.addH + stH
+
+	st:SetText(translate("Ammo") .. ":")
+	st:SetTextColor(255, 238, 153, 26)
+	self.addH = self.addH + stH
+
+	-- Боеприпасы
+	local s = sys_ini:r_string(self.section, "ammo_class")
+	for a in string.gfind(s, "[%w_%-%.]+") do
+		if not forbidden_items_props[a] then
+			self:ShowPropFromIni(a, CIconParams(a), g_inv_name(a), clr)
+		end
+	end
+
+	-- Гранаты
+	local s = ""
+	local gl = get_u32(self.section, "grenade_launcher_status", 0)
+	if gl ~= 0 then
+		s = get_string(self.section, "grenade_class")
+		for a in string.gfind(s, "[%w_%-%.]+") do
+			if not forbidden_items_props[a] then
+				self:ShowPropFromIni(a, CIconParams(a), g_inv_name(a))
+			end
+		end
+	end
+
+	-- Навесы
+	local st2
+	local text = ""
+	local addon, v
+	-- Прицел
+	local n = get_u32(self.section, "scope_status", 0)
+	if n ~= 0 then
+		st2 = self.xml:InitStatic("props", self.scroll_v)
+
+		local addon1 = get_string_wq(self.section, "scope_name", "wpn_addon_1pso")
+		addon = get_string_wq(self.section, "scope_names", addon1)
+		-- Многоприцельность
+		for a in string.gfind(addon, "[%w_%-%.]+") do
+			v = CIconParams(a)
+			if n == 1 then
+				v = nil
+				s = get_float(self.section, "scope_zoom_factor", 0)
+				s = device().fov / (s * 0.75)
+				if s > 1 then
+					text = string.format("%s x%.1f-%s", translate("ui_inv_integrated"), s, translate("ui_inv_multiple_sight"))
+				else
+					text = translate("ui_inv_integrated_sight")
+				end
+			else
+				text = g_inv_name(a)
+			end
+			clr = nil
+			if n == 1 or ogse_wpn_utils.get_scope_flag(self.item) and (a == addon1) then
+				clr = {255, 160, 255, 160}
+			end
+			self:ShowPropFromIni(a, v, text, clr)
+			if n == 1 then break end
+		end
+		--
+	end
+
+	-- Глушитель
+	n = get_u32(self.section, "silencer_status", 0)
+	if n ~= 0 then
+		if st2 == nil then st2 = self.xml:InitStatic("props", self.scroll_v) end
+		addon = get_string(self.section, "silencer_name", "wpn_addon_sil_545_ar")
+		v = CIconParams(addon)
+		if n == 1 then
+			v = nil
+			text = translate("ui_inv_integrated_silencer")
+		else
+			text = g_inv_name(addon)
+		end
+		clr = nil
+		if n == 1 or ogse_wpn_utils.get_silencer_flag(self.item) then
+			clr = {255, 160, 255, 160}
+		end
+		self:ShowPropFromIni(addon, v, text, clr)
+	end
+
+	-- Подствольник
+	if gl ~= 0 then
+		if st2 == nil then st2 = self.xml:InitStatic("props", self.scroll_v) end
+		addon = get_string(self.section, "grenade_launcher_name", "wpn_addon_grenade_launcher")
+		v = CIconParams(addon)
+		if gl == 1 then
+			v = nil
+			text = translate("ui_inv_integrated_grenade_launcher")
+		else
+			text = g_inv_name(addon)
+		end
+		clr = nil
+		if gl == 1 or ogse_wpn_utils.get_grenade_launcher_flag(self.item) then
+			clr = {255, 160, 255, 160}
+		end
+		self:ShowPropFromIni(addon, v, text, clr)
+	end
+	if st2 then
+		st2:SetText(translate("ui_inv_sheds") .. ":")
+		st2:SetTextColor(255, 238, 153, 26)
+		self.addH = self.addH + stH
+	end
+
+	self.xml:InitStatic("props", self.scroll_v)
+	self.addH = self.addH + stH
+
+	-- Некоторые характеристики
+	v = {}
+	n = sys_ini:r_float(self.section, "hit_power")
+	local shp = ""
+	local sil_stat = get_u32(self.section, "silencer_status", 0)
+	if sil_stat == 2 then -- При интегрированном глушителе движок читает параметры без префикса "silencer_"
+		local n2 = get_float(self.section, "silencer_hit_power", 0)
+		if (n2 ~= n) and (n2 > 0) then
+			shp = string.format(", %s: %.2f", translate("ui_inv_with_silencer"), n2)
+		end
+	end
+	text = string.format("%s: %.2f%s", translate("ui_inv_weapon_damage"), n, shp)
+	table.insert(v, {"hit_power", text})
+
+	n = sys_ini:r_u32(self.section, "fire_distance")
+	if sil_stat == 2  then -- При интегрированном глушителе движок читает параметры без префикса "silencer_"
+		local n2 = get_float(self.section, "silencer_fire_distance", 0)
+		if (n2 ~= n) and (n2 > 0) then
+			shp = string.format(", %s: %d ", translate("ui_inv_with_silencer"), n2)
+		end
+	end
+	text = string.format("%s: %d %s%s", translate("ui_inv_effective_range"), n, translate("ui_inv_meters"), shp)
+	table.insert(v, {"fire_distance", text})
+
+	n = sys_ini:r_u32(self.section, "rpm")
+	text = string.format("%s: %d %s", translate("ui_inv_rate_of_fire"), n, translate("ui_inv_v_min"))
+	table.insert(v, {"rpm", text})
+
+	local tbl = string.explode(",", get_string(self.section, "fire_modes", "1"), true)
+	-- table.sort(tbl, function(a, b) return(a > b) end)
+	text = table.concat(tbl, "|")
+	text = string.gsub(text, "-1", "A")
+	text = string.format("%s: %s", translate("st_fire_modes"), text)
+	table.insert(v, {"f_mode", text})
+
+	n = sys_ini:r_u32(self.section, "ammo_mag_size")
+	text = string.format("%s: %d / %d", translate("st_magazine_capacity"), self.item:get_ammo_in_magazine(), n)
+	local am2 = self.item:get_ammo_in_magazine2()
+	if am2 and am2 > 0 then
+		text = text .. string.format(" (%d)", am2)
+	end
+	table.insert(v, {"ammo_mag_size", text})
+
+	n = get_float(self.section, "condition_shot_dec", 0)
+	if n and n > 0 then
+		text = string.format("%s: %s", translate("st_wpn_resource"), math.floor(1 / n))
+		table.insert(v, {"condition_shot_dec", text})
+	end
+
+	n = get_accuracy(self.section)
+	if n and n > 0 then
+		text = string.format("%s: %.0f%%", translate("ui_inv_accuracy"), n)
+		table.insert(v, {"accuracy", text})
+		end
+
+	self:ShowProps(v)
+end
+
+function get_accuracy(section)
+	local ltx = sys_ini
+	local fire_dispersion_base = ltx:r_float(section, "fire_dispersion_base")
+	local disp_rate = get_float(section, "disp_rate", 1, ini)
+	local ammo_list = ltx:r_string(section, "ammo_class")
+	local pos = string.find(ammo_list, ",", 1)
+	local k_disp
+	if nil ~= pos then
+		local ammo = string.sub(ammo_list, 1, pos - 1)
+		k_disp = ltx:r_float(ammo, "k_disp")
+	else
+		k_disp = ltx:r_float(ammo_list, "k_disp")
+	end
+	local fir = disp_rate + math.log10(0.9 / (fire_dispersion_base * k_disp))
+	val = 28 * fir
+	return ui_wpn_params.normalize(val)
+end
+
+-- Показываем параметры артефактов
+function CUIDescriptionWnd:ShowAfParams()
+	local params = {}
+	local val, txt = 0, ""
+
+	for i, t in ipairs(conditions_params) do
+		-- val = sys_ini:r_float(self.section, t.prop, 0)
+		val = get_float(self.section, t.prop, 0)
+		local handle_satiety = t.prop == "satiety_restore_speed"
+		if val ~= 0 then
+			if not handle_satiety then
+				val = val * 100 / conditions[t.prop]
+			else
+				val = val * math.pow(10,8)
+				val = val / 4455 -- Sn: за единицу берём минимальное значения набрасываемого голода из конфигов; для простоты счёта, отбрасываем все нули
+			end
+			txt = ""
+			if t.prop == "bleeding_restore_speed" then
+				txt = txt .. (val > 0 and "%c[green]" or "%c[red]+")
+				val = -val
+			elseif t.prop == "radiation_restore_speed" then
+				txt = txt .. (val > 0 and "%c[red]+" or "%c[green]")
+			elseif handle_satiety then
+				txt = txt .. "%c[red]"
+			else
+				txt = txt .. (val > 0 and "%c[green]+" or "%c[red]")
+			end
+			if handle_satiety then
+				txt = txt .. string.format("%.2f ", val) .. translate("ui_inv_units")
+			else
+				txt = txt .. string.format("%d", math.round(val)) .. (t.unit or "%")
+			end
+			table.insert(params, {t.tex, t.text, txt})
+		end
+	end
+
+	local hit_absorbation_sect = sys_ini:r_string(self.section, "hit_absorbation_sect")
+	for i, t in ipairs(hit_types) do
+		val = sys_ini:r_float(hit_absorbation_sect, t.prop .. "_immunity")
+		if val ~= 1 then
+			val = 100 - val * 100
+			-- Округляем числа, ибо string.format этого не делает, а просто убирает все числа после запятой
+			txt = (val < 0 and "%c[red]" or "%c[green]+") .. string.format("%d%%", math.round(val))
+			table.insert(params, {t.prop, t.text, txt})
+		end
+	end
+
+	local iw_1 = get_float(self.section, "additional_inventory_weight", 0)
+	local iw_2 = get_float(self.section, "additional_inventory_weight2", 0)
+	if iw_1 ~= 0 or iw_2 ~= 0 then
+		local txt1 = (iw_1 > 0 and "%c[green]+" or "%c[red]") .. string.format("%.1f", iw_1)
+		local txt2 = (iw_2 > 0 and "%c[green]+" or "%c[red]") .. string.format("%.1f", iw_2)
+		txt = string.format("%s%%c[default]|%s %s", txt1, txt2, translate("ui_inv_s_kg"))
+		table.insert(params, {"additional_weight", translate("st_carried_weight"), txt})
+	end
+
+	val = get_float(self.section, "add_jump_speed", 0)
+	if val ~= 0 then
+		txt = (val < 0 and "%c[red]" or "%c[green]+") .. string.format("%.0f", val * 10)
+		table.insert(params, {"jump", translate("ui_inv_jump_height"), txt})
+	end
+	
+	val = get_float(self.section, "add_move_speed", 0)
+	if val ~= 0 then
+		txt = (val < 0 and "%c[red]" or "%c[green]+") .. string.format("%.0f%%", val * 100)
+		table.insert(params, {"speed", translate("ui_inv_move_speed"), txt})
+	end
+
+	val = get_float(self.section, "add_dog_psy", 0)
+	if val ~= 1 then
+		txt = (val < 0 and "%c[red]" or "%c[green]+") .. string.format("%.0f%%", (1 - val) * 100)
+		table.insert(params, {"telepatic", translate("ui_inv_spasm_protection"), txt})
+	end
+
+	if #params > 0 then
+		self:ShowProps(params)
+	end
+end
+
+-- Показываем параметры костмов
+function CUIDescriptionWnd:ShowOutfitParams()
+	local params = {}
+	local val, txt = 0, ""
+
+	-- скрытые свойства костюмов
+	for i, t in ipairs(conditions_params) do
+		-- val = sys_ini:r_float(self.section, t.prop, 0)
+		val = get_float(self.section, t.prop, 0)
+		if val ~= 0 then
+			val = val * 100 / conditions[t.prop]
+			-- txt = t.text .. " "
+			txt = ""
+			if t.prop == "bleeding_restore_speed" then
+				txt = txt .. (val > 0 and "%c[green]" or "%c[red]+")
+				val = -val
+			elseif t.prop == "radiation_restore_speed" then
+				txt = txt .. (val > 0 and "%c[red]+" or "%c[green]")
+			else
+				txt = txt .. (val > 0 and "%c[green]+" or "%c[red]")
+			end
+			txt = txt .. string.format("%d", val) .. (t.unit or "%")
+			table.insert(params, {t.tex, t.text, txt})
+		end
+	end
+
+	local immunities_sect = sys_ini:r_string(self.section, "immunities_sect")
+	for i, t in ipairs(hit_types) do
+
+		-- Manool: реальная, текущая защита костюма
+		local outfit = self.item:get_outfit()
+		local real_val = outfit[t.prop .. "_protection"] * 100 * self.condition
+
+		val = sys_ini:r_float(self.section, t.prop .. "_protection")
+		local val_imm = get_float(immunities_sect, t.prop .. "_immunity")
+		local orig_val = val * 100 -- выводим дополнительно хар-ки без учёта текущего condition.
+		val = val * 100 * self.condition
+		-- Округляем числа, ибо string.format просто убирает все числа после запятой.
+		-- local v1 = (val < 0 and "%c[red]" or val == 0 and "%c[gray]" or "%c[green]+") .. string.format("%d%%", math.round(val))
+		local v1 = (real_val < 0 and "%c[red]" or real_val == 0 and "%c[gray]" or "%c[green]+") .. string.format("%d%%", math.round(real_val))
+		local v2 = (val < 0 and "%c[red]" or val == 0 and "%c[gray]" or "%c[green]+") .. string.format("%d%%", math.round(orig_val))
+		local v3 = tonumber(string.format("%.3f", (1 - val_imm) * 100))
+		table.insert(params, {t.prop, t.text, v1, v2, v3 .. "%"})
+	end
+
+	-- Доп. вес
+	val = get_float(self.section, "additional_inventory_weight2", 0)
+	if val > 0 then
+		local v1 = string.format("%%c[green]+%.1f", self.item:get_additional_max_weight())..translate("ui_inv_s_kg")
+		local v2 = string.format("%%c[green]+%.1f", val)..translate("ui_inv_s_kg")
+		table.insert(params, {"additional_weight", translate("st_carrying"), v1, v2})
+	end
+
+	-- Доп. прыжок
+	val = get_float(self.section, "additional_jump_height", 0)
+	if val > 0 then
+		txt = string.format("%%c[green]x%.1f", val)
+		table.insert(params, {"power_loss", translate("ui_inv_jump_height"), txt})
+	end
+
+	val = get_float(self.section, "power_loss", 0)
+	if val > 0 then
+		local outfit = self.item:get_outfit()
+		local pwrl = outfit.power_loss
+		txt = (pwrl > 1 and "%c[red]" or "%c[green]") .. string.format("*%.0f%%", pwrl * 100)
+		table.insert(params, {"power", translate("ui_inv_power_loss"), txt})
+	end
+
+	if #params > 0 then
+		self:ShowProps(params)
+	end
+end
+
+function CUIDescriptionWnd:Remove()
+	if subscribed then
+		local sm = ogse_signals.get_mgr()
+		for _, s in ipairs(subscribed) do
+			sm:unsubscribe(s)
+		end
+		subscribed = false
+	end
+
+	self.shift_tmr = nil
+	self.owner = nil
+	self.keypressed = nil
+end
+
+function CUIDescriptionWnd:OnItemFocus(obj)
+	self.itemInFocus = obj:id()
+	self.shift_tmr = time_global() + shift_show_descr
+end
+
+function CUIDescriptionWnd:OnItemFocusLost(obj)
+	if self.itemInFocus == obj:id() then
+		self.itemInFocus = nil
+	end
+	if not self.keypressed then
+	self:HideDescription()
+end
+end
+
+function CUIDescriptionWnd:OnUpdate(delta) --Если сюда передали аргументом передали true - обновление будет форсировано.
+	if self.itemInFocus and not client_obj(self.itemInFocus) then
+		self.itemInFocus = nil
+		self:HideDescription()
+		return
+	end
+	if (not self.keypressed and self.shift_tmr and self.shift_tmr < time_global()) or delta == true then
+		if self.itemInFocus and (self.itemInFocus > 65535 or alife():object(self.itemInFocus)) then
+				self:ShowDescription(level.object_by_id(self.itemInFocus))
+			end
+		self.shift_tmr = nil
+	end
+end
+
+function CUIDescriptionWnd:OnKeyPress(dik, bind)
+	if (dik == DIK_keys.DIK_LMOUSE or dik == DIK_keys.DIK_RMOUSE) then
+		self:HideDescription()
+		self.itemInFocus = nil
+	elseif dik == DIK_keys.DIK_NUMPAD9 then -- Manool: на NUM9 сделал закреп окна
+		if self.itemInFocus then
+			self:OnUpdate(true)
+			self.keypressed = true
+		else
+			self.keypressed = nil
+			self:HideDescription()
+		end
+	end
+	end

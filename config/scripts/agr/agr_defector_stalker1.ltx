@@ -1,0 +1,60 @@
+[logic]
+active = {+agr_start_scene} walker, walker@1
+combat_ignore = combat_ignore
+on_death = death
+
+[death]
+on_info = %+agr_start_scene%
+
+[walker@1]
+path_walk = agr_entrance_walk1
+path_look = agr_entrance_look1
+on_actor_dist_ge_nvis = 5 | {-agr_start_scene} remark
+on_info = {+agr_start_scene} walker
+combat_ignore_cond = {!fighting_actor}
+danger = danger_conditions
+meet = no_meet
+
+[remark]
+anim = hello
+snd = agr_stalker_help_2
+on_actor_dist_le_nvis = 5 | remark@2
+on_actor_dist_ge_nvis = 50 | {-agr_start_scene} %+agr_start_scene% walker
+on_info = {+agr_start_scene} walker
+target = actor
+combat_ignore_cond = {!fighting_actor}
+danger = danger_conditions
+meet = no_meet
+
+[remark@2]
+on_actor_dist_ge_nvis = 5 | {-agr_start_scene} remark
+on_info = {+agr_start_scene} walker
+on_timer = 60000 |  %+agr_start_scene% walker
+combat_ignore_cond = {!fighting_actor}
+danger = danger_conditions
+target = actor
+meet = meet@agr_defector
+
+[meet@agr_defector]
+victim          = 5|actor
+victim_wpn      = 5|actor
+use 			= true
+use_wpn 		= true
+abuse           = false
+meet_dialog 	= agr_defector_dialog
+
+[walker]
+path_walk = agr_attacking_stalker
+path_look = agr_attacking_stalker_look
+def_state_moving1 = assault
+def_state_moving2 = assault
+def_state_moving3 = assault
+meet = no_meet
+on_info = {+agr_help_krot_done} walker@free
+
+[walker@free]
+path_walk = agr_attacking_free_walk
+path_look = agr_attacking_free_look
+
+[danger_conditions]
+ignore_distance = 0

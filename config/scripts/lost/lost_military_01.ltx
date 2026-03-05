@@ -1,0 +1,35 @@
+[logic]
+active = walker
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[walker]
+path_walk = lost_desertir1_walk
+path_look = lost_desertir1_look
+meet = meet
+combat_ignore_cond = {-lost_desertirs_fire =fighting_actor}
+danger = danger_condition
+
+[meet]
+meet_state = 5| {-lost_desertirs_fire} wait
+meet_state_wpn = 5| {-lost_desertirs_fire} guard
+victim 			= 10| actor
+victim_wpn = 10| actor
+use			= true
+use_wpn		= false
+abuse   = true
+meet_dialog		= lost_desertir1_dialog_start
+
+[combat_ignore]
+combat_ignore_cond = {-lost_desertirs_fire =fighting_actor}
+
+[danger_condition]
+ignore_distance = 2
+
+[hit]
+on_info = {=hit_by_actor} %+lost_desertirs_fire%
+
+[death]
+on_info = {=killed_by_actor} %+lost_desertirs_fire%
+on_death = %+lost_desertir1_umer%

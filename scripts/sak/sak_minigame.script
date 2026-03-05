@@ -1,0 +1,1007 @@
+local npc_roll = {}
+local gg_roll = {}
+local vodka_lim=7
+local art_lim=2
+
+local numer = {
+  "%c[255,175,2,39]"..game.translate_string("sakm.num1"),
+  "%c[255,175,2,169]"..game.translate_string("sakm.num2"),
+  "%c[255,65,77,235]"..game.translate_string("sakm.num3"),
+  "%c[255,15,140,140]"..game.translate_string("sakm.num4"),
+  "%c[255,14,175,128]"..game.translate_string("sakm.num5"),
+  "%c[255,14,175,2]"..game.translate_string("sakm.num6")}
+
+function generate_dices_drop()
+	dsh.get_next_random( "dices_stas_gg_vodka", 1, 6 )
+	dsh.get_next_random( "dices_stas_gg_money", 1, 6 )
+	dsh.get_next_random( "dices_stas_npc_vodka", 1, 6 )
+	dsh.get_next_random( "dices_stas_npc_money", 1, 6 )
+	dsh.get_next_random( "dices_mongol_gg", 1, 6 )
+	dsh.get_next_random( "dices_mongol_npc", 1, 6 )
+	dsh.get_next_random( "dices_lysyi_gg_art1", 1, 6 )
+	dsh.get_next_random( "dices_lysyi_gg_art2", 1, 6 )
+	dsh.get_next_random( "dices_lysyi_npc_art1", 1, 6 )
+	dsh.get_next_random( "dices_lysyi_npc_art2", 1, 6 )
+end
+
+function roll_npc(who)
+	npc_roll = {}
+	if who and type(who) == 'string' then
+		for i=1,3 do
+			table.insert(npc_roll, dsh.get_next_random( who, 1, 6 ))
+		end
+		if strposx(who,"npc_art2") then
+			for _,v in ipairs(npc_roll) do
+				if v ~= 6 then
+					v = v+1
+					break
+				end
+			end
+		end
+		db.actor:give_talk_message(string.format(game.translate_string("sakm.roll_npc"),numer[npc_roll[1]],numer[npc_roll[2]],numer[npc_roll[3]]), "ui\\ui_iconsTotal",Frect():set(498,188,83,47),"iconed_answer_item")
+	end
+end
+
+function roll_gg(who)
+	gg_roll = {}
+	if who and type(who) == 'string' then
+		for i=1,3 do
+			table.insert(gg_roll, dsh.get_next_random( who, 1, 6 ))
+		end
+		db.actor:give_talk_message(string.format(game.translate_string("sakm.roll_gg"),numer[gg_roll[1]],numer[gg_roll[2]],numer[gg_roll[3]]), "ui\\ui_iconstotal", Frect():set(498,188,83,47),"iconed_answer_item")
+	end
+	if (npc_roll[1]+npc_roll[2]+npc_roll[3]) > (gg_roll[1]+gg_roll[2]+gg_roll[3]) then
+		db.actor:give_info_portion("gg_luser")
+	elseif (npc_roll[1]+npc_roll[2]+npc_roll[3]) < (gg_roll[1]+gg_roll[2]+gg_roll[3]) then
+		db.actor:give_info_portion("gg_winner")
+	else
+		db.actor:give_info_portion("draw")
+	end
+end
+
+function stas_have_vodka()
+	local vodka_winned = get_value("vodka_win", 0)
+	return vodka_winned<vodka_lim
+end
+
+function stas_no_have_vodka()
+	return not stas_have_vodka()
+end
+
+function stas_vodka_win(num)
+	if num and type(num) == 'number' then
+		local vodka_winned = get_value("vodka_win", 0)
+		set_value("vodka_win", vodka_winned+num)
+		sak.create_items("vodka",num)
+	end
+end
+
+local ochko=11
+local gg_sum=0
+local npc_sum=0
+
+function new_game_ochko()
+	gg_sum=0
+	npc_sum=0
+	db.actor:disable_info_portion("gg_winner")
+	db.actor:disable_info_portion("gg_luser")
+	db.actor:disable_info_portion("draw")
+end
+
+function roll_ochko_gg()
+	local num = dsh.get_next_random( "dices_mongol_gg", 1, 6 )
+	if (num+gg_sum)==ochko then
+		db.actor:give_talk_message(string.format(game.translate_string("sakm.roll_ochko_gg_1"),numer[num],game.translate_string("sakm.summ_dises"..gg_sum)), "ui\\ui_iconsTotal",Frect():set(498,188,83,47),"iconed_answer_item")
+		db.actor:give_info_portion("gg_winner")
+	elseif (num+gg_sum)>ochko then
+		db.actor:give_talk_message(string.format(game.translate_string("sakm.roll_ochko_gg_2"),numer[num],game.translate_string("sakm.summ_dises"..gg_sum)), "ui\\ui_iconsTotal",Frect():set(498,188,83,47),"iconed_answer_item")
+		db.actor:give_info_portion("gg_luser")
+	elseif (num+gg_sum)<ochko then
+		if gg_sum~=0 then
+			db.actor:give_talk_message(string.format(game.translate_string("sakm.roll_ochko_gg_3"),numer[num],game.translate_string("sakm.summ_dises"..gg_sum),game.translate_string("sakm.summ_dises"..gg_sum+num)), "ui\\ui_iconsTotal",Frect():set(498,188,83,47),"iconed_answer_item")
+			gg_sum=(num+gg_sum)
+		else 
+			db.actor:give_talk_message(string.format(game.translate_string("sakm.roll_ochko_gg_4"),numer[num]), "ui\\ui_iconsTotal",Frect():set(498,188,83,47),"iconed_answer_item")
+			gg_sum=(num+gg_sum)
+		end
+	end
+end
+
+function roll_ochko_npc()
+	local num = dsh.get_next_random( "dices_mongol_npc", 1, 6 )
+	if npc_sum > 8 and num ~= 1 then
+		num = num - 1
+	end
+	if (num+npc_sum)==ochko then
+		db.actor:give_talk_message(string.format(game.translate_string("sakm.roll_ochko_npc_1"),numer[num],game.translate_string("sakm.summ_dises"..npc_sum)), "ui\\ui_iconsTotal",Frect():set(498,188,83,47),"iconed_answer_item")
+		db.actor:give_info_portion("gg_luser")
+	elseif (num+npc_sum)>ochko then
+		db.actor:give_talk_message(string.format(game.translate_string("sakm.roll_ochko_npc_2"),numer[num],game.translate_string("sakm.summ_dises"..npc_sum)), "ui\\ui_iconsTotal",Frect():set(498,188,83,47),"iconed_answer_item")
+		db.actor:give_info_portion("gg_winner")
+	elseif (num+npc_sum)<gg_sum then
+		if npc_sum~=0 then
+			db.actor:give_talk_message(string.format(game.translate_string("sakm.roll_ochko_npc_3"),numer[num],game.translate_string("sakm.summ_dises"..npc_sum),game.translate_string("sakm.summ_dises"..npc_sum+num)), "ui\\ui_iconsTotal",Frect():set(498,188,83,47),"iconed_answer_item")
+			npc_sum=(num+npc_sum)
+		else
+			db.actor:give_talk_message(string.format(game.translate_string("sakm.roll_ochko_npc_4"),numer[num]), "ui\\ui_iconsTotal",Frect():set(498,188,83,47),"iconed_answer_item")
+			npc_sum=(num+npc_sum)
+		end
+	elseif (num+npc_sum)==gg_sum then
+		if npc_sum~=0 then
+			db.actor:give_talk_message(string.format(game.translate_string("sakm.roll_ochko_npc_5"),numer[num],game.translate_string("sakm.summ_dises"..npc_sum),game.translate_string("sakm.summ_dises"..npc_sum+num)), "ui\\ui_iconsTotal",Frect():set(498,188,83,47),"iconed_answer_item")
+			npc_sum=(num+npc_sum)
+		else
+			db.actor:give_talk_message(string.format(game.translate_string("sakm.roll_ochko_npc_6"),numer[num]), "ui\\ui_iconsTotal",Frect():set(498,188,83,47),"iconed_answer_item")
+			npc_sum=(num+npc_sum)
+		end
+		db.actor:give_info_portion("draw")
+	elseif (num+npc_sum)>gg_sum and(num+npc_sum)<ochko then
+		if npc_sum~=0 then
+			db.actor:give_talk_message(string.format(game.translate_string("sakm.roll_ochko_npc_7"),numer[num],game.translate_string("sakm.summ_dises"..npc_sum),game.translate_string("sakm.summ_dises"..npc_sum+num)), "ui\\ui_iconsTotal",Frect():set(498,188,83,47),"iconed_answer_item")
+			npc_sum=(num+npc_sum)
+		else
+			db.actor:give_talk_message(string.format(game.translate_string("sakm.roll_ochko_npc_8"),numer[num]), "ui\\ui_iconsTotal",Frect():set(498,188,83,47),"iconed_answer_item")
+			npc_sum=(num+npc_sum)
+		end
+		db.actor:give_info_portion("gg_luser")
+	end
+end
+
+function take_aart()
+	local c=dsh.get_next_random( "amk_anoms.spawn_rand_arts", 1, 7 )
+	local d=dsh.get_next_random( "amk_anoms.spawn_rand_arts", 1, 3 )
+	local item=sak_dialog.table_aart[c]
+	sak.create_items(item.."_dyn"..d.."d",1)
+	art_wins_lysyi()
+end
+
+function take_bart()
+	local c=dsh.get_next_random( "amk_anoms.spawn_rand_arts", 1, 7 )
+	local d=dsh.get_next_random( "amk_anoms.spawn_rand_arts", 1, 3 )
+	local item=sak_dialog.table_bart[c]
+	sak.create_items(item.."_dyn"..d.."d",1)
+	art_wins_lysyi()
+end
+
+function lysyi_have_art()
+	local art_winned = get_value("art_win", 0)
+	return art_winned<art_lim
+end
+
+function lysyi_no_have_art()
+	return not lysyi_have_art()
+end
+
+function art_wins_lysyi()
+	local art_winned = get_value("art_win", 0)
+	set_value("art_win", art_winned+1)
+end
+
+function run_roll_dice_npc_stas(first_speaker, second_speaker)
+  game.start_tutorial("dises_sidor01")
+end
+function run_roll_dice_gg_stas(first_speaker, second_speaker)
+  game.start_tutorial("dises_sidor02")
+end
+function run_roll_dice_npc_lysyi(first_speaker, second_speaker)
+  game.start_tutorial("dises_bar01")
+end
+function run_roll_dice_gg_lysyi(first_speaker, second_speaker)
+  game.start_tutorial("dises_bar02")
+end
+function run_roll_dice_npc_mongol(first_speaker, second_speaker)
+  game.start_tutorial("dises_bandit01")
+end
+function run_roll_dice_gg_mongol(first_speaker, second_speaker)
+  game.start_tutorial("dises_bandit02")
+end
+local thimble_ids = {}
+local blow_thimbles = {}
+local thimble_fill_items = {
+  "ammo_vog-25", 15,
+  "ammo_11.43x23_fmj", 10,
+  "ammo_7.62x39_ap", 5,
+  "grenade_f1", 10,
+  "ammo_m209", 15,
+  "ammo_5.56x45_ap", 5,
+  "ammo_9x39_ap", 5,
+  "ammo_5.45x39_ap", 10,
+  "medkit_army", 10
+}
+
+local thimble_minigame={
+    {position={x=80.7,y=-12.57,z=61.5},gv=1558,lv=377701},
+  {position={x=81.7,y=-12.57,z=61.5},gv=1558,lv=379106},   
+  {position={x=82.7,y=-12.57,z=61.5},gv=1558,lv=379778}
+}
+function empty_thimbles()
+  for a,i in pairs(db.storage) do
+    local objg=client_obj(a)
+    if objg and objg:section() and  objg:section()=="minigame_thimble" then
+      alife():release(alife():object(objg:id()), true)
+    end 
+  end
+end
+function create_thimbles()
+local a=lua_random(1,3)
+  for k=1,3 do
+    if k==a then
+    local main_thimble=alife():create("minigame_thimble",vector():set(thimble_minigame[k].position.x,thimble_minigame[k].position.y,thimble_minigame[k].position.z), thimble_minigame[k].lv, thimble_minigame[k].gv)
+    local param=main_thimble.id
+    timers.start_timer("main_thimble_id",1,"sak_minigame.fill_thimbles("..param..")")  
+    else
+    local sec_thimble=alife():create("minigame_thimble",vector():set(thimble_minigame[k].position.x,thimble_minigame[k].position.y,thimble_minigame[k].position.z), thimble_minigame[k].lv, thimble_minigame[k].gv)
+    local pk = get_netpk(sec_thimble)
+    local data = pk:get()
+    data.custom_data = "[logic]\ncfg = scripts\\minigame_inventory_box.ltx"
+    pk:set(data)  
+    table.insert(blow_thimbles,sec_thimble.id)
+    end
+  end
+end
+function fill_thimbles(main_thimble_id)
+local fill_items,fill_item,fill_count
+local main_thimble=alife():object(main_thimble_id)
+  fill_items = lua_random((table.getn(thimble_fill_items))/2)*2-1
+  fill_item = thimble_fill_items[fill_items]
+  fill_count = thimble_fill_items[fill_items+1]
+  for i=1,fill_count do
+  local fills=alife():create(fill_item, main_thimble.position, main_thimble.m_level_vertex_id, main_thimble.m_game_vertex_id, main_thimble.id)
+  end
+end
+function thimbles_explosion(box)
+local box_id = box:id()
+  for i=1,table.getn(blow_thimbles) do
+    local obj_id = blow_thimbles[i]
+    if box_id==obj_id then
+    sak.close_window()
+    level.disable_input()
+    level.hide_indicators()
+      local h = hit()
+      h.power = 0.2
+      h.impulse = 50
+      h:bone("bip01_spine")
+      h.draftsman = db.actor
+      local bpos = box:position()
+      amk_particle.amk_particle({particle=[[explosions\explosion_dynamite]], pos=bpos, sound=[[weapons\rpg7_explode]]})
+      level.add_cam_effector("camera_effects\\hit_front.anm", 150, false, "")
+      local apos = db.actor:position()
+      local dist = bpos:distance_to(apos)
+      if dist > 0 then
+        h.direction = vector():set((apos.x - bpos.x)/dist,(apos.y - bpos.y)/dist,(apos.z - bpos.z)/dist)
+        h.type = hit.explosion
+        db.actor:hit(h)
+      end
+      local active_item = db.actor:active_item()
+      if active_item and active_item:section()~= "bolt" and active_item:section()~= "wpn_knife" and active_item:get_slot() ~= 7 then
+      db.actor:drop_item(active_item)
+      end
+      timers.start_timer("mil_minigame_effector",1,"sak_minigame.mil_minigame_effector()")
+      --set_inactivate_input_time(delta)
+    end
+  end
+end
+function mil_minigame_effector()
+  level.add_pp_effector("deadcity_wake.ppe", 50, false)
+  db.actor:set_actor_position(patrol("blow_thimbles"):point(0))
+  local dir = patrol("blow_thimbles"):point(0):sub(patrol("blow_thimbles"):point(0))
+  db.actor:set_actor_direction(-dir:getH())
+  timers.start_timer("mil_minigame_effector2",8,"sak_minigame.mil_minigame_effector2()")
+end
+function mil_minigame_effector2()
+  level.add_cam_effector("camera_effects\\prison_1.anm", 250, false, "")
+  level.show_indicators()
+  level.enable_input()
+end
+local esc_bio_1 = {
+[1]={
+"sakm.esc_bio_1_1_1",
+"sakm.esc_bio_1_1_2",
+"esc_wolf_bio",
+"",
+"sakm.esc_bio_1_1_3",
+"sakm.esc_bio_1_1_4",
+"esc_stas_bio",
+"",
+"sakm.esc_bio_1_1_5",
+"sakm.esc_bio_1_1_6",
+"escape_trader_bio",
+"",
+"sakm.esc_bio_1_1_7",
+"sakm.esc_bio_1_1_8",
+"esc_soldier_commander_bio",
+"",
+"sakm.esc_bio_1_1_9",
+"sakm.esc_bio_1_1_10",
+"esc_upir_bio",
+"",
+"sakm.esc_bio_1_1_11",
+"sakm.esc_bio_1_1_12",
+"esc_petruha_bio",
+"",
+},
+[2]={
+"sakm.esc_bio_1_2_1",
+"sakm.esc_bio_1_2_2",
+"esc_wolf_bio",
+"",
+"sakm.esc_bio_1_2_3",
+"sakm.esc_bio_1_2_4",
+"esc_stas_bio",
+"",
+"sakm.esc_bio_1_2_5",
+"sakm.esc_bio_1_2_6",
+"escape_trader_bio",
+"",
+"sakm.esc_bio_1_2_7",
+"sakm.esc_bio_1_2_8",
+"esc_soldier_commander_bio",
+"",
+"sakm.esc_bio_1_2_9",
+"sakm.esc_bio_1_2_10",
+"esc_upir_bio",
+"",
+"sakm.esc_bio_1_2_11",
+"sakm.esc_bio_1_2_12",
+"esc_petruha_bio",
+"",
+},
+[3]={
+"sakm.esc_bio_1_3_1",
+"sakm.esc_bio_1_3_2",
+"esc_wolf_bio",
+"",
+"sakm.esc_bio_1_3_3",
+"sakm.esc_bio_1_3_4",
+"esc_stas_bio",
+"",
+"sakm.esc_bio_1_3_5",
+"sakm.esc_bio_1_3_6",
+"escape_trader_bio",
+"",
+"sakm.esc_bio_1_3_7",
+"sakm.esc_bio_1_3_8",
+"esc_soldier_commander_bio",
+"",
+"sakm.esc_bio_1_3_9",
+"sakm.esc_bio_1_3_10",
+"esc_upir_bio",
+"",
+"sakm.esc_bio_1_3_11",
+"sakm.esc_bio_1_3_12",
+"esc_petruha_bio",
+"",
+},
+}
+local esc_bio_2 = {
+[1]={
+"sakm.esc_bio_2_1_1",
+"sakm.esc_bio_2_1_2",
+"esc_neumeha_bio",
+"",
+"sakm.esc_bio_2_1_3",
+"sakm.esc_bio_2_1_4",
+"esc_fox_bio",
+"",
+"sakm.esc_bio_2_1_5",
+"sakm.esc_bio_2_1_6",
+"esc_tolik_bio",
+"",
+"sakm.esc_bio_2_1_7",
+"sakm.esc_bio_2_1_8",
+"esc_vorobey_bio",
+"",
+"sakm.esc_bio_2_1_9",
+"sakm.esc_bio_2_1_10",
+"esc_shustryi_bio",
+"",
+"sakm.esc_bio_2_1_11",
+"sakm.esc_bio_2_1_12",
+"esc_fanat_bio",
+"",
+},
+[2]={
+"sakm.esc_bio_2_2_1",
+"sakm.esc_bio_2_2_2",
+"esc_neumeha_bio",
+"",
+"sakm.esc_bio_2_2_3",
+"sakm.esc_bio_2_2_4",
+"esc_fox_bio",
+"",
+"sakm.esc_bio_2_2_5",
+"sakm.esc_bio_2_2_6",
+"esc_tolik_bio",
+"",
+"sakm.esc_bio_2_2_7",
+"sakm.esc_bio_2_2_8",
+"esc_vorobey_bio",
+"",
+"sakm.esc_bio_2_2_9",
+"sakm.esc_bio_2_2_10",
+"esc_shustryi_bio",
+"",
+"sakm.esc_bio_2_2_11",
+"sakm.esc_bio_2_2_12",
+"esc_fanat_bio",
+"",
+},
+[3]={
+"sakm.esc_bio_2_3_1",
+"sakm.esc_bio_2_3_2",
+"esc_neumeha_bio",
+"",
+"sakm.esc_bio_2_3_3",
+"sakm.esc_bio_2_3_4",
+"esc_fox_bio",
+"",
+"sakm.esc_bio_2_3_5",
+"sakm.esc_bio_2_3_6",
+"esc_tolik_bio",
+"",
+"sakm.esc_bio_2_3_7",
+"sakm.esc_bio_2_3_8",
+"esc_vorobey_bio",
+"",
+"sakm.esc_bio_2_3_9",
+"sakm.esc_bio_2_3_10",
+"esc_shustryi_bio",
+"",
+"sakm.esc_bio_2_3_11",
+"sakm.esc_bio_2_3_12",
+"esc_fanat_bio",
+"",
+},
+}
+
+local gar_bio_1 = {
+[1]={
+"sakm.gar_bio_1_1_1",
+"sakm.gar_bio_1_1_2",
+"gar_kulinar_bio",
+"",
+"sakm.gar_bio_1_1_3",
+"sakm.gar_bio_1_1_4",
+"gar_prapor_bio",
+"",
+"sakm.gar_bio_1_1_5",
+"sakm.gar_bio_1_1_6",
+"gar_orex_bio",
+"",
+"sakm.gar_bio_1_1_7",
+"sakm.gar_bio_1_1_8",
+"bes_bio",
+"",
+"sakm.gar_bio_1_1_9",
+"sakm.gar_bio_1_1_10",
+"krot_bio",
+"",
+"sakm.gar_bio_1_1_11",
+"sakm.gar_bio_1_1_12",
+"koval_bio",
+"",
+},
+[2]={
+"sakm.gar_bio_1_2_1",
+"sakm.gar_bio_1_2_2",
+"gar_kulinar_bio",
+"",
+"sakm.gar_bio_1_2_3",
+"sakm.gar_bio_1_2_4",
+"gar_prapor_bio",
+"",
+"sakm.gar_bio_1_2_5",
+"sakm.gar_bio_1_2_6",
+"gar_orex_bio",
+"",
+"sakm.gar_bio_1_2_7",
+"sakm.gar_bio_1_2_8",
+"bes_bio",
+"",
+"sakm.gar_bio_1_2_9",
+"sakm.gar_bio_1_2_10",
+"krot_bio",
+"",
+"sakm.gar_bio_1_2_11",
+"sakm.gar_bio_1_2_12",
+"koval_bio",
+"",
+},
+[3]={
+"sakm.gar_bio_1_3_1",
+"sakm.gar_bio_1_3_2",
+"gar_kulinar_bio",
+"",
+"sakm.gar_bio_1_3_3",
+"sakm.gar_bio_1_3_4",
+"gar_prapor_bio",
+"",
+"sakm.gar_bio_1_3_5",
+"sakm.gar_bio_1_3_6",
+"gar_orex_bio",
+"",
+"sakm.gar_bio_1_3_7",
+"sakm.gar_bio_1_3_8",
+"bes_bio",
+"",
+"sakm.gar_bio_1_3_9",
+"sakm.gar_bio_1_3_10",
+"krot_bio",
+"",
+"sakm.gar_bio_1_3_11",
+"sakm.gar_bio_1_3_12",
+"koval_bio",
+"",
+},
+}
+
+local gar_bio_2 = {
+[1]={
+"sakm.gar_bio_2_1_1",
+"sakm.gar_bio_2_1_2",
+"esc_neumeha_bio",
+"",
+"sakm.gar_bio_2_1_3",
+"sakm.gar_bio_2_1_4",
+"esc_fox_bio",
+"",
+"sakm.gar_bio_2_1_5",
+"sakm.gar_bio_2_1_6",
+"esc_tolik_bio",
+"",
+"sakm.gar_bio_2_1_7",
+"sakm.gar_bio_2_1_8",
+"esc_vorobey_bio",
+"",
+"sakm.gar_bio_2_1_9",
+"sakm.gar_bio_2_1_10",
+"esc_shustryi_bio",
+"",
+"sakm.gar_bio_2_1_11",
+"sakm.gar_bio_2_1_12",
+"esc_fanat_bio",
+"",
+},
+[2]={
+"sakm.gar_bio_2_2_1",
+"sakm.gar_bio_2_2_2",
+"esc_neumeha_bio",
+"",
+"sakm.gar_bio_2_2_3",
+"sakm.gar_bio_2_2_4",
+"esc_fox_bio",
+"",
+"sakm.gar_bio_2_2_5",
+"sakm.gar_bio_2_2_6",
+"esc_tolik_bio",
+"",
+"sakm.gar_bio_2_2_7",
+"sakm.gar_bio_2_2_8",
+"esc_vorobey_bio",
+"",
+"sakm.gar_bio_2_2_9",
+"sakm.gar_bio_2_2_10",
+"esc_shustryi_bio",
+"",
+"sakm.gar_bio_2_2_11",
+"sakm.gar_bio_2_2_12",
+"esc_fanat_bio",
+"",
+},
+[3]={
+"sakm.gar_bio_2_3_1",
+"sakm.gar_bio_2_3_2",
+"esc_neumeha_bio",
+"",
+"sakm.gar_bio_2_3_3",
+"sakm.gar_bio_2_3_4",
+"esc_fox_bio",
+"",
+"sakm.gar_bio_2_3_5",
+"sakm.gar_bio_2_3_6",
+"esc_tolik_bio",
+"",
+"sakm.gar_bio_2_3_7",
+"sakm.gar_bio_2_3_8",
+"esc_vorobey_bio",
+"",
+"sakm.gar_bio_2_3_9",
+"sakm.gar_bio_2_3_10",
+"esc_shustryi_bio",
+"",
+"sakm.gar_bio_2_3_11",
+"sakm.gar_bio_2_3_12",
+"esc_fanat_bio",
+"",
+},
+}
+
+local bar_bio = {
+[1]={
+"sakm.bar_bio_1_1",
+"sakm.bar_bio_1_2",
+"cherep_bio",
+"",
+"sakm.bar_bio_1_3",
+"sakm.bar_bio_1_4",
+"master_bio",
+"",
+"sakm.bar_bio_1_5",
+"sakm.bar_bio_1_6",
+"ivanzov_bio",
+"",
+"sakm.bar_bio_1_7",
+"sakm.bar_bio_1_8",
+"dolgovazyi_bio",
+"",
+"sakm.bar_bio_1_9",
+"sakm.bar_bio_1_10",
+"docent_bio",
+"",
+"sakm.bar_bio_1_11",
+"sakm.bar_bio_1_12",
+"osvedomitel_bio",
+"",
+},
+[2]={
+"sakm.bar_bio_2_1",
+"sakm.bar_bio_2_2",
+"cherep_bio",
+"",
+"sakm.bar_bio_2_3",
+"sakm.bar_bio_2_4",
+"master_bio",
+"",
+"sakm.bar_bio_2_5",
+"sakm.bar_bio_2_6",
+"ivanzov_bio",
+"",
+"sakm.bar_bio_2_7",
+"sakm.bar_bio_2_8",
+"dolgovazyi_bio",
+"",
+"sakm.bar_bio_2_9",
+"sakm.bar_bio_2_10",
+"docent_bio",
+"",
+"sakm.bar_bio_2_11",
+"sakm.bar_bio_2_12",
+"osvedomitel_bio",
+"",
+},
+[3]={
+"sakm.bar_bio_3_1",
+"sakm.bar_bio_3_2",
+"cherep_bio",
+"",
+"sakm.bar_bio_3_3",
+"sakm.bar_bio_3_4",
+"master_bio",
+"",
+"sakm.bar_bio_3_5",
+"sakm.bar_bio_3_6",
+"ivanzov_bio",
+"",
+"sakm.bar_bio_3_7",
+"sakm.bar_bio_3_8",
+"dolgovazyi_bio",
+"",
+"sakm.bar_bio_3_9",
+"sakm.bar_bio_3_10",
+"docent_bio",
+"",
+"sakm.bar_bio_3_11",
+"sakm.bar_bio_3_12",
+"osvedomitel_bio",
+"",
+},
+}
+
+--[[
+Отец Диодор - Не святой отец. Воевал в Афгане, там после передряги одной и ударился в религию. Говорят даже в семинарии потом учился и проповедовал во Львове. Когда услыхал про Чернобыль пошел добровольцем помогать пострадавшим. Теперь вот тут наставляет на пути истинные. С Сяком знается, они оказывается в Афгане служили в соседних частях. Как то, говорят, сидели бухали с ним вдвоем неделю, их потом растаскивать пришлось....Видать, воспоминания нахлынули..
+
+Охотник - Добробушный, веселый малый. На Большой земле охотником, говорят, неплохим был. Зачем в Зону пришел сам не знает.. Стрелять умеет только из ружья. Остальное даже не пробует. Недавно попал в передрягу на Дикой территории так потерял там свое фамильное ружье. Теперь вот околачивается в баре, надеется, что кто-то вернет ему его раритет.
+
+Умник - Это студент химфака, с пятого курса института ушел в Зону на заработок, лаборантом у ученых на Болотах подрабатывал. Потом подался на Кордон к сталкерам. Он тут пока в деревне был всё познаниями своими хвастался в химии . За этот выпендреж его сталкеры и недолюбливали. Но в целом парень неплохой. Пытался даже местным ханыгам самогонный аппарат собрать, хе-хе...
+]]
+function bio_story(loka)
+local stop_dlg=0
+local m=get_value("r_treas_items", 1)
+loka=loka[m]
+  for a=1,table.getn(loka)/4,1 do 
+    local rand_bio=lua_random(1,table.getn(loka)/4)
+    if not db.actor:has_info(loka[rand_bio*4-1]) then
+    db.actor:give_talk_message("%c[255,216,186,140]"..game.translate_string(loka[rand_bio*4-2]).."\\n"..game.translate_string(loka[rand_bio*4-3]), "ui\\ui_iconsTotal",Frect():set(249,282,83,47),"iconed_answer_item")
+    stop_dlg=1
+    if loka[rand_bio*4]~="" then
+    loadstring(loka[rand_bio*4])()
+    end
+    db.actor:give_info_portion(loka[rand_bio*4-1]) break
+    end
+  end
+  if stop_dlg==0 then
+  db.actor:give_talk_message("%c[255,216,186,140]"..game.translate_string("sakm.end_phras_"..lua_random(4)),"ui\\ui_iconstotal", Frect():set(0,0,10,10), "simple_answer_item")
+  end
+end
+function one_bio_esc()
+bio_story(esc_bio_1)
+end
+function two_bio_esc()
+bio_story(esc_bio_2)
+end
+function one_bio_gar()
+bio_story(gar_bio_1)
+end
+function two_bio_gar()
+bio_story(gar_bio_2)
+end
+function bio_bar()
+bio_story(bar_bio)
+end
+function two_bio_esc_()
+local stop_dlg=0
+  for a=1,table.getn(esc_bio_2)/3,1 do 
+    local rand_bio=lua_random(1,table.getn(esc_bio_2)/3)
+    if not db.actor:has_info(esc_bio_2[rand_bio*3]) then
+    db.actor:give_talk_message("%c[255,216,186,140]"..esc_bio_2[rand_bio*3-1].."\\n"..esc_bio_2[rand_bio*3-2], "ui\\ui_iconsTotal",Frect():set(249,282,83,47),"iconed_answer_item")
+    stop_dlg=1
+    db.actor:give_info_portion(esc_bio_2[rand_bio*3]) break
+    end
+  end
+  if stop_dlg==0 then
+  db.actor:give_talk_message("%c[255,216,186,140]"..game.translate_string("sakm.two_bio_esc"),"ui\\ui_iconstotal", Frect():set(0,0,10,10), "simple_answer_item")
+  end
+end
+local sultan_weapons={
+  {"wpn_val_nimble","wpn_addon_sil_vsk"},
+  {"wpn_ump45"},
+  {"wpn_pp19"},
+  {"wpn_saiga12c_m1"},
+  {"wpn_fn2000"},
+  {"wpn_mp153"},
+  {"wpn_svu"},
+  {"wpn_ak104"},
+  {"wpn_fn2000"},
+  {"wpn_rpk"},
+  {"wpn_sv98"},
+  {"wpn_awm"},
+  {"wpn_svd"},
+  {"wpn_g36c"},
+  {"wpn_m110"},
+  {"wpn_pkp"},
+  {"wpn_aks47"}
+}
+local weapons_icons = {
+  {0, 0},
+  {700, 0},
+  {350, 0},
+  {0, 300},
+  {1050, 0},
+  {1400, 0},
+  {1400, 300},
+  {1400, 150},
+  {1050, 0},
+  {350, 150},
+  {350, 300},
+  {1050, 300},
+  {0, 150},
+  {700, 150},
+  {700, 300},
+  {1050, 150},
+  }
+local sultan_arts={3, 1, 1, 1, 1, 2, 3, 2, 1, 1, 2, 4, 1, 2, 4, 4, 2}
+local sultan_treasure={9127,"1",9128,"2",9129,"3"}
+function sultan_weapon_story_11()
+sultan_weapon(1)
+end
+function sultan_weapon_story_12()
+sultan_weapon(2)
+end
+function sultan_weapon_story_12_2()
+sultan_weapon(17)
+end
+function sultan_weapon_story_13()
+sultan_weapon(3)
+end
+function sultan_weapon_story_21()
+sultan_weapon(4)
+end
+function sultan_weapon_story_22()
+sultan_weapon(5)
+end
+function sultan_weapon_story_31()
+sultan_weapon(6)
+end
+function sultan_weapon_story_32()
+sultan_weapon(7)
+end
+function sultan_weapon_story_33()
+sultan_weapon(8)
+end
+function sultan_weapon_story_34()
+sultan_weapon(9)
+end
+function sultan_weapon_story_35()
+sultan_weapon(10)
+end
+function sultan_weapon_story_36()
+sultan_weapon(16)
+end
+function sultan_weapon_story_41()
+sultan_weapon(11)
+end
+function sultan_weapon_story_42()
+sultan_weapon(12)
+end
+function sultan_weapon_story_43()
+sultan_weapon(13)
+end
+function sultan_weapon_story_44()
+sultan_weapon(14)
+end
+function sultan_weapon_story_45()
+sultan_weapon(15)
+end
+function save_sultan_weapon_story_11()
+save_sultan_weapon(1)
+end
+function save_sultan_weapon_story_12()
+save_sultan_weapon(2)
+end
+function save_sultan_weapon_story_12_2()
+save_sultan_weapon(17)
+end
+function save_sultan_weapon_story_13()
+save_sultan_weapon(3)
+end
+function save_sultan_weapon_story_21()
+save_sultan_weapon(4)
+end
+function save_sultan_weapon_story_22()
+save_sultan_weapon(5)
+end
+function save_sultan_weapon_story_31()
+save_sultan_weapon(6)
+end
+function save_sultan_weapon_story_32()
+save_sultan_weapon(7)
+end
+function save_sultan_weapon_story_33()
+save_sultan_weapon(8)
+end
+function save_sultan_weapon_story_34()
+save_sultan_weapon(9)
+end
+function save_sultan_weapon_story_35()
+save_sultan_weapon(10)
+end
+function save_sultan_weapon_story_36()
+save_sultan_weapon(16)
+end
+function save_sultan_weapon_story_41()
+save_sultan_weapon(11)
+end
+function save_sultan_weapon_story_42()
+save_sultan_weapon(12)
+end
+function save_sultan_weapon_story_43()
+save_sultan_weapon(13)
+end
+function save_sultan_weapon_story_44()
+save_sultan_weapon(14)
+end
+function save_sultan_weapon_story_45()
+save_sultan_weapon(15)
+end
+function load_sultan_weapon_story()
+local tip=get_value("sultan_weapon", 0)
+  if tip~=0 then
+     db.actor:give_talk_message("%c[255,216,186,140]"..game.translate_string("sakm.sultan_arts_"..sultan_arts[tip]),"ui\\ui_iconsTotal",Frect():set(0,0,0,0),"simple_answer_item")
+  end
+end
+function sultan_weapon(tip)
+  -- local x = weapons_icons[tip][1]
+  -- local y = weapons_icons[tip][2]
+  db.actor:give_talk_message("%c[255,216,186,140]"..game.translate_string(amk.get_inv_name(sultan_weapons[tip][1])), "ui\\ui_iconsTotal",Frect():set(0,0,0,0),"simple_answer_center")
+  -- db.actor:give_talk_message("", "ui\\ui_unique_weapon",Frect():set(x,y,350,150),"iconed_weapon_item")
+  local icon = dsh.get_talk_item_icon(sultan_weapons[tip][1])
+  db.actor:give_talk_message("",icon[1],icon[2],icon[3])
+  db.actor:give_talk_message("%c[255,216,186,140]"..game.translate_string(get_inv_name_dial_desc(sultan_weapons[tip][1])), "ui\\ui_iconsTotal",Frect():set(0,0,0,0),"simple_answer_item")
+end
+function save_sultan_weapon(tip)
+  set_value("sultan_weapon", tip)
+end
+function get_inv_name_dial_desc(section)
+  local calibr, addons = {}, {}
+  for k, v in ipairs(string.explode(",", get_string(section, "ammo_class", ""), true)) do
+    table.insert(calibr, game.translate_string(amk.get_inv_name(v)))
+  end
+  if get_u32(section, "scope_status", 0) == 2 then
+    for k, v in ipairs(
+      string.explode(",", get_string(section, "scope_names", get_string(section, "scope_name", "")), true)
+    ) do
+      table.insert(addons, game.translate_string(amk.get_inv_name(v)))
+    end
+  elseif get_u32(section, "scope_status", 0) == 1 then
+    local text = game.translate_string("ui_inv_integrated_sight")
+    local s = get_float(section, "scope_lense_fov_factor", get_float(section, "scope_zoom_factor", 0))
+    s = device().fov / (s * 0.75)
+    if s > 1 then
+      text = string.format("%s x%.1f-%s", game.translate_string("ui_inv_integrated"), s, game.translate_string("ui_inv_multiple_sight"))
+    end
+    table.insert(addons, text)
+  end
+  if get_u32(section, "silencer_status", 0) == 2 then
+    table.insert(addons, game.translate_string(amk.get_inv_name(get_string(section, "silencer_name", ""))))
+  elseif get_u32(section, "silencer_status", 0) == 1 then
+    table.insert(addons, game.translate_string("ui_inv_integrated_silencer"))
+  end
+  if get_u32(section, "grenade_launcher_status", 0) == 2 then
+    table.insert(addons, game.translate_string(amk.get_inv_name(get_string(section, "grenade_launcher_name", ""))))
+  elseif get_u32(section, "grenade_launcher_status", 0) == 1 then
+    table.insert(addons, game.translate_string("ui_inv_integrated_grenade_launcher"))
+  end
+  if #addons == 0 then
+    table.insert(addons, "---")
+  end
+  return game.translate_string(get_string(section, "description", ""))..
+    "\\n"..game.translate_string("Ammo")..": "..table.concat(calibr, ", ")..
+    "\\n"..game.translate_string("ui_inv_sheds")..": "..table.concat(addons, ", ").."\\n"
+  --  if system_ini():line_exist(section, "dialog_description") then
+  --   return system_ini():r_string(section,"dialog_description")
+  --  else
+  --     return sprintf("#ERROR: not assigned %s.dialog_description", section)
+  --  end
+end
+
+function need_sultan_weapon_art_1()
+  local tip=get_value("sultan_weapon", 0)
+  if tip==2 or tip==3 or tip==4 or tip==5 or tip==9 or tip==10 or tip==13  then return true end
+end
+function need_sultan_weapon_art_2()
+  local tip=get_value("sultan_weapon", 0)
+  if tip==2 or tip==3 or tip==4 or tip==5 or tip==6 or tip==8 or tip==9 or tip==10 or tip==11 or tip==13 or tip==14 or tip==17  then return true end
+end
+function need_sultan_weapon_art_3()
+  local tip=get_value("sultan_weapon", 0)
+  if tip~=12 and tip~=15 and tip~=16 and tip~=0 then return true end
+end
+function need_sultan_weapon_art_4()
+  local tip=get_value("sultan_weapon", 0)
+  if tip~=0 then return true end
+end
+function load_sultan_weapon_treasure()
+	local tip=get_value("sultan_weapon", 0)
+	local rand_treasure = dsh.get_next_random( "sultan_weapon_treasure", 1, 3 )
+	local npc=db.actor
+	local obj = alife():story_object(sultan_treasure[rand_treasure*2-1])
+	if tip~=0 and obj then
+		for k,v in pairs(sultan_weapons[tip]) do
+			misc.spawn_to(v, obj)
+		end 
+    level.map_add_object_spot_ser(obj.id,"crlc_big_treasure0","?")
+		npc:give_talk_message("%c[255,216,186,140]"..game.translate_string("sakm.sultan_treasure_"..sultan_treasure[rand_treasure*2]),"ui\\ui_iconsTotal",Frect():set(0,0,0,0),"simple_answer_item")
+		npc:give_info_portion("way_sultan_treasure_"..rand_treasure)
+		remove_value("sultan_weapon")
+		npc:disable_info_portion("sultan_weapon_starting")
+	end
+end
+--[[Покер с игральными костями
+
+Для этой игры необходимо иметь пять покерных игральных костей. 
+Цель игры: составить наиболее выгодную покерную комбинацию из пяти игральных костей.
+Количество игроков может быть любым, но лучше всего, если число играющих не будет превышать пяти.
+Каждый игрок кидает одну игральную кость, чтобы определить очередность ходов. Начинает тот у кого выпала старшая карта(Например, если выпадает Туз, то игрок у которого он выпал начинает игру)
+Каждый игрок кидает все пять игральных костей, после чего он может заявить, что доволен результатами или перекинуть любое количество костей(от одной до пяти). После второго броска у него снова есть выбор - принять полученную комбинацию или снова перекинуть кости, причем он не имеет права трогать те кости, которые остались нетронутыми после первого сбрасывания. Таким образом, у каждого игрока есть три попытки собрать наиболее выгодную комбинацию. После третьего сбрасывания вне зависимости от результата ход переходит к игроку сидящему слева. В конце круга, когда все игроки сделали свои ходы, выигрывает тот у кого окажется высшая комбинация.
+Возможны следующие комбинации(в порядке убывания):
+1. Покер - пять костей одного вида(например, пять Королей или пять Девяток)
+2. Каре - четыре кости одного вида(например, четыре Десятки)
+3. Фулл хаус - три кости одного вида + пара(например, три Дамы и два Валета)
+4. Тройка - три кости одного вида(например, три Туза)
+5. Две пары - две кости одного вида и две кости другого вида(например, две Девятки и две Десятки)
+6. Пара - две кости одного вида(например, два Короля)
+7. Наивысшее очко - в случае, если ни у кого не выпало покерной комбинации выигрывает игрок с наивысшей суммой очков среди пяти несовмещающихся в комбинацию баллов, выпавших на игральных костях.
+Если комбинации двух игроков одинаковы(например, у двух игроков по Каре), то выигрывает тот у кого выше очки, выпавшие на костях(например, если у одного игрока Каре Десяток, а у второго Каре Дам, то выиграл второй). Если у игроков одинаковые комбинации, то они разыгрывают партию друг с другом.
+Ставки делаются перед каждой игрой. Выигравшему достается весь банк.
+
+Другой вариант игры: правила те же, только выигрывает игрок с худшей комбинацией.]]

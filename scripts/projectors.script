@@ -1,0 +1,67 @@
+tbl_levels = {
+    [ "l01_escape"		] = true,
+    [ "l03_agroprom"	] = true,
+    [ "l05_bar"			] = true,
+    [ "l07_military"	] = true,
+    [ "l08_yantar"		] = true,
+    [ "marsh"			] = true
+}
+
+function attach( sm )
+	sm:subscribe({ signal = "on_first_update",  	fun = this.on_first_update 	})
+	sm:subscribe({ signal = "on_info",  			fun = this.on_info 			})	
+end
+
+function on_first_update()
+	if tbl_levels[ level.name() ] then		
+		if level.get_time_hours() >= 6 and level.get_time_hours() < 21 then 	
+			this.turn_lamps( level.name(), "off" )
+		end
+	end	
+end
+
+function on_info( npc, info_id )
+	if info_id == "time_night" then			
+		if tbl_levels[ level.name() ] then
+			this.turn_lamps( level.name(), "on" )		
+		end
+	end
+	-----
+	if info_id == "time_morning" then		
+		if tbl_levels[ level.name() ] then
+			this.turn_lamps( level.name(), "off" )		
+		end
+ 	end	
+end
+
+function turn_lamps( lname, type )
+	local projectors_lvl = {
+		[ "l01_escape"		] = { 6, 10001 },
+		[ "l03_agroprom"	] = {  6, 10008 },
+		[ "l05_bar"			] = { 12, 10015 },
+		[ "l07_military"	] = { 14, 10028 },
+		[ "l08_yantar"		] = { 16, 10043 },
+		[ "marsh"			] = {  3, 10060 }
+	}	
+	local lamp_sid
+	for a = 0, projectors_lvl[ lname ][ 1 ] do 
+		lamp_sid = projectors_lvl[ lname ][ 2 ] + a	
+		if type == "on"  then turn_on_lamp( lamp_sid )  end
+		if type == "off" then turn_off_lamp( lamp_sid ) end	
+	end
+	-- if lname == "l08_yantar" then 
+		-- for i=10064,10068 do
+			-- turn_on_lamp(i)
+		-- end
+	-- end
+end
+
+function turn_off_lamp( l_sid )
+    local obj = level_object_by_sid( l_sid )
+    if obj then obj:get_hanging_lamp():turn_off() end
+end
+
+function turn_on_lamp( l_sid )
+    local obj = level_object_by_sid( l_sid )
+    if obj then obj:get_hanging_lamp():turn_on() end
+end

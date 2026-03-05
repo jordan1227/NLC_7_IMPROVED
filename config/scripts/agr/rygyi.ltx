@@ -1,0 +1,42 @@
+[logic]
+active = walker
+on_death = death
+
+[walker]
+path_walk = rygyi_walk
+path_look = rygyi_look
+wounded = wounded@rygyi
+meet = meet@rygyi
+danger = danger_condition
+on_info = {+agr_find_rygyi_done} remark@free
+
+[remark@free]
+show_spot = false 
+
+[wounded@rygyi]
+hp_state = 30|help_me@help|29|wounded_heavy@help_heavy
+hp_state_see = 30|wounded@help_see|29|wounded_heavy@help_heavy
+hp_victim = 30|nil|10|nil
+hp_cover = 30|true|29|false
+hp_fight = 30|true|29|false
+syndata = wounded@help
+help_dialog = rygyi_hello_dialog
+
+[meet@rygyi]
+meet_state = 5 | sit_ass
+meet_state_wpn = 5 | hide
+victim = 5 | actor
+victim_wpn = 5 | actor
+meet_dialog = rygyi_hello_dialog
+use	= true
+use_wpn	= true
+abuse = false
+
+[danger_condition]
+ignore_distance_corpse = 0
+ignore_distance_sound = 0
+ignore_distance = 2
+
+
+[death]
+on_info = %+rygyi_umer%

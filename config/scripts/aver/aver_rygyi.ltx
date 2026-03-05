@@ -1,0 +1,21 @@
+[logic]
+active = walker
+on_death = death
+
+[walker]
+path_walk = aver_rygyi_walk
+path_look = aver_rygyi_look
+meet = meet@rygyi
+
+[meet@rygyi]
+meet_state = 1 | sit_ass
+meet_dialog = rygyi_aver_dialog
+use	= true
+use_wpn	= true
+abuse = false
+
+[danger_condition]
+ignore_distance = 0
+
+[death]
+on_info = %+rygyi_aver_umer%

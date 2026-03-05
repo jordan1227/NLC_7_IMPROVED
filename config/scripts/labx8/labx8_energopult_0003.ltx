@@ -1,0 +1,13 @@
+[logic]
+active = ph_idle@idle
+
+[ph_idle@idle]
+on_info = {+docent_x10docs_done_info} ph_idle@idle1
+
+[ph_idle@idle1]
+tips = labx8_pribor3
+on_info = {+labx8_pribor3_on} nil
+on_use = {=actor_has_module()} %=sak.labx8_pribor_on()%  ph_idle@idle2, ph_idle@idle %=sak.info_no_module()%
+
+[ph_idle@idle2]
+on_timer = 5500| %=sak.labx8_pribor3_yes()% nil

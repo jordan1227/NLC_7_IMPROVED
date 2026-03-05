@@ -1,0 +1,33 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker
+danger = danger_condition
+combat_ignore = combat_ignore
+meet = meet
+
+[walker]
+path_walk = bun_camper22_w
+path_look = bun_camper22_w
+meet = meet
+danger = danger_condition
+combat_ignore_cond = {-x12_mercs_fire =fighting_actor}
+
+[meet]
+use	= true
+use_wpn	= true
+meet_state = 15|guard
+meet_state_wpn = 15|guard
+victim = 15|actor
+victim_wpn = 15|actor
+meet_dialog	= mercs_gun_2_dialog
+abuse = false
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_hit = 0
+ignore_distance_sound = 0
+
+[combat_ignore]
+combat_ignore_cond = {-x12_mercs_fire =fighting_actor}

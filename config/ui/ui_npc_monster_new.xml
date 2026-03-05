@@ -1,0 +1,33 @@
+<ui_texture>
+    <file_name>ui\ui_npc_monster_new</file_name>
+
+	<texture id="ui_monster_dog_white_1" x="0" y="0" width="306" height="200" />
+	<texture id="ui_monster_dog_brown" x="306" y="0" width="306" height="200" />
+	<texture id="ui_monster_dog_white_2" x="612" y="0" width="306" height="200" />
+	<texture id="ui_monster_dog_red" x="918" y="0" width="306" height="200" />
+	<texture id="ui_monster_flesh_weak" x="1224" y="0" width="306" height="200" />
+	<texture id="ui_monster_flesh_normal" x="1530" y="0" width="306" height="200" />
+	<texture id="ui_monster_flesh_strong" x="0" y="200" width="306" height="200" />
+	<texture id="ui_monster_pseudodog_brown" x="306" y="200" width="306" height="200" />
+	<texture id="ui_monster_pseudodog_grey" x="612" y="200" width="306" height="200" />
+	<texture id="ui_monster_boar_weak" x="918" y="200" width="306" height="200" />
+	<texture id="ui_monster_boar_normal" x="1224" y="200" width="306" height="200" />
+	<texture id="ui_monster_boar_strong" x="1530" y="200" width="306" height="200" />
+	<texture id="ui_monster_snork_weak" x="0" y="400" width="306" height="200" />
+	<texture id="ui_monster_snork_normal" x="306" y="400" width="306" height="200" />
+	<texture id="ui_monster_snork_strong" x="612" y="400" width="306" height="200" />
+	<texture id="ui_monster_bloodsucker_weak" x="918" y="400" width="306" height="200" />
+	<texture id="ui_monster_bloodsucker_normal" x="1224" y="400" width="306" height="200" />
+	<texture id="ui_monster_bloodsucker_strong" x="1530" y="400" width="306" height="200" />
+	<texture id="ui_monster_cat_weak" x="0" y="600" width="306" height="200" />
+	<texture id="ui_monster_cat_normal" x="306" y="600" width="306" height="200" />
+	<texture id="ui_monster_cat_strong" x="612" y="600" width="306" height="200" />
+	<texture id="ui_monster_zombie_1" x="918" y="600" width="306" height="200" />
+	<texture id="ui_monster_zombie_2" x="1224" y="600" width="306" height="200" />
+	<texture id="ui_monster_zombie_scientist" x="1530" y="600" width="306" height="200" />
+	<texture id="ui_monster_chimera_weak" x="0" y="1200" width="306" height="200" />
+	<texture id="ui_monster_electro_chimera" x="306" y="1200" width="306" height="200" />
+	<texture id="ui_monster_chimera_normal" x="612" y="1200" width="306" height="200" />
+	<texture id="ui_monster_chimera_strong" x="918" y="1200" width="306" height="200" />
+   
+</ui_texture>

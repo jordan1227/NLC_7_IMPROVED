@@ -1,0 +1,300 @@
+-- fix_manager v. 1.2
+-- Как пользоваться:
+-- Названия выполняемых функций должны быть внесены в таблицу fixes_pack или fixes_pack_all (функции run_fixes) в ковычках, через запятую: "script_name.fix_name", "other_script_name.othter_fix_name", ...
+-- Функции, выполненные из таблицы fixes_pack, сохраняются и повторно не вызываются, в отличии от ф-ий из fixes_pack_all, которые отрабатывают при каждой (пере)загрузке.
+-- Для очистки сохранённого списка вызовов следует выполнить run_fixes с аргументом true, т.е. run_fixes(true).
+
+function fix_mgr()
+	run_fixes()
+	fix_physic_objects()
+	fix_npc_pos()
+end
+
+function run_fixes(clear)  
+	local fixes_pack = {
+		"s_fixes.mil_no_weapon_zone_rel",
+		"s_fixes.del_bar_lamp",
+		"s_fixes.del_bar_sakbuzz"
+	}
+	
+	local fixes_pack_all = {
+	
+	}
+	
+	if clear then
+		log2("[ s_fixes ]: clearing saved vars")
+		local t = {}
+		set_value("fixes_done_tbl", t)
+	end
+
+	if #fixes_pack == 0 and #fixes_pack_all == 0 then 
+		log2("[ s_fixes ]: fixes_pack is empty")
+		return
+	end
+	
+	if #fixes_pack_all > 0 then
+		for _,fix_name in ipairs(fixes_pack_all) do
+			log2("[ s_fixes ]: trying to apply fix = %s from [fixes_pack_all]", fix_name)
+			loadstring(fix_name.."()")()
+		end
+	end
+	
+	if #fixes_pack > 0 then
+		local fixes_done_tbl = get_value("fixes_done_tbl", {}) --- таблица для хранения названий всех фиксов
+		local fix_tbl = {}
+		for _, fix_name in pairs(fixes_pack) do
+			if str_in_tab (fix_name,fixes_done_tbl) then
+				log2("[ s_fixes ]: fix_name = %s has already been executed earlier --> ignoring", fix_name)
+			else
+				log2("[ s_fixes ]: trying to apply fix = %s", fix_name)
+				loadstring(fix_name.."()")()
+			end	
+			table.insert(fix_tbl, fix_name)
+		end
+		set_value("fixes_done_tbl", fix_tbl)
+	end
+end
+
+function new_game_spawn()
+	log2("~~[%s.new_game_spawn]: done!", script_name())
+
+	-- Manool: для IWP
+	cmd("hud_fov", "0.7")
+
+	red_forest_eco_restr()
+	red_forest_kill_restr()
+	x18_kill_restr()
+	spawn_agro_blocks()
+	sanek_trade_res()
+	x18_botan_book_spawn()
+	ros_kill_restr()
+	rad_greedys()
+	bar_tp()
+	-- bar_rad()
+	mil_aver_lc_debris_spawn()
+	garb_lv_rad()
+	dsh.get_next_random("pda_drop_chance", 1, 1000)
+	dsh.get_next_random("pda_status_rnd", 1, 10)
+	dsh.get_next_random("pda_treas_rnd", 1, 100)
+	dsh.get_next_random("sultan_weapon_treasure", 1, 3)
+	dsh.get_next_random("generate_mutant_table", 1, 3)
+	dsh.get_next_random("generate_mutant_request", 1, 5)
+	dsh.get_next_random("generate_mutant_reward", 1, 5)
+	amk.spawn_item("sleeping_pill",sak.v3f(-213.0025,-22.5375652313232,-126.3443),59,41279)
+end
+
+-- Фиксирование костей физ. объектов, смена позиции, если они не должны перемещаться
+function fix_physic_objects()
+	local pt = profile_timer()
+	pt:start()
+
+	local ph_objects = {
+		-- {"bar_kletka_0001", "bone01", 161.990005493164, 0.100000001490116, 82.0299987792969, 42125, 1211} -- машина в баре на проходе к Лисапеду // Sn: этот объект теперь статик
+	}
+
+	for _, v in ipairs(ph_objects) do
+		local sobj = server_obj(v[1])
+		if sobj then
+			local pk = get_netpk(sobj, 1)
+			local data = pk:get()
+			data.fixed_bones = v[2]
+			pk:set(data)
+			sobj:used_ai_locations(false)
+
+			-- Manool: эти свойства доступны для записи
+			-- Всё-таки позиция обновляется после свитча оффлайн-онлайн,
+			-- если свойства перезаписать ПОСЛЕ перезаписи нетпакета
+			sobj.position = vector():set(v[3], v[4], v[5])
+			sobj.m_level_vertex_id = v[6]
+			sobj.m_game_vertex_id = v[7]
+
+			local ini = sobj:spawn_ini()
+			ini.readonly = false
+			ini:w_bool("collide", "ignore_static", true) -- игнорирование статики (если у какого-нибудь объекта его нет)
+			sobj:save_spawn_ini()
+		end
+	end
+	pt:stop()
+	log2("[%s.fix_physic_objects]: Time: %.2fms (%s)", script_name(), pt:time() / 1000, pt:time())
+end
+
+function fix_npc_pos()
+	local level_npc = {
+		["l01_escape"] = {
+			{"esc_vergas", -219.050003051758,-19.8999996185303,-168.899993896484, 34087, 47},
+		},
+		["l05_bar"] = {
+			{"bar_lisaped", 164.899993896484, 0.25, 108.449996948242, 43119, 1187},
+		},
+		["l04_darkvalley"] = {
+			{"val_bandit_trader", 28.7099990844727,4.53999996185303,-85.3899993896484, 209382, 1099},
+		},
+	}
+	local npct = level_npc[level.name()]
+	if not npct then return end
+	for _, par in pairs(npct) do
+		local sobj = alife():object(par[1])
+		local targ_pos = vector():set(par[2], par[3], par[4])
+		if sobj and sobj.level_name == level.name() then
+			-- log2("[%s.fix_npc_pos]: [%s] has wrong pos: {%s, %s, %s} %s, %s",
+			-- 	script_name(), sobj:name(), sobj.position.x, sobj.position.y, sobj.position.z, sobj.m_level_vertex_id, sobj.m_game_vertex_id
+			-- )
+			alife():teleport_object(sobj.id, targ_pos, par[5], par[6])
+		end
+	end
+end
+
+function mil_aver_lc_debris_spawn()
+	local obj = amk.spawn_item("physic_object",sak.v3f(-31.4152,-7.9518,-56.8445),1592,276525)
+	if obj then
+		local pk = get_netpk(obj,1)
+		local data = pk:get()
+		data.visual_name = "new_item\\stena_yantar"
+		data.physic_type=3
+		data.fixed_bones="link"
+		data.mass=250
+		data.custom_data = "[collide]\nignore_static"
+		pk:set(data)
+		set_value("mil_aver_lc_debris",obj.id)
+	end
+end
+
+function spawn_agro_blocks()
+	local blocks = g_sim:create("physic_object",vector():set(-130.0938,0.3198,-139.0064),4,810)
+	local pk, data
+	if blocks then
+		pk = get_netpk(blocks,1)
+		data = pk:get()
+		data.visual_name="physics\\prop_3bloks"
+		data.mass=300
+		data.fixed_bones = "bone01","bone02","bone03","bone04","bone05"
+		pk:set(data)
+	end
+end
+
+function red_forest_eco_restr()
+	local res = g_sim:create("space_restrictor",vector():set(-152.3122,2.2915,-28.1060),6298,3240)
+    local custom = "[logic]\nactive = sr_idle@idle\n[sr_idle@idle]\non_info = {+info_saharov_scientist_rf_start} sr_idle@work\n[sr_idle@work]\non_actor_inside = nil %+scientist_red_forest_dead =doc.red_corpses()%"
+	kotovod_restrictors.rewrite_restrictor(res, custom, 10.0)
+end
+
+function red_forest_kill_restr()
+	local res = g_sim:create("space_restrictor",vector():set(-135.3259,0.2873,-304.2229),6830,3239)
+    local custom = "[logic]\nactive = sr_idle@work\n[sr_idle@work]\non_actor_inside = %=sak.red_kill_zone()%"
+	kotovod_restrictors.rewrite_restrictor(res, custom, 15.0)
+end
+
+function x18_kill_restr()
+	local res = g_sim:create("space_restrictor",vector():set(40.1262,-6.3599,-27.6872),7403,1142)
+    local custom = "[logic]\nactive = sr_idle@work\n[sr_idle@work]\non_info = {+yan_labx16_switcher_primary_off} nil\non_actor_inside = %=sak.x18_kill_zone()%"
+	kotovod_restrictors.rewrite_restrictor(res, custom, 10.0)
+	set_value("x18_kill_restr", res.id)
+end
+
+function ros_kill_restr()
+	local res = g_sim:create("space_restrictor",vector():set(-186.4515,5.7944,103.6908),29751,1324)
+    local custom = "[logic]\nactive = sr_idle@work\n[sr_idle@work]\non_actor_inside = %=sak.ros_kill_zone()%"
+	kotovod_restrictors.rewrite_restrictor(res, custom, 6.0)
+	
+	res = g_sim:create("space_restrictor",vector():set(47.4888,-0.2157,140.1440),67708,1308)
+    custom = "[logic]\nactive = sr_idle@work\n[sr_idle@work]\non_actor_inside = %=sak.ros_kill_zone2()%"
+	kotovod_restrictors.rewrite_restrictor(res, custom, 6.0)
+end
+
+function rad_greedys()
+	local shape={shtype=0,radius=6.0,center={0,0.5,0}}
+	amk_anoms.spawn_anomaly("greedy_zone",sak.v3f(498.4261,-49.7434,22.3555),1920,165835, shape, "static")
+	amk_anoms.spawn_anomaly("greedy_zone",sak.v3f(498.4777,-50.3591,-11.2008),1920,165796, shape, "static")
+	amk_anoms.spawn_anomaly("greedy_zone",sak.v3f(504.044,-50.006,10.531),1920,168238,shape,"static")
+	
+	shape = {shtype=0,radius=2.5,center={0,0.5,0}}
+	amk_anoms.spawn_anomaly("greedy_zone",sak.v3f(506.7563,-50.0328,-2.0918),1901,209938, shape, "static")
+	amk_anoms.spawn_anomaly("amk_zone_mosquito_bald_strong",sak.v3f(-153.8413,0.4049,-314.1360),3239,6006, shape, "static")
+	amk_anoms.spawn_anomaly("amk_zone_mosquito_bald_strong",sak.v3f(-149.8607,0.5639,-309.2581),3239,6751, shape, "static")
+	
+	local res = g_sim:create("space_restrictor",vector():set(-161.71,-0.9,-318.46),5153,3237)
+    local custom = "[logic]\nactive = sr_idle@work\n[sr_idle@work]\non_actor_inside = %=sak.red_kill_zone2()%"
+	kotovod_restrictors.rewrite_restrictor(res, custom, 5.5)
+end
+
+function sanek_trade_res()
+	local res = g_sim:create("space_restrictor",vector():set(1.1799,-6.8299,-28.1200),308719,1585)
+    local custom = "[logic]\nactive = sr_idle\n[sr_idle]\non_actor_inside = %=sak_dialog.out_all_money% sr_idle@near\n[sr_idle@near]\non_actor_outside = %=sak_dialog.in_all_money% sr_idle"
+	kotovod_restrictors.rewrite_restrictor(res, custom, 4.0)
+	
+	res = g_sim:create("space_restrictor",vector():set(109.9199,0.1000,73.1100),33034,1225)
+	kotovod_restrictors.rewrite_restrictor(res, custom, 3.5)
+end
+
+function x18_botan_book_spawn()
+	local t = {"x18_inventory_box", "x18_inventory_box_0002", "x18_inventory_box1"}
+	local r = get_value("r_treas_items", 1)
+	local box = server_obj(t[r])
+	if box then
+		misc.spawn_to("x18_botan_book",box)
+	end
+end
+
+function bar_tp()
+	local res = g_sim:create("space_restrictor",vector():set(62.7021,-0.0013,76.8490),29236,1240)
+	local logic = "[logic]\nactive = sr_teleport\n[sr_teleport]\npoint1 = bar_sak_teleport_0001_exit_walk\nlook1 = bar_sak_teleport_0001_exit_look\ntimeout = 5\nbypass = sak.bar_tp_bypass()"
+	kotovod_restrictors.rewrite_restrictor(res, logic, 21.0)
+	
+	res = g_sim:create("space_restrictor",vector():set(83.3692,-0.0014,115.5599),29686,1221)
+	kotovod_restrictors.rewrite_restrictor(res, logic, 6.0)
+end
+
+function bar_rad()
+	amk_anoms.spawn_anomaly("amk_zone_sakbuzz_strong",{x=234.8296,y=0.3217,z=-77.8983},1269,60017,{shtype=0,radius=1.6,center={0,0.2,0}},"static")
+	amk_anoms.spawn_anomaly("amk_zone_sakbuzz_strong",{x=233.3265,y=0.9132,z=-75.2567},1269,59627,{shtype=0,radius=1,center={0,0.2,0}},"static")
+end
+
+function garb_lv_rad()
+	amk_anoms.spawn_anomaly("zone_radioactive_weak",{x=-293.7174,y=12.4659,z=-214.4214},260,254,{shtype=0,radius=5.0,center={0,0.5,0}},"static")
+end
+
+function mil_no_weapon_zone_rel()
+	local o = server_obj("mil_no_weapon_zone")
+	if o then
+		misc.release_obj(o.id)
+	end
+end
+
+-- Ненужные объекты с арены, которой нет. В основном лампы.
+-- Sn: прибрал в .спавне, удалить с НИ
+function del_bar_lamp()
+	for _, name in ipairs({
+		"bar_inventory_box_2",
+		"bar_lights_white_glass_0014",
+		"bar_lights_white_glass_0020",
+		"bar_lights_white_glass_0021",
+		"bar_lights_white_glass_0026",
+		"light_big_glass_0000",
+		"light_big_glass_0001",
+		"light_big_glass_0002",
+		"light_big_glass_0003",
+		"light_big_glass_0004",
+		"light_big_glass_0005",
+		"light_big_glass_0006",
+		"light_big_glass_0007"
+	}) do
+		misc.release_by_name(name)
+	end
+	log2("[%s.del_bar_lamp]: Done!", script_name())
+end
+
+-- Manool: удалить с НИ
+function del_bar_sakbuzz()
+	local t = {}
+	for id, sobj in alife():objects() do
+		-- Manool: не знаю как ещё определить, что это именно те Кисели. Но больше стат. Киселей там нет
+		if sobj.level_name == "l05_bar" and sobj:section_name() == "amk_zone_sakbuzz_strong" and string.find(sobj.custom_data or "", "static") then
+			t[id] = sobj
+		end
+	end
+	for id, sobj in pairs(t) do
+		log2("[%s.del_bar_sakbuzz]: [%s] removed!", script_name(), sobj:name())
+		anomaly_detector.remove_restriction(nil, id, true)
+		anomaly_detector.remove_restriction(nil, id)
+	end
+end

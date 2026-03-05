@@ -1,0 +1,10 @@
+[logic]
+active = ph_idle@idle
+
+[ph_idle@idle]
+nonscript_usable = false
+on_info = {+sakharov_labx6_note_start_info} ph_idle@enable
+
+[ph_idle@enable]
+nonscript_usable = true
+tips = st_search_treasure

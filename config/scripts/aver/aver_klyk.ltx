@@ -1,0 +1,28 @@
+[logic]
+active = walker
+danger = danger_condition
+
+[walker]
+path_walk = aver_klyk_walk_way
+path_look = aver_klyk_way_look
+meet = meet@aver_klyk_guard
+danger = danger_condition
+show_spot = false
+
+[meet@aver_klyk_guard]
+meet_state = 10|claim|2|sit
+meet_state_wpn = 10|backoff
+victim 			= 5 | actor
+victim_wpn = 5 | actor
+meet_dialog = aver_klyk_start_dialog
+use			= true
+use_wpn		= false
+abuse   = true
+
+[danger_condition]
+ignore_distance = 1
+ignore_types = corpse
+ignore_distance_sound = 3
+danger_inertion_time_sound = 1000
+danger_inertion_time_ricochet = 1000
+ignore_distance_corpse = 3

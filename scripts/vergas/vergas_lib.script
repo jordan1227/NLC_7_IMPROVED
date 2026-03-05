@@ -1,0 +1,509 @@
+--[[
+библиотека функций
+Vergas
+© NLC 6.0
+]]--
+init_xvars()
+
+function attach(sm)
+	sm:subscribe({signal = "on_update", fun = this.update_dyn_hud})
+	sm:subscribe({signal = "on_update", fun = this.update_2})
+end
+
+function s_play(path, vol)
+	-- path - путь на ogg-файл от папки sounds (она корневая), т.е device\pda\medik_2
+	-- vol - уровень громкости. Пределы от 0 до 1
+	local fs = getFS()  
+	if not fs:exist("$game_sounds$", path..".ogg") then
+		log2("#WARN: s_play cannot locate sound file %s", path)
+	end 
+
+	local snd_obj = xr_sound.get_safe_sound_object(path)
+	snd_obj:play_at_pos(db.actor, vector ():set (0, 0, 0), 0, sound_object.s2d)
+	if vol == nil then
+		vol = 1
+	end
+	snd_obj.volume = vol
+	return snd_obj
+end
+
+function spawn_item_in_inv(spawn_item,param,npc) 
+	--spawn_item - имя предмета (например "medkit" - стандартная аптечка)
+	--param - (true - спавн для разгрузки. false - спавн без разгрузки) 
+
+	if npc == nil then 
+		npc = db.actor 
+	end
+	local l_obj = misc.spawn_to(spawn_item, npc)  
+	if param then
+		razgruzka.save_take_obj(l_obj.id)
+	else
+		vergas_rucksack.set_fo_drop_items(l_obj.id)
+	end
+	return l_obj
+end
+
+function spawn_ammo_into (section, total_ammo, param, target)
+	--section - имя патрона
+	--total_ammo - количество патронов
+	--param - (true - спавн для разгрузки. false - спавн без учета разгрузки) 
+	local l_obj
+
+	if (section ~= "?") and section and total_ammo and (total_ammo > 0) then
+		local box_size = get_box_size(section)   
+		local full_count = math.floor(total_ammo / box_size)
+		local full_ammo = full_count * box_size
+		local rest_ammo = total_ammo - full_ammo
+		local spawned = {}
+
+		if full_count > 0 then 
+			spawned = misc.spawn_multi(section, nil, target, full_count)
+		end
+		if rest_ammo > 0 then
+			l_obj = misc.spawn_to(section, target, rest_ammo)
+			table.insert(spawned, l_obj)
+		end   
+
+		for i, sobj in ipairs(spawned) do  
+			if sobj ~= nil then
+				if param then
+					razgruzka.save_take_obj(sobj.id)
+				else
+					vergas_rucksack.set_fo_drop_items(sobj.id)
+				end
+				if bind_greedy.get_flag_greedy() then
+					bind_greedy.set_drop_rykzack(sobj.id)
+				end
+			end
+		end
+	end
+end
+
+function spawn_ammo_in_inv(section, count, param)
+	spawn_ammo_into(section, count, param, client_obj(0)) 
+end
+
+function return_time(param)
+	local y,m,d,h,mint,sec,ms = game.get_game_time():get()
+	if param == 1 then
+		return y
+	elseif param == 2 then
+		return m
+	elseif param == 3 then
+		return d
+	elseif param == 4 then
+		return h
+	elseif param == 5 then
+		return mint
+	elseif param == 6 then
+		return sec
+	elseif param == 7 then
+		return ms
+	end
+	return sec
+end
+
+function str_explode(div,str,clear)
+	--Разбивает инфо-строку на составляющие и выводит в виде таблицы
+	-- div - разделитель
+	-- str - разбираемая строка
+	-- clear ставим равное true
+	local t={}
+	if str and div then
+		local cpt = string.find(str, div, 1, true)
+		if cpt then
+			repeat
+			if clear then
+				table.insert( t, trim(string.sub(str, 1, cpt-1)) )
+			else
+				table.insert( t, string.sub(str, 1, cpt-1) )
+			end
+			str = string.sub( str, cpt+string.len(div) )
+			cpt = string.find(str, div, 1, true)
+			until cpt==nil
+		end
+		if clear then
+			table.insert(t, trim(str))
+		else
+			table.insert(t, str)
+		end  
+		return t
+	end
+end
+
+function trim (s)
+	return (string.gsub(s, "^%s*(.-)%s*$", "%1"))
+end
+
+function StringSplit(sStr, Mode, sDiv, sPattern)
+	--sStr -- cтрока для разбора
+	--Mode -- режим заполнения таблицы
+	--sDiv --сепаратор: если указываем, то обязательно указать режим Mode
+	--sPattern -- свой шаблон:если указываем, то в аргументе sDiv передать nil и обязательно указать режим Mode
+
+	local tRet = {}
+	local sPatt
+	if sDiv and  not sPattern then --// если сепаратор  задан: разделяем по нему
+		--// если нет шаблона - используем универсальный
+		sPatt = '[^%s%'..sDiv..']+'
+		--// если сепаратор указан как nil, но указан  шаблон: используем его
+	elseif not sDiv and  sPattern then 
+		sPatt=sPattern
+	else--/ если сепаратор и шаблон  не указаны: разделяем слова
+		sPatt = '[%w%_]+'
+	end
+	if Mode == nil then --// обычный массив
+		for sValue in sStr:gmatch(sPatt) do
+			table.insert(tRet, sValue)
+		end
+	elseif Mode == true then --// таблица '[значение]=true'
+		for sValue in sStr:gmatch(sPatt) do
+			tRet[sValue] = true
+		end
+	elseif type(Mode) == "number" then --//таблица '[idx] = число или стринг'
+		for sValue in sStr:gmatch(sPatt) do
+			tRet[#tRet+1] = tonumber(sValue) or sValue
+		end
+	end
+	return tRet
+end
+
+function get_ammo_size(obj)
+	local size=1
+	if obj.get_ammo then -- если клиентский объект  
+		local ammo = obj:get_ammo() 
+		if ammo then
+			return ammo.current
+		else
+			log2("#ERROR(get_ammo_size): used for non-ammo object %s from %s", obj:name(), lua_traceback(' '))
+			return 1    
+		end
+	end
+
+	if obj then
+		local pk = get_netpk(obj,1)
+		if pk then
+			local data = pk:get()
+			size = data.ammo_left
+		end
+	end
+	return size
+end
+
+function get_box_size(section)
+	local ltx = system_ini()
+	local box_size = ltx:r_float(section,"box_size")
+	if box_size == nil then
+		box_size = 0
+	end
+	return box_size
+end
+
+function set_pr_from_config(section,pr)
+	local ltx = system_ini()
+	local pr_s
+	if ltx:line_exist(section,pr) then
+		pr_s = ltx:r_float(section,pr)
+	else
+		pr_s = 0
+	end
+	return pr_s
+end
+
+function set_pr_from_config_str(section,pr)
+	local ltx = system_ini()
+	local pr_s
+	if ltx:line_exist(section,pr) then
+		pr_s = ltx:r_string(section,pr)
+	else
+		pr_s = "?"
+	end
+	return pr_s
+end
+
+local verg_use = {
+	notebook_of_artist  = used_items.used_notebook_of_artist,
+	device_pda_npc      = used_items.used_pda_npc,
+	repair_boxoutfit    = used_items.used_repair_boxoutfit,
+	arts_notebook		= ui_notebook_arts.notebook_arts_screen,
+	arc_art_box_1basic  = arc_containers.show_dialog,
+	arc_art_box_basic   = arc_containers.show_dialog,
+	arc_art_box_8basic  = arc_containers.show_dialog,
+	suhpay				= sak.suhpay_cond,
+	borov_freq_scanner	= sak.freq_scanner_handle,
+}
+
+-- alpet: сколько восстанавливать порций, при использовании 
+local use_rest_portions = {
+	arc_art_box_1basic = 1,
+	arc_art_box_basic  = 1,
+	arc_art_box_8basic = 1,
+	arts_notebook	   = 1,
+	borov_freq_scanner = 1,
+	mask_repair_kit    = 1,
+}
+
+function used_item(obj)
+	local sect=obj:section()
+	local func = verg_use[sect]
+	-- alpet: если восстановить число порций "съедобного" предмета, его не потребуется заново респавнить!
+	local p = use_rest_portions[sect]
+	if obj and p then
+		local eat = obj:get_eatable_item()     
+		if eat then
+			wprintf("[~T]. #DBG(used_item):~C0A %s~C07 portions now =~C0D %d~C07, restoring to~C0D %d~C07", obj:name(), eat.eat_portions_num, p)
+			eat.eat_portions_num = p  
+		end
+	end
+	
+	if sect == 'mask_repair_kit' then
+		mask_repair_handle_start(obj)
+		return
+	end
+	
+	if func then
+		local id = obj:id()
+		wprintf("[~T]. #DBG: used_item activating function~C0F %s~C07 for ~C0D %d~C07 ", DumpVar(func), id) 
+		func(id) -- улучшает трассировку стека
+	end
+end
+
+vergas_lib.used_item = used_item
+
+function mask_repair_handle_start(obj)
+	local dbg = false
+	sak.close_window()
+	local armor = db.actor:item_in_slot(6)
+	if not armor then
+		sak.send_tip(game.translate_string("mask_repair_1"),game.translate_string("thinking_out_loud"),1,10,"g_g","sak","red")
+		return
+	end
+	if not sak.have_items_count("repair_boxoutfit",1) then
+		sak.send_tip(game.translate_string("mask_repair_2"),game.translate_string("thinking_out_loud"),1,10,"g_g","sak","red")
+		return
+	end
+	local mask, _ = vergas_masks.mask_definition()
+	if mask == "?" then
+		sak.send_tip(game.translate_string("mask_repair_3"),game.translate_string("thinking_out_loud"),1,10,"g_g","sak","red")
+		return
+	end
+	local sobj = server_obj(obj:id())
+	local ini = sobj and sobj:spawn_ini()
+	local masks_t = { ["hud_gas"] = true, ["hud_sci"] = true, ["hud_mer"] = true, ["hud_exo"] = true, ["hud_mil"] = true }
+	local portions = 5
+
+	if not ini:section_exist("mask_kit") then
+		ini.readonly = false
+		for k,v in pairs(masks_t) do
+			ini:w_bool("mask_kit", tostring(k), v)
+		end
+		sobj:save_spawn_ini()
+		if dbg then
+			log2("[mask_repair_handle_start]: setting default params for [%s]", obj:name())
+		end
+	else
+		for k,v in pairs(masks_t) do
+			local val = ini:r_bool("mask_kit", tostring(k), false)
+			if val == false then
+				portions = portions - 1
+			end
+			masks_t[k] = val
+		end
+		if dbg then
+			log2("[mask_repair_handle_start]: checking portions [%d]", portions)
+		end
+	end
+	if dbg then
+		for k,v in pairs(masks_t) do
+			log2("[mask_repair_handle_start]: checking masks_t k [%s] v [%s]",tostring(k),tostring(v))
+		end
+	end
+
+	mask = string.sub(mask,1,7)
+	if masks_t[mask] ~= nil and masks_t[mask] == true then
+		local add_delay = false
+		if vergas_masks.allcore_mask_is_on() then
+			vergas_masks.on_off_mask()
+			add_delay = true
+		end
+		portions = portions - 1
+		local destroy_id = -1
+		if portions < 1 then
+			destroy_id = obj:id()
+		end
+		ini = sobj:spawn_ini()
+		ini.readonly = false
+		ini:w_bool("mask_kit", mask, false)
+		sobj:save_spawn_ini()
+		local delay = 300
+		if add_delay then
+			delay = 3500
+		end
+		schedule.add("mask_repair_process", "vergas_lib.mask_repair_handle_process("..destroy_id..")", delay)
+	else
+		sak.send_tip(game.translate_string("mask_repair_4"),game.translate_string("thinking_out_loud"),1,10,"g_g","sak","red")
+	end
+end
+
+function mask_repair_handle_process(destroy_id)
+	sak.actor_hide_weapon()
+	if destroy_id then 
+		destroy_id = tonumber(destroy_id)
+	end
+	if destroy_id ~= -1 then
+		misc.release_obj(destroy_id)
+	end
+	local snd_obj = xr_sound.get_safe_sound_object("device\\tiski_bronik_"..lua_random(1,3))
+	snd_obj:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+	schedule.add("mask_repair_end", "vergas_lib.mask_repair_handle_end()", 15500)
+end
+
+function mask_repair_handle_end()
+	local armor = db.actor:item_in_slot(6)
+	if armor then
+		vergas_masks.set_mask_condition(armor:id(), 100, true)
+		sak.send_tip(game.translate_string("mask_repair_5"),game.translate_string("thinking_out_loud"),2,10,"g_g","sak","green")
+	end
+	sak.restore_weap()
+end
+
+function mask_repair_kit_ui(id)
+	local desc = ""
+	local sobj = server_obj(id)
+	if sobj == nil then
+		return desc
+	end
+	local ini = sobj and sobj:spawn_ini()
+	desc = "\\n"..game.translate_string("mask_repair_kit_ui_1")..":\\n"
+	local masks_t = { {"hud_gas", game.translate_string("mask_repair_kit_ui_2")}, {"hud_mil", game.translate_string("mask_repair_kit_ui_3")},
+    {"hud_sci", game.translate_string("mask_repair_kit_ui_4")},
+		{"hud_mer", game.translate_string("mask_repair_kit_ui_5")}, {"hud_exo", game.translate_string("mask_repair_kit_ui_6")} }
+	if not ini:section_exist("mask_kit") then
+		ini.readonly = false
+		for _,v in ipairs(masks_t) do
+			ini:w_bool("mask_kit", v[1], true)
+			desc = desc .. v[2] .. " - %c[green]1 "..game.translate_string("st_count").."\\n%c[default]"
+		end
+		sobj:save_spawn_ini()
+	else
+		for _,v in ipairs(masks_t) do
+			local val = ini:r_bool("mask_kit", v[1], false)
+			if val then
+				desc = desc .. v[2] .. "%c[green]1 "..game.translate_string("st_count").."\\n%c[default]"
+			else
+				desc = desc .. v[2] .. "%c[red]0 "..game.translate_string("st_count").."\\n%c[default]"
+			end
+		end
+		
+	end
+	return desc
+end
+
+function update_2()
+	ogse_signals.get_mgr():reschedule(141)
+	vergas_art.take_art_update()
+	sleeping_bag.remove_sleep_zone()
+	bind_greedy.actor_update()
+	bind_mteleport.actor_update()
+	amk.on_actor_update_2()
+	vergas_pda.set_pda_info()
+end
+
+function drop_item(obj)
+	bind_greedy.drop_item(obj)
+	return razgruzka.drop_item_from_inventory(obj)
+end
+
+function update_dyn_hud()
+	ogse_signals.get_mgr():reschedule(43)
+	vergas_masks.update_blurs()
+end
+
+function game_load()
+	i_hide = false
+	cmd("unbind", "inventory")
+	cmd("unbind_sec", "inventory")
+	vergas_medical_elastic.load()
+	inv_buttons_use.set_flag_equipment(false)
+	news_main.load()
+end
+
+function game_save()
+	vergas_medical_elastic.save()
+	vergas_masks.save_mask_on_off()
+	news_main.save()
+end
+
+flag_inventory=true
+function flag_inventory_on()
+	flag_inventory=true
+end
+
+function inventory_info(i_info)
+	if i_info =="ui_inventory" or i_info == "ui_car_body" or i_info == "ui_trade" then 
+		flag_inventory=false
+		schedule.add ("flag_inventory","vergas_lib.flag_inventory_on()",300)
+		
+		if i_info == "ui_car_body" or i_info == "ui_trade" then
+			used_items.set_get_flag_use_gadget(1,false)
+			inv_buttons_use.set_rucksack_mode(4)  
+			razgruzka.inventory_on_off(true,true)
+		end
+    
+		if i_info =="ui_inventory" then
+			if not inv_buttons_use.get_flag_equipment() then
+				used_items.set_get_flag_use_gadget(1,false)
+				inv_buttons_use.set_rucksack_mode(4)  
+				razgruzka.inventory_on_off(true,true)
+			else
+				razgruzka.set_inv_on_off(true)
+			end
+		end
+		
+	elseif i_info =="ui_inventory_hide" or i_info == "ui_car_body_hide" or i_info == "ui_trade_hide" then
+		flag_inventory=false
+		schedule.add ("flag_inventory","vergas_lib.flag_inventory_on()",300)
+		used_items.set_get_flag_use_gadget(1,true)
+		inv_buttons_use.transfer_superfluous_in_inventory()
+		razgruzka.inventory_on_off(false)
+		inv_buttons_use.set_flag_equipment(false)
+	end
+end
+
+function search_items(section,count,mode,tips)
+	if razgruzka.object_stock_taking(section,count,tips) then  
+		if mode == 1 then
+			return true     
+		elseif mode == 2  then
+			return sak_inventory.release_actor_items(section, count, tips)
+		end   
+	end
+	return false
+end
+
+function ammo_for_slot(wpn)
+	local tmp_inf
+	if wpn == nil then
+		for i = 1, 3 do
+			table.insert(tmp_inf, "?")
+		end
+	else
+		tmp_inf = vergas_lib.str_explode(",",set_pr_from_config_str(wpn,"ammo_class"),true)
+		if table.getn(tmp_inf) == 1 then
+			table.insert(tmp_inf, "?")
+			table.insert(tmp_inf, "?")
+		elseif table.getn(tmp_inf) == 2 then
+			table.insert(tmp_inf, "?")
+		end
+	end
+	return tmp_inf
+end
+
+function register_change(str,mode)
+	if mode == 1 then
+		str = str:lower()       
+	else 
+		str = str:upper()
+	end  
+	return str
+end

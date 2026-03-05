@@ -1,0 +1,19 @@
+[logic]
+active = ph_idle@lock
+
+[ph_idle@lock]
+tips = no_supply
+on_info = {+supply_x12_on} ph_code@lock
+
+[ph_code@lock]
+on_check_code1 = 23695 | {+x18_iq_check_info1} %=sak.out_bun_ognetushitel() +bun_opendoor1%
+on_check_code2 = 85632 | {+x18_iq_check_info2} %=sak.out_bun_ognetushitel() +bun_opendoor1%
+on_check_code3 = 76263 | {+x18_iq_check_info3} %=sak.out_bun_ognetushitel() +bun_opendoor1%
+on_check_code4 = 86596 | {+x18_iq_check_info4} %=sak.out_bun_ognetushitel() +bun_opendoor1%
+on_check_code5 = 94231 | {+x18_iq_check_info5} %=sak.out_bun_ognetushitel() +bun_opendoor1%
+on_check_code6 = 31263 | {+x18_iq_check_info6} %=sak.out_bun_ognetushitel() +bun_opendoor1%
+on_check_code7 = 85694 | {+x18_iq_check_info7} %=sak.out_bun_ognetushitel() +bun_opendoor1%
+on_check_code8 = 74326 | {+x18_iq_check_info8} %=sak.out_bun_ognetushitel() +bun_opendoor1%
+on_check_code9 = 52347 | {+x18_iq_check_info9} %=sak.out_bun_ognetushitel() +bun_opendoor1%
+on_check_code10 = 1455987401 | %=sak.out_bun_ognetushitel() +bun_opendoor1%
+on_info = {-supply_x12_on} ph_idle@lock

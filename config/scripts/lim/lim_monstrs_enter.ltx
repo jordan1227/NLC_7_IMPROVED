@@ -1,0 +1,12 @@
+[logic]
+active = mob_home
+
+[mob_home]
+path_home = lim_halt_walk
+home_min_radius = 20
+home_max_radius = 50
+aggressive_home
+on_signal = sig_attacked | mob_combat
+
+[mob_combat]
+on_timer = 10000 | mob_home

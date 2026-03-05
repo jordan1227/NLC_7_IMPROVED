@@ -1,0 +1,160 @@
+    <!-- Линейка Пружины -->
+	
+    <article id="enc_amk_recipt_dikoobraz" name="af_dik_1" group="enc_recipts/mod">
+	    <texture x="100" y="50" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_amk_recipt_dikoobraz_text</text>
+	</article>
+	
+    <article id="enc_amk_recipt_electra_dikoobraz" name="af_dik_2" group="enc_recipts/mezomod">
+	    <texture x="100" y="100" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_amk_recipt_electra_dikoobraz_text</text>
+	</article>
+	
+    <article id="enc_amk_recipt_sopl_dikoobraz" name="af_dik_3" group="enc_recipts/gipermod">
+	    <texture x="100" y="150" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_amk_recipt_sopl_dikoobraz_text</text>
+	</article>
+	
+    <article id="enc_amk_recipt_stone_dikoobraz" name="af_dik_4" group="enc_recipts/absol">
+	    <texture x="100" y="200" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_amk_recipt_stone_dikoobraz_text</text>
+	</article>
+	
+	<!-- Линейка Колобка -->
+	
+    <article id="enc_amk_recipt_steel_kolobok" name="af_kol_1" group="enc_recipts/mod">
+	    <texture x="100" y="250" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_amk_recipt_steel_kolobok_text</text>
+	</article>
+	
+    <article id="enc_amk_recipt_titan_kolobok" name="af_kol_2" group="enc_recipts/mezomod">
+	    <texture x="100" y="300" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_amk_recipt_titan_kolobok_text</text>
+	</article>
+	
+    <article id="enc_amk_recipt_almaz_kolobok" name="af_kol_3" group="enc_recipts/gipermod">
+	    <texture x="100" y="350" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_amk_recipt_almaz_kolobok_text</text>
+	</article>
+	
+    <article id="enc_amk_recipt_giant_small_brother" name="af_kol_4" group="enc_recipts/absol">
+	    <texture x="100" y="400" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_amk_recipt_giant_small_brother_text</text>
+	</article>	
+	
+	<!-- Линейка Симбиона -->
+	
+    <article id="enc_amk_recipt_souls_drops" name="af_spirit_1" group="enc_recipts/mod">
+	    <texture x="100" y="650" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_amk_recipt_souls_drops_text</text>
+	</article>
+	
+    <article id="enc_amk_recipt_souls_fire" name="af_spirit_2" group="enc_recipts/mezomod">
+	    <texture x="100" y="700" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_amk_recipt_souls_fire_text</text>
+	</article>
+	
+    <article id="enc_amk_recipt_souls_cristal" name="af_spirit_3" group="enc_recipts/gipermod">
+	    <texture x="100" y="750" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_amk_recipt_souls_cristal_text</text>
+	</article>
+
+    <article id="enc_amk_recipt_souls_bengal" name="af_spirit_4" group="enc_recipts/absol">
+	    <texture x="100" y="800" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_amk_recipt_souls_bengal_text</text>
+	</article>
+	
+	<!-- Линейка Батарейки -->
+
+    <article id="enc_amk_recipt_tears_electra" name="af_cry_1" group="enc_recipts/mod">
+	    <texture x="50" y="900" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_amk_recipt_tears_electra_text</text>
+	</article>
+	
+    <article id="enc_amk_recipt_tears_fire" name="af_cry_2" group="enc_recipts/mezomod">
+	    <texture x="50" y="950" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_amk_recipt_tears_fire_text</text>
+	</article>
+	
+    <article id="enc_amk_recipt_tears_chimaera" name="af_cry_3" group="enc_recipts/gipermod">
+  	    <texture x="100" y="0" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_amk_recipt_tears_chimaera_text</text>
+	</article>
+
+    <article id="enc_amk_recipt_tears_gigant" name="af_cry_4" group="enc_recipts/absol">
+	    <texture x="950" y="800" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_amk_recipt_tears_gigant_text</text>
+	</article>
+	
+	<!-- Линейка Маминых Бус -->
+	
+    <article id="enc_amk_recipt_grandmother_glassbeards" name="af_babka_1" group="enc_recipts/mod">
+ 	    <texture x="50" y="750" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_amk_recipt_grandmother_glassbeards_text</text>
+	</article>
+	
+    <article id="enc_amk_recipt_pra_grandmother_glassbeards" name="af_babka_2" group="enc_recipts/mezomod">
+	    <texture x="50" y="800" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_amk_recipt_pra_grandmother_glassbeards_text</text>
+	</article>
+	
+    <article id="enc_amk_recipt_burer_grandmother_glassbeards" name="af_babka_3" group="enc_recipts/gipermod">
+	    <texture x="50" y="850" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_amk_recipt_burer_grandmother_glassbeards_text</text>
+	</article>
+	
+    <article id="enc_amk_recipt_burer_pra_grandmother_glassbeards" name="af_babka_4" group="enc_recipts/absol">
+	    <texture x="950" y="850" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_amk_recipt_burer_pra_grandmother_glassbeards_text</text>
+	</article>	
+	
+	<!-- Линейка Плёнки -->
+	
+    <article id="enc_amk_recipt_shkura" name="af_armor_1" group="enc_recipts/mod">
+	    <texture x="50" y="550" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_amk_recipt_shkura_text</text>
+	</article>
+	
+    <article id="enc_amk_recipt_cheshya" name="af_armor_2" group="enc_recipts/mezomod">
+	    <texture x="50" y="600" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_amk_recipt_cheshya_text</text>
+	</article>
+	
+    <article id="enc_amk_recipt_pancir" name="af_armor_3" group="enc_recipts/gipermod">
+	    <texture x="50" y="650" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_amk_recipt_pancir_text</text>
+	</article>
+
+    <article id="enc_amk_recipt_controller_skalp" name="af_armor_4" group="enc_recipts/absol">
+	    <texture x="50" y="700" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_amk_recipt_controller_skalp_text</text>
+	</article>
+	
+	<!-- Линейка Пустышки --> 
+	
+    <article id="enc_amk_recipt_dummy_fire" name="af_pudd_1" group="enc_recipts/mod">
+	    <texture x="100" y="450" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_amk_recipt_dummy_fire_text</text>
+	</article>
+	
+    <article id="enc_amk_recipt_dummy_bright" name="af_pudd_2" group="enc_recipts/mezomod">
+	    <texture x="100" y="500" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_amk_recipt_dummy_bright_text</text>
+	</article>
+	
+    <article id="enc_amk_recipt_dummy_moon" name="af_pudd_3" group="enc_recipts/gipermod">
+	    <texture x="100" y="550" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_amk_recipt_dummy_moon_text</text>
+	</article>
+	
+    <article id="enc_amk_recipt_dummy_puding" name="af_pudd_4" group="enc_recipts/absol">
+	    <texture x="100" y="600" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_amk_recipt_dummy_puding_text</text>
+	</article>	
+	
+	<!-- -->
+	
+    <article id="enc_amk_recipt_simbion" name="enc_amk_recipt_simbion_name" group="enc_artmod/a_level_4">
+	    <texture x="700" y="950" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_amk_recipt_simbion_text</text>
+	</article>	

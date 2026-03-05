@@ -1,0 +1,1534 @@
+--[[
+
+File:  amk_mod .script
+copyright © AMK TEAM 2007-2008
+--]]
+
+function attach(sm)
+	sm:subscribe({signal = "on_update", fun = this.blowout_phantoms})
+	sm:subscribe({signal = "on_update", fun = this.check_metka})
+	sm:subscribe({signal = "on_update", fun = this.weather_manager})
+	sm:subscribe({signal = "on_update", fun = this.check_armor})
+	sm:subscribe({signal = "on_update", fun = this.on_blowout_hit_actor})
+end
+
+local gv,lv
+in_hide=false
+local sound_obj_right,sound_obj_left,snd_volume,snd_obj_eq
+sync_done=false
+local dynlasthour
+last_wconf = ""
+local bt
+local sMapNow,idMapNow
+
+local weather_types={
+				marsh=0,
+				aver=2,
+				generators=4,
+				hospital=0,
+				limansk=4,
+				lost_village=0,
+				red_forest=0,
+				av_peshera=1,
+				labx8=1,
+				labx10=1,
+				warlab=1,
+				l01_escape=0,
+				l02_garbage=0,
+				l03_agroprom=0,
+				l03u_agr_underground=1,
+				l04_darkvalley=0,
+				k01_darkscape=0,
+				l04u_labx18=1,
+				l05_bar=0,
+				l06_rostok=0,
+				l07_military=0,
+				l08_yantar=2,
+				l08u_brainlab=1,
+				l10_radar=5,
+				l10u_bunker=1,
+				deadcity=4,
+				l11_pripyat=4,
+				l12_stancia_new=4,
+				l12_stancia_2_new=4,
+				l12u_control_monolith=1,
+				l12u_sarcofag=1
+				}
+
+local points={
+				{position={x=129.534,y=4.857,z=97.978},gv=157,lv=434414},
+				{position={x=-8.369,y=6.877,z=129.023},gv=95,lv=268561},
+				{position={x=-3.2842042446136,y=-17.627033996582,z=-154.93109130859},gv=108,lv=272952},
+				{position={x=167.59065246582,y=5.3164655685425,z=93.90438079834},gv=155,lv=470751},
+				{position={x=-25.290637969971,y=1.9589133024216,z=99.127182006836},gv=86,lv=252031},
+				{position={x=-9.036,y=-17.235,z=-169.403},gv=108,lv=267524},
+				}
+
+function dbg_set_w_fx(wconf, flag)
+	--wprintf("[~T]. #DBG: set_weather_fx ~C0A %s~C07", wconf)
+	level.set_weather_fx(wconf, flag)
+end
+
+function dbg_set_w(wconf, flag)
+	if wconf==last_wconf then
+		return
+	end
+	--wprintf("[~T]. #DBG: set_weather ~C0A %s~C07, last =~C0A %s~C07", wconf or 'nil', last_wconf or 'nil')
+	last_wconf = wconf  
+	level.set_weather(wconf, flag)
+end
+
+function spawn_star()
+	local init_rnd1 = get_value("r_task_reward", 1)
+	local init_rnd2 = get_value("r_treas_items", 1)
+	local b
+	if init_rnd2 == 1 then
+		b = init_rnd1 + 1
+	else
+		b = init_rnd1
+	end
+	local a = points[b]					 
+	local obj = misc.spawn_obj ("arc_art_box_1basic", vector():set(a.position.x,a.position.y,a.position.z))
+	local pk = get_netpk(obj,1)
+	local data = pk:get()
+	data.custom_data = "amk_af_night_star_29"
+	data.mass=20
+	pk:set(data)
+	set_value("kontainer", obj.id)
+end
+function on_game_start()
+
+end
+
+local tmp_intro=false
+function first_run() 
+	if get_value("x_first_run") == nil then
+		timers.start_timer("show_news",0,0,8,"amk_mod.show_news()")
+		sak.add_new_lcitem()
+		amk_anoms.pre_blow_off()
+		amk_anoms.after_blow_on()
+		spawn_military_btr()  
+		spawn_fuel()
+		tmp_intro=true
+		set_value("x_first_run", false)
+		timers.start_timer("vergas_m_dirt", 0, 0, lua_random(6, 8), "vergas_masks.add_time_dirt_phase()")
+	end
+end
+
+function update_spots(lname, sname)
+	local obj1, obj2
+  
+	if ((lname=="l01_escape" and sname=="k01_darkscape") or (lname=="k01_darkscape" and sname=="l01_escape")) and not has_alife_info("actor_zoneguard_info") then
+		sak.add_new_esc_dar_112()
+	end
+	
+	if (lname=="k01_darkscape" and sname=="l04_darkvalley" and not has_alife_info("info_way199a")) then
+		sak.add_new_dsc_199()
+	end
+	
+	obj1 = g_sim:story_object(story_ids.hos_exit_to_esc_157)
+	obj2 = g_sim:story_object(story_ids.esc_exit_to_hos_158)
+	if obj1 and obj2 and sname=="l01_escape" and lname=="hospital" then
+		level.map_add_object_spot_ser(obj1.id, "level_changer_self", "to_escape")
+		level.map_add_object_spot_ser(obj2.id, "level_changer_self", "to_hospital")
+	end
+	
+	obj1 = g_sim:story_object(story_ids.dsc_exit_to_hospital_255)
+	obj2 = g_sim:story_object(story_ids.hos_lev_chang_door)
+	if (obj1 or obj2) and ((sname=="k01_darkscape" and lname=="hospital") or (lname=="k01_darkscape" and sname=="hospital")) then
+		if obj1 then
+			level.map_add_object_spot_ser(obj1.id, "level_changer_self", "to_hospital")
+		end
+		if obj2 then
+			level.map_add_object_spot_ser(obj2.id, "level_changer_self", "to_darkscape")
+		end
+	end
+	
+	obj1 = g_sim:story_object(story_ids.exit_to_for)
+	obj2 = g_sim:story_object(story_ids.gar_exit_to_hospital_177)
+	if (obj1 and obj2) and ((sname=="hospital" and lname=="l02_garbage") or (sname=="l02_garbage" and lname=="hospital")) then
+		if obj1 then
+			level.map_add_object_spot_ser(obj1.id, "level_changer_self", "to_garbage")
+		end
+		if obj2 then
+			level.map_add_object_spot_ser(obj2.id, "level_changer_self", "to_hospital")
+		end
+	end
+	
+	obj1 = g_sim:story_object(story_ids.lim_exit_to_red_forest_155)
+	obj2 = g_sim:story_object(story_ids.red_level_changer_to_limansk)
+	if obj1 and obj2 and ((sname=="red_forest" and lname=="limansk") or (sname=="limansk" and lname=="red_forest")) then
+		level.map_add_object_spot_ser(obj1.id, "level_changer_self", "to_red_forest")
+		level.map_add_object_spot_ser(obj2.id, "level_changer_self", "to_limansk")
+	end
+	
+	obj1 = g_sim:story_object(story_ids.ros_exit_to_red_forest_104)
+	obj2 = g_sim:story_object(story_ids.red_level_changer_to_rostok)
+	if obj2 and ((sname=="red_forest" and lname=="l06_rostok") or (sname=="l06_rostok" and lname=="red_forest")) then
+		if not obj1 then
+			sak.add_new_ros_red_104()
+		end
+		level.map_add_object_spot_ser(obj2.id, "level_changer_self", "to_rostok")
+	end
+	
+	obj1 = g_sim:story_object(story_ids.dead_exit_to_generators_194)
+	obj2 = g_sim:story_object(story_ids.generators_level_changer)
+	if obj1 and obj2 and ((sname=="generators" and lname=="deadcity") or (sname=="deadcity" and lname=="generators")) then
+		level.map_add_object_spot_ser(obj1.id, "level_changer_self", "to_generators")
+		level.map_add_object_spot_ser(obj2.id, "level_changer_self", "to_deadcity")
+	end
+	
+	obj1 = g_sim:story_object(story_ids.dead_exit_to_prip_193)
+	obj2 = g_sim:story_object(story_ids.prip_exit_to_deadcity_195)
+	if obj1 and obj2 and ((sname=="l11_pripyat" and lname=="deadcity") or (sname=="deadcity" and lname=="l11_pripyat")) then
+		level.map_add_object_spot_ser(obj1.id, "level_changer_self", "to_pripyat")
+		level.map_add_object_spot_ser(obj2.id, "level_changer_self", "to_deadcity")
+	end
+	
+	-- obj1 = g_sim:story_object(story_ids.aver_level_changer_to_av_peshera)
+	-- if obj1 and ((sname=="aver" and lname=="av_peshera") or (sname=="av_peshera" and lname=="aver"))  then
+		-- level.map_add_object_spot_ser(obj1.id, "level_changer_self", "to_av_peshera")
+	-- end
+	
+	obj1 = g_sim:story_object(story_ids.gen_exit_to_lim_190)
+	if obj1 and (sname=="generators" and lname=="limansk")  then
+		level.map_add_object_spot_ser(obj1.id, "level_changer_self", "to_limansk")
+		sak.add_new_lim_gen_165()
+	end
+	
+	obj1 = g_sim:story_object(story_ids.gen_exit_to_mil_191)
+	if obj1 and (sname=="generators" and lname=="l07_military")  then
+		level.map_add_object_spot_ser(obj1.id, "level_changer_self", "to_military")
+		sak.add_new_mil_gen_154()
+	end
+	
+	obj1 = g_sim:story_object(story_ids.gen_exit_to_radar_189)
+	if obj1 and (sname=="generators" and lname=="l10_radar")  then
+		level.map_add_object_spot_ser(obj1.id, "level_changer_self", "to_radar")
+		sak.add_new_radar_tesla()
+	end
+	
+	-- obj1 = g_sim:story_object(story_ids.red_exit_to_av_pesh_188)
+	-- if obj1 and ((sname=="red_forest" and lname=="av_peshera") or (sname=="av_peshera" and lname=="red_forest")) then
+		-- level.map_add_object_spot_ser(obj1.id, "level_changer_self", "to_av_peshera")
+	-- end
+	
+	obj1 = g_sim:story_object(story_ids.red_level_changer_to_yantar)
+	obj2 = g_sim:story_object(story_ids.yan_exit_to_red_forest_106)
+	if obj1 and (sname=="red_forest" and lname=="l08_yantar") and obj2==nil then
+		level.map_add_object_spot_ser(obj1.id, "level_changer_self", "to_yantar")
+		sak.add_new_yan_red()
+	end
+	
+	obj1 = g_sim:story_object(story_ids.aver_level_changer_to_garbage_135)
+	obj2 = g_sim:story_object(story_ids.gar_exit_to_aver_151)
+	if obj1 and (sname=="aver" and lname=="l02_garbage") and obj2==nil then
+		level.map_add_object_spot_ser(obj1.id, "level_changer_self", "to_garbage")
+		sak.add_new_gar_aver_151()
+	end
+	
+	obj1 = g_sim:story_object(story_ids.aver_level_changer_to_darkvalley)
+	obj2 = g_sim:story_object(story_ids.val_exit_to_aver_110)
+	if obj1 and (sname=="aver" and lname=="l04_darkvalley") and obj2==nil then
+		level.map_add_object_spot_ser(obj1.id, "level_changer_self", "to_darkvalley")
+		sak.add_new_dv_aver()
+	end
+
+	if sname == "red_forest" and lname == "l08u_brainlab" then
+		local obj = server_obj("x16_beton_block_7")
+		if obj then
+			misc.release_obj(obj)
+		end
+	end	
+end
+
+function check_spawn()
+	wprintf('~CF0[~T/~U/~B]. #PERF: amk_mod.check_spawn begin~C07');
+	bt = blowout_type()
+	amk_anoms.init()
+	wprintf('~CF0[~T/~U/~B]. #PERF: spawn_unspawned_respawners() ~C07');
+	spawn_unspawned_respawners() 
+	news_main.init()
+	amk_offline_alife.init()
+	-- timers.tTimers = {}
+	local obj1, obj2
+ 
+	wprintf('~CF0[~T/~U/~B]. #PERF: updating LC~C07'); 
+
+	local lc_list = { info_way91a = 91,                         -- кордон -- свалка
+                    info_way100a = 9100, info_way176a = 9176,   -- агро-зх -- зх-агро
+                    info_way101a = 9101, info_way182a = 9182,   -- кордон-зх -- зх-кордон					
+                    info_way102a = 9102, info_way103a = 9103,   -- агро-янтарь -- янтарь-агро 
+                    info_way104a = 9104, info_way172a = 9172,   -- дт-рл -- рл-дт 
+                    info_way105a = 9105, info_way174a = 9174,   -- ас-рл -- рл-ас
+                    info_way106a = 9106, --info_way173a = 9173, -- янтарь-рл -- рл-янтарь
+                    info_way107a = 9107,                        -- вход в х12 
+                    info_way108a = 9108, --info_way189a = 9189, -- радар-тесла -- тесла-радар
+                    info_way109a = 9109,                        -- вход в х10
+                    info_way110a = 9110, --info_way136a = 9136, -- тд-тч -- тч-тд
+                    info_way111a = 9111, info_way137a = 9137,   -- ас-тч -- тч-ас
+                    info_way116a = 9116, info_way117a = 9117,   -- тд-свалка -- свалка-тд 
+                    info_way151a = 9151, --info_way135a = 9135, -- свалка-тч -- тч-свалка
+                    --info_way130a = 9130,                      -- вход х12 
+                     --info_way112a = 1008,                     -- кордон-кишка 
+                    info_way113a = 592,                         -- бар-ас 
+                    info_way114a = 594,                         -- бар-дт
+                    info_way154a = 9154, --info_way191a = 9191, -- ас-тесла -- тесла-ас
+                    info_way156a = 9156,                        -- лиманск -- склады
+					info_way158a = 9158,                        -- кордон -- санаторий
+					info_way159a = 9159,                        -- санаторий -- свалка!					
+                    info_way165a = 9165, --info_way190a = 9190, -- лимаск-тесла -- тесла-лиманск
+					info_way177a = 9177,                        -- свалка -- санаторий!					
+                    info_way179a = 9179, info_way178a = 9178,   -- болота-кордон -- кордон-болота
+                    info_way181b = 9181, info_way183a = 9183,   -- болота-агро -- агро-болота
+                    
+                    info_way180a = 9180, info_way166a = 9166,   -- болота-зх -- зх-болота
+                    
+                    info_way184a = 9184, info_way185a = 9185,   -- свалка-зх -- зх-свалка
+					info_way255a = 9255,
+					--info_way829a = 9829,                        -- exit_to_agr_underground_03!
+					--info_way831a = 9831,                        -- exit_to_agr_underground_04!
+					--info_way832a = 9832,                        -- exit_to_agroprom_03! 
+					--info_way833a = 9833,                        -- exit_to_agroprom_05!
+					info_way301a = 191,                           -- свалка -- агро!
+					info_way303a = 196,                           -- свалка -- тд!					
+                    val_raid_start = 9199,
+					water_tunnel = 9813,						  -- БУМ-ТЧ
+					prizrak_news_info = 9261,					  -- х10-ТД (в овраге)
+					marsh_new_theme_info = 9120,				  -- х18-ТЧ
+					gg_has_pass_info = 9814						  -- Тесла-ЧАЭС
+					}
+       
+	for info, sid in pairs(lc_list) do        
+		-- wprintf(" out_new_lc~C0D %4d~C0B =~C0A '%s'~C07", sid, info) 
+		sak.out_new_lc(sid, info)
+	end
+ 
+	local sid = 593
+	local objt = g_sim:story_object(sid)
+	if not objt then     
+		wprintf("~C0C #ERROR: level changer not exists~C0D %d~C0C, trying respawn~C07", sid)
+		g_sim:create(g_sim:spawn_id(sid))
+	end                            
+  
+	local lname = level.name()
+	local sname = get_value("level_on_save", "")
+	wprintf('~CF0[~T/~U/~B]. #PERF: updating npc tables ~C07'); 
+	amk_offline_alife.update_npc_tables()       
+	if lname ~= sname then
+		wprintf('~CF0[~T/~U/~B]. #PERF: updating map spots~C0A %s / %s~C07 ~C07', lname, sname)
+		update_spots(lname, sname)
+	end    
+  
+	obj = g_sim:story_object(story_ids.aes_exit_to_pripyat)
+	if obj then
+		level.map_add_object_spot_ser(obj.id,"level_changer_self","to_pripyat")
+	end
+	wprintf('~CF0[~T/~U/~B]. #PERF: updating weahter ~C07');
+    
+	schedule.add ("r_sun", "amk_mod.restore_sun()", 50)
+	if get_value("blowout", 0) > 0 and get_value("blowout", 0) <4 then
+		level.add_cam_effector("camera_effects\\earthquake.anm", 2002, true,"")
+		if bt<1 then
+			dbg_set_w("default_pre_blowout",true)
+			level.add_pp_effector("vibros.ppe", 2001, true)
+			blowout_psy_sound("start")
+		end
+	end
+	if get_value("blowout", 0) > 0 then
+		level.block_change_level(true)
+	end
+  
+	sak.get_command("unbind contacts")
+	-- sak.get_command("cl_cod_pickup_mode off")
+    wprintf('~CF0[~T/~U/~B]. #PERF: amk_mod.check_spawn end~C07');
+end
+
+function restore_sun()
+    --ODS( sprintf("[~T]. #DBG: restore_sun") )
+    timers.initialize_timers()
+
+    local lname = level.name()
+    local sname = get_value("level_on_save", "")
+    --wprintf("[~T]. #DBG: weather %s name, sname=%s, w = %s", lname, sname, w)
+	if get_value("blow_started",0)==0 then
+		start_blow_timer()
+		set_value("blow_started",1)
+	end
+	if tmp_intro then
+		tmp_intro=false
+	end
+	if db.actor then
+		sak.some_updates()
+		vergas_art.spawn_art()
+	end
+	idMapNow = g_sim:level_id()
+	sMapNow = (idMapNow and g_sim:level_name(idMapNow)) or ""
+	db.idMapSav = get_value("map_sav", 0)
+	db.sMapSav = (db.idMapSav ~= 0 and g_sim:level_name(db.idMapSav)) or ""
+	db.idMapNow,db.sMapNow = idMapNow,sMapNow
+	set_value("map_sav", idMapNow)
+	set_value("level_on_save", lname)
+    sak.start_progress()
+	sak.amb_clear()
+end
+
+function freeplay()
+	set_value("freeplay", 1)
+	local obj = g_sim:story_object(story_ids.aes_exit_to_pripyat)
+	if not obj then   
+		misc.spawn_by_name ('exit_to_pripyat_from_st1')
+	end
+	for a=1,5 do
+		if (amk_anoms) then
+			amk_anoms.after_blow_on()
+		end
+	end
+end
+
+local function get_community_strings(community,num)
+	return translate(community.."_news_"..lua_random(num))
+end
+
+function show_news()
+	timers.start_timer("show_news_main",49,"news_main.on_news()")
+	local min_rand=lua_random(27,53)
+	timers.start_timer("show_news",0,0,min_rand,"amk_mod.show_news()")
+	local ln = level.name()
+	if (news_main.isIsolatedLevel(ln)==true) or db.actor:has_info("pda_is_broken") then return end
+	if lua_random()>0.5 then
+		if lua_random()>0.875 then
+			if lua_random()>0.5 then
+				local dolg_news=get_community_strings("dolg",8)
+				db.actor:give_game_news(dolg_news,"ui\\ui_iconsTotal", Frect():set(498,141,83,47), 4000, 15000)
+			else
+				local freedom_news=get_community_strings("freedom",7)
+				db.actor:give_game_news(freedom_news,"ui\\ui_iconsTotal", Frect():set(498,94,83,47), 3000, 15000)
+			end
+		end 
+	else
+		if lua_random()>0.5 then
+			local info,who,uniq,who2,uniq2,info2=amk_uniq_news_lists.get_strings()
+			if (info=="" or not has_alife_info(info)) and (info2=="" or has_alife_info(info2)) then
+				local name,sname = amk_names_lists.get_strings()
+				if who~="" then
+					amk.send_tip(uniq,who,nil,15,"uniq","news","gray")
+				else
+					amk.send_tip(uniq,name.." "..sname,nil,15,"uniq","news","gray")
+				end
+				if uniq2~="" then
+					name,sname = amk_names_lists.get_strings()
+					if who2~="" then
+						amk.send_tip(uniq2,who2,10,15,"uniq","news","gray")
+					else
+						amk.send_tip(uniq2,name.." "..sname,7,15,"uniq","news","gray")
+					end
+				end
+			end
+		end
+	end
+end
+
+function test_for_need_sleep() end -- заглушка от сбоев из-за хранимых таймеров
+
+local amk_used={
+				["energy_drink"]="sleep_manager.test_for_need_sleep_nrg()",
+				["vodka"]="sleep_manager.test_for_need_sleep_vodka()",
+				["banka"]="sak.empty_banka_fill()",
+				["kanistra"]="sak.kanistra_fill()",
+				-- ["banka_full"]="sak.banka_full_use()",
+				-- ["drag_cat_eyes"]="sak.add_cat_eyes()",
+				["sak_resiver_yantar"]="sak.add_skaner_1_saharoff()",
+				["sak_resiver2_yantar"]="sak.add_skaner_2_saharoff()",
+				["scanner_artefact"]="sak.add_scanner_artefact()",
+				["aver_monolith_scanner"]="sak.set_aver_monolith_scanner()",
+				["pda_chip_rad"]="amk_mod.handle_pda_chip('pda_upgr_rad')",
+				["pda_chip_spot"]="amk_mod.handle_pda_chip('pda_upgr_spot')",
+				["pda_chip_cook"]="amk_mod.handle_pda_chip('pda_upgr_cook')",
+				["pda_chip_hack"]="amk_mod.handle_pda_chip('pda_upgr_hack')",
+				}
+
+function handle_pda_chip(val)
+	set_value(val,true)
+end
+
+function used_item(obj)
+	local sect=obj:section()
+	if amk_used[sect] then
+		local txt=amk_used[sect]
+		loadstring(txt) ()
+	end
+end
+
+-- Manool: места, в которых нельзя спать, например, бункер Сидоровича
+local bad_sleep_places = {
+	{"l01_escape", 20, -246.95002746582,-24.795707702637,-134.45962524414},
+}
+
+function test_for_need_sleep_matras(oid)
+	--Vergas sleeping_bag---------------ON--------------------
+	local flag = false
+	local flag_bag = false
+	if oid:section() == "sleeping_bag" then
+		flag = true
+	elseif type(oid) == 'number' and g_sim:object(oid) == nil then
+		flag = true
+	end
+	--if g_sim:object(oid)==nil then
+	if not flag then return end
+
+	--Vergas sleeping_bag---------------OFF-------------------
+	local enemy = false
+	sak.close_window()
+
+	-- одетый рюкзак мешает залезть в мешок
+	local act = db.actor
+	local equ = false
+
+	if get_shadow_inv():update_storage() then
+		equ = true
+	end
+
+	for a,i in pairs(db.storage) do
+		local objg = client_obj(a)
+		if objg then
+			if (objg and ((IsStalker(objg) and amk.get_npc_relation(objg,db.actor)=="enemy" and objg:alive())  or 
+			IsMonster(objg) and not string.find(objg:name(),"^rat_")) and objg:position():distance_to(db.actor:position()) < 30  and objg:alive()) then
+				enemy=true
+			break
+			end 
+		end 
+	end
+
+	local bad_place
+	local lv, pos = level.name(), db.actor:position()
+	for i, v in ipairs(bad_sleep_places) do
+		if lv == v[1] and pos:distance_to(vector():set(v[3], v[4], v[5])) <= v[2] then
+			bad_place = true
+			break
+		end
+	end
+
+	if bad_place then
+		flag_bag = true
+		amk.send_tip(game.translate_string("ui_inv_sms_bad_sleep_place"),nil,nil,5)
+	elseif enemy == true then
+		flag_bag = true
+		amk.send_tip(game.translate_string("not_need_sleep_enemy"),nil,nil,5)
+	else
+		if get_value("blowout", 0) > 0 and get_value("blowout", 0) < 5 then
+			flag_bag = true
+			amk.send_tip(game.translate_string("blowout_not_sleep"),nil,nil,5)
+		elseif ( equ ) then
+			flag_bag = true
+			wprintf("[~T]. #SLEEP_REJECT: equipment thwarted")
+			amk.send_tip(game.translate_string("cant_sleep_equip"),nil,nil,5)
+		elseif has_alife_info("sleep_abuse_timer_info") then
+			flag_bag = true
+			sak.send_tip(game.translate_string("cant_sleep_abuse"), game.translate_string("thinking_out_loud"), 1, 10, "g_g", "sak", "red")
+		elseif get_value("block_sleep_menu", 0) == 0 then
+			if ( sleep_manager.get_sleepiness(108) ) > 50 then
+				if oid:section()=="sleeping_bag" then
+					vergas_lib.s_play([[device\sleeping_bag\sleep_bag_down]])
+				end
+				used_items.sleep_management()
+				--local spwn=ui_cheat.cheat(get_hud())
+				--level.start_stop_menu(spwn,true)
+			else
+				--Меченный не хочет спать
+				flag_bag = true
+				wprintf("[~T]. #SLEEP_REJECT: actor sleepiness =~C0D %.3f~C07", sleep_manager.get_sleepiness(108))
+				amk.send_tip(game.translate_string("not_need_sleep"),nil,nil,5)
+			end
+		else
+			--действует энергетик
+			flag_bag = true
+			amk.send_tip(game.translate_string("not_need_sleep_nrg"),nil,nil,5)
+		end
+	end
+	if flag_bag then
+		sleeping_bag.no_sleep()
+	end
+	if oid:section()~="sleeping_bag" then
+		amk.spawn_item_in_inv("matras")
+	end
+end
+
+function esc_sleep_matras()
+	if get_value("blowout", 0) >0 and get_value("blowout", 0) < 5 then
+		amk.send_tip(game.translate_string("blowout_not_sleep"),nil,nil,5)
+	elseif get_value("block_sleep_menu",0)==0 then
+		if sleep_manager.get_sleepiness(108) > 50 then
+			used_items.sleep_management()
+		else
+			amk.send_tip(game.translate_string("not_need_sleep"),nil,nil,5)
+		end
+	elseif bt > 0 then 
+		amk.send_tip(game.translate_string("not_need_sleep_undegrourd"),nil,nil,5)
+	else
+		amk.send_tip(game.translate_string("not_need_sleep_nrg"),nil,nil,5)
+	end
+end
+
+--'*******************************************************************************
+--'  **  **  **  **  **    **  **  **      RADAR_FIX        **  **  **  **  **    **  **  **  **
+--'*******************************************************************************
+local time_radar = time_global()
+function check_radar_off()
+	if (level.name()=="l10_radar") then
+		if not has_alife_info("bar_deactivate_radar_done") and  not has_alife_info("time_morning") then
+			local pos = db.actor:position()
+			if pos.z>65 and pos.x>350 and pos.x<410 then
+				local time_current = time_global()
+				local time_delta = time_current - time_radar
+				if time_delta >= 1100 then
+					local h = hit()
+					h.draftsman = db.actor
+					h:bone("eyelid_1")
+					h.type = hit.explosion
+					h.power = 0.01*(pos.z-65)
+					h.impulse = 0.0
+					db.actor:hit(h)
+					h:bone("bip01_spine")
+					h.type = hit.telepatic
+					h.power = 0.01*(pos.z-65)
+					db.actor:hit(h)
+					time_radar = time_current
+				end
+			end
+		end
+	end
+end
+
+local afs={
+			"af_medusa",
+			"af_blood",
+			"af_drops",
+			"af_vyvert",
+			"af_soul",
+			"af_fireball",
+			"af_electra_",
+			"af_electra_moonlight",
+			"af_rusty_",
+			"af_rusty_sea-urchin",
+			"af_cristal_flower",
+			"af_night_star",
+			"af_gravi",
+			"af_mincer_meat",
+			"af_ameba_",
+			"af_gold_fish",
+			"af_cristall",
+			"af_dummy_",
+			"af_red_dummy_",
+			"af_kol_",
+			"af_armor_",
+			"af_pudd_",
+			"af_dik_",
+			"af_babka_",
+			"af_spirit_",
+			"af_unknown_",
+			"af_cry_",
+			"af_dummy_kolobok",
+			"af_sul_new",
+			-- "kolbasa",
+			-- "conserva",
+			-- "vodka",
+			-- "bandage",
+			"mutant_",
+			-- "bread",
+			-- "energy_drink"
+			}
+
+function check_for_af_drop(obj)
+	if obj and obj:id() then
+		schedule.add("check_af_drop"..obj:id(), "amk_mod.check_af_drop("..obj:id()..")", 200, true) 
+	end
+end
+
+function check_af_drop(af_id)
+	if not af_id then
+		wprintf("[~T].~C0C #ERROR: invalid param specified for check_af_drop.\n~C0A %s~C07", lua_traceback(' '))
+		return
+	end
+	local obj = client_obj( misc.get_object_id(af_id) )
+	if obj==nil or obj:parent()~=nil then return end  
+    
+	local section=obj:section()
+	if str_in_tab (section, afs) and not strposx (section,"_capsule") then
+		local id, pos, radius, dist = amk_anoms.get_nearest_anomaly(obj)
+		if id and radius - dist > 1 then
+			local anom_sect = client_obj(id):section()
+			check_af_transform(obj, id, anom_sect) 
+		end
+		return
+	end  
+end
+
+function af_flash(af)
+	level.add_pp_effector("teleport.ppe", 1524, false)
+	amk.remove_item(af)
+end
+
+function af_start_transform(v1, v2, af_from, af_target)
+	if v2 == 100 then
+		return af_from
+	end
+	local rnd = dsh.get_next_random("mods_rnd", 1, 100)
+	ASSERT(sys_ini:section_exist(af_target), "Section not found: %s", tostring(af_target))
+    
+	if rnd > v1 then
+		if rnd > v2+v1 then
+			return "af_dummy_buliz"
+		else
+			return af_from
+		end
+	else
+		return af_target
+	end
+end
+
+function split_pair(s, delim)
+	local t = SplitStr(s, delim)
+	return (t[1] or '01'), (t[2] or '22') 
+end
+
+function check_reciepts(list)
+	local t = SplitStr(list, ",")
+	for i, info in ipairs(t) do
+		if db.actor:has_info(info) then
+			return true
+		end
+	end
+	return false
+end
+
+local artefacts_cooking_tbl
+local function get_artefacts_cooking()
+	if not artefacts_cooking_tbl then
+		artefacts_cooking_tbl = {}
+		local ini = ini_file("misc\\artefacts_cooking.ltx")
+		ini:iterate_sections(function(sect)
+			local t = {}
+			for i = 0, ini:line_count(sect) - 1 do
+				local _, k, v = ini:r_line(sect, i, "", "")
+				t[k] = v
+			end
+			artefacts_cooking_tbl[sect] = t
+		end)
+	end
+	return artefacts_cooking_tbl
+end
+
+-- Sn: здесь варятся только модификаты, для всего остального см. вызов в конце этой функции
+function check_af_transform(af, anom_id, anom_sect)
+	local af_sect = af:section()
+	local pos     = af:position()
+	gv=client_obj(anom_id):game_vertex_id()
+	lv=client_obj(anom_id):level_vertex_id()
+	if gv==BAD_OBJ_ID then gv = af:game_vertex_id() end
+	if gv==BAD_OBJ_ID then gv = db.actor:game_vertex_id() end
+	if gv==BAD_OBJ_ID then return end
+  
+	if strposx(anom_sect, "_psi_field") and strpos(af_sect, "^af_unknown") then
+		mike.af_transform(af, anom_sect, af_sect)
+		return
+	end
+
+	for scn, sc in pairs(get_artefacts_cooking()) do
+		local rlist = sc.recipes or 'nil'
+		if check_reciepts(rlist) then
+			local good = (af_sect == sc.source)
+			local anom_pass = strposx(anom_sect, sc.anomaly or '?')
+			if good and anom_pass then
+				sc.auto_type = false
+				af_flash(af)
+				local new_sect = scn:gsub("cook.", "") -- секция создаваемого артефакта
+				local required_exp_lvl = tonumber(string.sub(new_sect,string.len(new_sect))) - 1
+				local p1, p2 = split_pair(sc.probability or "80,10", ",")
+				local hh, mm = split_pair(sc['time'], ":")
+				local cur_exp = actor_stats.get_points("artefacts")
+				local threshold = 0
+				threshold = math.modf(cur_exp/5)
+				if threshold < required_exp_lvl then
+					p2 = 100
+				end
+				local time_prob_coeff = (math.modf(cur_exp/10)) - 1
+				if time_prob_coeff < 0 then
+					time_prob_coeff = 0
+				elseif time_prob_coeff > 4 then
+					time_prob_coeff = 4
+				end
+				time_prob_coeff = time_prob_coeff * 5
+				mm = tonumber(mm) - time_prob_coeff
+				p1 = tonumber(p1) + time_prob_coeff
+				local tr = af_start_transform(p1, tonumber(p2), af_sect, new_sect)
+				xr_statistic.addCookingPoints(new_sect)
+
+				log2("#AMK_MOD:start cooking %s with time %s:%02d, prob = %s, %s (%s)",
+					new_sect, hh, mm, p1, p2, sc.probability or 'nil')
+				return af_start_transform_timer(tr, pos, 0, tonumber(hh), mm)
+			else
+				-- wprintf("[~T].~C06 #AMK_MOD: ~C0A %-25s~C07 reject, need ~C0E %-25s~C0B (%s)~C07 in~C0F %-15s~C0B (%s)~C07, have ~C0B %s~C07", scn, sc.source, DumpVar(good), sc.anomaly, DumpVar(anom_pass), af_sect)
+			end
+		else
+			-- wprintf("[~T].~C06 #AMK_MOD: ~C0A %-25s~C07 reject, need one reciept from ~C0E %-25s~C07 ", scn, rlist)
+		end
+	end
+	sak.artmodscheck(anom_id, af, anom_sect) 
+end
+
+function af_start_transform_timer(af, pos, delay_d, delay_h, delay_m)
+	local t={}
+	t.section=af
+	t.pos={}
+	t.pos.x=pos.x
+	t.pos.y=(pos.y+1)
+	t.pos.z=pos.z
+	t.gv=gv
+	t.lv=lv
+	local gtime = misc.game_time_minutes()
+	set_value("p_"..gtime.."_af", t)  
+	timers.start_timer("af_trans_"..gtime, delay_d, delay_h, delay_m, "amk_mod.af_transform_end(\"p_"..gtime.."_af\")")
+end
+
+function af_transform_end(params_string)
+	local prms = get_value(params_string, {})
+	--if nil == prms or type(prms) ~= "table" then return end
+	local sect = prms.section
+	if not sect then
+		wprintf("~C0C #ERROR:~C07 af_transform_end loaded invalid table for~C0A %s~C07 ", params_string)
+		dump_table(prms)
+		return  
+	end
+    
+	local name = amk.get_inv_name(sect)
+	local from_sect=game.translate_string(name)
+	local obj=amk.spawn_item(prms.section,vector():set(prms.pos.x,prms.pos.y+2.5,prms.pos.z),prms.gv,prms.lv)
+	local se_obj = alife():object(obj.id)
+	se_obj:used_ai_locations(false)
+	local s
+	local upgr = get_value("pda_upgr_cook")
+	if upgr then
+		s = string.format("[%s]: %s%%c[255,255,0,0]%s",game.translate_string(se_obj.level_name),game.translate_string("trans_finished_title_upgr"),from_sect)
+		level.map_add_object_spot_ser(se_obj.id,"artefact_location",from_sect)
+	else
+		s = string.format("%s",game.translate_string("trans_finished_title"))
+	end
+	amk.send_tip(s)
+	remove_value(params_string)
+end
+
+local beakons={}
+function check_beacon_drop(obj)
+	if has_alife_info("ui_car_body") then
+		gps_habar.on_item_drop(obj)
+	end
+	if has_alife_info("ui_inventory_hide") then return end
+	if obj:section()=="amk_metka" then
+		schedule.add("close_window", "sak.close_window()", 100)
+		beakons[obj:id()]=true
+	end
+end
+
+function check_metka()
+	ogse_signals.get_mgr():reschedule(927)
+	for id,v in pairs(beakons) do
+		local obj=client_obj(id)
+		if obj then
+			beakons[id]=nil
+			if obj:parent()==nil then
+				schedule.add("check_metka_ui"..id, "amk_mod.check_metka_ui("..id..")" ,300)
+			end
+		end
+	end
+end
+
+function check_metka_ui(id)
+	local spwn=ui_dots.dots(get_hud(),id)
+	level.start_stop_menu(spwn,true)
+end
+
+function blowout_phantoms()
+	ogse_signals.get_mgr():reschedule(271)
+	bt = bt or 0   
+	if bt>=2 then return end
+	local blow = get_value("blowout", 0)
+	if blow>1 and blow<4 then
+		local lname=level.name()
+		local a_pos = db.actor:position()
+		if amk_anoms.check_coordinates(a_pos) and amk_hideouts.blowouts_phantoms[lname] then
+			local phantoms=amk_hideouts.blowouts_phantoms[lname]
+			if phantoms and phantoms.count>0 then
+				if lua_random()<phantoms.probability then
+					if phantom_manager:phantom_count()<phantoms.count then
+						local yaw  = math.pi*2.0*lua_random()
+						local radius = phantoms.radius*(lua_random()/2.0+0.5)
+						local height = phantoms.height*lua_random()
+						local pos   = vector():set(math.sin(yaw)*radius+a_pos.x,a_pos.y+height,math.cos(yaw)*radius+a_pos.z)
+						phantom_manager.spawn_phantom(pos)
+					end
+				end
+			end
+		end
+	end
+end
+
+function blowout_scary_sounds()
+	local blow= get_value("blowout", 0)
+	if blow>0 and blow<4 then
+		local snd_obj = xr_sound.get_safe_sound_object(amk_hideouts.blowout_sounds[lua_random(table.getn(amk_hideouts.blowout_sounds))])
+		local a=vector()
+		a.x=lua_random(0,10)
+		a.y=lua_random(0,10)
+		a.z=lua_random(0,10)
+		snd_obj:play_at_pos(db.actor, db.actor:position():add(a))
+		timers.start_timer("blowout_ss",lua_random(10,30),"amk_mod.blowout_scary_sounds()")
+		local name, delay = timers.check_timer("blowout")
+		if not name then
+			timers.start_timer("blowout",11,"amk_mod.Blowout_pp(0)")
+		end
+	end
+end
+
+function blowout_psy_sound(action)
+	if action=="start" then
+		snd_obj_eq = sound_object([[ambient\earthquake]],sound_object.looped+sound_object.s2d)
+		snd_obj_eq:play(db.actor, 4, sound_object.looped+sound_object.s2d)
+	end
+	if action=="stop" then
+		if snd_obj_eq then snd_obj_eq:stop() end
+	end
+  
+	local lname=level.name()
+	if not amk_hideouts.blowouts_phantoms[lname] then return end
+	local psy_sound=amk_hideouts.blowouts_phantoms[lname].psy_sounds or false  
+	if not psy_sound then return end
+
+	if action=="start" then
+		local level_vol=amk_hideouts.blowouts_phantoms[lname].level_vol or 1        
+		sound_obj_right, sound_obj_left = xr_sound.get_sound_object("psy_voices","random")
+		sound_obj_left:play_at_pos(db.actor, vector():set(-1, 0, 1), 0, sound_object.s2d + sound_object.looped)
+		sound_obj_right:play_at_pos(db.actor, vector():set(1, 0, 1), 0, sound_object.s2d + sound_object.looped)
+		snd_volume  = level.get_snd_volume()
+		level.set_snd_volume(level_vol)
+	end
+	if action=="stop" then
+		if sound_obj_left then sound_obj_left:stop() end
+		if sound_obj_right then sound_obj_right:stop() end
+		if snd_volume then level.set_snd_volume(snd_volume) end
+	end  
+end
+
+function Run_Blowout_pp()
+	local bl_sl = sleep_manager.sleep_blowout
+	if bl_sl~=false then
+		db.blowout_active=true
+		set_value("blowout",1)
+		level.block_change_level(true)
+		_G.flag_can_save = false
+		log2("game saving is disabled now!")
+		if bt<1 then
+			level.add_pp_effector("monolith_off.ppe", 2003, false)
+			level.add_cam_effector("camera_effects\\shell_shock.anm", 2004, false,"")
+			local snd_obj = xr_sound.get_safe_sound_object([[ambient\organic_moan1]])
+			snd_obj:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+		end
+		sleep_manager.stopper()
+		timers.start_timer("blowout_ss",lua_random(5,15),"amk_mod.blowout_scary_sounds()")
+		timers.start_timer("blowout",11,"amk_mod.Blowout_pp(0)")
+	end
+	start_blow_timer()
+end
+
+function start_blow_timer()
+	local shift = 2160
+	local day = timers.Get_Game_Days() or 1
+	local add_time = math.modf(day / 7) * 2 * 60
+	local t_time =(lua_random()*shift)-(shift/2)+2880+add_time
+	timers.start_timer("blow_shift",0,0, t_time,"amk_mod.Run_Blowout_pp()")
+	news_main.next_blow(t_time)
+end
+
+function Blowout_pp(num)
+---------------------------------------------------
+--' TimeFactor = 5
+--' GameMin = 12 RealSec
+--' TimeBlowout = 184 RealSec
+
+--' Начало(Timer = 36 sec)
+--' Первая Фаза(Timer = 36 sec)
+--' Вторая Фаза(Timer = 36 sec)
+--' Третья Фаза(Timer = 36 sec)
+--' Четвертая Фаза(Timer = 60 sec)
+--' Конечнвя Фаза(Timer = 0 sec)
+---------------------------------------------------
+	local phase=tonumber(num)
+	local lname = level.name()
+	local hour = level.get_time_hours()
+	if phase==0 then
+		db.actor:give_info_portion("vybros_info")
+		amk_anoms.pre_blow_off()
+		if bt<1 then
+			dbg_set_w("default_pre_blowout",true)
+			dbg_set_w_fx("fx_surge_day_3",true)
+		end 
+		timers.start_timer("blowout",0,0,3,"amk_mod.Blowout_pp(1)")
+	elseif phase==1 then
+		local snd_obj = xr_sound.get_safe_sound_object([[ambient\earthquake]])
+		snd_obj:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+		level.add_cam_effector("camera_effects\\earthquake.anm", 2002, true,"")
+		snd_obj = xr_sound.get_safe_sound_object([[anomaly\blowout]])
+		snd_obj:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+		blowout_psy_sound("start")
+		if bt<1 then
+			level.add_pp_effector("vibros.ppe", 2001, true)
+		end
+		in_hide=false
+		timers.start_timer("blowout",0,0,3,"amk_mod.Blowout_pp(2)")
+		set_value("blowout",2)
+	elseif phase==2 then
+		timers.start_timer("blowout",0,0,3,"amk_mod.Blowout_pp(3)")
+		clear_skel_tbl()
+	elseif phase==3 then
+		amk_anoms.after_blow_on()
+		sak.off_testobj()
+	
+		remove_value("tbl_bio_art")
+	
+		set_value("blowout",3)
+		timers.start_timer("blowout",0,0,3,"amk_mod.Blowout_pp(4)")
+	elseif phase==4 then
+		set_value("blowout",4)
+		level.remove_cam_effector(2002)
+		if bt<1 then
+			level.remove_pp_effector(2001)
+			level.add_pp_effector("monolith_off.ppe", 2003, false)
+		end
+		blowout_psy_sound("stop")
+		timers.start_timer("blowout",5,"amk_mod.Blowout_pp(5)")
+		amk_anoms.generate_arts()
+		local spwn_tbl = get_value("need_art_spawn", {})
+		spwn_tbl[lname] = false
+		set_value("need_art_spawn", spwn_tbl)
+	elseif phase==5 then
+		--dbg_set_w(get_value("weather", default),true)
+		if bt<1 then
+			local snd_obj = xr_sound.get_safe_sound_object([[anomaly\teleport_work2]])
+			snd_obj:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+			if level.is_wfx_playing() then
+				level.stop_weather_fx()
+			end
+			if const.ground_levels[lname] then
+				level.set_weather("default_np_thunder",true)
+				set_value("after_blow_weather_lock",true)
+			else
+				level_weathers.get_weather_manager():forced_weather_change()
+			end
+			set_value("dynlasthour", hour)
+		end
+		remove_value("blowout")
+		dsh.timeout(8000, function()
+			_G.flag_can_save = true
+			level.block_change_level(false)
+			log2("game saving is enabled now!")
+		end)
+		if lname=="generators" then
+			sak.spawn_teleports(sak.v3f(-20.4,34.8,-223.8),311873,3106,5,20,"amk_zone_teleport_labirint",20)
+		elseif lname=="aver" then
+			sak.spawn_teleports(sak.v3f(350.91,-6.01,-21.23),1492916,2902,5,30,"amk_zone_teleport_aver_labirint",40)
+		elseif lname=="l11_pripyat" then
+			sak.spawn_teleports(sak.v3f(29.7,1.8,355.8),139177,2260,5,30,"amk_zone_teleport_prip_labirint",40)
+		end
+		db.blowout_active=false
+		timers.start_timer("allow_weather_change",0,0,30,"amk_mod.allow_weather_change()")
+		db.actor:give_info_portion("groza_info")
+		xr_statistic.add_pts(
+		"otherstats", game.translate_string( "st_pda_otherstats_blowouts" ), 1, 0.5
+		)
+	end
+end
+function allow_weather_change()
+	remove_value("after_blow_weather_lock")
+end
+
+local next_actor_hit_time=0
+function on_blowout_hit_actor()
+	ogse_signals.get_mgr():reschedule(779)
+    if get_value("blowout", 0)~=3 then return end
+	if next_actor_hit_time < time_global() then
+		next_actor_hit_time=time_global()+1000
+		on_blowout_hit (db.actor)
+	end
+end
+
+function on_blowout_hit(npc,hide)
+	bt = bt or 0
+	if bt > 0 or get_value("blowout",-1)~=3 then 
+		if npc:id()==db.actor:id() then in_hide = true end
+		return false
+	end
+	local lname=level.name()
+	local need_hit
+	need_hit=true
+	local khit=1
+	if hide and hide.zone then
+		need_hit = not check_npc_in_hideout(npc,hide)
+		if not need_hit then
+			if hide.defence then 
+				khit=hide.defence
+			else
+				khit=0
+			end
+		end
+	else
+		local hides=amk_hideouts.hide[lname]
+		local tmp
+		if hides then
+			for i,o in ipairs(hides) do
+				if o.zone then
+					for j,v in ipairs(o.zone) do
+						if v.p3 then
+							tmp=amk.check_npc_in_box(npc,vector():set(unpack(v.p1)),vector():set(unpack(v.p2)),vector():set(unpack(v.p3)))
+						else
+							tmp=amk.check_npc_in_box(npc,vector():set(unpack(v.p1)),vector():set(unpack(v.p2)))
+						end
+						need_hit = need_hit and not tmp
+						if tmp then
+							if o.defence then 
+								khit=o.defence
+							else
+								khit=0
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+
+	if npc:id()==db.actor:id() then in_hide = not need_hit end
+	if (need_hit or khit>0) and get_value("blowout",-1)==3 then
+	local power =(amk_hideouts.blowout_damages[lname] or 0.01)*khit
+		if npc:id()==db.actor:id() then
+			params.psy_health_add(-power)
+			params.radiation_add(power)
+			power=-(power/2)
+			params.health_add(power)
+		else
+			local h = hit()
+			h.power = power
+			h.impulse = 0
+			h.draftsman = npc
+			h.direction = vector():set(0,0,0)
+			h:bone("bip01_spine") 
+			h.type = hit.strike
+			npc:hit(h)
+			h.type = hit.telepatic
+			npc:hit(h)
+			h.type = hit.radiation
+			npc:hit(h)
+		end
+	end
+	return need_hit or khit>0
+end
+
+function check_npc_in_hideout(npc,hide)
+	local not_in_zone=true
+	if hide and hide.zone then
+		for k,v in pairs(hide.zone) do
+			if v.p3 then 
+				not_in_zone = not_in_zone and not amk.check_npc_in_box(npc,vector():set(unpack(v.p1)),vector():set(unpack(v.p2)),vector():set(unpack(v.p3)))
+			else
+				not_in_zone = not_in_zone and not amk.check_npc_in_box(npc,vector():set(unpack(v.p1)),vector():set(unpack(v.p2)))
+			end
+		end
+	end
+	return not not_in_zone
+end
+
+function blowout_type()
+	local lname=level.name()
+	local t=amk_hideouts.blowout_types[lname]
+	return t or 0
+end
+				
+local comm_black_tip = {
+				["stalker"] = true,
+				["freedom"] = true,
+				["dolg"]    = true
+				}
+				
+function IsStalkerCorpse(prn_id)
+	local npc=client_obj(prn_id)
+	if IsStalker(npc) then
+		local comm = npc:character_community()
+		return comm_black_tip[comm]
+	end
+	return false
+end
+   
+function try_add_black_tip(lname,prn_id)
+	local day = timers.Get_Game_Days() or 1
+    if day < 10 or not IsStalkerCorpse(prn_id) then return false end
+    if lua_random(100)<=2 and not has_alife_info("info_black_tip") then
+		timers.start_timer("black_tip_hv",8,1,1,"sak_dialog.take_black_tip()")
+		db.actor:give_info_portion("info_black_tip")
+		return true
+    end
+    return false
+end
+
+function check_usable_item(obj)
+	local actor=db.actor
+	local section=obj:section()
+	if section=="amk_metka" then
+		amk.remove_spot_from_map(obj:id(),"red_location")
+		beakons[obj:id()]=nil
+	elseif string.find(obj:section(),"outfit") then
+		last_armor_id = 0
+	elseif section=="vehicle_btr" then
+		actor:kill(actor)
+	end
+end
+
+function spawn_fuel()
+	local ballons = {
+				{58.30, 19.36, 156.50, 345136, 97},
+				{-118.00,-2.49,-192.783, 97199, 269},
+				{-74.17, 1.80, 8.45, 127766, 329},
+				{3.18, 1.24, 42.48, 243919, 490},
+				{15.35, -1.90, 2.40, 255433, 479},
+				{77.54, 0.30, -108.47, 312366, 427},
+				{-145.54, -0.00, -199.61, 92520, 650},
+				{-130.08, 10.00, -196.67, 109214, 629},
+				{-140.13, 10.00, -197.94, 98647, 629},
+				{37.28, 1.02, -49.90, 220638, 1084},
+				{476.68, -46.94, -0.23, 155714, 1919},
+				{76.80, -2.54, -23.93, 36304, 1970},
+				{94.78, 0.03, -6.88, 88986, 1514},
+				{-3.24, -11.75, -263.07, 33794, 1448}
+				}
+	-- local kanisters = {
+				-- {5.864511013031,0.65,297.02972412109,282644,186},
+				-- {353.74182128906,16.96,249.29316711426,590705,251},
+				-- {-69.94, 0.97, 6.51, 131411, 329},
+				-- {64.01, 0.60, 148.46, 235341, 364},
+				-- {63.29, -0.20, 5.10, 299326, 461},
+				-- {-28.52, -1.04, -181.84, 211644, 676},
+				-- {2.93, -1.88, -13.30, 176553, 1047},
+				-- {41.71, 4.54, -86.36, 227110, 1100},
+				-- {7.90, 1.41, -71.93, 183138, 1041},
+				-- {158.71, -0.76, -259.73, 358950, 962},
+				-- {-344.63,-12.82,400.97, 9612, 1847},
+				-- {305.22, -36.99, -24.40, 68330, 1930},
+				-- {55.02, 1.17, 40.35, 68094, 1511},
+				-- {-114.14, -0.00, 121.75, 43453, 1315},
+				-- {31.33, 5.60, -13.51, 4683, 1538}
+				-- }
+	for k,v in pairs(ballons) do
+		-- Manool: поднял спавн баллонов на 1м.
+		local obj = g_sim:create("amk_ballon",vector():set(v[1], v[2]+1, v[3]), v[4], v[5])
+	end
+	--[[for k,v in pairs(kanisters) do
+		local obj = g_sim:create("amk_kanistra",vector():set(v[1], v[2], v[3]), v[4], v[5])
+	end--]]
+end
+
+function spawn_military_btr()
+	local obj=g_sim:create("vehicle_btr",vector():set(-168.11, -29.65, -303.21),81808,38)
+	local pk = get_netpk(obj,1)
+	local data = pk:get()
+	data.object_flags = bit_not(5)
+	data.custom_data = "[logic]\ncfg = scripts\\esc\\esc_blockpost_btr.ltx"
+	data.mass=100
+	pk:set(data)
+	--[[ 
+	obj=g_sim:create("vehicle_btr",vector():set(-237.85, -26.15, -378.81),17147,14)
+	pk = get_netpk(obj,1)
+	data = pk:get()
+	data.object_flags = bit_not(5)
+	data.custom_data = "[logic]\ncfg = scripts\\esc\\esc_blockpost_btr.ltx"
+	data.mass=100
+	pk:set(data)
+	--]]
+	obj=g_sim:create("vehicle_btr",vector():set(-191.32,0.09,-120.19),45517,446)
+	pk = get_netpk(obj,1)
+	data = pk:get()
+	data.object_flags = bit_not(5)
+	data.custom_data = "[logic]\ncfg=scripts\\agr\\agr_blockpost_btr.ltx"
+	data.mass=100
+	pk:set(data)
+	--[[
+	obj=g_sim:create("vehicle_btr",vector():set(-93.81,0,-185.82),146369,607)
+	pk = get_netpk(obj,1)
+	data = pk:get()
+	data.object_flags = bit_not(5)
+	data.custom_data = "[logic]\ncfg=scripts\\agr\\agr_blockpost_btr.ltx"
+	data.mass=100
+	pk:set(data)
+	--]] 
+	obj=g_sim:create("helicopter",vector():set(-150.0,-40.0,-620.0),128298,11)
+	pk = get_netpk(obj,1)
+	data = pk:get()
+	data.object_flags = bit_not(5)
+	data.custom_data = "[logic]\ncfg = scripts\\esc\\esc_blockpost_heli.ltx"
+	data.engine_sound = "alexmx\\helicopter"
+	data.mass=50
+	pk:set(data)
+end
+
+-- Manool: теперь к погоде это не имеет отношения
+function weather_manager()
+	ogse_signals.get_mgr():reschedule(331)
+	if sync_done==false then return end
+	local hour = level.get_time_hours()
+	--local minut = level.get_time_minutes()
+	local dynlasthour = get_value("dynlasthour", 1)
+	if dynlasthour~=hour then
+		sak.consum_artefact()
+		sak.info_days(hour)
+		set_value("dynlasthour", hour)
+	end
+end
+
+function switch_monster_online(obj)
+	se_monster.need_be_online[obj.id]=true
+end
+
+function switch_monster_offline(obj)
+	se_monster.need_be_online[obj.id]=false
+end
+
+local sini = ini_file("scripts\\amk\\amk_respawns.ltx")
+function respawned(obj,respawner)
+	if IsMonster(obj) then
+		local cfg_name
+		local path_home = utils.cfg_get_string(sini,respawner.amk_name,"path_home", false, false, false,"")
+		local home_min_radius = utils.cfg_get_string(sini,respawner.amk_name,"home_min_radius", false, false, false,"")
+		local home_max_radius = utils.cfg_get_string(sini,respawner.amk_name,"home_max_radius", false, false, false,"")
+		local timer_agr = tostring(lua_random(11,43)*997)
+		local timer_stop = tostring(lua_random(9,31)*997)
+		if strpos(respawner.amk_name,"dead_zomb",1,true) then
+			cfg_name="[smart_terrains]\nnone=true\n[logic]\nactive = mob_fake_death\n[mob_fake_death]\non_actor_dist_le_nvis = 10 | mob_home\n[mob_home]\npath_home = "..path_home.."\nhome_min_radius = "..home_min_radius.."\nhome_max_radius = "..home_max_radius.."\naggressive_home\non_actor_dist_ge_nvis = 20 | mob_fake_death\non_signal = sig_attacked | mob_combat\non_timer = "..timer_agr.." | %=bar_arena_hit%  mob_combat\n[mob_combat]\non_timer = "..timer_stop.." | mob_home\non_actor_dist_ge_nvis = 30 | mob_fake_death"
+		elseif strpos(respawner.amk_name,"x10_zomb",1,true) then
+			cfg_name="[smart_terrains]\nnone=true\n[logic]\nactive = mob_fake_death\n[mob_fake_death]\non_actor_dist_le_nvis = 10 | mob_home\n[mob_home]\npath_home = "..path_home.."\nhome_min_radius = "..home_min_radius.."\nhome_max_radius = "..home_max_radius.."\naggressive_home\non_actor_dist_ge_nvis = 20 | mob_fake_death\non_signal = sig_attacked | mob_combat\non_timer = "..timer_agr.." | %=bar_arena_hit%  mob_combat\n[mob_combat]\non_timer = "..timer_stop.." | mob_home\non_actor_dist_ge_nvis = 25 | mob_fake_death"
+		elseif strpos(respawner.amk_name,"_zomb",1,true) then
+			cfg_name="[smart_terrains]\nnone=true\n[logic]\nactive = mob_fake_death\n[mob_fake_death]\non_actor_dist_le_nvis = 25 | mob_home\n[mob_home]\npath_home = "..path_home.."\nhome_min_radius = "..home_min_radius.."\nhome_max_radius = "..home_max_radius.."\naggressive_home\non_actor_dist_ge_nvis = 60 | mob_fake_death\non_signal = sig_attacked | mob_combat\non_timer = "..timer_agr.." | %=bar_arena_hit%  mob_combat\n[mob_combat]\non_timer = "..timer_stop.." | mob_home\non_actor_dist_ge_nvis = 80 | mob_fake_death"
+		else
+			if home_min_radius == "" or home_min_radius == nil then
+				home_min_radius = 30
+			end
+			if home_max_radius == "" or home_min_radius == nil then
+				home_max_radius = 50
+			end
+			local home_min_radius_n=tostring(math.ceil(tonumber(home_min_radius)/1.5))
+			local home_max_radius_n=tostring(math.ceil(tonumber(home_max_radius)/1.5))
+			cfg_name="[smart_terrains]\nnone=true\n[logic]\nactive = mob_home@0\n[mob_home@0]\non_info={+time_night} mob_home@1\npath_home = "..path_home.."\nhome_min_radius = "..home_min_radius.."\nhome_max_radius = "..home_max_radius.."\naggressive_home\non_signal = sig_attacked | mob_combat\non_timer = "..timer_agr.." | %=bar_arena_hit%  mob_combat\n[mob_combat]\non_timer = "..timer_stop.." | mob_home@0\n[mob_home@1]\non_info={-time_night} mob_home@0\npath_home = "..path_home.."\nhome_min_radius = "..home_min_radius_n.."\nhome_max_radius = "..home_max_radius_n.."\naggressive_home\non_signal = sig_attacked | mob_combat\non_timer = "..timer_agr.." | %=bar_arena_hit%  mob_combat"
+		end
+		local pk = get_netpk(obj)
+		local data = pk:get()
+		data.custom_data = cfg_name
+		pk:set(data)  
+		local conds = {}
+		conds["none"] = xr_logic.parse_condlist(obj, "smart_terrains", "none", "true")
+		obj.smart_terrain_conditions = conds
+		--ODS("[~T/~B]. #DBG: монстр = "..obj:name().."  респавнер  "..respawner.amk_name.."   конфиг    "..cfg_name)
+	end  
+end
+
+local respawners={}
+
+function spawn_unspawned_respawners()
+	for id, obj in alife():objects() do
+		local oini = (obj and obj:clsid() == CLID_RESPAWN) and obj:spawn_ini()
+		if oini and oini:line_exist("respawn", "amk_name") == true then
+			local amk_name = utils.cfg_get_string(oini, "respawn", "amk_name", false, false, false, false)
+			if amk_name then respawners[amk_name] = true end
+			--ODS("[~T/~B]. #DBG: amk_name = "..tostring(amk_name).." "..obj:name())
+		end
+	end
+
+	local dv={}
+	if sini:section_exist("default_values") then
+		local result, id, value = nil, nil, nil
+		for a=0,sini:line_count("default_values")-1 do
+			result, id, value = sini:r_line("default_values",a,"","")
+			if id~=nil and amk.trim(id)~="" and amk.trim(id)~=nil then
+				dv[amk.trim(id)]=amk.trim(value)
+			end
+		end
+	end
+
+	if sini:section_exist("amk_respawns") then
+		local tmp={}
+		local result, id, value = nil, nil, nil
+		for a=0,sini:line_count("amk_respawns")-1 do
+			result, id, value = sini:r_line("amk_respawns",a,"","")
+			if id~=nil and amk.trim(id)~="" and amk.trim(id)~=nil then
+				table.insert(tmp, amk.trim(id))
+			end
+		end
+    
+		for k,v in pairs(tmp) do
+		--local flag = utils.cfg_get_bool(sini,"amk_respawns", v, true, false, false)
+			local map = utils.cfg_get_string(sini,"amk_respawns",v, false, false, false,"")
+			if not respawners[v] and map==level.name()then
+				local t = amk.parse_ini_section_to_array(sini, v)
+				local xyzlg = amk.str_explode(",",t.xyzlg,true)
+				local pos = vector():set(tonumber(xyzlg[1]),tonumber(xyzlg[2]),tonumber(xyzlg[3]))
+				-- local respawner = amk.spawn_item("respawn",pos,tonumber(xyzlg[5]),tonumber(xyzlg[4]))
+				local respawner = amk_anoms.spawn_anomaly("respawn", pos, tonumber(xyzlg[5]), tonumber(xyzlg[4]),
+					{shtype = 0, radius = 1, center = {0, 0, 0}}
+				)
+				--ODS("[~T/~B]. #DBG: amk_name = "..xyzlg[5].." "..xyzlg[4])
+				t.xyzlg = nil
+				t.amk_name = v
+				for kkk,vvv in pairs(dv) do
+					if t[kkk]==nil then
+						t[kkk]=vvv
+					end
+				end
+				local pk = get_netpk(respawner)
+				local data = pk:get()
+				data.custom_data = amk.gen_custom_data({respawn=t})
+				pk:set(data)
+				se_respawn.reinit_spawner_params(respawner:name())
+				--amk.add_spot_on_map(respawner.id,"red_location", v.."//n"..tbl.custom)
+				--amk.mylog("spawned respawn "..respawner.id)
+			end
+			--[[if flag==false then
+				local o = se_respawn.get_respawner_by_name(v)
+				if o then
+					g_sim:release(o)
+				end
+			end--]]
+		end
+	end
+end
+
+local last_armor_id=0
+
+function repair_armor(val)
+	local armor = db.actor:item_in_slot(6)
+	if armor then
+		last_armor_id=armor:id()
+		armor:set_condition(val)
+		local maskc = vergas_masks.mask_condition()
+		if maskc ~= -1 and maskc >= 0.94 then
+			vergas_masks.set_mask_condition(last_armor_id, 100)
+		elseif maskc ~= -1 and maskc < 0.94 then
+			sak.send_tip(game.translate_string("cant_repair_mask"),game.translate_string("thinking_out_loud"),2,10,"g_g","no","red")
+		end
+	end
+end
+
+function check_armor(force)
+	-- ogse_signals.get_mgr():reschedule(120)
+	ogse_signals.get_mgr():reschedule(2000)
+	if not sak.game_began then
+		return
+	end
+	
+	local armor = db.actor:item_in_slot(6)
+	if not armor then
+		last_armor_id=0
+		params.outfit_weight_cond(nil,0.03)
+		return
+	end
+	local cond=armor:condition()
+	if (armor:id()~=last_armor_id) or force then
+		last_armor_id=armor:id()
+		params.outfit_weight_cond(armor,cond,true)
+		return
+	end
+	params.outfit_weight_cond(armor,cond)
+end
+
+-- function fast_wpn_textures()
+	-- local armor = db.actor:item_in_slot(6)
+	-- last_armor_id=0
+	-- for slot = 0, 4 do
+		-- local item = db.actor:item_in_slot(slot)
+		-- if item and item:get_weapon() ~= nil and false == strpos(item:section(), "knife") and (slot ~= 3) then
+			-- params.weapon_mag_size_cond_check (item, slot) 
+		-- end
+	-- end
+	-- log2("fast_wpn_textures called")
+	-- params.outfit_weight_cond(armor,0.15,true)
+-- end
+
+btrs_friends={}
+
+function build_btrs_table(obj)
+	if obj and(IsStalker(obj) and obj:character_community()=="military" and obj:alive()) or obj:section()=="vehicle_btr" then 
+		btrs_friends[obj:id()] = obj:section()
+	end
+end
+
+local zombi_skeletons={
+				"physics\\dead_body\\skelet_combine_pose_03",
+				"physics\\dead_body\\skelet_combine_pose_04",
+				"physics\\dead_body\\skelet_combine_pose_05",
+				"physics\\dead_body\\skelet_torso"
+}
+function zomby_blow(obj)
+	if obj:section()=="zombie_blow" then
+		amk_particle.amk_particle({
+        particle="amk\\zomb_explode",
+        pos=obj:position(),
+        sound=[[anomaly\anomaly_body_tear_1]]
+		})
+		local dist = db.actor:position():distance_to(obj:position())
+		if dist < 30 and db.actor:see(obj) then
+			local h = hit()
+			h.impulse = 0
+			h.draftsman = db.actor
+			h.direction = vector():set(0,0,0)
+			h:bone("bip01_spine")
+			h.power = 1/dist
+			h.type = hit.strike
+			db.actor:hit(h)
+			h.power = 15/dist
+			h.type = hit.chemical_burn
+			db.actor:hit(h)
+		end
+        
+        local skel = amk.spawn_item("breakable_object", obj:position(), obj:game_vertex_id(), obj:level_vertex_id())
+		if skel then
+			local skel_tbl_del = get_value("skel_tbl", {})
+			table.insert(skel_tbl_del,skel.id)
+			set_value("skel_tbl", skel_tbl_del)
+			
+			local pk = get_netpk(skel, 1)        
+			local t = pk:get()
+			t.visual_name = zombi_skeletons[lua_random(table.getn(zombi_skeletons))]
+			t.mass = 5.0
+			t.physic_type = 3
+			t.skeleton_flags = 1
+			t.visual_flags = 1
+			pk:set(t)
+  
+			misc.release_obj(obj)
+		end
+	end
+end
+function clear_skel_tbl()
+	local skel_tbl_del = get_value("skel_tbl", {})
+	if #skel_tbl_del > 0 then
+		for _,v in ipairs(skel_tbl_del) do
+			local obj = g_sim:object(v)
+			if obj and obj:section_name()=="breakable_object" then
+				misc.release_obj(obj)
+			end
+		end
+		remove_value("skel_tbl")
+	end	
+end
+
+function init_module()
+end
+
+function late_init()
+end
+
+bt = blowout_type()

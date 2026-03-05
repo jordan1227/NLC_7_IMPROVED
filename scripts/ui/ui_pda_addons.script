@@ -1,0 +1,255 @@
+function attach(sm)
+	sm:subscribe({signal = "on_pda_open", fun = this.pda_open})
+	sm:subscribe({signal = "on_pda_hide", fun = this.pda_close})
+	sm:subscribe({signal = "on_key", fun = this.on_key})
+	sm:subscribe({signal = "on_update", fun = this.on_update})
+end
+
+local open_add_now = nil
+local wnd = nil
+function pda_open()
+	if not wnd and level.get_pda_wnd() then
+		wnd = PDAAdd(level.get_pda_wnd())
+	end
+end
+
+function pda_close()
+	if wnd then
+		wnd:DetachWnd()
+		wnd = nil
+		open_add_now = nil
+	end
+end
+
+-- Manool: коллбэк срабатывает раньше, чем открывается PDAAdd, поэтому, успеваем установить флаг
+function on_key(key, bind)
+	if bind ~= key_bindings.kPDA_CLOCK then return end
+	open_add_now = true
+end
+
+function on_update()
+	ogse_signals.get_mgr():reschedule(500)
+	if wnd then
+		wnd:UpdateTextRad()
+	end
+end
+
+local xml = CScriptXmlInit()
+xml:ParseFile("ui_pda_add.xml")
+
+class "PDAAdd" (CUIScriptWnd)
+function PDAAdd:__init(owner) super()
+	self.owner = owner
+	self.watch = vergas_watch.g_watch
+	self:Init(0, 0, 1024, 768)
+	self:InitControls()
+end
+
+function PDAAdd:InitControls()
+	self.stat = CUIStatic()
+	self.stat:Init(0, 0, 1024, 768)
+	self.owner:AttachChild(self.stat)
+	self.stat:Show(true)
+
+	self.main_btn = xml:InitButton("btn_show_timer", self.stat)
+	self:Register(self.main_btn, "button_timer")
+	if open_add_now then
+		open_add_now = nil
+		self:ShowTimerDlg()
+	end
+	self:AddCallback("button_timer", ui_events.BUTTON_CLICKED, self.ShowTimerDlg, self)
+end
+
+function PDAAdd:ShowTimerDlg()
+	vergas_watch.set_flag_watch_open(true)
+	self:SwitchMainControl(false)
+	if self.inited then
+		self:UpdateText()
+		self.main_back:Enable(true)
+		self.main_back:Show(true)
+		return
+	end
+	self.inited = true
+
+	self.main_back = xml:InitFrame("back_frame", self.stat)
+
+	self.caption = xml:InitStatic("caption", self.main_back)
+	xml:InitStatic("cap_hours", self.main_back)
+	xml:InitStatic("cap_minutes", self.main_back)
+
+	self.cap_rad = xml:InitStatic("cap_rad", self.main_back)
+	self.cap_day_of_week = xml:InitStatic("cap_day_of_week", self.main_back)
+	self.cap_days_in_zone = xml:InitStatic("cap_days_in_zone", self.main_back)
+
+	self.edit_h = xml:InitSpinNum("edit_hours", self.main_back)
+	self.edit_m = xml:InitSpinNum("edit_minutes", self.main_back)
+	self.edit_h:SetReverse(true)
+	self.edit_m:SetReverse(true)
+	self.edit_h:SetMax(23)
+	self.edit_m:SetMax(59)
+
+	btn = xml:Init3tButton("btn_start", self.main_back)
+	self:Register(btn, "button_start")
+	btn = xml:Init3tButton("btn_stop", self.main_back)
+	self:Register(btn, "btn_stop")
+	btn = xml:Init3tButton("btn_quit", self.main_back)
+	self:Register(btn, "button_quit")
+
+	self:AddCallback("button_start", ui_events.BUTTON_CLICKED, self.OnButtonStart, self)
+	self:AddCallback("btn_stop", ui_events.BUTTON_CLICKED, self.OnButtonStop, self)
+	self:AddCallback("button_quit", ui_events.BUTTON_CLICKED, self.OnButtonQuit, self)
+
+	self:UpdateText()
+	self.main_btn:Enable(false)
+end
+
+function PDAAdd:SwitchMainControl(flag)
+	local wnd = level.get_pda_wnd()
+	if wnd then
+		local bg = wnd:FindChild("background_static")
+		if bg then
+			-- log2("SwitchMainControl: [%s]", tostring(flag))
+			bg:Enable(flag)
+		end
+	end
+end
+
+function PDAAdd:OnButtonStop()
+	self.watch:disable_alarm()
+	self.watch:shut_up()
+	local cfg = self.watch:alarm_config()
+	cfg.h = 0
+	cfg.m = 0
+	set_value("alarm_time", cfg)
+
+	vergas_watch.set_get_old_sizes("ss", 0)
+	vergas_watch.set_get_flag_sec_show(1, false)
+	vergas_lib.s_play([[pda\pass_no]], 1)
+	self:UpdateText()
+end
+
+function PDAAdd:CheckRadDevice()
+	local slots = {8, 13, 14, 15, 16}
+	for i, slot in ipairs(slots) do
+		if razgruzka.active_detectors[slot] then return true end
+	end
+	return false
+end
+
+function PDAAdd:UpdateTextRad()
+	if not self.cap_rad then return end
+	self.cap_rad:SetTextComplexMode(true)
+	
+	if not get_value("pda_upgr_rad") then
+		self.cap_rad:SetText(game.translate_string("ui_inv_radiation") .. ":%c[red] " .. game.translate_string("no_pda_chip_rad"))
+		return
+	end
+	if not self:CheckRadDevice() then
+		self.cap_rad:SetText(game.translate_string("ui_inv_radiation") .. ":%c[red] " .. game.translate_string("no_device"))
+		return
+	end
+	local txt = "000"
+	local pref = "%c[green]"
+	local t1, t2, t3, t4 = vergas_watch.set_radiation_textures()
+	if t1 ~= "0" or t2 ~= "0" or t3 ~= "0" then
+		if t4 == 'mp' then
+			pref = "%c[255,255,255,1]"
+		elseif t4 == 'p' then
+			pref = "%c[red]"
+		end
+		txt = pref .. t1 .. t2 .. t3 .. " " .. t4
+	end
+	self.cap_rad:SetText(game.translate_string("ui_inv_radiation") .. ": " .. txt)
+end
+
+function PDAAdd:UpdateText()
+	self.cap_day_of_week:SetText(game.translate_string(vergas_watch.set_day_week_textures()))
+	self.cap_days_in_zone:SetText(game.translate_string("st_days_in_zone") .. ": " .. timers.Get_Game_Days())
+
+	if self.watch:alarm_config().f then
+		local cfg = self.watch:alarm_config()
+		self.caption:SetText(
+			string.format(
+				"%s: [%s:%s]",
+				game.translate_string("st_alarm"),
+				(cfg.h <= 9 and "0" or "") .. cfg.h,
+				(cfg.m <= 9 and "0" or "") .. cfg.m
+			)
+		)
+		self.caption:SetTextColor(255, 255, 255, 0)
+	else
+		self.caption:SetTextST("st_alarm")
+		self.caption:SetTextColor(255, 255, 255, 255)
+	end
+end
+
+function PDAAdd:OnButtonStart()
+	local cfg = self.watch:alarm_config()
+
+	cfg.h = tonumber(self.edit_h:GetText())
+	cfg.m = tonumber(self.edit_m:GetText())
+
+	if not cfg.h then cfg.h = 0 end
+	if not cfg.m then cfg.m = 0 end
+
+	if cfg.h < 0 then cfg.h = 0 end
+	if cfg.m < 0 then cfg.m = 0 end
+
+	if cfg.h >= 24 then cfg.h = 23 end
+	if cfg.m >= 60 then cfg.m = 59 end
+
+	set_value("alarm_time", cfg)
+
+	--устанавливаю флаг запущенного будильника
+	self.watch:enable_alarm()
+	self.watch:shut_up()
+
+	vergas_watch.set_get_flag_sec_show(1, true)
+	vergas_lib.s_play([[pda\pass_ok]], 1)
+	self:UpdateText()
+end
+
+function PDAAdd:OnButtonQuit()
+	self:SwitchMainControl(true)
+	self.main_back:Enable(false)
+	self.main_back:Show(false)
+	self.main_btn:Enable(true)
+	vergas_watch.set_flag_watch_open(false)
+
+	if self.watch:alarm_config().f then
+		self.watch:enable_alarm() -- перенастройка дня звонка
+	end
+
+	if vergas_watch.set_get_old_sizes("sec") ~= 0 and (not vergas_watch.set_get_flag_sec_show(2)) then
+		vergas_watch.set_get_old_sizes("sec", 0)
+	end
+end
+
+function PDAAdd:DetachWnd()
+	if self.stat then
+		self:SwitchMainControl(true)
+		self:ClearCallbacks()
+		self.owner:DetachChild(self.stat)
+	end
+end
+
+function PDAAdd:OnKeyboard(dik, action)
+	CUIScriptWnd.OnKeyboard(self, dik, action)
+	if self.stat then return true end
+	if action == ui_events.WINDOW_KEY_PRESSED then
+		local bind = dik_to_bind(dik)
+		if dik == DIK_keys.DIK_ESCAPE
+			or bind == key_bindings.kACTIVE_JOBS
+			or bind == key_bindings.kMAP
+			or bind == key_bindings.kCONTACTS
+		then
+			self:OnButtonQuit()
+		end
+	end
+	return true
+end
+
+function get_pda_upgr_spot()
+	local res = get_value("pda_upgr_spot",false)
+	return res
+end

@@ -1,0 +1,48 @@
+[logic]
+active = walker1
+danger = danger_condition
+
+[walker1]
+path_walk = jila_walk_way
+path_look = jila_way_look
+danger = danger_condition
+on_info = {+val_raid_start -val_raid_end} camper@mil_raid
+on_actor_dist_le_nvis = 10 | remark@jila_hello
+meet = no_meet
+
+[remark@jila_hello]
+anim = guard
+target = actor
+snd = jila_hello
+meet = no_meet
+danger = danger_condition
+on_info = {+val_raid_start -val_raid_end} camper@mil_raid
+on_signal = sound_end| walker2
+
+[walker2]
+path_walk = jila_walk_way
+path_look = jila_way_look
+danger = danger_condition
+on_info = {+val_raid_start -val_raid_end} camper@mil_raid
+meet = meet
+
+[camper@mil_raid]
+path_walk = jila_walk_way
+path_look = jila_way_raid_look
+danger = danger_condition
+on_info = {+val_raid_end} walker1
+radius = 5
+no_retreat = true
+
+[danger_condition]
+ignore_distance = 1
+ignore_types = grenade, corpse, sound
+
+[meet]
+use = true
+use_wpn = true
+meet_talk_enabled = true
+meet_state = 10|ward
+meet_state_wpn = 10|ward
+victim 			= 10| actor
+victim_wpn = 10| actor

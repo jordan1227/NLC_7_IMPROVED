@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+<string id="actor_has_borov_key"><text>Место входа в лабораторию Х-18</text></string>
+<string id="Found_PDA"><text>Найденные обрывки информации</text></string>
+
+<string id="bandit"><text>Бандиты</text></string>
+<string id="dolg"><text>"Долг"</text></string>
+<string id="ecolog"><text>Учёные</text></string>
+<string id="killer"><text>Наёмники</text></string>
+<string id="freedom"><text>"Свобода"</text></string>
+<string id="military"><text>Военные</text></string>
+<string id="monolith"><text>"Монолит"</text></string>
+<string id="trader"><text>Уважаемый</text></string>
+<string id="stalker"><text>Одиночки</text></string>
+<string id="zombied"><text>зомби</text></string>
+
+<string id="actor"><text>Одиночка</text></string>
+<string id="actor_dolg"><text>"Долг"</text></string>
+<string id="actor_freedom"><text>"Свобода"</text></string>
+<string id="arena_enemy"><text>Наёмник</text></string>
+
+<string id="neutral"><text>нейтрал</text></string>
+<string id="indifferent"><text>нейтрал</text></string>
+<string id="friendly"><text>друг</text></string>
+<string id="enemy"><text>враг</text></string>
+<string id="bad"><text>плохая</text></string>
+<string id="good"><text>хорошая</text></string>
+<string id="excellent"><text>отличная</text></string>
+<string id="terrible"><text>ужасная</text></string>
+<string id="very_bad"><text>очень плохая</text></string>
+<string id="very_good"><text>очень хорошая</text></string>
+
+<string id="l01_escape"><text>Кордон</text></string>
+<string id="l02_garbage"><text>Свалка</text></string>
+<string id="l03_agroprom"><text>Агропром</text></string>
+<string id="l04_darkvalley"><text>Тёмная долина</text></string>
+<string id="l05_bar"><text>Бар</text></string>
+<string id="l06_rostok"><text>Дикая территория</text></string>
+<string id="l07_military"><text>Армейские склады</text></string>
+<string id="l08_yantar"><text>Янтарь</text></string>
+<string id="l10_radar"><text>Радар</text></string>
+<string id="l11_pripyat"><text>Припять</text></string>
+<string id="l12_stancia_new"><text>ЧАЭС</text></string>
+<string id="l12_stancia_2"><text>ЧАЭС</text></string>
+<string id="l12_stancia_2_new"><text>ЧАЭС2</text></string>
+<string id="l03u_agr_underground"><text>Подземелье НИИ 'Агропром'</text></string>
+<string id="l04u_labx18"><text>Лаборатория X-18</text></string>
+<string id="l08u_brainlab"><text>Лаборатория X-16</text></string>
+<string id="labx8"><text>Лаборатория X-8</text></string>
+<string id="labx10"><text>Лаборатория X-10</text></string>
+<string id="l10u_bunker"><text>Лаборатория X-12</text></string>
+<string id="l12u_sarcofag"><text>Саркофаг</text></string>
+<string id="l12u_control_monolith"><text>Управление Монолитом</text></string>
+<string id="aver"><text>Туманная чаща</text></string>
+<string id="av_peshera"><text>Подземелье диггеров</text></string>
+<string id="deadcity"><text>Иванковский райцентр</text></string>
+<string id="limansk"><text>Лиманск</text></string>
+<string id="lost_village"><text>Забытый хутор</text></string>
+<string id="marsh"><text>Болота</text></string>
+<string id="peshera"><text>Катакомбы</text></string>
+<string id="red_forest"><text>Рыжий лес</text></string>
+<string id="generators"><text>Зона 'Тесла'</text></string>
+<string id="hospital"><text>Санаторий 'Луч'</text></string>
+<string id="k01_darkscape"><text>'Кишка' Зоны</text></string>
+<string id="warlab"><text>Бункер 'Тесла'</text></string>
+
+<string id="master"><text>мастер</text></string>
+<string id="experienced"><text>опытный</text></string>
+<string id="novice"><text>новичок</text></string>
+<string id="veteran"><text>ветеран</text></string>
+
+<string id="st_no_active_task"><text>Нет активного задания</text></string>
+<string id="st_time_till_surge"><text>Время до Выброса</text></string>
+<string id="Btn_Cancel"><text>Отменить</text></string>
+<string id="Btn_No"><text>Нет</text></string>
+<string id="Btn_OK"><text>OK</text></string>
+<string id="Btn_Yes"><text>Да</text></string>
+<string id="global_map"><text>ЗОНА</text></string>
+<string id="st_autosave"><text>Автосохранение...</text></string>
+<string id="st_game_over"><text>Погиб</text></string>
+<string id="st_item_used"><text>Использовано</text></string>
+<string id="st_not_enough_money"><text>Недостаточно денег</text></string>
+<string id="st_not_enough_money_npc"><text>У собеседника недостаточно денег</text></string>
+<string id="ui_st_opponent_items"><text>Рюкзак</text></string>
+<string id="st_search_treasure"><text>Проверить</text></string>
+<string id="st_search_body"><text>Что там у него в брюхе...</text></string>
+<string id="search_self_inv"><text>Заглянуть внутрь</text></string>
+<string id="search_self_rep"><text>Разложить рембокс</text></string>
+<string id="what_this"><text>Что там у меня...</text></string>
+<string id="inventory_item_use"><text>Поднять</text></string>
+<string id="ui_mm_check_updates"><text>Обновления</text></string>
+<string id="ui_mm_alternative"><text>Альтернатива</text></string>
+<string id="ui_inv_health"><text>Здоровье</text></string>
+<string id="ui_inv_psy_health"><text>Пси-здоровье</text></string>
+<string id="ui_inv_radiation"><text>Радиация</text></string>
+<string id="ui_inv_power"><text>Выносливость</text></string>
+<string id="st_mp_say_to_all"><text>Всем</text></string>
+<string id="st_mp_say_to_team"><text>Команде</text></string>
+<string id="st_mp_disabled_voting"><text>ПОСЛ.СОХРАНЕНИЕ</text></string>
+<string id="st_mp_no_current_voting"><text>ЗАГРУЗИТЬ</text></string>
+<string id="st_mp_ready"><text>готов</text></string>
+<string id="st_mp_voting_succeed"><text>В ГЛАВНОЕ МЕНЮ</text></string>
+<string id="st_mp_voting_failed"><text>NLC 3.9.1</text></string>
+<string id="st_change_level_disabled"><text>Переход заблокирован, требуется цифровая подпись профиля. Загрузите player.dat на странице http://darkstalker.ru/sign_profile.php для подписывания.</text></string>
+<string id="st_save_not_allowed"><text>Нельзя сохраняться во время выброса и некоторое время после!</text></string>
+<string id="box_no_space"><text>Нельзя положить больше предметов</text></string>
+
+<string id="enc_recipts"><text>Рецепты модификатов</text></string>
+<string id="a_level_1"><text>Первый уровень</text></string>
+<string id="a_level_2"><text>Второй уровень</text></string>
+<string id="a_level_3"><text>Третий уровень</text></string>
+<string id="a_level_4"><text>Пустышки</text></string>
+<string id="a_level_5"><text>Уникальные</text></string>
+<string id="mod"><text>Модификаты</text></string>
+<string id="mezomod"><text>Мезомодификаты</text></string>
+<string id="gipermod"><text>Гипермодификаты</text></string>
+<string id="absol"><text>Абсолюты</text></string>
+
+<string id="blowout_not_sleep"><text>Выброс же! Уснёшь тут!</text></string>
+<string id="cant_sleep_equip"><text>Не влезаю туда в снаряге!</text></string>
+<string id="not_need_sleep"><text>Что-то не хочется спать...</text></string>
+<string id="not_need_sleep_nrg"><text>Не могу уснуть! Энергетик действует... Зараза!</text></string>
+<string id="not_need_sleep_enemy"><text>Какой сон?! Когда враги рядом!</text></string>
+<string id="not_need_sleep_undegrourd"><text>Подземелье - не самое удачное место для сна.</text></string>
+</string_table>

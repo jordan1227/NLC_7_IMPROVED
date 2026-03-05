@@ -1,0 +1,658 @@
+;***************************************************************
+; ОСНОВНЫЕ ТЕМЫ
+;***************************************************************
+[state_rnd]
+stalker				= 1,states\idle\idle_
+zombied				= 1,states\idle\idle_
+bar_bar_drunk_dolg 	= 0,scenario\bar\bar_veteran\bar_veteran_ 
+bar_bar_hunter 		= 0,scenario\bar\bar_hunter\bar_hunter_
+bar_general 		= 0,scenario\bar\bar_visitor\bar_visitor_
+bar_bandit 			= 0,scenario\bar\bar_visitor\bar_visitor_
+bar_white_novice	= 0,scenario\bar\bar_visitor\bar_visitor_
+bar_killer 			= 0,scenario\bar\bar_visitor\bar_visitor_
+bar_bandit 			= 0,scenario\bar\bar_visitor\bar_visitor_
+bar_dolg 			= 0,scenario\bar\bar_visitor\bar_visitor_
+bar_brown_novice	= 0,scenario\bar\bar_visitor\bar_visitor_
+bar_dolg_leader		= 0,scenario\bar\dolg_voronin\duty_voronin_
+bar_dolg_petrenko	= 0,scenario\bar\dolg_petrenko\duty_petrenko_
+sak				 	= 0,scenario\bar\dolg_voronin\duty_voronin_
+
+[diador_spam_rnd]
+550			= 0,scenario\diador\diador_
+
+[sleep_rnd]
+stalker		= 1,states\sleep\sleep_
+
+[weather_bad_rnd]
+stalker		= 1,weather\bad_weather\bad_weather_
+	
+[weather_good_rnd]
+stalker		= 1,states\idle\idle_
+
+
+[help_seq]
+stalker     = 1,help\not_wounded\help_
+[help_rnd]
+stalker     = 1,help\not_wounded\help_
+
+[help_see_seq]
+stalker		= 1,help\wounded_see_helper\help_
+[help_see_rnd]
+stalker		= 1,help\wounded_not_see_helper\help_
+
+[help_heavy_rnd]
+stalker		= 1,help\wounded_heavy\help_
+zombied		= 1,states\rising\rising_
+
+[wounded_psy_seq]
+stalker		= 1,help\wounded_psy\psy_
+[wounded_psy_rnd]
+stalker		= 1,help\wounded_psy\psy_
+
+[wounded_psy_shoot_seq]
+stalker		= 1,help\wounded_psy\suicide_
+	
+[wait_seq]
+stalker		= 1,waiting\wait_
+
+[threat_weap_seq]
+stalker		= 1,threat\drop_weapon\dropweapon_
+
+[threat_back_seq]
+stalker		= 1,threat\back_off\backoff_
+
+[threat_stop_rnd]
+stalker		= 1,threat\stop\stop_
+
+[reac_see_rnd]
+stalker		= 1,reactions\see_something\see_
+	
+[talk_hello_rnd]
+500			= 0,scenario\bar\barman\bar_barman_hello_
+stalker		= 0,greetings\greeting_
+
+[reac_music_rnd]
+stalker		= 1,reactions\music\reaction_music_
+
+[reac_joke_rnd]
+stalker		= 1,reactions\joke\reaction_joke_
+
+[use_no_fight_rnd]
+stalker		= 1,talk\use\no_fight_
+
+[use_no_sleep_rnd]
+stalker		= 1,talk\use\no_sleep_
+
+[use_no_weapon_rnd]
+stalker		= 1,talk\use\no_weapon_
+
+[use_no_default_rnd]
+stalker		= 1,talk\use\no_default_
+
+[use_abuse_rnd]
+stalker		= 1,talk\use\abuse_
+
+
+[fight_attack_rnd]
+stalker	= 1,fight\attack\attack_
+
+[zombied_fight_attack_rnd]
+stalker	= 1,fight\attack\attack_
+
+[fight_enemy_rnd]
+stalker	= 1,fight\enemy\enemy_
+
+[fight_backup_rnd]
+stalker	= 1,fight\backup\backup_
+
+[speech_rnd]
+407		= 0,scenario\val\escort_threat_
+408		= 0,scenario\val\escort_threat_
+
+
+[speech_seq]
+302		= 0,scenario\agroprom\krot_thanks_
+401		= 0,scenario\val\sacrifice_help_
+404		= 0,scenario\val\sacrifice_bandit1_dialog_
+405		= 0,scenario\val\sacrifice_bandit2_dialog_
+409		= 0,scenario\val\tunnel_bandit_dialog_
+412		= 0,scenario\val\opendoor_soldier_dialog2
+424		= 0,scenario\val\escort_halfdead_phrase1
+1002	= 0,scenario\radar\entrance\rad_entrance_1_
+1003	= 0,scenario\radar\entrance\rad_entrance_2_
+
+[intro_music_rnd]
+stalker	= 1,talk\intros\intro_music_
+
+[harmonica_rnd]
+stalker	= 0,music\stalkers\harmonica_
+
+[guitar_rnd]
+bandit	= 0,music\bandits\guitar_
+stalker	= 0,music\stalkers\guitar_
+
+[intro_joke_rnd]
+stalker	= 1,talk\intros\intro_joke_
+
+[joke_rnd]
+stalker	= 1,talk\jokes\joke_
+
+[story_01_seq]
+stalker	= 0,stories\story001_part_
+
+[story_02_seq]
+stalker	= 0,stories\story002_part_
+
+[story_03_seq]
+stalker	= 0,stories\story003_part_
+
+[story_04_seq]
+stalker	= 0,stories\story004_part_
+
+[story_05_seq]
+stalker	= 0,stories\story005_part_
+
+[story_06_seq]
+stalker	= 0,stories\story006_part_
+
+[legend_01_seq]
+stalker	= 0,stories\legend001_part_
+
+[legend_02_seq]
+stalker	= 0,stories\legend002_part_
+
+[legend_03_seq]
+stalker	= 0,stories\legend003_part_
+
+[legend_04_seq]
+stalker	= 0,stories\legend004_part_
+
+[legend_05_seq]
+stalker	= 0,stories\legend005_part_
+
+[story_reac_action_right_rnd]
+stalker	= 0,story_reactions\action_right_
+
+[story_reac_advice_sceptic_rnd]
+stalker	= 0,story_reactions\advice_sceptic_
+
+[story_reac_advice_support_rnd]
+stalker	= 0,story_reactions\advice_support_
+
+[story_reac_belief_story_rnd]
+stalker	= 0,story_reactions\belief_story_
+
+[story_reac_continue_rnd]
+stalker	= 0,story_reactions\continue_
+
+[story_reac_cool_info_rnd]
+stalker	= 0,story_reactions\cool_info_
+
+[story_reac_cool_teller_rnd]
+stalker	= 0,story_reactions\cool_teller_
+
+[story_reac_disbelief_rnd]
+stalker	= 0,story_reactions\disbelief_
+
+[story_reac_disbelief_story_rnd]
+stalker	= 0,story_reactions\disbelief_story_
+
+[story_reac_disbelief_teller_rnd]
+stalker	= 0,story_reactions\disbelief_teller_
+
+[story_reac_doubt_rnd]
+stalker	= 0,story_reactions\doubt_
+
+[story_reac_fear_rnd]
+stalker	= 0,story_reactions\fear_
+
+[story_reac_final_happy_rnd]
+stalker	= 0,story_reactions\final_happy_
+
+[story_reac_final_tragic_rnd]
+stalker	= 0,story_reactions\final_tragic_
+
+[story_reac_laughter_rnd]
+stalker	= 0,story_reactions\laughter_
+
+[story_reac_wonder_rnd]
+stalker	= 0,story_reactions\wonder_
+
+[story_reac_yes_rnd]
+stalker	= 0,story_reactions\yes_
+
+;***************************************************************
+; УНИКАЛЬНЫЕ ТЕМЫ
+;***************************************************************
+
+; Escape
+[esc_tolik_help_rnd]
+7		= 0,scenario\escape\tolik_help_tutor_
+
+[esc_factory_raid_seq]
+9		= 0,scenario\escape\assault_raid
+
+[esc_factory_attack_seq]
+9		= 0,scenario\escape\assault_attack
+
+[esc_factory_go_rnd]
+9		= 0,scenario\escape\assault_go_
+
+[esc_tolik_thanks_seq]
+7		= 0,scenario\escape\tolik_thanks
+
+[esc_wolf_say_thanks_seq]
+6		= 0,scenario\escape\wolf_thanks_1
+
+[esc_lager_killer_seq]
+cit_bandit_veteran_best		= 0,scenario\escape\lager_killer
+
+[esc_fanat_dialog_seq]
+22			= 0,scenario\escape\lager_fanat_dialog
+
+[esc_fanat_ready_seq]
+22			= 0,scenario\escape\lager_fanat_ready
+
+[esc_bridge_soldiers_rnd]
+military	= 0,scenario\escape\bridge_soldier_
+
+[esc_dram_green_rnd]
+bandit	= 0,scenario\sak\esc_green_come_here_
+green	= 0,scenario\sak\esc_green_come_here_
+
+[val_dram_glavn_rnd]
+412		= 0,scenario\sak\val_dram_glavn_come_here_
+lim_rashpil = 0,scenario\sak\val_dram_glavn_come_here_
+
+[arny_hello_rnd]
+571		= 0,scenario\sak\arny_hello_
+
+[arny_thanks_rnd]
+571		= 0,scenario\sak\arny_thanks_
+
+[esc_dram_green_commander_seq]
+9512	= 0,scenario\sak\esc_green_commander
+
+[esc_bandit_shustryi_rnd]
+bandit	= 0,scenario\escape\factory_bandits_
+
+[esc_shustryi_help_rnd]
+4		= 0,scenario\escape\shustryi_asked_
+
+[esc_wolf_radio_seq]
+6		= 0,scenario\escape\wolf_to_rangers
+
+[esc_petruha_raport_seq]
+9		= 0,scenario\escape\petruha_raport
+
+[esc_petruha_call_seq]
+9		= 0,scenario\escape\petruha_call
+
+[esc_fox_thanks_seq]
+5		= 0,scenario\escape\fox_thanks
+
+[esc_shustryi_thanks_seq]
+4		= 0,scenario\escape\shustryi_thanks
+
+[sak_hello_seq]
+9501	= 0,scenario\military\dolg_kill_patrol\mil_dolg_cherep
+
+[doktor_hello_seq]
+9503	= 0,scenario\meetings\doctor_hello_1
+
+[stas_hello_rnd]
+35		= 0,scenario\meetings\stas_hello_
+37		= 0,scenario\meetings\stas_hello_
+
+[stas_bye_seq]
+35		= 0,scenario\meetings\stas_bye
+37		= 0,scenario\meetings\stas_hello_
+
+[sher_hello_seq]
+9506	= 0,scenario\meetings\sher_hello
+
+[jila_hello_seq]
+9507	= 0,scenario\bandits\bandit_on_actor_1
+
+;Garbage
+
+;----------------------
+;--ограбление бандитами на свалке, бывший БП Долга
+[gar_bandit_robber_see_actor_seq]
+bandit		= 0,scenario\sak\bandit_robber_see_actor
+
+[gar_bandit_robber_come_here_rnd]
+bandit		= 0,scenario\sak\val_dram_glavn_come_here_
+mil_Svoboda_zoneguard = 0,scenario\sak\val_dram_glavn_come_here_
+
+[gar_bandit_robber_drop_weapon_rnd]
+bandit		= 1,threat\drop_weapon\dropweapon_
+
+[gar_bandit_robber_get_out_1_seq]
+bandit		= 0,scenario\val\rob_leave_1
+
+;--ограбление Юрика на свалке
+;----------------------
+
+[gar_dm_bandit_backoff1_seq]
+101		= 0,scenario\dramatic_garbage\dramatic_bandits_back_off_1_
+102		= 0,scenario\dramatic_garbage\dramatic_bandits_back_off_1_
+103		= 0,scenario\dramatic_garbage\dramatic_bandits_back_off_1_
+
+[gar_dm_bandit_backoff2_seq]
+101		= 0,scenario\dramatic_garbage\dramatic_bandits_back_off_2_
+102		= 0,scenario\dramatic_garbage\dramatic_bandits_back_off_2_
+103		= 0,scenario\dramatic_garbage\dramatic_bandits_back_off_2_
+
+[gar_dm_bandit_demand_rnd]
+101		= 0,scenario\dramatic_garbage\dramatic_bandits_demand_
+102		= 0,scenario\dramatic_garbage\dramatic_bandits_demand_
+103		= 0,scenario\dramatic_garbage\dramatic_bandits_demand_
+bandit	= 0,scenario\dramatic_garbage\dramatic_bandits_demand_
+
+[gar_dm_newbie_no_money_rnd]
+104		= 0,scenario\dramatic_garbage\dramatic_newbie_no_money_
+
+[gar_dm_newbie_help_me_rnd]
+104		= 0,scenario\dramatic_garbage\dramatic_newbie_help_me_
+
+[gar_dm_newbie_thank_you_rnd]
+104		= 0,scenario\dramatic_garbage\dramatic_newbie_thank_you_
+
+[gar_hellcar_alarm_seq]
+stalker		= 0,scenario\garbage\junkyard_1
+
+[gar_hellcar_ambush_seq]
+107		= 0,scenario\garbage\ambush_
+
+[gar_bandits_seryi_seq]
+bandit	= 0,scenario\garbage\grey_bandit_
+
+[gar_seryi_see_actor_seq]
+100		= 0,scenario\garbage\grey_grey_see_actor
+
+[gar_dolg_blokpost_seq]
+gar_dolg_blokpost_commander		= 0,scenario\garbage\duty_zoneguard_1
+
+[gar_hellcar_to_battle_seq]
+107		= 0,scenario\garbage\junkyard_combat_start
+
+; Agroprom
+
+[agr_dont_shoot_seq]
+370		= 0,scenario\agroprom\desertir_dont_shoot
+
+[agr_desertir_spam_rnd]
+370		= 0,scenario\agroprom\desertir_
+
+[vasilev_spam_rnd]
+mil_vasilev	= 0,monsters\zombie\zombie_idle_
+
+[agr_stalker_help_2_seq]
+agr_stalker_general	= 0,scenario\agroprom\stalker_help_2
+
+[agr_krot_thanks_2_seq]
+302		= 0,scenario\agroprom\krot_thanks_2
+
+[agr_krot_fear_seq]
+302		= 0,scenario\escape\shustryi_asked_3
+
+[agr_doctor_1_seq]
+350		= 0,scenario\agroprom\doctor_1
+
+[bar_bar_osvedomitel_hello_rnd]
+bar_bar_osvedomitel = 0,scenario\bar\bar_informer\bar_informer_
+
+[bar_bar_barmen_hello_rnd]
+bar_barman = 0,scenario\bar\barman\bar_barman_hello_
+
+[bar_dolg_leader_hello_rnd]
+bar_dolg_leader = 0,scenario\bar\dolg_voronin\duty_voronin_hello_
+
+[bar_dolg_petrenko_hello_rnd]
+bar_dolg_petrenko = 0,scenario\bar\dolg_petrenko\duty_petrenko_hello_
+
+[bar_dolg_guard_stop_rnd]
+bar_dolg_guard_commander = 0,scenario\bar\dolg_guard\duty_guards_stop_
+
+[bar_guard_prohodi_seq]
+bar_barman_guard2 = 0,scenario\bar\bar_guard\bar_guard_prohodi_1
+
+[bar_dolg_guard_busy_rnd]
+dolg = 0,scenario\bar\dolg_guard\duty_guards_busy_
+
+[bar_dolg_hangar_bridge_hello_rnd]
+dolg_dummy = 0,scenario\bar\dolg_guard\duty_post_2
+
+[bar_guard_stop_rnd]
+bar_barman_guard = 0,scenario\bar\bar_guard\bar_guard_stop_
+
+[bar_guard_enter_seq]
+bar_barman_guard = 0,scenario\bar\bar_guard\bar_guard_enter_2
+
+;***************************************************************
+; DarkValley
+;***************************************************************
+[val_prisoner_captive_help_me_rnd]
+402		= 0,scenario\val\prisoner_help_
+
+[val_prisoner_captive_come_here_rnd]
+402		= 0,scenario\val\prisoner_come_here_
+
+[val_prisoner_captive_open_rnd]
+402		= 0,scenario\val\val_prisoner_
+
+[val_prisoner_captive_thanx_seq]
+402		= 0,scenario\val\val_prisoner_thanx
+
+[krysa_call_seq]
+9508	= 0,scenario\val\rob_call_1
+
+; Max Luber scene
+[val_escort_guards_seq]
+bandit  = 0,scenario\val\escort_threat_
+
+[val_escort_captive_phrase1_seq]
+400	 	= 0,scenario\val\escort_captive_phrase1_1
+
+[val_escort_captive_phrase2_seq]
+400 	= 0,scenario\val\escort_captive_phrase1_2
+
+[val_escort_captive_phrase3_seq]
+400 	= 0,scenario\val\escort_captive_phrase1_3
+
+[val_escort_nap1_phrase1_seq]
+406 	= 0,scenario\val\escort_nap1_phrase1_
+
+[val_escort_nap1_phrase2_seq]
+406		= 0,scenario\val\escort_nap1_phrase2_
+
+[val_escort_nap1_phrase3_seq]
+406 	= 0,scenario\val\escort_nap1_phrase3_1
+
+[val_escort_nap1_phrase4_seq]
+406 	= 0,scenario\val\exit_partner1_dialog_2
+
+[val_escort_nap1_phrase5_seq]
+406 	= 0,scenario\val\escort_nap1_phrase3_2
+
+[val_escort_nap1_phrase6_seq]
+406 	= 0,scenario\val\exit_partner1_dialog_3
+
+[val_escort_nap1_phrase7_seq]
+406 	= 0,scenario\val\escort_nap1_phrase4_1
+
+[val_escort_dead_seq]
+400 	= 0,scenario\val\escort_dead
+406 	= 0,scenario\val\escort_dead
+
+[val_escort_nap1_go_home_seq]
+406 	= 0,scenario\val\escort_nap1_go_home
+
+[val_escort_phrase_invite_seq]
+406 	= 0,scenario\val\escort_phrase_invite
+
+;***************************************************************
+; Marsh psycho
+;***************************************************************
+[marsh_psycho_rnd]
+stalker = 0,scenario\bar\psycho\psycho_talks_
+
+;***************************************************************
+; Rostok
+;***************************************************************
+
+[kruglov_pda_help_seq]
+503 = 0,scenario\kruglov_pda_help_1
+
+;***************************************************************
+; MILITARY
+;***************************************************************
+
+[mil_kolyan_seq]
+freedom = 0,scenario\military\collect\mil_collect_kolyan
+
+[mil_max_to_kolyan_seq]
+702 	= 0,scenario\military\collect\mil_max_to_kolyan
+
+[mil_max_to_tolyan_seq]
+702 	= 0,scenario\military\collect\mil_max_to_tolyan
+
+[mil_collect_laugh1_seq]
+freedom = 0,scenario\military\collect\mil_collect_laugh1
+
+[mil_collect_laugh2_seq]
+freedom = 0,scenario\military\collect\mil_collect_laugh2
+
+[mil_collect_laugh3_seq]
+freedom = 0,scenario\military\collect\mil_collect_laugh3
+
+[mil_collect_laugh4_seq]
+freedom = 0,scenario\military\collect\mil_collect_laugh4
+
+[mil_collect_laugh5_seq]
+freedom = 0,scenario\military\collect\mil_collect_laugh5
+
+[mil_collect_phrase1_single]
+freedom = 0,scenario\military\collect\mil_collect_phrase1
+
+[mil_collect_phrase2_single]
+freedom = 0,scenario\military\collect\mil_collect_phrase2
+
+[mil_collect_phrase3_single]
+freedom = 0,scenario\military\collect\mil_collect_phrase3
+
+[mil_collect_phrase4_single]
+freedom = 0,scenario\military\collect\mil_collect_phrase4
+
+[mil_collect_phrase5_single]
+freedom = 0,scenario\military\collect\mil_collect_phrase5
+
+[mil_collect_phrase6_single]
+freedom = 0,scenario\military\collect\mil_collect_phrase6
+
+[mil_collect_phrase7_single]
+freedom = 0,scenario\military\collect\mil_collect_phrase7
+
+[mil_crazy_rnd]
+703 	= 0,scenario\military\crazy\mil_crazy
+
+[mil_dolg_about_sniper_rnd]
+dolg 	= 0,scenario\military\dolg_attack\mil_dolg_about_sniper
+
+[mil_dolg_go_attack_seq]
+708 	= 0,scenario\military\dolg_attack\mil_dolg_go
+
+[mil_dolg_fight_rnd]
+dolg 	= 1,fight\attack\attack_5
+
+[mil_freedom_patrol_seq]
+722 = 0,scenario\military\dolg_kill_patrol\mil_freedom_patrol
+
+[mil_freedom_zoneguard_seq]
+freedom = 0,scenario\military\freedom_base\mil_freedom_zoneguard
+
+[mil_guard_to_max_seq]
+707 	= 0,scenario\military\lukash\mil_guard_to_max
+
+[mil_max_to_actor_seq]
+702 	= 0,scenario\military\before_collect\max_to_player
+
+[mil_dolg_getready_seq]
+dolg 	= 0,scenario\military\dolg_attack\mil_dolg_getready
+
+[mil_freedom_ambush1_seq]
+freedom = 0,scenario\military\khutor_attack\mil_freedom_ambush_1
+
+[mil_freedom_ambush2_seq]
+freedom = 0,scenario\military\khutor_attack\mil_freedom_ambush_2
+
+[mil_freedom_ambush3_seq]
+freedom = 0,scenario\military\khutor_attack\mil_freedom_ambush_3
+
+[mil_freedom_ambush4_seq]
+freedom = 0,scenario\military\khutor_attack\mil_freedom_ambush_4
+
+[mil_freedom_ambush5_seq]
+freedom = 0,scenario\military\khutor_attack\mil_freedom_ambush_5
+
+[mil_freedom_ambush6_seq]
+freedom = 0,scenario\military\khutor_attack\mil_freedom_ambush_6
+
+[mil_freedom_victory1_seq]
+freedom = 0,scenario\military\khutor_attack\mil_freedom_victory_1
+
+[mil_freedom_victory2_seq]
+freedom = 0,scenario\military\khutor_attack\mil_freedom_victory_2
+
+[mil_freedom_victory3_seq]
+freedom = 0,scenario\military\khutor_attack\mil_freedom_victory_3
+
+[mil_freedom_victory4_seq]
+freedom = 0,scenario\military\khutor_attack\mil_freedom_victory_4
+
+[mil_freedom_victory5_seq]
+freedom = 0,scenario\military\khutor_attack\mil_freedom_victory_5
+
+[mil_dolg_before_attack1_seq]
+708 	= 0,scenario\military\dolg_attack\mil_dolg_cherep_command_1
+
+[mil_dolg_before_attack2_seq]
+708 	= 0,scenario\military\dolg_attack\mil_dolg_cherep_command_2
+
+[mil_cherep_hi_seq]
+708 	= 0,scenario\military\dolg_attack\mil_cherep_hi
+
+;***********************************
+;  yantar
+;***********************************
+[yantar_professor_idle_rnd]
+902 = 0,scenario\yantar\professor_idle_
+
+[yantar_professor_to_kruglov_1_seq]
+902 = 0,scenario\yantar\professor_to_kruglov_1
+
+[yantar_professor_to_kruglov_2_seq]
+902 = 0,scenario\yantar\professor_to_kruglov_2
+
+[yantar_kruglov_to_professor_1_seq]
+905 = 0,scenario\yantar\kruglov_to_professor_1
+
+[yantar_kruglov_to_professor_2_seq]
+905 = 0,scenario\yantar\kruglov_to_professor_2
+
+[yantar_professor_radiation_quest_2_seq]
+902 = 0,scenario\yantar\professor_radiation_quest_2
+
+; оставлено на всякий, т.к. используется в анимациях probe_
+
+[yantar_probe_1_seq]
+905 = 0,scenario\yantar\kruglov_radiation_quest_11
+
+[yantar_probe_2_seq]
+905 = 0,scenario\yantar\kruglov_radiation_quest_12
+marsh_aspirant2 = 0,scenario\yantar\kruglov_radiation_quest_12
+
+[yantar_probe_3_seq]
+905 = 0,scenario\yantar\kruglov_radiation_quest_6
+ 

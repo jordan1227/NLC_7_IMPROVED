@@ -1,0 +1,32 @@
+[logic]
+active = walker
+danger = danger_condition
+combat_ignore = combat_ignore@gig_watch
+
+[walker]
+path_walk = marsh_botan_look_gigant_way
+path_look = marsh_botan_look_gigant_look
+on_info  = {+marsh_botan_ok} companion@to_gigant
+combat_ignore_cond = {=fighting_gigant}
+meet = no_meet
+danger = danger_condition
+
+[companion@to_gigant]
+path_walk = marsh_botan_look_gigant_way
+path_look = marsh_botan_look_gigant_look
+on_actor_dist_ge_nvis = 50 | %=kill =sak.gluzov_sos_msg%
+combat_ignore_cond = {=fighting_gigant}
+meet = no_meet
+
+[combat_ignore@gig_watch]
+combat_ignore_cond = {=fighting_dist_ge(5) =fighting_gigant}
+
+[danger_condition]
+ignore_distance_corpse = 0
+ignore_distance_sound = 0
+ignore_distance = 0
+danger_inertion_time_grenade = 0
+danger_inertion_time_hit = 4000
+danger_inertion_time_ricochet = 0
+danger_inertion_time_corpse = 0
+danger_inertion_time_sound = 0

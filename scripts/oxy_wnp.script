@@ -1,0 +1,304 @@
+-- скрипт для ф-ций порчи ножа при "выстреле":----------------------------------
+-- удар по предмету, мобу, срезание запчастей ----------------------------------
+
+function attach( sm )
+	-- bind_monster.on_monster_hit, on_monster_death - the same function called
+	sm:subscribe({ signal = "on_monster_hit", fun = this.downgrade_knife_condition_on_mob })
+	
+	--bind_physic_object.on_ph_object_hit, on_ph_object_death
+	sm:subscribe({ signal = "on_ph_object_hit", fun = this.downgrade_knife_condition_on_ph })
+	sm:subscribe({ signal = "on_monster_death", fun = this.downgrade_knife_condition_on_mob_death })
+	
+	--bind_stalker - on info_callback ui_car_body, ui_car_body_hide
+	sm:subscribe({ signal = "on_body_hide", fun = this.on_body_hide })
+	sm:subscribe({ signal = "on_body_open", fun = this.on_body_open })
+		
+end
+local monster, subscribed
+
+function on_body_hide()
+	monster = nil
+	if subscribed then
+		ogse_signals.get_mgr():unsubscribe( subscribed )
+		subscribed = nil
+	end
+end
+
+
+function on_body_open( npc )
+	local obj = sleep_manager.get_target_obj() 
+	if obj and IsMonster( obj ) and not obj:alive() then
+		-- log2( "From on_body_open" )
+		monster = obj
+	if not subscribed then
+		-- "on_take" is generated in bind_stalker.handle_taked()
+		-- due to problems with NLC invisible inventory
+		subscribed = { signal = "on_take", fun = this.on_monster_parts_take }
+		ogse_signals.get_mgr():subscribe( subscribed )
+    end
+	else
+		monster = nil
+	end
+end
+
+function send_knife_sms()
+	sak.send_tip(game.translate_string("send_knife_sms"),game.translate_string("thinking_out_loud"), 7, 15,"pribor","pda_news", "green")
+end
+
+function return_due_to_nothin_to_do( obj, who )
+	if db.actor == nil 
+	or( not obj ) or ( not who )
+	or ( who:id()~= db.actor:id() )
+	or ( db.actor:active_item() == nil )
+	then 
+		return true
+	end
+	return false
+end
+
+function get_steel_coeff( sc )
+	local coeff_steel
+	if	sc == "wpn_knife_m1"
+	then
+		coeff_steel = 0.001
+	elseif sc == "wpn_knife" 
+	then
+		coeff_steel = 0.005
+	else
+		coeff_steel = 0
+	end
+	return coeff_steel
+end
+
+function get_coeff_hard_skin( obj )
+	local coeff = 0
+	if	not obj or not obj:clsid() then return coeff end 
+	if ( obj:clsid() == CLID_CHIMERA or obj:clsid() == CLID_BLOODSUCKER
+	or	obj:clsid() == CLID_GIGANT )
+	then
+		coeff = 0.007
+	elseif ( obj:clsid() == CLID_PSEUDODOG or obj:clsid() == CLID_SNORK
+	or	obj:clsid() == CLID_CONTROLLER )
+	then
+		coeff = 0.005
+	else 
+		coeff = 0.002
+	end	
+	return coeff
+end
+
+
+function downgrade_knife_condition_on_mob_death( obj, who )
+if return_due_to_nothin_to_do( obj, who ) then return end
+	
+	-- определяем коэффициенты твердости стали ножа
+	--log2("From on_mob_hit-10")
+	
+	local sc = db.actor:active_item():section()
+	if not sc 
+	or ( not strpos( sc, "wpn_knife" ) )
+	then return end
+	--log2("From on_mob_hit -11")
+	local coeff_steel = get_steel_coeff( sc )
+	
+	-- определяем коэффициенты твердости моба-мутанта
+	local coeff_hard_skin = get_coeff_hard_skin( obj )
+	
+	-- определяем суммарный коэффициент порчи - меньше 0.01 не делаем никогда --
+	local summ_coeff = coeff_steel + coeff_hard_skin
+	
+	local current_knife = db.actor:active_item() -- we have object here!
+	
+	if not current_knife then return end
+	--log2("From on_mob_hit -13. WPN = %s", current_knife:name() )
+	local knife_current_cond = current_knife:condition()
+	--log2("From on_mob_hit -14. Condition = %s", tostring( knife_current_cond ))
+	if knife_current_cond and knife_current_cond  >= 0.2 
+	then
+		--log2("From on_mob_hit -15")
+		knife_current_cond = knife_current_cond - summ_coeff
+		if knife_current_cond > 0.01 then
+		--log2("From on_mob_hit -16")
+		params.upd_condition( current_knife, knife_current_cond )
+		--log2("From on_mob_hit -17. Cur_cond = %s", tostring( knife_current_cond ))		
+		end
+	end
+
+end
+function downgrade_knife_condition_on_mob( obj, amount, local_direction, who, bone_index )
+	
+	if return_due_to_nothin_to_do( obj, who ) then return end
+	
+	-- определяем коэффициенты твердости стали ножа
+	--log2("From on_mob_hit-00")
+	
+	local sc = db.actor:active_item():section()
+	if not sc 
+	or ( not strpos( sc, "wpn_knife" ) )
+	then return end
+	--log2("From on_mob_hit -01")
+	local coeff_steel = get_steel_coeff( sc )
+	
+	-- определяем коэффициенты твердости моба-мутанта
+	local coeff_hard_skin = get_coeff_hard_skin( obj )
+	
+	-- определяем суммарный коэффициент порчи - меньше 0.01 не делаем никогда --
+	local summ_coeff = coeff_steel + coeff_hard_skin
+	
+	local current_knife = db.actor:active_item() -- we have object here!
+	
+	if not current_knife then return end
+	--log2("From on_mob_hit -03. WPN = %s", current_knife:name() )
+	local knife_current_cond = current_knife:condition()
+	
+	-- смс, если нож М9 испорчен более чем на 50%
+	if knife_current_cond <= 0.5 and strpos( sc, "wpn_knife_m1" ) then
+		local name, delay = timers.check_timer("timer_sms_knife")
+		if not name then
+			timers.start_timer( "timer_sms_knife", 30 , "oxy_wnp.send_knife_sms()" )
+		end
+		
+	end
+	--log2("From on_mob_hit -04. Condition = %s", tostring( knife_current_cond ))
+	if knife_current_cond and knife_current_cond  >= 0.2 
+	then
+		--log2("From on_mob_hit -05")
+		knife_current_cond = knife_current_cond - summ_coeff
+		if knife_current_cond > 0.01 then
+		--log2("From on_mob_hit -06")
+		params.upd_condition( current_knife, knife_current_cond )
+		-- log2("From on_mob_hit - knife worsened")
+		end
+	end
+
+end
+
+
+function downgrade_knife_condition_on_ph( obj, who )
+	--log2( "From on_ph_object_hit-000" )
+-- по физ.объектам любой удар, кроме ящика,  портит нож на 0.09 ед -------------
+	if return_due_to_nothin_to_do( obj, who ) then return end
+	
+	local coeff_steel, temp_knife_cond, knife_current_cond, current_knife, sc
+	
+	--log2( "From on_ph_object_hit - 001" )
+	current_knife = db.actor:active_item() -- we have to get object knife here!
+	
+	if not current_knife 
+	or not strpos( current_knife:section(), "wpn_knife" ) 
+	then return end
+	sc = current_knife:section()
+	coeff_steel = get_steel_coeff( sc )
+	temp_knife_cond = current_knife:condition()
+	knife_current_cond = temp_knife_cond - coeff_steel
+	-- смс, если нож М9 испорчен более чем на 50%
+	
+	if knife_current_cond <= 0.5 and strpos( sc, "wpn_knife_m1" ) then
+		local name, delay = timers.check_timer("timer_sms_knife")
+		if not name then
+			timers.start_timer( "timer_sms_knife", 30, "oxy_wnp.send_knife_sms()" )
+		end
+		
+	end
+	
+	if knife_current_cond >= 0.1 then
+		params.upd_condition( current_knife, knife_current_cond ) 
+		-- log2( "From on_ph_object_hit - knife worsened" )
+	else 
+		misc.release_obj( current_knife )
+    	sak.send_tip( game.translate_string("broke_knife"), game.translate_string("broke_knife_h"), 5, 20,   "uniq", "sak", "red" ) 
+	end
+	
+end
+
+local dmg_msg = false
+function on_monster_parts_take( obj, sobj )
+	-- obj - client obj, sobj - server obj for taken object(parts only)
+	--log2("From on_part take-20")
+	if not monster then return end
+	--log2("From on_part take-21")
+	
+	local spawn = get_string( monster:section(), "Spawn_Inventory_Item_Section" )
+	--log2( "Obj Spawn Section is %s", tostring( spawn ) )
+	if not spawn then return end
+	local sum_coeff = 0
+
+	local knf_det_tbl = {
+	[ "mutant_flesh_eye" ]			= 0.01,
+    [ "mutant_boar_leg" ]			= 0.02,
+    [ "mutant_dog_tail" ]			= 0.015,
+    [ "mutant_psevdodog_tail" ]		= 0.015,
+    [ "mutant_krovosos_jaw" ]		= 0.01,
+    [ "mutant_burer_hand" ]			= 0.02,
+    [ "mutant_zombie_hand" ]		= 0.015,
+    [ "mutant_snork_leg" ]			= 0.03,
+    [ "mutant_face_tushkano" ]		= 0.015,
+    [ "mutant_hand_kontroler" ]		= 0.02,
+    [ "mutant_poltergeist_glas" ]	= 0.01,
+    [ "mutant_psevdogigant_hand" ]	= 0.05,
+    [ "mutant_tail_cat" ]			= 0.015,
+    [ "mutant_chimera_kogot" ]		= 0.05,
+    [ "mutant_flesh_shkura" ]		= 0.025,
+    [ "mutant_e_chimera_kidney" ]	= 0.04, 
+	}
+	--local current_knife = db.actor:active_item() -- we have to get object knife here!
+	local current_knife = db.actor:item_in_slot(0)
+	if not current_knife 
+	or not strpos( current_knife:section(), "wpn_knife" ) 
+	then 
+		-- log2("From on_part take-22")
+		return
+	end
+	-- прочитаем кондицию ножа
+	--log2("From on_part take-23")
+	local knife_current_cond = current_knife:condition()
+
+	-- смс, если нож М9 испорчен более чем на 50%
+	if knife_current_cond <= 0.5 and strpos( current_knife:section(), "wpn_knife_m1" ) and not dmg_msg then
+		local name, delay = timers.check_timer("timer_sms_knife")
+		if not name then
+			timers.start_timer( "timer_sms_knife", 3, "oxy_wnp.send_knife_sms()" )
+			dmg_msg = true
+		end
+		
+	end
+	
+	if knife_current_cond and knife_current_cond  > 0.1  then
+	--log2("From on_part take-24")
+		if strposx( obj:section(), "mutant_" ) then
+			-- портим запчасть только в том случае, если нож уже убит наполовину
+			if knife_current_cond <= 0.5 then
+				local item_condition = knife_current_cond
+				-- log2("From on_part take-25. Item name = % s", tostring ( obj:name() ))
+				params.upd_condition( obj, item_condition )
+				params.upd_condition( sobj, item_condition )
+				-- если в процессе порчи ножа его кондиция стала < 0.1, то
+				-- дальше его портить не будем и все запчасти с текущего мута
+				-- срезаются с неизменной мин. кондицией, а  след. раз срезание
+				-- с другого мутанта уже будет недоступным
+			end
+			-- а вот нож - всегда, но по-разному, в зависимости от типа ножа
+			sum_coeff = get_steel_coeff( current_knife:section() ) + knf_det_tbl[ obj:section() ]
+			local tmp_cond
+			-- если нож М9 - то портить кондицию будем с вероятностью 0.3
+			if 	current_knife:section() ==  "wpn_knife_m1" and lua_random( 1,100 ) >= 25  then
+				tmp_cond = knife_current_cond
+			else 
+				tmp_cond = knife_current_cond - sum_coeff
+			end
+			-- эта часть остается проверкой на недопустимую величину порчи
+			if  tmp_cond < 0.1 then
+				knife_current_cond = 0.1
+			else
+				knife_current_cond = tmp_cond
+			end
+			params.upd_condition( current_knife, knife_current_cond )
+			log2( "Current knife cond is %s, current part name is %s, current part cond id %s",
+			tostring ( knife_current_cond ), tostring ( obj:name() ), tostring ( item_condition )
+			)
+		else
+			-- log2("From on_part take-25. Item section = % s", tostring ( obj:section() ))
+		end
+	end
+	
+end

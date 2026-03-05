@@ -1,0 +1,247 @@
+-------------------- Таблица наград Сидоровича за модификаты
+local sidr_nagrad = {
+		"ammo_5.45x39_fmj", 60,
+		"ammo_5.45x39_ap", 40,
+		"ammo_7.62x39_fmj", 30,
+		"ammo_7.62x39_ap", 20,
+		"ammo_7.62x54_7h1", 35,
+		"ammo_7.62x54_7h14", 25,
+		"ammo_7.62x54_ap", 15,
+		"ammo_vog-25", 30,
+		"ammo_m209", 30,
+
+		"ammo_7.62x39_fmj", 50,
+		"ammo_7.62x39_ap", 35,
+		"ammo_9x39_ap", 20,
+		"ammo_7.62x54_7h1", 50,
+		"ammo_7.62x54_7h14", 40,
+		"ammo_7.62x54_ap", 30,
+		"ammo_vog-25", 50,
+
+		"ammo_7.62x39_fmj", 70,
+		"ammo_7.62x39_ap", 50,
+		"ammo_9x39_ap", 30,
+		"ammo_7.62x54_7h1", 65,
+		"ammo_7.62x54_7h14", 55,
+		"ammo_7.62x54_ap", 45,
+		"ammo_vog-25", 70,
+
+		"ammo_9x39_ap", 40,
+		"ammo_7.62x54_7h1", 80,
+		"ammo_7.62x54_7h14", 70,
+		"ammo_7.62x54_ap", 60,
+		"ammo_vog-25", 100,
+		"militaryspec_outfit", 1
+}
+
+-------------------- Обмен модификатов у Сидоровича
+function have_any_cond_modart()
+	for i=1,4 do
+		if sak_dialog.cond_items_have("m"..i,1) then
+			return true
+		end
+	end
+end
+function save_modart_order(order)	-- Запоминаем заказ и время
+	set_value("modart_order", order)
+	set_value("modart_order_time", game.get_game_time():diffSec(game.CTime()))
+end
+function modart_order_give()			-- Награждаем ГГ из таблицы sidr_nagrad[]
+	local order = get_value("modart_order")*2-1
+	local order_item = sidr_nagrad[order]
+	local order_count = sidr_nagrad[order+1]
+	sak.create_items(order_item,order_count)
+end
+function modart_order_time_yes()			-- Проверяем прошли ли 24 часа, можно ли получать товар
+	if get_value("modart_order_time") == nil then	-- Если переменная с временем заказа не проинициализированна (ГГ не делал заказ у Сидора), то товар получить нельзя
+		return false
+	end
+
+	if game.get_game_time():diffSec(game.CTime()) - get_value("modart_order_time") > 24*60*60 then
+		return true				-- 24 часа прошли, товар получить можно
+	end
+	return false
+end
+function modart_order_time_no()
+	return not modart_order_time_yes()
+end
+
+local nagrad = {
+-------------------- Обмен на артефакты у Сидоровича
+	level_4 = {
+		"grenade_f1",25,
+		"ammo_9x39_pab9",10,
+		"ammo_9x39_ap",10,
+		"ammo_5.45x39_ap",20,
+		"ammo_5.56x45_ap",20,
+		"ammo_7.62x39_ap",15,
+		"ammo_og-7b",10,
+		"ammo_m209",25,
+		"medkit_army",15,
+		"medkit_scientic",10,
+		"antirad",15},
+
+-------------------- Обмен на артефакты у Бармена
+	level_3 = {
+		"grenade_rgd5",20,
+		"ammo_9x19_pbp",20,
+		"ammo_5.45x39_fmj",20,
+		"ammo_5.45x39_ap",15,
+		"ammo_5.56x45_ap",20,
+		"ammo_5.56x45_ss190",15,
+		"ammo_7.62x39_fmj",10,
+		"ammo_7.62x39_ap",7,
+		"ammo_m209",15,
+		"medkit_army",10,
+		"antirad",10},
+
+-------------------- Обмен на бензин в Баре
+	level_2 = {
+		"ammo_9x19_pbp",4,
+		"ammo_5.45x39_fmj",5,
+		"ammo_7.62x39_fmj",2,
+		"ammo_12x70_buck",5,
+		"grenade_rgd5",10,
+		"conserva",7,
+		"ammo_m209",3,
+		"medkit_army",3,
+		"antirad",3,
+		"antirad",3,
+		"antirad",3,
+		"antirad",3},
+
+-------------------- Обмен на бензин на Кордоне
+	level_1 = {
+		"ammo_9x18_pmm",5,
+		"ammo_5.45x39_fmj",4,
+		"ammo_7.62x39_fmj",2,
+		"ammo_12x70_buck",5,
+		"ammo_vog-25",3,
+		"conserva",5,
+		"vodka",4,
+		"medkit",5,
+		"antirad",3,
+		"antirad",3,
+		"antirad",3,
+		"antirad",3}
+}
+
+-------------------- Обмен артов у Круглова
+local cur_art = nil
+local first_trade_done = false
+local good_art = nil
+function art_exchange_prec_yes()
+	local count = get_value("art_exchange_count", 0)
+	return count < 3
+end
+
+function art_exchange_prec_no()
+	return not art_exchange_prec_yes()
+end
+
+function art_exchange_1trade()
+	return not first_trade_done
+end
+
+function art_exchange_2trade()
+	return first_trade_done
+end
+
+function art_exchange_good_art_prec()
+	local res = false
+	for _,v in ipairs(sak_dialog.table_bart) do
+		if res then
+			break
+		end
+		for i=3,5 do
+			local sec = v.."_dyn"..i.."d"
+			res = sak_dialog.cond_items_have(sec,1,0.95)
+			if res then
+				good_art = sec
+				break
+			end
+		end
+	end
+	return res
+end
+
+function art_exchange_good_art_give()
+	if good_art ~= nil then
+		sak_dialog.cond_items_have(good_art,1,0.95,true)
+		good_art = nil
+	end
+end
+
+function art_exchange_rnd_arts()
+	for i=1,3 do
+		local r = dsh.get_next_random( "kruglov_art_exchange", 1, 7 )
+		local art = sak_dialog.table_aart[r]
+		art = art.."_dyn"..lua_random(1,3).."d"
+		sak.create_items(art,1)
+	end
+	local count = get_value("art_exchange_count", 0)
+	set_value("art_exchange_count", count + 1)
+end
+
+function art_exchange_set_art(n)
+	if n and type(n) == 'number' then
+		cur_art = sak_dialog.table_aart[n]
+	end
+end
+
+function art_exchange_give_art(final_flag)
+	if cur_art ~= nil then
+		cur_art = cur_art.."_dyn"..lua_random(1,4).."d"
+		sak.create_items(cur_art,1)
+		cur_art = nil
+	end
+	if type(final_flag) == 'boolean' then
+		if final_flag == true then
+			local count = get_value("art_exchange_count", 0)
+			set_value("art_exchange_count", count + 1)
+			first_trade_done = false
+		else
+			first_trade_done = true
+		end
+	end
+end
+
+------------------- Обмен канистр на Кордоне
+local add_nagrad_kanistra_esc_nagrad = 0		-- здесь храним, какую награду выбрал ГГ за канистру на Кордоне
+function add_nagrad_kanistra_esc1(nagrad_item)		-- запоминаем, какую награду выбрал ГГ за канистру на Кордоне
+	add_nagrad_kanistra_esc_nagrad = nagrad_item
+end
+function add_nagrad_kanistra_esc2()			-- награждение за канистру на Кордоне
+	local items = nagrad.level_1[add_nagrad_kanistra_esc_nagrad*2-1]
+	local count = nagrad.level_1[add_nagrad_kanistra_esc_nagrad*2]
+	sak.create_items(items,count)			-- даем награду
+	sak_dialog.take_2000_money()				-- даем деньги
+	sak_inventory.release_actor_items("amk_kanistra",1)	-- забираем канистру
+	timers.start_timer("timer_kanistra_esc",1,0,0,"sak_rand_nagrad.timer_kanistra_esc_end()")	-- запускаем таймер на 24 часа
+	db.actor:give_info_portion("kanistra_esc_not_over")	-- включаем инфопоршень, что канистр больше не надо (выключится по таймеру)
+	db.actor:disable_info_portion("esc_no_charge")
+end
+function timer_kanistra_esc_end()
+	sak.send_tip("Сталкеры, у нас на Кордоне закончился бензин. Если есть желание заработать, несите канистры, поменяем на патроны, медикаменты, еду, Водку...","Новости Кордона",11,20,"g_g","sak","green")
+	db.actor:disable_info_portion("kanistra_esc_not_over")	-- выключаем инфопоршень, теперь канистры можно менять.
+end
+
+------------------- Обмен канистр в Баре
+local add_nagrad_kanistra_bar_nagrad = 0		-- здесь храним, какую награду выбрал ГГ за канистру в Баре
+function add_nagrad_kanistra_bar1(nagrad_item)		-- запоминаем, какую награду выбрал ГГ за канистру в Баре
+	add_nagrad_kanistra_bar_nagrad = nagrad_item
+end
+function add_nagrad_kanistra_bar2()			-- награждение за канистру в Баре
+	local items = nagrad.level_2[add_nagrad_kanistra_bar_nagrad*2-1]
+	local count = nagrad.level_2[add_nagrad_kanistra_bar_nagrad*2]
+	sak.create_items(items,count)			-- даем награду
+	sak_dialog.take_3000_money()				-- даем деньги
+	sak_inventory.release_actor_items("amk_kanistra",1)	-- забираем канистру
+	timers.start_timer("timer_kanistra_bar",1,0,0,"sak_rand_nagrad.timer_kanistra_bar_end()")	-- запускаем таймер на 24 часа
+	db.actor:give_info_portion("kanistra_bar_not_over")	-- включаем инфопоршень, что канистр больше не надо (выключится по таймеру)
+	db.actor:disable_info_portion("bar_no_charge")
+end
+function timer_kanistra_bar_end()
+	sak.send_tip("Сталкеры, у нас в Баре закончился бензин. Если есть желание заработать, несите канистры, поменяем на патроны, медикаменты, еду...","Новости Бара",11,20,"g_g","sak","green")
+	db.actor:disable_info_portion("kanistra_bar_not_over")	-- выключаем инфопоршень, теперь канистры можно менять.
+end

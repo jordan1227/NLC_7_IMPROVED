@@ -1,0 +1,46 @@
+[logic]
+active = walker@sak_0
+
+[walker@sak_0]
+path_walk = esc_sak_walk
+path_look = esc_sak_look
+meet = meet@sak_0
+danger = danger_condition
+on_info = {+radar_on} walker@sak_1
+
+[walker@sak_1]
+path_walk = esc_sak1_walk
+path_look = esc_sak1_look
+meet = no_meet
+on_actor_dist_le_nvis = 10 | remark@sak_hello
+danger = danger_condition
+
+[remark@sak_hello]
+anim = guard
+target = actor
+snd = sak_hello
+meet = no_meet
+danger = danger_condition
+on_signal = sound_end| walker@sak_2
+on_timer = 5000| walker@sak_2
+
+[walker@sak_2]
+path_walk = esc_sak1_walk
+path_look = esc_sak1_look
+meet = meet@sak
+danger = danger_condition
+
+[meet@sak]
+use = true
+use_wpn = false
+meet_state = wait
+meet_state_wpn = ward
+
+[danger_condition]
+ignore_distance = 0
+
+[meet@sak_0]
+use = true
+use_wpn = true
+meet_state = sit_ass
+meet_state_wpn = sit_ass

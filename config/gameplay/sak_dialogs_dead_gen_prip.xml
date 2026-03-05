@@ -1,0 +1,1167 @@
+<dialog id="vergas_start_dialog">
+	<phrase_list>
+		<phrase id="0">
+			<action>dialogs.no_trade_trader</action>
+			<text></text>
+			<next>100</next>
+			<next>200</next>
+			<next>300</next>
+		</phrase>
+		<phrase id="100">
+			<text></text>
+			<dont_has_info>vergas_decoder_give_info</dont_has_info>
+			<next>101</next>
+		</phrase>
+		<phrase id="200">
+			<text></text>
+			<dont_has_info>prizrak_said_everything</dont_has_info>			
+			<has_info>vergas_decoder_give_info</has_info>
+			<next>201</next>
+		</phrase>
+		<phrase id="300">
+			<text></text>
+			<has_info>prizrak_said_everything</has_info>
+			<next>301</next>
+		</phrase>		
+		<phrase id="101">
+			<text>vergas_start_dialog_101</text>
+			<next>102</next>
+		</phrase>
+		<phrase id="102">
+			<text>vergas_start_dialog_102</text>
+			<next>103</next>
+		</phrase>
+		<phrase id="103">
+			<text>vergas_start_dialog_103</text>
+			<next>104</next>
+		</phrase>
+		<phrase id="104">
+			<text>vergas_start_dialog_104</text>
+			<next>105</next>
+		</phrase>
+		<phrase id="105">
+			<text>vergas_start_dialog_105</text>
+			<next>106</next>
+		</phrase>
+		<phrase id="106">
+			<text>vergas_start_dialog_106</text>
+			<next>107</next>
+		</phrase>
+		<phrase id="107">
+			<text>vergas_start_dialog_107</text>
+			<next>108</next>
+		</phrase>
+		<phrase id="108">
+			<text>vergas_start_dialog_108</text>
+			<next>109</next>
+		</phrase>
+		<phrase id="109">
+			<text>vergas_start_dialog_109</text>
+			<next>110</next>
+		</phrase>
+		<phrase id="110">
+			<text>vergas_start_dialog_110</text>
+			<next>111</next>
+		</phrase>
+		<phrase id="111">
+			<text>vergas_start_dialog_111</text>
+			<next>112</next>
+		</phrase>
+		<phrase id="112">
+			<text>vergas_start_dialog_112</text>
+			<next>113</next>
+		</phrase>
+		<phrase id="113">
+			<text>vergas_start_dialog_113</text>
+			<action>sak.create_items("self_made_decoder",1)</action>
+			<give_info>vergas_decoder_give_info</give_info>
+			<next>114</next>
+		</phrase>
+		<phrase id="114">
+			<text>vergas_start_dialog_114</text>
+			<next>115</next>
+		</phrase>
+		<phrase id="115">
+			<text>vergas_start_dialog_115</text>
+			<next>116</next>
+		</phrase>
+		<phrase id="116">
+			<text>vergas_start_dialog_116</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="201">
+			<text>vergas_start_dialog_201</text>
+			<next>202</next>
+		</phrase>
+		<phrase id="202">
+			<text>vergas_start_dialog_202</text>
+			<next>203</next>
+		</phrase>
+		<phrase id="203">
+			<text>vergas_start_dialog_203</text>
+		</phrase>
+		<phrase id="301">
+			<text>vergas_start_dialog_301</text>
+			<next>302</next>
+		</phrase>
+		<phrase id="302">
+			<text>vergas_start_dialog_302</text>
+			<next>303</next>
+		</phrase>
+		<phrase id="303">
+			<text>vergas_start_dialog_303</text>
+			<action>dialogs.break_dialog</action>			
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="dead_vergas_kostum">
+	<dont_has_info>dead_vergas_kostum_info</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>dead_vergas_kostum_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>dead_vergas_kostum_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>dead_vergas_kostum_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>dead_vergas_kostum_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>dead_vergas_kostum_4</text>
+			<next>5</next>
+			<next>51</next>
+		</phrase>
+		<phrase id="5">
+		<dont_has_info>klyk_saved_info</dont_has_info>
+			<text>dead_vergas_kostum_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="51">
+		<has_info>klyk_saved_info</has_info>
+			<text>dead_vergas_kostum_51</text>
+			<next>6</next>
+		</phrase>		
+		<phrase id="6">
+			<text>dead_vergas_kostum_6</text>
+			<next>7</next>
+		</phrase>
+		<phrase id="7">
+			<text>dead_vergas_kostum_7</text>
+			<next>8</next>
+		</phrase>
+		<phrase id="8">
+			<text>dead_vergas_kostum_8</text>
+			<next>9</next>
+		</phrase>
+		<phrase id="9">
+			<text>dead_vergas_kostum_9</text>
+			<next>10</next>
+		</phrase>
+		<phrase id="10">
+			<text>dead_vergas_kostum_10</text>
+			<next>11</next>
+		</phrase>
+		<phrase id="11">
+			<text>dead_vergas_kostum_11</text>
+			<give_info>dead_vergas_kostum_info</give_info>
+			<next>12</next>
+		</phrase>
+		<phrase id="12">
+			<text>dead_vergas_kostum_12</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="deadcity_botan_glavn_dialog_start">
+	<phrase_list>
+		<phrase id="0">
+			<text></text>
+			<next>100</next>
+			<next>200</next>
+			<next>300</next>
+		</phrase>
+		<phrase id="100">
+			<text></text>
+			<dont_has_info>deadcity_botan_glavn_new_gg</dont_has_info>
+			<next>101</next>
+		</phrase>
+		<phrase id="200">
+			<text></text>
+			<has_info>agr_find_rygyi_done</has_info>
+			<dont_has_info>deadcity_botan_glavn_new_gg</dont_has_info>
+			<next>201</next>
+		</phrase>
+		<phrase id="300">
+			<text></text>
+			<has_info>deadcity_botan_glavn_new_gg</has_info>
+			<next>301</next>
+		</phrase>
+		<phrase id="101">
+			<text>deadcity_botan_glavn_dialog_start_101</text>
+
+		</phrase>
+		<phrase id="201">
+			<text>deadcity_botan_glavn_dialog_start_201</text>
+			<next>202</next>
+		</phrase>
+		<phrase id="202">
+			<text>deadcity_botan_glavn_dialog_start_202</text>
+			<next>203</next>
+		</phrase>
+		<phrase id="203">
+			<text>deadcity_botan_glavn_dialog_start_203</text>
+			<next>204</next>
+		</phrase>
+		<phrase id="204">
+			<text>deadcity_botan_glavn_dialog_start_204</text>
+			<next>205</next>
+		</phrase>
+		<phrase id="205">
+			<text>deadcity_botan_glavn_dialog_start_205</text>
+			<next>2061</next>
+			<next>2062</next>
+		</phrase>
+		<phrase id="2061">
+			<has_info>agr_fox_ill</has_info>
+			<text>deadcity_botan_glavn_dialog_start_2061</text>
+			<next>207</next>
+		</phrase>
+		<phrase id="2062">
+			<dont_has_info>agr_fox_ill</dont_has_info>
+			<text>deadcity_botan_glavn_dialog_start_2062</text>
+			<next>207</next>
+		</phrase>
+		<phrase id="207">
+			<text>deadcity_botan_glavn_dialog_start_207</text>
+			<give_info>deadcity_botan_glavn_new_gg</give_info>
+			<action>sak_dialog.take_detector_sakbuzz_simple</action>
+			<next>208</next>
+		</phrase>
+		<phrase id="208">
+			<text>deadcity_botan_glavn_dialog_start_208</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="301">
+			<text>deadcity_botan_glavn_dialog_start_301</text>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="final_vrach_dialog">
+	<precondition>sak_dialog.gg_vrach</precondition>
+	<has_info>gg_know_self</has_info>
+	<dont_has_info>final_vrach_dialog_info</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>final_vrach_dialog_00</text>
+			<next>100</next>
+		</phrase>
+		<phrase id="100">
+			<text>final_vrach_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>final_vrach_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>final_vrach_dialog_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>final_vrach_dialog_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>final_vrach_dialog_4</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>final_vrach_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>final_vrach_dialog_6</text>
+			<next>7</next>
+		</phrase>
+		<phrase id="7">
+			<text>final_vrach_dialog_7</text>
+			<next>8</next>
+		</phrase>
+		<phrase id="8">
+			<text>final_vrach_dialog_8</text>
+			<next>9</next>
+		</phrase>
+		<phrase id="9">
+			<text>final_vrach_dialog_9</text>
+			<next>10</next>
+		</phrase>
+		<phrase id="10">
+			<text>final_vrach_dialog_10</text>
+			<next>11</next>
+		</phrase>
+		<phrase id="11">
+			<text>final_vrach_dialog_11</text>
+			<next>12</next>
+		</phrase>
+		<phrase id="12">
+			<text>final_vrach_dialog_12</text>
+			<next>13</next>
+		</phrase>
+		<phrase id="13">
+			<text>final_vrach_dialog_13</text>
+			<next>14</next>
+		</phrase>
+		<phrase id="14">
+			<text>final_common_reply_14</text>
+			<next>151</next>
+			<next>152</next>
+			<next>153</next>
+		</phrase>
+		<phrase id="151">
+		    <has_info>mil_mercs_fire</has_info> <!-- если воевали с мерками на АС, на этом всё, игра окончена -->
+			<dont_has_info>sakharov_final_start_info</dont_has_info>
+			<text>final_common_reply_151</text>
+			<next>161</next>
+		</phrase>
+		<phrase id="152">
+		    <dont_has_info>mil_mercs_fire</dont_has_info> <!-- если не воевали с мерками на АС, идём на "реальную" концовку -->
+			<text>final_common_reply_152</text>
+			<give_info>final_vrach_dialog_info</give_info>
+			<give_info>doc_last_speech_info</give_info>
+			<next>162</next>
+		</phrase>
+		<phrase id="153">
+		    <has_info>sakharov_final_start_info</has_info> <!-- если выполнены условия для альтернативной концовки -->
+			<text>final_common_reply_153</text>
+			<give_info>final_vrach_dialog_info</give_info>
+			<give_info>doc_last_speech_info</give_info>
+			<give_info>bd_final_start_info</give_info>
+			<next>163</next>
+		</phrase>
+		<phrase id="161">
+			<text>final_common_reply_16</text>
+			<next>171</next>
+		</phrase>
+		<phrase id="162">
+			<text>final_common_reply_16</text>
+			<next>172</next>
+		</phrase>
+		<phrase id="163">
+			<text>final_common_reply_16</text>
+			<next>173</next>
+		</phrase>
+		<phrase id="171">
+			<text>final_common_reply_17</text>
+			<give_info>final_vrach_dialog_info</give_info>
+			<action>mike.final_message</action>
+			<next>181</next>
+		</phrase>
+		<phrase id="172">
+			<text>final_common_reply_17</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="173">
+			<text>final_common_reply_17</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="181">
+			<text>final_common_reply_181</text>
+			<next>191</next>
+		</phrase>
+		<phrase id="191">
+			<text>final_common_reply_191</text>
+			<action>dialogs.break_dialog</action>
+			<action>xr_effects.game_credits</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="final_botan_dialog">
+	<precondition>sak_dialog.gg_botan</precondition>
+	<has_info>gg_know_self</has_info>
+	<dont_has_info>final_botan_dialog_info</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>final_botan_dialog_00</text>
+			<next>100</next>
+		</phrase>
+		<phrase id="100">
+			<text>final_botan_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>final_botan_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>final_botan_dialog_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>final_botan_dialog_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>final_botan_dialog_4</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>final_botan_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>final_botan_dialog_6</text>
+			<next>7</next>
+		</phrase>
+		<phrase id="7">
+			<text>final_botan_dialog_7</text>
+			<next>8</next>
+		</phrase>
+		<phrase id="8">
+			<text>final_botan_dialog_8</text>
+			<next>9</next>
+		</phrase>
+		<phrase id="9">
+			<text>final_botan_dialog_9</text>
+			<next>10</next>
+		</phrase>
+		<phrase id="10">
+			<text>final_botan_dialog_10</text>
+			<next>11</next>
+		</phrase>
+		<phrase id="11">
+			<text>final_botan_dialog_11</text>
+			<next>12</next>
+		</phrase>
+		<phrase id="12">
+			<text>final_botan_dialog_12</text>
+			<next>13</next>
+		</phrase>
+		<phrase id="13">
+			<text>final_botan_dialog_13</text>
+			<next>14</next>
+		</phrase>
+		<phrase id="14">
+			<text>final_common_reply_14</text>
+			<next>151</next>
+			<next>152</next>
+			<next>153</next>
+		</phrase>
+		<phrase id="151">
+		    <has_info>mil_mercs_fire</has_info> <!-- если воевали с мерками на АС, на этом всё, игра окончена -->
+			<dont_has_info>sakharov_final_start_info</dont_has_info>
+			<text>final_common_reply_151</text>
+			<next>161</next>
+		</phrase>
+		<phrase id="152">
+		    <dont_has_info>mil_mercs_fire</dont_has_info> <!-- если не воевали с мерками на АС, идём на "реальную" концовку -->
+			<text>final_common_reply_152</text>
+			<give_info>final_botan_dialog_info</give_info>
+			<give_info>doc_last_speech_info</give_info>
+			<next>162</next>
+		</phrase>
+		<phrase id="153">
+		    <has_info>sakharov_final_start_info</has_info> <!-- если выполнены условия для альтернативной концовки -->
+			<text>final_common_reply_153</text>
+			<give_info>final_botan_dialog_info</give_info>
+			<give_info>doc_last_speech_info</give_info>
+			<give_info>bd_final_start_info</give_info>
+			<next>163</next>
+		</phrase>
+		<phrase id="161">
+			<text>final_common_reply_16</text>
+			<next>171</next>
+		</phrase>
+		<phrase id="162">
+			<text>final_common_reply_16</text>
+			<next>172</next>
+		</phrase>
+		<phrase id="163">
+			<text>final_common_reply_16</text>
+			<next>173</next>
+		</phrase>
+		<phrase id="171">
+			<text>final_common_reply_17</text>
+			<give_info>final_botan_dialog_info</give_info>
+			<action>mike.final_message</action>
+			<next>181</next>
+		</phrase>
+		<phrase id="172">
+			<text>final_common_reply_17</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="173">
+			<text>final_common_reply_17</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="181">
+			<text>final_common_reply_181</text>
+			<next>191</next>
+		</phrase>
+		<phrase id="191">
+			<text>final_common_reply_191</text>
+			<action>dialogs.break_dialog</action>
+			<action>xr_effects.game_credits</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="final_oper_dialog">
+	<precondition>sak_dialog.gg_oper</precondition>
+	<has_info>gg_know_self</has_info>
+	<dont_has_info>final_oper_dialog_info</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>final_oper_dialog_00</text>
+			<next>100</next>
+		</phrase>
+		<phrase id="100">
+			<text>final_oper_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>final_oper_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>final_oper_dialog_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>final_oper_dialog_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>final_oper_dialog_4</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>final_oper_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>final_oper_dialog_6</text>
+			<next>7</next>
+		</phrase>
+		<phrase id="7">
+			<text>final_oper_dialog_7</text>
+			<next>8</next>
+		</phrase>
+		<phrase id="8">
+			<text>final_oper_dialog_8</text>
+			<next>9</next>
+		</phrase>
+		<phrase id="9">
+			<text>final_oper_dialog_9</text>
+			<next>10</next>
+		</phrase>
+		<phrase id="10">
+			<text>final_oper_dialog_10</text>
+			<next>11</next>
+		</phrase>
+		<phrase id="11">
+			<text>final_oper_dialog_11</text>
+			<next>12</next>
+		</phrase>
+		<phrase id="12">
+			<text>final_oper_dialog_12</text>
+			<next>13</next>
+		</phrase>
+		<phrase id="13">
+			<text>final_oper_dialog_13</text>
+			<next>14</next>
+		</phrase>
+		<phrase id="14">
+			<text>final_common_reply_14</text>
+			<next>151</next>
+			<next>152</next>
+			<next>153</next>
+		</phrase>
+		<phrase id="151">
+		    <has_info>mil_mercs_fire</has_info> <!-- если воевали с мерками на АС, на этом всё, игра окончена -->
+			<dont_has_info>sakharov_final_start_info</dont_has_info>
+			<text>final_common_reply_151</text>
+			<next>161</next>
+		</phrase>
+		<phrase id="152">
+		    <dont_has_info>mil_mercs_fire</dont_has_info> <!-- если не воевали с мерками на АС, идём на "реальную" концовку -->
+			<text>final_common_reply_152</text>
+			<give_info>final_oper_dialog_info</give_info>
+			<give_info>doc_last_speech_info</give_info>
+			<next>162</next>
+		</phrase>
+		<phrase id="153">
+		    <has_info>sakharov_final_start_info</has_info> <!-- если выполнены условия для альтернативной концовки -->
+			<text>final_common_reply_153</text>
+			<give_info>final_oper_dialog_info</give_info>
+			<give_info>doc_last_speech_info</give_info>
+			<give_info>bd_final_start_info</give_info>
+			<next>163</next>
+		</phrase>
+		<phrase id="161">
+			<text>final_common_reply_16</text>
+			<next>171</next>
+		</phrase>
+		<phrase id="162">
+			<text>final_common_reply_16</text>
+			<next>172</next>
+		</phrase>
+		<phrase id="163">
+			<text>final_common_reply_16</text>
+			<next>173</next>
+		</phrase>
+		<phrase id="171">
+			<text>final_common_reply_17</text>
+			<give_info>final_oper_dialog_info</give_info>
+			<action>mike.final_message</action>
+			<next>181</next>
+		</phrase>
+		<phrase id="172">
+			<text>final_common_reply_17</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="173">
+			<text>final_common_reply_17</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="181">
+			<text>final_common_reply_181</text>
+			<next>191</next>
+		</phrase>
+		<phrase id="191">
+			<text>final_common_reply_191</text>
+			<action>dialogs.break_dialog</action>
+			<action>xr_effects.game_credits</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="final_bandit_dialog">
+	<precondition>sak_dialog.gg_bandit</precondition>
+	<has_info>gg_know_self</has_info>
+	<dont_has_info>final_bandit_dialog_info</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>final_bandit_dialog_00</text>
+			<next>100</next>
+		</phrase>
+		<phrase id="100">
+			<text>final_bandit_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>final_bandit_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>final_bandit_dialog_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>final_bandit_dialog_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>final_bandit_dialog_4</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>final_bandit_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>final_bandit_dialog_6</text>
+			<next>7</next>
+		</phrase>
+		<phrase id="7">
+			<text>final_bandit_dialog_7</text>
+			<next>8</next>
+		</phrase>
+		<phrase id="8">
+			<text>final_bandit_dialog_8</text>
+			<next>9</next>
+		</phrase>
+		<phrase id="9">
+			<text>final_bandit_dialog_9</text>
+			<next>10</next>
+		</phrase>
+		<phrase id="10">
+			<text>final_bandit_dialog_10</text>
+			<next>11</next>
+		</phrase>
+		<phrase id="11">
+			<text>final_bandit_dialog_11</text>
+			<next>12</next>
+		</phrase>
+		<phrase id="12">
+			<text>final_bandit_dialog_12</text>
+			<next>13</next>
+		</phrase>
+		<phrase id="13">
+			<text>final_bandit_dialog_13</text>
+			<next>14</next>
+		</phrase>
+		<phrase id="14">
+			<text>final_common_reply_14</text>
+			<next>151</next>
+			<next>152</next>
+			<next>153</next>
+		</phrase>
+		<phrase id="151">
+		    <has_info>mil_mercs_fire</has_info> <!-- если воевали с мерками на АС, на этом всё, игра окончена -->
+			<dont_has_info>sakharov_final_start_info</dont_has_info>
+			<text>final_common_reply_151</text>
+			<next>161</next>
+		</phrase>
+		<phrase id="152">
+		    <dont_has_info>mil_mercs_fire</dont_has_info> <!-- если не воевали с мерками на АС, идём на "реальную" концовку -->
+			<text>final_common_reply_152</text>
+			<give_info>final_bandit_dialog_info</give_info>
+			<give_info>doc_last_speech_info</give_info>
+			<next>162</next>
+		</phrase>
+		<phrase id="153">
+		    <has_info>sakharov_final_start_info</has_info> <!-- если выполнены условия для альтернативной концовки -->
+			<text>final_common_reply_153</text>
+			<give_info>final_bandit_dialog_info</give_info>
+			<give_info>doc_last_speech_info</give_info>
+			<give_info>bd_final_start_info</give_info>
+			<next>163</next>
+		</phrase>
+		<phrase id="161">
+			<text>final_common_reply_16</text>
+			<next>171</next>
+		</phrase>
+		<phrase id="162">
+			<text>final_common_reply_16</text>
+			<next>172</next>
+		</phrase>
+		<phrase id="163">
+			<text>final_common_reply_16</text>
+			<next>173</next>
+		</phrase>
+		<phrase id="171">
+			<text>final_common_reply_17</text>
+			<give_info>final_bandit_dialog_info</give_info>
+			<action>mike.final_message</action>
+			<next>181</next>
+		</phrase>
+		<phrase id="172">
+			<text>final_common_reply_17</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="173">
+			<text>final_common_reply_17</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="181">
+			<text>final_common_reply_181</text>
+			<next>191</next>
+		</phrase>
+		<phrase id="191">
+			<text>final_common_reply_191</text>
+			<action>dialogs.break_dialog</action>
+			<action>xr_effects.game_credits</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="final_spec_dialog">
+	<precondition>sak_dialog.gg_spec</precondition>
+	<has_info>gg_know_self</has_info>
+	<dont_has_info>final_spec_dialog_info</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>final_spec_dialog_00</text>
+			<next>100</next>
+		</phrase>
+		<phrase id="100">
+			<text>final_spec_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>final_spec_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>final_spec_dialog_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>final_spec_dialog_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>final_spec_dialog_4</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>final_spec_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>final_spec_dialog_6</text>
+			<next>7</next>
+		</phrase>
+		<phrase id="7">
+			<text>final_spec_dialog_7</text>
+			<next>8</next>
+		</phrase>
+		<phrase id="8">
+			<text>final_spec_dialog_8</text>
+			<next>9</next>
+		</phrase>
+		<phrase id="9">
+			<text>final_spec_dialog_9</text>
+			<next>10</next>
+		</phrase>
+		<phrase id="10">
+			<text>final_spec_dialog_10</text>
+			<next>11</next>
+		</phrase>
+		<phrase id="11">
+			<text>final_spec_dialog_11</text>
+			<next>12</next>
+		</phrase>
+		<phrase id="12">
+			<text>final_spec_dialog_12</text>
+			<next>13</next>
+		</phrase>
+		<phrase id="13">
+			<text>final_spec_dialog_13</text>
+			<next>14</next>
+		</phrase>
+		<phrase id="14">
+			<text>final_common_reply_14</text>
+			<next>151</next>
+			<next>152</next>
+			<next>153</next>
+		</phrase>
+		<phrase id="151">
+		    <has_info>mil_mercs_fire</has_info> <!-- если воевали с мерками на АС, на этом всё, игра окончена -->
+			<dont_has_info>sakharov_final_start_info</dont_has_info>
+			<text>final_common_reply_151</text>
+			<next>161</next>
+		</phrase>
+		<phrase id="152">
+		    <dont_has_info>mil_mercs_fire</dont_has_info> <!-- если не воевали с мерками на АС, идём на "реальную" концовку -->
+			<text>final_common_reply_152</text>
+			<give_info>final_spec_dialog_info</give_info>
+			<give_info>doc_last_speech_info</give_info>
+			<next>162</next>
+		</phrase>
+		<phrase id="153">
+		    <has_info>sakharov_final_start_info</has_info> <!-- если выполнены условия для альтернативной концовки -->
+			<text>final_common_reply_153</text>
+			<give_info>final_spec_dialog_info</give_info>
+			<give_info>doc_last_speech_info</give_info>
+			<give_info>bd_final_start_info</give_info>
+			<next>163</next>
+		</phrase>
+		<phrase id="161">
+			<text>final_common_reply_16</text>
+			<next>171</next>
+		</phrase>
+		<phrase id="162">
+			<text>final_common_reply_16</text>
+			<next>172</next>
+		</phrase>
+		<phrase id="163">
+			<text>final_common_reply_16</text>
+			<next>173</next>
+		</phrase>
+		<phrase id="171">
+			<text>final_common_reply_17</text>
+			<give_info>final_spec_dialog_info</give_info>
+			<action>mike.final_message</action>
+			<next>181</next>
+		</phrase>
+		<phrase id="172">
+			<text>final_common_reply_17</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="173">
+			<text>final_common_reply_17</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="181">
+			<text>final_common_reply_181</text>
+			<next>191</next>
+		</phrase>
+		<phrase id="191">
+			<text>final_common_reply_191</text>
+			<action>dialogs.break_dialog</action>
+			<action>xr_effects.game_credits</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="final_hunter_dialog">
+	<precondition>sak_dialog.gg_hunter</precondition>
+	<has_info>gg_know_self</has_info>
+	<dont_has_info>final_hunter_dialog_info</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>final_hunter_dialog_00</text>
+			<next>100</next>
+		</phrase>
+		<phrase id="100">
+			<text>final_hunter_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>final_hunter_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>final_hunter_dialog_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>final_hunter_dialog_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>final_hunter_dialog_4</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>final_hunter_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>final_hunter_dialog_6</text>
+			<next>7</next>
+		</phrase>
+		<phrase id="7">
+			<text>final_hunter_dialog_7</text>
+			<next>8</next>
+		</phrase>
+		<phrase id="8">
+			<text>final_hunter_dialog_8</text>
+			<next>9</next>
+		</phrase>
+		<phrase id="9">
+			<text>final_hunter_dialog_9</text>
+			<next>10</next>
+		</phrase>
+		<phrase id="10">
+			<text>final_hunter_dialog_10</text>
+			<next>11</next>
+		</phrase>
+		<phrase id="11">
+			<text>final_hunter_dialog_11</text>
+			<next>12</next>
+		</phrase>
+		<phrase id="12">
+			<text>final_hunter_dialog_12</text>
+			<next>13</next>
+		</phrase>
+		<phrase id="13">
+			<text>final_hunter_dialog_13</text>
+			<next>14</next>
+		</phrase>
+		<phrase id="14">
+			<text>final_common_reply_14</text>
+			<next>151</next>
+			<next>152</next>
+			<next>153</next>
+		</phrase>
+		<phrase id="151">
+		    <has_info>mil_mercs_fire</has_info> <!-- если воевали с мерками на АС, на этом всё, игра окончена -->
+			<dont_has_info>sakharov_final_start_info</dont_has_info>
+			<text>final_common_reply_151</text>
+			<next>161</next>
+		</phrase>
+		<phrase id="152">
+		    <dont_has_info>mil_mercs_fire</dont_has_info> <!-- если не воевали с мерками на АС, идём на "реальную" концовку -->
+			<text>final_common_reply_152</text>
+			<give_info>final_hunter_dialog_info</give_info>
+			<give_info>doc_last_speech_info</give_info>
+			<next>162</next>
+		</phrase>
+		<phrase id="153">
+		    <has_info>sakharov_final_start_info</has_info> <!-- если выполнены условия для альтернативной концовки -->
+			<text>final_common_reply_153</text>
+			<give_info>final_hunter_dialog_info</give_info>
+			<give_info>doc_last_speech_info</give_info>
+			<give_info>bd_final_start_info</give_info>
+			<next>163</next>
+		</phrase>
+		<phrase id="161">
+			<text>final_common_reply_16</text>
+			<next>171</next>
+		</phrase>
+		<phrase id="162">
+			<text>final_common_reply_16</text>
+			<next>172</next>
+		</phrase>
+		<phrase id="163">
+			<text>final_common_reply_16</text>
+			<next>173</next>
+		</phrase>
+		<phrase id="171">
+			<text>final_common_reply_17</text>
+			<give_info>final_hunter_dialog_info</give_info>
+			<action>mike.final_message</action>
+			<next>181</next>
+		</phrase>
+		<phrase id="172">
+			<text>final_common_reply_17</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="173">
+			<text>final_common_reply_17</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="181">
+			<text>final_common_reply_181</text>
+			<next>191</next>
+		</phrase>
+		<phrase id="191">
+			<text>final_common_reply_191</text>
+			<action>dialogs.break_dialog</action>
+			<action>xr_effects.game_credits</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="final_igrok_dialog">
+	<precondition>sak_dialog.gg_igrok</precondition>
+	<has_info>gg_know_self</has_info>
+	<dont_has_info>final_igrok_dialog_info</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>final_igrok_dialog_00</text>
+			<next>100</next>
+		</phrase>
+		<phrase id="100">
+			<text>final_igrok_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>final_igrok_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>final_igrok_dialog_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>final_igrok_dialog_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>final_igrok_dialog_4</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>final_igrok_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>final_igrok_dialog_6</text>
+			<next>7</next>
+		</phrase>
+		<phrase id="7">
+			<text>final_igrok_dialog_7</text>
+			<next>8</next>
+		</phrase>
+		<phrase id="8">
+			<text>final_igrok_dialog_8</text>
+			<next>9</next>
+		</phrase>
+		<phrase id="9">
+			<text>final_igrok_dialog_9</text>
+			<next>10</next>
+		</phrase>
+		<phrase id="10">
+			<text>final_igrok_dialog_10</text>
+			<next>11</next>
+		</phrase>
+		<phrase id="11">
+			<text>final_igrok_dialog_11</text>
+			<next>12</next>
+		</phrase>
+		<phrase id="12">
+			<text>final_igrok_dialog_12</text>
+			<next>13</next>
+		</phrase>
+		<phrase id="13">
+			<text>final_igrok_dialog_13</text>
+			<next>14</next>
+		</phrase>
+		<phrase id="14">
+			<text>final_common_reply_14</text>
+			<next>151</next>
+			<next>152</next>
+			<next>153</next>
+		</phrase>
+		<phrase id="151">
+		    <has_info>mil_mercs_fire</has_info> <!-- если воевали с мерками на АС, на этом всё, игра окончена -->
+			<dont_has_info>sakharov_final_start_info</dont_has_info>
+			<text>final_common_reply_151</text>
+			<next>161</next>
+		</phrase>
+		<phrase id="152">
+		    <dont_has_info>mil_mercs_fire</dont_has_info> <!-- если не воевали с мерками на АС, идём на "реальную" концовку -->
+			<text>final_common_reply_152</text>
+			<give_info>final_igrok_dialog_info</give_info>
+			<give_info>doc_last_speech_info</give_info>
+			<next>162</next>
+		</phrase>
+		<phrase id="153">
+		    <has_info>sakharov_final_start_info</has_info> <!-- если выполнены условия для альтернативной концовки -->
+			<text>final_common_reply_153</text>
+			<give_info>final_igrok_dialog_info</give_info>
+			<give_info>doc_last_speech_info</give_info>
+			<give_info>bd_final_start_info</give_info>
+			<next>163</next>
+		</phrase>
+		<phrase id="161">
+			<text>final_common_reply_16</text>
+			<next>171</next>
+		</phrase>
+		<phrase id="162">
+			<text>final_common_reply_16</text>
+			<next>172</next>
+		</phrase>
+		<phrase id="163">
+			<text>final_common_reply_16</text>
+			<next>173</next>
+		</phrase>
+		<phrase id="171">
+			<text>final_common_reply_17</text>
+			<give_info>final_igrok_dialog_info</give_info>
+			<action>mike.final_message</action>
+			<next>181</next>
+		</phrase>
+		<phrase id="172">
+			<text>final_common_reply_17</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="173">
+			<text>final_common_reply_17</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="181">
+			<text>final_common_reply_181</text>
+			<next>191</next>
+		</phrase>
+		<phrase id="191">
+			<text>final_common_reply_191</text>
+			<action>dialogs.break_dialog</action>
+			<action>xr_effects.game_credits</action>
+		</phrase>
+	</phrase_list>
+</dialog>

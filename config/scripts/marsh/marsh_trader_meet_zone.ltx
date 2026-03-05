@@ -1,0 +1,8 @@
+[logic]
+active = sr_idle
+
+[sr_idle]
+on_actor_inside = %=sak_dialog.out_all_money% sr_idle@near
+
+[sr_idle@near]
+on_actor_outside = %=sak_dialog.in_all_money% sr_idle

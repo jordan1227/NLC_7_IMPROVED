@@ -1,0 +1,23 @@
+[logic]
+active = walker
+trade = misc\shop_other\trade_junkman.ltx
+inv_max_weight = 10000
+on_death = death
+
+[walker]
+path_walk = hos_junkman_walk
+path_look = hos_junkman_look
+danger = danger_condition
+on_info = {+gg_in_hos_junkman} walker2
+
+[walker2]
+path_walk = hos_junkman2_walk
+path_look = hos_junkman2_look
+danger = danger_condition
+on_info = {-gg_in_hos_junkman} walker
+
+[danger_condition]
+ignore_distance = 0
+
+[death]
+on_info = {=killed_by_actor} %+hos_junkman_umer =sak.gg_bandit()%, %+hos_junkman_umer%

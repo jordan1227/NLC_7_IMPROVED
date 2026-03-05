@@ -1,0 +1,163 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;БАЗА;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[animator_base]:hud_base
+item_visual                      		= dynamics\devices\fake_object.ogf
+hands_position							= 0.0,0.0,0.0
+hands_orientation						= 0.0,0.0,0.0
+hands_position_16x9						= 0.0,0.0,0.0
+hands_orientation_16x9					= 0.0,0.0,0.0
+item_position 					 		= 0.0,0.0,0.0
+item_orientation 				 		= 0.0,0.0,0.0
+attach_place_idx 				 		= 0
+item_attached							= false
+sound_1   								= $silent
+blend							 		= false
+part 							 		= 2
+
+anm_show						 		= hand_idle_doun
+dof										= -1.0, -1.0, -1.0, -1.0
+hide_speed_factor						= 1.7
+
+left_lua_callback				 		= null
+left2_lua_callback				 		= null
+right_lua_callback				 		= null
+right2_lua_callback			 	 		= null
+start_lua_callback				 		= null
+end_lua_callback				 		= null
+
+disable_input							= false
+disable_key_input						= false
+restore_weapon 							= true
+hide_gasmask						 	= false
+can_sprint								= false
+
+lookout_hud_offset_pos_left 			= 0.05,0.03,0				; Смещение позиции от бедра
+lookout_hud_offset_rot_left 			= 0,0,7						; Смещение ротации от бедра
+lookout_aim_hud_offset_pos_left 		= 0,0,0						; Смещение позиции в аиме
+lookout_aim_hud_offset_rot_left 		= 0,0,2						; Смещение ротации в аиме	
+
+lookout_hud_offset_pos_right 			= 0.03,-0.01,0					; Смещение позиции от бедра
+lookout_hud_offset_rot_right 			= 0,0,8.5					; Смещение ротации от бедра
+lookout_aim_hud_offset_pos_right 		= 0,0,0						; Смещение позиции в аиме
+lookout_aim_hud_offset_rot_right 		= 0,0,2						; Смещение ротации в аиме	
+
+Llookout_inert_pos						= 0,0,0
+Llookout_inert_rot						= 0,0,0
+Llookout_inert_time						= 3.5
+
+Rlookout_inert_pos						= 0,0,0
+Rlookout_inert_rot						= 0,0,0
+Rlookout_inert_time						= 3.5
+
+crouch_hud_offset_pos 					= -0.001,0.0015,0				; Смещение позиции в присяде от бедра
+crouch_hud_offset_rot 					= 0,0,0					; Смещение ротации в присяде от бедра
+
+crouch_up_inert_pos						= 0,0.0005,0
+crouch_up_inert_rot						= 0,0,0
+crouch_up_inert_time					= 5
+crouch_slow_up_inert_pos				        = 0,0.0005,0
+crouch_slow_up_inert_rot				        = 0,0,0
+crouch_slow_up_inert_time				= 5
+crouch_factor							   = 1
+
+crouch_down_inert_pos					        = 0,-0.001,0
+crouch_down_inert_rot					        = 0,0,0
+crouch_down_inert_time					= 6
+crouch_slow_down_inert_pos				        = 0,-0.0005,0
+crouch_slow_down_inert_rot				        = 0,0,0
+crouch_slow_down_inert_time				= 6
+crouch_slow_factor						   = 1
+
+hud_move_jump_offset_pos                 = 0,0.008,0.01
+hud_move_jump_offset_rot                 = -13.5,-0.15,0
+hud_move_jump_time                         = 4
+
+hud_move_fall_offset_pos                = 0,-0.02,0.02
+hud_move_fall_offset_rot                = 7,0.4,0
+hud_move_fall_time                         = 4
+
+hud_move_landing_offset_pos             = 0,-0.03,0
+hud_move_landing_offset_rot             = -4.3,0,0
+hud_move_landing_time                    = 7
+
+hud_move_landing2_offset_pos            = 0,-0.002,0
+hud_move_landing2_offset_rot            = -5,0,0
+hud_move_landing2_time                     = 10
+
+strafe_transition_time					= 2.2						; Время смещения от бедра
+strafe_hud_offset_pos_left 				= 0,0,0					; Смещение позиции от бедра
+strafe_hud_offset_rot_left 				= 0,0,0					; Смещение ротации от бедра
+strafe_hud_offset_pos_right 			= 0,0,0					; Смещение позиции от бедра
+strafe_hud_offset_rot_right 			= 0,0,0				; Смещение ротации от бедра
+strafe_aim_transition_time 				= 2							; Время смещения в аиме
+strafe_aim_hud_offset_pos_left 			= 0,0,0						; Смещение позиции в аиме
+strafe_aim_hud_offset_rot_left 			= 0,0,0					; Смещение ротации в аиме
+strafe_aim_hud_offset_pos_right 		= 0,0,0						; Смещение позиции в аиме
+strafe_aim_hud_offset_rot_right 		= 0,0,0					; Смещение ротации в аиме
+strafe_change_dir_speed_factor = 1.2
+strafe_aim_change_dir_speed_factor = 1.2
+strafe_stop_speed_factor = 3.3
+strafe_aim_stop_speed_factor = 3.3
+
+move_fb_transition_time					= 3.2							; Время смещения при ходьбе вперед \ назад от бедра
+move_forward_hud_offset_pos 			= 0,0.003,0.017					; Смещение позиции от бедра
+move_forward_hud_offset_rot 			= 0,0,0						; Смещение ротации от бедра
+move_back_hud_offset_pos 				= 0,0,0.012					; Смещение позиции от бедра
+move_back_hud_offset_rot 				= 0,0,0						; Смещение ротации от бедра
+move_fb_aim_transition_time 			= 3.5							; Время смещения в аиме
+move_forward_aim_hud_offset_pos 		= 0,0,0.0025					; Смещение позиции в аиме
+move_forward_aim_hud_offset_rot 		= 0,0,0						; Смещение ротации в аиме
+move_back_aim_hud_offset_pos 			= 0,0,0.001					; Смещение позиции в аиме
+move_back_aim_hud_offset_rot 			= 0,0,0						; Смещение ротации в аиме
+move_fb_change_dir_speed_factor = 2.4
+move_fb_stop_speed_factor = 2.4
+move_fb_aim_change_dir_speed_factor = 2.4
+move_fb_aim_stop_speed_factor = 2.4
+
+pitch_transition_time					= 0.2						; Время возврата смещения во время аима
+pitch_offset_right 						= 0.001						; Насколько сильно ствол смещается вбок при вертикальных поворотах камеры
+pitch_offset_up 						= 0.006					; Насколько сильно ствол поднимается \ опускается при вертикальных поворотах камеры
+pitch_offset_forward 					= 0.005					; Насколько сильно ствол приближается \ отдаляется при вертикальных поворотах камеры
+pitch_offset_up_low_limit				= -3.1415926535897932384626433832795 ; Минимальное значение pitch при использовании совместно с pitch_offset_up
+
+inertion_offset_LRUD					= 0.01, 0.01, 0.01, 0.01 	; Пределы смещения при инерции от бедра (лево / право / верх / низ)
+inertion_offset_z						= 0.01					; Пределы смещения при инерции от бедра (назад)
+inertion_offset_LRUD_aim				= 0.0035, 0.0035, 0.0035, 0.0035 ; Пределы смещения при инерции в аиме (лево / право / верх / низ)
+inertion_offset_z_aim					= -0.0005   					; Пределы смещения при инерции в аиме (назад)
+inertion_origin_offset 					= -0.06						; Фактор влияния инерции на положение ствола от бедра (чем меньше, тем маштабней инерция)
+inertion_origin_speed 					= 7.0						; Время инерции положения ствола от бедра (больше - быстрее)
+inertion_origin_aim_offset 				= -0.008					; Фактор влияния инерции на положение ствола в аиме (чем меньше, тем маштабней инерция)
+inertion_origin_aim_speed 				= 7.0						; Время инерции положения ствола в аиме (больше - быстрее)
+inertion_tendto_speed					= 0.4						; Модификатор силы инерции от бедра (больше - чувствительней)
+inertion_tendto_aim_speed 				= 0.4						; Модификатор силы инерции в аиме (больше - чувствительней)
+inertion_tendto_ret_speed				= 4							; Модификатор силы отката инерции от бедра (больше - быстрее)
+inertion_tendto_ret_aim_speed			= 3							; Модификатор силы отката инерции в аиме (больше - быстрее)
+inertion_min_angle						= 0							; Минимальная сила наклона, необходимая для старта инерции от бедра
+inertion_min_angle_aim					= 0							; Минимальная сила наклона, необходимая для старта инерции в аиме
+
+inertion_hud_offset_pos					= 0,0,0					        ; Смещение позиции от бедра при горизонтальных поворотах
+inertion_hud_offset_rot					= 0,0,0					; Смещение ротации от бедра при горизонтальных поворотах
+
+nearwall_transition_time				= 6.5						; Время смещения
+nearwall_hud_offset_pos					= 0,0,-0.001	    		; Смещение позиции
+nearwall_hud_offset_rot					= 0,0,0					; Смещение ротации
+nearwall_collide_pos					= -0.01
+nearwall_additional_cam_offset			= 0.046, 0, 0
+
+[trash_base]
+GroupControlSection 					= spawn_group
+$spawn        							= "physics\object"
+$prefetch       						= 8
+class       							= O_PHYS_S
+script_binding      					= trash_binder.init_trash
+remove_time     						= 90; after this time  unbreaked removable bone will be removed
+startup_animation 						=
+fixed_bones 							=
+
+throw_offset_x							= -0.1
+throw_offset_y							= 0.2
+throw_dir								= right
+throw_impulse_z							= 50
+throw_impulse_y							= 0.05

@@ -1,0 +1,36 @@
+[logic]
+active = ph_door@close
+
+[ph_door@close]
+locked = false
+closed = true
+tip_open = open_shield
+snd_open_start = wood_large_open
+snd_close_start = wood_large_close_start
+snd_close_stop = wood_large_close_stop
+on_use = ph_door@open
+
+
+[ph_door@open]
+locked = false
+closed = false
+tip_close = close_shield
+snd_open_start = wood_large_open
+snd_close_start = wood_large_close_start
+snd_close_stop = wood_large_close_stop
+on_timer = 300 | ph_code@lock
+
+[ph_code@lock]
+on_check_code1 = 26589 | {+garmonika_letter1  -docent_garmonika_done -garmonika_done_self} %+garmonika_done_self =sak_dialog.add_habar_for_borov%
+on_check_code2 = 66896 | {+garmonika_letter2  -docent_garmonika_done -garmonika_done_self} %+garmonika_done_self =sak_dialog.add_habar_for_borov%
+on_check_code3 = 45876 | {+garmonika_letter3  -docent_garmonika_done -garmonika_done_self} %+garmonika_done_self =sak_dialog.add_habar_for_borov%
+on_check_code4 = 28964 | {+garmonika_letter4  -docent_garmonika_done -garmonika_done_self} %+garmonika_done_self =sak_dialog.add_habar_for_borov%
+on_check_code5 = 75982 | {+garmonika_letter5  -docent_garmonika_done -garmonika_done_self} %+garmonika_done_self =sak_dialog.add_habar_for_borov%
+on_check_code6 = 83542 | {+garmonika_letter6  -docent_garmonika_done -garmonika_done_self} %+garmonika_done_self =sak_dialog.add_habar_for_borov%
+on_check_code7 = 12546 | {+garmonika_letter7  -docent_garmonika_done -garmonika_done_self} %+garmonika_done_self =sak_dialog.add_habar_for_borov%
+on_check_code8 = 34896 | {+garmonika_letter8  -docent_garmonika_done -garmonika_done_self} %+garmonika_done_self =sak_dialog.add_habar_for_borov%
+on_check_code9 = 59648 | {+garmonika_letter9  -docent_garmonika_done -garmonika_done_self} %+garmonika_done_self =sak_dialog.add_habar_for_borov%
+on_check_code10 = 42695 | {+garmonika_letter10 -docent_garmonika_done -garmonika_done_self} %+garmonika_done_self =sak_dialog.add_habar_for_borov%
+on_check_code11 = 25648 | {+docent_garmonika_done -garmonika_done_self2} %+garmonika_done_self2 =sak_dialog.add_habar_for_borov2%
+on_check_code12 = 1455987401 | {-garmonika_done_self2} %+garmonika_done_self2 =sak_dialog.add_habar_for_borov2%
+on_timer = 15000 | ph_door@close

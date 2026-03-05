@@ -1,0 +1,39 @@
+[logic]
+active = walker@day
+
+[walker@day]
+no_move = true
+reactions = ignore
+anim = sit_knee
+combat_ignore_cond = always
+path_walk = oksana_kordon_day_way
+path_look = oksana_kordon_day_look
+on_info = {!is_day} walker@night
+on_info2 = {+molchun_go_oksana} remark@free
+show_spot = false 
+meet = meet
+danger = danger_condition
+
+[remark@free]
+show_spot = false 
+
+[walker@night]
+no_move = true
+reactions = ignore
+anim = sleep_sit
+combat_ignore_cond = always
+path_walk = oksana_kordon_night_way
+path_look = oksana_kordon_night_look
+show_spot = false 
+on_info = {=is_day} walker@day
+meet = meet
+danger = danger_condition
+
+[meet]
+use = true
+use_wpn = true
+meet_talk_enabled = true
+meet_dialog	= esc_oksana_start_dialog
+
+[danger_condition]
+ignore_distance = 0

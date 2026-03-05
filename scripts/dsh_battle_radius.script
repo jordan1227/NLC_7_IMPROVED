@@ -1,0 +1,189 @@
+-- -*- mode: lua; coding: windows-1251-dos -*-
+
+function attach( sm )
+  sm:subscribe({ signal = "on_monster_death",  fun = this.on_monster_death })
+  sm:subscribe({ signal = "on_monster_net_destroy", fun = this.on_monster_death })
+end
+
+
+function create_radius( obj, home_radius, home_vertex, onetime )
+  local binder = obj:binded_object()
+  local mgr    = binder[ "dsh_battle_radius.mgr" ]
+  if mgr then
+    mgr:reset_scheme()
+    ogse_signals.get_mgr():unsubscribe( mgr.subscribed )
+  end
+  mgr = battle_radius( obj, home_radius, home_vertex, onetime )
+  binder[ "dsh_battle_radius.mgr" ] = mgr
+  local subscribed = {
+    [ "signal" ] = "on_monster_update." .. obj:id(),
+    [ "self"   ] = mgr,
+    [ "fun"    ] = mgr.update,
+  }
+  ogse_signals.get_mgr():subscribe( subscribed )
+  mgr.subscribed = subscribed
+  --log2( "000000000000000000")
+  return mgr
+end
+
+
+function on_monster_death( obj )
+  local binder = obj:binded_object()
+  local mgr    = binder[ "dsh_battle_radius.mgr" ]
+  if not mgr then return end
+  ogse_signals.get_mgr():unsubscribe( mgr.subscribed )
+  binder[ "dsh_battle_radius.mgr" ] = nil
+  --log2( "11111111111111111111" )
+end
+
+
+local STATE_ALIFE     = 1
+local STATE_MOVE_HOME = 2
+
+
+class "battle_radius"
+function battle_radius:__init( obj, home_radius, home_vertex, onetime )
+  self.home_changed = false
+  self.home_radius  = home_radius
+  self.home_vertex  = home_vertex
+  self.initialized  = false
+  self.object       = obj
+  self.onetime      = onetime
+end
+
+
+function battle_radius:reset_scheme()
+  self.state_current = STATE_ALIFE
+  self.state_prev    = self.state_current
+  xr_logic.mob_release( self.object )
+  if self.onetime then
+    self.startup_time = time_global() + math.random( 1000, 2000 )
+  end
+end
+
+
+function battle_radius:update()
+  if not self.object:alive() then return end
+  if not self.initialized then
+    self:reset_scheme()
+    self.initialized = true
+  end
+  if self.startup_time and self.startup_time > time_global() then
+    return
+  end
+  self:select_state()
+  self:execute_state()
+end
+
+
+function battle_radius:select_state()
+  self.state_prev = self.state_current
+
+  local home_node = self.home_vertex or db.actor:level_vertex_id()
+  if not self.object:accessible( home_node ) then
+    local pos = vector():set( 0, 0, 0 )
+    home_node = self.object:accessible_nearest(
+      level.vertex_position( home_node ), pos
+    )
+    log2(
+      "[%s]: %s: home_vertex %s restricted, use %s instead",
+      script_name(), self.object:name(), self.home_vertex, home_node
+    )
+    self.home_changed = true
+    self.home_vertex  = home_node
+  end
+  self.home_node     = home_node
+  self.home_position = level.vertex_position( self.home_node )
+
+  local enemy     = self.object:best_enemy()
+  local home_dist = self.object:position():distance_to( self.home_position )
+  if
+    (
+      enemy
+      and ( IsStalker( enemy ) or ( self.onetime and IsMonster( enemy ) ) )
+      and enemy:alive()
+    )
+    or (
+      home_dist < self.home_radius
+      and (
+        ( not self.home_min_radius )
+        or (
+          self.state_current == STATE_MOVE_HOME
+          and home_dist < self.home_min_radius
+        )
+      )
+    )
+  then
+    self.state_current = STATE_ALIFE
+  else
+    self.state_current = STATE_MOVE_HOME
+  end
+
+  self:check_moving()
+end
+
+
+function battle_radius:check_moving()
+  if not ( self.onetime and self.state_current == STATE_MOVE_HOME ) then
+    return
+  end
+  if not self.check_time then
+    self.check_pos  = self.object:position()
+    self.check_time = time_global() + 5000
+    return
+  end
+  if self.check_time < time_global() then
+    local dist = self.object:position():distance_to( self.check_pos )
+    if dist < 0.1 then
+      log2(
+        "[%s]: %s: too slow: dist = %s",
+        script_name(), self.object:name(), dist
+      )
+      self.state_current = STATE_ALIFE
+    else
+      self.check_pos  = self.object:position()
+      self.check_time = time_global() + 1000
+    end
+  end
+end
+
+
+function battle_radius:execute_state()
+  if self.state_current == STATE_ALIFE and self.state_prev == STATE_ALIFE then
+    return
+  end
+
+  if self.state_current == STATE_ALIFE and self.state_prev ~= STATE_ALIFE then
+    xr_logic.mob_release( self.object )
+    if self.onetime then
+      on_monster_death( self.object )
+    end
+    local sobj = alife():object( self.object:id() )
+    if sobj then
+      sobj.force_online = false
+    end
+    return
+  end
+
+  if
+    ( self.state_current ~= STATE_ALIFE and self.state_prev == STATE_ALIFE )
+    or self.home_changed
+  then
+    self.home_changed = false
+    xr_logic.mob_capture( self.object, true )
+    local sobj = self.object:get_alife_object()
+    if sobj then
+      sobj.force_online = true
+    end
+  end
+
+  if self.state_current == STATE_MOVE_HOME then
+    if not self.object:action() then
+      action_first(
+        self.object,
+        move( move.run_fwd, self.home_node, self.home_position, 1 ),
+        cond( cond.move_end )
+      )
+    end
+  end
+end

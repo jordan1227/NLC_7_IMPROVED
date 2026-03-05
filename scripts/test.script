@@ -1,0 +1,101 @@
+function info(info)
+	if has_alife_info(info) then
+		sak.send_tip(info,"got info!",0,15,"g_g","sak","yellow")
+	else
+		sak.send_tip(info,"no info",0,15,"g_g","sak","yellow")
+	end
+end
+function give_info( info )
+	db.actor:give_info_portion( info )
+	sak.send_tip(
+		"Выдан поршень: ".. info .."", nil, 1, 10, "g_g", "no", "green"
+		)
+end
+function disable_info( info )
+	db.actor:disable_info_portion( info )
+	sak.send_tip(
+		"Поршень отключен: ".. info .."", nil, 1, 10, "g_g", "no", "red"
+		)
+end
+function disable_article(id)
+	if id == nil then
+		return
+	end
+	if g_sim:disable_article(id) then
+		sak.send_tip("Артикл отключен: ".. id .."", nil, 1, 10, "g_g", "no", "red")
+	else
+		sak.send_tip("Артикл указан неверно, либо уже отключен", nil, 1, 10, "g_g", "no", "red")
+	end
+end
+function del_wrong_object(name)
+	local sobj = g_sim:object( name )
+	if sobj then
+		log2("[del_wrong_object]: obj %s released ", sobj:name())
+		misc.release_obj( sobj )
+	end
+end
+function set_npc_neutral(id)
+	local sobj = server_obj(id)
+	if sobj then
+		local obj = client_obj(sobj.id)
+		if obj then
+			if amk.get_npc_relation(obj,db.actor) == 'enemy' then
+				obj:set_relation(game_object.neutral,db.actor)
+			end
+		end
+	end
+end
+-- gas_burner
+function spawn_lampada()
+    dsh.create_candle( vector():set( 6.61, -7.82, -13.24 ), 7641, 2693, "new_item\\gas_burner" )
+end
+-- телепортация на 1, 5, 100, 300 метров
+function t1()
+	if level.present() and db.actor and db.actor:alive() then
+	   db.actor:set_actor_position(device().cam_pos:add(device().cam_dir:mul(1.0)))
+    end	
+end
+function t5()
+	if level.present() and db.actor and db.actor:alive() then
+	   db.actor:set_actor_position(device().cam_pos:add(device().cam_dir:mul(5.0)))
+    end	
+end
+function t100()
+	if level.present() and db.actor and db.actor:alive() then
+	   db.actor:set_actor_position(device().cam_pos:add(device().cam_dir:mul(100.0)))
+    end	
+end
+function t300()
+	if level.present() and db.actor and db.actor:alive() then
+	   db.actor:set_actor_position(device().cam_pos:add(device().cam_dir:mul(300.0)))
+    end	
+end
+-- метка на НПС
+function mark(id,flag)
+	local obj
+	if type(id)=="number" then
+		if flag then
+			obj = g_sim:object(id)
+		else
+			obj = g_sim:story_object(id)
+		end
+		if obj then
+			if flag then
+				sak.send_tip(tostring(obj.id),"id@find_obj",0,15,"g_g","sak","yellow")
+			else
+				sak.send_tip(tostring(obj.m_story_id),"m_story_id@find_obj",0,15,"g_g","sak","yellow")
+			end
+			level.map_add_object_spot_ser(obj.id, "blue_location", obj:name())
+		else
+			sak.send_tip("no obj or other err","id@find_obj",0,15,"g_g","sak","yellow")
+		end
+	elseif type(id)=="string" then
+		obj = g_sim:object(id)
+		if obj then
+			sak.send_tip(obj:name(),"name@find_obj",0,15,"g_g","sak","yellow")
+			level.map_add_object_spot_ser(obj.id, "blue_location", obj:name())
+		else
+			sak.send_tip("no obj or other err","m_story_id@find_obj",0,15,"g_g","sak","yellow")
+		end
+	end
+end

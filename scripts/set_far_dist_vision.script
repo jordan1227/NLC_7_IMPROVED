@@ -1,0 +1,31 @@
+-------------------------------------------------------------------------------------
+-- скрипт увеличения угла и дальности зрения таким монстрам, как контроллеры и бюреры
+-------------------------------------------------------------------------------------
+function attach( sm )
+	sm:subscribe({ signal = "on_monster_hit", fun = this.far_distance_vision })
+end
+
+function far_distance_vision( obj, amount, local_direction, who, bone_index )
+	
+	-- ничего не делать, если нет мутанта, или он мертв, или нет агрессора, или агрессор - не актор
+	if ( not obj )or ( not obj:alive() ) or ( not who ) or ( who:id() ~= 0 ) then return end
+	--log2( "Fov and range for obj %s was  %s", obj:name(), tostring( obj:range() ) )
+	-- ничего не делать, если величина хита совсем мала
+	if amount <= 0.01 then return end
+	
+	-- ничего не делать, если мутант не контроллер или бюрер
+	if  obj:clsid() == CLID_BURER or obj:clsid() == CLID_CONTROLLER then 
+		--log2( "Fov and range 2 for obj %s was  %s", obj:name(), tostring( obj:range() ) )
+	-- теперь обработки
+	
+		local temp_dist = obj:position():distance_to( who:position() )
+		if temp_dist > obj:range() then
+			obj:set_range( temp_dist*1.5 )
+			obj:set_fov( 270 )
+			local new_range	= obj:fov()
+			local new_fov	= obj:range()
+			--log2( "Fov and range 3 for obj %s was changed to %s and %s", obj:name(), tostring( new_range ), tostring( new_fov ) )
+		end
+	end
+	
+end

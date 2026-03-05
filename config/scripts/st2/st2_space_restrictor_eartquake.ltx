@@ -1,0 +1,8 @@
+[logic]
+active = sr_idle1
+
+[sr_idle1]
+on_timer = 27021 | %=aes_earthshake% sr_idle2
+
+[sr_idle2]
+on_timer = 51061 | sr_idle1

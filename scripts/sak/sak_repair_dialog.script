@@ -1,0 +1,815 @@
+setfenv(1, sak_dialog) -- фактически этот скрипт включается в содержимое sak_dialog
+this = sak_dialog 
+this.t_repair         = get_value("repair", {})            
+this.vergas_margin    = 1
+this.lisaped_margin   = 1
+this.stepanych_margin = 1
+this.dolgovjaz_margin = 1
+-- test
+this.cur_price        = 0
+this.cur_time         = 0
+this.need_additonal_repair_mask = false
+this.need_additonal_repair_armor = false
+--
+
+this.repair_config = {
+  
+	dolgovjaz = {
+				info_start    = "repair_starting",  
+				cost_phrase_1 = "list_trader_repair_0",
+				cost_phrase_2 = "list_trader_repair_1",
+				cost_phrase_6 = "list_trader_repair_2"       
+				},
+  
+	lisaped  =  {
+				info_start    = "lisaped_repair_starting",    
+				cost_phrase_1 = "lisaped_list_trader_repair_1",
+				cost_phrase_2 = "lisaped_list_trader_repair_2",
+				cost_phrase_6 = "lisaped_list_trader_repair_1"  
+				},
+  
+	stepanych = {      
+				info_start    = "stepanych_repair_starting",
+				cost_phrase_1 = "stepanych_list_trader_repair_6",
+				cost_phrase_2 = "stepanych_list_trader_repair_6",
+				cost_phrase_6 = "stepanych_list_trader_repair_6"
+				},
+  
+	vergas = 	{
+				info_start    = "vergas_repair_starting",         
+				cost_phrase_1 = "vergas_list_trader_repair_1",
+				cost_phrase_2 = "vergas_list_trader_repair_2",
+				cost_phrase_6 = "vergas_list_trader_repair_6" 
+				}
+
+}
+          
+_G.r_dolgovjaz = "dolgovjaz"
+_G.r_lisaped   = "lisaped"
+_G.r_stepanych = "stepanych"
+_G.r_vergas    = "vergas"
+
+-- if type(t_repair) == "table" then 
+	-- misc.dump_table(t_repair)
+-- else
+	-- misc.dump_table(t_repair(true))
+-- end  
+  
+function sak_dialog.update_margin()
+	this.vergas_margin         = 1.0 + 0.1 * math.ceil(sak.day_money/4)
+	this.lisaped_margin        = 0.9 + 0.1 * math.ceil(sak.day_money/4)
+	this.dolgovjaz_margin      = 0.8 + 0.1 * math.ceil(sak.day_money/6)
+	this.stepanych_margin      = 0.8 + 0.1 * math.ceil(sak.day_money/4)
+end
+
+function uniform_time_repair(cond)
+	local c_tab = {95,90,80,70,60,37}
+	local t_tab = {20,40,80,120,240,480}
+	for i, c in ipairs(c_tab) do
+		if cond >= c then
+			this.cur_time = t_tab[i]	
+			return t_tab[i] 
+		end
+	end
+	return 0
+end
+
+function calc_repair_cost(item, margin) -- сколько рублей стоит починить предмет
+	if not margin or type(margin) ~= "number" then
+		wprintf(" [~T].~C0C #WARN:~C07 margin = ~C0F %s~C07", DumpVar(margin))
+		margin = 1
+	end
+	local cond, dec = math.modf(item:condition() * 100)
+	dec = math.floor(dec * 10)
+	if dec >= 5 then
+		cond = cond + 1
+	end
+	local corr = 100 - cond
+	local res = math.ceil( item:cost() * margin / 100 * corr )
+
+	-- Manool: зависимость стоймости от уровня сложности
+	local difft = {
+		[0] = {0.7, 250}, -- новичек
+		[1] = {0.8, 500}, -- сталкер
+		[2] = {0.9, 750}, -- ветеран
+		[3] = {1, 1000}    -- мастер
+	}
+	local g_dif = difft[level.get_game_difficulty()]
+	res = math.ceil(res * g_dif[1])
+
+	if res < g_dif[2] then 
+		res = g_dif[2]
+	end
+	this.cur_price = res
+	--log2("[s_fixes]: performing calc_repair_cost for obj %s with cond = %s, corr = %s | repair price = %s (base price = %s | margin = %s)", item:name(),cond,corr,res,item:cost(),margin)
+	return res,cond
+end
+
+function time_desc(minutes)
+	local tm = {
+	[20] = "\\n"..game.translate_string("time_desc_1"),
+	[40] = "\\n"..game.translate_string("time_desc_2"),
+	[60] = "\\n"..game.translate_string("time_desc_3"),
+	[80] = "\\n"..game.translate_string("time_desc_4"),
+	[120] = "\\n"..game.translate_string("time_desc_5"),
+	[240] = "\\n"..game.translate_string("time_desc_6"),
+	[480] = "\\n"..game.translate_string("time_desc_7"),
+	[12 * 60] = "\\n"..game.translate_string("time_desc_8"),
+	[24 * 60] = "\\n"..game.translate_string("time_desc_9")}
+	if minutes > 24 * 60 then 
+		return "\\n"..game.translate_string("time_desc_10")
+	else  
+		return tm[minutes] or sprintf("\\n"..game.translate_string("time_desc_11"), minutes)
+	end        
+end
+
+function get_margin(repairer)
+	local m = this[repairer..'_margin']
+	if not m then
+		wprintf("[~T].~C0C #ERROR: this.%s_margin == nil~C07", repairer)
+		m = 1
+	end 
+ 
+	return tonumber(m)
+end                              
+
+-- функция начала ремонта любым из доступных ремонтников
+function uniform_repair_start(slot, repairer)
+	local item = nil
+	local mask_handle = type(slot) ~= 'number'
+	if mask_handle then
+		slot = 6
+	end
+	item = actor_active_item(slot)
+	if item == nil then
+		wprintf("[~T].~C0C #ERROR(uniform_repair_start):~C07 actor_active_item(%d) return nil", slot)
+		return 
+	end                       
+	repairer = repairer or 'nil'            
+ 
+	local cfg = this.repair_config[repairer] 
+	if not cfg then
+		wprintf("[~T].~C0C #ERROR(uniform_repair_start):~C07 not specified configuration for repairer~C0A %s~C07", repairer)
+		return 
+	end
+
+	local item_repair_cost = this.cur_price
+	local time_need_repair = this.cur_time
+	local section = item:section()        
+	local scr = get_string(section, "scope_respawn")
+	if scr and slot ~= 6 then
+		section = scr
+	end
+	sak_dialog.relocate_money(db.actor, item_repair_cost, 1) -- заплатить за ремонт 
+ 
+	if cfg.info_start then db.actor:give_info_portion(cfg.info_start) end
+ 
+	if t_repair[repairer] == nil then
+		t_repair[repairer] = {}
+	end
+   
+	wprintf("[~T]. #REPAIR: scheduled recovery~C0A %s~C07 at~C0D %d~C07 minutes", section, time_need_repair)   
+	t_repair[repairer].time_need = time_need_repair
+	t_repair[repairer].time_end  = misc.game_time_minutes() + time_need_repair 
+	t_repair[repairer].section   = section
+	if slot == 6 then
+		t_repair[repairer].armor_cond = item:condition()
+		t_repair[repairer].mask_cond = vergas_masks.mask_condition()
+		t_repair[repairer].upgr_time = 0
+		if mask_handle then
+			t_repair[repairer].mask_or_armor = "m"
+			local sobj = item:get_alife_object()
+			local upgr_time = sobj and bind_upg_outfit.get_end_time(sobj)
+			if upgr_time > timers.Get_Game_Minutes() + 60 then -- Sn: проверяем, что намазка ещё будет действовать через час (время на замену стекла)
+				t_repair[repairer].upgr_time = upgr_time
+			end
+		else
+			t_repair[repairer].mask_or_armor = "a"
+		end
+		log2("uniform_repair_start: saving armor_cond [%f] mask_cond [%f]", t_repair[repairer].armor_cond, t_repair[repairer].mask_cond)
+	end
+	sak.relocate_item("out", section, 1)
+	amk.remove_item(item)
+	this.cur_price = 0
+	this.cur_time = 0
+end
+
+-- функция добавления сообщения о стоимости ремонта любым из ремонтников
+function uniform_repair_cost(slot, repairer)
+	repairer = repairer or 'nil'
+	local cfg = this.repair_config[repairer] 
+	if not cfg then
+		wprintf("[~T].~C0C #ERROR(uniform_repair_cost):~C07 not specified configuration for repairer~C0A %s~C07", repairer)
+		misc.dump_table(this.repair_config)
+		return 
+	end
+
+	local task_texture, task_rect = get_texture_info("ui_iconsTotal_lost_money")
+	local item_name_and_price = ""
+	local item_repair_cost, cond = 0, 0
+	local item = nil
+	local mask, armor = nil, nil
+	local handle_mask = false
+	
+	if type(slot) == 'string' then
+		mask, armor = vergas_masks.mask_definition()
+		if mask ~= "?" then
+			mask = string.sub(mask,1,7)
+		end
+		handle_mask = true
+	else
+		item = actor_active_item(slot)
+		if item == nil then
+			wprintf("[~T].~C0C #ERROR(uniform_repair_cost):~C07 actor_active_item(%d) return nil", slot)
+			return 
+		end
+	end
+
+	if not handle_mask then
+		item_repair_cost, cond = calc_repair_cost(item, get_margin(repairer))
+	end
+ 
+	if item_repair_cost > 0 then 
+		wprintf("[~T].~C0F #REPAIR_C:~C07 item_repair_cost for~C0A %s~C0B =~C0D %.0f~C07", item:name(), item_repair_cost)
+		local time_need_repair = uniform_time_repair (cond)
+		local time_rep = time_desc(time_need_repair)       
+		local cost_phrase =  cfg["cost_phrase_" .. tostring(slot)]
+		item_name_and_price = "%c[255,216,186,140]"..game.translate_string(cost_phrase)..
+							" %c[255,238,155,23]"..item_repair_cost..
+							" %c[255,216,186,140]"..game.translate_string("ui_st_money_descr")..". "..time_rep.." "..game.translate_string("list_time_repair_2")
+		db.actor:give_talk_message(item_name_and_price, task_texture, task_rect,"iconed_answer_item")
+		return
+	else 
+		-- wprintf("[~T].~C0C #REPAIR_Z:~C07 item_repair_cost for~C0A %s~C0B =~C0D %.0f~C07", item:name(), item_repair_cost)
+	end
+
+	if handle_mask then
+		local mask_cost = {
+			["hud_gas"] = 2500,
+			["hud_sci"] = 7500,
+			["hud_mer"] = 7500, -- реже пачкаются, поэтому дорогие
+			["hud_exo"] = 10000,
+			["hud_mil"] = 5000,
+		}
+		
+		local mask_repair_cost = 0
+		if mask_cost[mask] then
+			mask_repair_cost = mask_cost[mask]
+		end
+		mask_repair_cost = mask_repair_cost * get_margin(repairer)
+		this.cur_price = mask_repair_cost
+		this.cur_time = 60
+		local price_string = "%c[255,238,155,23]"..mask_repair_cost.." %c[255,216,186,140]"..game.translate_string("ui_st_money_descr")..". "
+		db.actor:give_talk_message(price_string, task_texture, task_rect, "iconed_answer_item")
+	end
+end
+
+function uniform_check_money(item_slot, margin)
+	local price = this.cur_price
+	if type(item_slot) == 'number' then
+		local item = actor_active_item(item_slot)
+		if item ~= nil then 
+			return ( price > 0 ) and ( db.actor:money() >= price ) and ( item:condition() < 1.0 )
+		end
+	else
+		return ( price > 0 ) and ( db.actor:money() >= price )
+	end
+end                                            
+
+function uniform_take(repairer)
+	local tr = t_repair[repairer]
+	if nil == tr then
+		wprintf("[~T].~C0C #ERROR(uniform_take):~C07 not specified repair for repairer~C0A %s~C07", repairer)          
+		misc.dump_table(t_repair)
+		return 
+	end      
+	local sec = tr.section
+	if sec then
+		local obj = misc.spawn_to(sec, 0)
+		sak.relocate_item("in", sec, 1)
+		local class = sys_ini:line_exist(sec, "class") and sys_ini:r_clsid(sec, "class")
+		if strposx(sec, "wpn_") then      
+			schedule.add ("unload_weapon", "sak_dialog.weapon_unload("..obj.id..")", 250)
+		elseif class == clsid.equ_stalker or class == clsid.equ_stalker_s then
+			local mask_or_armor = t_repair[repairer].mask_or_armor
+			if mask_or_armor == 'm' then
+				local cond = t_repair[repairer].armor_cond
+				if cond < 1 then
+					level.client_spawn_manager():add(
+						obj.id, -1,
+						function( id, obj )
+							obj:set_condition(cond)
+						end
+					)
+				end
+				local upgr_time = t_repair[repairer].upgr_time
+				if upgr_time > 0 then
+					bind_upg_outfit.set_end_time(obj, upgr_time)
+				end
+			else
+				local cond = t_repair[repairer].mask_cond
+				if cond < 1 and cond ~= -1 then
+					cond = cond * 100
+					local id = obj.id
+					schedule.add("set_default_cd","vergas_masks.set_default_cd("..id..")",100)
+					schedule.add("set_mask_condition","vergas_masks.set_mask_condition("..id..","..cond..","..tostring(1)..")",250)
+				end
+			end
+		end
+		t_repair[repairer] = {}  -- cleanup
+		set_value("repair", t_repair)
+	else
+		wprintf("[~T].~C0C #ERROR(uniform_take):~C07 nothing for spawn for repairer~C0A %s~C07", repairer)  
+	end
+end
+
+------------------------- диалоговые функции ----------------------------------
+
+function repair_costs(first_speaker, second_speaker)
+	return uniform_repair_cost(6, r_dolgovjaz)  
+end
+
+function sak_check_money_s6(trader, actor)
+	return uniform_check_money (6, r_dolgovjaz)
+end
+
+function sak_repair_armor_s6(trader, actor)
+	uniform_repair_start(6, r_dolgovjaz)  
+end
+
+function stepanych_repair_precond(trader, actor)
+	local armor = actor_active_item(6)
+	if armor~=nil and (strposx(armor:section(),"bandit_veteran_") or strposx(armor:section(),"bandit_master_")) and (1 > armor:condition() + 0.01) then 
+		return true
+	else 
+		return false
+	end  
+end
+function stepanych_repair_repair_precond()
+	local armor = actor_active_item(6)
+	if armor and (1 > armor:condition() + 0.01) and (armor:condition() > 0.55) and not strposx(armor:section(),"_add") then return true
+	else 
+		return false
+	end  
+end
+
+function stepanych_not_repair_precond(trader, actor)
+	return not stepanych_repair_repair_precond()
+end
+
+function stepanych_check_money_s6(trader, actor)
+	return uniform_check_money (6, r_stepanych)  
+end
+function stepanych_repair_armor_s6(trader, actor)
+	uniform_repair_start(6, r_stepanych)  
+end
+function stepanych_repair_costs(first_speaker, second_speaker)
+	uniform_repair_cost(6, r_stepanych)  
+end
+
+function lisaped_check_money_s1(trader, actor)
+	return uniform_check_money (1, r_lisaped)  
+end
+function lisaped_check_money_s2(trader, actor)
+	return uniform_check_money (2, r_lisaped)
+end
+function lisaped_check_money_s6(trader, actor)
+	return uniform_check_money (6, r_lisaped)
+end
+function lisaped_repair_armor_s6(trader, actor)
+	uniform_repair_start(6, r_lisaped)  
+end
+function lisaped_repair_costs(first_speaker, second_speaker)
+	uniform_repair_cost(6, r_lisaped)  
+end
+function lisaped_repair_weapon_s1(trader, actor)
+	uniform_repair_start(1, r_lisaped)  
+end
+function lisaped_repair_costs_s1(first_speaker, second_speaker)
+	uniform_repair_cost(1, r_lisaped)
+end
+function lisaped_repair_weapon_s2(trader, actor)
+	uniform_repair_start(2, r_lisaped)
+end
+function lisaped_repair_costs_s2(first_speaker, second_speaker)
+	uniform_repair_cost(2, r_lisaped)
+end
+
+function take_repair_wpn()
+	uniform_take(r_dolgovjaz)  
+end
+function vergas_take_repair_wpn()
+	uniform_take(r_vergas)
+end
+function lisaped_take_repair_wpn()
+	uniform_take(r_lisaped)  
+end
+function stepanych_take_repair_wpn()
+	uniform_take(r_stepanych)  
+end
+
+function _is_ready_repair(repairer)
+	local cfg = repair_config[repairer]
+	local rep = t_repair[repairer]
+	if (nil == cfg) or (nil == rep) then return false end       
+	if not db.actor:has_info(cfg.info_start) then
+		return false
+	end                     
+  
+	wprintf("[~T].~C0E #REPAIR_R:~C07 time_need for~C0A %s~C07 =~C0D %s~C07", repairer, DumpVar(rep.time_need))
+	misc.dump_table(rep) 
+	local k = repairer.."_time_repair"       
+	local tm = rep.time_need or 10
+	local t = get_value("dialog_timers", {})
+	t[k] = t[k] or (rep.time_end - rep.time_need)
+	set_value("dialog_timers", t)
+	return is_ready_time(k, tm, 0)
+end
+
+-- Manool: для напоминаний
+function get_ready_repair(repairer)
+	local cfg = repair_config[repairer]
+	local rep = t_repair[repairer]
+	if (nil == cfg) or (nil == rep) then return false end       
+	if not db.actor:has_info(cfg.info_start) then
+		return false
+	end                     
+
+	wprintf("[~T].~C0E #REPAIR_R:~C07 time_need for~C0A %s~C07 =~C0D %s~C07", repairer, DumpVar(rep.time_need))
+	misc.dump_table(rep) 
+	local k = repairer.."_time_repair"       
+	local tm = rep.time_need or 10
+	return sak_dialog.get_ready_time(k, tm, 0), rep.section
+end
+--
+
+function _not_ready_repair(repairer)
+	local cfg = repair_config[repairer]
+	local rep = t_repair[repairer]
+	if (nil == cfg) or (nil == rep) then return true end     
+	if not db.actor:has_info(cfg.info_start) then
+		return true
+	end                                      
+	wprintf("[~T].~C0E #REPAIR_N:~C07 time_need for~C0A %s~C07 =~C0D %s~C07", repairer, DumpVar(rep.time_need))
+	-- misc.dump_table(rep)
+	local k = repairer.."_time_repair"       
+	local tm = rep.time_need or 10
+	local t = get_value("dialog_timers", {})
+	t[k] = t[k] or (rep.time_end - rep.time_need)
+	set_value("dialog_timers", t)
+	return not_ready_time(k, tm, 0)
+end
+
+local time_need_repair
+local vergas_time_need_repair
+
+function start_repair()
+	start_time("dolgovjaz_time_repair")
+	db.actor:disable_info_portion("repair_starting_go")  
+end
+
+function is_ready_repair()
+	return _is_ready_repair(r_dolgovjaz)  
+end
+
+function not_ready_repair()
+	return _not_ready_repair(r_dolgovjaz)
+end
+
+function vergas_start_repair()
+	start_time("vergas_time_repair")
+end
+function vergas_is_ready_repair()
+	return _is_ready_repair(r_vergas)  
+end
+function vergas_not_ready_repair()
+	return _not_ready_repair(r_vergas)
+end
+
+function lisaped_start_repair()
+	start_time("lisaped_time_repair")
+end
+
+function lisaped_is_ready_repair()
+	return _is_ready_repair(r_lisaped)
+end
+function lisaped_not_ready_repair()
+	return _not_ready_repair(r_lisaped)
+end
+function stepanych_start_repair()
+	start_time("stepanych_time_repair")
+end
+function stepanych_is_ready_repair()
+	return _is_ready_repair(r_stepanych)
+end
+function stepanych_not_ready_repair()
+	return _not_ready_repair(r_stepanych)
+end
+
+function clear_time_repair()
+	local dt = get_value("dialog_timers", {})
+	dt.dolgovjaz_time_repair = nil
+	dt.dolgovjaz_time_need_repair = nil    
+	set_value("dialog_timers", dt)
+end
+function vergas_clear_time_repair()
+	local dt = get_value("dialog_timers", {})
+	dt.vergas_time_repair = nil
+	dt.vergas_time_need_repair = nil   
+	set_value("dialog_timers", dt) 
+end
+function lisaped_clear_time_repair()
+	local dt = get_value("dialog_timers", {})
+	dt.lisaped_time_repair = nil
+	dt.lisaped_time_need_repair = nil  
+	set_value("dialog_timers", dt)
+end
+function stepanych_clear_time_repair()
+	local dt = get_value("dialog_timers", {})
+	dt.stepanych_time_repair = nil
+	dt.stepanych_time_need_repair = nil  
+	set_value("dialog_timers", dt)
+end
+
+-- копипаста прекондиции ремонта
+
+function repair_mask_precond()
+	local maskc = vergas_masks.mask_condition()
+	if maskc ~= -1 and maskc < 0.94 then
+		return true
+	else
+		return false
+	end
+end
+
+function mask_serious_dmg_prec()
+	local maskc = vergas_masks.mask_condition()
+	return maskc < 0.82
+end
+
+function mask_not_serious_dmg_prec()
+	return not mask_serious_dmg_prec()
+end
+
+function is_mask_in_repair(repairer)
+	local tr = t_repair[repairer]
+	if tr == nil then
+		return false
+	else
+		local mask_or_armor = tr.mask_or_armor
+		if mask_or_armor ~= nil and mask_or_armor == 'm' then
+			if tr.armor_cond < 0.82 then
+				this.need_additonal_repair_armor = true
+			end
+			return true
+		else
+			return false
+		end
+	end
+end
+
+function is_armor_in_repair(repairer)
+	local tr = t_repair[repairer]
+	if tr == nil then
+		return false
+	else
+		local mask_or_armor = tr.mask_or_armor
+		if mask_or_armor ~= nil and mask_or_armor == 'a' then
+			if tr.mask_cond < 0.82 then
+				this.need_additonal_repair_mask = true
+			end
+			return true
+		else
+			return false
+		end
+	end
+end
+
+function is_wpn_in_repair(repairer)
+	return not is_mask_in_repair(repairer) and not is_armor_in_repair(repairer)
+end
+
+function need_additional_repair_mask()
+	return this.need_additonal_repair_mask
+end
+
+function need_additional_repair_armor()
+	return this.need_additonal_repair_armor
+end
+
+function no_additional_repair()
+	return not need_additional_repair_mask() and not need_additional_repair_armor()
+end
+
+function clear_repair_vars()
+	this.need_additonal_repair_mask = false
+	this.need_additonal_repair_armor = false
+end
+
+function sak_repair_precond(trader, actor)
+	local item_in_slot_6 = actor_active_item(6)
+	if item_in_slot_6~=nil and (1 > item_in_slot_6:condition() + 0.01) then
+		return true
+	else
+		return false
+	end
+end
+
+function sak_repair_wpn_precond(trader, actor)
+	local item_in_slot_1 = actor_active_item(1)
+	local item_in_slot_2 = actor_active_item(2)
+	if item_in_slot_1~=nil and 1 > item_in_slot_1:condition() + 0.01 then return true
+		elseif item_in_slot_2~=nil and 1 > item_in_slot_2:condition() + 0.01 then return true
+		else return false
+	end  
+end
+function vergas_repair_wpn1_precond1(trader, actor)
+	local item_in_slot_1 = actor_active_item(1)
+	if item_in_slot_1 and 1 > item_in_slot_1:condition() + 0.01 then return true
+		else return false
+	end  
+end
+function vergas_repair_wpn2_precond1(trader, actor)
+	local item_in_slot_2 = actor_active_item(2)
+	if item_in_slot_2 and 1 > item_in_slot_2:condition() + 0.01 then return true
+		else return false
+	end  
+end
+function lisaped_repair_wpn1_precond1(trader, actor)
+	local item_in_slot_1 = actor_active_item(1)
+	if item_in_slot_1~=nil and 1 > item_in_slot_1:condition() + 0.01  then return true
+		else return false
+	end  
+end
+function lisaped_repair_wpn2_precond1(trader, actor)
+	local item_in_slot_2 = actor_active_item(2)
+	if item_in_slot_2~=nil and 1 > item_in_slot_2:condition() + 0.01  then return true
+		else return false
+	end  
+end
+function vergas_repair_precond()
+	local item_in_slot_6 = actor_active_item(6)
+	if item_in_slot_6 and 1 > item_in_slot_6:condition() + 0.01 and item_in_slot_6:condition() > 0.59 then return true
+		else return false
+	end  
+end
+function vergas_plash_precond()
+	local item_in_slot_6 = actor_active_item(6)
+	if item_in_slot_6 and (strpos(item_in_slot_6:section(),"bandit_veteran_",1,true) or strpos(item_in_slot_6:section(),"bandit_master_",1,true)) then return true
+		else return false
+	end  
+end
+function vergas_not_plash_precond()
+	return not vergas_plash_precond()
+end
+function vergas_q_precond()
+	local item_in_slot_6 = actor_active_item(6)
+	if item_in_slot_6 and bind_upg_outfit.is_upgraded(item_in_slot_6) then return true
+		else return false
+	end  
+end
+function vergas_not_q_precond()
+	return not vergas_q_precond()
+end
+
+function vergas_not_repair_precond(trader, actor)
+	local item_in_slot_6 = actor_active_item(6)
+	if item_in_slot_6~=nil and (item_in_slot_6:condition() <= 0.59) then return true
+		else return false
+	end  
+end
+
+function sak_dialog.dolgovazyi_repair_precond()
+	local item_in_slot_6 = actor_active_item(6)
+	if item_in_slot_6 and 1 > item_in_slot_6:condition() + 0.01 and item_in_slot_6:condition() > 0.42 then return true
+		else return false
+	end  
+end
+function dolgovazyi_not_repair_precond(trader, actor)
+	return not sak_dialog.dolgovazyi_repair_precond()
+end
+function dolgovazyi_not_dolg_for_case()
+	if has_alife_info("dolgovjazyi_blockpost_case_shurup") or has_alife_info("dolgovjazyi_blockpost_case_bulyznik") then
+		return false
+	else
+		return true
+	end
+end
+
+function vergas_repair_wpn1_precond(trader, actor)
+	local item_in_slot_1 = actor_active_item(1)
+	if item_in_slot_1~=nil and 1 > item_in_slot_1:condition() + 0.01 and item_in_slot_1:condition() > 0.65 then return true
+		else return false
+	end  
+end
+function vergas_repair_wpn2_precond(trader, actor)
+	local item_in_slot_2 = actor_active_item(2)
+	if item_in_slot_2~=nil and 1 > item_in_slot_2:condition() + 0.01 and item_in_slot_2:condition() > 0.65 then return true
+		else return false
+	end  
+end
+function vergas_not_repair_wpn1_precond(trader, actor)
+	local item_in_slot_1 = actor_active_item(1)
+	if item_in_slot_1~=nil and item_in_slot_1:condition() <= 0.65 then return true
+		else return false
+	end  
+end
+function vergas_not_repair_wpn2_precond(trader, actor)
+	local item_in_slot_2 = actor_active_item(2)
+	if item_in_slot_2~=nil and item_in_slot_2:condition() <= 0.65 then return true
+		else return false
+	end  
+end
+function lisaped_repair_wpn1_precond(trader, actor)
+	local item_in_slot_1 = actor_active_item(1)
+	if item_in_slot_1~=nil and 1 > item_in_slot_1:condition() + 0.01 and item_in_slot_1:condition() > 0.38 then return true
+		else return false
+	end  
+end
+function lisaped_repair_wpn2_precond(trader, actor)
+	local item_in_slot_2 = actor_active_item(2)
+	if item_in_slot_2~=nil and 1 > item_in_slot_2:condition() + 0.01 and item_in_slot_2:condition() > 0.38 then return true
+		else return false
+	end  
+end
+function lisaped_not_repair_wpn1_precond(trader, actor)
+	local item_in_slot_1 = actor_active_item(1)
+	if item_in_slot_1~=nil and item_in_slot_1:condition() <= 0.38 then return true
+		else return false
+	end  
+end
+function lisaped_not_repair_wpn2_precond(trader, actor)
+	local item_in_slot_2 = actor_active_item(2)
+	if item_in_slot_2~=nil and item_in_slot_2:condition() <= 0.38 then return true
+		else return false
+	end  
+end
+-- new_ak_strelok
+function lisaped_wpn1_strelok_precond(trader, actor)
+	local item_in_slot_1 = actor_active_item(1)
+	if item_in_slot_1 and strpos(item_in_slot_1:section(),"wpn_ak74_m1",1,true) then return true
+		else return false
+	end  
+end
+function lisaped_wpn1_not_strelok_precond()
+	return not lisaped_wpn1_strelok_precond()
+end
+function lisaped_wpn2_strelok_precond(trader, actor)
+	local item_in_slot_2 = actor_active_item(2)
+	if item_in_slot_2 and strpos(item_in_slot_2:section(),"wpn_ak74_m1",1,true) then return true
+		else return false
+	end  
+end
+function lisaped_wpn2_not_strelok_precond()
+	return not lisaped_wpn2_strelok_precond()
+end
+
+-- модульные колбеки
+function sak_repair_dialog.init_module()
+	if nil == get_value("repair") then 
+		set_value("repair", {dolgovjaz = {}, lisaped = {}, stepanych = {}, vergas = {},})
+	end 
+	t_repair = get_value("repair")
+	local repairers = { r_dolgovjaz, r_lisaped, r_stepanych, r_vergas }
+ 
+	local dt = get_value("dialog_timers", {}) 
+ 
+ 
+	-- конвертирование из старой схемы                                                                
+	for i, repairer in ipairs(repairers) do
+		local ss = repairer .. "_"
+		if ss == r_dolgovjaz.."_" then ss = "" end 
+ 
+		local tip = get_value(ss.."repairtip") 
+  
+		if tip and tip:len() > 1 then        
+			t_repair[repairer].section = tip
+			remove_value(ss.."repairtip")    
+		end 
+  
+  
+		local tnr = get_value(ss.."time_need_repair", dt[ss.."time_need_repair"])
+   
+		if tnr and tnr > 0 then        
+			t_repair[repairer].time_need = tnr
+			dt[repairer.."_time_need_repair"] = tnr     
+			remove_value(ss.."time_need_repair")
+		end                                     
+  
+		local tmr = get_value(ss.."time_repair", dt[ss.."time_repair"])
+		if tmr and tmr > 0 then        
+			t_repair[repairer].time_repair = tmr
+			dt[repairer.."_time_repair"] = tmr     
+			remove_value(ss.."time_repair")         
+		end
+	end -- for
+ 
+	dt.time_repair = nil -- obsolete
+	set_value("dialog_timers", dt)
+   
+	-- wprintf(" t_repair dump:")  
+	-- misc.dump_table(t_repair(true))
+end
+ 
+function sak_repair_dialog.late_init()
+end 

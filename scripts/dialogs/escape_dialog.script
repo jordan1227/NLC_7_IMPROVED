@@ -1,0 +1,190 @@
+--------------------------------------------------------------------------------------------------------
+-- Trader Repair
+--------------------------------------------------------------------------------------------------------
+
+local weapon_profit_margin = 2
+local armor_profit_margin = 2
+
+function trader_repair_precond(trader, actor)
+	local item_in_slot_1 = db.actor:item_in_slot(1)
+	local item_in_slot_2 = db.actor:item_in_slot(2)
+	local item_in_slot_6 = db.actor:item_in_slot(6)
+	if item_in_slot_1~=nil and 1 > item_in_slot_1:condition() + 0.01 then return true
+	elseif item_in_slot_2~=nil and 1 > item_in_slot_2:condition() + 0.01 then return true
+	elseif item_in_slot_6~=nil and 1 > item_in_slot_6:condition() + 0.01 then return true
+	else return false
+	end	
+end
+
+function trader_check_money_s1(trader, actor)
+	local item_in_slot = db.actor:item_in_slot(1)
+	if item_in_slot~=nil then 
+		local item_repair_cost = math.floor((1-item_in_slot:condition())*item_in_slot:cost()*weapon_profit_margin)
+		if item_repair_cost > 0 and db.actor:money() >= item_repair_cost and 1 > item_in_slot:condition() then
+			return true
+		end 
+	end
+	return false
+end
+
+function trader_check_money_s2(trader, actor)
+	local item_in_slot = db.actor:item_in_slot(2)
+	if item_in_slot~=nil then 
+		local item_repair_cost = math.floor((1-item_in_slot:condition())*item_in_slot:cost()*weapon_profit_margin)
+		if item_repair_cost > 0 and db.actor:money() >= item_repair_cost and 1 > item_in_slot:condition() then
+			return true
+		end 
+	end
+	return false
+end
+
+function trader_check_money_s6(trader, actor)
+	local item_in_slot = db.actor:item_in_slot(6)
+	if item_in_slot~=nil then 
+		local item_repair_cost = math.floor((1-item_in_slot:condition())*item_in_slot:cost()*armor_profit_margin)
+		if item_repair_cost > 0 and db.actor:money() >= item_repair_cost and 1 > item_in_slot:condition() then
+			return true
+		end 
+	end
+	return false
+end
+
+function trader_repair_weapon_s1(trader, actor)
+	local item_in_slot = db.actor:item_in_slot(1)
+	if item_in_slot~=nil then
+		local item_repair_cost = math.floor((1-item_in_slot:condition())*item_in_slot:cost()*weapon_profit_margin)
+		local section = item_in_slot:section()
+		--item_in_slot:set_condition(1)
+		set_value("repairtip", section)
+		dialogs.relocate_money(actor, item_repair_cost, "out")
+		db.actor:give_info_portion("repair_starting")
+		amk.remove_item(item_in_slot)
+	end
+end
+
+function trader_repair_weapon_s2(trader, actor)
+	local item_in_slot = db.actor:item_in_slot(2)
+	if item_in_slot~=nil then
+		local item_repair_cost = math.floor((1-item_in_slot:condition())*item_in_slot:cost()*weapon_profit_margin)
+		local section = item_in_slot:section()
+		--item_in_slot:set_condition(1)
+		set_value("repairtip", section)
+		dialogs.relocate_money(actor, item_repair_cost, "out")
+		db.actor:give_info_portion("repair_starting")
+		amk.remove_item(item_in_slot)
+	end
+end
+
+function trader_repair_armor_s6(trader, actor)
+	local item_in_slot = db.actor:item_in_slot(6)
+	if item_in_slot~=nil then
+		local item_repair_cost = math.floor((1-item_in_slot:condition())*item_in_slot:cost()*armor_profit_margin)
+		local section = item_in_slot:section()
+		--amk_mod.repair_armor(1)   
+		set_value("repairtip", section)
+		dialogs.relocate_money(actor, item_repair_cost, "out")
+		db.actor:give_info_portion("repair_starting")
+		amk.remove_item(item_in_slot)
+	end	
+end
+
+function repair_costs(first_speaker, second_speaker)
+	local task_texture, task_rect = get_texture_info("ui_iconsTotal_lost_money")
+	
+	local item_name_and_price = ""
+	local item_repair_cost = 0
+	if db.actor~=nil then 
+		local item_in_slot_1 = db.actor:item_in_slot(1)
+		local item_in_slot_2 = db.actor:item_in_slot(2)
+		local item_in_slot_6 = db.actor:item_in_slot(6)
+	
+		if item_in_slot_1~=nil then 
+			item_repair_cost = math.floor((1-item_in_slot_1:condition())*item_in_slot_1:cost()*weapon_profit_margin)
+			if item_repair_cost > 0 then
+				item_name_and_price = game.translate_string("list_trader_repair_0").." %c[255,238,155,23]"..item_repair_cost.." "..game.translate_string("ui_st_money_descr").."%c[default]"
+				db.actor:give_talk_message(item_name_and_price, task_texture, task_rect, "iconed_trade_info")
+			end
+		end
+		if item_in_slot_2~=nil then
+			item_repair_cost = math.floor((1-item_in_slot_2:condition())*item_in_slot_2:cost()*weapon_profit_margin)
+			if item_repair_cost > 0 then
+				item_name_and_price = game.translate_string("list_trader_repair_1").." %c[255,238,155,23]"..item_repair_cost.." "..game.translate_string("ui_st_money_descr").."%c[default]"
+				db.actor:give_talk_message(item_name_and_price, task_texture, task_rect, "iconed_trade_info")
+			end
+		end
+		if item_in_slot_6~=nil then
+			item_repair_cost = math.floor((1-item_in_slot_6:condition())*item_in_slot_6:cost()*armor_profit_margin)
+			if item_repair_cost > 0 then
+				item_name_and_price = game.translate_string("list_trader_repair_2").." %c[255,238,155,23]"..item_repair_cost.." "..game.translate_string("ui_st_money_descr").."%c[default]"
+				db.actor:give_talk_message(item_name_and_price, task_texture, task_rect, "iconed_trade_info")
+			end
+		end
+	end
+end
+
+function is_tutorial()
+	return not has_alife_info("tutorial_end")
+end
+
+function is_not_tutorial()
+	return has_alife_info("tutorial_end")
+end
+
+function give_medkit(first_speaker, second_speaker)
+	dialogs.relocate_item_section(first_speaker, "medkit", "in")
+end
+
+function transfer_medikit_to_fox(player, wounded)
+	wounded:set_relation(game_object.friend, player)
+	db.actor:give_info_portion("escape_fox_heal")
+end
+
+function give_blockpost_case_reward(first_speaker, second_speaker)
+	dialogs.relocate_money(first_speaker, 8000, "in")
+end
+
+function wounded_need_help(first_speaker, second_speaker)
+	local actor = db.actor
+	return actor~=nil and not has_alife_info("tutorial_wounded_help")
+end
+
+function transfer_wolf_reward()
+	sak_dialog.pre_rolled_arts_give("volk_shustr_rew")
+	if has_alife_info("add_pm_volk_have") then
+		sak.create_items("wpn_pm",1)
+		sak.create_items("ammo_9x18_fmj",1)
+	end
+	xr_statistic.add_pts("quests", "wolf_document", 1, 1.5)
+end
+
+function wolf_additional_reward()
+	sak.create_items("vodka",3)
+	sak.create_items("grenade_f1",2)
+	dialogs.relocate_money(db.actor,5000,"in")
+end
+function wolf_additional_2reward()
+	sak.create_items("antirad",1)
+	sak.create_items("vodka",1)
+	sak.create_items("grenade_f1",1)
+	sak.create_items("ammo_9x18_pmm",2)
+end
+
+function wounded_give_flash(first_speaker, second_speaker)
+	dialogs.relocate_item_section(first_speaker, "esc_wounded_flash", "in")
+end
+
+function have_wounded_flash(first_speaker, second_speaker)
+	return first_speaker:object("esc_wounded_flash")~=nil
+end
+function dont_have_wounded_flash(first_speaker, second_speaker)
+	return not have_wounded_flash(first_speaker, second_speaker)
+end
+
+function give_wounded_flash(first_speaker, second_speaker)
+	sak_inventory.release_actor_items("esc_wounded_flash",1)
+    xr_statistic.add_pts("quests", "esc_wounded_flash", 1, 5.0) 
+end
+
+function wolf_precond_univ(actor, npc)
+	return has_alife_info("esc_kill_bandits_quest_done") or (has_alife_info("tutorial_wounded_give_info") and not has_alife_info("esc_kill_bandits_quest_have"))
+end

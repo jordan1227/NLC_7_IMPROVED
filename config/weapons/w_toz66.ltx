@@ -1,0 +1,228 @@
+;рнг-66
+[wpn_bm16_full]:weapon_immunities,base_wpn_shotgun
+GroupControlSection					= spawn_group
+discovery_dependency				=
+$spawn  							= "weapons\bm16_full"
+$npc    							= on
+$prefetch							= 8
+scheduled							= off
+cform   							= skeleton
+class   							= WP_BM16
+min_radius							= 0
+max_radius							= 45
+description							= enc_weapons1_wpn-bm16_full
+
+default_to_ruck						= false
+
+ef_main_weapon_type					= 1
+ef_weapon_type						= 6
+
+holder_range_modifier				= 1.0
+holder_fov_modifier					= 1.5
+
+cost    							= 2400
+weapon_class						= shotgun
+
+ammo_limit							= 60
+ammo_current						= 10
+ammo_elapsed						= 0
+
+f_mode								= 1
+
+ammo_mag_size						= 2
+ammo_class							= ammo_12x70_buck,ammo_12x76_dart,ammo_12x76_zhekan
+
+dispersion_start					= 0
+fire_dispersion_base				= 0.42
+control_inertion_factor				= 1.25f
+
+cam_relax_speed						= 7.0
+cam_dispersion						= 2.5
+cam_dispersion_inc					= 2.5
+cam_dispertion_frac					= 0.8
+cam_max_angle						= 30
+cam_max_angle_horz					= 10
+cam_step_angle_horz					= 1.5
+
+fire_dispersion_condition_factor	= 1.5
+misfire_probability 				= 0.03
+misfire_condition_k					= 0.1
+condition_shot_dec					= 0.0004
+
+hand_dependence						= 1
+single_handed						= 0
+
+slot    		    				= 2
+animation_slot						= 3
+
+inv_name							= wpn-bm16_full
+inv_name_short						= wpn-bm16_full
+inv_weight							= 3.25
+icon_group          				= 7
+inv_grid_width									   = 6
+inv_grid_height									   = 2
+inv_grid_x										   = 66
+inv_grid_y										   = 8
+
+kill_msg_x							= 0
+kill_msg_y							= 104
+kill_msg_width						= 54
+kill_msg_height						= 16
+
+direction							= 0, 0, 1
+shell_point							= 0.0, 0.136, 0.07
+fire_point							= 0.000000,0.136000,0.740000
+fire_point2							= 0.000000,0.136000,0.740000
+
+flame_particles						= weapons\generic_weapon05
+smoke_particles		   				= _ecp\weapon_shotgun
+rpm_empty_click						= 200
+
+hit_power							= 1
+hit_impulse							= 1
+hit_type							= fire_wound
+
+fire_distance						= 60
+bullet_speed						= 270
+rpm				        			= 200
+
+use_aim_bullet						= false
+time_to_aim							= 1.0
+
+PDM_disp_base 						= 2.0
+PDM_disp_vel_factor 				= 3.0
+PDM_disp_accel_factor 				= 5.0
+PDM_crouch							= 1.9
+PDM_crouch_no_acc					= 0.7
+
+hud     							= wpn_bm16_full_hud
+normal  							= 0, 1, 0
+position							= -0.026, -0.12, 0.05
+orientation							= 0, 30, 0
+
+strap_orientation                                  = -15,-9,110
+strap_position                                     = -0.26,-0.11,0.15
+
+strap_bone0							= bip01_spine2
+strap_bone1							= bip01_spine1
+
+startup_ammo						= 10
+visual  							= dynamics\weapons\wpn_bm16\wpn_bm16_full
+
+light_color							= 0.6,0.5,0.3
+light_range							= 6.0
+light_var_color						= 0.05
+light_var_range						= 0.5
+light_time							= 0.2
+
+ph_mass 							= 3
+
+scope_status						= 0
+silencer_status						= 0
+grenade_launcher_status				= 0
+
+zoom_enabled						= true
+scope_zoom_factor					= 90
+
+snd_draw                                           = weapons\bm16\toz66_draw
+snd_empty                                          = weapons\bm16\toz66_empty
+snd_holster                                        = weapons\shotgun_holster
+snd_reload                                         = weapons\bm16\toz66_reload_empty
+snd_reload_1                                       = weapons\bm16\toz66_reload
+snd_reload_jammed_1                               = weapons\bm16\toz66_misfire
+snd_reload_jammed                                 = weapons\bm16\toz66_misfire
+snd_changeammo_1                                   = weapons\bm16\toz66_ammochange_1 
+snd_changeammo_2                                   = weapons\bm16\toz66_ammochange_2
+snd_mag_shot									   = $silent
+snd_sprint_idle								   	   = weapons\sprint_assault
+
+snd_shoot							= weapons\bm16\bm16_hole_mono
+snd_shoot_duplet					= weapons\bm16\bm16_hole_mono
+snd_razgruzka						= weapons\razgruzka\ammo_1
+
+watcher_act.bad_item = true
+ 
+[wpn_bm16_full_hud]:hud_base
+aim_hud_offset_pos = -0.065500,0.042500,-0.09
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+
+aim_hud_offset_pos_16x9 = -0.065500,0.042500,-0.09
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+anm_bore_0                                         = toz66_idle_aim, idle_empty
+anm_bore_1                                         = toz66_idle_aim, idle_one
+anm_bore_2                                         = toz66_idle_aim, idle
+anm_hide_0                                         = toz66_holster, idle_empty
+anm_hide_1                                         = toz66_holster, idle_one
+anm_hide_2                                         = toz66_holster, idle
+anm_idle_0                                         = toz66_idle, idle_empty
+anm_idle_1                                         = toz66_idle, idle_one
+anm_idle_2                                         = toz66_idle, idle
+anm_idle_aim_0                                     = toz66_idle_aim, idle_empty
+anm_idle_aim_1                                     = toz66_idle_aim, idle_one
+anm_idle_aim_2                                     = toz66_idle_aim, idle
+anm_idle_moving_0                                  = toz66_moving, idle_empty
+anm_idle_moving_1                                  = toz66_moving, idle_one
+anm_idle_moving_2                                  = toz66_moving, idle
+anm_idle_aim_moving_0                              = toz66_moving_aim, idle_empty
+anm_idle_aim_moving_1                              = toz66_moving_aim, idle_one
+anm_idle_aim_moving_2                              = toz66_moving_aim
+anm_idle_moving_slow_0                             = toz66_moving_slow, idle_empty
+anm_idle_moving_slow_1                             = toz66_moving_slow, idle_one
+anm_idle_moving_slow_2                             = toz66_moving_slow, idle
+anm_idle_moving_crouch_0                           = toz66_crouch, idle_empty
+anm_idle_moving_crouch_1                           = toz66_crouch, idle_one
+anm_idle_moving_crouch_2                           = toz66_crouch, idle
+anm_reload_jammed_1                               = toz66_misfire, misfire_empty
+anm_reload_jammed_2                               = toz66_misfire, misfire
+anm_reload_1                                       = toz66_reload, reload
+anm_reload_2                                       = toz66_reload_empty, reload_empty
+lock_time_end_anm_reload_1                         = 1.4
+lock_time_end_anm_reload_2                         = 1.4
+anm_shot_1                                         = toz66_shoot_last, shoot_last
+anm_shot_2                                         = toz66_shoot, shoot
+anm_shots_when_aim_1				   			   = toz66_shoot_aim, shoot_last
+anm_shots_when_aim_2				   			   = toz66_shoot_aim, shoot
+anm_show_0                                         = toz66_draw, idle_empty 
+anm_show_1                                         = toz66_draw, idle_one
+anm_show_2                                         = toz66_draw, idle
+
+anm_idle_sprint_start_2         				           = toz66_sprint_start, idle
+anm_idle_sprint_2         				           = toz66_sprint, idle
+anm_idle_sprint_end_2         					       = toz66_sprint_end, idle
+
+anm_idle_sprint_start_1         				           = toz66_sprint_start, idle_one
+anm_idle_sprint_1         				           = toz66_sprint, idle_one
+anm_idle_sprint_end_1         					       = toz66_sprint_end, idle_one
+
+anm_idle_sprint_start_0         					   	   = toz66_sprint_start, idle_empty
+anm_idle_sprint_0         					   	   = toz66_sprint, idle_empty
+anm_idle_sprint_end_0         					   	   = toz66_sprint_end, idle_empty
+
+anm_headlamp_on_0                                  = toz66_flash, idle_empty
+anm_gasmask_0                                        = toz66_clear, idle_empty
+
+anm_headlamp_on_1                                  = toz66_flash, idle_one
+anm_gasmask_1                                        = toz66_clear, idle_one
+
+anm_headlamp_on_2                                  = toz66_flash, idle
+anm_gasmask_2                                        = toz66_clear, idle
+
+attach_place_idx                                   = 0
+fire_bone                                          = wpn_body
+fire_point                      				   = 0.000000,0.007700,0.510401
+gl_hud_offset_pos                                  = 0,0,0
+gl_hud_offset_rot                                  = 0,0,0
+hands_orientation                                  = 0,0,0
+hands_orientation_16x9                             = 0,0,0
+hands_position					   				   = 0.007700,0.013975,-0.143099
+hands_position_16x9				   				   = 0.007700,0.013975,-0.143099
+item_orientation                                   = 0,0,0
+item_position                                      = 0,0,0
+item_visual                                        = dynamics\weapons\wpn_bm16\wpn_bm16_full_hud.ogf
+lean_hud_offset_pos                                = 0,0,0
+lean_hud_offset_rot                                = 0,0,0
+shell_bone                                         = wpn_body
+shell_dir                                          = 0.0, 1.0, 0.0
+shell_point                                        = 0,0,0
+zoom_hide_crosshair                                = true

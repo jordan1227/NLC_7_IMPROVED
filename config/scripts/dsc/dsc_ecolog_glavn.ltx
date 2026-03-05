@@ -1,0 +1,23 @@
+[logic]
+active = walker
+on_death = death
+
+[walker]
+path_walk = dsc_ecolog_glavn_walk_way
+path_look = dsc_ecolog_glavn_way_look
+meet = meet@dsc_ecolog_glavn
+danger = danger_condition
+
+[meet@dsc_ecolog_glavn]
+victim 			= 5 | actor
+victim_wpn = 5 | actor
+meet_dialog = dsc_ecolog_glavn_dialog
+use			= true
+use_wpn		= false
+abuse   = true
+
+[danger_condition]
+ignore_distance = 0
+
+[death]
+on_info = %+dsc_ecolog_glavn_umer%

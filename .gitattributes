@@ -1,2 +1,4 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+*.ltx     text=crlf linguist-language=INI
+*.lua     text=crlf linguist-language=Lua
+*.script  text=crlf linguist-language=Lua
+*.xml     text=crlf linguist-language=XML

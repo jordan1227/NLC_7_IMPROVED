@@ -1,0 +1,29 @@
+[logic]
+active = sr_idle@idle
+
+[sr_idle@idle]
+on_info = {+lim_energetik_1_dialog_end} sr_idle@work
+
+[sr_idle@work]
+on_actor_inside = %+lim_podval_info =sak.lim_podval_news% sr_idle@work2 
+
+[sr_idle@work2]
+on_info = {+lim_electro_power_on} sr_idle@prep
+
+[sr_idle@prep]
+on_timer = 1000 | %=x18_gluk =run_cam_effector(radar_stop:2506:false)% sr_idle@pre_dream
+
+[sr_idle@pre_dream]
+on_timer = 9000 | %=disable_ui =run_postprocess(agr_u_fade)% sr_idle@dream
+
+[sr_idle@dream]
+on_timer = 3000 | %=stop_cam_effector(1974) =start_esc_sky_05% sr_idle@wakeup
+
+[sr_idle@wakeup]
+on_info = {+esc_sky_05_dream} %=run_cam_effector(prison_1:2506:false)% sr_idle@msg
+
+[sr_idle@msg]
+on_timer = 4000 | nil %=enable_ui =sak.lim_tp_msg()%
+
+
+

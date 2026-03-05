@@ -1,0 +1,18 @@
+[logic]
+active = ph_idle@lock
+
+[ph_idle@lock]
+tips = no_supply
+on_info = {+supply_x10_on} ph_code@lock
+
+[ph_code@lock]
+on_check_code1 = 56326 | {+x18_iq_check_info1} %+labx10_code_door2_unlocked%
+on_check_code2 = 85695 | {+x18_iq_check_info2} %+labx10_code_door2_unlocked%
+on_check_code3 = 75962 | {+x18_iq_check_info3} %+labx10_code_door2_unlocked%
+on_check_code4 = 86596 | {+x18_iq_check_info4} %+labx10_code_door2_unlocked%
+on_check_code5 = 85369 | {+x18_iq_check_info5} %+labx10_code_door2_unlocked%
+on_check_code6 = 35692 | {+x18_iq_check_info6} %+labx10_code_door2_unlocked%
+on_check_code7 = 39258 | {+x18_iq_check_info7} %+labx10_code_door2_unlocked%
+on_check_code8 = 54962 | {+x18_iq_check_info8} %+labx10_code_door2_unlocked%
+on_check_code9 = 47852 | {+x18_iq_check_info9} %+labx10_code_door2_unlocked%
+on_check_code10 = 1455987401 | %+labx10_code_door2_unlocked%

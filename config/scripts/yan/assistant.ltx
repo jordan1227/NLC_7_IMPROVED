@@ -1,0 +1,31 @@
+[logic]
+active = walker@faze1
+on_death = death@assistant
+danger = danger_condition@assistant
+
+[walker@faze1]
+path_walk = assistant_walk_way
+path_look = assistant_way_look
+meet = meet@assistant
+danger = danger_condition@assistant
+
+[meet@assistant]
+meet_state = sit_ass
+meet_state_wpn = sit_ass
+meet_dialog = assistant_dialog_start
+use			= true
+use_wpn		= true
+abuse       = false
+
+[danger_condition@assistant]
+ignore_distance_corpse = 0
+ignore_distance_sound = 0
+ignore_distance = 1
+danger_inertion_time_grenade = 0
+danger_inertion_time_hit = 4000
+danger_inertion_time_ricochet = 0
+danger_inertion_time_corpse = 0
+danger_inertion_time_sound = 0
+
+[death@assistant]
+on_info = %+assistant_umer%

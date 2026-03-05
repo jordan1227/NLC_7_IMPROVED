@@ -1,0 +1,218 @@
+[wpn_rg6]:weapon_immunities
+GroupControlSection			= spawn_group
+$spawn                   	= "weapons\rg-6"					; option for Level Editor
+$npc			 			= on				; option for Level Editor
+$prefetch 		 			= 2
+scheduled                	= off              ; option for ALife Simulator
+cform                    	= skeleton
+class                    	= WP_RG6
+min_radius               	= 20
+max_radius               	= 150
+description					= enc_weapons1_wpn-rg-6
+
+ef_main_weapon_type			= 4
+ef_weapon_type				= 9
+
+;-----------------------------------------------------------------------------------
+holder_range_modifier	= 1.0               ; во сколько раз увеличивается eye_range 
+holder_fov_modifier		= 1.0              ; во сколько раз увеличивается eye_fov
+;-----------------------------------------------------------------------------------
+
+cost					 	= 15000
+weapon_class			 	= heavy_weapon
+
+tri_state_reload			= on
+
+ammo_limit		 			= 60
+ammo_current		 		= 10
+ammo_elapsed		 		= 0
+
+ammo_mag_size		 		= 6
+ammo_class		 			= ammo_vog-25, ammo_vog-25p
+launch_speed				= 76;50 ;for rocket
+sprint_allowed				= true
+;-----------------------------------------------------------------------------------
+;базовая дисперсия
+fire_dispersion_base		= 0.5  ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor			= 1.7f
+
+;отдача
+cam_relax_speed         	= 5.0	;скорость возврата в исходное положение
+cam_dispersion          	= 2.0	;увеличения угла (в градусах) с каждым выстрелом
+cam_max_angle				= 12		;максимальный угол отдачи
+cam_max_angle_horz			= 5.0	;(degree) maximum shot horizontal degree 
+cam_step_angle_horz			= 0.5	;(degree) size of step camera moved in horizontal position while shooting
+
+fire_dispersion_condition_factor = 5	;увеличение дисперсии в процентах при максимальном износе 
+misfire_probability 		= 0.003	    ;вероятность осечки при максимальном износе 
+condition_shot_dec 			= 0.0003	;увеличение износа при каждом выстреле
+;-----------------------------------------------------------------------------------
+
+hand_dependence 	 		= 1
+single_handed				= 0
+
+slot 				 		= 2		; // secondary
+animation_slot		 		= 9	; type of the animation that will be used
+
+inv_name					= wpn-rg-6
+inv_name_short				= wpn-rg-6
+inv_weight					= 5.6
+inv_grid_height                                    = 2
+inv_grid_width                                     = 4
+inv_grid_x                                         = 51
+inv_grid_y                                         = 0
+
+direction                	= 0, 0, 1
+shell_point				 	= 0.0, 0.120, 0.20
+fire_point               	= 0.0, 0.120, 0.452
+fire_point2              	= 0.0, 0.120, 0.452
+
+flame_particles		   		= weapons\generic_weapon05
+smoke_particles		   		= weapons\generic_shoot_00
+rpm_empty_click 	   		= 200
+; ttc
+
+hit_power        			= 1.0
+hit_impulse      			= 210
+hit_type 					= fire_wound
+
+fire_distance            	= 100
+bullet_speed			 	= 76			;начальная скорость пули
+rpm                      	= 140
+; end ttc
+
+hud                      	= wpn_rg-6_hud
+normal                   	= 0, 1, 0
+position                 	= -0.026, -0.125, 0.0
+orientation              	= 0, 0, 0
+startup_ammo             	= 0
+visual                   	= dynamics\weapons\wpn_rg6\wpn_rg6
+
+light_color		 			= 0.6,0.5,0.3
+light_range		 			= 6.0
+light_var_color		 		= 0.05
+light_var_range		 		= 0.5
+light_time 		 			= 0.2
+
+ph_mass			 			= 3
+;cost			 			= 900
+
+;addons
+scope_status				= 0
+silencer_status				= 0
+grenade_launcher_status		= 0
+
+scope_zoom_factor = 90
+
+;звуки
+snd_shoot					= weapons\gp25_shoot_mono
+snd_shoot_duplet			= weapons\gp25_shoot_mono
+
+snd_open_weapon_empty                              = weapons\rg6\rg6_open
+snd_add_cartridge_empty                            = weapons\rg6\rg6_reload
+snd_close_weapon                                   = weapons\rg6\rg6_close
+snd_empty                                          = weapons\rg6\rg6_empty, 0.5
+snd_add_cartridge                                  = weapons\rg6\rg6_reload
+snd_add_cartridge1                                 = weapons\rg6\rg6_reload1
+snd_add_cartridge2                                 = weapons\rg6\rg6_reload2
+snd_add_cartridge3                                 = weapons\rg6\rg6_reload3
+snd_add_cartridge4                                 = weapons\rg6\rg6_reload4
+snd_draw                                           = weapons\pkm\pkm_draw
+snd_empty                                          = weapons\rg6\rg6_empty
+snd_holster                                        = weapons\assault_holster
+snd_open_weapon                                    = weapons\rg6\rg6_open
+snd_reload                                         = weapons\rg6\rg6_empty, 0.5
+snd_mag_shot									   = $silent
+snd_sprint_idle								   	   = weapons\sprint_assault
+
+jump_enabled = false
+
+[wpn_rg-6_hud]:hud_base
+aim_hud_offset_pos = -0.099200,-0.021400,-0.09
+aim_hud_offset_rot = -0.075875,0.011250,0.137500
+aim_hud_offset_pos_16x9 = -0.099200,-0.021400,-0.09
+aim_hud_offset_rot_16x9 = -0.075875,0.011250,0.137500
+
+
+; anm_add_cartridge_0_1							   = rg6_reload1, reload1
+; anm_add_cartridge_0_2							   = rg6_reload6, reload6
+; anm_add_cartridge_0_3							   = rg6_reload5, reload5
+; anm_add_cartridge_0_4							   = rg6_reload4, reload4
+; anm_add_cartridge_0_5							   = rg6_reload3, reload3
+; anm_add_cartridge_0_6							   = rg6_reload2, reload2
+
+; anm_add_cartridge_1_2							   = rg6_reload6, reload6
+; anm_add_cartridge_1_3							   = rg6_reload5, reload5
+; anm_add_cartridge_1_4							   = rg6_reload4, reload4
+; anm_add_cartridge_1_5							   = rg6_reload3, reload3
+; anm_add_cartridge_1_6							   = rg6_reload2, reload2
+
+; anm_add_cartridge_2_3							   = rg6_reload5, reload5
+; anm_add_cartridge_2_4							   = rg6_reload4, reload4
+; anm_add_cartridge_2_5							   = rg6_reload3, reload3
+; anm_add_cartridge_2_6							   = rg6_reload2, reload2
+
+; anm_add_cartridge_3_4							   = rg6_reload4, reload4
+; anm_add_cartridge_3_5							   = rg6_reload3, reload3
+; anm_add_cartridge_3_6							   = rg6_reload2, reload2
+
+; anm_add_cartridge_4_5							   = rg6_reload3, reload3
+; anm_add_cartridge_4_6							   = rg6_reload2, reload2
+
+; anm_add_cartridge_5_6							   = rg6_reload2, reload2
+
+allow_drum_anims = true
+
+anm_add_cartridge_0							   = rg6_reload6, reload6
+anm_add_cartridge_1							   = rg6_reload5, reload5
+anm_add_cartridge_2							   = rg6_reload4, reload4
+anm_add_cartridge_3							   = rg6_reload3, reload3
+anm_add_cartridge_4							   = rg6_reload2, reload2
+anm_add_cartridge_5							   = rg6_reload1, reload1
+
+
+anm_empty_click									   = rg6_empty_click, empty_click
+
+; anm_reload										   = rg6_empty_click, empty_click
+anm_reload										   = rg6_reload6, reload6
+anm_add_cartridge										   = rg6_reload6, reload6
+
+anm_bore                                           = rg6_idle_aim
+anm_close                                          = rg6_close, close
+anm_hide                                           = rg6_holster
+anm_idle                                           = rg6_idle
+anm_idle_aim                                       = rg6_idle_aim
+anm_idle_aim_moving             				   = rg6_moving_aim
+anm_idle_moving                                    = rg6_moving
+anm_idle_moving_slow                               = rg6_moving_slow
+anm_idle_moving_crouch                             = rg6_crouch
+anm_open                                           = rg6_open, open
+anm_shots                                          = rg6_shoot, shoot
+anm_show                                           = rg6_draw, draw
+
+anm_idle_sprint_start         						   = rg6_sprint_start, sprint_start
+anm_idle_sprint         						   = rg6_sprint, sprint
+anm_idle_sprint_end         						   	   = rg6_sprint_end, sprint_end
+anm_idle_sprint_end_jammed = rg6_sprint_end,sprint_end
+anm_idle_sprint_start_jammed = rg6_sprint_start,sprint_start
+anm_idle_sprint_end_empty = rg6_sprint_end,sprint_end
+anm_idle_sprint_start_empty = rg6_sprint_start,sprint_start
+
+anm_headlamp_on                                  = rg6_flash
+; anm_gasmask                                        = rg6_clear
+
+anm_headlamp_on_empty                                  = rg6_flash
+; anm_gasmask_empty                                        = rg6_clear
+
+attach_place_idx                                   = 0
+fire_bone                                          = sight_front
+fire_point                                         = 0.000000,-0.034100,0.040700
+hands_orientation                                  = 0,0,0
+hands_orientation_16x9                             = 0,0,0
+hands_position                                     = -0.026400,-0.026400,-0.069400
+hands_position_16x9								   = -0.026400,-0.026400,-0.069400
+
+item_visual                                        = dynamics\weapons\wpn_rg6\wpn_rg6_hud.ogf
+shell_bone                                         = wpn_body
+shell_dir                                          = 0.0, 1.0, 0.0
+shell_point                                        = 0.0, 0.0, 0.0

@@ -1,0 +1,15 @@
+[logic]
+active = ph_idle@idle
+
+[ph_idle@idle]
+on_info = {+barmen_need_harddisc -barmen_x18_harddisc} ph_idle@work
+on_info2 = {+barmen_x18_harddisc} nil
+
+[ph_idle@work]
+on_info = {+barmen_x18_harddisc} nil
+tips = need_harddisc
+on_use = %=sak.x18_harddisc_off()% ph_idle@stop
+
+[ph_idle@stop]
+on_timer = 3000 | nil
+

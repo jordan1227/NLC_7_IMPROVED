@@ -1,0 +1,14 @@
+[logic]
+active = ph_idle@idle
+
+[ph_idle@idle]
+on_info = {+botan_need_harddisc -botan_harddisc_found} ph_idle@work
+on_info2 = {+botan_harddisc_found} nil
+
+[ph_idle@work]
+on_info = {+botan_harddisc_found} nil
+tips = need_harddisc
+on_use = %=sak.x10_harddisc_off()% ph_idle@stop
+
+[ph_idle@stop]
+on_timer = 3000 | nil

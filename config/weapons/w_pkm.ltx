@@ -1,0 +1,218 @@
+;Пулемет Калашникова модернизированный (ПКМ)
+[wpn_pkm]:weapon_immunities
+GroupControlSection			= spawn_group
+discovery_dependency		= 
+$spawn              		= "weapons\pkm"
+$npc						= on				
+$prefetch 					= 8
+scheduled					= off
+cform               		= skeleton
+class               		= WP_LR300
+min_radius          		= 0
+max_radius          		= 150
+description					= enc_weapons1_wpn-pkm
+dialog_description		    = desc_dialog_wpn-pkm
+
+default_to_ruck				= false
+	
+ef_main_weapon_type			= 2
+ef_weapon_type				= 6
+sprint_allowed				= true
+
+holder_range_modifier		= 1.0
+holder_fov_modifier			= 0.7
+
+cost						= 30000
+weapon_class				= assault_rifle	
+	
+ammo_limit					= 100
+ammo_elapsed				= 100
+	
+ammo_mag_size				= 100
+fire_modes					= -1
+
+ammo_class					= ammo_7.62x54r
+
+hand_dependence				= 1						
+single_handed				= 0
+	
+slot 						= 2
+animation_slot				= 2							
+
+inv_name	        		= wpn-pkm_name
+inv_name_short				= wpn-pkm_name	
+
+inv_weight					= 7.5
+
+icon_group                  = 7
+inv_grid_height                                    = 2
+inv_grid_width                                     = 7
+inv_grid_x                                         = 72
+inv_grid_y                                         = 8
+
+weapon_type					= heavy
+heavy_ammo					= ammo
+
+kill_msg_x					= 0
+kill_msg_y					= 123
+kill_msg_width				= 69
+kill_msg_height				= 30
+
+fire_dispersion_base 		= 0.2
+control_inertion_factor 	= 2.0f
+
+cam_relax_speed          	= 8
+cam_dispersion           	= 0.6
+cam_dispersion_inc 			= 0.3
+cam_dispertion_frac 		= 0.75
+cam_max_angle				= 30
+cam_max_angle_horz			= 10
+cam_step_angle_horz 		= 1.65
+
+fire_dispersion_condition_factor = 1.5     
+misfire_probability 		= 0.008
+misfire_condition_k 		= 0.1 
+condition_shot_dec 			= 0.00025
+
+fire_point             		=  0.0, 0.262, 0.447
+
+flame_particles				= weapons\generic_weapon03
+smoke_particles				= weapons\generic_shoot_00
+grenade_flame_particles		= weapons\generic_weapon01
+	
+shell_point		 			= 0.00, 0.262, 0.189
+shell_particles	 			= amik\weapons\7_62x54\7_62x54_l
+
+PDM_disp_base 				= 6.0
+PDM_disp_vel_factor 		= 7.0
+PDM_disp_accel_factor 		= 9.0
+PDM_crouch					= 5.9
+PDM_crouch_no_acc			= 4.7
+
+hit_power                 	= 1
+hit_impulse		 			= 1
+hit_type 					= fire_wound
+
+fire_distance             	= 300
+bullet_speed 				= 640
+rpm                       	= 650	
+
+hud                      	= wpn_pkm_hud
+
+position                                           = -0.027, -0.097, 0.042
+orientation      	        = 0,0,0
+
+strap_orientation                                  = -15,-9,110
+strap_position                                     = -0.26,-0.11,0.25
+strap_bone0					= bip01_spine2
+strap_bone1					= bip01_spine1
+
+visual         		        = dynamics\weapons\wpn_pkm\wpn_pkm
+
+light_color					= 0.6,0.5,0.3
+light_range					= 5
+light_var_color				= 0.05						
+light_var_range				= 0.5
+light_time 					= 0.2						
+
+ph_mass						= 5
+
+scope_status				= 0
+silencer_status				= 0
+grenade_launcher_status		= 0
+
+scope_x                     = 68		; offset in inventory icon
+scope_y                     = -14
+silencer_x                  = 0		; offset in inventory icon
+silencer_y                  = 0
+grenade_launcher_x          = 0		; offset in inventory icon
+grenade_launcher_y          = 0
+
+
+zoom_enabled				= true
+scope_zoom_factor	    	= 85
+
+snd_draw                                           = weapons\pkm\pkm_draw
+snd_draw1                                          = weapons\pkm\pkm_draw1
+snd_draw2                                          = weapons\pkm\pkm_draw2
+snd_draw3                                          = weapons\pkm\pkm_draw3
+snd_draw4                                          = weapons\pkm\pkm_draw4
+snd_draw5                                          = weapons\pkm\pkm_draw5
+snd_draw6                                          = weapons\pkm\pkm_draw6
+snd_empty                                          = weapons\pkm\pkm_empty, 0.5
+snd_holster                                        = weapons\pkm\pkm_holster
+snd_reload                                         = weapons\pkm\pkm_reload
+snd_reload_empty                                   = weapons\pkm\pkm_reload_empty
+snd_reload_jammed                                 = weapons\pkm\pkm_misfire
+snd_mag_shot									   = weapons\mag_shot_pkm
+snd_sprint_start								   = weapons\sprint_start_pkm
+snd_sprint_end								   	   = weapons\sprint_end_pkm
+snd_sprint_idle								   	   = weapons\sprint_pkm
+
+snd_shoot					= weapons\pkm\muzzle_pkm_mono
+snd_shoot1					= weapons\pkm\muzzle_pkm_mono1
+snd_shoot2					= weapons\pkm\muzzle_pkm_mono2
+snd_shoot3					= weapons\pkm\muzzle_pkm_mono3
+snd_razgruzka				= weapons\razgruzka\ammo_3
+
+bullet_bones = bullet1_12, bullet1_11, bullet1_10, bullet1_9, bullet1_8, bullet1_7, bullet1_6, bullet1_5, bullet1_4, bullet1_3, bullet1_2
+
+[wpn_pkm_hud]:hud_base
+
+aim_hud_offset_pos = -0.069100,0.041300,-0.09
+aim_hud_offset_rot = -0.005350,0.000985,-0.184200
+
+aim_hud_offset_pos_16x9 = -0.069100,0.041300,-0.09
+aim_hud_offset_rot_16x9 = -0.005350,0.000985,-0.184200
+
+anm_bore                                           = pkm_idle_aim, idle
+anm_hide                                           = pkm_hide, hide
+anm_idle                                           = pkm_idle, idle
+anm_idle_aim                                       = pkm_idle_aim, idle
+anm_idle_aim_moving                                = pkm_walk_aim, idle
+anm_idle_moving_slow                               = pkm_walk_slow, walk_slow
+anm_idle_moving                                    = pkm_walk, walk
+anm_idle_moving_crouch                             = pkm_walk_down, walk_down
+anm_reload                                         = pkm_reload, reload
+anm_reload_empty                                   = pkm_reload_empty, reload_empty
+anm_reload_jammed				  				   = pkm_misfire, misfire
+anm_shots                                          = pkm_shoot
+anm_shots_when_aim               	         	   = pkm_shoot_aim
+anm_show                                           = pkm_draw, draw
+
+anm_idle_sprint_start         						   = pkm_sprint_start, sprint_start
+anm_idle_sprint         						   = pkm_sprint, sprint
+anm_idle_sprint_end         						   	   = pkm_sprint_end, sprint_end
+anm_idle_sprint_end_jammed = pkm_sprint_end,sprint_end
+anm_idle_sprint_start_jammed = pkm_sprint_start,sprint_start
+anm_idle_sprint_end_empty = pkm_sprint_end,sprint_end
+anm_idle_sprint_start_empty = pkm_sprint_start,sprint_start
+
+anm_headlamp_on                                  = pkm_flash, flash
+; anm_gasmask                                        = pkm_clear, clear
+
+anm_headlamp_on_empty                                  = pkm_flash, flash
+; anm_gasmask_empty                                        = pkm_clear, clear
+
+attach_place_idx                                   = 0
+fire_bone                                          = muzzle
+fire_bone2                                         = wpn_body
+fire_point                                         = 0,0,0
+fire_point2                                        = 0,0,0
+gl_hud_offset_pos                                  = 0,0,0
+gl_hud_offset_pos_16x9                             = 0,0,0
+gl_hud_offset_rot                                  = 0,0,0
+gl_hud_offset_rot_16x9                             = 0,0,0
+hands_position_16x9								   = -0.216400,0.084000,-0.187500
+hands_orientation_16x9							   = 0.000000,-0.450000,0.000000
+hands_position									   = -0.216400,0.084000,-0.187500
+hands_orientation								   = 0.000000,-0.450000,0.000000
+item_orientation                                   = 0,0,0
+item_position                                      = 0,0,0
+item_visual                                        = dynamics\weapons\wpn_pkm\wpn_pkm_hud
+lean_hud_offset_pos                                = 0,0,0
+lean_hud_offset_rot                                = 0,0,0
+shell_bone                                         = wpn_body
+shell_dir                                          = 0.0, 1.0, 0.0
+shell_point                                        = 0,-0.15,-0.15
+zoom_hide_crosshair                                = true

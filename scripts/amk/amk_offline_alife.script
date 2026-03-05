@@ -1,0 +1,1316 @@
+local ini_trade_generic = ini_file("misc\\trade_logic\\trade_generic.ltx")
+local items={}
+local off_npcs={}
+local sell_table = {}
+local item_dependence = {}
+local wpn_fp = {}
+local item_cost = {}
+local initialized = false
+local npc_wpn_tbl = {}
+local protected_sids={[31]=true,[511]=true,[742]=true,[2288]=true,[5862]=true,[9115]=true,[9132]=true,[9140]=true,[9141]=true,[9142]=true,[9143]=true,[9144]=true}
+local cache_bad = {}
+
+local look_radius=50
+local search_intensivity=1
+local health_wound = 0.1
+local health_wound_set = 0.02
+local sell_limit = 15000
+local rate_art_found = 15
+local to_actor = 100
+local look_radius_box = 100
+local status_metka={}
+
+function can_be_online(obj)
+	return obj and obj.can_switch_online and obj:can_switch_online()
+end
+
+function get_off_npcs_tbl()
+	return off_npcs
+end
+
+function get_items_tbl()
+	return items
+end
+
+function get_protected_sids()
+	return protected_sids
+end
+
+local maps={
+	"l01_escape",
+	"l02_garbage",
+	"l03_agroprom",
+	"l03u_agr_underground",
+	"l04_darkvalley",
+	-- "l04u_labx18",
+	"l05_bar",
+	"l06_rostok",
+	"l07_military",
+	"l08_yantar",
+	-- "l08u_brainlab",
+	-- "l10_radar",
+	"limansk",
+	"lost_village",
+	"marsh",
+	"red_forest",
+	"k01_darkscape",
+	-- "warlab",
+	-- "labx10",
+	-- "labx8",
+	"generators",
+	"aver",
+	"hospital",
+	"deadcity",
+	-- "av_peshera",
+	-- "l10u_bunker",
+	"l11_pripyat"
+	-- "l12_stancia",
+	-- "l12_stancia_2",
+	-- "l12u_control_monolith",
+	-- "l12u_sarcofag"
+}
+
+function init()
+	if (initialized==false) then
+		build_tables()
+		initialized = true
+	end
+end
+
+function check_bad_item(s)
+	if cache_bad[s] == nil then
+		cache_bad[s] = get_bool(s, "watcher_act.bad_item", false) or get_bool(s, "quest_item", false)
+	end
+	return cache_bad[s]
+end
+
+local function is_reinforced_npc(sobj, name)
+	return xr_motivator.reinforced_npcs[name] or xr_motivator.reinforced_npcs[sobj:profile_name()]
+end
+
+function add_fresh_meat( obj )
+	if not obj then return end
+	local g_vert=obj.m_game_vertex_id
+	local o_id=obj.id
+	local o_sect=obj:section_name()
+	local o_sid=obj.m_story_id
+	local o_pid=obj.parent_id
+	local o_name=obj:name()
+	local flt = {"brkbl", "changer", "clmbl#", "barrel", "hanging", "m_crow", "_object", "physic", "restrictor", "smart_terrain", "zone_"}  
+	if check_bad_item(o_sect) or str_in_tab(o_name, flt) or str_in_tab(o_sect, flt) then
+		return 
+	end
+	if g_vert and db.actor and db.actor:id()~=o_id then
+		if game_graph():valid_vertex_id(g_vert) then
+			local map=g_sim:level_name(game_graph():vertex(g_vert):level_id())
+			if not off_npcs[map] then 
+				off_npcs[map]={monsters={},stalkers={},weapons={},artefacts={},inv_boxes={}} 
+			end
+			
+			if IsMonster(obj) and obj.alive and obj:alive() and obj.health and obj:health()>0 then
+				local flags = get_flags(o_id)
+				if flags==0 or flags==2 then
+					table.insert(off_npcs[map].monsters, {id = o_id, name = o_name})
+				end
+			elseif ((o_sect=="inventory_box" or o_sect == "rukzak_inventory_box" or o_sect=="rucksack") and box_is_protected(obj)~=true) then
+				table.insert(off_npcs[map].inv_boxes, {id = o_id, name = o_name})
+			elseif IsStalker(obj) and obj.alive and obj:alive() and not is_reinforced_npc(obj, o_name) then
+				if obj.health and obj:health()>0 and o_sid~=nil and (o_sid==NONE_SID or o_sid==NONE_CL_SID) then
+					local flags = get_flags(o_id)
+					if flags==0 or flags==2 then
+						if obj:community()~="zombied" then
+							table.insert(off_npcs[map].stalkers, {id = o_id, name = o_name})
+						else
+							table.insert(off_npcs[map].monsters, {id = o_id, name = o_name})
+						end
+					end
+				end	
+			elseif isWeapon(obj) then
+				load_weapon_params(obj)
+				if o_sid==nil or o_sid==NONE_SID or o_sid==NONE_CL_SID then
+					if (o_pid~=nil and o_pid~=BAD_OBJ_ID and o_pid~=0 ) then
+						local p_obj = g_sim:object(o_pid)
+						if (p_obj) then
+							if p_g_vert and game_graph():valid_vertex_id(p_g_vert) then
+								if p_o_sect=="inventory_box" or p_o_sect=="rukzak_inventory_box" or p_o_sect=="rucksack" or box_is_protected(p_obj)==true then
+									map = ""
+								else
+									local p_map = g_sim:level_name(game_graph():vertex(p_g_vert):level_id())
+									if (p_map~=map) then
+										if not off_npcs[p_map] then off_npcs[p_map]={monsters={},stalkers={},weapons={},artefacts={}, inv_boxes={}} end
+										map = p_map
+									end	
+								end
+							end
+						end
+					end
+					if map~="" then table.insert(off_npcs[map].weapons, {id=o_id, name = o_name}) end
+				end
+			elseif strpos(o_sect,"^af_") and not strpos(o_sect,"^af_full") then
+				if o_pid~=nil and o_pid==BAD_OBJ_ID then
+					if map~="" then
+						local need_to_add = true
+						if #off_npcs[map].artefacts > 0 then
+							for k,v in pairs (off_npcs[map].artefacts) do
+								if v.name == o_name then
+									-- log2("[offline_alife_log]: art %s, id%d is already in [%s] tbl, cur_size = %d! proof - %s, %d",o_name,o_id,map,#off_npcs[map].artefacts,v.name,v.id)
+									need_to_add = false
+									break
+								end
+							end
+						end
+						
+						if need_to_add then
+							table.insert(off_npcs[map].artefacts, {id = o_id, name = o_name}) 
+							-- log2("[offline_alife_log]: adding art %s @ lvl = %s | #tbl = %d",o_name,map,#off_npcs[map].artefacts)
+						end
+					end
+				end
+			end
+			
+			if (o_pid~=nil and o_pid~=BAD_OBJ_ID and o_pid~=0 and (o_sid==nil or o_sid==NONE_SID or o_sid==NONE_CL_SID) and IsMonster(obj)==false and IsStalker(obj)==false) then
+				local zz = g_sim:object(o_pid)
+				if zz then
+					if not items[o_pid] then 
+						items[o_pid] = {}
+					end
+					table.insert(items[o_pid], {id = o_id, name=o_name})
+					gps_habar.insert_item(o_pid, obj)
+				end
+			end
+		end
+	end
+end
+
+function build_tables()
+	sell_table = {}
+	local cfg_sell = utils.cfg_get_string(ini_trade_generic, "trader", "sell_condition", npc, false, false, "")
+	if ini_trade_generic and ini_trade_generic:section_exist(cfg_sell) then
+		local result, id, value = nil, nil, nil
+		for a=0,ini_trade_generic:line_count(cfg_sell)-1 do
+			result, id, value = ini_trade_generic:r_line(cfg_sell,a,"","")
+			if id~=nil and amk.trim(id)~="" and amk.trim(id)~=nil and amk.trim(value)~="" and amk.trim(value)~=nil then
+				-- Добавим в таблицу, что можно продавать.
+				sell_table[id] = true
+			end
+		end
+	end
+end
+
+function update_npc_tables()
+	local pt = profile_timer()
+	pt:start()
+
+	off_npcs={}	
+	for id, obj in alife():objects() do
+		add_fresh_meat(obj)
+	end
+	checked_marked_npc()
+	pt:stop()
+	log2("[%s.update_npc_tables]: Time: %.2fms (%s)", script_name(), pt:time() / 1000, pt:time())
+end
+
+function update_trade()
+	for a=1,MAX_OBJ_ID do
+		local obj = g_sim:object(a)
+		if obj then
+			process_trade(obj)
+		end
+	end
+end
+
+function trim(s)
+	return(string.gsub(s, "^%s*(.-)%s*$", "%1"))
+end
+
+function offline_alife( level_name )
+	local lname = nil
+	if level_name then -- если уровень задан явно, например, для теста, то оставляем, как есть
+		lname = level_name
+	else -- в противном случае не грабим КОРОВАНЫ, если ГГ находится на текущей локации
+		while ( lname == nil or lname == level.name() ) do
+			local sname = get_value("prev_level", "null")
+			if lua_random() > 0.6 and sname ~= "null" and const.ground_levels[sname] then -- шанс порыться на той локе, с которой перешли, кроме подземок
+				lname = sname
+				--log2("[offline_alife_log]: rnd proced!")
+			else
+				lname = maps[ lua_random( #maps ) ] -- иначе просто рандомная лока из таблицы
+			end
+		end
+	end
+	log2("[offline_alife_log]: level = %s",lname)
+	if lname == 'l01_escape' and has_alife_info("parley_bandits") and not has_alife_info("esc_kill_bandits_quest_done") then
+		return
+	elseif lname == 'l03u_agr_underground' then -- Sn: т.к. это всё же подземка, условие о переходе с этой локи не проверяется, следовательно, общий шанс воровства ниже
+		check_agr_und()
+		return
+	end
+	---------------------------------------------------------------
+	local g_diff = tonumber(level.get_game_difficulty())
+	local s_i = search_intensivity + g_diff
+	
+	local st = 0
+	if off_npcs[lname] then st = #off_npcs[lname].stalkers end
+	if st>0 then
+		for search = 1,s_i do
+			local rnd = lua_random(st)
+			if off_npcs[lname].stalkers[rnd] then 
+				local victim = g_sim:object(off_npcs[lname].stalkers[rnd].id)
+				if victim and not victim.online and victim.health and victim.can_switch_online and victim:health()>health_wound_set and victim:can_switch_online() and victim:name()==off_npcs[lname].stalkers[rnd].name then
+					local vdata = collect_info(victim,lname)
+					if #vdata.inv_boxes>0 then
+						log2("[offline_alife_log]: 'on_inv_boxes_found' called by stalker = %s, inv_boxes in reach = %d",victim:name(),#vdata.inv_boxes)
+						on_inv_boxes_found(victim, vdata)
+					end
+					if #vdata.artefacts>0 then
+						log2("[offline_alife_log]: 'on_artifacts_found' called by stalker = %s, artefacts on location = %d",victim:name(),#vdata.artefacts)
+						on_artifacts_found(victim, vdata)
+					elseif #vdata.corpses.monsters>0 then
+						log2("[offline_alife_log]: 'on_monster_corpses_found' called by stalker = %s, monster corpses in reach = %d",victim:name(),#vdata.corpses.monsters)
+						on_monster_corpses_found(victim, vdata)
+					elseif #vdata.corpses.stalkers>0 then
+						log2("[offline_alife_log]: 'on_npc_corpses_found' called by stalker = %s, npc corpses in reach = %d",victim:name(),#vdata.corpses.stalkers)
+						on_npc_corpses_found(victim, vdata)
+					-- elseif items[victim.id] and #items[victim.id] > 0 then
+						-- log2("[offline_alife_log]: 'process_trade' called by stalker = %s, items available = %d",victim:name(),#items[victim.id])
+						-- process_trade(victim)
+					else
+						--amk.mylog("__")
+					end
+				end
+			end
+		end
+	end
+end
+
+function collect_info(victim,map)
+	local vdata = {}
+	vdata.rank = victim:rank()
+	vdata.health = victim:health()
+	vdata.community = victim:community()
+	vdata.corpses={monsters={},stalkers={}}
+	if #off_npcs[map].stalkers>0 then
+		for a, z in pairs(off_npcs[map].stalkers) do
+			if off_npcs[map].stalkers[a] then
+				local opponent = g_sim:object(off_npcs[map].stalkers[a].id)
+				if opponent and opponent.id~=victim.id and opponent.health and opponent:health()<=0 and opponent.can_switch_online and opponent:can_switch_online() and opponent:name()==off_npcs[map].stalkers[a].name	then
+					if victim.position:distance_to(opponent.position)<look_radius then
+						table.insert(vdata.corpses.stalkers, {id = opponent.id, name = opponent:name()})
+					end
+				end
+			end
+		end
+	end
+	if off_npcs[map].monsters then
+		if #off_npcs[map].monsters>0 then
+			for a, z in pairs(off_npcs[map].monsters) do
+				if off_npcs[map].monsters[a] then
+					local monster = g_sim:object(off_npcs[map].monsters[a].id)
+					if can_be_online(monster) and monster.health and monster:health()<=0 and monster:name()==off_npcs[map].monsters[a].name and victim.position:distance_to(monster.position)<look_radius then
+						table.insert(vdata.corpses.monsters, {id = monster.id, name = monster:name()})
+					end
+				end
+			end
+		end
+	end
+	vdata.artefacts={}
+	if off_npcs[map].artefacts then
+		if #off_npcs[map].artefacts>0 then
+		-- log2("[offline_alife_log]: 'collect_info' found %d arts in off_npcs tbl for lvl %s",#off_npcs[map].artefacts,map)
+			for a, z in pairs(off_npcs[map].artefacts) do
+				if off_npcs[map].artefacts[a] then
+					local artefact = g_sim:object(off_npcs[map].artefacts[a].id)
+					if (artefact and artefact.can_switch_online and artefact:can_switch_online() and artefact:name()==off_npcs[map].artefacts[a].name and victim.position:distance_to(artefact.position)<look_radius) then
+						if artefact.parent_id==nil or artefact.parent_id==BAD_OBJ_ID or 
+							(g_sim:object(artefact.parent_id) and (g_sim:object(artefact.parent_id):section_name()=="inventory_box")) then
+							-- log2("[offline_alife_log]: adding art@vdata.artefacts id = %d, name = %s, map = %s",artefact.id,artefact:name(),map)
+							table.insert(vdata.artefacts, {id = artefact.id, name = artefact:name()})
+						end
+					end
+				end
+			end
+		end
+	end
+	vdata.inv_boxes={}
+	if off_npcs[map].inv_boxes then
+		if #off_npcs[map].inv_boxes>0 then
+			local g_diff = tonumber(level.get_game_difficulty())
+			local l_r_b = look_radius_box + (50 * g_diff)
+			for a, z in pairs(off_npcs[map].inv_boxes) do
+				if off_npcs[map].inv_boxes[a] then
+					local inv_box = g_sim:object(off_npcs[map].inv_boxes[a].id)
+					if (inv_box and inv_box.can_switch_online and inv_box:can_switch_online() and inv_box:name()==off_npcs[map].inv_boxes[a].name and
+						(inv_box.parent_id==nil or inv_box.parent_id==BAD_OBJ_ID)) and sobj_is_far(inv_box, to_actor) then
+						local dist = victim.position:distance_to(inv_box.position)
+						if dist<=l_r_b then
+							table.insert(vdata.inv_boxes, {id = inv_box.id, name = inv_box:name()})
+						end
+					end
+				end
+			end
+		end
+	end
+
+	return vdata
+end
+
+function on_npc_corpses_found(victim, vdata)
+	if (victim==nil or vdata==nil) then return end
+	if (vdata.corpses==nil) then return end
+	if (vdata.corpses.stalkers==nil) then return end
+	local obj, v_obj
+	local id
+	local v_id = victim.id
+	for i=1, #vdata.corpses.stalkers do
+		v_obj = vdata.corpses.stalkers[i]
+		local corpse = g_sim:object(v_obj.id)
+		local sid = corpse.m_story_id
+		if ( corpse and corpse:name()==v_obj.name and ( sid >= BAD_OBJ_ID or sid < 1 ) ) then
+		log2("[offline_alife_log]: processing 'on_npc_corpses_found' for %s | npc = %s, cor_num = %d",victim:name(),corpse:name(),#vdata.corpses.stalkers)
+			news_main.on_offline_corpse_found(victim, corpse)
+			id = corpse.id
+			if (id and items[id]) then
+				for a=1, #items[id] do
+					local v_itA = items[id][a]
+					if (v_itA) then
+						local itA = g_sim:object(v_itA.id)
+						if (itA and itA:name()==v_itA.name and itA.parent_id==id) then
+							pick_item(victim, itA)
+						end			
+					end
+				end
+			end
+		end
+	end
+end
+
+function on_monster_corpses_found(victim, vdata)
+	if (victim==nil or vdata==nil) then return end
+	if (vdata.corpses==nil) then return end
+	if (vdata.corpses.monsters==nil) then return end
+	local obj, v_obj
+	local object
+	local id
+	local v_id = victim.id
+	for i=1, #vdata.corpses.monsters do
+		v_obj = vdata.corpses.monsters[i]
+		local corpse = g_sim:object(v_obj.id)
+		if (corpse and corpse:name()==v_obj.name) then
+		log2("[offline_alife_log]: processing 'on_monster_corpses_found' for %s | mob = %s, cor_num = %d",victim:name(),corpse:name(),#vdata.corpses.monsters)
+			news_main.on_offline_corpse_found(victim, corpse)		
+			id = corpse.id
+			if (id and items[id]) then
+				for a=1, #items[id] do
+					local v_itA = items[id][a]
+					if (v_itA) then
+						local itA = g_sim:object(v_itA.id)
+						if (itA and itA:name()==v_itA.name and itA.parent_id==id) then
+							pick_item(victim, itA)
+						end			
+					end
+				end
+			end
+		end
+	end
+end
+
+function on_artifacts_found(victim, vdata)
+	if (victim==nil or vdata==nil) then return end
+	local obj, v_obj
+	local object
+	local v_id = victim.id
+	local b_stalker = false
+	if (IsStalker(victim) and victim.community) then
+		local m_comm	= victim:community()
+		if (m_comm=="stalker" or m_comm=="dolg" or m_comm=="freedom" or m_comm=="green") then
+			b_stalker = true
+		end
+	end
+	for i=1, #vdata.artefacts do
+		v_obj = vdata.artefacts[i]
+		if (v_obj) then
+			object = g_sim:object(v_obj.id)
+			if (object and object:name()==v_obj.name) then
+			log2("[offline_alife_log]: processing 'on_artifacts_found' for %s | cur_art = %s, art_num = %d",victim:name(),object:name(),#vdata.artefacts)
+				obj = pick_item(victim, object)
+				if (obj) then
+					if (b_stalker==true) then
+						victim:set_rank(victim:rank() + rate_art_found)
+					end
+				end
+			end
+		end
+	end
+end
+
+function on_inv_boxes_found(victim, vdata)
+	if (victim==nil or vdata==nil) then return end
+	local v_obj
+	local object
+	for i=1, #vdata.inv_boxes do
+		v_obj = vdata.inv_boxes[i]
+		if (v_obj) then
+			object = g_sim:object(v_obj.id)
+			-- Sn: добавил доп. проверку для ситуаций, когда новое исключение было добвлено уже после формирования таблицы ящиков
+			if object and object:name()==v_obj.name and validate_rucksack(object) and not box_is_protected(object) then
+				if items[v_obj.id] and #items[v_obj.id]>0 then
+				log2("[offline_alife_log]: processing 'on_inv_boxes_found' for %s | box = %s, tbl_size = %d",victim:name(),object:name(),#items[v_obj.id])
+					for a=1,#items[v_obj.id] do
+						local v_itA = items[v_obj.id][a]
+						if (v_itA) then
+							local itA = g_sim:object(v_itA.id)
+							if (itA and itA:name()==v_itA.name and itA.parent_id==v_obj.id) then
+								local nname = itA:name()
+								local bTake = is_valuable(itA)
+								if isWeapon(itA) then
+									local itA_cost = get_item_cost(itA)
+									local npc_wpn = get_npc_weapon(victim)
+									local npc_wpn_name = "unknown"
+									local npc_wpn_cost = 0
+									if npc_wpn ~= nil then
+										npc_wpn_name = npc_wpn:name()
+										npc_wpn_cost = get_item_cost(npc_wpn)
+									end
+									if itA_cost <= npc_wpn_cost then
+										log2("[offline_alife_log]: 'on_inv_boxes_found' -> found wpn %s, cost = %d =< looter's wpn %s, cost = %d -> removing",nname,itA_cost,tostring(npc_wpn_name),npc_wpn_cost)
+										do_drop_object(itA)
+										bTake = false
+									end
+								end
+								if bTake then
+									if check_box_trapped(victim, v_obj) then 
+										return
+									end
+									local new_item = pick_item(victim, itA)
+									if new_item then
+										log2("[offline_alife_log]: picked item %s, itter = %d",nname,a)
+										if isWeapon(new_item) then
+											npc_wpn_tbl[victim.id] = new_item.id
+											--log2("[offline_alife_log]: added new wpn %s@npc_wpn_tbl",new_item:name())
+										end
+									end
+								end
+							end
+						end
+					end					
+				end
+			end
+		end
+	end
+end
+
+function my_log(mtext, oname)
+	--get_console():execute("load ~~~~"..mtext.."	"..oname)
+end
+
+function is_ammo(obj)
+	if obj and obj:clsid()==CLID_AMMO then
+		return true
+	else
+		return false
+	end
+end
+
+function isammofor(wpn, ammos)
+	for aiter, ammo in pairs(ammos) do
+		local section_ammo = get_weapon_ammo(wpn)
+		if strpos(section_ammo, ammo:section_name(),1,true) then
+			return true
+		end
+	end
+	return false
+end
+
+function find_metka_near_box(boxobj)
+	if not boxobj or not game_graph():valid_vertex_id(boxobj.m_game_vertex_id) then return nil end
+	local blid = game_graph():vertex(boxobj.m_game_vertex_id):level_id()
+	local metka = nil
+	for iter=1,MAX_OBJ_ID do
+		local obj = g_sim:object(iter)
+		if obj and obj.parent_id and obj.parent_id==boxobj.id and obj.section_name and obj:section_name()=="amk_metka" then
+			metka = obj
+			break
+		end
+	
+	if obj and(obj.parent_id==nil or obj.parent_id==BAD_OBJ_ID) and obj.section_name and obj:section_name()=="amk_metka" then
+		if game_graph():valid_vertex_id(obj.m_game_vertex_id) then
+		local mlid = game_graph():vertex(obj.m_game_vertex_id):level_id()
+		if blid==mlid and boxobj.position:distance_to(obj.position) <= 2 then
+			metka = obj
+			break
+		end
+		end
+	end
+	end
+	return metka
+end
+
+function check_box_trapped(victim, box)
+	if victim==nil or box==nil then return false end
+	local result = check_box_trap_trigger(victim, box)
+	
+	local boxobj = g_sim:object(box.id)
+	if not boxobj then return result end
+	
+	local metka = find_metka_near_box(boxobj)
+	if metka==nil then return result end
+	local vname = news_main.get_npc_name(victim)
+	local mtext = game.translate_string("on_level").." "..news_main.get_level_name(news_main.get_object_levelname(victim)).."."
+	if result then
+		amk.send_tip(mtext, game.translate_string("explode_cache"),0,10)
+		--amk.add_spot_on_map(victim.id, spot_type, "Мародер-неудачник "..vname)
+	else
+		amk.send_tip(mtext,game.translate_string("cache_opened"),0,10)
+		--amk.add_spot_on_map(victim.id, spot_type, "Мародер "..vname)
+	end
+		--set_metka_victim(metka.id, victim.id)
+	return result
+end
+
+function blow_habar_out(box_id)
+	if #items[box_id]==0 then return end
+	local boxobj = g_sim:object(box_id)
+	if not boxobj then return end
+	local habar = {}
+	local rnd = 1000/#items[box_id]
+	for iter,zzz in pairs(items[box_id]) do
+		if rnd >= my_lua_random(100) then
+			local v_itA = items[box_id][iter]
+			if v_itA then
+				local itA = g_sim:object(v_itA.id)
+				if itA and itA:name()==v_itA.name and itA.parent_id==box_id and not strpos(itA:section_name(), "grenade_",1,true) and not strpos(itA:section_name(), "outfit",1,true) and not strpos(itA:section_name(), "wpn_",1,true) then 
+			table.insert(habar, itA)
+			if #habar==5 then break end
+			end
+		end
+	end
+	end
+	local base_dir = vector():set(boxobj.position.x, boxobj.position.y, boxobj.position.z)
+	for iter=1, #habar do
+	local obj = habar[iter]
+	local ang = my_lua_random()*2.0*math.pi
+	local radius = my_lua_random()*1.5
+	local dir = vector():set(math.cos(ang), 0.0, math.sin(ang))
+	local lv = boxobj.m_level_vertex_id
+	local pos = vector():set(base_dir.x + radius*dir.x, base_dir.y + 0.5, base_dir.z + radius*dir.z)
+	if lv and boxobj.m_game_vertex_id and game_graph():valid_vertex_id(boxobj.m_game_vertex_id) then
+	local new = create_newitem(obj, pos, lv, boxobj.m_game_vertex_id, BAD_OBJ_ID)
+	end
+	if new then
+		add_fresh_meat(new)
+	end
+	do_drop_object(obj)
+	end	
+end
+
+function my_lua_random(lower)
+	local cnt = lua_random(5)
+	local res
+	if lower then
+		for iter=0,cnt do res = lua_random(lower) end
+	else
+		for iter=0,cnt do res = lua_random() end
+	end
+	return res
+end
+
+function check_box_trap_trigger(victim, box)
+	local grenades = {}
+	for iter, zzz in pairs(items[box.id]) do
+		local v_itA = items[box.id][iter]
+		if v_itA then
+			local itA = g_sim:object(v_itA.id)
+			if itA and itA:name()==v_itA.name and itA.parent_id==box.id and
+			(itA:section_name()=="grenade_rgd5" or itA:section_name()=="grenade_f1") then 
+			table.insert(grenades, itA)
+			if #grenades==5 then break end
+		end
+	end
+	end
+	if #grenades <= 0 then return false end
+	local rank = victim:rank()
+	local f1f = 85
+	local rgd5f = 93
+	if rank < 300 then
+		f1f = 20
+		rgd5f = 27
+	elseif rank < 600 then
+		f1f = 35
+		rgd5f = 42
+	elseif rank < 900 then
+		f1f = 55
+		rgd5f = 63
+	elseif rank < 2000 then
+		f1f = 75
+		rgd5f = 85
+	end 
+	local failed = false
+	for iter=1, #grenades do
+		local grenade = grenades[iter]
+		local grf
+		local itA = g_sim:object(grenade.id)
+		if itA and string.find(itA:name(),"_rgd5",1,true) then
+			grf = rgd5f
+		else
+			grf = f1f
+		end
+		local rnd = my_lua_random(100)
+		if grf >= rnd then
+			pick_item(victim, itA)
+		else
+			do_drop_object(itA)
+			failed = true
+			break
+		end
+	end	
+	if failed then
+		set_npc_health(victim, health_wound_set)
+		blow_habar_out(box.id)
+	end	
+	return failed
+end
+
+function do_drop_item(obj)
+	if (obj and db.actor and obj.id~=db.actor:id()) then
+		if (obj.parent_id and items[obj.parent_id] and #items[obj.parent_id]>0) then
+			for z, v in pairs(items[obj.parent_id]) do
+				if (items[obj.parent_id][z] and items[obj.parent_id][z].id==obj.id) then
+					items[obj.parent_id][z]=nil
+					gps_habar.remove_item(obj.parent_id, items[obj.parent_id][z])
+					break
+				end
+			end
+		end
+	end
+end
+
+function do_drop_object(obj)
+	if (obj and db.actor and obj.id~=db.actor:id()) then
+		do_drop_item(obj)
+		misc.release_obj(obj.id, 'amk_offline_alife.do_drop_object')
+	end
+end
+
+function get_ammo_size(obj)
+	return vergas_lib.get_ammo_size(obj)
+end
+-- чтобы нпс не чинили всё что тащут из схронов den1s
+function create_newitem(obj, pos, lvi, gvi, pid)
+    if obj and obj.id then 
+    if g_sim:object( obj.id ) == nil then return nil end
+        obj = g_sim:object( obj.id )
+        if is_ammo( obj ) then
+            local cnt = get_ammo_size( obj )
+            if cnt > 0 then
+                return g_sim:create_ammo(
+                    obj:section_name(), pos, lvi, gvi, pid, cnt
+                )
+            end
+        else
+            local item_cond = 1
+            local pk        = get_netpk( obj, 1 )
+			if not pk then return nil end
+            local data      = pk:get()
+            item_cond       = data.condition
+            local new_itm   = g_sim:create( obj:section_name(), pos, lvi, gvi, pid )
+            if new_itm then
+                pk             = get_netpk( new_itm, 1 )
+                data           = pk:get()
+                data.condition = item_cond
+                pk:set( data )
+                return new_itm
+            end
+        end
+    end
+    return nil
+end
+
+function pick_item(npc, obj)
+	local new = nil
+	if npc and obj and db.actor and obj.id~=db.actor:id() then
+		
+		new = create_newitem(obj, npc.position, npc.m_level_vertex_id, npc.m_game_vertex_id, npc.id)
+		if new then
+			if new.parent_id then
+				if not items[new.parent_id] then items[new.parent_id] = {} end
+				table.insert(items[new.parent_id], {id = new.id, name = new:name()})
+			end
+			do_drop_object(obj)
+		end
+	end
+	return new
+end
+
+function get_npc_weapon(npc)
+	local obj = nil
+	local cost = 0
+	if npc then
+		if npc_wpn_tbl[npc.id] ~= nil then
+			obj = g_sim:object(npc_wpn_tbl[npc.id])
+			--log2("[get_npc_weapon]: catched obj %s in tbl",tostring(obj:name()))
+		else
+			for k,v in pairs(items[npc.id]) do
+				local wpn = g_sim:object(v.id)
+				if wpn and isWeapon(wpn) and wpn:name()==v.name and wpn.parent_id==npc.id then
+					local new_cost = get_item_cost(wpn)
+					if cost < new_cost then
+						cost = new_cost
+						obj = wpn
+					end
+				end
+			end
+			if obj ~= nil then
+				npc_wpn_tbl[npc.id] = obj.id
+			end
+		end
+	end
+	--log2("[get_npc_weapon]: returned %s",tostring(obj:name()))
+	return obj
+end
+
+function load_weapon_params(wpn)
+	local ini = system_ini()
+	if not wpn then return end
+	local wpnsect = wpn:section_name()
+	if wpn_fp[wpnsect] then return end
+	if isWeapon(wpn) then
+		if not strpos(wpnsect, "grenade",1,true) then
+			local sl = utils.cfg_get_number(ini, wpnsect, "slot", wpn, false, 0)
+			if sl <= 0 then return end
+			local priority = utils.cfg_get_number(ini, wpnsect, "ef_weapon_type", wpn, false, 1)
+			local priority2 = utils.cfg_get_number(ini, wpnsect, "ef_main_weapon_type", wpn, false, 0)
+			if priority>1 and priority2>0 then
+				priority = priority + priority2
+			end
+			local fp = math.ceil(priority*1000) - 5000
+			local ac = utils.cfg_get_string(ini, wpnsect, "ammo_class", wpn, false, "")
+			wpn_fp[wpnsect] = {frp = fp, ammo = ac, slot = sl, p = priority}
+		end
+	end
+end
+
+function get_weapon_slot(wpn)
+	if wpn then
+		local wpnsect = wpn:section_name() or wpn:section()
+		if not wpn_fp[wpnsect] then
+			load_weapon_params(wpn)
+		end
+		if wpn_fp[wpnsect] then
+			return wpn_fp[wpnsect].slot
+		end
+	end
+	return 0
+end
+
+function get_weapon_ammo(wpn)
+	if wpn then
+		local wpnsect = wpn:section_name() or wpn:section()
+		if not wpn_fp[wpnsect] then
+			load_weapon_params(wpn)
+		end
+		if wpn_fp[wpnsect] then
+			return wpn_fp[wpnsect].ammo
+		end
+	end
+	return ""
+end
+
+function get_weapon_firepower(wpn)
+	if wpn then
+		local wpnsect = wpn:section_name() or wpn:section()
+		if not wpn_fp[wpnsect] then
+			load_weapon_params(wpn)
+		end
+		if wpn_fp[wpnsect] then
+			return wpn_fp[wpnsect].frp
+		end
+	end
+	return 0
+end
+
+function get_item_cost( item )
+	local result = 0
+	local ini = system_ini()
+	if item and item.section_name then
+		local sect = item:section_name()
+		if not sect then 
+			return 0
+		end
+		if item_cost[sect] then
+			result = item_cost[sect]
+			--log2("[get_item_cost]: item_cost[%s] found, result = %d",sect,result)
+		else
+			if ini:section_exist(sect) then
+				result = ini:r_float(sect,"cost")
+				item_cost[sect] = result
+				--log2("[get_item_cost]: result@ini:r_float for %s = %d",sect,result)
+			end
+		end
+	end
+	return result
+end
+
+function set_npc_health(obj, health)
+	if (obj and health >=0 and health <=2) then
+		local pk = get_netpk(obj)
+		local data = pk:get()
+		data.health     = health
+		data.upd.health = health
+		pk:set(data)																					
+		if health==0 then
+			smart_terrain.on_death(obj.id)
+		end
+	end
+end
+
+--[[
+	Уникальные предметы НЕ ПРОДАЕМ. Максимум - в новости.	
+	Отсортировали оружие по firepower(можем еще ef_weapon_type добавить.)
+	Оставили себе то, для которого есть патроны.(а) - wpn..ammo_class + item_dependence
+	Оставили одно, которое лучше(а), но патронов нет(б)(%)
+	Одно, которое лучше(а), но хуже(б) - в новости на продажу
+	Остальное на продажу
+	Патроны оставили только те, что подходят к(а), остальные на продажу
+	Для вояк - только родной калаш надо бы... Не продавать вобще?
+	Оставляем не более 2 аптечек и бинтов, антирада
+	Оставляем 1-2 гранаты(%)
+	Оставляем не более 1 шт: фонарик, рация, ПДА, бинокль, нож, детекторы
+	Еда, водка - не более 1-2 шт(%)	
+	Броники наверное продаем...
+	Части монстров? Тоже продаем наверное, максимум 1-2 оставим.
+]]
+function process_trade(npc)	
+	local item_list = {}
+	local sell_list = {}
+	if npc and IsStalker(npc) and npc:alive() and (npc.m_story_id==nil or npc.m_story_id==NONE_SID or npc.m_story_id==NONE_CL_SID) and items[npc.id] and #items[npc.id]>0 then
+		local m_comm = npc:community()
+		local b_stalker = false		
+		if (m_comm=="actor" or m_comm=="stalker" or m_comm=="dolg" or m_comm=="freedom" or  m_comm=="green") then
+				b_stalker = true
+		elseif m_comm=="zombied" or m_comm=="military" then
+			return
+		end
+		local obj, v_obj
+		for ok,ov in pairs(items[npc.id]) do
+			obj = g_sim:object(ov.id)
+			if obj and obj:name()==ov.name then
+				if is_valuable(obj) and sell_table[obj:section_name()]~=nil then
+					table.insert(item_list, obj)
+					--ODS("[~T]. #DBG: Process_trade: "..npc:name().." ["..m_comm.."] have "..obj:section_name().." ["..obj:name().."]")
+				end
+			end
+		end
+		if item_list and #item_list>0 then
+			--ODS("[~T]. #DBG: Process_trade: "..npc:name().." ["..m_comm.."] have "..tostring(table.getn(item_list)).." items.")
+			table.sort(item_list, function(a,b) return get_item_cost(a) > get_item_cost(b) end)		
+			local cnt_food = 0
+			local cnt_drink = 0
+			local cnt_arts = 0
+			local cnt_mparts = 0
+			local cnt_outfits = 0
+			local cnt_b_best = 0
+			local weapons1 = {}
+			local weapons2 = {}
+			local ammo = {}
+			for k,v in pairs(item_list) do			
+				local sect = v:section_name() or v:section()
+				local cl_id = v:clsid()
+				--ODS("[~T]. #DBG: Process_trade: first pass - "..npc:name().." ["..m_comm.."] have "..sect.." ["..v:name().."]")
+				if isWeapon_no_gren(v) then
+					local ac = get_weapon_ammo(v)
+					if ac and ac~="" then
+						local vvv = amk.str_explode(",", ac, true)
+						local ammo_classes = {}
+						for ak,av in pairs(vvv) do
+							table.insert(ammo_classes, av)
+						end
+						local slot=get_weapon_slot(v)
+						if slot==1 then
+						table.insert(weapons1, {obj = v, ammo = ammo_classes})
+						elseif slot==2 then
+						table.insert(weapons2, {obj = v, ammo = ammo_classes})
+						end
+					else
+						table.insert(weapons1, {obj = v, ammo = nil})
+					end
+				elseif isAmmo(v) then
+					if ammo[sect]==nil then 
+						ammo[sect] = 1
+					else
+						ammo[sect] = ammo[sect] + 1
+						if ammo[sect] > 3 then
+							table.insert(sell_list, v)
+						end
+					end
+				elseif isArt(v) then
+						cnt_arts = cnt_arts + 1
+						if cnt_arts > 1 then
+							table.insert(sell_list, v)
+						end				
+				elseif isOutfit(v) then		
+					cnt_outfits = cnt_outfits + 1
+					if cnt_outfits > 1 then
+						table.insert(sell_list, v)
+					end					
+				elseif cl_id==CLID_BREAD then
+					cnt_food = cnt_food + 1
+					if cnt_food > 2 then
+						table.insert(sell_list, v)
+					end
+				elseif cl_id==CLID_DRINK then
+					cnt_drink = cnt_drink + 1
+					if cnt_drink > 2 then
+						table.insert(sell_list, v)
+					end
+				elseif strpos(sect, "mutant_",1,true) then
+					cnt_mparts = cnt_mparts + 1
+					if cnt_mparts > 2 then
+						table.insert(sell_list, v)
+					end
+				else
+					table.insert(sell_list, v)
+					--ODS("[~T]. #DBG: Process_trade: unknown - "..sect.." "..v:name())
+				end			
+			end
+			table.sort(weapons1, function(a,b) return get_weapon_firepower(a.obj) > get_weapon_firepower(b.obj) end)
+			table.sort(weapons2, function(a,b) return get_weapon_firepower(a.obj) > get_weapon_firepower(b.obj) end)
+			local b_self = false
+			local b_best = false
+			local s_self = ""
+			for k, v in pairs(weapons1) do
+				local b_ammo = false
+				local vac = v.ammo
+				if vac and #vac>0 then
+					for kk, vv in pairs(vac) do
+						if ammo[vv] and ammo[vv] > 0 then
+							b_ammo = true
+							break
+						end
+					end
+				end
+				if b_self==false and b_ammo==true then
+					b_self = true
+					s_self = v.obj:section_name() or v.obj:section()
+				elseif b_best==false then
+					if s_self~="" then
+						if v.obj:section_name()~=s_self then
+							b_best = true
+							cnt_b_best = cnt_b_best + 1
+							if cnt_b_best > 1 then
+							table.insert(sell_list, v.obj)
+							end
+						else
+							table.insert(sell_list, v.obj)
+						end
+					else
+						b_best = true
+					end
+				else
+					table.insert(sell_list, v.obj)
+				end
+			end
+			b_self = false
+			b_best = false
+			s_self = ""
+			for k, v in pairs(weapons2) do
+				local b_ammo = false
+				local vac = v.ammo
+				if vac and #vac>0 then
+					for kk, vv in pairs(vac) do
+						if ammo[vv] and ammo[vv] > 0 then -- Так, патроны есть.
+							b_ammo = true
+							break
+						end
+					end
+				end
+				if b_self==false and b_ammo==true then
+					b_self = true
+					s_self = v.obj:section_name() or v.obj:section()
+				elseif b_best==false then
+					if s_self~="" then
+						if v.obj:section_name()~=s_self then
+							b_best = true
+							cnt_b_best = cnt_b_best + 1
+							if cnt_b_best > 1 then
+							--ODS("[~T]. #DBG: Process_trade: second pass - "..npc:name().."_["..m_comm.."]_BEST weapon is_"..v.obj:section_name().."_["..v.obj:name().."]"..cnt_b_best)
+							table.insert(sell_list, v.obj)
+							end
+						else
+							table.insert(sell_list, v.obj)
+						end
+					else
+						b_best = true
+					end
+				else
+					table.insert(sell_list, v.obj)
+				end
+			end
+			item_list = nil
+			if sell_list and #sell_list>0 then
+				table.sort(sell_list, function(a,b) return get_item_cost(a) > get_item_cost(b) end)		
+				local zz = sell_list[1]
+				if zz and b_stalker==true and(get_item_cost(zz) >= sell_limit) then
+					--ODS("[~T]. #DBG: Offline: "..npc:name().." собирается продать через новости "..zz:name())
+					news_main.on_offline_trade(npc, zz)
+					table.remove(sell_list, 1)
+				end
+			end
+			local money = 0
+			for kk,vv in pairs(sell_list) do
+				--ODS("[~T]. #DBG: Process_trade: final pass - "..npc:name().." ["..m_comm.."] sells "..vv:section_name().." ["..vv:name().."]")
+				local cost = get_item_cost(vv)
+				if (cost > 0) then
+					money = money + cost
+					if (items[npc.id] and #items[npc.id]>0) then
+						for zzz, vvv in pairs(items[npc.id]) do
+							if (items[npc.id][zzz] and items[npc.id][zzz].id==vv.id) then
+								gps_habar.remove_item(npc.id, items[npc.id][zzz])
+								items[npc.id][zzz]=nil
+								break
+							end
+						end
+					end
+					misc.release_obj(vv.id, 'amk_offline_alife.Process_trade')
+				end				
+			end
+			if (money > 0) then
+				local pk = get_netpk(npc)
+				local data = pk:get()
+				data.money = data.money+money
+				pk:set(data)																			
+			end
+		end
+	end
+end
+
+function validate_rucksack(box)
+	local sec = box and box:section_name()
+	if sec then
+		return sec ~= 'rucksack' or (sec == 'rucksack' and box.level_name ~= db.actor.level_name)
+	else
+		return false
+	end
+end
+
+function sobj_is_far(obj, distance)
+	local result = true
+	if (db.actor and obj and distance and obj.position and db.actor.position) then
+		if obj.m_game_vertex_id and game_graph():valid_vertex_id(obj.m_game_vertex_id) then
+			local map = g_sim:level_name(game_graph():vertex(obj.m_game_vertex_id):level_id())
+			if (map and level.name()==map) then
+				if (obj.position:distance_to(db.actor:position()) < distance) then
+					result = false
+				end
+			end
+		end
+	end
+	return result
+end
+
+function box_is_protected(v)
+	if v then
+		local st_id = v.m_story_id
+		if st_id and protected_sids[st_id] then return true end
+
+		local spot = "crlc_big_treasure"
+		for i=0,5 do
+			if level.map_has_object_spot(v.id, spot..i)~=0 then
+				return true
+			end
+		end					  
+	end
+	return false
+end
+
+function get_flags(npc_id)
+	local flags = 0
+	local obj = g_sim:object(npc_id)
+	if obj then
+		if IsMonster(obj) or IsStalker(obj) then
+			local char_ini = xr_logic.get_customdata_or_ini_file(obj, "<customdata>")
+			if char_ini:section_exist("logic") then
+				local from = ""
+				local items = ""
+				if char_ini:line_exist("logic", "on_hit") then
+					flags = 1
+				end
+				if char_ini:line_exist("logic", "on_death") then
+					flags = flags + 2
+				end
+			end
+		end
+	end
+	return flags
+end
+
+function is_valuable(item)
+	local result = true
+	local sec = item:section_name()
+	if check_bad_item(sec) or sec == 'amk_metka' then
+		result = false
+	end
+	return result
+end
+
+function actor_check_body(npc)
+	if sak.black_bonus ~= 1 then
+		return
+	end
+	if npc then
+		local lname = level.name()
+		amk_mod.try_add_black_tip(lname,npc:id())
+	end
+end
+
+function item_change(obj)
+	local sobj=g_sim:object(obj:id())
+	if sobj then
+	   do_drop_item(sobj)
+	   if sobj.section_name and strpos(sobj:section_name(),"^af") then return end
+	   add_fresh_meat(sobj)
+	end
+end
+
+function set_metka_victim(metka_id, victim_id)
+	if not victim_id or victim_id==BAD_OBJ_ID then return end
+	if not status_metka[metka_id] then
+		status_metka[metka_id] = {}
+	end
+	table.insert(status_metka[metka_id], victim_id)
+end
+
+function check_metka_take(obj)
+	local sobj=g_sim:object(obj:id())
+	if sobj and sobj:section_name()=="amk_metka" then
+		if status_metka[sobj.id] then
+			for iter=1, #status_metka[sobj.id] do
+				amk.remove_spot_from_map(status_metka[sobj.id][iter], "red_location")
+			end
+			status_metka[sobj.id] = nil
+		end
+	end
+end
+
+function on_item_take(obj)
+	if not obj then return end
+	item_change(obj)
+	check_metka_take(obj)
+end
+
+function on_item_drop(obj)
+	if obj then
+		item_change(obj)
+	end
+end
+
+function remove_treas_marks(box)
+	local box_id = box:id()
+	for spot=0,5 do
+		if level.map_has_object_spot(box_id,"crlc_big_treasure"..spot)~=0 then
+			level.map_remove_object_spot(box_id, "crlc_big_treasure"..spot)
+		end
+	end
+end
+
+function take_item_from_box(box, item)
+	local box_id = box:id()
+	if item then
+		local itemid = item:id()
+		if items[box_id] and #items[box_id]>0 then
+			for z,v  in  pairs(items[box_id]) do
+				if items[box_id][z] and items[box_id][z].id==itemid then
+					items[box_id][z]=nil
+					break
+				end
+			end
+		end
+	end
+end
+
+function save(p)
+	local t = {}
+	t.status_metka = status_metka
+	set_value("amk_offline_alife.data", t)
+end
+
+local loaded = false
+function load(p)
+	local t = get_value("amk_offline_alife.data")
+	if not t then loaded = true return end
+	status_metka = t.status_metka
+	loaded = true
+end
+
+function checked_marked_npc()
+	if loaded then return end
+	local metkas = {}
+	local stalkers = {}
+	for iobj=1,MAX_OBJ_ID do
+		local obj = g_sim:object(iobj)
+		if obj then 
+			if IsStalker(obj) and level.map_has_object_spot(obj.id, "red_location")~= 0 then
+				table.insert(stalkers, obj)
+			elseif obj:section_name()=="amk_metka" and(not obj.parent_id or obj.parent_id==BAD_OBJ_ID) then
+				table.insert(metkas, obj)
+			end			
+		end
+	end
+	
+	for inpc=1, #stalkers do
+		local npc = stalkers[inpc]
+		--find closest gps metka
+		dist = 1000000.0
+		if game_graph():valid_vertex_id(npc.m_game_vertex_id) then
+			local nlid = game_graph():vertex(npc.m_game_vertex_id):level_id()
+			local nmetka = nil
+			for imtk=1, #metkas do
+				local metka = metkas[imtk]
+				if game_graph():valid_vertex_id(metka.m_game_vertex_id) then
+					local mlid = game_graph():vertex(metka.m_game_vertex_id):level_id()
+					if nlid==mlid and npc.position:distance_to(metka.position) < dist then
+						dist = npc.position:distance_to(metka.position)
+						nmetka = metka
+					end
+				end
+			end
+			if nmetka then
+				set_metka_victim(nmetka.id, npc.id)
+			end
+		end
+	end
+end
+
+function check_agr_und()
+	if not has_alife_info("agroprom_military_case_know") then
+		return
+	end
+	local boxes = off_npcs["l03u_agr_underground"].inv_boxes
+	if boxes and #boxes>0 then
+		for _,v in pairs(boxes) do
+			local inv_box = server_obj(v.id)
+			if inv_box then
+				local o_sect = inv_box:section_name()
+				if o_sect=="inventory_box" or o_sect=="rucksack" then
+					if inv_box.m_story_id and box_is_protected(inv_box) then
+						return
+					end
+					if items[inv_box.id] and #items[inv_box.id]>0 then
+						for _,vv in ipairs(items[inv_box.id]) do
+							local inv_item = server_obj(vv.id)
+							if inv_item and inv_item.parent_id and inv_item.parent_id==inv_box.id then
+								if is_valuable(inv_item) then
+									log2("amk_offline_alife.check_agr_und: releasing item [%s] from inventory_box [%s]",inv_item:name(),inv_box:name())
+									do_drop_object(inv_item)
+								else
+									log2("amk_offline_alife.check_agr_und: skipped valuable item [%s] from inventory_box [%s]",inv_item:name(),inv_box:name())
+								end
+							end
+						end
+					end
+				else
+					log2("amk_offline_alife.check_agr_und: unexpected inv_box section [%s]",o_sect)
+				end
+			end
+		end
+	end
+end

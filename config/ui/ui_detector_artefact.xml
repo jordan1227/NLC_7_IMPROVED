@@ -1,0 +1,1677 @@
+<w>
+  <elite x="0" y="0" width="0.0576" height="0.029">
+    <wrk_area width="0.0576" height="0.029">
+      <auto_static width="0.0576" height="0.029" stretch="1">
+        <texture shader="hud\p3d">ui_temp_ad3_radar</texture>
+      </auto_static>
+    </wrk_area>
+
+    <af_sign width="0.0045" height="0.005" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad3_artefact</texture>
+    </af_sign>
+
+    <palette id="af_sign" width="0.0045" height="0.005" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad3_artefact</texture>
+    </palette>
+  </elite>
+
+  <scientific x="0" y="0" width="0.0576" height="0.029">
+    <wrk_area width="0.0576" height="0.029">
+      <auto_static width="0.0576" height="0.029" stretch="1">
+        <texture shader="hud\p3d">ui_temp_ad3_radar_sky</texture>
+      </auto_static>
+    </wrk_area>
+
+    <palette id="zone_mine_acidic_weak" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_acid_big</texture>
+    </palette>
+    <palette id="zone_mine_acidic_average" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_acid_big</texture>
+    </palette>
+    <palette id="zone_mine_acidic_strong" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_acid_big</texture>
+    </palette>
+
+    <palette id="zone_mine_chemical_weak" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_acid_big</texture>
+    </palette>
+    <palette id="zone_mine_chemical_average" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_acid_big</texture>
+    </palette>
+    <palette id="zone_mine_chemical_strong" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_acid_big</texture>
+    </palette>
+
+    <palette id="zone_buzz_weak" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_acid_big</texture>
+    </palette>
+    <palette id="zone_buzz_average" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_acid_big</texture>
+    </palette>
+    <palette id="zone_buzz_strong" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_acid_big</texture>
+    </palette>
+<!--
+    <palette id="zone_mine_acidic_big" width="0.03" height="0.03" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_acid_big</texture>
+    </palette>
+-->
+    <palette id="zone_mine_electric_strong" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_electro_big</texture>
+    </palette>
+    <palette id="zone_mine_electric_average" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_electro_big</texture>
+    </palette>
+    <palette id="zone_mine_electric_weak" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_electro_big</texture>
+    </palette>
+
+    <palette id="zone_mine_static_strong" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_electro_big</texture>
+    </palette>
+    <palette id="zone_mine_static_average" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_electro_big</texture>
+    </palette>
+    <palette id="zone_mine_static_weak" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_electro_big</texture>
+    </palette>
+
+    <palette id="zone_witches_galantine_strong" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_electro_big</texture>
+    </palette>
+    <palette id="zone_witches_galantine_average" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_electro_big</texture>
+    </palette>
+    <palette id="zone_witches_galantine_weak" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_electro_big</texture>
+    </palette>
+
+    <palette id="zone_mine_gravitational_strong" width="0.008" height="0.008" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_gravity_big</texture>
+    </palette>
+    <palette id="zone_mine_gravitational_average" width="0.008" height="0.008" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_gravity_big</texture>
+    </palette>
+    <palette id="zone_mine_gravitational_weak" width="0.006" height="0.006" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_gravity_big</texture>
+    </palette>
+<!--
+    <palette id="zone_mine_gravitational_big" width="0.032" height="0.032" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_gravity_big</texture>
+    </palette>
+-->
+    <palette id="zone_gravi_zone" width="0.008" height="0.008" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_gravity_big</texture>
+    </palette>
+
+    <palette id="zone_mine_thermal_strong" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_fire_big</texture>
+    </palette>
+    <palette id="zone_mine_thermal_average" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_fire_big</texture>
+    </palette>
+    <palette id="zone_mine_thermal_weak" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_fire_big</texture>
+    </palette>
+
+    <palette id="zone_zharka_static_weak" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_fire_big</texture>
+    </palette>
+    <palette id="zone_zharka_static_average" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_fire_big</texture>
+    </palette>
+    <palette id="zone_zharka_static_strong" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_fire_big</texture>
+    </palette>
+
+    <palette id="zone_mine_steam_strong" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_fire_big</texture>
+    </palette>
+    <palette id="zone_mine_steam_average" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_fire_big</texture>
+    </palette>
+    <palette id="zone_mine_steam_weak" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_fire_big</texture>
+    </palette>
+
+	
+	<palette id="zone_mosquito_bald" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_fire_big</texture>
+    </palette>
+    <palette id="zone_mosquito_bald_weak" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_fire_big</texture>
+    </palette>
+    <palette id="zone_mosquito_bald_weak_noart" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_fire_big</texture>
+    </palette>
+    <palette id="zone_mosquito_bald_average" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_fire_big</texture>
+    </palette>
+    <palette id="zone_mosquito_bald_strong" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_fire_big</texture>
+    </palette>
+    <palette id="zone_mosquito_bald_strong_noart" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_inGame2_Detector_icon_fire_big</texture>
+    </palette>
+<!--
+    <palette id="zone_mine_acidic_weak" width="0.0065" height="0.0065" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_acidic</texture>
+    </palette>
+    <palette id="zone_mine_acidic_average" width="0.0065" height="0.0065" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_acidic</texture>
+    </palette>
+    <palette id="zone_mine_acidic_strong" width="0.0065" height="0.0065" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_acidic</texture>
+    </palette>
+
+    <palette id="zone_mine_chemical_weak" width="0.0065" height="0.0065" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_acidic</texture>
+    </palette>
+    <palette id="zone_mine_chemical_average" width="0.0065" height="0.0065" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_acidic</texture>
+    </palette>
+    <palette id="zone_mine_chemical_strong" width="0.0065" height="0.0065" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_acidic</texture>
+    </palette>
+
+    <palette id="zone_buzz_weak" width="0.0065" height="0.0065" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_acidic</texture>
+    </palette>
+    <palette id="zone_buzz_average" width="0.0065" height="0.0065" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_acidic</texture>
+    </palette>
+    <palette id="zone_buzz_strong" width="0.0065" height="0.0065" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_acidic</texture>
+    </palette>
+
+    <palette id="zone_mine_acidic_big" width="0.0065" height="0.0065" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_acidic</texture>
+    </palette>
+
+    <palette id="zone_mine_electric_strong" width="0.0065" height="0.0065" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_electric</texture>
+    </palette>
+    <palette id="zone_mine_electric_average" width="0.0065" height="0.0065" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_electric</texture>
+    </palette>
+    <palette id="zone_mine_electric_weak" width="0.0065" height="0.0065" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_electric</texture>
+    </palette>
+
+    <palette id="zone_mine_static_strong" width="0.0065" height="0.0065" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_electric</texture>
+    </palette>
+    <palette id="zone_mine_static_average" width="0.0065" height="0.0065" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_electric</texture>
+    </palette>
+    <palette id="zone_mine_static_weak" width="0.0065" height="0.0065" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_electric</texture>
+    </palette>
+
+    <palette id="zone_witches_galantine_strong" width="0.0065" height="0.0065" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_electric</texture>
+    </palette>
+    <palette id="zone_witches_galantine_average" width="0.0065" height="0.0065" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_electric</texture>
+    </palette>
+    <palette id="zone_witches_galantine_weak" width="0.0065" height="0.0065" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_electric</texture>
+    </palette>
+
+    <palette id="zone_mine_gravitational_strong" width="0.013" height="0.013" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_gravitational</texture>
+    </palette>
+    <palette id="zone_mine_gravitational_average" width="0.013" height="0.013" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_gravitational</texture>
+    </palette>
+    <palette id="zone_mine_gravitational_weak" width="0.01" height="0.01" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_gravitational</texture>
+    </palette>
+
+    <palette id="zone_mine_gravitational_big" width="0.013" height="0.013" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_gravitational</texture>
+    </palette>
+
+    <palette id="zone_gravi_zone" width="0.013" height="0.013" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_gravitational</texture>
+    </palette>
+
+    <palette id="zone_mine_thermal_strong" width="0.0065" height="0.0065" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_thermal</texture>
+    </palette>
+    <palette id="zone_mine_thermal_average" width="0.0065" height="0.0065" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_thermal</texture>
+    </palette>
+    <palette id="zone_mine_thermal_weak" width="0.0065" height="0.0065" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_thermal</texture>
+    </palette>
+
+    <palette id="zone_zharka_static_weak" width="0.0065" height="0.0065" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_thermal</texture>
+    </palette>
+    <palette id="zone_zharka_static_average" width="0.0065" height="0.0065" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_thermal</texture>
+    </palette>
+    <palette id="zone_zharka_static_strong" width="0.0065" height="0.0065" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_thermal</texture>
+    </palette>
+
+    <palette id="zone_mine_steam_strong" width="0.0065" height="0.0065" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_thermal</texture>
+    </palette>
+    <palette id="zone_mine_steam_average" width="0.0065" height="0.0065" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_thermal</texture>
+    </palette>
+    <palette id="zone_mine_steam_weak" width="0.0065" height="0.0065" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad4_mine_thermal</texture>
+    </palette>
+
+    <palette id="af_blood" width="0.003" height="0.003" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad3_artefact</texture>
+    </palette>
+    <palette id="af_mincer_meat" width="0.003" height="0.003" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad3_artefact</texture>
+    </palette>
+    <palette id="af_soul" width="0.003" height="0.003" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad3_artefact</texture>
+    </palette>
+    <palette id="af_fuzz_kolobok" width="0.003" height="0.003" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad3_artefact</texture>
+    </palette>
+    <palette id="af_baloon" width="0.003" height="0.003" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad3_artefact</texture>
+    </palette>
+    <palette id="af_glass" width="0.003" height="0.003" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad3_artefact</texture>
+    </palette>
+
+    <palette id="af_electra_sparkler" width="0.003" height="0.003" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad3_artefact</texture>
+    </palette>
+    <palette id="af_electra_flash" width="0.003" height="0.003" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad3_artefact</texture>
+    </palette>
+    <palette id="af_electra_moonlight" width="0.003" height="0.003" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad3_artefact</texture>
+    </palette>
+    <palette id="af_dummy_battery" width="0.003" height="0.003" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad3_artefact</texture>
+    </palette>
+    <palette id="af_dummy_dummy" width="0.003" height="0.003" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad3_artefact</texture>
+    </palette>
+    <palette id="af_ice" width="0.003" height="0.003" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad3_artefact</texture>
+    </palette>
+
+    <palette id="af_medusa" width="0.003" height="0.003" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad3_artefact</texture>
+    </palette>
+    <palette id="af_cristall_flower" width="0.003" height="0.003" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad3_artefact</texture>
+    </palette>
+    <palette id="af_night_star" width="0.003" height="0.003" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad3_artefact</texture>
+    </palette>
+    <palette id="af_vyvert" width="0.003" height="0.003" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad3_artefact</texture>
+    </palette>
+    <palette id="af_gravi" width="0.003" height="0.003" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad3_artefact</texture>
+    </palette>
+    <palette id="af_gold_fish" width="0.003" height="0.003" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad3_artefact</texture>
+    </palette>
+
+    <palette id="af_cristall" width="0.003" height="0.003" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad3_artefact</texture>
+    </palette>
+    <palette id="af_fireball" width="0.003" height="0.003" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad3_artefact</texture>
+    </palette>
+    <palette id="af_dummy_glassbeads" width="0.003" height="0.003" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad3_artefact</texture>
+    </palette>
+    <palette id="af_eye" width="0.003" height="0.003" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad3_artefact</texture>
+    </palette>
+    <palette id="af_fire" width="0.003" height="0.003" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad3_artefact</texture>
+    </palette>
+
+    <palette id="af_oasis_heart" width="0.004" height="0.004" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad3_artefact</texture>
+    </palette>
+    <palette id="af_quest_b14_twisted" width="0.003" height="0.003" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad3_artefact</texture>
+    </palette>
+    <palette id="jup_b1_half_artifact" width="0.003" height="0.003" stretch="1" alignment="c">
+      <texture shader="hud\p3d">ui_temp_ad3_artefact</texture>
+    </palette>
+-->
+<palette id="af_ameba_mica" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_ameba_mica_capsule" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_ameba_mica_capsule_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_ameba_mica_capsule_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_ameba_mica_capsule_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_ameba_mica_capsule_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_ameba_mica_capsule_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_ameba_mica_capsule_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_ameba_mica_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_ameba_mica_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_ameba_mica_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_ameba_mica_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_ameba_mica_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_ameba_mica_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_ameba_slime" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_ameba_slime_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_ameba_slime_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_ameba_slime_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_ameba_slime_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_ameba_slime_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_ameba_slime_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_ameba_slug" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_ameba_slug_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_ameba_slug_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_ameba_slug_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_ameba_slug_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_ameba_slug_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_ameba_slug_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_armor_1" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_armor_2" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_armor_3" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_armor_4" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_babka_1" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_babka_2" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_babka_3" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_babka_4" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_baloon" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_baloon_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_baloon_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_baloon_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_baloon_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_baloon_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_baloon_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_base" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_battery" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_blood" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_blood_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_blood_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_blood_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_blood_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_blood_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_blood_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_compass" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_compass_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_compass_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_compass_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_compass_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_compass_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_compass_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_crist_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_cristal_flower" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_cristal_flower_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_cristal_flower_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_cristal_flower_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_cristal_flower_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_cristal_flower_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_cristal_flower_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_cristall" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_cristall_capsule" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_cristall_capsule_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_cristall_capsule_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_cristall_capsule_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_cristall_capsule_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_cristall_capsule_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_cristall_capsule_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_cristall_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_cristall_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_cristall_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_cristall_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_cristall_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_cristall_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_cry_1" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_cry_2" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_cry_3" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_cry_4" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dik_1" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dik_2" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dik_3" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dik_4" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_drops" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_drops_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_drops_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_drops_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_drops_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_drops_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_drops_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_dummy_battery" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dummy_battery_capsule" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_battery_capsule_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_battery_capsule_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_battery_capsule_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_battery_capsule_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_battery_capsule_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_battery_capsule_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_battery_fake" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dummy_black_tip" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dummy_black_tip_fake" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dummy_buliz" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dummy_buliz_fake" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dummy_dummy" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dummy_dummy_capsule" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_dummy_capsule_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_dummy_capsule_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_dummy_capsule_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_dummy_capsule_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_dummy_capsule_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_dummy_capsule_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_dummy_fake" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dummy_dummy_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dummy_dummy_new_fake" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dummy_fire" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dummy_fire_fake" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dummy_glassbeads" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dummy_glassbeads_capsule" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_glassbeads_capsule_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_glassbeads_capsule_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_glassbeads_capsule_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_glassbeads_capsule_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_glassbeads_capsule_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_glassbeads_capsule_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_glassbeads_fake" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dummy_green_blood" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dummy_green_blood_fake" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dummy_green_medusa" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dummy_green_medusa_fake" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dummy_green_vyvert" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dummy_green_vyvert_fake" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dummy_kolobok" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dummy_kolobok_capsule" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_kolobok_capsule_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_kolobok_capsule_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_kolobok_capsule_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_kolobok_capsule_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_kolobok_capsule_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_kolobok_capsule_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_kolobok_fake" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dummy_pellicle" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dummy_pellicle_capsule" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_pellicle_capsule_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_pellicle_capsule_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_pellicle_capsule_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_pellicle_capsule_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_pellicle_capsule_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_pellicle_capsule_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_pellicle_fake" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dummy_simbion" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dummy_simbion_fake" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dummy_sparkler" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dummy_sparkler_fake" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dummy_spring" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_dummy_spring_capsule" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_spring_capsule_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_spring_capsule_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_spring_capsule_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_spring_capsule_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_spring_capsule_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_spring_capsule_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_dummy_spring_fake" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_electra_blue_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_electra_flash" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_electra_flash_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_electra_flash_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_electra_flash_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_electra_flash_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_electra_flash_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_electra_flash_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_electra_flash_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_electra_moonlight" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_electra_moonlight_capsule" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_electra_moonlight_capsule_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_electra_moonlight_capsule_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_electra_moonlight_capsule_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_electra_moonlight_capsule_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_electra_moonlight_capsule_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_electra_moonlight_capsule_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_electra_moonlight_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_electra_moonlight_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_electra_moonlight_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_electra_moonlight_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_electra_moonlight_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_electra_moonlight_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_electra_moonlight_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_electra_sparkler" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_electra_sparkler_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_electra_sparkler_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_electra_sparkler_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_electra_sparkler_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_electra_sparkler_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_electra_sparkler_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_electra_sparkler_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_eye" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_eye_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_eye_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_eye_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_eye_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_eye_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_eye_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_fireball" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_fireball_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_fireball_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_fireball_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_fireball_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_fireball_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_fireball_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_flower_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_full_akkum" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_fuzz_kolobok_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_fuzz_kolobok_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_fuzz_kolobok_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_fuzz_kolobok_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_fuzz_kolobok_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_fuzz_kolobok_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_glass_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_glassbeads" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_glassbeads_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_glassbeads_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_glassbeads_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_glassbeads_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_glassbeads_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_glassbeads_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_gold_fish" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_gold_fish_capsule" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_gold_fish_capsule_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_gold_fish_capsule_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_gold_fish_capsule_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_gold_fish_capsule_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_gold_fish_capsule_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_gold_fish_capsule_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_gold_fish_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_gold_fish_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_gold_fish_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_gold_fish_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_gold_fish_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_gold_fish_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_gravi" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_gravi_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_gravi_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_gravi_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_gravi_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_gravi_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_gravi_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_ice" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_ice_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_ice_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_ice_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_ice_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_ice_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_ice_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_kol_1" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_kol_2" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_kol_3" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_kol_4" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_mayatnik" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_mayatnik_bad" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_mayatnik_capsule" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_mayatnik_none" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_medus_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_medusa" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_medusa_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_medusa_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_medusa_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_medusa_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_medusa_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_medusa_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_mincer_meat" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_mincer_meat_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_mincer_meat_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_mincer_meat_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_mincer_meat_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_mincer_meat_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_mincer_meat_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_night_star" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_night_star_capsule" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_night_star_capsule_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_night_star_capsule_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_night_star_capsule_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_night_star_capsule_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_night_star_capsule_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_night_star_capsule_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_night_star_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_night_star_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_night_star_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_night_star_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_night_star_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_night_star_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_pudd_1" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_pudd_2" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_pudd_3" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_pudd_4" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_red_dummy_battery" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_red_dummy_battery_fake" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_red_dummy_pellicle" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_red_dummy_pellicle_fake" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_red_dummy_spring" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_red_dummy_spring_fake" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_rusty_kristall" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_rusty_kristall_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_rusty_kristall_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_rusty_kristall_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_rusty_kristall_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_rusty_kristall_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_rusty_kristall_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_yellow</texture>
+</palette>
+<palette id="af_rusty_sea-urchin" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_rusty_sea-urchin_capsule" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_rusty_sea-urchin_capsule_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_rusty_sea-urchin_capsule_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_rusty_sea-urchin_capsule_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_rusty_sea-urchin_capsule_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_rusty_sea-urchin_capsule_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_rusty_sea-urchin_capsule_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_rusty_sea-urchin_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_rusty_sea-urchin_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_rusty_sea-urchin_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_rusty_sea-urchin_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_rusty_sea-urchin_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_rusty_sea-urchin_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_rusty_thorn" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_rusty_thorn_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_rusty_thorn_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_rusty_thorn_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_rusty_thorn_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_rusty_thorn_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_rusty_thorn_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_soul" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_soul_capsule" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_soul_capsule_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_soul_capsule_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_soul_capsule_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_soul_capsule_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_soul_capsule_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_soul_capsule_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_soul_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_soul_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_soul_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_soul_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_soul_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_soul_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="af_spirit_1" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_spirit_2" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_spirit_3" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_spirit_4" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_star_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_sul_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_sul_new_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_sul_new_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_sul_new_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_sul_new_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_sul_new_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_sul_new_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_1" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_10" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_10_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_11" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_11_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_12" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_12_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_13" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_13_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_14" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_14_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_15" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_15_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_16" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_16_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_17" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_17_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_18" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_18_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_19" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_19_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_1_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_2" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_20" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_20_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_21" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_21_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_22" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_22_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_23" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_23_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_24" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_24_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_25" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_25_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_26" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_26_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_27" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_27_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_28" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_28_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_29" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_29_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_2_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_3" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_30" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_30_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_31" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_31_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_3_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_4" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_4_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_5" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_5_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_6" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_6_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_7" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_7_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_8" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_8_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_9" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_unknown_9_new" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="af_vyvert" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_vyvert_dyn1d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_vyvert_dyn2d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_vyvert_dyn3d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_vyvert_dyn4d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_vyvert_dyn5d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="af_vyvert_dyn6d" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_white</texture>
+</palette>
+<palette id="amk_af_night_star" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_red</texture>
+</palette>
+<palette id="art_collection_fake" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="art_collection_fake01f" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="art_collection_fake02f" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="art_collection_fake03f" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="art_collection_fake04f" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="art_collection_fake05f" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="art_collection_fake06f" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="art_collection_fake07f" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="art_collection_fake08f" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="art_collection_fake09f" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="capsule" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+<palette id="fake_compass" width="0.003" height="0.003" stretch="1" alignment="c">
+<texture shader="hud\p3d">ui_inGame2_Detector_icon_artefact_blue</texture>
+</palette>
+
+  </scientific>
+</w>

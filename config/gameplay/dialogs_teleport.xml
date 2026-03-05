@@ -1,0 +1,1073 @@
+<?xml version="1.0" encoding="windows-1251"  ?>
+<game_dialogs>
+<dialog id="teleport_yantar_dialog"> 
+	<has_info>yan_scientist_teleport_02_start</has_info>
+	<dont_has_info>saharov_teleport_not_ready</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>teleport_yantar_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>teleport_yantar_dialog_1</text>
+			<next>2</next>
+			<next>3</next>
+		</phrase>
+		<phrase id="2">
+			<text>teleport_yantar_dialog_2</text>
+			<next>21</next>
+		</phrase>
+		<phrase id="3">
+		<has_info>yan_scientist_teleport_03_refuse</has_info>
+			<text>teleport_yantar_dialog_3</text>
+			<next>31</next>
+		</phrase>
+		<phrase id="21">
+			<text>teleport_yantar_dialog_21</text>
+			<next>22</next>
+			<next>23</next>
+		</phrase>
+		<phrase id="22">
+		<precondition>sak_dialog.kompass_have</precondition>
+			<text>teleport_yantar_dialog_22</text>
+			<next>221</next>
+		</phrase>
+		<phrase id="23">
+			<text>teleport_yantar_dialog_23</text>
+		</phrase>
+		<phrase id="221">
+			<text>teleport_yantar_dialog_221</text>
+			<next>222</next>
+		</phrase>
+		<phrase id="222">
+			<text>teleport_yantar_dialog_222</text>
+			<next>223</next>
+		</phrase>
+		<phrase id="223">
+			<text>teleport_yantar_dialog_223</text>
+			<next>224</next>
+			<next>226</next>
+		</phrase>
+		<phrase id="224">
+		<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<precondition>sak_dialog.kompass_have</precondition>
+			<text>teleport_yantar_dialog_224</text>
+			<action>sak_dialog.transfer_any_x_art("a")</action>
+			<action>sak_dialog.relocate_kompass_yan("yan_tele_mil")</action>
+			<next>25</next>
+		</phrase>
+		<phrase id="226">
+			<text>teleport_yantar_dialog_226</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="25">
+			<text>teleport_yantar_dialog_25</text>
+			<action>sak_dialog.saharov_teleport_start_time</action>
+			<give_info>saharov_teleport_not_ready</give_info>
+			<next>27</next>
+		</phrase>
+		<phrase id="27">
+			<text>teleport_yantar_dialog_27</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="31">
+			<text>teleport_yantar_dialog_31</text>
+			<next>32</next>
+			<next>33</next>
+		</phrase>
+		<phrase id="32">
+		<precondition>sak_dialog.kompass_have</precondition>
+			<text>teleport_yantar_dialog_32</text>
+			<next>321</next>
+		</phrase>
+		<phrase id="33">
+			<text>teleport_yantar_dialog_33</text>
+		</phrase>
+		<phrase id="321">
+			<text>teleport_yantar_dialog_321</text>
+			<next>322</next>
+		</phrase>
+		<phrase id="322">
+			<text>teleport_yantar_dialog_322</text>
+			<next>323</next>
+		</phrase>
+		<phrase id="323">
+			<text>teleport_yantar_dialog_323</text>
+			<next>324</next>
+			<next>326</next>
+		</phrase>
+		<phrase id="324">
+		<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+		<precondition>sak_dialog.kompass_have</precondition>
+			<text>teleport_yantar_dialog_324</text>
+			<action>sak_dialog.transfer_any_x_art("a")</action>
+			<action>sak_dialog.relocate_kompass_yan("yan_tele_esc")</action>
+			<next>35</next>
+		</phrase>
+		<phrase id="326">
+			<text>teleport_yantar_dialog_326</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="35">
+			<text>teleport_yantar_dialog_35</text>
+			<action>sak_dialog.saharov_teleport_start_time</action>
+			<give_info>saharov_teleport_not_ready</give_info>
+			<next>37</next>
+		</phrase>
+		<phrase id="37">
+			<text>teleport_yantar_dialog_37</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="saharov_teleport_end">
+	<precondition>dialogs.is_not_wounded</precondition>
+	<has_info>saharov_teleport_not_ready</has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>saharov_teleport_end_0</text>
+			<next>11</next>
+			<next>12</next>
+		</phrase>
+		<phrase id="11">
+			<precondition>sak_dialog.not_ready_time_saharov_teleport</precondition>
+			<text>saharov_teleport_end_11</text>
+			<next>21</next>
+		</phrase>
+		<phrase id="12">
+			<precondition>sak_dialog.is_ready_time_saharov_teleport</precondition>
+			<text>saharov_teleport_end_12</text>
+			<next>22</next>
+		</phrase>
+		<phrase id="22">
+			<text>saharov_teleport_end_22</text>
+			<action>sak_dialog.clear_ready_time_saharov_teleport</action>
+			<disable_info>saharov_teleport_not_ready</disable_info>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>saharov_teleport_end_3</text>
+			<action>sak_dialog.return_yan_komp</action>
+		</phrase>
+		<phrase id="21">
+			<text>saharov_teleport_end_21</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+	
+<dialog id="teleport_escape_dialog"> 
+	<has_info>fanat_teleport_04_start</has_info>
+	<dont_has_info>fanat_teleport_not_ready</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>teleport_escape_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>teleport_escape_dialog_1</text>
+			<next>2</next>
+			<next>5</next>
+			<next>6</next>
+		</phrase>
+		<phrase id="2">
+		<has_info>fanat_teleport_04_done</has_info>
+			<text>teleport_escape_dialog_2</text>
+			<next>21</next>
+		</phrase>
+		<phrase id="5">
+			<text>teleport_escape_dialog_5</text>
+			<next>51</next>
+		</phrase>
+		<phrase id="6">
+			<text>teleport_escape_dialog_6</text>
+			<next>61</next>
+		</phrase>
+		<phrase id="21">
+			<text>teleport_escape_dialog_21</text>
+			<next>22</next>
+			<next>23</next>
+		</phrase>
+		<phrase id="22">
+		<precondition>sak_dialog.kompass_have</precondition>
+			<text>teleport_escape_dialog_22</text>
+			<next>221</next>
+		</phrase>
+		<phrase id="23">
+			<text>teleport_escape_dialog_23</text>
+		</phrase>
+		<phrase id="221">
+			<text>teleport_escape_dialog_221</text>
+			<next>222</next>
+		</phrase>
+		<phrase id="222">
+			<text>teleport_escape_dialog_222</text>
+			<next>223</next>
+		</phrase>
+		<phrase id="223">
+			<text>teleport_escape_dialog_223</text>
+			<next>224</next>
+			<next>226</next>
+		</phrase>
+		<phrase id="224">
+		<precondition>sak_dialog.kompass_have</precondition>
+		<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+			<text>teleport_escape_dialog_224</text>
+			<action>sak_dialog.transfer_any_x_art("a")</action>
+			<action>sak_dialog.relocate_kompass_esc_mil</action>
+			<next>25</next>
+		</phrase>
+		<phrase id="25">
+			<text>teleport_escape_dialog_25</text>
+			<action>sak_dialog.fanat_teleport_start_time</action>
+			<give_info>fanat_teleport_not_ready</give_info>
+			<next>27</next>
+		</phrase>
+		<phrase id="27">
+			<text>teleport_escape_dialog_27</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="226">
+			<text>teleport_escape_dialog_226</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="51">
+			<text>teleport_escape_dialog_51</text>
+			<next>52</next>
+			<next>53</next>
+		</phrase>
+		<phrase id="52">
+		<precondition>sak_dialog.kompass_have</precondition>
+			<text>teleport_escape_dialog_52</text>
+			<next>521</next>
+		</phrase>
+		<phrase id="53">
+			<text>teleport_escape_dialog_53</text>
+		</phrase>
+		<phrase id="521">
+			<text>teleport_escape_dialog_521</text>
+			<next>522</next>
+		</phrase>
+		<phrase id="522">
+			<text>teleport_escape_dialog_522</text>
+			<next>523</next>
+		</phrase>
+		<phrase id="523">
+			<text>teleport_escape_dialog_523</text>
+			<next>524</next>
+			<next>526</next>
+		</phrase>
+		<phrase id="524">
+		<precondition>sak_dialog.kompass_have</precondition>
+		<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+			<text>teleport_escape_dialog_524</text>
+			<action>sak_dialog.transfer_any_x_art("a")</action>
+			<action>sak_dialog.relocate_kompass_esc_mar</action>
+			<next>55</next>
+		</phrase>
+		<phrase id="55">
+			<text>teleport_escape_dialog_55</text>
+			<action>sak_dialog.fanat_teleport_start_time</action>
+			<give_info>fanat_teleport_not_ready</give_info>
+			<next>57</next>
+		</phrase>
+		<phrase id="57">
+			<text>teleport_escape_dialog_57</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="526">
+			<text>teleport_escape_dialog_526</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="61">
+			<text>teleport_escape_dialog_61</text>
+			<next>62</next>
+			<next>63</next>
+		</phrase>
+		<phrase id="62">
+		<precondition>sak_dialog.kompass_have</precondition>
+			<text>teleport_escape_dialog_62</text>
+			<next>621</next>
+		</phrase>
+		<phrase id="63">
+			<text>teleport_escape_dialog_63</text>
+		</phrase>
+		<phrase id="621">
+			<text>teleport_escape_dialog_621</text>
+			<next>622</next>
+		</phrase>
+		<phrase id="622">
+			<text>teleport_escape_dialog_622</text>
+			<next>623</next>
+		</phrase>
+		<phrase id="623">
+			<text>teleport_escape_dialog_623</text>
+			<next>624</next>
+			<next>626</next>
+		</phrase>
+		<phrase id="624">
+		<precondition>sak_dialog.kompass_have</precondition>
+		<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+			<text>teleport_escape_dialog_624</text>
+			<action>sak_dialog.transfer_any_x_art("a")</action>
+			<action>sak_dialog.relocate_kompass_esc_dsc</action>
+			<next>65</next>
+		</phrase>
+		<phrase id="65">
+			<text>teleport_escape_dialog_65</text>
+			<action>sak_dialog.fanat_teleport_start_time</action>
+			<give_info>fanat_teleport_not_ready</give_info>
+			<next>67</next>
+		</phrase>
+		<phrase id="67">
+			<text>teleport_escape_dialog_67</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="626">
+			<text>teleport_escape_dialog_626</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="fanat_teleport_end">
+	<precondition>dialogs.is_not_wounded</precondition>
+	<has_info>fanat_teleport_not_ready</has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>fanat_teleport_end_0</text>
+			<next>11</next>
+			<next>12</next>
+		</phrase>
+		<phrase id="11">
+			<precondition>sak_dialog.not_ready_time_fanat_teleport</precondition>
+			<text>fanat_teleport_end_11</text>
+			<next>21</next>
+		</phrase>
+		<phrase id="12">
+			<precondition>sak_dialog.is_ready_time_fanat_teleport</precondition>
+			<text>fanat_teleport_end_12</text>
+			<next>22</next>
+		</phrase>
+		<phrase id="22">
+			<text>fanat_teleport_end_22</text>
+			<action>sak_dialog.clear_ready_time_fanat_teleport</action>
+			<disable_info>fanat_teleport_not_ready</disable_info>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>fanat_teleport_end_3</text>
+			<action>sak_dialog.return_kompass</action>
+		</phrase>
+		<phrase id="21">
+			<text>fanat_teleport_end_21</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+	
+<dialog id="teleport_skraga_dialog"> 
+	<has_info>mil_trader_teleport_07_done</has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>teleport_skraga_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>teleport_skraga_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>teleport_skraga_dialog_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>teleport_skraga_dialog_3</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+		<precondition>sak_dialog.kompass_have</precondition>
+		<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+			<text>teleport_skraga_dialog_41</text>
+			<action>sak_dialog.transfer_any_x_art("a")</action>
+			<action>sak_dialog.relocate_kompass_mil_esc</action>
+			<next>5</next>
+		</phrase>
+		<phrase id="42">
+			<text>teleport_skraga_dialog_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="5">
+			<text>teleport_skraga_dialog_5</text>
+			<next>6</next>
+		   </phrase>
+		<phrase id="6">
+			<text>teleport_skraga_dialog_6</text>
+			<next>7</next>
+		</phrase>		
+		<phrase id="7">
+			<text>teleport_skraga_dialog_7</text>
+			<action>sak_dialog.skraga_teleport_start_time</action>
+			<give_info>skraga_teleport_not_ready</give_info>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="skraga_teleport_end">
+	<precondition>dialogs.is_not_wounded</precondition>
+	<has_info>skraga_teleport_not_ready</has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>skraga_teleport_end_0</text>
+			<next>11</next>
+			<next>12</next>
+		</phrase>
+		<phrase id="11">
+			<precondition>sak_dialog.not_ready_time_skraga_teleport</precondition>
+			<text>skraga_teleport_end_11</text>
+			<next>21</next>
+		</phrase>
+		<phrase id="12">
+			<precondition>sak_dialog.is_ready_time_skraga_teleport</precondition>
+			<text>skraga_teleport_end_12</text>
+			<next>22</next>
+		</phrase>
+		<phrase id="22">
+			<text>skraga_teleport_end_22</text>
+			<action>sak_dialog.clear_ready_time_skraga_teleport</action>
+			<disable_info>skraga_teleport_not_ready</disable_info>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>skraga_teleport_end_3</text>
+			<action>sak_dialog.return_kompass</action>
+		</phrase>
+		<phrase id="21">
+			<text>skraga_teleport_end_21</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+	
+<dialog id="teleport_max_dialog"> 
+	<has_info>mil_max_teleport_08_done</has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>teleport_max_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>teleport_max_dialog_1</text>
+			<next>2</next>
+		   </phrase>
+		<phrase id="2">
+			<text>teleport_max_dialog_2</text>
+			<next>21</next>
+		</phrase>
+		<phrase id="21">
+			<text>teleport_max_dialog_21</text>
+			<next>22</next>
+			<next>23</next>
+		</phrase>
+		<phrase id="22">
+		<precondition>sak_dialog.kompass_have</precondition>
+			<text>teleport_max_dialog_22</text>
+			<next>221</next>
+		</phrase>
+		<phrase id="23">
+			<text>teleport_max_dialog_23</text>
+		</phrase>
+		<phrase id="221">
+			<text>teleport_max_dialog_221</text>
+			<next>222</next>
+		</phrase>
+		<phrase id="222">
+			<text>teleport_max_dialog_222</text>
+			<next>223</next>
+		</phrase>
+		<phrase id="223">
+			<text>teleport_max_dialog_223</text>
+			<next>224</next>
+			<next>226</next>
+		</phrase>
+		<phrase id="224">
+		<precondition>sak_dialog.kompass_have</precondition>
+		<precondition>sak_dialog.have_any_x_art("a",true)</precondition>
+			<text>teleport_max_dialog_224</text>
+			<action>sak_dialog.transfer_any_x_art("a")</action>
+			<action>sak_dialog.relocate_kompass_mil_yan</action>
+			<next>25</next>
+		</phrase>
+		<phrase id="25">
+			<text>teleport_max_dialog_25</text>
+			<action>sak_dialog.max_teleport_start_time</action>
+			<give_info>max_teleport_not_ready</give_info>
+			<next>27</next>
+		</phrase>
+		<phrase id="226">
+			<text>teleport_max_dialog_226</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="27">
+			<text>teleport_max_dialog_27</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="max_teleport_end">
+	<precondition>dialogs.is_not_wounded</precondition>
+	<has_info>max_teleport_not_ready</has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>max_teleport_end_0</text>
+			<next>11</next>
+			<next>12</next>
+		</phrase>
+		<phrase id="11">
+			<precondition>sak_dialog.not_ready_time_max_teleport</precondition>
+			<text>max_teleport_end_11</text>
+			<next>21</next>
+		</phrase>
+		<phrase id="12">
+			<precondition>sak_dialog.is_ready_time_max_teleport</precondition>
+			<text>max_teleport_end_12</text>
+			<next>22</next>
+		</phrase>
+		<phrase id="22">
+			<text>max_teleport_end_22</text>
+			<action>sak_dialog.clear_ready_time_max_teleport</action>
+			<disable_info>max_teleport_not_ready</disable_info>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>max_teleport_end_3</text>
+			<action>sak_dialog.return_kompass</action>
+		</phrase>
+		<phrase id="21">
+			<text>max_teleport_end_21</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+	
+<dialog id="teleport_01_dialog">
+	<has_info>saharov_teleports_info</has_info>
+	<has_info>fanat_teleport_04_done</has_info>
+	<dont_has_info>yan_scientist_teleport_01_start</dont_has_info>
+	<dont_has_info>yan_scientist_teleport_01_done</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>teleport_01_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>teleport_01_dialog_1</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>teleport_01_dialog_4</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>teleport_01_dialog_5</text>
+			<next>2</next>
+			<next>3</next>
+		</phrase>
+		<phrase id="2">
+			<text>teleport_01_dialog_2</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>teleport_01_dialog_6</text>
+			<action>sak_dialog.give_yan_scientist_teleport_01</action>
+			<give_info>yan_scientist_teleport_01_start</give_info>			
+		</phrase>
+		<phrase id="3">
+			<text>teleport_01_dialog_3</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="teleport_01_2dialog">
+	<has_info>yan_scientist_teleport_01_done</has_info>
+	<dont_has_info>yan_scientist_teleport_01_time_start</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>teleport_01_2dialog_0</text>
+			<next>1</next>
+			<next>11</next>
+		</phrase>
+		<phrase id="1">
+		<precondition>sak_dialog.skaner_1_in_place</precondition>
+			<text>teleport_01_2dialog_1</text>
+			<give_info>yan_scientist_teleport_01_time_start</give_info>
+			<action>mike.saharov_teleport_start</action>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>teleport_01_2dialog_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>teleport_01_2dialog_3</text>
+			<next>4</next>			
+		</phrase>
+		<phrase id="4">
+			<text>teleport_01_2dialog_4</text>
+			<next>5</next>			
+		</phrase>
+		<phrase id="5">
+			<text>teleport_01_2dialog_5</text>
+			<next>6</next>			
+		</phrase>
+		<phrase id="6">
+			<text>teleport_01_2dialog_6</text>
+			<next>7</next>			
+		</phrase>
+		<phrase id="7">
+			<text>teleport_01_2dialog_7</text>
+			<give_info>info_artmod_cristall_buzz</give_info>
+			<action>sak.info_artmod</action>		
+			<next>8</next>			
+		</phrase>
+		<phrase id="8">
+			<text>teleport_01_2dialog_8</text>
+			<next>9</next>			
+		</phrase>		
+		<phrase id="9">
+			<text>teleport_01_2dialog_9</text>
+		</phrase>
+		<phrase id="11">
+		<precondition>sak_dialog.skaner_1_out_place</precondition>
+			<text>teleport_01_2dialog_11</text>
+			<next>21</next>
+		</phrase>
+		<phrase id="21">
+			<text>teleport_01_2dialog_21</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+	
+<dialog id="teleport_02_dialog">
+	<has_info>yan_scientist_teleport_01_time_start</has_info>
+	<dont_has_info>yan_scientist_teleport_02_start</dont_has_info>
+	<dont_has_info>yan_scientist_teleport_02_done</dont_has_info>
+	<has_info>saharov_teleport_info</has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>teleport_02_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>teleport_02_dialog_1</text>
+			<next>2</next>
+			<next>3</next>
+		</phrase>
+		<phrase id="2">
+			<text>teleport_02_dialog_2</text>
+			<action>mike.clear_time_saharov_teleport</action>
+			<give_info>yan_scientist_teleport_02_start</give_info>
+			<next>6</next>
+		</phrase>
+		<phrase id="3">
+			<text>teleport_02_dialog_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>teleport_02_dialog_4</text>
+		</phrase>
+		<phrase id="6">
+			<text>teleport_02_dialog_6</text>
+			<action>sak_dialog.give_yan_scientist_teleport_02</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+
+<dialog id="teleport_02_2dialog">
+	<has_info>yan_scientist_teleport_02_done</has_info>
+	<dont_has_info>yan_scientist_teleport_02_time_start</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>teleport_02_2dialog_0</text>
+			<next>1</next>
+			<next>11</next>
+		</phrase>
+		<phrase id="1">
+		<precondition>sak_dialog.skaner_2_in_place</precondition>
+			<text>teleport_02_2dialog_1</text>
+			<give_info>yan_scientist_teleport_02_time_start</give_info>
+			<action>mike.saharov_teleport_start</action>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>teleport_02_2dialog_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>teleport_02_2dialog_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>teleport_02_2dialog_4</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>teleport_02_2dialog_5</text>
+			<action>mike.add_nagrad_saharov</action>
+			<give_info>info_artmod_dummy_dummy_mosquito_bald</give_info>
+			<action>sak.info_artmod</action>			
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>teleport_02_2dialog_6</text>
+		</phrase>
+		<phrase id="11">
+		<precondition>sak_dialog.skaner_2_out_place</precondition>
+			<text>teleport_02_2dialog_11</text>
+			<next>21</next>
+		</phrase>
+		<phrase id="21">
+			<text>teleport_02_2dialog_21</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+	
+<dialog id="teleport_03_dialog">
+	<has_info>yan_scientist_teleport_02_time_start</has_info>
+	<dont_has_info>yan_scientist_teleport_03_refuse</dont_has_info>
+	<has_info>saharov_teleport_info</has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>teleport_03_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>teleport_03_dialog_1</text>
+			<give_info>yan_scientist_teleport_03_refuse</give_info>
+			<action>mike.clear_time_saharov_teleport</action>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>teleport_03_dialog_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>teleport_03_dialog_3</text>
+		</phrase>
+	</phrase_list>
+</dialog>
+	
+<dialog id="teleport_04_dialog">
+	<has_info>bar_barman_tele_info</has_info>
+	<dont_has_info>fanat_teleport_04_start</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>teleport_04_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>teleport_04_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>teleport_04_dialog_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>teleport_04_dialog_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>teleport_04_dialog_4</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>teleport_04_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>teleport_04_dialog_6</text>
+			<next>7</next>
+		</phrase>
+		<phrase id="7">
+			<text>teleport_04_dialog_7</text>
+			<next>8</next>
+		</phrase>
+		<phrase id="8">
+			<text>teleport_04_dialog_8</text>
+			<next>9</next>
+		</phrase>
+		<phrase id="9">
+			<text>teleport_04_dialog_9</text>
+			<next>91</next>
+			<next>92</next>
+		</phrase>
+		<phrase id="91">
+			<text>teleport_04_dialog_91</text>
+			<next>10</next>			
+		</phrase>
+		<phrase id="10">
+			<text>teleport_04_dialog_10</text>
+			<action>sak.add_notebook</action>
+			<give_info>fanat_teleport_04_start</give_info>			
+		</phrase>		
+		<phrase id="92">
+			<text>teleport_04_dialog_92</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+	
+<dialog id="teleport_042_dialog">
+	<precondition>sak_dialog.notebook_have</precondition>
+	<dont_has_info>fanat_teleport_04_done_ok</dont_has_info>
+	<has_info>fanat_teleport_04_start</has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>teleport_042_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>teleport_042_dialog_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+		<precondition>sak_dialog.notebook_have</precondition>
+			<text>teleport_042_dialog_21</text>
+			<action>sak_dialog.give_notebook</action>
+			<next>3</next>
+		</phrase>
+		<phrase id="22">
+			<text>teleport_042_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+			<text>teleport_042_dialog_3</text>
+			<give_info>fanat_teleport_04_done_ok</give_info>
+			<action>sak_dialog.start_time_fanat_teleport_04</action>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>teleport_042_dialog_4</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+	
+<dialog id="teleport_043_dialog">
+	<precondition>dialogs.is_not_wounded</precondition>
+	<has_info>fanat_teleport_04_done_ok</has_info>
+	<dont_has_info>fanat_teleport_04_done</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>teleport_043_dialog_0</text>
+			<next>11</next>
+			<next>12</next>
+		</phrase>
+		<phrase id="11">
+		<precondition>sak_dialog.is_ready_time_fanat_teleport_04</precondition>
+			<text>teleport_043_dialog_11</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="12">
+		<precondition>sak_dialog.not_ready_time_fanat_teleport_04</precondition>
+			<text>teleport_043_dialog_12</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="2">
+			<text>teleport_043_dialog_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>teleport_043_dialog_3</text>
+			<action>sak_dialog.clear_ready_time_fanat_teleport_04</action>
+			<give_info>fanat_teleport_04_done</give_info>
+			<give_info>info_artmod_gold_fish_galant</give_info>
+			<action>sak.info_artmod</action>			
+		</phrase>
+		<phrase id="6">
+			<text>teleport_043_dialog_6</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+	
+<dialog id="teleport_07_dialog">
+	<has_info>mil_trader_aver_done_info</has_info>
+	<has_info>saharov_teleports_info</has_info>
+	<dont_has_info>mil_trader_teleport_07_start</dont_has_info>
+	<dont_has_info>mil_trader_teleport_07_done</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>teleport_07_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>teleport_07_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>teleport_07_dialog_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>teleport_07_dialog_3</text>
+			<next>4</next>
+		</phrase>
+		<phrase id="4">
+			<text>teleport_07_dialog_4</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>teleport_07_dialog_5</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="6">
+			<text>teleport_07_dialog_6</text>
+			<next>7</next>
+		</phrase>
+		<phrase id="7">
+			<text>teleport_07_dialog_7</text>
+			<give_info>mil_trader_teleport_07_start</give_info>			
+			<next>8</next>
+		</phrase>
+		<phrase id="8">
+			<text>teleport_07_dialog_8</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+	
+<dialog id="teleport_072_dialog">
+	<precondition>sak_dialog.chimera_kogot_have</precondition>
+	<dont_has_info>mil_trader_teleport_07_done</dont_has_info>
+	<has_info>mil_trader_teleport_07_start</has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>teleport_072_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>teleport_072_dialog_1</text>
+			<next>21</next>
+			<next>22</next>
+		</phrase>
+		<phrase id="21">
+		<precondition>sak_dialog.chimera_kogot_have</precondition>
+			<text>teleport_072_dialog_21</text>
+			<action>sak_dialog.give_chimera_kogot</action>
+			<next>3</next>
+		</phrase>
+		<phrase id="22">
+			<text>teleport_072_dialog_22</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="3">
+			<text>teleport_072_dialog_3</text>
+			<give_info>mil_trader_teleport_07_done</give_info>
+			<action>sak.create_items("ammo_7.62x51_fmj",5)</action>
+			<action>sak.create_items("ammo_5.56x45_ss190",5)</action>
+			<action>sak.create_items("ammo_9x19_pbp",5)</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+	
+<dialog id="teleport_08_dialog">
+	<has_info>mil_trader_aver_done_info</has_info>
+	<has_info>mil_trader_teleport_07_start</has_info>											   
+	<dont_has_info>mil_max_teleport_08_start</dont_has_info>
+	<dont_has_info>mil_max_teleport_08_have</dont_has_info>
+	<dont_has_info>mil_max_teleport_08_done</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>teleport_08_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>teleport_08_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>teleport_08_dialog_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>teleport_08_dialog_3</text>
+			<next>41</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="41">
+			<text>teleport_08_dialog_41</text>
+			<give_info>mil_max_teleport_08_start</give_info>
+			<action>dialogs.break_dialog</action>			
+		</phrase>
+		<phrase id="42">
+			<text>teleport_08_dialog_42</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+	
+<dialog id="teleport_082_dialog">
+	<dont_has_info>mil_max_teleport_08_done</dont_has_info>
+	<has_info>mil_max_teleport_08_have</has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>teleport_082_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>teleport_082_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>teleport_082_dialog_2</text>
+			<action>sak_inventory.release_actor_items("playboy_12",1)</action>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>teleport_082_dialog_3</text>
+			<give_info>mil_max_teleport_08_done</give_info>
+		</phrase>
+	</phrase_list>
+</dialog>
+	
+<dialog id="teleport_083_dialog">
+	<has_info>mil_max_teleport_08_start</has_info>
+	<dont_has_info>mil_max_teleport_08_have</dont_has_info>
+	<phrase_list>
+		<phrase id="0">
+			<text>teleport_083_dialog_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>teleport_083_dialog_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>teleport_083_dialog_2</text>
+			<next>21</next>
+		</phrase>
+		<phrase id="21">
+			<text>teleport_083_dialog_21</text>
+			<next>22</next>
+		</phrase>
+		<phrase id="22">
+			<text>teleport_083_dialog_22</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>teleport_083_dialog_3</text>
+			<give_info>mil_max_teleport_08_have</give_info>
+			<action>sak.create_items("playboy_12",1)</action>
+		</phrase>
+	</phrase_list>
+</dialog>
+</game_dialogs>

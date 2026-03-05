@@ -1,0 +1,169 @@
+-------------------------
+;Череп
+-------------------------
+[logic@mil_dolg_skull]
+active = walker1@mil_dolg_skull
+on_death = death@mil_dolg_skull
+combat_ignore = combat_ignore@mil_dolg
+
+[death@mil_dolg_skull]
+on_info = {=killed_by_actor} %+mil_scull_dead +gg_kill_cherep%, %+mil_scull_dead%
+
+[walker1@mil_dolg_skull]
+path_walk = path_walk1
+path_look = path_look1
+meet = meet@mil_dolg_skull
+danger = danger_condition@mil_dolg
+combat_ignore_cond = {=check_fighting(704)}
+on_actor_dist_le_nvis = 15 | walker3@mil_dolg_skull
+wounded = wounded@ignore_scull
+
+[walker3@mil_dolg_skull]
+path_walk = path_walk1
+path_look = path_look1
+meet = meet@2mil_dolg_skull
+danger = danger_condition@mil_dolg
+combat_ignore_cond = {=check_fighting(704)}
+wounded = wounded@ignore_scull
+
+[meet@mil_dolg_skull]
+meet_dialog = mil_dolg_skull_dialog
+use = true
+use_wpn = true
+victim = 15|actor
+victim_wpn = 15|actor
+meet_state = 40|hello_wpn@mil_cherep_hi|20|ward
+meet_state_wpn = 40|hello_wpn@mil_cherep_hi|20|ward
+
+[meet@2mil_dolg_skull]
+meet_dialog = mil_dolg_skull_dialog
+use = true
+use_wpn = true
+victim = 15|actor
+victim_wpn = 15|actor
+
+[wounded@ignore_scull]
+hp_state        = 0|wounded_heavy@help_heavy
+hp_state_see    = 0|wounded_heavy@help_heavy
+hp_victim       = 0|nil
+hp_fight        = 0|false
+hp_cover        = 0|false
+-------------------------
+;Солдат с биноклем
+-------------------------
+[logic@mil_dolg_soldier1]
+active = walker10@mil_dolg_soldier1
+on_death = death@mil_dolg
+combat_ignore = combat_ignore@mil_dolg
+
+[walker10@mil_dolg_soldier1]
+path_walk = walk_bin
+path_look = look_bin
+on_signal = bin | remark1@mil_dolg_soldier1
+danger = danger_condition@mil_dolg
+combat_ignore_cond = {=check_fighting(704)}
+meet = meet@mil_dolg_soldier1
+
+[remark1@mil_dolg_soldier1]
+no_move = true
+no_rotate = true
+snd = mil_dolg_about_sniper
+anim = binocular
+on_signal = action_end | walker11@mil_dolg_soldier1
+danger = danger_condition@mil_dolg
+combat_ignore_cond = {=check_fighting(704)}
+target = 704
+meet = meet@mil_dolg_soldier1
+
+[walker11@mil_dolg_soldier1]
+path_walk = walk_bin2
+path_look = look_bin2
+on_signal = pora | walker10@mil_dolg_soldier1
+danger = danger_condition@mil_dolg
+combat_ignore_cond = {=check_fighting(704)}
+meet = meet@mil_dolg_soldier1
+
+[meet@mil_dolg_soldier1]
+use = true
+use_wpn = false
+victim = 2|actor
+victim_wpn = 2|actor
+meet_state = 2|ward
+meet_state_wpn = 2|ward
+
+
+[logic@mil_dolg_soldier2]
+active = kamp1@mil_dolg_soldier
+on_death = death@mil_dolg
+combat_ignore = combat_ignore@mil_dolg
+
+
+[logic@mil_dolg_soldier3]
+active = kamp1@mil_dolg_soldier
+on_death = death@mil_dolg
+combat_ignore = combat_ignore@mil_dolg
+
+
+[logic@mil_dolg_soldier4]
+active = kamp1@mil_dolg_soldier
+on_death = death@mil_dolg
+combat_ignore = combat_ignore@mil_dolg
+
+
+[logic@mil_dolg_soldier5]
+active = kamp1@mil_dolg_soldier
+on_death = death@mil_dolg
+combat_ignore = combat_ignore@mil_dolg
+
+
+[kamp1@mil_dolg_soldier]
+center_point = camp_center
+danger = danger_condition@mil_dolg
+combat_ignore_cond = {=check_fighting(704)}
+meet = no_meet
+soundgroup = mil_dolg_kamp
+
+
+[logic@mil_dolg_soldier6]
+active = walker@mil_dolg_soldier6
+on_death = death@mil_dolg
+combat_ignore = combat_ignore@mil_dolg
+
+[walker@mil_dolg_soldier6]
+path_walk = watchman1_walk
+path_look = watchman1_look
+danger = danger_condition@mil_dolg
+combat_ignore_cond = {=check_fighting(704)}
+meet = no_meet
+
+
+[logic@mil_dolg_soldier7]
+active = walker@mil_dolg_soldier7
+on_death = death@mil_dolg
+combat_ignore = combat_ignore@mil_dolg
+
+[walker@mil_dolg_soldier7]
+path_walk = watchman2_walk
+path_look = watchman2_look
+danger = danger_condition@mil_dolg
+combat_ignore_cond = {=check_fighting(704)}
+meet = no_meet
+;-------------------------------------------------------------------------------------------------
+;-- Общие секции (danger, combat_ignore)
+;-------------------------------------------------------------------------------------------------
+[combat_ignore@mil_dolg]
+combat_ignore_cond = {=check_fighting(704)}
+
+[death@mil_dolg]
+on_info = {=killed_by_actor} %=sak.make_dolg_enemy%
+
+[danger_condition@mil_dolg]
+ignore_distance_grenade	= 20
+ignore_distance_corpse	= 0
+ignore_distance_hit		= 150
+ignore_distance_sound	= 0
+danger_inertion_time_grenade	= 2000
+danger_inertion_time_corpse	= 1000
+danger_inertion_time_hit		= 2000
+danger_inertion_time_sound	= 1500
+danger_inertion_time_ricochet	= 0

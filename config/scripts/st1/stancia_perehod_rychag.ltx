@@ -1,0 +1,12 @@
+[logic]
+active = ph_idle@idle1
+
+[ph_idle@idle1]
+tips = open
+on_use = %=sak.actor_hide_weapon()% ph_idle@idle2_1
+
+[ph_idle@idle2_1]
+on_timer = 1000| %+stancia_perehod_door_open% ph_idle@idle2
+
+[ph_idle@idle2]
+on_timer = 3000| %=sak.restore_weap()% nil

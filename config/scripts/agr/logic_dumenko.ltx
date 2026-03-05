@@ -1,0 +1,31 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@dumenko
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[walker@dumenko]
+path_walk          = agr_dumenko_walk
+path_look          = agr_dumenko_look
+combat_ignore_cond = { -dumenko_fire =fighting_actor },{ =fighting_dist_ge(5) =fighting_monster }
+meet = meet@dumenko
+danger = danger_condition
+
+[meet@dumenko]
+use	= true
+use_wpn	= false
+meet_state = wait
+meet_dialog	= agr_dumenko_start_dialog
+
+[danger_condition]
+ignore_distance = 1
+
+[hit]
+on_info = {=hit_by_actor} %+dumenko_fire +sherstuk_enemy +esc_blockpost_abuse +esc_bridge_pass_fire +agr_nii_helicopter_atack%
+
+[death]
+on_info = {=killed_by_actor} %+dumenko_fire +sherstuk_enemy +esc_blockpost_abuse +esc_bridge_pass_fire +agr_nii_helicopter_atack%

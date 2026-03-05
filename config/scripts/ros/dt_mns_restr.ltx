@@ -1,0 +1,9 @@
+[logic]
+active = sr_idle@idle
+
+[sr_idle@idle]
+on_info = {+assistant_go_to_mil -assistant_go_to_bar} sr_idle@work
+
+[sr_idle@work]
+on_actor_inside = nil %+assistant_go_to_bar =sak.dt_mns_msg()%
+

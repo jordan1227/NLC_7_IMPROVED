@@ -1,0 +1,104 @@
+;АК Стрелка
+[wpn_ak74_m1]:wpn_ak74_m2
+description							= enc_weapons1_wpn-ak_strelok
+
+default_to_ruck						= false
+
+
+ammo_mag_size						= 40
+
+ammo_class							= ammo_5.45x39_fmj,ammo_5.45x39_ap,ammo_5.45x39_merc
+
+slot 								= 2
+cost								= 20000
+
+fire_modes							= 1, -1
+
+inv_name                    		= wpn-ak_strelok    
+inv_name_short              		= wpn-ak_strelok
+
+inv_weight							= 3.5
+
+fire_dispersion_base				= 0.3
+
+control_inertion_factor		= 1.4f
+
+cam_relax_speed        	 	= 5.0 	
+cam_dispersion          	= 0.2
+cam_dispersion_inc		= 0.25	
+cam_dispertion_frac		= 0.7
+cam_max_angle			= 15.0	
+cam_max_angle_horz		= 7.5	
+cam_step_angle_horz		= 0.5
+
+fire_dispersion_condition_factor 	= 2.5
+misfire_probability 			    = 0.001
+misfire_condition_k				    = 0.05
+condition_shot_dec 					= 0.0003
+
+
+PDM_disp_base 						= 1.8
+PDM_disp_vel_factor 				= 2.2
+PDM_disp_accel_factor 				= 3.5
+PDM_crouch	 						= 1.45
+PDM_crouch_no_acc 					= 0.65 
+
+hit_power                			= 1
+hit_impulse		 					= 1.0
+fire_distance            			= 170	
+bullet_speed						= 600
+rpm                      			= 600
+
+
+grenade_launcher_status				= 2
+scope_status 						= 2
+silencer_status						= 2
+scope_mode 							= 3
+
+
+scope_respawn_ac10632 = wpn_ak74_m1_ac10632
+scope_respawn_wpn_addon_eotech = wpn_ak74_m1_eot
+scope_respawn_microt1 = wpn_ak74_m1_microt1
+scope_respawn_specter = wpn_ak74_m1_specter
+
+
+grenade_launcher_name 				= wpn_addon_grenade_launcher
+scope_x                     = 69		; offset in inventory icon
+scope_y                     = -17
+silencer_x                  = 220		; offset in inventory icon
+silencer_y                  = 3
+grenade_launcher_x          = 142		; offset in inventory icon
+grenade_launcher_y          = 16
+
+	
+scope_zoom_factor           		= 90
+zoom_enabled					    = true	
+	
+fire_point             		= 0,0.216,0.66
+fire_point2            		= 0,0.1650,0.730
+
+
+
+[wpn_ak74_m1_ac10632]:wpn_ak74_m1
+scope_name = ac10632
+scope_respawn = wpn_ak74_m1
+hud = wpn_ak74_m1_ac10632_hud
+[wpn_ak74_m1_ac10632_hud]:wpn_ak12_ac10632_hud
+
+[wpn_ak74_m1_eot]:wpn_ak74_m1
+scope_name = wpn_addon_eotech
+scope_respawn = wpn_ak74_m1
+hud = wpn_ak74_m1_eot_hud
+[wpn_ak74_m1_eot_hud]:wpn_ak12_eot_hud
+
+[wpn_ak74_m1_microt1]:wpn_ak74_m1
+scope_name = microt1
+scope_respawn = wpn_ak74_m1
+hud = wpn_ak74_m1_microt1_hud
+[wpn_ak74_m1_microt1_hud]:wpn_ak12_microt1_hud
+
+[wpn_ak74_m1_specter]:wpn_ak74_m1
+scope_name = specter
+scope_respawn = wpn_ak74_m1
+hud = wpn_ak74_m1_specter_hud
+[wpn_ak74_m1_specter_hud]:wpn_ak12_specter_hud

@@ -1,0 +1,12 @@
+[logic]
+active = ph_idle@idle
+
+[ph_idle@idle]
+on_info = {+mar_gg_psy_scan_ask} ph_idle@idle1
+
+[ph_idle@idle1]
+tips = dead_chudishe_use
+on_use = {-mar_gg_psy_scan_ask_done} %=sak.dead_chudishe_handle() +mar_gg_psy_scan_ask_done% nil, nil
+
+;[ph_idle@idle2]
+;on_timer = 5000 | %=sak.dead_chudishe_handle_end()% nil

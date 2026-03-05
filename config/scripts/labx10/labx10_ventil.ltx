@@ -1,0 +1,16 @@
+[logic]
+active = ph_button@stop
+
+[ph_button@stop]
+tooltip = ventil_rotate
+anim = ventil_stop
+on_info = {+supply_x10_on} nil
+on_press = ph_button@rotate %=sak.labx10_ventil()%
+
+[ph_button@rotate]
+anim = ventil_rotate
+on_timer = 15000 | ph_button@nil
+
+[ph_button@nil]
+anim = ventil_stop
+on_timer = 1000 | nil %+supply_x10_on =sak.restore_weap()%

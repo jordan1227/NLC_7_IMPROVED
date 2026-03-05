@@ -1,0 +1,111 @@
+----------------------------------------------------------------------------------------------------
+-- Dream manager
+----------------------------------------------------------------------------------------------------
+-- Author: Oleg Kreptul (Haron) haronk@ukr.net 2005
+----------------------------------------------------------------------------------------------------
+can_sleep   = false
+local type        = "all"
+local dream_types = {all = 2}
+
+local def_global_regular_probability = 80
+local def_regular_probability = 2
+local def_regular_type = "normal"
+
+class "dream_mgr"
+
+function dream_mgr:__init()
+	local ini = dsh.cached_ini_file("misc\\dream.ltx")
+    self.regular = nil
+    if ini:section_exist("dreams") then
+        self.regular_probability = def_global_regular_probability
+        if ini:line_exist("dreams", "regular_probability") then
+            local rp = ini:r_float("dreams", "regular_probability")
+            if rp >= 0 or rp <= 100 then
+                self.regular_probability = rp
+            end
+        end
+        if ini:line_exist("dreams", "dream_types") then
+            local rt_str = ini:r_string("dreams", "dream_types")
+            if rt_str then
+                for rt in string.gfind(rt_str, "([%w_]+)") do
+                    dream_types[rt] = 1
+                end
+            end
+        end
+		if ini:line_exist("dreams", "regular") then
+			self.regular = {}
+			local rd_str = ini:r_string("dreams", "regular")
+			if rd_str then
+				for rd_sect in string.gfind(rd_str, "([%w_]+)") do
+					if ini:section_exist(rd_sect) then
+						if ini:line_exist(rd_sect, "dream") then
+							local dream_path = ini:r_string(rd_sect, "dream")
+							local prob = def_regular_probability
+							local tp = def_regular_type
+							if ini:line_exist(rd_sect, "probability") then
+								local p = ini:r_float(rd_sect, "probability")
+								if p >= 0 then
+									prob = p
+								end
+							end
+							if ini:line_exist(rd_sect, "type") then
+								local t = ini:r_float(rd_sect, "type")
+								if dream_types[t] == 1 then
+									tp = t
+								end
+							end
+							self.regular[rd_sect] = {dream_path, prob, tp}
+						end
+					end
+				end
+			end
+		end
+	end
+end
+
+function dream_mgr:name()
+    return "dream_mgr"
+end
+
+function dream_mgr:get_dream()
+    local k, v
+	local rval = lua_random(100)
+	local rp = self.regular_probability
+	if rval < rp and dream_types[type] then
+		local prob_power = 0
+		for k, v in pairs(self.regular) do
+			if type == "all" or type == v[3] then
+				prob_power = prob_power + v[2]
+			end
+		end
+		if prob_power > 0 then
+			local cur_prob = 0
+			rval = lua_random(prob_power)
+			for k, v in pairs(self.regular) do
+				if type == "all" or type == v[3] then
+					if rval <  cur_prob + v[2] then
+						return v[1]
+					else
+						cur_prob = cur_prob + v[2]
+					end
+				end
+			end
+		end
+	end
+
+    return ""
+end
+
+local dream_manager = dream_mgr()
+
+function can_sleep_callback()
+    if can_sleep == true then
+        return "can_sleep" -- registered keyword
+    else
+        return "cant_sleep_not_on_solid_ground"
+    end
+end	
+
+function sleep_video_name_callback()
+    return dream_manager:get_dream()
+end

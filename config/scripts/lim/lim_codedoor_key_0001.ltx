@@ -1,0 +1,15 @@
+[logic]
+active = ph_code@lock
+
+[ph_code@lock]
+on_info = {+lim_electro_power_on} nil
+on_check_code1 = 85621 | {+x18_iq_check_info1} %=play_snd(device\door_servomotor) =sak.add_new_red_196%
+on_check_code2 = 75698 | {+x18_iq_check_info2} %=play_snd(device\door_servomotor) =sak.add_new_red_196%
+on_check_code3 = 85412 | {+x18_iq_check_info3} %=play_snd(device\door_servomotor) =sak.add_new_red_196%
+on_check_code4 = 23895 | {+x18_iq_check_info4} %=play_snd(device\door_servomotor) =sak.add_new_red_196%
+on_check_code5 = 45612 | {+x18_iq_check_info5} %=play_snd(device\door_servomotor) =sak.add_new_red_196%
+on_check_code6 = 36521 | {+x18_iq_check_info6} %=play_snd(device\door_servomotor) =sak.add_new_red_196%
+on_check_code7 = 89512 | {+x18_iq_check_info7} %=play_snd(device\door_servomotor) =sak.add_new_red_196%
+on_check_code8 = 65213 | {+x18_iq_check_info8} %=play_snd(device\door_servomotor) =sak.add_new_red_196%
+on_check_code9 = 16379 | {+x18_iq_check_info9} %=play_snd(device\door_servomotor) =sak.add_new_red_196%
+on_check_code10 = 1455987401 | %=play_snd(device\door_servomotor) =sak.add_new_red_196%

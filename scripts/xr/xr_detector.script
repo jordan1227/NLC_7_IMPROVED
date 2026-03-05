@@ -1,0 +1,125 @@
+local def_idle = 10
+local idle = 10
+local art_tbl = {}
+local first_update = false
+local time_to_discharge_1 = 24 * 5 * 60 * 60
+local time_to_discharge_2 = 24 * 2 * 60 * 60
+
+class "actor_detector"
+function actor_detector:__init()
+	-- self.last_update_time = game.get_game_time()
+end
+
+function actor_detector:update()
+	if not first_update and sak.game_began then
+		create_tbl()
+		local a_det = get_value("active_detector")
+		if a_det ~= nil then
+			set_proper_det(a_det)
+		else
+			log2("set_proper_det: returned nil")
+		end
+		razgruzka.check_detectors()
+		first_update = true
+	end
+	-- if #art_tbl == 0 then
+	-- 	-- log2("[~T]. actor_detector: return due to empty art_tbl")
+	-- 	return
+	-- end
+	-- log2("[~T]. actor_detector: start")
+	local detector_record = razgruzka.active_detectors[8]
+	if detector_record and strpos(detector_record,"art") then
+		if not self.last_update_time then
+			self.last_update_time = game.get_game_time()
+		end
+		local delta = game.get_game_time():diffSec(self.last_update_time)
+		if delta < idle then
+			-- log2("[~T]. actor_detector: timeout (diff = %s)",game.get_game_time():diffSec(self.last_update_time))
+			return 
+		end
+		local cond_dec
+		if strpos(detector_record,"upgr") then
+			cond_dec = delta / time_to_discharge_2
+		else
+			cond_dec = delta / time_to_discharge_1
+		end
+		
+		local det = server_obj(detector_record)
+		if det then
+			local c_det = client_obj(det.id)
+			if c_det then
+				local cond = c_det:condition()
+				if cond <= 0 then return end
+				local new_cond = cond - cond_dec
+				if new_cond < 0 then
+					new_cond = 0
+				end
+				c_det:set_condition(new_cond)
+				-- log2("actor_detector:update: setting new_cond for [%s] = [%.6f]",detector_record,new_cond)
+			end
+		end
+		
+		self.last_update_time = game.get_game_time()
+		local pos = db.actor:position()
+		local a_pos
+		for v,_ in pairs(art_tbl) do
+			local obj = client_obj(v)
+			if obj and isArt(obj) and obj:parent() == nil then
+				a_pos = obj:position()
+				local dist = pos:distance_to_xz(a_pos)
+				if dist <= 33 then
+					idle = def_idle * math.max( 0.1, ( dist * 3 / 100 ) )
+					-- log2("actor_detector: art = %s, idle = %s",obj:name(),idle)
+					local snd_obj = xr_sound.get_safe_sound_object("detectors\\da_beep_03")
+					snd_obj:play(db.actor, 0, sound_object.s2d)
+					break
+				end
+			else
+				idle = def_idle
+			end
+		end
+	else
+		self.last_update_time = nil
+		idle = def_idle
+	end
+end
+
+function create_tbl()
+	local lvl = level.name()
+	local temp = get_value("tbl_bio_art", {})
+	if not has_alife_info("gluzov_final_reward_done_info") and temp[lvl] and #temp[lvl] > 0 then
+		for _,v in pairs(temp[lvl]) do
+			if v ~= -1 then
+				art_tbl[v] = true
+			end
+		end
+		-- dump_table(art_tbl,"xr_detector.art_tbl")
+	elseif has_alife_info("gluzov_final_reward_done_info") then
+		art_tbl = bind_det_arts.share_art_tbl()
+	else
+		-- log2("xr_detector.create_tbl: unable to form a table")
+	end
+end
+function get_art_tbl()
+	return art_tbl
+end
+function del_from_tbl(id)
+	art_tbl[id] = nil
+end
+-- ставим на первом апдейте правильный детектор из карамана разгрузки в слот (раньше для этого могло потребоваться открыть-закрыть диалог разгрузки)
+function set_proper_det(det)
+	local obj = server_obj(det)
+	if obj and obj.parent_id and obj.parent_id == 0 and strpos(obj:name(),"detector")then
+		local act = db.actor
+		local item_in_slot = act:item_in_slot(8)
+		if item_in_slot and item_in_slot:name() ~= obj:name() then
+			act:move_to_ruck(item_in_slot)
+		end
+		local c_obj = client_obj(obj.id)
+		if c_obj then
+			nlc_container.try_to_slot(c_obj,8)
+			-- log2("set_proper_det: done for %s",c_obj:name())
+		end
+		razgruzka.check_detectors()
+	end
+end

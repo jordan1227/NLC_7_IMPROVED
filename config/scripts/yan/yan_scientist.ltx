@@ -1,0 +1,32 @@
+[logic]
+active = walker@sakharov
+combat_ignore = combat_ignore
+trade = misc\shop_sakharov\trade_sakharov.ltx
+inv_max_weight = 10000
+
+[walker@sakharov]
+path_walk = yan_ucheniy_walk_talk
+path_look = yan_ucheniy_look_talk
+combat_ignore_cond = always
+meet = meet@sakharov
+danger = danger_condition@sakharov
+def_state_standing = yan_professor_wait
+def_state_moving1 = yan_professor_walk
+def_state_moving2 = yan_professor_walk
+def_state_moving3 = yan_professor_walk
+
+[meet@sakharov]
+meet_state 		= 1 | yan_professor_wait
+meet_state_wpn 	= 1 | yan_professor_wait
+victim 			= 1 | actor
+victim_wpn 		= nil
+use             = true
+use_wpn         = false
+abuse = false
+precond = usability
+
+[danger_condition@sakharov]
+ignore_distance = 0
+
+[combat_ignore]
+combat_ignore_cond = always

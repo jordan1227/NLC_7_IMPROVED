@@ -1,0 +1,10 @@
+[trader]
+buy_condition = dolg_generic_buy
+sell_condition = {+ivancov_gg_news_start} dolg_after_mil_kurjer_sell, {+bar_dolg_petrenko_exo_done} dolg_after_exo_sell, dolg_start_sell
+buy_supplies = {+ivancov_gg_news_start} supplies_after_mil_kurjer, {+bar_dolg_petrenko_exo_done} supplies_after_exo, supplies_start
+
+
+
+#include "petrenko_buy.ltx"
+#include "petrenko_supl.ltx"
+#include "petrenko_trade.ltx"

@@ -1,0 +1,212 @@
+;Винтовка AWM-F
+[wpn_awm]:wpn_svd
+min_radius						= 20
+max_radius						= 150
+description						= enc_weapons_wpn_awm
+dialog_description				= desc_dialog_wpn_awm
+
+default_to_ruck					= false
+
+ef_main_weapon_type				= 3
+ef_weapon_type					= 8
+
+holder_range_modifier			= 2.15
+holder_fov_modifier				= 0.3
+
+cost							= 60000
+
+weapon_class					= sniper_rifle
+
+f_mode							= 1
+
+ammo_limit						= 60
+ammo_current					= 10
+ammo_elapsed					= 0
+ammo_mag_size					= 5
+ammo_class						= ammo_8.6x70, ammo_8.6x70_ap
+sprint_allowed					= true
+
+fire_dispersion_base			= 0.02
+
+control_inertion_factor			= 1.5f
+
+cam_relax_speed         		= 4
+cam_dispersion          		= 0.9
+cam_dispersion_inc				= 0.9
+cam_dispertion_frac				= 1.0
+cam_max_angle					= 30
+cam_max_angle_horz				= 10
+cam_step_angle_horz				= 0.1
+
+fire_dispersion_condition_factor = 1.25
+misfire_probability				= 0.009
+misfire_condition_k				= 0.50
+condition_shot_dec 				= 0.0006
+
+hand_dependence					= 1
+single_handed					= 0
+
+slot							= 2
+animation_slot					= 2	
+
+inv_name						= wpn_awm
+inv_name_short					= wpn_awm
+
+inv_weight						= 6.9
+
+icon_group                      = 7
+inv_grid_width									   = 7
+inv_grid_height									   = 2
+inv_grid_x										   = 72
+inv_grid_y										   = 16
+
+kill_msg_x						= 0
+kill_msg_y						= 0
+kill_msg_width					= 98
+kill_msg_height					= 23
+
+direction						= 0, 0, 1
+fire_point						= 0.0, 0.129, 0.942
+flame_particles					= weapons\generic_weapon06
+smoke_particles					= weapons\generic_shoot_00
+rpm_empty_click					= 200
+shell_point						= 0.0, 0.129, 0.192
+shell_dir						= 0.0, 0.0, 0.4
+
+PDM_disp_base 					= 4.0
+PDM_disp_vel_factor 			= 5.0
+PDM_disp_accel_factor 			= 7.0
+PDM_crouch						= 3.9
+PDM_crouch_no_acc				= 2.7
+
+hit_power						= 1.5
+hit_impulse		 				= 1
+
+fire_distance					= 500
+bullet_speed					= 760
+rpm								= 35
+
+use_aim_bullet					= false
+time_to_aim						= 1.0
+	
+hud								= wpn_awm_hud
+normal							= 0, 1, 0
+position						= -0.026, -0.077, 0.00
+orientation						= 0, 0, 0
+strap_orientation                                  = -25,-189,65
+strap_position                                     = -0.15,-0.15,0.45
+strap_bone0						= bip01_spine2
+strap_bone1						= bip01_spine1
+startup_ammo					= 10
+visual							= dynamics\weapons\wpn_awm\wpn_awm
+
+light_color						= 0.6,0.5,0.3
+light_range						= 4.0
+light_var_color					= 0.05
+light_var_range					= 0.5
+light_time						= 0.2
+ph_mass							= 3
+
+scope_status					= 1
+silencer_status					= 0
+grenade_launcher_status			= 0
+scope_zoom_factor								   = 6
+scope_dynamic_zoom = true
+scope_texture                                      = wpn_crosshair_awm
+
+3d_reticle_size = 5.5
+3dss_gen_zoom_enable = true
+
+scope_mode 						= 3
+scope_name 						= specter
+
+scope_x							= 83
+scope_y							= -9
+
+;silencer_name					=
+silencer_x 						= 310
+silencer_y 						= 6
+
+snd_shoot						= weapons\awm\awm_muzzle_mono_awm_bolt_out
+snd_silncer_shot				= weapons\awm\awm_muzzle_mono_awm_bolt_out
+snd_razgruzka					= weapons\razgruzka\ammo_5
+
+snd_bore                                           = weapons\generic_draw
+snd_empty                                          = weapons\ak_empty, 0.5
+snd_draw                                           = weapons\sniper_draw
+snd_holster                                        = weapons\sniper_holster
+snd_reload                                         = weapons\awm\awm_reload
+snd_reload_empty                                   = weapons\awm\awm_reload_empty
+snd_reload_misfire                                 = weapons\awm\awm_misfire
+snd_sprint_idle								   	   = weapons\sprint_assault
+
+[wpn_awm_hud]:hud_base
+
+aim_hud_offset_pos = -0.0695001,0.018,-0.0710001
+aim_hud_offset_rot = 0.003,-0.0025,0
+aim_hud_offset_pos_16x9 = -0.0695001,0.018,-0.0710001
+aim_hud_offset_rot_16x9 = 0.003,-0.0025,0
+
+anm_show										   = awm_draw, draw
+anm_show_empty									   = awm_draw, draw_empty
+anm_hide             							   = awm_holster, holster
+anm_hide_empty             						   = awm_holster, holster_empty
+anm_idle             							   = awm_idle, idle
+anm_idle_empty             						   = awm_idle, idle_empty
+anm_shots										   = awm_shoot, shoot
+anm_shots_last									   = awm_shoot_last, shoot_last
+anm_shots_when_aim								   = awm_shoot_scope, shoot_scope
+anm_shots_when_aim_last							   = awm_shoot_scope_last, shoot_scope_last
+anm_idle_aim									   = awm_idle_aim, idle
+anm_idle_aim_empty								   = awm_idle_aim, idle_empty
+anm_reload										   = awm_reload, reload
+anm_reload_empty								   = awm_reload_empty, reload_empty
+anm_reload_jammed								   = awm_misfire, misfire
+anm_idle_moving 								   = awm_moving, moving
+anm_idle_moving_slow 							   = awm_moving_slow, moving_slow
+anm_idle_moving_slow_empty 						   = awm_moving_slow, moving_slow_empty
+anm_idle_moving_empty 							   = awm_moving, moving_empty
+anm_idle_moving_crouch 							   = awm_crouch, crouch
+anm_idle_moving_crouch_empty 					   = awm_crouch, crouch_empty
+anm_idle_aim_moving								   = awm_moving_aim, moving_slow
+anm_idle_aim_moving_empty						   = awm_moving_aim, moving_slow_empty
+anm_idle_sprint									   = awm_sprint, sprint
+anm_idle_sprint_empty							   = awm_sprint, sprint_empty
+anm_bore										   = awm_idle, idle
+anm_bore_empty									   = awm_idle, idle_empty
+
+anm_idle_sprint_start         						   = awm_sprint_start, sprint_start
+anm_idle_sprint         						   = awm_sprint, sprint
+anm_idle_sprint_end         						   	   = awm_sprint_end, sprint_end
+
+anm_idle_sprint_start_empty         					   = awm_sprint_start, sprint_start_empty
+anm_idle_sprint_empty         					   = awm_sprint, sprint_empty
+anm_idle_sprint_end_empty         					   = awm_sprint_end, sprint_end_empty
+
+anm_idle_sprint_start_jammed      = awm_sprint_start, sprint_start
+anm_idle_sprint_end_jammed       = awm_sprint_end, sprint_end
+
+anm_headlamp_on                                  = awm_flash
+anm_gasmask                                        = awm_clear
+
+anm_headlamp_on_empty                            = awm_flash, idle_empty
+anm_gasmask_empty                                  = awm_clear, idle_empty
+
+attach_place_idx                                   = 0
+fire_bone                                          = muzzle
+fire_point										   = 0,0,0
+gl_hud_offset_pos                                  = 0,0,0
+gl_hud_offset_rot                                  = 0,0,0
+hands_position									   = -0.020400,-0.007800,-0.150900
+hands_position_16x9								   = -0.020400,-0.007800,-0.150900
+hands_orientation								   = 0,0,0
+hands_orientation_16x9							   = 0,0,0
+item_position									   = 0,0,0
+item_orientation								   = 0,0,0
+item_visual										   = dynamics\weapons\wpn_awm\wpn_awm_hud.ogf
+lean_hud_offset_pos                                = 0,0,0
+lean_hud_offset_rot                                = 0,0,0
+shell_bone                                         = wpn_body
+shell_dir                                          = 0.0, 1.0, 0.0
+shell_point										   = 0,0,0
+zoom_hide_crosshair                                = true

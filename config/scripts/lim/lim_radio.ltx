@@ -1,0 +1,16 @@
+[logic]
+active = ph_sound1
+on_hit = hit
+
+[hit]
+on_info = %+lim_priemnik_off%
+
+[ph_sound1]
+tips = switch_off
+on_use = ph_idle@idle
+snd = radio_music_limansk
+on_info = {+lim_priemnik_off} nil 
+
+[ph_idle@idle]
+tips = switch_on
+on_use = ph_sound1

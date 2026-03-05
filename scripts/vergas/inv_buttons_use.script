@@ -1,0 +1,420 @@
+--[[
+Снаряжение Главного Героя
+Vergas
+© NLC 6.0
+]]--
+
+local rucksack_mode								-- режим открытия рюкзака
+local tbl_id_hran = get_value("tbl_id_hr", {})	-- таблица id объектов в хранилище
+local flag_equipment							-- флаг открытия окна снаряжения
+
+function set_flag_equipment(param)
+	flag_equipment = param
+end
+
+function get_flag_equipment()
+	return flag_equipment
+end
+
+function imitation_opening_inventory()    --имитация открытия инвентаря
+	--vergas_rucksack.set_flag_drop(false)
+	ODS("[~T]. #DBG: imitation_opening_inventory()")
+	razgruzka.open_inv_raz_pod = false
+	razgruzka.open_inv_menu() -- открытие именно менюшки, восстановит все предметы в инвентарь
+	sak_inventory.belt_need_update_razgr(true)
+end
+
+function imitation_closing_inventory(mode)  
+	vergas_rucksack.close_inventory()
+	razgruzka.close_inventory()
+	razgruzka.open_inv_raz_pod = false
+	if mode == 0 then  
+		bind_stalker.restore_weapon() --восстанавливаю руки
+	end
+	sak_inventory.belt_need_update_razgr(false)
+	used_items.set_get_flag_use_gadget(1,true)
+end
+
+function open_inventory(mode)        --открытие окна инвентаря
+	wprintf("[~T]. #DBG: open_inventory(%d)", mode or -1)
+	if mode == 4 then
+		level.enable_input() --разрешаю ГГ двигаться
+	end
+	set_rucksack_mode(mode)
+	used_items.set_get_flag_use_gadget(1,false)  
+	schedule.add("show_invent", "inv_buttons_use.transfer_superfluous_from_inventory()", 300)
+end
+
+local function is_wpn_addon(obj, sect)
+	if sect == "af_dummy_sparkler" then return true end
+	return obj:is_scope() or obj:is_silencer() or obj:is_grenade_launcher()
+end
+
+function search_weapons_belt_in_inventory(param)
+	local i
+	local flag = false
+	if db.actor then
+		for i=0, db.actor: object_count()-1 do
+			local obj = db.actor:object(i)
+			if razgruzka.check_obj(obj) then
+				local section=obj:section()
+				if param == "wpn_" and is_wpn_addon(obj, section) then
+					flag = true
+					break
+				end
+				if string.sub (section, 1, 4) == param then
+					flag = true
+					break
+				end
+			end
+		end
+	end
+	return flag
+end
+
+function search_flask_army_in_inventory()
+	local flag = false
+	if search_weapons_belt_in_inventory("flas") then
+		flag = true
+	end
+	return flag
+end
+
+function search_small_things_in_inventory()
+	if db.actor then
+		for i=0, db.actor:object_count()-1 do
+			local obj = db.actor:object(i)
+			if sak.is_food(obj) or razgruzka.is_medical(obj:section()) then
+				return true
+			end
+		end
+	end
+	return false
+end
+
+-- Manool: достаточно один раз скрыть, т.к. для этих объектов больше не будет сбрасываться флаг FIHiddenForInventory
+function hide_always_items()
+	for i = 0, db.actor:object_count() - 1 do
+		local obj = db.actor:object(i)
+		if razgruzka.check_obj(obj) and keep_always_hidden(obj) then
+			-- log2("hide_always_items: [%s]", obj:name())
+			set_item_inv_hidden(obj)
+		end
+	end
+end
+
+function transfer_superfluous_from_inventory()
+	--rucksack_mode = 1 - трансфер лишнего для кармана еды/медицины
+	--rucksack_mode = 2 - трансфер лишнего для кармана оружия
+	--rucksack_mode = 3 - трансфер лишнего для кармана под поясные дела
+	--rucksack_mode = 7 - трансфер лишнего для макулатуры
+	--rucksack_mode = 4 - ничего не трансферить
+	
+	if rucksack_mode == 4 then
+		set_flag_equipment(true)
+		sak_inventory.show_inventory()
+		return
+	end
+	
+	local tbl_belts = {}
+	local tbl_on_belt = {}
+	local tbl_slots = {}
+	local tbl_id_tr = {}
+  
+	if db.actor then
+		for i=0, db.actor:object_count()-1 do
+			local obj = db.actor:object(i)
+			local flag_hide = true
+			if razgruzka.check_obj(obj) then
+				if string.sub(obj:section(), 1, 5)=="belt_" then
+					--Это пояс. С ними разберусь позже
+					table.insert(tbl_belts,obj:id())
+					flag_hide = false
+				end
+				if flag_hide then
+					-- flag_hide = check_for_slots_object(obj)     --слотовые объекты
+					if check_for_slots_object(obj) then
+						table.insert(tbl_slots,obj:id())
+						flag_hide = false
+					end
+				end
+				if flag_hide then
+					if rucksack_mode ~= 3 and is_object_on_belt(obj) then      --объекты на поясе
+						table.insert(tbl_on_belt,obj:id())
+						flag_hide = false
+					end
+				end
+				if flag_hide then
+					local flag1 = check_for_weapons_object(obj)     --всякие пухи
+					local flag2 = is_object_for_belt(obj)		--объекты для пояса
+					local flag3 = check_for_paper_object(obj)		--макулатура
+					if rucksack_mode == 1 then
+						if (not flag1) and (not flag2) and (not flag3) then
+							--костюмы не должны попадать в мелочевку
+							if not razgruzka.is_medical(obj:section()) and not sak.is_food(obj) and not quick_slot_detector(obj) then
+								flag_hide = true
+							else
+								flag_hide = false
+							end
+						end
+					elseif rucksack_mode == 2 then
+						if flag1 then
+							flag_hide = false
+						end
+					elseif rucksack_mode == 3 then
+						if flag2 then
+							flag_hide = false
+						end
+					elseif rucksack_mode == 7 then
+						if flag3 then
+							flag_hide = false
+						end
+					end
+				end
+				if flag_hide then
+					table.insert(tbl_id_tr,obj:id())
+				end
+			end
+		end
+		--разбираюсь с поясами
+		if rucksack_mode == 3 then
+			handle_belts(tbl_belts, tbl_id_tr)
+		else
+			for _, v in ipairs(tbl_belts) do
+				table.insert(tbl_id_tr, v)
+			end
+		end
+		
+		if #tbl_slots > 0 then
+			for _, v in ipairs(tbl_slots) do
+				table.insert(tbl_id_tr, v)
+			end
+		end
+		
+		if #tbl_on_belt > 0 then
+			for _, v in ipairs(tbl_on_belt) do
+				table.insert(tbl_id_tr, v)
+			end
+		end
+	end
+  
+	if table.getn(tbl_id_tr)~=0 then
+		set_value("tbl_id_hr", tbl_id_tr)
+		for i = 1, table.getn(tbl_id_tr) do
+			local item = client_obj(tbl_id_tr[i])
+			if item then
+				-- log2("hiding item %s",item:name())
+				set_item_inv_hidden(item)
+				--эти вещи нельзя скармливать жадинке
+				if bind_greedy.get_flag_greedy() then
+					bind_greedy.set_zapret_items(tbl_id_tr[i])
+				end
+			end
+		end
+	end
+	
+	set_flag_equipment(true)
+	schedule.add("show_invent", "sak_inventory.show_inventory()", 300)
+end
+
+function transfer_superfluous_in_inventory()
+	if vergas_rucksack.have() then
+		local i
+		local tbl_id_hran=get_value("tbl_id_hr", {})
+		if #tbl_id_hran~=0 then
+			-- dump_table(tbl_id_hran,"transfer_superfluous_in_inventory")
+			for i = 1, #tbl_id_hran do
+				local cobj = client_obj(tbl_id_hran[i])
+				if cobj and not keep_always_hidden(cobj) then
+					-- log2("unhiding item %s",cobj:name())
+					set_item_inv_visible(cobj)
+				end 
+			end
+		end
+		set_value("tbl_id_hr",{})
+		sak_inventory.no_leds_flag = false
+		sak_inventory.leds_reset_flag = true
+		sak_inventory.update_accum_leds()
+		sak_inventory.belt_need_update_razgr(true)
+	end
+end
+
+function set_rucksack_mode(mode)          --режим текущего открытия инвентаря
+	rucksack_mode = mode
+end
+
+function keep_always_hidden(obj)
+	local section = obj:section()
+	local flag = false
+	if section=="razgruzka" or section=="razgruzka_new" or section=="podsumok" or section== "bag_on_belt"
+		or section=="detector_simple_fake" or section=="fake_compass" then
+		flag = true
+	end
+	return flag
+end
+
+function check_for_slots_object(obj)
+	local test_slots
+	local eatable_slots_to_hide = { 0, 1, 2, 4, 6, 9, 10 }
+	local weap_slots_to_hide = { 6, 9, 10, 13, 14, 15, 16 }
+	local belt_slots_to_hide = { 0, 1, 2, 4, 6, 9, 13, 14, 15, 16 }
+	local other_slots_to_hide = { 0, 1, 2, 4, 6, 9, 10, 13, 14, 15, 16 }
+	
+	if rucksack_mode == 1 then
+		test_slots = eatable_slots_to_hide
+	elseif rucksack_mode == 2 then
+		test_slots = weap_slots_to_hide
+	elseif rucksack_mode == 3 then
+		test_slots = belt_slots_to_hide
+	else
+		test_slots = other_slots_to_hide
+	end
+    local id = obj:id()
+	sak_inventory.no_leds_flag = false
+	for i, slot in ipairs(test_slots) do
+		local item = db.actor:item_in_slot(slot)
+		if item and id == item:id() then
+			if slot == 10 then
+				sak_inventory.no_leds_flag = true
+				sak_inventory.leds_reset_flag = true
+				sak_inventory.update_accum_leds()
+			end
+			return true
+		end
+	end
+	return false
+end
+
+function is_object_on_belt(obj)
+	local i,k
+	for i,k in pairs(sak_inventory.belt_items) do
+		if obj:section() == i then
+			local j
+			for j = 1, #k do
+				if obj:id() == k[j] then
+					return true
+				end
+			end
+		end
+	end
+	return false
+end
+
+function check_for_weapons_object(obj)
+	local flag
+	local section = obj:section()
+
+	if is_wpn_addon(obj, section) or obj:is_weapon() or string.sub (section, 1, 4) == "ammo" or string.sub (section, 1, 7) == "grenade" then
+		--это ствол или прибамбасы к нему
+		flag = true
+	else
+		flag = false
+	end
+	return flag
+end
+
+function is_object_for_belt(obj)
+	local flag
+	local sect = obj:section()
+	if sect == "af_dummy_sparkler" then return false end
+	if string.sub (sect,1 , 3)=="af_" or string.sub (sect,1 , 11)=="arc_art_box" 
+	or string.sub (sect,1 , 7)=="capsule" or string.sub (sect,1 , 6)=="amk_af" then
+		flag = true
+	else
+		flag = false
+	end
+	return flag
+end
+
+function check_for_paper_object(obj)
+    local flag
+	local sec = obj:section()
+    if str_in_tab( sec,
+        { 
+		    "playboy", "zapiska",
+            "document", "letter",
+            "sheet", "theory",
+            "book", "_pda",
+            "batt_torch", "_code",
+            "docs_", "matches"
+        }
+    )
+	or ( strpos(sec, "_flash") and not strpos(sec, "^af_") ) then
+        flag = true
+    else
+        flag = false
+    end
+    return flag
+end
+
+function quick_slot_detector(obj)
+	if strpos(obj:section(),"detector_") then
+		return db.actor:is_in_slot(obj)
+	end
+	return false
+end
+
+function handle_belts(belt_tbl, hide_tbl)
+	if #belt_tbl == 0 then
+		return 0
+	end  
+	
+	local best_belt = 0
+	local best_belt_pos = 1
+	for i = 1 ,#belt_tbl do
+		local belt = client_obj(belt_tbl[i])
+		local sec = belt and belt:section()
+		local temp_best_belt = tonumber(string.sub(sec,6,6))
+		if temp_best_belt > best_belt then
+			best_belt = temp_best_belt
+			best_belt_pos = i
+		end
+	end
+	table.remove(belt_tbl,best_belt_pos)
+	for _, v in ipairs(belt_tbl) do
+		table.insert(hide_tbl, v)
+	end
+end
+
+function check_wpn_slots()
+  -- local slot_new
+  -- local slot_old
+  -- if db.actor:item_in_slot(1) then
+    -- slot_new = db.actor:item_in_slot(1):id()
+    -- slot_old = slot_1
+    -- if slot_old == 0 and slot_new ~= 0 then
+    -- actor_params.toggle_slot(slot_new, false)
+    -- end
+  -- end
+  
+  -- if db.actor:item_in_slot(2) then
+    -- slot_new = db.actor:item_in_slot(2):id()
+    -- slot_old = slot_2
+    -- if slot_old == 0 and slot_new ~= 0 then
+       -- actor_params.toggle_slot(slot_new, false)
+    -- end
+  -- end
+end
+
+function transfer_ammo(id)
+	if id == 0 or id == nil then
+		return
+	end
+
+	local cobj = client_obj(id)
+	if cobj then
+		set_item_inv_hidden(cobj)
+		db.actor:invalidate_inventory()
+	end
+end
+
+function take_ammo(obj)
+	--патроны могут попасть в открытый инвентарь только если разрядить ствол
+	if string.sub(obj:section(),1,4) ~= "ammo" then
+		return
+	end
+
+	if rucksack_mode == 1 or rucksack_mode == 3 then
+		transfer_ammo(obj:id())
+	end
+end

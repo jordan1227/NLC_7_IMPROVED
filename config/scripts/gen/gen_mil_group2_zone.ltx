@@ -1,0 +1,9 @@
+[logic]
+active = sr_idle@idle
+
+[sr_idle@idle]
+on_info = {+mikhalych_item_start} sr_idle@work
+
+[sr_idle@work]
+on_actor_inside = %=sak.info_gen_mil_group2% nil
+

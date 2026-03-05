@@ -1,0 +1,9 @@
+;space_restrictor_agro_undrgrnd
+[logic]
+active = sr_idle
+
+[sr_idle]
+on_actor_inside = %+actor_in_safe_zone_agro% sr_idle@actorout
+
+[sr_idle@actorout]
+on_actor_outside = %-actor_in_safe_zone_agro% sr_idle

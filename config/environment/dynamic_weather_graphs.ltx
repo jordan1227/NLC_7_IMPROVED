@@ -1,0 +1,573 @@
+;dynamic weather graphs
+;modified for SWE by ggGhosTt, zhoracementov
+
+[weather_console_settings]
+r2_ls_bloom_threshold 		= 0.0001
+r2_ls_bloom_kernel_scale 	= 0.8
+; r2_sun_lumscale 			= 1.0
+; r2_sun_lumscale_amb 		= 1.0
+; r2_sun_lumscale_hemi 		= 0.7
+r2_tonemap_adaptation 		= 1.0
+r2_tonemap_amount 			= 0.7
+r2_tonemap_lowlum 			= 0.0001
+r2_tonemap_middlegray 		= 2.0
+r_SunShafts_Blend 			= 0.01
+r_SunShafts_Radius 			= 2.0
+
+;pediod_section_name = hours_range_min, hours_range_max
+[weather_periods]
+1_good 				= 2, 6
+2_neutral			= 2, 7
+3_alpha				= 2, 3
+4_bad				= 2, 5
+5_foggy				= 2, 3
+
+;starts on one hour	after prev period ending
+[transition]
+np_cloudy4			= 1.0
+
+; pre blowout weathers
+[pre_blowout]
+pre_blowout			= 1.0
+
+[good]
+np_clear			= 0.25
+np_clear2 			= 0.25
+np_clear3 			= 0.25
+np_clear4 			= 0.25
+
+[neutral]
+np_cloudy 			= 0.15
+np_cloudy2 			= 0.10
+np_cloudy2_redmoon 	= 0.05
+np_cloudy3 			= 0.10
+np_cloudy4 			= 0.15
+np_cloudy5 			= 0.15
+swtc_dark 			= 0.15
+swtc_etalon 		= 0.15
+
+[alpha]
+np_alpha 			= 0.4
+np_alpha2 			= 0.3
+np_alpha3			= 0.3
+
+[bad]
+np_rain 			= 0.5
+np_thunder 			= 0.5
+
+[foggy]
+np_foggy 			= 0.4
+np_foggy_dark 		= 0.3
+np_foggy_nosun 		= 0.3
+
+[1_good]:good
+[2_neutral]:neutral
+[3_alpha]:alpha
+[4_bad]:bad
+[5_foggy]:foggy
+
+[pripyat]:bad
+[yantar]:foggy
+[radar]:bad
+[stancia]:bad
+[sarkofag]:neutral
+[stancia2]:bad
+
+; NLC Improved
+
+[default]
+np_clear			= 0.1
+np_clear2 			= 0.05
+np_clear3 			= 0.05
+np_clear4 			= 0.05
+np_cloudy 			= 0.05
+np_cloudy2 			= 0.05
+np_cloudy2_redmoon 	= 0.05
+np_cloudy3 			= 0.05
+np_cloudy4 			= 0.05
+np_cloudy5 			= 0.05
+swtc_dark 			= 0.05
+swtc_etalon 		= 0.05
+np_alpha 			= 0.05
+np_alpha2 			= 0.05
+np_alpha3			= 0.05
+np_rain 			= 0.05
+np_thunder 			= 0.05
+np_foggy 			= 0.05
+np_foggy_nosun 		= 0.05
+
+[indoor]
+indoor = 1.0
+[depressive]:bad
+[no_far]:foggy
+[no_far_normal]
+np_foggy 			= 0.5
+np_foggy_nosun 		= 0.5
+[storm]:bad
+[mrachno]:bad
+
+
+[nlc_escape]
+np_clear			= 0.15
+np_clear2 			= 0.15
+np_clear3 			= 0.15
+np_clear4 			= 0.15
+np_cloudy 			= 0.05
+np_cloudy2 			= 0.05
+np_cloudy2_redmoon 	= 0.05
+np_cloudy3 			= 0.05
+np_cloudy4 			= 0.05
+np_cloudy5 			= 0.05
+;swtc_dark 			= 
+;swtc_etalon 		= 
+np_alpha 			= 0.03
+np_alpha2 			= 0.03
+np_alpha3			= 0.04
+;np_rain 			= 
+;np_thunder 		= 
+;np_foggy 			= 
+;np_foggy_dark 		= 
+;np_foggy_nosun 	=
+
+[nlc_garbage]
+np_clear			= 0.10
+np_clear2 			= 0.10
+np_clear3 			= 0.10
+np_clear4 			= 0.10
+np_cloudy 			= 0.07
+np_cloudy2 			= 0.07
+np_cloudy2_redmoon 	= 0.07
+np_cloudy3 			= 0.07
+np_cloudy4 			= 0.07
+np_cloudy5 			= 0.07
+;swtc_dark 			= 
+;swtc_etalon 		= 
+np_alpha 			= 0.06
+np_alpha2 			= 0.06
+np_alpha3			= 0.06
+;np_rain 			= 
+;np_thunder 		= 
+;np_foggy 			= 
+;np_foggy_dark 		= 
+;np_foggy_nosun 	=
+
+[nlc_agroprom]
+np_clear			= 0.08
+np_clear2 			= 0.08
+np_clear3 			= 0.08
+np_clear4 			= 0.08
+np_cloudy 			= 0.08
+np_cloudy2 			= 0.08
+np_cloudy2_redmoon 	= 0.08
+np_cloudy3 			= 0.08
+np_cloudy4 			= 0.08
+np_cloudy5 			= 0.08
+;swtc_dark 			= 
+;swtc_etalon 		= 
+np_alpha 			= 0.06
+np_alpha2 			= 0.06
+np_alpha3			= 0.06
+;np_rain 			= 
+;np_thunder 		= 
+np_foggy 			= 0.01
+;np_foggy_dark 		= 
+np_foggy_nosun 	    = 0.01
+
+[nlc_darkvalley]
+np_clear			= 0.02
+np_clear2 			= 0.02
+np_clear3 			= 0.02
+np_clear4 			= 0.02
+np_cloudy 			= 0.10
+np_cloudy2 			= 0.10
+np_cloudy2_redmoon 	= 0.10
+np_cloudy3 			= 0.10
+np_cloudy4 			= 0.10
+np_cloudy5 			= 0.10
+;swtc_dark 			= 
+;swtc_etalon 		= 
+np_alpha 			= 0.06
+np_alpha2 			= 0.06
+np_alpha3			= 0.06
+;np_rain 			= 
+;np_thunder 		= 
+np_foggy 			= 0.07
+;np_foggy_dark 		= 
+np_foggy_nosun 	    = 0.07
+
+[nlc_darkvalley_polters]
+np_cloudy2_redmoon = 1.0
+
+[nlc_hospital]
+np_clear			= 0.15
+np_clear2 			= 0.15
+np_clear3 			= 0.15
+np_clear4 			= 0.15
+np_cloudy 			= 0.05
+np_cloudy2 			= 0.05
+np_cloudy2_redmoon 	= 0.05
+np_cloudy3 			= 0.05
+np_cloudy4 			= 0.05
+np_cloudy5 			= 0.05
+;swtc_dark 			= 
+;swtc_etalon 		= 
+np_alpha 			= 0.03
+np_alpha2 			= 0.03
+np_alpha3			= 0.04
+;np_rain 			= 
+;np_thunder 		= 
+;np_foggy 			= 
+;np_foggy_dark 		= 
+;np_foggy_nosun 	=
+
+[nlc_darkscape]
+np_clear			= 0.10
+np_clear2 			= 0.10
+np_clear3 			= 0.10
+np_clear4 			= 0.10
+np_cloudy 			= 0.07
+np_cloudy2 			= 0.07
+np_cloudy2_redmoon 	= 0.07
+np_cloudy3 			= 0.07
+np_cloudy4 			= 0.07
+np_cloudy5 			= 0.07
+;swtc_dark 			= 
+;swtc_etalon 		= 
+np_alpha 			= 0.06
+np_alpha2 			= 0.06
+np_alpha3			= 0.06
+;np_rain 			= 
+;np_thunder 		= 
+;np_foggy 			= 
+;np_foggy_dark 		= 
+;np_foggy_nosun 	=
+
+[nlc_lost_village]
+np_clear			= 0.15
+np_clear2 			= 0.15
+np_clear3 			= 0.15
+np_clear4 			= 0.15
+np_cloudy 			= 0.05
+np_cloudy2 			= 0.05
+np_cloudy2_redmoon 	= 0.05
+np_cloudy3 			= 0.05
+np_cloudy4 			= 0.05
+np_cloudy5 			= 0.05
+;swtc_dark 			= 
+;swtc_etalon 		= 
+np_alpha 			= 0.03
+np_alpha2 			= 0.03
+np_alpha3			= 0.04
+;np_rain 			= 
+;np_thunder 		= 
+;np_foggy 			= 
+;np_foggy_dark 		= 
+;np_foggy_nosun 	=
+
+[nlc_marsh]
+np_clear			= 0.07
+np_clear2 			= 0.07
+np_clear3 			= 0.07
+np_clear4 			= 0.07
+np_cloudy 			= 0.07
+np_cloudy2 			= 0.07
+np_cloudy2_redmoon 	= 0.07
+np_cloudy3 			= 0.07
+np_cloudy4 			= 0.07
+np_cloudy5 			= 0.07
+;swtc_dark 			= 
+;swtc_etalon 		= 
+np_alpha 			= 0.06
+np_alpha2 			= 0.06
+np_alpha3			= 0.06
+;np_rain 			= 
+;np_thunder 		= 
+np_foggy 			= 0.06
+;np_foggy_dark 		=
+np_foggy_nosun 	    = 0.06
+
+[nlc_bar]
+np_clear			= 0.07
+np_clear2 			= 0.07
+np_clear3 			= 0.07
+np_clear4 			= 0.07
+np_cloudy 			= 0.07
+np_cloudy2 			= 0.07
+np_cloudy2_redmoon 	= 0.07
+np_cloudy3 			= 0.07
+np_cloudy4 			= 0.07
+np_cloudy5 			= 0.07
+;swtc_dark 			= 
+;swtc_etalon 		= 
+np_alpha 			= 0.09
+np_alpha2 			= 0.09
+np_alpha3			= 0.09
+;np_rain 			= 
+;np_thunder 		= 
+np_foggy 			= 0.02
+;np_foggy_dark 		= 
+np_foggy_nosun 	    = 0.01
+
+[nlc_rostok]
+np_clear			= 0.06
+np_clear2 			= 0.06
+np_clear3 			= 0.06
+np_clear4 			= 0.06
+np_cloudy 			= 0.06
+np_cloudy2 			= 0.06
+np_cloudy2_redmoon 	= 0.06
+np_cloudy3 			= 0.06
+np_cloudy4 			= 0.06
+np_cloudy5 			= 0.06
+;swtc_dark 			= 
+;swtc_etalon 		= 
+np_alpha 			= 0.10
+np_alpha2 			= 0.10
+np_alpha3			= 0.10
+;np_rain 			= 
+;np_thunder 		= 
+np_foggy 			= 0.05
+;np_foggy_dark 		= 
+np_foggy_nosun 	    = 0.05
+
+[nlc_yantar]
+np_clear			= 0.03
+np_clear2 			= 0.03
+np_clear3 			= 0.03
+np_clear4 			= 0.03
+np_cloudy 			= 0.05
+np_cloudy2 			= 0.05
+np_cloudy2_redmoon 	= 0.05
+np_cloudy3 			= 0.05
+np_cloudy4 			= 0.05
+np_cloudy5 			= 0.05
+swtc_dark 			= 0.05
+swtc_etalon 		= 0.05
+np_alpha 			= 0.05
+np_alpha2 			= 0.05
+np_alpha3			= 0.05
+np_rain 			= 0.05
+np_thunder 			= 0.05
+np_foggy 			= 0.12
+;np_foggy_dark 		=
+np_foggy_nosun 		= 0.11
+
+[nlc_military]
+;np_clear			=
+;np_clear2 			=
+;np_clear3 			=
+;np_clear4 			=
+np_cloudy 			= 0.10
+np_cloudy2 			= 0.10
+np_cloudy2_redmoon 	= 0.10
+np_cloudy3 			= 0.10
+np_cloudy4 			= 0.10
+np_cloudy5 			= 0.10
+swtc_dark 			= 0.04
+swtc_etalon 		= 0.04
+np_alpha 			= 0.06
+np_alpha2 			= 0.06
+np_alpha3			= 0.06
+np_rain 			= 0.04
+np_thunder 		    = 0.04
+np_foggy 			= 0.03
+;np_foggy_dark 		= 
+np_foggy_nosun 	    = 0.03
+
+[nlc_red_forest]
+;np_clear			=
+;np_clear2 			=
+;np_clear3 			=
+;np_clear4 			=
+np_cloudy 			= 0.05
+np_cloudy2 			= 0.05
+np_cloudy2_redmoon 	= 0.05
+np_cloudy3 			= 0.05
+np_cloudy4 			= 0.05
+np_cloudy5 			= 0.05
+swtc_dark 			= 0.10
+swtc_etalon 		= 0.10
+np_alpha 			= 0.05
+np_alpha2 			= 0.05
+np_alpha3			= 0.05
+np_rain 			= 0.15
+np_thunder 		    = 0.10
+np_foggy 			= 0.05
+;np_foggy_dark 		= 
+np_foggy_nosun 	    = 0.05
+
+[nlc_limansk]
+;np_clear			=
+;np_clear2 			=
+;np_clear3 			=
+;np_clear4 			=
+np_cloudy 			= 0.07
+np_cloudy2 			= 0.04
+np_cloudy2_redmoon 	= 0.04
+np_cloudy3 			= 0.04
+np_cloudy4 			= 0.04
+np_cloudy5 			= 0.04
+swtc_dark 			= 0.10
+swtc_etalon 		= 0.10
+np_alpha 			= 0.05
+np_alpha2 			= 0.04
+np_alpha3			= 0.04
+np_rain 			= 0.15
+np_thunder 		    = 0.15
+np_foggy 			= 0.05
+; np_foggy_dark
+np_foggy_nosun 	    = 0.05
+
+[nlc_generators]
+;np_clear			=
+;np_clear2 			=
+;np_clear3 			=
+;np_clear4 			=
+np_cloudy 			= 0.04
+np_cloudy2 			= 0.04
+np_cloudy2_redmoon 	= 0.04
+np_cloudy3 			= 0.04
+np_cloudy4 			= 0.04
+np_cloudy5 			= 0.04
+swtc_dark 			= 0.10
+swtc_etalon 		= 0.10
+np_alpha 			= 0.05
+np_alpha2 			= 0.04
+np_alpha3			= 0.04
+np_rain 			= 0.20
+np_thunder 		    = 0.15
+np_foggy 			= 0.04
+;np_foggy_dark 		=
+np_foggy_nosun 	    = 0.04
+
+[nlc_deadcity]
+;np_clear			=
+;np_clear2 			=
+;np_clear3 			=
+;np_clear4 			=
+np_cloudy 			= 0.02
+np_cloudy2 			= 0.02
+np_cloudy2_redmoon 	= 0.02
+np_cloudy3 			= 0.02
+np_cloudy4 			= 0.02
+np_cloudy5 			= 0.02
+swtc_dark 			= 0.06
+swtc_etalon 		= 0.06
+np_alpha 			= 0.02
+np_alpha2 			= 0.02
+np_alpha3			= 0.02
+np_rain 			= 0.25
+np_thunder 		    = 0.25
+np_foggy 			= 0.10
+;np_foggy_dark 		= 
+np_foggy_nosun 	    = 0.10
+
+[nlc_radar]
+;np_clear			=
+;np_clear2 			=
+;np_clear3 			=
+;np_clear4 			=
+np_cloudy 			= 0.03
+np_cloudy2 			= 0.03
+np_cloudy2_redmoon 	= 0.03
+np_cloudy3 			= 0.03
+np_cloudy4 			= 0.03
+np_cloudy5 			= 0.03
+swtc_dark 			= 0.03
+swtc_etalon 		= 0.03
+np_alpha 			= 0.03
+np_alpha2 			= 0.03
+np_alpha3			= 0.03
+np_rain 			= 0.30
+np_thunder 		    = 0.30
+np_foggy 			= 0.04
+;np_foggy_dark 		=
+np_foggy_nosun 	    = 0.03
+
+[nlc_pripyat]
+;np_clear			=
+;np_clear2 			=
+;np_clear3 			=
+;np_clear4 			=
+np_cloudy 			= 0.04
+np_cloudy2 			= 0.04
+np_cloudy2_redmoon 	= 0.04
+np_cloudy3 			= 0.04
+np_cloudy4 			= 0.04
+np_cloudy5 			= 0.04
+swtc_dark 			= 0.10
+swtc_etalon 		= 0.10
+np_alpha 			= 0.05
+np_alpha2 			= 0.04
+np_alpha3			= 0.05
+np_rain 			= 0.16
+np_thunder 		    = 0.16
+np_foggy 			= 0.05
+;np_foggy_dark 		= 
+np_foggy_nosun 	    = 0.05
+
+[nlc_aver]
+;np_clear			=
+;np_clear2 			=
+;np_clear3 			=
+;np_clear4 			=
+np_cloudy 			= 0.05
+np_cloudy2 			= 0.05
+np_cloudy2_redmoon 	= 0.05
+np_cloudy3 			= 0.05
+np_cloudy4 			= 0.05
+np_cloudy5 			= 0.05
+swtc_dark 			= 0.05
+swtc_etalon 		= 0.05
+np_alpha 			= 0.05
+np_alpha2 			= 0.05
+np_alpha3			= 0.05
+np_rain 			= 0.10
+np_thunder 		    = 0.10
+np_foggy 			= 0.15
+;np_foggy_dark 		= 
+np_foggy_nosun 	    = 0.10
+
+[nlc_stancia]
+;np_clear			=
+;np_clear2 			=
+;np_clear3 			=
+;np_clear4 			=
+np_cloudy 			= 0.10
+np_cloudy2 			= 0.10
+np_cloudy2_redmoon 	= 0.10
+np_cloudy3 			= 0.10
+np_cloudy4 			= 0.10
+np_cloudy5 			= 0.10
+swtc_dark 			= 0.04
+swtc_etalon 		= 0.04
+np_alpha 			= 0.06
+np_alpha2 			= 0.06
+np_alpha3			= 0.06
+np_rain 			= 0.04
+np_thunder 		    = 0.04
+np_foggy 			= 0.03
+;np_foggy_dark 		= 
+np_foggy_nosun 	    = 0.03
+
+[nlc_stancia_2]
+;np_clear			=
+;np_clear2 			=
+;np_clear3 			=
+;np_clear4 			=
+np_cloudy 			= 0.04
+np_cloudy2 			= 0.04
+np_cloudy2_redmoon 	= 0.04
+np_cloudy3 			= 0.04
+np_cloudy4 			= 0.04
+np_cloudy5 			= 0.04
+swtc_dark 			= 0.10
+swtc_etalon 		= 0.10
+np_alpha 			= 0.05
+np_alpha2 			= 0.04
+np_alpha3			= 0.04
+np_rain 			= 0.20
+np_thunder 		    = 0.15
+np_foggy 			= 0.04
+;np_foggy_dark 		=
+np_foggy_nosun 	    = 0.04

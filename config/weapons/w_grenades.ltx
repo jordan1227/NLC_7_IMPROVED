@@ -1,0 +1,369 @@
+;Граната Ф-1
+[grenade_f1]:identity_immunities
+grenade_remove_time				= 60000
+detonation_threshold_hit		= 200
+GroupControlSection				= spawn_group
+discovery_dependency			= 
+$spawn							= "weapons\grenades\f1"
+$prefetch						= 128
+class							= G_F1
+cform							= skeleton
+visual							= dynamics\weapons\wpn_grenades\wpn_f1
+inv_name						= grenade-f1
+inv_name_short					= grenade-f1
+inv_weight						= 0.6
+description						= enc_weapons1_grenade-f1
+
+ef_weapon_type					= 10
+icon_group              		= 7
+inv_grid_height                                    = 1
+inv_grid_width                                     = 2
+inv_grid_x                                         = 55
+inv_grid_y                                         = 24
+
+kill_msg_x						= 1
+kill_msg_y						= 232
+kill_msg_width					= 13
+kill_msg_height					= 23
+
+animation_slot					= 7
+hand_dependence					= 1
+single_handed					= 0
+
+slot							= 3
+animation_slot					= 2	
+hud								= grenade_f1_hud
+force_min						= 10
+force_const						= 25
+force_max						= 30
+force_grow_speed				= 15
+
+destroy_time					= 2500
+
+cost							= 210
+
+blast							= 10
+blast_r							= 10
+blast_impulse					= 250
+
+frags							= 20
+frags_r							= 20
+frag_hit						= 2
+frag_hit_impulse				= 140
+
+hit_type_blast					= explosion
+hit_type_frag					= fire_wound
+
+up_throw_factor					= 1.2
+
+explode_particles				= explosions\explosion_01
+
+light_color						= 1.9,1.4,0.5
+light_range						= 25.0
+light_time						= 0.85
+
+fragment_speed					= 150
+explode_duration				= 3
+
+snd_explode 					= weapons\grenade\f1_explode
+snd_draw                                           = weapons\grenade\draw
+snd_holster                                        = weapons\grenade\holster
+snd_checkout            						   = weapons\grenade\grenade_throw_start
+snd_throw              							   = weapons\grenade\grenade_throw
+snd_throw1              						   = weapons\grenade\grenade_throw1
+snd_throw2              						   = weapons\grenade\grenade_throw2
+snd_throw3              						   = weapons\grenade\grenade_throw3
+snd_sprint_idle								   	   = weapons\sprint_hand
+snd_razgruzka					= weapons\razgruzka\ammo_3
+
+attach_position_offset			= -0.053,-0.089,0.0
+attach_angle_offset				= 0,0,0
+attach_bone_name				= 
+
+bone_name						= bip01_r_hand
+position_offset					= 0.0,0.0,0.0
+angle_offset					= 1.570790,1.570790,3.92699
+
+throw_point						= 0,0.3,0.2
+throw_dir						= 0,0,1
+wm_size							= 0.1
+
+wallmark_section				= explosion_marks
+
+[grenade_f1_hud]:hud_base
+; anm_bore                                           = f1_bore, idle
+anm_hide                                           = f1_holster, holster
+anm_idle                                           = f1_idle, idle
+anm_idle_moving_slow                               = f1_moving_slow, moving_slow
+anm_idle_moving                                    = f1_moving, moving
+anm_idle_moving_crouch                             = f1_crouch, crouch
+anm_idle_sprint                                    = f1_sprint, sprint
+anm_idle_sprint_start         						   = f1_sprint_start, sprint_start
+anm_idle_sprint         						   = f1_sprint, sprint
+anm_idle_sprint_end         						   	   = f1_sprint_end, sprint_end
+anm_show                                           = f1_draw, draw
+anm_throw                                          = f1_throw_end, throw_idle
+anm_throw_begin                                    = f1_throw_start, throw_start
+anm_throw_idle                                     = f1_throw_idle, throw_idle
+anm_headlamp_on                                  = f1_flash, flash
+; anm_gasmask                                        = f1_clear, flash
+attach_place_idx                                   = 0
+fire_bone                                          = wpn_body
+fire_point                                         = 0,0,0
+hands_orientation                                  = 0,0,0
+hands_orientation_16x9                             = 0,0,0
+hands_position                                     = 0.004700,-0.087650,-0.022750
+hands_position_16x9                                = 0.004700,-0.087650,-0.022750
+item_orientation                                   = 0,0,0
+item_position                                      = 0,0,0
+item_visual                                        = dynamics\weapons\wpn_grenades\wpn_f1_hud
+third_person_throw_point_offset                    = -0.05,0.848,0.706
+throw_dir                                          = 0,0,1
+throw_point                                        = 0.0,0.4,0.3
+
+
+;Граната РГД-5
+[grenade_rgd5]:identity_immunities
+GroupControlSection				= spawn_group
+discovery_dependency 			= 
+$spawn 							= "weapons\grenades\rgd5"
+$prefetch						= 128
+class							= G_RGD5
+cform							= skeleton
+visual							= dynamics\weapons\wpn_grenades\wpn_rgd5
+inv_name						= grenade-rgd5
+inv_name_short					= grenade-rgd5
+inv_weight						= 0.31
+description						= enc_weapons1_grenade-rgd5
+ef_weapon_type					= 10
+icon_group                  	= 7
+inv_grid_height                                    = 1
+inv_grid_width                                     = 2
+inv_grid_x                                         = 55
+inv_grid_y                                         = 25
+
+kill_msg_x						= 240
+kill_msg_y						= 123
+kill_msg_width					= 14
+kill_msg_height					= 23
+	
+animation_slot					= 7
+single_handed					= 0
+	
+slot							= 3
+hud								= grenade_rgd5_hud
+force_min						= 10
+force_const						= 25
+force_max						= 30
+force_grow_speed				= 15
+	
+destroy_time					= 2500
+	
+cost							= 100
+box_size						= 1
+	
+blast							= 7
+blast_r							= 7
+blast_impulse					= 200
+	
+frags							= 20
+frags_r							= 15
+frag_hit						= 1.5
+frag_hit_impulse				= 140
+	
+hit_type_blast					= explosion
+hit_type_frag					= fire_wound
+	
+up_throw_factor		 			= 1.2
+
+explode_particles				= explosions\explosion_01
+	
+light_color		         		= 1.9,1.4,0.5
+light_range		         		= 14.0
+light_time 		         		= 0.85
+	
+fragment_speed					= 150
+	
+explode_duration		 		= 5
+	
+snd_explode 					= weapons\grenade\rgd5_explode
+snd_explode1 					= weapons\grenade\rgd5_explode1
+snd_razgruzka					= weapons\razgruzka\ammo_3
+
+snd_draw                                           = weapons\grenade\draw
+snd_holster                                        = weapons\grenade\holster
+snd_checkout            						   = weapons\grenade\grenade_throw_start
+snd_throw              							   = weapons\grenade\grenade_throw
+snd_throw1              						   = weapons\grenade\grenade_throw1
+snd_throw2              						   = weapons\grenade\grenade_throw2
+snd_throw3              						   = weapons\grenade\grenade_throw3
+snd_sprint_idle								   	   = weapons\sprint_hand
+
+attach_position_offset			= -0.053,-0.089,0.0
+attach_angle_offset				= 0,0,0
+attach_bone_name				= 
+	
+position_offset			 		= 0.0,0.0,0.0
+angle_offset			 		= 1.570790,1.570790,3.92699
+	
+throw_point				 		= 0,0.3,0.2
+throw_dir				 		= 0,0,1
+wm_size                  		= 0.1
+wallmark_section		 		= explosion_marks
+	
+[grenade_rgd5_hud]:hud_base
+; anm_bore                                           = rgd5_bore, idle
+anm_hide                                           = rgd5_holster, holster
+anm_idle                                           = rgd5_idle, idle
+anm_idle_moving_slow                               = rgd5_moving_slow, moving_slow
+anm_idle_moving                                    = rgd5_moving, moving
+anm_idle_moving_crouch                             = rgd5_crouch, crouch
+anm_idle_sprint_start         						   = rgd5_sprint_start, sprint_start
+anm_idle_sprint         						   = rgd5_sprint, sprint
+anm_idle_sprint_end         						   	   = rgd5_sprint_end, sprint_end
+anm_show                                           = rgd5_draw, draw
+anm_throw                                          = rgd5_throw_end, throw_idle
+anm_throw_begin                                    = rgd5_throw_start, throw_start
+anm_throw_idle                                     = rgd5_throw_idle, throw_idle
+anm_headlamp_on                                  = rgd5_flash, flash
+; anm_gasmask                                        = rgd5_clear, flash
+attach_place_idx                                   = 0
+fire_bone                                          = wpn_body
+fire_point                                         = 0,0,0
+hands_orientation                                  = 0,0,0
+hands_orientation_16x9                             = 0,0,0
+hands_position                                     = 0.004700,-0.087650,-0.022750
+hands_position_16x9                                = 0.004700,-0.087650,-0.022750
+item_orientation                                   = 0,0,0
+item_position                                      = 0,0,0
+item_visual                                        = dynamics\weapons\wpn_grenades\wpn_rgd5_hud.ogf
+third_person_throw_point_offset                    = -0.05,0.848,0.706
+throw_dir                                          = 0,0,1
+throw_point                                        = 0.0,0.4,0.3
+
+
+[grenade_rgo]:identity_immunities
+$prefetch                                          = 128
+$spawn                                             = "weapons\grenades\rgo"
+animation_slot                                     = 7
+attach_angle_offset                                = 0.000000,  0.000000,  0.000000
+attach_bone_name                                   = 
+attach_position_offset                             = -0.053,-0.089,0.0
+
+cform                                              = skeleton
+class                                              = G_F1
+cost                                               = 500
+
+discovery_dependency                               = 
+ef_weapon_type                                     = 4
+explode_duration                                   = 3
+explode_particles                                  = explosions\explosion_01
+force_const                                        = 25
+force_grow_speed                                   = 30; 20
+
+destroy_time									   = 2500
+
+force_max                                          = 30
+force_min                                          = 10
+
+blast                                              = 6
+blast_r                                            = 6
+blast_impulse                                      = 175
+frags                                              = 25
+frags_r                                            = 12
+frag_hit                                           = 1
+frag_hit_impulse                                   = 100
+fragment_speed                                     = 150
+
+GroupControlSection                                = spawn_group
+highlight_equipped                                 = true
+hit_type_blast                                     = explosion
+hit_type_frag                                      = fire_wound
+hud                                                = grenade_rgo_hud
+
+icon_group                  					   = 7
+inv_grid_height                                    = 1
+inv_grid_width                                     = 1
+inv_grid_x                                         = 43
+inv_grid_y                                         = 36
+
+inv_name                                           = grenade-rgo
+inv_name_short                                     = grenade-rgo
+description                                        = grenade_rgo_desc
+
+inv_weight                                         = 0.53
+kill_msg_height                                    = 23
+kill_msg_width                                     = 14
+kill_msg_x                                         = 240
+kill_msg_y                                         = 123
+light_color                                        = 1.9,1.4,0.5
+light_range                                        = 14.0
+light_time                                         = 0.85
+max_radius                                         = 17.5
+min_radius                                         = 5
+position_offset                                    = 0.0, 0.0, 0.0
+reload_dof                                         = 0.0, 0.5, 5, 1.7
+single_handed                                      = 0
+slot                                               = 3
+sprint_allowed                                     = true
+throw_dir                                          = 0,0,1
+throw_point                                        = 0.4, 0.3, 0.1
+up_throw_factor                                    = 1.2
+upgr_icon_height                                   = 128
+upgr_icon_width                                    = 128
+upgr_icon_x                                        = 900
+upgr_icon_y                                        = 1250
+visual                                             = dynamics\weapons\wpn_grenades\wpn_rgo.ogf
+wallmark_section                                   = explosion_marks
+weapon_class                                       = 
+wm_size                                            = 0.1
+zoom_dof                                           = 0.5, 1.0, 180
+
+explosion_on_kick = true ;делает гранату контактной
+safe_dist_to_explode = 5 ;минимальная дистанция для контактного взрыва
+explode_by_timer_on_safe_dist = true ;по сути влияние safe_dist_to_explode на взрыв по таймеру. Если true - грена будет взрываться даже в пределах safe_dist_to_explode по таймеру
+
+sprint_start_time 						 		   = 0.035
+
+use_device_anims = true
+
+snd_explode 									   = weapons\grenade\f1_explode
+snd_draw                                           = weapons\grenade\draw
+snd_holster                                        = weapons\grenade\holster
+snd_checkout            						   = weapons\grenade\grenade_throw_start
+snd_throw              							   = weapons\grenade\grenade_throw
+snd_throw1              						   = weapons\grenade\grenade_throw1
+snd_throw2              						   = weapons\grenade\grenade_throw2
+snd_throw3              						   = weapons\grenade\grenade_throw3
+snd_sprint_idle								   	   = weapons\sprint_hand
+snd_razgruzka									   = weapons\razgruzka\ammo_3
+
+[grenade_rgo_hud]:hud_base
+anm_bore                                           = rgn_idle
+anm_hide                                           = rgn_holster
+anm_idle                                           = rgn_idle
+anm_idle_moving_slow                               = rgn_moving_slow, rgn_slow_super
+anm_idle_moving                                    = rgn_moving, rgn_slow_super
+anm_idle_moving_crouch                             = rgn_crouch, rgn_slow_super
+anm_idle_sprint_start                              = rgn_sprint_start
+anm_idle_sprint         						   = rgn_sprint
+anm_idle_sprint_end                                = rgn_sprint_end
+anm_show                                           = rgn_draw
+anm_throw                                          = f1_throw_end, rgn_throw_idle
+anm_throw_begin                                    = rgn_throw_start
+anm_throw_idle                                     = f1_throw_idle, rgn_throw_idle
+anm_switch_device                                  = rgn_flash, flash
+anm_gasmask                                        = rgn_clear, flash
+attach_place_idx                                   = 0
+fire_bone                                          = wpn_body
+fire_point                                         = 0,0,0
+hands_orientation                                  = 0,0,0
+hands_orientation_16x9                             = 0,0,0
+hands_position                                     = 0.004700,-0.087650,-0.022750
+hands_position_16x9                                = 0.004700,-0.087650,-0.022750
+item_orientation                                   = 0,0,0
+item_position                                      = 0,0,0
+item_visual                                        = dynamics\weapons\wpn_grenades\wpn_rgo_hud.ogf
+third_person_throw_point_offset                    = -0.05,0.848,0.706
+throw_dir                                          = 0,0,1
+throw_point                                        = 0.0,0.4,0.3

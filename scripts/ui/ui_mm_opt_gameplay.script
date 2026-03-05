@@ -1,0 +1,53 @@
+--Меню настроек геймплея. Используется скриптом ui_mm_opt_main.script
+
+local options = {
+	{"cap_difficulty", "InitStatic", {"list_difficulty", "InitComboBox"}, "", ""},
+	{"cap_font_scale_y", "InitStatic", {"track_font_scale_y", "InitTrackBar"}, "", ""},
+	{"cap_font_scale_x", "InitStatic", {"track_font_scale_x", "InitTrackBar"}, "", ""},
+	{"check_autopause", "InitCheck", false, "", ""},
+	{"check_3d_pda", "InitCheck", false, "", ""},
+	{"check_3d_scopes", "InitCheck", false, "", ""},
+	{"check_tips", "InitCheck", false, "", ""},
+	{"check_crosshair", "InitCheck", false, "", ""},
+	{"check_dyn_crosshair", "InitCheck", false, "", ""},
+	{"check_dist", "InitCheck", false, "", ""},
+	{"check_ambient", "InitCheck", false, "", ""},
+	{"check_build_crosshair", "InitCheck", false, "", ""},
+	{"check_crosshair_hard", "InitCheck", false, "ui_mm_crosshair_hard", "ui_mm_crosshair_hard_desc"},
+	{"check_aim_toggle", "InitCheck", false, "", ""},
+	{"check_switch_slot", "InitCheck", false, "", ""},
+	{"check_disable_cam_inert", "InitCheck", false, "ui_mm_disable_cam_inert", "ui_mm_disable_cam_inert_desc"},
+	{"check_show_dyn_desc_wnd", "InitCheck", false, "ui_mm_g_show_dyn_desc_wnd", "ui_mm_g_show_dyn_desc_wnd_desc"},
+	{"check_hide_untradable_items", "InitCheck", false, "ui_mm_g_hide_untradable_items", "ui_mm_g_hide_untradable_items_desc"},
+	{"check_show_status_icons", "InitCheck", false, "ui_mm_hud_show_status_icons", "ui_mm_hud_show_status_icons_desc"},
+}
+
+class "opt_gameplay" (CUIWindow)
+function opt_gameplay:__init() super()
+end
+
+function opt_gameplay:__finalize()
+end
+
+function opt_gameplay:InitControls(x, y, xml, handler)
+	self:Init(x, y, 738, 416)
+	self:SetAutoDelete(true)
+
+	xml:InitFrame("frame", self)
+	self.scroll_v = xml:InitScrollView("tab_gameplay:scroll_v", self)
+
+	for i = #options, 1, -1 do
+		local opt, ctr_type, second_element, hint_caption, hint_string = unpack(options[i])
+
+		local _st = xml:InitStatic("tab_gameplay:templ_item", self.scroll_v)
+		local ctl = xml[ctr_type](xml, "tab_gameplay:"..opt, _st)
+		if second_element then xml[second_element[2]](xml, "tab_gameplay:"..second_element[1], _st) end
+
+		handler:Register(_st, "tab_gameplay_cap"..opt)
+		handler:AddCallback("tab_gameplay_cap"..opt, ui_events.STATIC_FOCUS_RECEIVED, function()
+			handler.hint_name:SetText(hint_caption and game.translate_string(hint_caption) or "")
+			handler.hint_caption:SetText(hint_string and game.translate_string(hint_string) or "")
+		end)
+	end
+	xml:InitStatic("tab_gameplay:templ_item", self.scroll_v)
+end

@@ -1,0 +1,194 @@
+; ол
+[wpn_pm]:weapon_immunities
+GroupControlSection			= spawn_group
+discovery_dependency 		=
+$spawn                   	= "weapons\pm"
+$npc			 			= on
+$prefetch 					= 8
+scheduled            		= off
+cform                    	= skeleton
+class                    	= WP_PM
+min_radius               	= 0
+max_radius               	= 40
+description					= enc_weapons1_wpn-pm
+
+default_to_ruck				= false
+
+ef_main_weapon_type			= 2
+ef_weapon_type				= 5
+
+holder_range_modifier		= 1.0
+holder_fov_modifier			= 1.0
+
+cost					 	= 500
+
+ammo_limit		 			= 120
+ammo_current		 		= 96
+ammo_elapsed		 		= 8
+
+f_mode						= 1
+
+ammo_mag_size		 		= 8
+ammo_class		 			= ammo_9x18_fmj, ammo_9x18_pmm
+
+hand_dependence			 	= 1
+
+slot 				 		= 1,4
+animation_slot		 		= 1
+single_handed				= 1
+
+inv_name					= wpn-pm
+inv_name_short				= wpn-pm
+inv_weight					= 0.73
+inv_grid_height             = 2
+inv_grid_width              = 2
+inv_grid_x                  = 79
+inv_grid_y                  = 24
+
+fire_dispersion_base		= 0.3
+control_inertion_factor		= 1.1f
+
+cam_relax_speed         	= 8
+cam_dispersion          	= 0.3
+cam_dispersion_inc			= 0.0
+cam_dispertion_frac			= 1.0
+cam_max_angle				= 30
+cam_max_angle_horz			= 10
+cam_step_angle_horz			= 1.0
+
+fire_dispersion_condition_factor = 2.1
+misfire_probability 		= 0.005
+misfire_condition_k			= 0.50
+condition_shot_dec 			= 0.00025
+
+direction                	= 0, 0, 1
+fire_point               	= 0.0, 0.127, 0.117
+
+flame_particles				= weapons\generic_weapon03
+smoke_particles				= weapons\generic_shoot_00
+
+shell_point		 			= 0.00, 0.127, 0.03
+shell_dir		 			= 0.0, 0.0, 0.4
+;shell_particles	 		= weapons\arsenal_shells1
+
+rpm_empty_click 	 		= 100
+
+PDM_disp_base 				= 1.5
+PDM_disp_vel_factor 		= 2.0
+PDM_disp_accel_factor 		= 3.0
+PDM_crouch					= 1.5
+PDM_crouch_no_acc			= 0.7
+
+hit_power               	= 0.95
+hit_impulse		 			= 1
+hit_type 					= fire_wound
+
+fire_distance           	= 50
+bullet_speed				= 255
+rpm                     	= 230
+
+use_aim_bullet				= false
+time_to_aim					= 1.0
+
+hud                      	= wpn_pm_hud
+normal                   	= 0, 1, 0
+position                 	= -0.021, -0.085, -0.01
+orientation              	= 0, 0, 0
+
+visual                   	= dynamics\weapons\wpn_pm\wpn_pm
+
+light_color		 			= 0.6,0.5,0.3
+light_range		 			= 3.0
+light_var_color		 		= 0.05
+light_var_range		 		= 0.5
+light_time 		 			= 0.2
+
+ph_mass			 			= 1
+silencer_smoke_particles 	= weapons\generic_shoot_00
+
+silencer_light_color		= 0.6,0.5,0.3
+silencer_light_range		= 0.01
+silencer_light_var_color	= 0.05
+silencer_light_var_range	= 0.5
+silencer_light_time 		= 0.2
+
+scope_zoom_factor = 75
+
+snd_close                   = weapons\pistol_holster
+snd_draw                    = weapons\pistol_draw
+snd_empty                   = weapons\pm\pm_empty
+snd_holster                 = weapons\pistol_holster
+snd_reload                  = weapons\pm\pm_reload
+snd_reload_empty            = weapons\pm\pm_reload_empty
+snd_reload_jammed          = weapons\pm\pm_misfire
+snd_sprint_idle				= weapons\sprint_pistol
+
+snd_shoot					= weapons\pm\pm_muzzle_mono
+snd_shoot1					= weapons\pm\pm_muzzle_mono1
+snd_silncer_shot			= weapons\pm\pm_silencer_mono
+snd_razgruzka				= weapons\razgruzka\ammo_2
+
+[wpn_pm_hud]:hud_base
+aim_hud_offset_pos = -0.073000,0.040000,-0.09
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.073000,0.040000,-0.09
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+anm_bore                                           = pm_idle_aim
+anm_bore_empty                                     = pm_idle_aim, idle_empty
+anm_hide                                           = pm_holster
+anm_hide_empty                                     = pm_holster, idle_empty
+anm_idle                                           = pm_idle
+anm_idle_aim                                       = pm_idle_aim
+anm_idle_aim_empty                                 = pm_idle, idle_empty
+anm_idle_empty                                     = pm_idle, idle_empty
+anm_idle_moving_slow                               = pm_moving_slow
+anm_idle_moving_slow_empty                         = pm_moving_slow, idle_empty
+anm_idle_moving                                    = pm_moving
+anm_idle_moving_empty                              = pm_moving, idle_empty
+anm_idle_moving_crouch                             = pm_crouch
+anm_idle_moving_crouch_empty                       = pm_crouch, idle_empty
+anm_idle_aim_moving		 						   = pm_moving_aim
+anm_idle_aim_moving_empty						   = pm_moving_aim, idle_empty
+anm_idle_sprint_start         						   = pm_sprint_start
+anm_idle_sprint         						   = pm_sprint
+anm_idle_sprint_end         						   	   = pm_sprint_end
+anm_idle_sprint_start_empty         					   = pm_sprint_start, idle_empty
+anm_idle_sprint_empty         					   = pm_sprint, idle_empty
+anm_idle_sprint_end_empty         					   = pm_sprint_end, idle_empty
+anm_idle_sprint_end_jammed = pm_sprint_end
+anm_idle_sprint_start_jammed = pm_sprint_start
+
+anm_reload                                         = pm_reload, reload
+anm_reload_empty                                   = pm_reload_empty, reload_empty
+anm_reload_jammed								   = pm_misfire, misfire
+anm_shot_l                                         = pm_shoot, idle_empty
+anm_shots                                          = pm_shoot, shoot
+anm_shots_when_aim								   = pm_shoot_aim, shoot
+anm_shot_l_when_aim								   = pm_shoot_aim, idle_empty
+anm_show                                           = pm_draw
+anm_show_empty                                     = pm_draw, idle_empty
+
+; anm_prepare_detector                               = pm_hand_holster
+; anm_prepare_detector_empty                         = pm_hand_holster, idle_empty
+; anm_finish_detector                                = pm_hand_draw
+; anm_finish_detector_empty                          = pm_hand_draw, idle_empty
+
+anm_headlamp_on                                  = pm_flash
+; anm_gasmask                                        = pm_clear
+
+anm_headlamp_on_empty                            = pm_flash, idle_empty
+; anm_gasmask_empty                                  = pm_clear, idle_empty
+
+attach_place_idx                                   = 0
+fire_bone                                          = wpn_body
+fire_point                                         = 0.000000,0.062700,0.261801
+
+hands_position									   = 0.000000,-0.077200,-0.008500
+hands_orientation								   = 0.0,0.0,0.0
+hands_position_16x9								   = 0.000000,-0.077200,-0.008500
+hands_orientation_16x9							   = 0.0,0.0,0.0
+
+item_visual                                        = dynamics\weapons\wpn_pm\wpn_pm_hud
+
+shell_bone                                         = wpn_body
+shell_point                                        = 0,0.085,0.1

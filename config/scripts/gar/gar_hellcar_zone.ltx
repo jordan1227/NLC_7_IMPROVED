@@ -1,0 +1,8 @@
+[logic]
+active = sr_idle
+
+[sr_idle]
+on_info = {+hellcar_raid_start} sr_idle@alive
+
+[sr_idle@alive]
+on_info = {+gar_hellcar_help -gar_bandits_killed =gulag_population_active_le(gar_bandit_agr:5)} nil %+gar_bandits_killed =sak_spawn.spawn_items_on_escape()%

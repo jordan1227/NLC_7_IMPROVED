@@ -1,0 +1,487 @@
+-- by alpet 13.02.2011 ...
+-- inv_object as CInventoryItem* = wpn_object-D8
+-- wpn_object as CWeapon*
+
+function get_zie_obj()
+	if find_effector_zi then
+		return find_effector_zi()
+	end
+end
+
+wpn_params.get_zie_obj = get_zie_obj
+
+function find_zie_obj()
+	local eff_obj = wpn_params.get_zie_obj(nc)
+	if eff_obj then
+		wprintf("[~T]. #DBG: zie at %s", eff_obj:format())
+	else
+		wprintf("[~T]. #WARN: not found zie")
+	end
+	return eff_obj
+end
+
+wpn_params.find_zie_obj = find_zie_obj
+
+function cut_suffix(k, suffix)
+	local slen = suffix:len()
+	local real = k:sub(-slen)
+	if real == suffix then
+		local kl = k:len()
+		if kl > slen then
+			-- wprintf(" cut %s from %s, %d - %d ", real, k, kl, slen)
+			k = k:sub(1, kl - slen)
+		end
+	end
+	return k
+end
+
+function zupd(k, v, test, eff_obj)
+	if eff_obj == nil then
+		eff_obj = wpn_params.get_zie_obj()
+	end
+
+	if (eff_obj == nil) then
+		return
+	end
+
+	local ck = cut_suffix(k, "_int")
+	if eff_obj[ck] ~= nil then
+		eff_obj[ck] = v
+	else
+		wprintf("~C0C#WARN(zupd):~C07 zie not supported propery %s [%s] ", ck, k)
+	end
+end
+
+wpn_params.zupd = zupd
+
+wpn_params.disp_add = {17, -17, 5}
+
+wpn_params.zoom_time = 1
+
+local base_radius = 0
+local disp_angles = {0, 0, 0}
+local disp_radius = {0.01, 0.001, 0.005}
+
+function inc_angle(idx)
+	local a = wpn_params.disp_add[idx]
+	wpn_params.disp_add[idx] = a
+
+	local v = disp_angles[idx] + a
+
+	if v < 0 then
+		v = v + 360
+	elseif v >= 360 then
+		v = v - 360
+	end
+	disp_angles[idx] = v
+end
+
+local wobble_wpn = {
+["wpn_abakan"] = 1.35,
+["wpn_abakan_1p78"] = 1.35,
+["wpn_abakan_ekp"] = 1.35,
+["wpn_abakan_okp"] = 1.35,
+["wpn_abakan_pso"] = 1.35,
+["wpn_abakan_rakurs"] = 1.35,
+["wpn_aek971"] = 1.3,
+["wpn_ak103_1p78"] = 1.2,
+["wpn_ak103_ekp"] = 1.2,
+["wpn_ak103_okp"] = 1.2,
+["wpn_ak103_pso"] = 1.2,
+["wpn_ak103_rakurs"] = 1.2,
+["wpn_ak104"] = 1.2,
+["wpn_ak108"] = 1.4,
+["wpn_ak12_ac10632"] = 1.3,
+["wpn_ak12_acog"] = 1.3,
+["wpn_ak12_eot"] = 1.3,
+["wpn_ak12_microt1"] = 1.3,
+["wpn_ak12_specter"] = 1.3,
+["wpn_ak47"] = 1.4,
+["wpn_ak74"] = 1.4,
+["wpn_ak74_1p78"] = 1.4,
+["wpn_ak74_ekp"] = 1.4,
+["wpn_ak74_m1"] = 1.3,
+["wpn_ak74_m1_ac10632"] = 1.3,
+["wpn_ak74_m1_acog"] = 1.3,
+["wpn_ak74_m1_eot"] = 1.3,
+["wpn_ak74_m1_microt1"] = 1.3,
+["wpn_ak74_m1_specter"] = 1.3,
+["wpn_ak74_m2"] = 1.3,
+["wpn_ak74_m3"] = 1.35,
+["wpn_ak74_okp"] = 1.4,
+["wpn_ak74_pso"] = 1.4,
+["wpn_ak74_rakurs"] = 1.4,
+["wpn_ak74m"] = 1.35,
+["wpn_ak74pbn"] = 1.35,
+["wpn_ak74u"] = 1.5,
+["wpn_ak74u_1p78"] = 1.5,
+["wpn_ak74u_ekp"] = 1.5,
+["wpn_ak74u_okp"] = 1.5,
+["wpn_ak74u_rakurs"] = 1.5,
+["wpn_ak74u_snag_1p78"] = 1.3,
+["wpn_ak74u_snag_ac10632"] = 1.3,
+["wpn_ak74u_snag_ekp"] = 1.3,
+["wpn_ak74u_snag_eot"] = 1.3,
+["wpn_ak74u_snag_microt1"] = 1.3,
+["wpn_ak74u_snag_okp"] = 1.3,
+["wpn_ak74u_snag_pso"] = 1.3,
+["wpn_ak74u_snag_rakurs"] = 1.3,
+["wpn_akm"] = 1.35,
+["wpn_aks47"] = 1.4,
+["wpn_aps"] = 1.15,
+["wpn_awm"] = 1,
+["wpn_beretta"] = 1.2,
+["wpn_beretta93"] = 1.15,
+["wpn_binoc"] = 0.9,
+["wpn_bizon"] = 1.35,
+["wpn_bizon_ekp"] = 1.35,
+["wpn_bizon_okp"] = 1.35,
+["wpn_bizon_rakurs"] = 1.35,
+["wpn_bm16"] = 1.6,
+["wpn_bm16_full"] = 1.35,
+["wpn_colt1911"] = 1.1,
+["wpn_desert_eagle"] = 1.05,
+["wpn_eagle_m1"] = 1.05,
+["wpn_flame"] = 1.5,
+["wpn_fn2000"] = 1.2,
+["wpn_fn2000_nimble_ac10632"] = 1.2,
+["wpn_fn2000_nimble_acog"] = 1.2,
+["wpn_fn2000_nimble_eot"] = 1.2,
+["wpn_fn2000_nimble_microt1"] = 1.2,
+["wpn_fn2000_nimble_specter"] = 1.2,
+["wpn_fort"] = 1.2,
+["wpn_fort_m1"] = 1.25,
+["wpn_g36"] = 1.2,
+["wpn_g36_nimble_ac10632"] = 1.3,
+["wpn_g36_nimble_acog"] = 1.3,
+["wpn_g36_nimble_eot"] = 1.3,
+["wpn_g36_nimble_microt1"] = 1.3,
+["wpn_g36_nimble_specter"] = 1.3,
+["wpn_g36c"] = 1.3,
+["wpn_galil31_ac10632"] = 1.35,
+["wpn_galil31_acog"] = 1.35,
+["wpn_galil31_eot"] = 1.35,
+["wpn_galil31_microt1"] = 1.35,
+["wpn_galil31_specter"] = 1.35,
+["wpn_gauss"] = 1.3,
+["wpn_gauss_auto"] = 1.35,
+["wpn_glock"] = 1.2,
+["wpn_glock_m1"] = 1.18,
+["wpn_glock_m2"] = 1.16,
+["wpn_gm94"] = 1.4,
+["wpn_groza"] = 1.3,
+["wpn_gungauss"] = 1.25,
+["wpn_hunters_toz_new"] = 1.35,
+["wpn_knife"] = 1,
+["wpn_lr300"] = 1.25,
+["wpn_lr300_ac10632"] = 1.25,
+["wpn_lr300_acog"] = 1.25,
+["wpn_lr300_eot"] = 1.25,
+["wpn_lr300_microt1"] = 1.25,
+["wpn_lr300_specter"] = 1.25,
+["wpn_m110"] = 1.15,
+["wpn_m16a4"] = 1.2,
+["wpn_mosin"] = 1.15,
+["wpn_mosin_pu"] = 1.15,
+["wpn_mp153"] = 1.3,
+["wpn_mp153_m1"] = 1.6,
+["wpn_mp5"] = 1.35,
+["wpn_mp5_ac10632"] = 1.35,
+["wpn_mp5_acog"] = 1.35,
+["wpn_mp5_eot"] = 1.35,
+["wpn_mp5_m1"] = 1.9,
+["wpn_mp5_m1_ac10632"] = 1.9,
+["wpn_mp5_m1_acog"] = 1.9,
+["wpn_mp5_m1_eot"] = 1.9,
+["wpn_mp5_m1_microt1"] = 1.9,
+["wpn_mp5_m1_specter"] = 1.9,
+["wpn_mp5_m2"] = 1.3,
+["wpn_mp5_microt1"] = 1.35,
+["wpn_mp5_nimble_ac10632"] = 1.35,
+["wpn_mp5_nimble_acog"] = 1.35,
+["wpn_mp5_nimble_eot"] = 1.35,
+["wpn_mp5_nimble_microt1"] = 1.35,
+["wpn_mp5_nimble_specter"] = 1.35,
+["wpn_mp5_specter"] = 1.35,
+["wpn_mp9_ac10632"] = 1.16,
+["wpn_mp9_eot"] = 1.16,
+["wpn_mp9_microt1"] = 1.16,
+["wpn_mr308"] = 1.1,
+["wpn_pb"] = 1.25,
+["wpn_pkm"] = 1.25,
+["wpn_pkm_zulus_ac10632"] = 1.2,
+["wpn_pkm_zulus_eot"] = 1.2,
+["wpn_pkm_zulus_microt1"] = 1.2,
+["wpn_pkp"] = 1.2,
+["wpn_pm"] = 1.25,
+["wpn_pp19"] = 1.35,
+["wpn_rg6"] = 1.45,
+["wpn_rpg7"] = 1.7,
+["wpn_rpk"] = 1.3,
+["wpn_rpk16_ac10632"] = 1.4,
+["wpn_rpk16_acog"] = 1.4,
+["wpn_rpk16_eot"] = 1.4,
+["wpn_rpk16_microt1"] = 1.4,
+["wpn_rpk16_specter"] = 1.4,
+["wpn_rpk74"] = 1.3,
+["wpn_rpk74_1p78"] = 1.3,
+["wpn_rpk74_ekp"] = 1.3,
+["wpn_rpk74_okp"] = 1.3,
+["wpn_rpk74_pso"] = 1.3,
+["wpn_rpk74_rakurs"] = 1.3,
+["wpn_rpk74m_1p78"] = 1.3,
+["wpn_rpk74m_ekp"] = 1.3,
+["wpn_rpk74m_okp"] = 1.3,
+["wpn_rpk74m_pso"] = 1.3,
+["wpn_rpk74m_rakurs"] = 1.3,
+["wpn_sa58_ac10632"] = 1.2,
+["wpn_sa58_acog"] = 1.2,
+["wpn_sa58_eot"] = 1.2,
+["wpn_sa58_microt1"] = 1.2,
+["wpn_sa58_specter"] = 1.2,
+["wpn_saiga12_ekp"] = 1.35,
+["wpn_saiga12_okp"] = 1.35,
+["wpn_saiga12_rakurs"] = 1.35,
+["wpn_saiga12c"] = 1.35,
+["wpn_saiga12c_m1"] = 1.25,
+["wpn_saiga12c_m2"] = 1.25,
+["wpn_saiga12m_ac10632"] = 1.25,
+["wpn_saiga12m_eot"] = 1.25,
+["wpn_saiga12m_microt1"] = 1.25,
+["wpn_scarh_ac10632"] = 1.15,
+["wpn_scarh_acog"] = 1.15,
+["wpn_scarh_eot"] = 1.15,
+["wpn_scarh_microt1"] = 1.15,
+["wpn_scarh_specter"] = 1.15,
+["wpn_sig220"] = 1.2,
+["wpn_sig550"] = 1.3,
+["wpn_sig550_ac10632"] = 1.3,
+["wpn_sig550_acog"] = 1.3,
+["wpn_sig550_eot"] = 1.3,
+["wpn_sig550_microt1"] = 1.3,
+["wpn_sig550_specter"] = 1.3,
+["wpn_sks_1p78"] = 1.4,
+["wpn_sks_ekp"] = 1.4,
+["wpn_sks_okp"] = 1.4,
+["wpn_sks_pso"] = 1.4,
+["wpn_sks_rakurs"] = 1.4,
+["wpn_soc308"] = 1.2,
+["wpn_soc308_m1"] = 1.15,
+["wpn_soc308_m1_ac10632"] = 1.15,
+["wpn_soc308_m1_acog"] = 1.15,
+["wpn_soc308_m1_eot"] = 1.15,
+["wpn_soc308_m1_microt1"] = 1.15,
+["wpn_soc308_m1_specter"] = 1.15,
+["wpn_spas12"] = 1.2,
+["wpn_spas12_m1"] = 1.2,
+["wpn_spas12_nimble_ac10632"] = 1.2,
+["wpn_spas12_nimble_eot"] = 1.2,
+["wpn_spas12_nimble_microt1"] = 1.2,
+["wpn_spas15"] = 1.25,
+["wpn_spas15_m1"] = 1.25,
+["wpn_sr2m_ac10632"] = 1.3,
+["wpn_sr2m_eot"] = 1.3,
+["wpn_sr2m_microt1"] = 1.3,
+["wpn_sv98"] = 1,
+["wpn_svd"] = 1.05,
+["wpn_svd_1p78"] = 1.05,
+["wpn_svd_ekp"] = 1.05,
+["wpn_svd_okp"] = 1.05,
+["wpn_svd_pso"] = 1.05,
+["wpn_svd_rakurs"] = 1.05,
+["wpn_svu"] = 1.1,
+["wpn_svu_1p78"] = 1.1,
+["wpn_svu_ekp"] = 1.1,
+["wpn_svu_okp"] = 1.1,
+["wpn_svu_pso"] = 1.1,
+["wpn_svu_rakurs"] = 1.1,
+["wpn_toz34"] = 1.35,
+["wpn_toz34_m1"] = 1.35,
+["wpn_ump45"] = 1.35,
+["wpn_usp"] = 1.2,
+["wpn_val"] = 1.35,
+["wpn_val_1p78"] = 1.35,
+["wpn_val_ekp"] = 1.35,
+["wpn_val_okp"] = 1.35,
+["wpn_val_pso"] = 1.35,
+["wpn_val_rakurs"] = 1.35,
+["wpn_vector_ac10632"] = 1.4,
+["wpn_vector_acog"] = 1.4,
+["wpn_vector_eot"] = 1.4,
+["wpn_vector_microt1"] = 1.4,
+["wpn_vector_specter"] = 1.4,
+["wpn_vintorez"] = 1.3,
+["wpn_vintorez_1p78"] = 1.3,
+["wpn_vintorez_ekp"] = 1.3,
+["wpn_vintorez_m1"] = 1.35,
+["wpn_vintorez_nimble_ac10632"] = 1.35,
+["wpn_vintorez_nimble_acog"] = 1.35,
+["wpn_vintorez_nimble_eot"] = 1.35,
+["wpn_vintorez_nimble_microt1"] = 1.35,
+["wpn_vintorez_nimble_specter"] = 1.35,
+["wpn_vintorez_okp"] = 1.3,
+["wpn_vintorez_pso"] = 1.3,
+["wpn_vintorez_rakurs"] = 1.3,
+["wpn_vityaz_ac10632"] = 1.35,
+["wpn_vityaz_acog"] = 1.35,
+["wpn_vityaz_eot"] = 1.35,
+["wpn_vityaz_microt1"] = 1.35,
+["wpn_vityaz_specter"] = 1.35,
+["wpn_vpo101_1p78"] = 1.25,
+["wpn_vpo101_ekp"] = 1.25,
+["wpn_vpo101_okp"] = 1.25,
+["wpn_vpo101_pso"] = 1.25,
+["wpn_vpo101_rakurs"] = 1.25,
+["wpn_walther"] = 1.2,
+["wpn_wincheaster1300"] = 1.3,
+["wpn_wincheaster1300_trapper_ac10632"] = 1.6,
+["wpn_wincheaster1300_trapper_eot"] = 1.6,
+["wpn_wincheaster1300_trapper_microt1"] = 1.6,
+["wpn_winchester_m1"] = 1.6
+}
+
+local wobble_x = 0
+local wobble_y = 0
+local last_cond = 1
+local wpn_id = 1
+local flag_wpn = true
+local start_woobl = 0
+zoom_weapon = false -- game_object!
+gg_tired = 1
+
+function scope_wobble()
+	ogse_signals.get_mgr():reschedule(70)
+	local eff_obj = wpn_params.get_zie_obj()
+	if eff_obj == nil then
+		-- if wpn_params.zoom_time > 1 and zoom_weapon then
+		-- wpn_params.zoom_time = 1
+		-- params.weapon_mag_size_cond(zoom_weapon, zoom_weapon:condition()) -- восстановление постоянной девиации
+		-- end
+		wpn_params.zoom_time = 1
+		return
+	end
+
+	local slot = db.actor:active_slot()
+	zoom_weapon = db.actor:item_in_slot(slot)
+	wpn_params.zoom_weapon = zoom_weapon
+
+	local wpn = nil
+	if zoom_weapon then
+		wpn = zoom_weapon:get_weapon()
+	end
+
+	if wpn_params.zoom_time <= 1 then
+		if wpn ~= nil then
+			wpn.const_deviation.pitch = 0
+			wpn.const_deviation.yaw = 0
+		end
+		wpn_params.disp_add[1] = math.random() * 30 - 15
+		wpn_params.disp_add[2] = 12
+		wpn_params.disp_add[3] = -math.random() * 30 + 15
+		base_radius = 0
+		last_cond = 1
+		flag_wpn = true
+		start_woobl = timers.Get_Game_Seconds()
+	end
+
+	wobble_x = 0
+	wobble_y = 0
+
+	if flag_wpn then
+		local wpn = db.actor:active_item()
+		if wpn and wpn:section() then
+			base_wobble = wobble_wpn[wpn:section()] or 2
+			if sak_dialog.dolgovazyi_exo_quest_start_prec() then
+				local diff = base_wobble - 1
+				if diff > 0 then
+					diff = diff * 0.25
+				else
+					diff = 0
+				end
+				base_wobble = base_wobble - diff
+			end
+			wpn_id = wpn:id()
+			flag_wpn = false
+		end
+	end
+	local cond = params.obj_condition(wpn_id)
+	if cond < last_cond then
+		last_cond = cond
+		if wpn_params.zoom_time > 1 then
+			local h, p = coord_params.camera_angles()
+			local hofs = 0.001
+			local pofs = 0.03
+			hofs = hofs * math.random() - hofs / 2
+			pofs = pofs * math.random() - pofs / 2
+			coord_params.camera_angles(h + hofs, p + pofs)
+			base_radius = 0
+			wpn_params.zoom_time = 1
+		end
+	end
+
+	local div_limit = 10
+	local aobj = get_actor_obj()
+	-- local crouch = db.actor:get_crouch_factor()
+	if aobj and aobj:is_actor_crouch() then
+		wpn_params.zoom_time = wpn_params.zoom_time + 0.07
+		div_limit = 12
+	elseif aobj and aobj:is_actor_creep() then
+		wpn_params.zoom_time = wpn_params.zoom_time + 0.25
+		div_limit = 14
+	else
+		wpn_params.zoom_time = wpn_params.zoom_time + 0.01
+	end
+
+	local power = 0.2 + (db.actor.power * 0.8)
+	if timers.Get_Game_Seconds() - start_woobl > 60 * power and zoom_weapon and zoom_weapon:section() ~= "wpn_binoc" then
+		last_cond = 2
+		start_woobl = timers.Get_Game_Seconds()
+		vergas_lib.s_play("actor\\breathout", 1)
+	end
+	base_radius = math.min(1, base_radius + 0.1) * base_wobble * gg_tired / power
+	local dir = vector():set(device().cam_dir)
+	for i, deg in ipairs(disp_angles) do
+		inc_angle(i)
+		local rdiv = math.min(div_limit, wpn_params.zoom_time)
+		local a = math.pi * deg / 180
+		local r = base_radius * disp_radius[i] / rdiv
+		wobble_x = wobble_x + math.cos(a) * r
+		wobble_y = wobble_y + math.sin(a) * r
+	end
+	local m_rot = matrix()
+	m_rot:setHPB(dir:getH(), dir:getP(), 0)
+	local v = vector():set(wobble_x, wobble_y, 0)
+	v = transform_tiny(m_rot, v)
+	switch_zoom_osc(true)
+	zupd("target_point", v, false, eff_obj)
+	zupd("time_passed_int", 0.000, false, eff_obj)
+	zupd("speed_min", 0.001, false, eff_obj)
+end
+
+wpn_params.scope_wobble = scope_wobble
+
+function transform_tiny(m, v)
+	local res = vector()
+	res.x = m.i.x * v.x + m.k.x * v.z + m.j.x * v.y + m.c.x
+	res.y = m.k.y * v.z + m.j.y * v.y + m.i.y * v.x + m.c.y
+	res.z = m.k.z * v.z + m.j.z * v.y + m.i.z * v.x + m.c.z
+	return res
+end
+
+function wpn_params.start_fire(id)
+	local wpn = client_obj(id)
+	if wpn and wpn:is_weapon_magazined() then
+		wpn:get_weapon():start_fire()
+	end
+end
+
+function wpn_params.end_fire(id)
+	local wpn = client_obj(id)
+	if wpn and wpn:is_weapon_magazined() then
+		wpn:get_weapon():stop_fire()
+	end
+end
+
+function attach(sm)
+	sm:subscribe({signal = "on_update", fun = this.scope_wobble})
+end

@@ -1,0 +1,330 @@
+[wpn_svu]:weapon_immunities
+GroupControlSection			= spawn_group
+discovery_dependency 		= 
+$spawn                  	= "weapons\svu"
+$npc			 			= on
+$prefetch 		 			= 8
+scheduled               	= off
+cform                   	= skeleton
+class                   	= WP_LR300
+min_radius              	= 10
+max_radius              	= 150
+inv_name		 			= wpn-svu
+inv_name_short		 		= wpn-svu
+description					= enc_weapons1_wpn-svu
+dialog_description		    = desc_dialog_wpn-svu
+
+default_to_ruck				= false
+
+ef_main_weapon_type		 	= 3
+ef_weapon_type			 	= 8
+
+holder_range_modifier		= 2.15
+holder_fov_modifier			= 0.3 
+
+cost						= 27000
+weapon_class				= sniper_rifle
+
+ammo_limit		 			= 60
+ammo_current				= 10
+ammo_elapsed		 		= 0
+
+fire_modes					= 1, -1
+f_mode						= 2
+
+ammo_mag_size		 		= 20
+ammo_class		 			= ammo_7.62x54_ap, ammo_7.62x54_7h1, ammo_7.62x54_7h14
+
+sprint_allowed				= true
+
+fire_dispersion_base		= 0.06
+control_inertion_factor		= 1.3f
+
+cam_relax_speed         	= 6.0
+cam_dispersion          	= 1.0
+cam_dispersion_inc			= 0.75
+cam_dispertion_frac			= 1.0
+cam_max_angle				= 60.0
+cam_max_angle_horz			= 10.0
+cam_step_angle_horz			= 1.8
+
+fire_dispersion_condition_factor = 1.25
+misfire_probability 		= 0.009
+misfire_condition_k			= 0.50
+condition_shot_dec 			= 0.0005
+
+hand_dependence 			= 1
+single_handed				= 0
+
+slot 			 			= 2
+animation_slot				= 2
+
+inv_weight		 			= 4.4
+
+inv_grid_height                                    = 2
+inv_grid_width                                     = 6
+inv_grid_x                                         = 58
+inv_grid_y                                         = 14
+
+direction               	= 0, 0, 1
+fire_point              	= 0.0, 0.205, 0.56
+fire_point2             	= 0.0, 0.128, 0.522
+
+flame_particles		   		= weapons\generic_shoot_00
+smoke_particles		   		= weapons\generic_shoot_00
+rpm_empty_click 	 		= 200
+
+shell_point		 			= 0.0, 0.23, -0.123
+shell_dir		 			= 0.0, 0.0, 0.4
+shell_particles	 			= 
+
+PDM_disp_base 				= 4.0
+PDM_disp_vel_factor 		= 5.0
+PDM_disp_accel_factor 		= 7.0
+PDM_crouch					= 3.9
+PDM_crouch_no_acc			= 2.7
+
+hit_power           		= 1.1
+hit_impulse		 			= 1
+hit_type 		  			= fire_wound
+
+fire_distance           	= 300
+bullet_speed		 		= 620
+rpm                     	= 550
+
+use_aim_bullet				= false
+time_to_aim					= 1.0
+
+hud                     	= wpn_svu_hud
+normal                  	= 0, 1, 0
+position 					= -0.026, -0.084, 0.0
+orientation             	= 0, 0, 0
+
+strap_orientation                                  = -15,-9,110
+strap_position                                     = -0.26,-0.11,0.25
+
+startup_ammo            	= 10
+visual                  	= dynamics\weapons\wpn_svu\wpn_svu_nimble
+
+light_disabled				= true
+
+ph_mass			 			= 3
+
+scope_status				= 2
+silencer_status				= 0
+grenade_launcher_status		= 0
+silencer_name  				= wpn_addon_tgp-a_silencer
+silencer_x 					= 263
+silencer_y 					= 14
+allow_inertion				= false
+
+scope_x						= 90
+scope_y						= -3
+zoom_enabled				= true
+scope_zoom_factor = 90
+
+scope_mode 					= 3
+scope_name 					= wpn_addon_1pso
+
+scope_names 					= wpn_addon_1p78, okp, wpn_addon_cobra, wpn_addon_1pso, rakurs
+
+scope_respawn_wpn_addon_1p78 = wpn_svu_1p78
+scope_respawn_okp = wpn_svu_okp
+scope_respawn_wpn_addon_cobra = wpn_svu_ekp 
+scope_respawn_wpn_addon_1pso = wpn_svu_pso
+scope_respawn_rakurs = wpn_svu_rakurs
+
+snd_shoot					= weapons\svu\svu_muzzle_mono
+
+snd_bore                                           = weapons\generic_draw
+snd_close                                          = weapons\generic_close
+snd_draw                                           = weapons\svu\svu_draw
+snd_empty                                          = weapons\ak_empty, 0.5
+snd_holster                                        = weapons\sniper_holster
+snd_reload                                         = weapons\svu\svu_reload
+snd_reload_empty                                   = weapons\svu\svu_reload_empty
+snd_reload_jammed                                 = weapons\svu\svu_misfire
+snd_sprint_idle								   	   = weapons\sprint_assault
+
+[wpn_svu_hud]:hud_base
+aim_hud_offset_pos = -0.071000,0.013500,-0.09
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.071000,0.013500,-0.09
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+
+; anm_bore                                           = svu_bore
+; anm_bore_empty                                     = svu_bore, idle_empty
+anm_hide                                           = svu_holster
+anm_hide_empty                                     = svu_holster, idle_empty
+anm_idle                                           = svu_idle
+anm_idle_empty                                     = svu_idle, idle_empty
+anm_idle_aim                                       = svu_idle_aim
+anm_idle_aim_empty                                 = svu_idle_aim, idle_empty
+anm_idle_moving                                    = svu_moving
+anm_idle_moving_empty                              = svu_moving, idle_empty
+anm_idle_moving_crouch                             = svu_crouch
+anm_idle_moving_crouch_empty                       = svu_crouch, idle_empty
+; anm_reload                                         = svu_reload, reload
+; anm_reload_empty                                   = svu_reload_empty, reload_empty
+anm_reload_jammed								   = svu_misfire, misfire
+anm_shots                                          = svu_shoot, shoot
+anm_shots_last                                     = svu_shoot, idle_empty
+anm_shots_when_aim                                 = svu_shoot_aim, shoot
+anm_shots_when_aim_last                            = svu_shoot_aim, idle_empty
+anm_show                                           = svu_draw
+anm_show_empty                                     = svu_draw, idle_empty
+anm_idle_moving_slow                               = svu_moving_slow
+anm_idle_moving_slow_empty                         = svu_moving_slow, idle_empty
+anm_idle_aim_moving                                = svu_moving_aim
+anm_idle_aim_moving_empty                          = svu_moving_aim, idle_empty
+
+anm_idle_sprint_start         						   = svu_sprint_start
+anm_idle_sprint         						   = svu_sprint
+anm_idle_sprint_end         						   	   = svu_sprint_end
+
+anm_idle_sprint_start_empty         					   = svu_sprint_start, idle_empty
+anm_idle_sprint_empty         					   = svu_sprint, idle_empty
+anm_idle_sprint_end_empty         					   = svu_sprint_end, idle_empty
+anm_idle_sprint_end_jammed = svu_sprint_end
+anm_idle_sprint_start_jammed = svu_sprint_start
+
+anm_headlamp_on                                = svu_flash
+anm_gasmask                                      = svu_clear
+
+anm_headlamp_on_empty                          = svu_flash, idle_empty
+anm_gasmask_empty                                = svu_clear, idle_empty
+
+anm_firemode                                       = svu_firemode
+anm_firemode_empty                                 = svu_firemode
+
+
+anm_firemode_aim = svu_firemode
+anm_firemode_empty = svu_firemode
+anm_firemode_aim_empty = svu_firemode
+
+anm_reload                                         = svu_reload20, reload
+anm_reload_empty                                   = svu_reload_empty20, reload_empty
+
+attach_place_idx                                   = 0
+fire_bone                                          = wpn_body
+fire_point                                         = 0,0,0.536802
+gl_hud_offset_pos                                  = 0,0,0
+gl_hud_offset_rot                                  = 0,0,0
+hands_position	 								   = -0.072000,0.063500,-0.396973
+hands_position_16x9				                   = -0.072000,0.063500,-0.396973
+hands_orientation								   = 0,0,0
+hands_orientation_16x9							   = 0,0,0
+item_orientation                                   = 0,0,0
+item_position                                      = 0,0,0
+item_visual                                        = dynamics\weapons\wpn_svu\wpn_svu_nimble_hud
+lean_hud_offset_pos                                = 0,0,0
+lean_hud_offset_rot                                = 0,0,0
+shell_bone                                         = shell
+shell_dir                                          = 0.0, 1.0, 0.0
+shell_point                                        = 0,0,0
+zoom_hide_crosshair                                = true
+
+
+[wpn_svu_ekp]:wpn_svu
+$spawn             			= "weapons\wpn_svu_ekp"
+hud					= wpn_svu_ekp_hud
+visual					= dynamics\weapons\wpn_svu\wpn_svu_nimble_ekp.ogf
+scope_x                                      = 104
+scope_y                                      = 1
+
+
+scope_respawn = wpn_svu
+scope_name = wpn_addon_cobra
+
+[wpn_svu_ekp_hud]:wpn_svu_hud
+item_visual                		= dynamics\weapons\wpn_svu\wpn_svu_nimble_ekp_hud.ogf
+aim_hud_offset_pos = -0.069500,-0.011500,-0.07
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.069500,-0.011500,-0.07
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+
+[wpn_svu_okp]:wpn_svu
+$spawn                  		= "weapons\wpn_svu_okp"
+hud					= wpn_svu_okp_hud
+visual					= dynamics\weapons\wpn_svu\wpn_svu_nimble_okp.ogf
+scope_x                                      = 102
+scope_y                                      = -1
+
+
+scope_respawn = wpn_svu
+scope_name = okp
+
+[wpn_svu_okp_hud]:wpn_svu_hud
+item_visual                		= dynamics\weapons\wpn_svu\wpn_svu_nimble_okp_hud.ogf
+aim_hud_offset_pos = -0.066500,0.005500,-0.07
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.066500,0.005500,-0.07
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+
+[wpn_svu_rakurs]:wpn_svu
+$spawn                  		= "weapons\wpn_svu_rakurs"
+hud					= wpn_svu_rakurs_hud
+visual					= dynamics\weapons\wpn_svu\wpn_svu_nimble_rakurs.ogf
+scope_x                                      = 107
+scope_y                                      = 1
+
+
+scope_respawn = wpn_svu
+scope_name = rakurs
+
+[wpn_svu_rakurs_hud]:wpn_svu_hud
+item_visual                		= dynamics\weapons\wpn_svu\wpn_svu_nimble_rakurs_hud.ogf
+aim_hud_offset_pos = -0.071000,-0.015000,-0.07
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.071000,-0.015000,-0.07
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+
+[wpn_svu_1p78]:wpn_svu
+$spawn             			= "weapons\wpn_svu_1p78"
+hud					= wpn_svu_1p78_hud
+visual					= dynamics\weapons\wpn_svu\wpn_svu_nimble_1p78.ogf
+scope_x                                      = 89
+scope_y                                      = -10
+
+3d_reticle_size = 5.4
+3dss_gen_zoom_enable = true
+
+scope_respawn = wpn_svu
+scope_name = wpn_addon_1p78
+
+[wpn_svu_1p78_hud]:wpn_svu_hud
+item_visual                		= dynamics\weapons\wpn_svu\wpn_svu_nimble_1p78_hud.ogf
+anm_shots_when_aim                                 = svu_shoot_scope, shoot
+anm_shots_when_aim_last                                = svu_shoot_scope, idle_empty
+
+aim_hud_offset_pos = -0.0720001,-0.0085,-0.1235
+aim_hud_offset_rot = 0.0035,-0.003,0.0055
+aim_hud_offset_pos_16x9 = -0.0720001,-0.0085,-0.1235
+aim_hud_offset_rot_16x9 = 0.0035,-0.003,0.0055
+
+[wpn_svu_pso]:wpn_svu
+$spawn             			= "weapons\wpn_svu_pso"
+hud					= wpn_svu_pso_hud
+visual					= dynamics\weapons\wpn_svu\wpn_svu_nimble_pso.ogf
+scope_x                                      = 77
+scope_y                                      = 0
+
+3d_reticle_size = 6.2
+3dss_gen_zoom_enable = true
+
+scope_respawn = wpn_svu
+scope_name = wpn_addon_1pso
+
+[wpn_svu_pso_hud]:wpn_svu_hud
+item_visual                						   = dynamics\weapons\wpn_svu\wpn_svu_nimble_pso_hud.ogf
+anm_shots_when_aim                                 = svu_shoot_scope, shoot
+anm_shots_when_aim_last                                = svu_shoot_scope, idle_empty
+
+aim_hud_offset_pos = -0.0574,0.0061,-0.0900001
+aim_hud_offset_rot = 0.001,-0.003,0
+aim_hud_offset_pos_16x9 = -0.0574,0.0061,-0.0900001
+aim_hud_offset_rot_16x9 = 0.001,-0.003,0

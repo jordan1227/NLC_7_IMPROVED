@@ -1,0 +1,17 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker
+
+[walker]
+path_walk = green_guard_walk
+path_look = green_guard_look
+meet = meet@green_guard
+
+[meet@green_guard]
+victim = 5 | actor
+victim_wpn = 5 | actor
+use	= true
+use_wpn	= false
+abuse = true

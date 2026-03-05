@@ -1,0 +1,33 @@
+[logic]
+active = ph_button@locked
+
+[ph_button@locked]
+tooltip = labx10_button5
+anim_blend = false
+anim = button_false
+on_press = ph_button@unlocked %+supply_radar_on =play_snd(device\power_switch) =sak.labx10_button5()%
+on_info = {+supply_radar_on} ph_button@unlocked3
+
+[ph_button@unlocked]
+anim_blend = false
+anim = button_true
+on_timer = 1000 | ph_button@locked2 %=play_snd(device\power_switch)%
+
+[ph_button@locked2]
+anim_blend = false
+anim = button_false
+on_timer = 2000 | ph_button@unlocked2 %=play_snd(device\power_switch)%
+
+[ph_button@unlocked2]
+anim_blend = false
+anim = button_true
+on_timer = 1000 | ph_button@locked3 %=play_snd(device\power_switch)%
+
+[ph_button@locked3]
+anim_blend = false
+anim = button_false
+on_timer = 1000 | ph_button@unlocked3 %=play_snd(device\power_switch)%
+
+[ph_button@unlocked3]
+anim_blend = false
+anim = button_true

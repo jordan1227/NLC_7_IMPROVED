@@ -1,0 +1,36 @@
+[logic]
+active = walker@prapor
+
+[walker@prapor]
+path_walk = bar_prapor_walker_1_walk
+path_look = bar_prapor_walker_1_look
+on_info = {!is_agr_day} walker@lisiy
+on_info2 = {+bar_deactivate_radar_done} remark@free
+soundgroup = bar_visitors1
+meet = meet@patrul
+danger = danger_condition
+
+[remark@free]
+show_spot = false 
+
+[walker@lisiy]
+path_walk = bar_bar_square_3_place_1_walk
+path_look = bar_bar_square_3_place_1_look
+on_info = {=is_agr_day} walker@prapor
+soundgroup = bar_visitors1
+meet = meet@bar
+
+[danger_condition]
+ignore_distance = 2
+
+[meet@bar]
+use = true
+use_wpn = true
+meet_talk_enabled = true
+meet_state = ward
+meet_dialog = prapor_bar_start_dialog
+
+[meet@patrul]
+use = true
+use_wpn = true
+meet_talk_enabled = true

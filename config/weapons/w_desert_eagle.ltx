@@ -1,0 +1,250 @@
+;Desert Eagle
+[wpn_desert_eagle]:weapon_immunities
+GroupControlSection			= spawn_group
+discovery_dependency		= 
+$spawn						= "weapons\Desert Eagle"
+$npc						= on	
+$prefetch					= 8
+scheduled					= off	
+cform						= skeleton
+class						= WP_PM
+min_radius					= 0
+max_radius					= 50
+description					= enc_weapons1_wpn-desert-eagle
+
+default_to_ruck				= false
+
+ef_weapon_type				= 5
+
+holder_range_modifier		= 1.0
+holder_fov_modifier			= 1.0
+
+cost						= 15000
+
+ammo_limit					= 120
+ammo_current				= 90
+ammo_elapsed				= 12
+
+f_mode						= 1
+
+ammo_mag_size				= 9
+ammo_class					= ammo_9x33_hp
+
+hand_dependence				= 1
+single_handed				= 1
+
+slot						= 1
+animation_slot				= 1
+
+inv_name					= wp_desert_eagle
+inv_name_short				= wp_desert_eagle
+
+inv_weight					= 1.7
+
+icon_group         			= 7
+inv_grid_height             = 2
+inv_grid_width              = 2
+inv_grid_x                  = 79
+inv_grid_y                  = 14
+
+kill_msg_x					= 194
+kill_msg_y					= 123
+kill_msg_width				= 46
+kill_msg_height				= 27
+
+fire_dispersion_base		= 0.16
+control_inertion_factor		= 1.15f
+
+cam_relax_speed				= 7.0
+cam_dispersion				= 1.2
+cam_dispersion_inc			= 0.0
+cam_dispertion_frac			= 1.0	
+cam_max_angle				= 30
+cam_max_angle_horz			= 10
+cam_step_angle_horz			= 0.6
+
+fire_dispersion_condition_factor = 3
+misfire_probability			= 0.003
+misfire_condition_k			= 0.50
+condition_shot_dec			= 0.0005
+
+direction                	= 0, 0, 1
+fire_point					= -0.005000,0.130000,0.220000
+
+flame_particles				= weapons\generic_weapon05
+smoke_particles				= weapons\generic_shoot_00
+rpm_empty_click				= 200
+
+shell_point		 			= 0.0, 0.133, 0.06
+shell_dir		 			= 0.0, 0.0, 0.4
+
+PDM_disp_base 				= 1.5
+PDM_disp_vel_factor 		= 2.0
+PDM_disp_accel_factor 		= 3.0
+PDM_crouch					= 1.5
+PDM_crouch_no_acc			= 0.7
+
+hit_power					= 1.25
+hit_impulse					= 1
+hit_type					= fire_wound
+
+fire_distance    			= 100
+bullet_speed				= 390
+rpm							= 200
+
+use_aim_bullet				= false
+time_to_aim					= 1.0
+
+hud							= wpn_desert_eagle_hud
+normal                   	= 0, 1, 0
+position                 	= -0.021, -0.085, 0.0
+orientation              	= 0, 0, 0
+
+;strap_position				= -0.1,-0.45,0.2
+;strap_orientation			= 1.57,0,0
+;strap_bone0				= bip01_spine2
+;strap_bone1				= bip01_spine1
+
+startup_ammo				= 90
+visual						= dynamics\weapons\wpn_desert_eagle\wpn_desert_eagle_nimble
+
+light_color					= 0.6,0.5,0.3
+light_range					= 3.0
+light_var_color				= 0.05
+light_var_range				= 0.5
+light_time 					= 0.2
+
+ph_mass						= 1
+
+scope_status				= 2
+silencer_status				= 0
+grenade_launcher_status		= 0
+scope_mode 					= 3
+scope_name 					= microt1
+scope_names 					= microt1
+scope_respawn_microt1 = wpn_desert_eagle_po
+scope_x	               		= 39
+scope_y	               		= 1
+
+zoom_enabled				= true
+scope_zoom_factor			= 80
+
+snd_shoot					= weapons\deagle\muzzle_deagle_mono
+snd_shoot1					= weapons\deagle\muzzle_deagle_mono1
+
+snd_close                                          = weapons\pistol_holster
+snd_bore                                           = weapons\generic_draw
+snd_draw                                           = weapons\pistol_draw
+snd_empty                                          = weapons\deagle\deagle_empty
+snd_holster                                        = weapons\pistol_holster
+snd_reload                                         = weapons\deagle\deagle_reload
+snd_reload_empty                                   = weapons\deagle\deagle_reload_empty
+snd_reload_jammed                                 = weapons\deagle\deagle_misfire
+snd_sprint_idle								   	   = weapons\sprint_pistol
+
+silencer_name				= wpn_addon_silencer
+silencer_x					= 87
+silencer_y					= 10
+
+;silencer_flame_particles	= weapons\generic_weapon01
+silencer_smoke_particles	= weapons\generic_shoot_00
+
+silencer_light_color		= 0.6,0.5,0.3
+silencer_light_range		= 0.01
+silencer_light_var_color	= 0.05
+silencer_light_var_range	= 0.5
+silencer_light_time			= 0.2
+
+[wpn_desert_eagle_hud]:hud_base
+
+
+aim_hud_offset_pos = -0.076000,0.031000,-0.09
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+
+aim_hud_offset_pos_16x9 = -0.076000,0.031000,-0.09
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+
+anm_bore                                           = deagle_idle_aim
+anm_bore_empty                                     = deagle_idle_aim, idle_empty
+anm_hide                                           = deagle_holster
+anm_hide_empty                                     = deagle_holster, idle_empty
+anm_idle                                           = deagle_idle
+anm_idle_aim                                       = deagle_idle_aim
+anm_idle_aim_empty                                 = deagle_idle_aim, idle_empty
+anm_idle_empty                                     = deagle_idle, idle_empty
+anm_idle_moving_slow                               = deagle_moving_slow
+anm_idle_moving_slow_empty                         = deagle_moving_slow, idle_empty
+anm_idle_moving                                    = deagle_moving
+anm_idle_moving_crouch                             = deagle_crouch
+anm_idle_moving_crouch_empty                       = deagle_crouch, idle_empty
+anm_idle_moving_empty                              = deagle_moving, idle_empty
+anm_idle_aim_moving		 						   = deagle_moving_aim
+anm_idle_aim_moving_empty						   = deagle_moving_aim, idle_empty
+anm_idle_sprint_start         						   = deagle_sprint_start
+anm_idle_sprint         						   = deagle_sprint
+anm_idle_sprint_end         						   	   = deagle_sprint_end
+anm_idle_sprint_start_empty         					   = deagle_sprint_start, idle_empty
+anm_idle_sprint_empty         					   = deagle_sprint, idle_empty
+anm_idle_sprint_end_empty         					   = deagle_sprint_end, idle_empty
+anm_idle_sprint_start_jammed      = deagle_sprint_start
+anm_idle_sprint_end_jammed       = deagle_sprint_end
+anm_reload                                         = deagle_reload, reload
+anm_reload_empty                                   = deagle_reload_empty, reload_empty
+anm_reload_jammed								   = deagle_misfire, misfire
+anm_shot_l                                         = deagle_shoot, idle_empty
+anm_shots                                          = deagle_shoot, shoot
+anm_shots_when_aim								   = deagle_shoot_aim, shoot
+anm_shot_l_when_aim								   = deagle_shoot_aim, idle_empty
+anm_show                                           = deagle_draw
+anm_show_empty                                     = deagle_draw, idle_empty
+
+anm_prepare_detector                               = deagle_hand_holster
+anm_prepare_detector_empty                         = deagle_hand_holster, idle_empty
+anm_finish_detector                                = deagle_hand_draw
+anm_finish_detector_empty                          = deagle_hand_draw, idle_empty
+
+anm_headlamp_on                                  = deagle_flash
+anm_gasmask                                        = deagle_clear
+
+anm_headlamp_on_empty                            = deagle_flash, idle_empty
+anm_gasmask_empty                                  = deagle_clear, idle_empty
+
+attach_place_idx                                   = 0
+fire_bone                                          = wpn_body
+fire_point                                         = -0.005500,0.067100,0.260701
+gl_hud_offset_pos                                  = 0,0,0
+gl_hud_offset_rot                                  = 0,0,0
+hands_position									   = 0.000000,-0.077200,-0.008500
+hands_orientation								   = 0.0,0.0,0.0
+hands_position_16x9								   = 0.000000,-0.077200,-0.008500
+hands_orientation_16x9							   = 0.0,0.0,0.0
+item_orientation                                   = 0,0,0
+item_position                                      = 0,0,0
+item_visual                                        = dynamics\weapons\wpn_desert_eagle\wpn_desert_eagle_nimble_hud
+lean_hud_offset_pos                                = 0,0,0
+lean_hud_offset_rot                                = 0,0,0
+shell_bone                                         = wpn_body
+shell_point                                        = 0.03,0.12,0.1
+zoom_hide_crosshair                                = true
+
+[wpn_desert_eagle_po]:wpn_desert_eagle
+
+scope_x                     = 43		; offset in inventory icon
+scope_y                     = -1
+
+scope_name = microt1
+scope_respawn = wpn_desert_eagle
+
+visual = dynamics\weapons\wpn_desert_eagle\wpn_desert_eagle_nimble_microt1
+
+hud = wpn_desert_eagle_po_hud
+[wpn_desert_eagle_po_hud]:wpn_desert_eagle_hud
+
+aim_hud_offset_pos = -0.076500,0.004500,-0.09
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+
+aim_hud_offset_pos_16x9 = -0.076500,0.004500,-0.09
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+item_visual = dynamics\weapons\wpn_desert_eagle\wpn_desert_eagle_nimble_microt1_hud

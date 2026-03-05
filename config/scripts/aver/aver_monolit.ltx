@@ -1,0 +1,9 @@
+[logic]
+active = ph_idle
+
+[ph_idle]
+on_info = {+aver_monolith_ready} ph_idle@work
+
+[ph_idle@work]
+tips = tip_aver_monolith
+on_use = %=pre_game_credits%

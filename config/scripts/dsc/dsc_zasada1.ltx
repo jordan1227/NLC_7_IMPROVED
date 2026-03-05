@@ -1,0 +1,23 @@
+[smart_terrains]
+none = true
+
+[dont_spawn_character_supplies]
+
+[spawn]
+wpn_ak74u
+ammo_5.45x39_fmj = 2
+
+[logic]
+active = walker
+
+[walker]
+path_walk = dsc_zasada1_walk
+path_look = dsc_zasada1_look
+meet = no_meet
+danger = danger_condition
+
+[danger_condition]
+ignore_types = corpse
+ignore_distance_corpse = 0
+ignore_distance = 7
+ignore_distance_sound = 7

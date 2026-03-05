@@ -1,0 +1,28 @@
+[logic]
+active = walker@esc_vergas_no_talk
+on_death = death
+
+[walker@esc_vergas_no_talk]
+path_walk = esc_vergas_walk
+path_look = esc_vergas_look
+on_info = {+kvest_art_done} walker@esc_vergas_talk
+meet = no_meet
+danger = danger_condition
+
+[walker@esc_vergas_talk]
+path_walk = esc_vergas_walk
+path_look = esc_vergas_look
+meet = meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_types = corpse
+
+[meet]
+use = true
+use_wpn = false
+meet_dialog	= esc_vergas_start_dialog
+
+[death]
+on_info = %+vergas_umer%

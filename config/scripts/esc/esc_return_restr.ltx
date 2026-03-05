@@ -1,0 +1,9 @@
+[logic]
+active = sr_idle
+
+[sr_idle]
+on_info = {+val_raid_start -val_raid_end} sr_idle2
+
+[sr_idle2]
+on_info = {+val_raid_end} nil
+on_actor_inside = {-esc_bridge_pass_fire} nil %=esc_return_dv +esc_trader_speak +esc_dog_spawn +val_raid_end%, {+esc_bridge_pass_fire} nil %+esc_dog_spawn +val_raid_end%

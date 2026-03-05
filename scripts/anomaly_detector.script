@@ -1,0 +1,133 @@
+
+local excluded_by_name = {
+	-- Росток, электры в тоннеле
+	["amk_zone_witches_galantine_180"] = true,
+	["ros_tutorial_witches_galantine_average"] = true,
+	["ros_tutorial_witches_galantine_average_0000"] = true,
+	-- Подземка Агро, холодцы на путях солдат и бандосов
+	["kat2_zone_buzz_0014"] = true,
+	["kat2_zone_buzz_0019"] = true,
+	["kat2_zone_buzz_0053"] = true,
+	["kat2_zone_buzz_0057"] = true,
+	-- Подземка х-18
+	["dar_zone_mincer_strong"] = true,
+	["dar_zone_zharka_static_strong"] = true,
+	["dar_zone_zharka_static_strong_0000"] = true,
+	["dar_zone_zharka_static_strong_0001"] = true,
+	["dar_zone_zharka_static_strong_0002"] = true,
+	["dar_zone_zharka_static_strong_0003"] = true,
+	["dar_zone_zharka_static_strong_0004"] = true,
+	["dar_zone_zharka_static_strong_0005"] = true
+}
+
+local excluded_npc_by_name = {
+	["marsh_oksana"] = true, -- Oksana
+	["marsh_ecolog1_sev_khutor"] = true, -- Gluzov
+	["sanek2"] = true, -- Sanek na ZabHutore
+	["sanek"] = true, -- Sanek na Bolotah
+	["diador"] = true, -- Diador
+	["assistant2"] = true, -- МНС Матвеев
+	["klyk"] = true
+}
+
+local excluded_comms = { -- запретные коммунити
+	["zombied"] = true
+}
+
+function excluded_anom(n)
+	return excluded_by_name[n]
+end
+
+function attach(sm)
+	sm:subscribe({signal = "on_after_blowout", fun = this.on_after_blowout})
+	sm:subscribe({signal = "on_monster_death", fun = this.on_death})
+	sm:subscribe({signal = "on_monster_net_destroy", fun = this.on_death})
+	sm:subscribe({signal = "on_monster_spawn", fun = this.on_monster_spawn})
+	sm:subscribe({signal = "on_npc_death", fun = this.on_death})
+	sm:subscribe({signal = "on_npc_net_destroy", fun = this.on_death})
+	sm:subscribe({signal = "on_npc_spawn", fun = this.on_npc_spawn})
+end
+
+local mobs = {}
+
+local function ad_off(obj)
+	if not obj then return end
+	local anomaly_detector = obj:get_custom_monster():anomaly_detector()
+	anomaly_detector:deactivate(true)
+end
+
+function on_monster_spawn(obj, binder)
+	if not (obj:alive() and obj:is_custom_monster()) then return end
+	if get_bool(obj:section(), "ogse_anomaly_evader.disable", false) then ad_off(obj) return end
+	local anomaly_detector = obj:get_custom_monster():anomaly_detector()
+	anomaly_detector:activate(true)
+	mobs[obj:id()] = true
+	-- log2("~~[%s.on_monster_spawn]: Add mob: [%s], [%s]", script_name(), obj:name(), obj:id())
+end
+
+function on_npc_spawn(obj, binder)
+	if not obj:alive() then return end
+	if excluded_comms[obj:character_community()] or excluded_npc_by_name[obj:name()] then ad_off(obj) return end
+	local anomaly_detector = obj:get_custom_monster():anomaly_detector()
+	anomaly_detector:activate(true)
+	mobs[obj:id()] = true
+	-- log2("~~[%s.on_npc_spawn]: Add mob: [%s], [%s]", script_name(), obj:name(), obj:id())
+end
+
+function on_death(obj)
+	if mobs[obj:id()] then
+		local anomaly_detector = obj:get_custom_monster():anomaly_detector()
+		anomaly_detector:deactivate(true)
+		if alife():object(obj:id()) then
+			anomaly_detector:remove_all_restrictions()
+		end
+		mobs[obj:id()] = nil
+		-- log2("~~[%s.on_death]: Remove mob: [%s], [%s]", script_name(), obj:name(), obj:id())
+	end
+end
+
+function remove_restriction(npc, anomid, rem)
+	for id, _ in pairs(mobs) do
+		local obj = level.object_by_id(id)
+		if obj then
+			local anomaly_detector = obj:get_custom_monster():anomaly_detector()
+			anomaly_detector:remove_restriction(anomid)
+		end
+	end
+	if not rem then return end
+	local cobj = level.object_by_id(anomid)
+	if cobj then
+		cobj:set_ignore_any(true) -- Исключаем из попадания в feel_touch_contact
+		cobj:disable_anomaly() -- На всякий
+	end
+	local sobj = alife():object(anomid)
+	if sobj then
+		amk_anoms.remove_anomaly(sobj.id)
+		alife():release(sobj)
+	end
+end
+
+function pre_blow_off()
+	for id, _ in pairs(mobs) do
+		local obj = level.object_by_id(id)
+		if obj then
+			local anomaly_detector = obj:get_custom_monster():anomaly_detector()
+			anomaly_detector:deactivate(true)
+			anomaly_detector:remove_all_restrictions()
+		end
+	end
+end
+
+function on_after_blowout()
+	for id, _ in pairs(mobs) do
+		local obj = level.object_by_id(id)
+		if obj then
+			local anomaly_detector = obj:get_custom_monster():anomaly_detector()
+			anomaly_detector:activate(true)
+		end
+	end
+end
+
+function get_freq()
+	return 1000
+end

@@ -1,0 +1,623 @@
+;АС "Вал"
+[wpn_val]:weapon_immunities
+GroupControlSection			= spawn_group
+discovery_dependency 		= 
+$spawn                  	= "weapons\val"	
+$npc			 			= on
+$prefetch 					= 8
+scheduled            		= off
+cform                		= skeleton
+class                		= WP_VAL
+min_radius					= 0
+max_radius					= 100
+description					= enc_weapons1_wpn-val
+
+default_to_ruck				= false
+
+ef_main_weapon_type			= 2
+ef_weapon_type				= 6
+
+holder_range_modifier		= 1.0
+holder_fov_modifier			= 0.7
+
+cost		 	 			= 15000
+weapon_class				= assault_rifle
+
+ammo_limit					= 210
+ammo_current				= 180
+ammo_elapsed				= 20
+	
+ammo_mag_size				= 20
+ammo_class		 			= ammo_9x39_sp5, ammo_9x39_ap, ammo_9x39_pab9
+fire_modes					= 1, -1
+f_mode						= 2
+
+hand_dependence		 		= 1
+single_handed				= 0
+	
+slot 				 		= 2
+animation_slot		 		= 2
+
+inv_name	         		= wpn-val
+inv_name_short		 		= wpn-val
+inv_weight		 			= 2.7
+inv_grid_height                                    = 2
+inv_grid_width                                     = 6
+inv_grid_x                                         = 52
+inv_grid_y                                         = 18
+
+fire_dispersion_base		= 0.2
+control_inertion_factor		= 1.2f
+
+cam_relax_speed         	= 5
+cam_dispersion          	= 0.22
+cam_dispersion_inc			= 0.22
+cam_dispertion_frac			= 0.9
+cam_max_angle				= 30
+cam_max_angle_horz			= 10
+cam_step_angle_horz			= 1.4
+
+fire_dispersion_condition_factor = 2 
+misfire_probability 		= 0.007
+misfire_condition_k 		= 0.50
+condition_shot_dec 			= 0.0004
+
+direction            	    = 0, 0, 1
+
+fire_point           	    = 0.0, 0.175, 0.580
+
+smoke_particles				= weapons\generic_shoot_00
+
+shell_point		 			= 0,0.190,0.120
+shell_dir		 			= 0.0, 1.0, 0.0
+shell_particles				= amik\weapons\val_shells_r_00
+
+rpm_empty_click 			= 200
+
+PDM_disp_base 				= 2.0
+PDM_disp_vel_factor 		= 3.0
+PDM_disp_accel_factor 		= 5.0
+PDM_crouch					= 1.9
+PDM_crouch_no_acc			= 0.7
+
+hit_power        			= 1
+hit_impulse		 			= 1
+hit_type 					= fire_wound
+
+fire_distance				= 150
+bullet_speed				= 230
+rpm             			= 850
+
+use_aim_bullet				= false
+time_to_aim					= 1.0	
+
+hud             	        = wpn_val_hud
+normal          	        = 0, 1, 0
+position        	        = -0.026, -0.097, 0.0
+orientation     	        = 0, 0, 0
+
+strap_orientation                                  = -15,-9,110
+strap_position                                     = -0.26,-0.11,0.25
+
+startup_ammo    	        = 90
+visual          	        = dynamics\weapons\wpn_val\wpn_val
+
+light_disabled				= true
+
+ph_mass			 			= 5
+
+scope_status				= 2
+silencer_status				= 1
+grenade_launcher_status		= 0
+
+scope_name 					= wpn_addon_1pso
+
+scope_names 				= wpn_addon_1p78, wpn_addon_cobra, okp, wpn_addon_1pso, rakurs
+
+scope_respawn_wpn_addon_1p78 = wpn_val_1p78
+scope_respawn_wpn_addon_cobra = wpn_val_ekp
+scope_respawn_okp = wpn_val_okp
+scope_respawn_wpn_addon_1pso = wpn_val_pso
+scope_respawn_rakurs = wpn_val_rakurs
+
+scope_zoom_factor = 90
+scope_x						= 56
+scope_y						= -2
+
+scope_mode 					= 3
+
+snd_draw                                           = weapons\val\val_draw
+snd_empty                                          = weapons\val\val_empty, 0.8
+snd_holster                                        = weapons\assault_holster
+snd_reload                                         = weapons\vintorez\vintorez_reload
+snd_reload_empty                                   = weapons\vintorez\vintorez_reload_empty
+snd_reload_jammed                                 = weapons\vintorez\vintorez_misfire
+snd_sprint_idle								   	   = weapons\sprint_assault
+
+snd_shoot					= weapons\vintorez\vss_silencer_mono
+
+[wpn_val_hud]:hud_base
+aim_hud_offset_pos = -0.067500,0.035500,-0.09
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.067500,0.035500,-0.09
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+anm_show             							   = vss_draw
+anm_hide             							   = vss_hide
+anm_idle             							   = vss_idle
+anm_idle_sprint        		 					   = vss_sprint
+anm_idle_aim_moving            	    			   = vss_aim_walk
+anm_idle_moving_slow    						   = vss_walk_slow
+anm_idle_moving 								   = vss_walk
+anm_idle_moving_crouch							   = vss_walk_slow_down
+anm_shots               						   = vss_shoot, shoot
+anm_reload              						   = val_reload, reload
+anm_reload_empty        						   = val_reload_full, reload_empty
+anm_reload_jammed								   = vss_revival, misfire
+anm_idle_aim           							   = vss_idle_aim
+anm_bore										   = vss_idle_aim
+anm_shots_when_aim               				   = vss_aim_shoot, shoot
+anm_firemode                    				   = vss_firemode
+
+anm_firemode_aim = vss_firemode
+anm_firemode_empty = vss_firemode
+anm_firemode_aim_empty = vss_firemode
+
+anm_idle_sprint_start         						   = vss_sprint_start
+anm_idle_sprint         						   = vss_sprint
+anm_idle_sprint_end         						       = vss_sprint_end
+anm_idle_sprint_end_jammed = vss_sprint_end
+anm_idle_sprint_start_jammed = vss_sprint_start
+anm_idle_sprint_end_empty = vss_sprint_end
+anm_idle_sprint_start_empty = vss_sprint_start
+
+anm_headlamp_on                                  = vss_flash
+anm_gasmask                                        = vss_clear
+
+anm_headlamp_on_empty                                  = vss_flash
+anm_gasmask_empty                                        = vss_clear
+
+attach_place_idx                                   = 0
+fire_bone                                          = sight
+fire_bone2                                         = sight
+fire_point                                         = 0,0,0
+fire_point2                                        = 0,0,0
+gl_hud_offset_pos                                  = 0,0,0
+gl_hud_offset_rot                                  = 0,0,0
+grenade_bone                                       = wpn_body
+hands_position_16x9								   = 0.002375,0.040125,-0.190874
+hands_orientation_16x9							   = 0,0,0
+hands_position									   = 0.002375,0.040125,-0.190874
+hands_orientation								   = 0,0,0
+item_position									   = 0,0,0
+item_orientation								   = 0,0,0
+item_visual                                        = dynamics\weapons\wpn_val\wpn_val_hud.ogf
+lean_hud_offset_pos                                = 0,0,0
+lean_hud_offset_rot                                = 0,0,0
+shell_bone                                         = shell
+shell_dir                                          = 0.0, 1.0, 0.0
+shell_point                                        = 0,0,-0.06
+zoom_hide_crosshair                                = true
+
+; anim_aim_start 									   = aim_start_vss, 1, 1, 0.14, 0.15
+; anim_aim_idle  									   = aim_idle_vss, 1, 1, 0.2, 0.2
+; anim_aim_end   									   = aim_end_vss, 1, 1, 0.14, 0.15
+
+[wpn_val_ekp]:wpn_val
+$spawn             							 	   = "weapons\wpn_val_ekp"
+hud											 	   = wpn_val_ekp_hud
+visual										 	   = dynamics\weapons\wpn_val\wpn_val_ekp.ogf
+scope_x                                      	   = 99
+scope_y                                      	   = 3
+
+
+scope_respawn = wpn_val
+scope_name = wpn_addon_cobra
+
+[wpn_val_ekp_hud]:wpn_val_hud
+item_visual                						   = dynamics\weapons\wpn_val\wpn_val_ekp_hud.ogf
+
+aim_hud_offset_pos = -0.070000,-0.010000,-0.07
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+
+aim_hud_offset_pos_16x9 = -0.070000,-0.010000,0.000000
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+
+; anim_aim_start 									   = aim_start_vss_scope, 1, 1, 0.14, 0.15
+; anim_aim_idle  									   = aim_idle_vss_scope, 1, 1, 0.2, 0.2
+; anim_aim_end   									   = aim_end_vss_scope, 1, 1, 0.14, 0.15
+
+[wpn_val_okp]:wpn_val
+$spawn             							       = "weapons\wpn_val_okp"
+hud											       = wpn_val_okp_hud
+visual										       = dynamics\weapons\wpn_val\wpn_val_okp.ogf
+scope_x                                            = 101
+scope_y                                            = 2
+
+
+scope_respawn = wpn_val
+scope_name = okp
+
+[wpn_val_okp_hud]:wpn_val_hud
+item_visual                						   = dynamics\weapons\wpn_val\wpn_val_okp_hud.ogf
+
+aim_hud_offset_pos = -0.065000,0.011500,-0.07
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+
+aim_hud_offset_pos_16x9 = -0.065000,0.011500,-0.07
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+
+; anim_aim_start 									   = aim_start_vss_scope, 1, 1, 0.14, 0.15
+; anim_aim_idle  									   = aim_idle_vss_scope, 1, 1, 0.2, 0.2
+; anim_aim_end   									   = aim_end_vss_scope, 1, 1, 0.14, 0.15
+
+[wpn_val_rakurs]:wpn_val
+$spawn             							 	   = "weapons\wpn_val_rakurs"
+hud											 	   = wpn_val_rakurs_hud
+visual										 	   = dynamics\weapons\wpn_val\wpn_val_rakurs.ogf
+scope_x                                      	   = 97
+scope_y                                      	   = -1
+
+
+scope_respawn = wpn_val
+scope_name = rakurs
+
+[wpn_val_rakurs_hud]:wpn_val_hud
+item_visual                						   = dynamics\weapons\wpn_val\wpn_val_rakurs_hud.ogf
+
+aim_hud_offset_pos = -0.069000,-0.006500,-0.07
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+
+aim_hud_offset_pos_16x9 = -0.069000,-0.006500,-0.07
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+
+; anim_aim_start 									   = aim_start_vss_scope, 1, 1, 0.14, 0.15
+; anim_aim_idle  									   = aim_idle_vss_scope, 1, 1, 0.2, 0.2
+; anim_aim_end   									   = aim_end_vss_scope, 1, 1, 0.14, 0.15
+
+[wpn_val_1p78]:wpn_val
+$spawn             						 	 	   = "weapons\wpn_val_1p78"
+hud										 	 	   = wpn_val_1p78_hud
+visual									 	 	   = dynamics\weapons\wpn_val\wpn_val_1p78.ogf
+scope_x                                      	   = 87
+scope_y                                      	   = -4
+
+3d_reticle_size = 5.3
+3dss_gen_zoom_enable = true
+
+scope_respawn = wpn_val
+scope_name = wpn_addon_1p78
+
+[wpn_val_1p78_hud]:wpn_val_hud
+item_visual                						   = dynamics\weapons\wpn_val\wpn_val_1p78_hud.ogf
+anm_shots_when_aim               				   = vss_aim_shoot_scope, shoot
+
+aim_hud_offset_pos = -0.0685,0.0025,-0.04
+aim_hud_offset_rot = 0.002,-0.003,0
+aim_hud_offset_pos_16x9 = -0.0685,0.0025,-0.04
+aim_hud_offset_rot_16x9 = 0.002,-0.003,0
+
+; anim_aim_start 									   = aim_start_vss_scope, 1, 1, 0.14, 0.15
+; anim_aim_idle  									   = aim_idle_vss_scope, 1, 1, 0.2, 0.2
+; anim_aim_end   									   = aim_end_vss_scope, 1, 1, 0.14, 0.15
+
+[wpn_val_pso]:wpn_val
+$spawn             								   = "weapons\wpn_val_pso"
+hud												   = wpn_val_pso_hud
+scope_x                                     	   = 75
+scope_y                                     	   = 5
+
+3d_reticle_size = 5.8
+3dss_gen_zoom_enable = true
+
+scope_respawn = wpn_val
+scope_name = wpn_addon_1pso
+
+[wpn_val_pso_hud]:wpn_val_hud
+item_visual										   = dynamics\weapons\wpn_val\wpn_val_hud.ogf
+anm_shots_when_aim               				   = vss_aim_shoot_scope, shoot
+
+aim_hud_offset_pos = -0.0588,0.0084,-0.0485
+aim_hud_offset_rot = 0.005,-0.0015,0
+aim_hud_offset_pos_16x9 = -0.0588,0.0084,-0.0485
+aim_hud_offset_rot_16x9 = 0.005,-0.0015,0
+
+; anim_aim_start 									   = aim_start_vss_scope, 1, 1, 0.14, 0.15
+; anim_aim_idle  									   = aim_idle_vss_scope, 1, 1, 0.2, 0.2
+; anim_aim_end   									   = aim_end_vss_scope, 1, 1, 0.14, 0.15
+
+[wpn_val_nimble]:wpn_val
+$spawn                                             = "weapons\unique\val_nimble"
+ammo_mag_size                                      = 30
+
+description                                        = st_wpn_val_nimble_descr
+inv_name                                           = st_wpn_val_nimble
+inv_name_short                                     = st_wpn_val_nimble
+
+condition_shot_dec 			= 0.0002
+cost		 	 			= 32000
+slot = 1, 2
+disable_detector = true
+
+hit_power        			= 1.25
+
+inv_weight                                         = 2.46
+inv_grid_width                                     = 6
+inv_grid_x                                         = 49
+inv_grid_y                                         = 20
+
+scope_names = wpn_addon_1p78, okp, wpn_addon_cobra, wpn_addon_1pso, rakurs, ac10632, wpn_addon_eotech, microt1
+scope_respawn_wpn_addon_1p78 = wpn_val_nimble_1p78
+scope_respawn_okp = wpn_val_nimble_okp
+scope_respawn_wpn_addon_cobra = wpn_val_nimble_ekp
+scope_respawn_wpn_addon_1pso = wpn_val_nimble_pso
+scope_respawn_rakurs = wpn_val_nimble_rakurs
+scope_respawn_ac10632 = wpn_val_nimble_ac10632
+scope_respawn_wpn_addon_eotech = wpn_val_nimble_eot
+scope_respawn_microt1 = wpn_val_nimble_microt1
+
+silencer_status = 2
+silencer_name = wpn_addon_sil_vsk
+silencer_x                                         = 217
+silencer_y                                         = 3
+
+snd_reload		                                   = weapons\vihr\vihr_reload
+snd_reload_empty                                   = weapons\vihr\vihr_reload_empty
+snd_reload_jammed                                 = weapons\vihr\vihr_misfire
+snd_shoot					= weapons\groza\groza_muzzle_mono
+snd_silncer_shot                                   = weapons\vintorez\vss_silencer_mono
+
+visual                                             = dynamics\weapons\wpn_val\wpn_val_nimble.ogf
+
+hud = wpn_val_nimble_hud
+[wpn_val_nimble_hud]:wpn_val_hud
+aim_hud_offset_pos = -0.067500,0.028000,-0.09
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.067500,0.028000,-0.09
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+anm_show             							   = vihr_draw
+anm_hide             							   = vihr_holster
+anm_idle             							   = vihr_idle
+anm_idle_aim_moving            					   = vihr_moving_aim
+anm_idle_moving_slow    						   = vihr_moving_slow
+anm_idle_moving 								   = vihr_moving
+anm_idle_moving_crouch							   = vihr_crouch
+anm_shots               						   = vihr_shoot, shoot
+anm_reload              						   = vihr_reload, reload
+anm_reload_empty        						   = vihr_reload_empty, reload_empty
+anm_reload_jammed								   = vihr_misfire, misfire
+anm_idle_aim           							   = vihr_idle_aim
+anm_bore										   = vihr_idle_aim
+anm_shots_when_aim             					   = vihr_shoot_aim, shoot
+anm_firemode                   					   = vihr_firemode
+
+anm_firemode_aim = vihr_firemode
+anm_firemode_empty = vihr_firemode
+anm_firemode_aim_empty = vihr_firemode
+
+anm_idle_sprint_start         						   = vihr_sprint_start
+anm_idle_sprint         						   = vihr_sprint
+anm_idle_sprint_end         						       = vihr_sprint_end
+anm_idle_sprint_end_jammed = vihr_sprint_end
+anm_idle_sprint_start_jammed = vihr_sprint_start
+anm_idle_sprint_end_empty = vihr_sprint_end
+anm_idle_sprint_start_empty = vihr_sprint_start
+
+anm_headlamp_on                                  = vihr_flash
+anm_gasmask                                        = vihr_clear
+
+anm_headlamp_on_empty                                  = vihr_flash
+anm_gasmask_empty                                        = vihr_clear
+
+fire_bone                                          = wpn_body
+fire_bone2                                         = wpn_body
+fire_point                                         = 0.000000,-0.006400,0.177900
+fire_point2                                        = 0,0,0
+item_visual                                        = dynamics\weapons\wpn_val\wpn_val_nimble_hud.ogf
+
+[wpn_val_nimble_ekp]:wpn_val_nimble
+$spawn             			= "weapons\wpn_val_nimble_ekp"
+hud					= wpn_val_nimble_ekp_hud
+visual					= dynamics\weapons\wpn_val\wpn_val_nimble_ekp.ogf
+scope_x                                      = 105
+scope_y                                      = -9
+
+
+scope_respawn = wpn_val_nimble
+scope_name = wpn_addon_cobra
+
+[wpn_val_nimble_ekp_hud]:wpn_val_nimble_hud
+item_visual                		= dynamics\weapons\wpn_val\wpn_val_nimble_ekp_hud.ogf
+
+aim_hud_offset_pos = -0.068500,-0.010000,-0.07
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+
+aim_hud_offset_pos_16x9 = -0.068500,-0.010000,-0.07
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+; aim_hud_offset_pos								   = 0.002300,-0.019300,0.013500
+; aim_hud_offset_pos_16x9							   = 0.002300,-0.019300,0.013500
+
+; anim_aim_start 									   = aim_start_vss_scope, 1, 1, 0.14, 0.15
+; anim_aim_idle  									   = aim_idle_vss_scope, 1, 1, 0.2, 0.2
+; anim_aim_end   									   = aim_end_vss_scope, 1, 1, 0.14, 0.15
+
+[wpn_val_nimble_okp]:wpn_val_nimble
+$spawn             			= "weapons\wpn_val_nimble_okp"
+hud					= wpn_val_nimble_okp_hud
+visual					= dynamics\weapons\wpn_val\wpn_val_nimble_okp.ogf
+scope_x                                      = 105
+scope_y                                      = -8
+
+
+scope_respawn = wpn_val_nimble
+scope_name = okp
+
+[wpn_val_nimble_okp_hud]:wpn_val_nimble_hud
+item_visual                		= dynamics\weapons\wpn_val\wpn_val_nimble_okp_hud.ogf
+aim_hud_offset_pos = -0.064500,0.010500,-0.07
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.064500,0.010500,-0.07
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+; aim_hud_offset_pos								   = 0.006000,0.002100,0.000000
+; aim_hud_offset_pos_16x9							   = 0.006000,0.002100,0.000000
+
+; anim_aim_start 									   = aim_start_vss_scope, 1, 1, 0.14, 0.15
+; anim_aim_idle  									   = aim_idle_vss_scope, 1, 1, 0.2, 0.2
+; anim_aim_end   									   = aim_end_vss_scope, 1, 1, 0.14, 0.15
+
+[wpn_val_nimble_rakurs]:wpn_val_nimble
+$spawn             			= "weapons\wpn_val_nimble_rakurs"
+hud					= wpn_val_nimble_rakurs_hud
+visual					= dynamics\weapons\wpn_val\wpn_val_nimble_rakurs.ogf
+scope_x                                      = 98
+scope_y                                      = -8
+
+
+scope_respawn = wpn_val_nimble
+scope_name = rakurs
+
+[wpn_val_nimble_rakurs_hud]:wpn_val_nimble_hud
+item_visual                		= dynamics\weapons\wpn_val\wpn_val_nimble_rakurs_hud.ogf
+aim_hud_offset_pos = -0.068500,-0.007500,-0.07
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.068500,-0.007500,-0.07
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+; aim_hud_offset_pos								   = 0.002600,-0.016400,0.000000
+; aim_hud_offset_pos_16x9							   = 0.002600,-0.016400,0.000000
+
+; anim_aim_start 									   = aim_start_vss_scope, 1, 1, 0.14, 0.15
+; anim_aim_idle  									   = aim_idle_vss_scope, 1, 1, 0.2, 0.2
+; anim_aim_end   									   = aim_end_vss_scope, 1, 1, 0.14, 0.15
+
+[wpn_val_nimble_1p78]:wpn_val_nimble
+$spawn             			= "weapons\wpn_val_nimble_1p78"
+hud					= wpn_val_nimble_1p78_hud
+visual					= dynamics\weapons\wpn_val\wpn_val_nimble_1p78.ogf
+scope_x                                      = 87
+scope_y                                      = -13
+
+3d_reticle_size = 5.3
+3dss_gen_zoom_enable = true
+
+scope_respawn = wpn_val_nimble
+scope_name = wpn_addon_1p78
+
+[wpn_val_nimble_1p78_hud]:wpn_val_nimble_hud
+item_visual                		= dynamics\weapons\wpn_val\wpn_val_nimble_1p78_hud.ogf
+anm_shots_when_aim               	= vihr_shoot_scope, shoot
+anm_idle_aim_moving            	    = vihr_moving_scope_aim
+
+aim_hud_offset_pos = -0.0690001,0.003,-0.039
+aim_hud_offset_rot = 0.004,-0.002,0
+aim_hud_offset_pos_16x9 = -0.0690001,0.003,-0.039
+aim_hud_offset_rot_16x9 = 0.004,-0.002,0
+
+; anim_aim_start 									   = aim_start_vss_scope, 1, 1, 0.14, 0.15
+; anim_aim_idle  									   = aim_idle_vss_scope, 1, 1, 0.2, 0.2
+; anim_aim_end   									   = aim_end_vss_scope, 1, 1, 0.14, 0.15
+
+[wpn_val_nimble_pso]:wpn_val_nimble
+$spawn             			= "weapons\wpn_val_nimble_pso"
+hud					= wpn_val_nimble_pso_hud
+scope_x                                      = 81
+scope_y                                      = -7
+
+3d_reticle_size = 5.9
+3dss_gen_zoom_enable = true
+
+scope_respawn = wpn_val_nimble
+scope_name = wpn_addon_1pso
+
+[wpn_val_nimble_pso_hud]:wpn_val_nimble_hud
+item_visual				= dynamics\weapons\wpn_val\wpn_val_nimble_hud.ogf
+anm_shots_when_aim               	= vihr_shoot_scope, shoot
+anm_idle_aim_moving            	    = vihr_moving_scope_aim
+
+aim_hud_offset_pos = -0.058,0.008,-0.049
+aim_hud_offset_rot = 0.005,-0.0035,0
+aim_hud_offset_pos_16x9 = -0.058,0.008,-0.049
+aim_hud_offset_rot_16x9 = 0.005,-0.0035,0
+
+; anim_aim_start 									   = aim_start_vss_scope, 1, 1, 0.14, 0.15
+; anim_aim_idle  									   = aim_idle_vss_scope, 1, 1, 0.2, 0.2
+; anim_aim_end   									   = aim_end_vss_scope, 1, 1, 0.14, 0.15
+
+[wpn_val_nimble_ac10632]:wpn_val_nimble
+$spawn                                             = "weapons\wpn_val_nimble_ac10632"
+hud													= wpn_val_nimble_ac10632_hud
+scope_x                                      = 167
+scope_y                                      = -18
+visual												= dynamics\weapons\wpn_val\wpn_val_nimble_ac10632.ogf
+
+scope_respawn = wpn_val_nimble
+scope_name = ac10632
+
+[wpn_val_nimble_ac10632_hud]:wpn_val_nimble_hud
+item_visual            	 							= dynamics\weapons\wpn_val\wpn_val_nimble_ac10632_hud.ogf
+
+aim_hud_offset_pos = -0.067500,0.005500,-0.07
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.067500,0.005500,-0.07
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+; aim_hud_offset_pos								   = 0.002800,-0.004300,-0.044100
+; aim_hud_offset_pos_16x9							   = 0.002800,-0.004300,-0.044100
+
+; anim_aim_start 									   = aim_start_vss_scope, 1, 1, 0.14, 0.15
+; anim_aim_idle  									   = aim_idle_vss_scope, 1, 1, 0.2, 0.2
+; anim_aim_end   									   = aim_end_vss_scope, 1, 1, 0.14, 0.15
+
+[wpn_val_nimble_eot]:wpn_val_nimble
+$spawn                                             = "weapons\wpn_val_nimble_eot"
+hud													= wpn_val_nimble_eot_hud
+scope_x                                      = 166
+scope_y                                      = -17
+visual												= dynamics\weapons\wpn_val\wpn_val_nimble_eot.ogf
+
+scope_respawn = wpn_val_nimble
+scope_name = wpn_addon_eotech
+
+[wpn_val_nimble_eot_hud]:wpn_val_nimble_hud
+item_visual            	 							= dynamics\weapons\wpn_val\wpn_val_nimble_eot_hud.ogf
+aim_hud_offset_pos = -0.067500,0.002500,-0.07
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.067500,0.002500,-0.07
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+; aim_hud_offset_pos								   = 0.003000,-0.006400,-0.044100
+; aim_hud_offset_pos_16x9							   = 0.003000,-0.006400,-0.044100
+
+; anim_aim_start 									   = aim_start_vss_scope, 1, 1, 0.14, 0.15
+; anim_aim_idle  									   = aim_idle_vss_scope, 1, 1, 0.2, 0.2
+; anim_aim_end   									   = aim_end_vss_scope, 1, 1, 0.14, 0.15
+
+[wpn_val_nimble_microt1]:wpn_val_nimble
+$spawn                                             = "weapons\wpn_val_nimble_microt1"
+hud													= wpn_val_nimble_microt1_hud
+scope_x                                      = 168
+scope_y                                      = -14
+visual												= dynamics\weapons\wpn_val\wpn_val_nimble_micro-t1.ogf
+
+scope_respawn = wpn_val_nimble
+scope_name = microt1
+
+[wpn_val_nimble_microt1_hud]:wpn_val_nimble_hud
+item_visual            	 							= dynamics\weapons\wpn_val\wpn_val_nimble_micro-t1_hud.ogf
+aim_hud_offset_pos = -0.067500,0.000500,-0.07
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.067500,0.000500,-0.07
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+; aim_hud_offset_pos								   = 0.003100,-0.008200,-0.044100
+; aim_hud_offset_pos_16x9							   = 0.003100,-0.008200,-0.044100
+
+; anim_aim_start 									   = aim_start_vss_scope, 1, 1, 0.14, 0.15
+; anim_aim_idle  									   = aim_idle_vss_scope, 1, 1, 0.2, 0.2
+; anim_aim_end   									   = aim_end_vss_scope, 1, 1, 0.14, 0.15

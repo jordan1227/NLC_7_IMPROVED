@@ -1,0 +1,623 @@
+-------------------Jack Pavlov-------------------
+
+-------------------------------------------------
+-- служебная функция для конвертации любых данных в текст
+-- (предполагается использовать при выводе переменных для отладки)
+-- Корректно понимает: nil, числа, логические значения, таблицы. Вместо остальных данных возвращает их тип.
+--
+function data2text(data1)
+	local data2 = data1 or "<nil>"
+	local data3
+	if type(data2) == "string" then
+		data3 = data2
+	elseif type(data2) == "number" then
+		data3 = tostring(data2)
+	elseif type(data2) == "boolean" then
+		if data2 then
+			data3 = "true"
+		else
+			data3 = "false"
+		end
+	elseif type(data2) == "table" then
+		data3 = "{table: "
+		for k,v in pairs(data2) do
+			data3 = data3.."["..k.."]"..data2text(v)	-- рекурсивный вызов
+		end
+		data3 = data3.."}"
+	else
+		data3 = "<"..type(data2)..">"
+	end
+	return data3
+end
+-------------------------------------------------
+-- служебная функция для вывода на экран сообщения (предполагается использовать для отладки)
+-- text1 - сообщение для вывода, если отсутствует - выводится "<!>". text1 разбирается с помощью data2text, т.е.
+--	корректно понимается: nil, числа, логические значения, таблицы. Вместо остальных данных возвращается их тип.
+-- time1 - длительность вывода сообщения в секундах, если отсутствует - длительность 15 секунд
+--
+function show(text1, time1)
+	local time2 = time1 or 15
+	local text2 = text1 or "<!>"
+	if db.actor == nil then return end
+	db.actor:give_game_news(jack.data2text(text2),"",Frect():set(0,215,163,105),0,time2*1000)
+end
+-------------------------------------------------
+-- служебная функция для вывода на экран состояния инфопоршня (предполагается использовать для отладки)
+-- name_infoportion - название инфопоршня
+-- time1 - длительность вывода сообщения в секундах, если отсутствует - длительность 15 секунд
+--
+function show_infoportion(name_infoportion, time1)
+	if db.actor:has_info(name_infoportion) then
+		jack.show(name_infoportion.."=on", time1)
+	else
+		jack.show(name_infoportion.."=off", time1)
+	end
+end
+-------------------------------------------------
+-- функция для выдачи случайного рецепта игроку
+--
+-- Применение. Везде где необходимо вместо:
+-- <action>sak.info_amk_received</action>
+-- <give_info>info_amk_recipt_?????????</give_info>
+--
+-- используйте:
+-- <action>jack.give_random_recipe</action>
+--
+-- Описание работы.
+-- Для работы используется список рецептов. Список можно редактировать (добавлять, убирать, менять рецепты).
+-- При первом запуске (или после редактирования списка рецептов), функция генерирует таблицу случайных значений и
+-- выдает случайные рецепты игроку, ориентируясь на нее.
+-- Читерить, переигрывая момент выдачи, бесполезно. Функция выдаст один и тот же случайный рецепт.
+-- Функция проверяет, если рецепт игроку известен, то выбирается следующий случайный рецепт. Т.е. функция корректно
+-- работает в условиях, когда рецепты выдает не только она.
+-- Функция корректно работает с игроками на старых сохранках (где эта функция не использовалась, где использовалась
+-- другая таблица рецептов и т.п.)
+--
+--
+function give_random_recipe()
+	-- глобальная таблица со случайными значениями: give_random_recipe___table_random_values
+	-- глобальная переменная с текущей позицией в таблице случайных значений: give_random_recipe___position_table_random_values
+	-- глобальная таблица со списком рецептов: give_random_recipe___table_recipes (для определения, что список рецептов table_recipes редактировали)
+
+	-- список рецептов с которыми работает функция (можно добавлять, можно убирать, можно менять рецепты)
+	local table_recipes = {
+		"info_amk_recipt_souls_drops",
+		"info_amk_recipt_souls_fire",
+		"info_amk_recipt_souls_cristal",
+		"info_amk_recipt_souls_bengal",
+
+		"info_amk_recipt_dummy_fire",
+		"info_amk_recipt_dummy_bright",
+		"info_amk_recipt_dummy_moon",
+		"info_amk_recipt_dummy_puding",
+
+		"info_amk_recipt_dikoobraz",
+		"info_amk_recipt_electra_dikoobraz",
+		"info_amk_recipt_sopl_dikoobraz",
+		"info_amk_recipt_stone_dikoobraz",
+
+		"info_amk_recipt_steel_kolobok",
+		"info_amk_recipt_titan_kolobok",
+		"info_amk_recipt_almaz_kolobok",
+		"info_amk_recipt_giant_small_brother",
+
+		"info_amk_recipt_shkura",
+		"info_amk_recipt_cheshya",
+		"info_amk_recipt_pancir",
+		"info_amk_recipt_controller_skalp",
+
+		"info_amk_recipt_tears_electra",
+		"info_amk_recipt_tears_fire",
+		"info_amk_recipt_tears_chimaera",
+		"info_amk_recipt_tears_gigant",
+
+		"info_amk_recipt_grandmother_glassbeards",
+		"info_amk_recipt_pra_grandmother_glassbeards",
+		"info_amk_recipt_burer_grandmother_glassbeards",
+		"info_amk_recipt_burer_pra_grandmother_glassbeards",
+	}
+
+	-- при первом запуске (или если редактировалась таблица рецептов table_recipes):
+	-- инициализируем таблицу случайных значений table_random_values
+	-- и устанавливаем текущую позицию в ней position_table_random_values
+	local flag_need_init = false		-- флаг необходимости инициализации
+	if (get_value("give_random_recipe___table_recipes") == nil)
+	   or (get_value("give_random_recipe___table_random_values") == nil)
+	   or (get_value("give_random_recipe___position_table_random_values") == nil)
+	   or (#get_value("give_random_recipe___table_recipes") ~= #table_recipes) then
+		flag_need_init = true		-- надо инициализировать, т.к. первый запуск функции или менялся размер списока рецептов
+	else
+		for i=1,#table_recipes do
+			if get_value("give_random_recipe___table_recipes")[i] ~= table_recipes[i] then
+				flag_need_init = true		-- надо инициализировать, т.к. редактировали список рецептов
+				break
+			end
+		end
+	end
+	if flag_need_init then
+		-- делаем инициализацию (первый запуск или редактировали таблицу рецептов)
+		local t, tt = {}, {}
+		for i=1, #table_recipes do
+			t[i] = i
+		end
+		for i=1, #table_recipes do		-- перестановка значений, чтобы получить случайный набор
+			local temp = lua_random(1,#table_recipes)
+			t[i],t[temp] = t[temp],t[i]
+		end
+
+		set_value("give_random_recipe___position_table_random_values", 1)
+		for i=1, #table_recipes do
+			tt[i] = table_recipes[i]
+		end
+		set_value("give_random_recipe___table_random_values", t)
+		set_value("give_random_recipe___table_recipes", tt)
+	end
+
+	-- ищем первый невыданный рецепт для игрока
+	while (get_value("give_random_recipe___position_table_random_values") <= #table_recipes) and
+	      (db.actor:has_info(table_recipes[get_value("give_random_recipe___table_random_values")[get_value("give_random_recipe___position_table_random_values")]])) do
+		set_value("give_random_recipe___position_table_random_values", get_value("give_random_recipe___position_table_random_values") + 1)
+	end
+
+	-- выдаем игроку рецепт или награду (если больше рецептов нет)
+	if get_value("give_random_recipe___position_table_random_values") <= #table_recipes then
+		-- выдача рецепта
+		db.actor:give_info_portion(table_recipes[get_value("give_random_recipe___table_random_values")[get_value("give_random_recipe___position_table_random_values")]])
+		set_value("give_random_recipe___position_table_random_values", get_value("give_random_recipe___position_table_random_values") + 1)
+		sak.info_amk_received()
+	else
+		-- выдача награды если все рецепты закончились (игрок знает все рецепты)
+		jack.create_actor_item("vodka",20)
+		jack.create_actor_item("conserva",20)
+	end
+
+end
+
+---------------------------------------
+-- функция для работы с предметами в инвентаре игрока.
+-- С предметами искомого имени (item_name) выполняется функция (action_name).
+-- 
+-- Использование:
+-- boolean: jack.process_actor_item(action_name, item_name, [[[count_item], mode_where_search], mode_how_search])
+-- 
+-- где:	item_name - название предмета для работы
+--	action_name - название функции, которая будет выполнять работу с предметами.
+--		Для каждого найденного предмета	эта функция будет вызываться action_name(item_id),
+--		где item_id - идентификатор объекта найденного предмета.
+--	count_item - с каким количеством предметов работать (>=0)
+--		если параметр равен >0, то работа ведется с первыми найденными count_item предметами
+--		если параметр равен 0, то работа ведется со всеми найденными предметами
+--		параметр можно не указывать, по-умолчанию количество считается равным 1 (работаем с первым и единственным предметом)
+--	mode_where_search - где искать
+-- 		1 = подсчёт предметов только в рюкзаке (разгрузка, пояс, сумка НЗ и слоты не учитываются),
+--		2 = подсчёт предметов не в рюкзаке (в разгрузке, на поясе, сумке НЗ и в слотах)
+--		3 = полный учет предметов
+--		параметр можно не указывать, по-умолчанию режим где искать считается равным 1 (только в рюкзаке)
+--		при полном учете предметов не считаются: артефакты в контейнерах, патроны в оружии, обвесы на оружии.
+--	mode_how_search - как искать
+--		1 = требуется точное совпадение строки item с названием предмета у персонажа ("medkit" и "medkit_army" НЕ считается совпадением)
+--		2 = достаточно совпадение строки item с началом названия предмета у персонажа ("medkit" и "medkit_army" считается совпадением)
+--		параметр можно не указывать, по-умолчанию режим "как искать" равен 1 (точное совпадение)
+-- возвращает: true - если обработка прошла успешно, false - если обработка не получилась.
+-- 
+-- примеры использования:
+-- jack.process_actor_item(jack.action_name1(),"af_blood_dyn5d",1)	-- выполнить jack.action_name1 с одним артефактом "Кровь Камня" 5 дана.
+-- jack.process_actor_item(jack.action_name1(),"af_blood",0,1,2)	-- выполнить jack.action_name1 со всеми артефактами "Кровь Камня" разых данов в рюкзаке
+-- jack.process_actor_item(jack.action_name1(),"af_",0,1,2)		-- выполнить jack.action_name1 со всеми артефактами (и аккумуляторами) в рюкзаке
+-- jack.process_actor_item(jack.action_name1(),"af_",0,3,2)		-- выполнить jack.action_name1 со всеми артефактами (и аккумуляторами) везде (на поясе и в рюкзаке)
+-- jack.process_actor_item(jack.action_name1(),"wpn_knife_m1",1,2)	-- выполнить jack.action_name1 с ножом M9 в слоте
+-- jack.process_actor_item(jack.action_name1(),"wpn_knife",1,1,2)	-- выполнить jack.action_name1 с любым ножом в слоте
+-- jack.process_actor_item(jack.action_name1(),"wpn_knife",1,3,2)	-- выполнить jack.action_name1 с ножами у игрока везде (в слотах и в рюкзаке)
+-- jack.process_actor_item(jack.action_name1(),"grenade_f1"1)		-- выполнить jack.action_name1 с гранатами Ф1 в рюкзаке
+-- jack.process_actor_item(jack.action_name1(),"grenade_f1",1,3)	-- выполнить jack.action_name1 с гранатами Ф1 везде (в разгрузке и в рюкзаке)
+--
+--
+-- ВНИМАНИЕ! Функция пока не работает!
+--
+function process_actor_item(action_name, item_name, count_item, mode_where_search, mode_how_search)
+	if (action_name == nil) or (type(action_name) ~= "function") then   return false   end
+	if (item_name == nil) or (type(item_name) ~= "string") then   return false   end
+
+	local count_item = count_item or 1
+	if (type(count_item) ~= "number") or (count_item < 0) or (count_item % 1 ~= 0) then   return false   end
+
+	local mode_where_search = mode_where_search or 1
+	if not ((mode_where_search == 1) or (mode_where_search == 2) or (mode_where_search == 3)) then   return false   end
+
+	local mode_how_search = mode_how_search or 1
+	if not ((mode_how_search == 1) or (mode_how_search == 2)) then   return false   end
+	local function temp_search(string1, string2)
+		if mode_how_search == 1 then
+			return string1 == string2			-- точный поиск
+		elseif mode_how_search == 2 then
+			return string.find(string1, string2) == 1	-- не точный поиск
+		end
+	end
+
+	local result = false
+	if mode_where_search == 1 then
+		-- считает предметы только в рюкзаке
+		get_shadow_inv():hide_content(2)
+		for temp_item,temp_count_item in get_shadow_inv():hidden_items(true):pairs() do
+			if temp_search(temp_item, item_name) then
+				action_name()
+			end
+		end
+	elseif mode_where_search == 2 then
+		-- считаем предметы на поясе артефактов
+		for temp_item,temp_count_item in pairs(sak_inventory.belt_items) do
+			if temp_search(temp_item, item_name) then
+				action_name()
+			end 
+		end
+
+		-- считаем предметы в слотах оружия, одежды, детектора
+		for temp_item,temp_count_item in pairs(sak_inventory.slots) do
+			if temp_search(temp_item, item_name) then
+				action_name()
+			end 
+		end
+
+		-- считаем предметы в "съедобных" слотах пояса и разгрузки
+		for temp_item,temp_count_item in pairs(sak_inventory.eatable) do
+			if temp_search(temp_item, item_name) then
+				action_name()
+			end 
+		end
+
+		-- Послание будущим поколениям.
+		-- Не считаются предметы:
+		--	патроны в разрузке и сумке НЗ
+		--	гранаты в разрузке и сумке НЗ
+		--	подствольные гранаты в разрузке и сумке НЗ
+		-- Если сделаете - красавчики.
+		-- PS. get_shadow_inv():get_content(false) не правильно работает (см. предмет "bread").
+
+	elseif mode_where_search == 3 then
+		-- считает предметы везде
+		for i, temp in get_shadow_inv():get_content(true):ipairs() do
+			if temp_search(temp.sect, item_name) then
+				action_name()
+			end
+		end
+	end
+
+	return result
+end
+
+---------------------------------------
+-- функция подсчета количества предмета у игрока.
+--
+-- Использование:
+-- integer: jack.count_actor_item(item_name, [[mode_where_search], mode_how_search])
+--
+-- где:	item_name - название предмета для подсчета количества
+--	mode_where_search - где искать
+-- 		1 = подсчёт предметов только в рюкзаке (разгрузка, пояс, сумка НЗ и слоты не учитываются),
+--		2 = подсчёт предметов не в рюкзаке (в разгрузке, на поясе, сумке НЗ и в слотах)
+--		3 = полный учет предметов
+--		параметр можно не указывать, по-умолчанию режим где искать считается равным 1 (только в рюкзаке)
+--		при полном учете предметов не считаются: артефакты в контейнерах, патроны в оружии, обвесы на оружии.
+--	mode_how_search - как искать
+--		1 = требуется точное совпадение строки item с названием предмета у персонажа ("medkit" и "medkit_army" НЕ считается совпадением)
+--		2 = достаточно совпадение строки item с началом названия предмета у персонажа ("medkit" и "medkit_army" считается совпадением)
+--		параметр можно не указывать, по-умолчанию режим "как искать" равен 1 (точное совпадение)
+-- возвращает: целое число >=0 количество предмета у игрока
+--
+-- примеры:
+-- jack.count_actor_item("medkit")		-- подсчет количества простых аптечек в рюкзаке (военные и научные аптечки не найдем)
+-- jack.count_actor_item("medkit",1,2)		-- подсчет количества любых аптечек (простых "medkit", военных "medkit_army", научных "medkit_scientic") в рюкзаке
+-- jack.count_actor_item("af_blood_dyn5d")	-- подсчёт количества артефакта "Кровь Камня" 5 дана в рюкзаке
+-- jack.count_actor_item("af_blood",1,2)	-- подсчёт количества артефакта "Кровь Камня" разых данов в рюкзаке
+-- jack.count_actor_item("af_",1,2)		-- подсчёт всех артефактов (и аккумуляторов) в рюкзаке
+-- jack.count_actor_item("af_",3,2)		-- подсчёт всех артефактов (и аккумуляторов) везде (на поясе и в рюкзаке)
+-- jack.count_actor_item("wpn_knife_m1",2)	-- есть ли нож M9 в слоте
+-- jack.count_actor_item("wpn_knife",1,2)	-- есть ли любой нож в слоте
+-- jack.count_actor_item("wpn_knife",3,2)	-- считаем сколько всего ножей у игрока везде (в слотах и в рюкзаке)
+-- jack.count_actor_item("grenade_f1")		-- сколько гранат Ф1 в рюкзаке
+-- jack.count_actor_item("grenade_f1",3)	-- сколько гранат Ф1 всего (в разгрузке и в рюкзаке)
+--
+--
+function count_actor_item(item_name, mode_where_search, mode_how_search)
+	if item_name == nil then   return 0   end
+
+	local mode_where_search = mode_where_search or 1
+	if not ((mode_where_search == 1) or (mode_where_search == 2) or (mode_where_search == 3)) then   return 0   end
+
+	local mode_how_search = mode_how_search or 1
+	if not ((mode_how_search == 1) or (mode_how_search == 2)) then   return 0   end
+	local function temp_search(string1, string2)
+		if mode_how_search == 1 then
+			return string1 == string2			-- точный поиск
+		elseif mode_how_search == 2 then
+			return string.find(string1, string2) == 1	-- не точный поиск
+		end
+	end
+
+	local result = 0  
+	if mode_where_search == 1 then
+		-- считает предметы только в рюкзаке
+		get_shadow_inv():hide_content(2)
+		for temp_item,temp_count_item in get_shadow_inv():hidden_items(true):pairs() do
+			if temp_search(temp_item, item_name) then
+				result = result + temp_count_item
+			end
+		end
+	elseif mode_where_search == 2 then
+		-- считаем предметы на поясе артефактов
+		for temp_item,temp_count_item in pairs(sak_inventory.belt_items) do
+			if temp_search(temp_item, item_name) then
+				result = result + #temp_count_item
+			end 
+		end
+
+		-- считаем предметы в слотах оружия, одежды, детектора
+		for temp_item,temp_count_item in pairs(sak_inventory.slots) do
+			if temp_search(temp_item, item_name) then
+				result = result + #temp_count_item
+			end 
+		end
+
+		-- считаем предметы в "съедобных" слотах пояса и разгрузки
+		for temp_item,temp_count_item in pairs(sak_inventory.eatable) do
+			if temp_search(temp_item, item_name) then
+				result = result + #temp_count_item
+			end 
+		end
+
+		-- Послание будущим поколениям.
+		-- Не считаются предметы:
+		--	патроны в разрузке и сумке НЗ
+		--	гранаты в разрузке и сумке НЗ
+		--	подствольные гранаты в разрузке и сумке НЗ
+		-- Если сделаете - красавчики.
+		-- PS. get_shadow_inv():get_content(false) не правильно работает (см. предмет "bread").
+
+	elseif mode_where_search == 3 then
+		-- считает предметы везде
+		for i, temp in get_shadow_inv():get_content(true):ipairs() do
+			if temp_search(temp.sect, item_name) then
+				result = result + nlc_container.amount_in_batch(temp.obj)
+			end
+		end
+	end
+
+	return result
+end
+
+---------------------------------------
+-- функция для проверки наличия предмета у игрока.
+--
+-- Использование:
+-- boolean: jack.have_actor_item(item_name, [[[count_item], mode_where_search], mode_how_search])
+--
+-- где:	item_name - название предмета для проверки
+--	count_item - необходимое количество предмета (>0)
+--		параметр можно не указывать, по-умолчанию количество считается равным 1
+--	mode_where_search - где искать
+--		см. описание в функции jack.count_actor_item
+--	mode_how_search - как искать
+--		см. описание в функции jack.count_actor_item
+-- возвращает: true - если предмет в нужном количестве у игрока есть, false - если предмета нет
+--
+--
+function have_actor_item(item_name, count_item, mode_where_search, mode_how_search)
+	if item_name == nil then   return false   end
+
+	local count_item = count_item or 1
+	if count_item <=0 then   return false   end
+
+	return count_actor_item(item_name, mode_where_search, mode_how_search) >= count_item
+end
+
+---------------------------------------
+-- функция для создания предмета в инвентаре игрока
+-- 
+-- Использование:
+-- void: jack.create_actor_item(item_name, [count_item])
+-- 
+-- где:	item_name - название предмета для создания
+--	count_item - необходимое количество предмета (>0)
+--		параметр можно не указывать, по-умолчанию количество считается равным 1
+-- 
+--
+function create_actor_item(item_name, count_item)
+	if item_name == nil then   return   end
+
+	local count_item = count_item or 1
+	if count_item <=0 then   return   end
+
+	sak.spawn_items(db.actor, item_name, count_item)
+--news_manager.
+end
+
+---------------------------------------
+-- функция для уничтожения предмета в инвентаре игрока
+-- 
+-- Использование:
+-- boolean: jack.remove_actor_item(item_name, [[[count_item], mode_where_search], mode_how_search])
+-- 
+-- где:	item_name - название предмета для уничтожения
+--	count_item - необходимое количество уничтожаемых предметов (>=0)
+--		параметр можно не указывать, по-умолчанию количество считается равным 1
+--		если параметр равен 0, то надо уничтожить все предметы с заданным именем
+--	mode_where_search - где искать
+--		см. описание в функции jack.count_actor_item
+--	mode_how_search - как искать
+--		см. описание в функции jack.count_actor_item
+-- возвращает: true - если удаление прошло успешно, false - если удаление не получилось.
+-- 
+--
+-- ВНИМАНИЕ! Функция пока не работает!
+--
+function remove_actor_item(item_name, count_item, mode_where_search, mode_how_search)
+	if item_name == nil then   return false   end
+
+	local count_item = count_item or 1
+	if count_item <0 then   return false   end
+
+	local mode_where_search = mode_where_search or 1
+	if not ((mode_where_search == 1) or (mode_where_search == 2) or (mode_where_search == 3)) then   return false   end
+
+	local mode_how_search = mode_how_search or 1
+	if not ((mode_how_search == 1) or (mode_how_search == 2)) then   return false   end
+	function temp_search (string1, string2)
+		if mode_how_search == 1 then
+			return string1 == string2
+		elseif mode_how_search == 2 then
+			return string.find(string1, string2) == 1
+		else
+			return false
+		end
+	end
+
+--local real = 0
+--for i, rec in get_shadow_inv():get_content(true):ipairs() do
+--    local sect = dyn_art_base(rec.sect)
+--    if strposx(sect, item) then
+--       local amount =  nlc_container.amount_in_batch(rec.obj)
+--       local need_release = count_item - real
+--       if need_release < amount then            
+--         nlc_container.amount_in_batch(rec.obj, amount - need_release) -- вычитание из пачки уничтожаемого количества
+--         amount = need_release                          
+--       else 
+--         misc.release_obj(rec.id, "sak_inventory.release_actor_items")
+--       end   
+--       real = real + amount  
+--       if real >= count_item then break end
+--    end
+--end
+--if real > 0 then
+--    sak.relocate_item("out", item, real, true)
+--    sak_inventory.need_update_inventory()
+--end  
+-- 
+--return (real == count_item) -- уничтожено все? 
+--news_manager.
+
+	return false
+end
+
+---------------------------------------
+-- функция для передачи предмета из инвентаря игрока в инвентарь другого объекта
+-- 
+-- Использование:
+-- void: jack.transfer_actor_item(object, item_name, [count_item])
+-- 
+-- 
+-- ВНИМАНИЕ! Функция пока не работает!
+--
+function transfer_actor_item(object, item_name, count_item)
+
+
+
+--sak.relocate_item("out", item_name, real, true)
+--news_manager.
+
+end
+
+---------------------------------------
+-- функция для проверки наличия нужной суммы у игрока
+-- 
+-- Использование:
+-- boolean: jack.have_actor_money(count_money)
+-- 
+-- где: count_money - какая сумма должна быть у игрока (>0)
+-- возвращает: true - если нужная сумма у игрока есть, false - если суммы нет
+-- 
+--
+function have_actor_money(count_money)
+	if (count_money == nil) or (count_money <= 0) then   return false   end
+	return db.actor:money() >= count_money
+end
+
+---------------------------------------
+-- функция для выдачи денег игроку
+-- 
+-- Использование:
+-- void: jack.give_actor_money(count_money)
+-- 
+-- где count_money - сколько денег выдать (>0)
+-- 
+--
+function give_actor_money(count_money)
+	if (count_money == nil) or (count_money <= 0) then   return   end
+	db.actor:give_money(count_money)
+	news_manager.relocate_money(db.actor, "in", count_money)
+end
+
+---------------------------------------
+-- функция для отъема денег у игрока
+-- 
+-- Использование:
+-- void: jack.remove_actor_money(count_money)
+-- 
+-- где count_money - сколько денег отнять (>0)
+-- 
+--
+function remove_actor_money(count_money)
+	if (count_money == nil) or (count_money <= 0) then   return   end
+	db.actor:give_money(-count_money)
+	news_manager.relocate_money(db.actor, "out", count_money)
+end
+
+---------------------------------------
+-- спавн объектов
+-- 
+-- Использование:
+-- ?????
+-- 
+-- 
+-- ВНИМАНИЕ! Функция пока не работает!
+--
+
+---------------------------------------
+-- спавн монстров
+-- 
+-- Использование:
+-- ?????
+-- 
+-- 
+-- ВНИМАНИЕ! Функция пока не работает!
+--
+
+---------------------------------------
+-- возврат репутации игрока
+-- 
+-- Использование:
+-- ?????
+-- 
+-- 
+-- ВНИМАНИЕ! Функция пока не работает!
+--
+
+---------------------------------------
+-- установить репутацию игрока
+-- 
+-- Использование:
+-- ?????
+-- 
+-- 
+-- ВНИМАНИЕ! Функция пока не работает!
+--
+
+---------------------------------------
+-- изменить репутацию игрока
+-- 
+-- Использование:
+-- ?????
+-- 
+-- 
+-- ВНИМАНИЕ! Функция пока не работает!
+--
+
+---------------------------------------
+-- вернуть коэффициент инфляции для игрока (в зависимости от даты в игре, репутации и ранга игрока)
+-- 
+-- Использование:
+-- ?????
+-- 
+-- 
+-- ВНИМАНИЕ! Функция пока не работает!
+--
+

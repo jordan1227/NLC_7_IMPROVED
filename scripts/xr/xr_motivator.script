@@ -1,0 +1,621 @@
+--[[------------------------------------------------------------------------------------------------------------------
+автор: Диденко Руслан(Stohe)
+
+порядок вызова методов биндера:
+reload
+reinit
+load
+net_spawn
+--------------------------------------------------------------------------------------------------------------------]]
+
+reinforced_npcs = {
+	["agr_krot"] = true, -- Крот
+	["agr_ratcatcher"] = true, -- Дезертир
+	["bar_arena_manager"] = true, -- Арни
+	["bar_bandit"] = true, -- Баграм
+	["bar_bar_drunk_dolg"] = true, -- Ефрейтор Бром
+	["bar_bar_hunter"] = true, -- Игорь Сухой
+	["bar_bar_lisiy"] = true, -- Лысый
+	["bar_barman_guard"] = true, -- Гарик
+	["bar_barman_guard2"] = true, -- Жорик
+	["bar_dolg_guard_commander"] = true, -- Сержант Пличко
+	["bar_dolg_ivancov"] = true, -- Полковник Иванцов
+	["bar_dolg_leader"] = true, -- Генерал Воронин
+	["bar_dolg_petrenko"] = true, -- Полковник Петренко
+	["bar_lisaped"] = true, -- Юрко Лисапед
+	["bar_zastava_commander_1"] = true, -- Сержант Киценко
+	["dolg_dummy"] = true, -- Счастливчик
+	["dolgovazyi"] = true, -- Долговязый
+	["dumenko"] = true, -- Майор Думенко
+	["esc_bridge_soldier1"] = true, -- Лейтенант Зубцов
+	["esc_fox"] = true, -- Лис
+	["esc_green_respawn_2"] = true, -- Ник И Тин
+	["esc_green_respawn_4"] = true, -- Назар
+	["esc_ranger"] = true, -- Петруха
+	["esc_shustryi"] = true, -- Шустрый
+	["esc_sid_guard"] = true, -- Стас охранник
+	["esc_soldier_commander_sub"] = true, -- Лейтенант Ковальчук
+	["esc_vagon_wounded"] = true, -- Толик
+	["esc_vergas"] = true, -- Вергас
+	["esc_wolf"] = true, -- Волк
+	["gar_dolg_commander_blokpost"] = true, -- Прапор
+	["gar_hellcar"] = true, -- Бес
+	["gar_seryi"] = true, -- Серый
+	["green_dan"] = true, -- Дэн-охотник
+	["green_glavn"] = true, -- Игнат
+	["ivan"] = true, -- Иван Небов
+	["klyk"] = true, -- Клык
+	["neumeha"] = true, -- Неумёха
+	["prut2"] = true, -- Прут-Балабол
+	["rygyi"] = true, -- Рыжий
+	["sak_military_stalker"] = true, -- Прапорщик Шерстюк
+	["sim_dolg_veteran_barin"] = true, -- Барин
+	["sim_dolg_veteran_prapor"] = true, -- Прапор
+	["sim_stalker_master_diador"] = true, -- Отец Диодор
+	["stalker_disel"] = true, -- Пашка
+	["stalker_sultana"] = true, -- Калёный
+	["sultan"] = true, -- Султан
+	["sanek"] = true, -- Санёк
+	["muller"] = true, -- Мюллер
+	["stepanych"] = true, -- Степаныч на Болотах
+	["stepanych2"] = true, -- Степаныч на Забытом Хуторе
+	["marsh_gluzov"] = true, -- Аспирант Глузов
+	["marsh_aspirant"] = true, -- Аспирант Исаев
+	["amk_artem_kulinar"] = true, -- Артём Кулинар
+	["hos_junkman"] = true, -- Лёха-старьёвщик
+	["val_bandit_trader"] = true, -- Жила
+	["val_bandit_borov"] = true, -- Боров
+	["val_vlad"] = true, -- Влад
+	["amk_vitek_voron"] = true, -- Витёк Ворон
+	["val_dram_glavn"] = true, -- Рашпиль
+	["rad_ivar_drug"] = true, -- Друг Ивара
+	["val_escort_halfdead"] = true, -- Пашок Монгол
+	["val_escort_captive"] = true, -- Макс Любер
+	["val_escort_nap1"] = true, -- Пуля
+	["marsh_oksana"] = true, -- Оксана
+	["mar_military_glavn"] = true, -- Капитан Калинин
+	["mar_boryan"] = true, -- Борян Скула
+	["marsh_provodnik"] = true, -- Проводник на болоте
+	["assistant"] = true, -- МНС Матвеев
+	["cit_bandit_leader"] = true, -- Борзый
+	["serafim"] = true, -- Серафим-12
+	["bar_ecolog_professor"] = true, -- Проф. Круглов (ДТ)
+	["yan_ecolog_kruglov"] = true, -- Проф. Круглов (Янтарь)
+	["yan_Semenov"] = true, -- Семёнов
+	["yan_dolg_petrenko"] = true, -- Полковник Петренко (Янтарь)
+	["mil_freedom_member0005"] = true, -- Главный охранник на базе Свободы
+	["mil_Svoboda_zombi_stalker"] = true, -- Сумасшедший
+	["mil_Svoboda_blockpost_leader"] = true, -- Кеп
+	["mil_Svoboda_master_Ugrumiy"] = true, -- Угрюмый
+	["mil_Killer_informator"] = true, -- Вахтанг
+	["gar_bandit_dm_2"] = true, -- Диман Орех
+	["td_stalker_fraer"] = true, -- Фраер
+	["lim_rashpil"] = true, -- Рашпиль (Лиманск)
+	["cit_bandit_leader"] = true, -- Борзый
+	["val_bandit_krisyk"] = true, -- Крысюк (Кишка)
+	["val_bandit_krisyk2"] = true, -- Крысюк (Бар)
+	["art_exchanger"] = true, -- Саня Меняла
+	["sim_bandit_master_kocherga_sak"] = true, -- Кочерга ДТ
+}
+
+local particles={}
+
+class "motivator_binder"(object_binder)
+
+function motivator_binder:__init(obj) super(obj)
+	self.loaded = false
+	self.first_update = false
+	self.particles = {}
+	self.am = ogse_signals.get_mgr()
+	self.am:call( "on_npc_init", obj, self )
+end
+
+function motivator_binder:extrapolate_callback(cur_pt)
+	if self.object==nil or cur_pt==NONE_SID then return false end
+	--ODS(string.format("[~T]. #DBG: object '%s': extrapolate_callback '%s'",self.object:name(),cur_pt))
+	if self.st.active_section then
+		xr_logic.issue_event(self.object, self.st[self.st.active_scheme], "extrapolate_callback")
+		self.st.move_mgr:extrapolate_callback(self.object)
+	end
+	if patrol(self.object:patrol()):flags(cur_pt):get()==0 then return true end
+	return false
+end
+
+function motivator_binder:reinit()
+	if self.object==nil then return end
+	object_binder.reinit(self)
+	-- local char_ini = self.object:spawn_ini() or ini_file("scripts\\dummy.ltx")
+	db.storage[self.object:id()] = {followers = {}}
+	self.st = db.storage[self.object:id()]
+	self.st.state_mgr = state_mgr.bind_manager(self.object)
+	self.st.move_mgr = move_mgr.move_mgr(self.object)
+	self.st.move_mgr:initialize()
+end
+
+function motivator_binder:net_spawn(sobject)
+	if not object_binder.net_spawn(self, sobject) then return false	end
+	db.add_obj(self.object)
+
+	if reinforced_npcs[self.object:name()] or reinforced_npcs[self.object:profile_name()] then
+		self.object:get_custom_monster().visible_for_zones = false
+	end
+
+	self.object:set_patrol_extrapolate_callback(motivator_binder.extrapolate_callback, self)
+	self.object:set_callback(callback.hit, motivator_binder.hit_callback, self)
+	self.object:set_callback(callback.death, motivator_binder.death_callback, self)
+	self.object:set_callback(callback.use_object, motivator_binder.use_callback, self)
+-- добавлено DSH дл проверки на патроны -----------------
+-- self.object:set_callback( callback.on_item_take, self.on_item_take, self )	
+------------------------------------------------------------	
+-- добавлено для изменения работы xr_combat_ignore.script-----------------------
+	if self.object:alive() then
+	self.object:set_enemy_callback( self.enemy_callback, self )
+    self.object:set_callback( callback.entity_alive_before_hit, self.before_hit_callback, self )
+	end
+--------------------------------------------------------------------------------
+------------------ добавлено для работы нового sound_theme.script --------------
+self.am:call( "on_npc_before_spawn", self.object, self )
+--------------------------------------------------------------------------------
+	if self.loaded==false then
+		local char_ini = self.object:spawn_ini() or dsh.cached_ini_file("scripts\\dummy.ltx")
+		xr_info.loadInfo(self.object, char_ini)
+	end
+	if not self.object:alive() then
+	-- added for OGSE Anomaly Evader -----------------------
+		self.am:call( "on_npc_spawn", self.object, self )
+	--------------------------------------------------------
+		return true
+	end
+	local manager = self.object:motivation_action_manager()
+	manager:remove_evaluator	(stalker_ids.property_anomaly)
+	manager:add_evaluator	(stalker_ids.property_anomaly, property_evaluator_const(false))
+	xr_sound.load_sound(self.object)
+	xr_gulag.setup_gulag_and_logic_on_spawn(self.object, self.st, sobject, modules.stype_stalker, self.loaded)
+	amk.on_npc_spawn(self.object)
+	amk.on_net_spawn(self.object)
+	local particle_param = utils.cfg_get_string(system_ini(), self.object:section(), "bones_particles", null, false, false, nil)
+	if particle_param and system_ini():section_exist(particle_param) then
+		local tmp=amk.parse_ini_section_to_array(system_ini(),particle_param)
+		for k,v in pairs(tmp) do
+			local t = amk.parse_ini_section_to_array(system_ini(), v)
+			t.obj = self.object
+			if not t.stop_on_death or self.object:alive() then
+				play_particle(self.object, t)
+			end
+		end
+	end
+	-- added by DSH for xr_kamp and OGSE Anomaly Evader ----
+	self.am:call( "on_npc_spawn", self.object, self )
+	--------------------------------------------------------
+	return true
+end
+
+function motivator_binder:net_destroy()
+	if self.object==nil then return end
+	xrs_ai.npc_net_destroy(self.object)
+	if rx_ai then rx_ai.npc_switch_offline(self.object) end
+	if table.getn(self.particles)>0 then
+		for kk,vv in pairs(self.particles) do
+			if not vv:is_finished() then
+				vv:stop()
+				self.particles[kk]=nil
+			end
+		end
+	end
+	amk.on_npc_go_offline(self.object)
+	local st = db.storage[self.object:id()]
+	if st.active_scheme then
+		xr_logic.issue_event(self.object, st[st.active_scheme], "net_destroy", self.object)
+	end
+	--added  for OGSE Anomaly Evader -------------------- last changed 20190508
+	self.am:call( "on_npc_net_destroy", self.object, self )
+	self.am:cleanup_signal_subs( "on_npc_update." .. self.object:id() )
+	-----------------------------------------------------
+	db.del_obj(self.object)
+	db.storage[self.object:id()] = nil
+	self:clear_callbacks()
+	self.object:set_callback(callback.use_object, nil)
+-- добавлено DHS дл проверки на патроны -----------------	
+--	self.object:set_callback( callback.on_item_take, nil )
+-------------------------------------------------------------	
+	object_binder.net_destroy(self)
+	local id=self.object:id()
+	local sobj=alife():object(id)
+	if sobj then
+		-- local pk = get_netpk(sobj)
+		-- local data = pk:get()
+		-- data.dynamic_in_restrictions = {}
+		-- pk:set(data)
+		alife():remove_in_restrictions(sobj)
+	end
+end
+
+function motivator_binder:clear_callbacks()
+	if self.object==nil then return end
+	self.object:set_patrol_extrapolate_callback(nil)
+	self.object:set_callback(callback.hit, nil)
+	self.object:set_callback(callback.death, nil)
+-- добавлено для изменения работы xr_combat_ignore.script-----------------------	
+	self.object:set_enemy_callback()
+--------------------------------------------------------------------------------	
+	self.object:set_callback(callback.entity_alive_before_hit, nil)
+end
+
+function motivator_binder:before_hit_callback(hit_data)
+	local who = hit_data.who
+	if not who then
+		who = hit_data.who_id and client_obj(hit_data.who_id)
+	end
+	if who then -- если есть виновник хита
+		if who:is_actor() and who:character_community() == 'stranger' and not who:is_relation_enemy( self.object ) then
+			if self.object:character_community() == 'bandit' then
+				self.object:set_relation(game_object.enemy, db.actor) -- Sn: убогий костыль от применения штрафа free_friend_attack_reputation
+			end
+		end
+		if --Проверяем условия игнорирования урона от дружественного огня
+			who:is_stalker()
+			and ( hit_data.who_id ~= self.object:id() or hit_data.hit_type == hit.explosion ) --Попробую обработать ситуацию, когда тупой НПС себе гранату под ноги швырнул.
+			and (
+				( not self.object:is_relation_enemy( who ) and not who:is_relation_enemy( self.object ) )
+			)
+		then
+			--log3("~~[%s] Friendly-Fire detected! [%s --> %s]", script_name(), who:name(), self.object:name())
+			hit_data.ignore_hit = true
+			return -- хит проигнорировали - дальше делать нечего.
+		end
+	end
+
+	local reinforced = reinforced_npcs[self.object:name()] or reinforced_npcs[self.object:profile_name()]
+	if reinforced then
+		local is_actor = who:is_actor()
+		if (not who) or who:is_anomaly() --[[or (is_actor and not self.object:is_relation_enemy(who))]] then 
+			hit_data.ignore_hit = true
+			return
+		end
+		if not is_actor then
+			hit_data.power = hit_data.power * 0.1
+		end
+	end
+
+	self.am:call("on_npc_before_hit", self.object, hit_data, self)
+end
+
+function motivator_binder:hit_callback(obj, amount, local_direction, who, bone_index)
+	if self.object==nil or amount<0.0001 then return end
+	--ODS(string.format("#~C0F #DBG: HIT_CALLBACK: %s amount=%s bone=%s who=%s :~C07", obj:name(), amount, tostring(bone_index),who:name()))
+	if self.st.active_section then
+		xr_logic.issue_event(self.object, self.st[self.st.active_scheme], "hit_callback", obj, amount, local_direction, who, bone_index)
+	end
+	if self.st.combat_ignore then
+		xr_logic.issue_event(self.object, self.st.combat_ignore, "hit_callback", obj, amount, local_direction, who, bone_index)
+	end
+	if self.st.combat then
+		xr_logic.issue_event(self.object, self.st.combat, "hit_callback", obj, amount, local_direction, who, bone_index)
+	end
+	if self.st.hit then
+		xr_logic.issue_event(self.object, self.st.hit, "hit_callback", obj, amount, local_direction, who, bone_index)
+	end
+	if amount > 0.01 then
+		sr_territory.issue_event(self.object, "hit_callback", obj, amount, local_direction, who, bone_index)
+		xr_wounded.hit_callback(self.object:id())
+		if blowout_scheme then
+			blowout_scheme.hit_callback(obj)
+		end
+		amk.on_npc_hit(obj, amount, local_direction, who, bone_index)
+	end
+	if rx_ai then rx_ai.npc_hit(obj,amount,local_direction,who,bone_index,self.object) end
+end
+local gulags_bad={
+["val_escort"]=true,
+["gar_psevdowounded"]=true,
+}
+function motivator_binder:death_callback(victim, who)
+	if self.object==nil then return end
+	xrs_ai.npc_death_callback(self.object)
+	if rx_ai then rx_ai.npc_death(self.object,who) end
+	if who:id()==db.actor:id() then
+		xr_statistic.addKillCount(self.object)
+		if amk.get_npc_relation(victim,who)~="enemy" then
+			if self.object:character_community()~="bandit" then
+				sak_dialog.hellcar_repa_no_good()
+			end
+		else
+			if strpos(victim:name(),"esc_factory_bandit") and level.name()=="l01_escape" and has_alife_info("atp_bandits_gogo") then
+				set_value("esc_band_abuse", true)
+			end
+		end
+		local gulag = xr_gulag.get_npc_gulag(victim)
+		if gulag and gulag.name and not gulags_bad[gulag.name] then
+			xr_gulag.setGulagEnemy(gulag.name, db.actor)
+		end
+	end
+	if self.st.death then
+		xr_logic.issue_event(self.object, self.st.death, "death_callback", victim, who)
+	end
+	if self.st.active_section then
+		xr_logic.issue_event(self.object, self.st[self.st.active_scheme], "death_callback", victim, who)
+	end
+	local id = self.object:id()
+	amk.on_death(victim, who)
+	sr_territory.issue_event(self.object, "death_callback", victim, who)
+	sr_light.check_light(self.object)
+	smart_terrain.on_death(id)
+	death_manager.drop_manager(self.object):create_release_item()
+	self:clear_callbacks()
+	local h = hit()
+	h.draftsman = self.object
+	h.type = hit.fire_wound
+	h.direction = db.actor:position():sub(self.object:position())
+	h:bone("pelvis")
+	h.power = 1
+	h.impulse = 10
+	self.object:hit(h)
+	if table.getn(self.particles)>0 then
+		for kk,vv in pairs(self.particles) do
+			vv:on_death()
+		end
+	end
+	if string.find(self.object:profile_name(),"osoznanie",1,true) then
+		local particle=particles_object("anomaly2\\group_items\\anomaly_greedy_dust")
+		particle:play_at_pos(self.object:position())
+		misc.force_offline(id)
+		schedule.add("mon_release", "misc.release_obj("..id..")", 500)
+	end
+	-- для работы xr_kamp от DSH
+	--xr_kamp.on_death(victim, who)
+	self.am:call( "on_npc_death", self.object, who )
+
+end
+
+function motivator_binder:use_callback(obj, who)
+	if self.object==nil then return end
+	if self.object:alive() then
+		xr_use.notify_on_use(obj, who)
+		if self.st.active_section then
+			xr_logic.issue_event(self.object, self.st[self.st.active_scheme], "use_callback", obj, who)
+		end
+	else
+		if obj:story_id() < 10000 then
+			sak_off_corpses.check_looted(obj)
+		end
+		if who:id()==0 then
+			local activ=db.actor:active_slot()
+			if activ~= NO_ACTIVE_SLOT and (activ~=0 or string.find(db.actor:item_in_slot(0):section(),"wpn_knife",1,true)~=nil) then--db.actor:item_in_slot(0):section()~="wpn_knife" or db.actor:item_in_slot(0):section()~="wpn_knife_m1") then
+				params.set_obj_usable(obj:id(),false)
+			else
+				params.set_obj_usable(obj:id(),true)
+				amk_offline_alife.actor_check_body(obj)
+				if string.find(obj:section(),"zombie",1,true)~=nil then
+				sak.zombie_checkup()
+				end
+			end
+		end
+	end
+	amk.on_use(obj, who)
+end
+
+function motivator_binder:update(delta)
+	if self.object==nil then return end
+    
+	object_binder.update(self, delta)
+	if particles[self.object:id()] and table.getn(particles[self.object:id()])>0 then
+		for kk,vv in pairs(particles[self.object:id()]) do
+			table.insert(self.particles,amk_particle.amk_particle(vv))
+			table.remove(particles[self.object:id()],kk)
+		end
+	end
+	if table.getn(self.particles)>0 then
+		for kk,vv in pairs(self.particles) do
+			if vv:is_finished() then
+				self.particles[kk]=nil
+			else
+				vv:update(delta)
+			end
+		end
+	end
+	if self.first_update==false then
+		if self.object:alive()==false then
+			death_manager.drop_manager(self.object):create_release_item()
+			-- if const.underground(level.name()) then
+				-- local c_pos = self.object:position()
+				-- local s_pos = server_obj(self.object:id()).position
+				-- if math.abs(c_pos.y - s_pos.y) > 0.05 then
+					-- log2("applying force to [%s] diff [%.6f]",self.object:name(),math.abs(c_pos.y - s_pos.y))
+					-- local ps = self.object:get_physics_shell()
+					-- local el = ps:get_element_by_bone_name("bip01_spine1")
+					-- local m = self.object:mass()
+					-- ps:apply_force( 0, m * 300, 0 )
+					-- el:apply_force( 0, m * 200, 0 )
+				-- end
+				-- misc.touch_obj(self.object)
+			-- end
+		end
+		self.first_update = true
+	end
+
+	if self.st.state_mgr then
+		if self.object:alive() then
+			self.st.state_mgr:update()
+			if self.st.state_mgr.combat==false and
+				self.st.state_mgr.alife==false
+			then
+				trade_manager.update(self.object)
+			end
+		else
+			self.st.state_mgr = nil
+		end
+	end
+	if self.object:alive() then
+		xr_sound.update(self.object)
+	end
+	if self.object:alive() then
+		if self.object:is_talk_enabled() then
+			self.object:set_tip_text("character_use")
+		else
+			self.object:set_tip_text("")
+		end
+	else
+		local activ=db.actor:active_slot()
+		--if activ~=NONE_SID and activ~=NONE_CL_SID and (activ~=0 or db.actor:item_in_slot(0):section()~="wpn_knife") then
+		if activ~=NO_ACTIVE_SLOT and (activ~=0 or string.find(db.actor:item_in_slot(0):section(),"wpn_knife",1,true)~=nil) then
+			self.object:set_tip_text("hands_busy") 
+		else
+			self.object:set_tip_text("to_scan_body") 
+		end
+		--self.object:set_tip_text_default()
+	end
+	self.object:info_clear()
+	local best_enemy = self.object:best_enemy()
+	if best_enemy then
+		self.object:info_add('enemy -- ' .. best_enemy:name())
+	end
+	local active_section = db.storage[self.object:id()].active_section
+	if active_section then
+		self.object:info_add('section -- ' .. active_section)
+	end
+	self.object:info_add('name -- ' .. self.object:name())
+	xrs_ai.npc_update(self)
+	if rx_ai then rx_ai.npc_update(self.object,self.st) end
+	----------- added for OGSE Anomaly Evader --------------
+	self.am:call( "on_npc_update", self.object, delta )
+	self.am:call( "on_npc_update." .. self.object:id(), self.object, delta )
+	--------------------------------------------------------
+end
+
+function motivator_binder:reload(section)
+	object_binder.reload(self, section)
+end
+
+function motivator_binder:net_save_relevant()
+	return true
+end
+
+function motivator_binder:save(packet)
+	object_binder.save(self, packet)
+	xr_logic.save_obj(self.object, packet)
+	dialog_manager.save(self.object, packet)
+	trade_manager.save(self.object, packet)
+end
+
+function motivator_binder:load(reader)
+	self.loaded = true
+	object_binder.load(self, reader)
+	if reader:r_eof() then abort("SAVE FILE IS CORRUPT") end
+	xr_logic.load_obj(self.object, reader)
+	dialog_manager.load(self.object, reader, 7)
+	trade_manager.load(self.object, reader, 7)
+end
+
+function motivator_binder:hear_callback(self, who, sound_type, sound_position, sound_power)
+	if who:id()==self:id() then	return end
+	local type = "NIL"
+	if bit_and(sound_type, snd_type.weapon)==snd_type.weapon then
+		type = "WPN"
+		if bit_and(sound_type, snd_type.weapon_shoot)==snd_type.weapon_shoot then
+			type = "WPN_shoot"
+		elseif bit_and(sound_type, snd_type.weapon_empty)==snd_type.weapon_empty then
+			type = "WPN_empty"
+		elseif bit_and(sound_type, snd_type.weapon_bullet_hit)==snd_type.weapon_bullet_hit then
+			type = "WPN_hit"
+		elseif bit_and(sound_type, snd_type.weapon_reload)==snd_type.weapon_reload then
+			type = "WPN_reload"
+		end
+	elseif bit_and(sound_type, snd_type.item)==snd_type.item then
+		type = "ITM"
+		if bit_and(sound_type, snd_type.item_pick_up)==snd_type.item_pick_up then
+			type = "ITM_pckup"
+		elseif bit_and(sound_type, snd_type.item_drop)==snd_type.item_drop then
+			type = "ITM_drop"
+		elseif bit_and(sound_type, snd_type.item_hide)==snd_type.item_hide then
+			type = "ITM_hide"
+		elseif bit_and(sound_type, snd_type.item_take)==snd_type.item_take then
+			type = "ITM_take"
+		elseif bit_and(sound_type, snd_type.item_use)==snd_type.item_use then
+			type = "ITM_use"
+		end
+	elseif bit_and(sound_type, snd_type.monster)==snd_type.monster then
+		type = "MST"
+		if bit_and(sound_type, snd_type.monster_die)==snd_type.monster_die then
+			type = "MST_die"
+		elseif bit_and(sound_type, snd_type.monster_injure)==snd_type.monster_injure then
+			type = "MST_damage"
+		elseif bit_and(sound_type, snd_type.monster_step)==snd_type.monster_step then
+			type = "MST_step"
+		elseif bit_and(sound_type, snd_type.monster_talk)==snd_type.monster_talk then
+			type = "MST_talk"
+		elseif bit_and(sound_type, snd_type.monster_attack)==snd_type.monster_attack then
+			type = "MST_attack"
+		elseif bit_and(sound_type, snd_type.monster_eat)==snd_type.monster_eat then
+			type = "MST_eat"
+		end
+	end
+	if type~="NIL" then
+	end
+end
+
+-- добавлено для изменения работы xr_combat_ignore.script----------------------- 
+function motivator_binder:enemy_callback( obj, enemy_st )
+	if not obj:alive() then return false end
+	local valid, enemy = validate_enemy_object( enemy_st )
+	if valid then
+		local result = {}
+		if enemy:alive() then
+			self.am:call( "on_npc_enemy_callback", obj, enemy, result )
+		else
+			table.insert( result, false )
+		end
+		for _, v in ipairs( result ) do
+			if not v then
+				obj:enable_memory_object( enemy, false )
+				return false
+			end
+		end
+	end
+	return true
+end
+--------------------------------------------------------------------------------
+
+function AddToMotivator(npc)
+	if alife() then
+		npc:bind_object(this.motivator_binder(npc))
+	end
+end
+
+function addCommonPrecondition(action)
+	--action:add_precondition(world_property(xr_evaluators_id.reaction,false))
+	--action:add_precondition(world_property(blowout_scheme.evid_anomaly, false))
+	action:add_precondition(world_property(xr_evaluators_id.stohe_meet_base + 1,false))
+	action:add_precondition(world_property(xr_evaluators_id.sidor_wounded_base + 0,	false))
+	action:add_precondition(world_property(xr_evaluators_id.chugai_heli_hunter_base, false))
+	action:add_precondition(world_property(xr_evaluators_id.abuse_base, false))
+	action:add_precondition(world_property(blowout_scheme.evid_outside, false))
+	action:add_precondition(world_property(blowout_scheme.evid_blowout, false))
+	action:add_precondition(world_property(blowout_scheme.evid_preblowout, false))
+	if ricochet_scheme then
+		action:add_precondition(world_property(ricochet_scheme.evid_ricochet_danger, false))
+	end
+	action:add_precondition(world_property(watcher_act.evid_see_stuff, false))
+	xrs_ai.addCommonPrecondition(action)
+	if rx_ai then rx_ai.addCommonPrecondition(action) end
+end
+
+function play_particle(obj,params)
+	if not particles[obj:id()] then
+		particles[obj:id()]={}
+	end
+	table.insert(particles[obj:id()],params)
+end
+-- добавлено dsh для проверки на патроны -----------------
+function motivator_binder:on_item_take( obj )
+--[[  local sobj
+  if not obj then
+    return
+  else
+    local id = obj:id()
+    sobj     = alife():object( id )
+    if not sobj then return end
+  end
+
+  log2( "dsh: %s got %s", self.object:name(), obj:name() )
+  --]]
+end

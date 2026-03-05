@@ -1,0 +1,295 @@
+;Оптический прицел ПСО-1 (4 крат)
+[wpn_addon_1pso]:weapon_immunities
+GroupControlSection                      = spawn_group
+discovery_dependency                     =
+cform                                    = skeleton
+class                                    = WP_SCOPE
+$spawn                                   = "weapons\addons\pso"
+cost                                     = 3500
+description                              = st_addon_scope_pso1_descr
+inv_grid_height                          = 1
+inv_grid_width                           = 2
+inv_grid_x                               = 68
+inv_grid_y                               = 26
+inv_name                                 = st_addon_scope_pso1
+inv_name_short                           = st_addon_scope_pso1
+inv_weight                               = 0.6
+scope_texture                            = wpn_crosshair_pso1
+visual                                   = dynamics\weapons\wpn_upgrade\wpn_scope.ogf
+
+scope_zoom_factor	= 20
+scope_dynamic_zoom 	= true
+
+;Прицел стрелковый 1П78
+[wpn_addon_1p78]:weapon_immunities
+GroupControlSection                      = spawn_group
+discovery_dependency                     =
+cform                                    = skeleton
+class                                    = WP_SCOPE
+$spawn                                   = "mod\1p78"
+cost                                     = 3000
+crosshair_inertion                       = 9
+description                              = st_addon_scope_1p78_descr
+inv_grid_height                          = 1
+inv_grid_width                           = 1
+inv_grid_x                               = 68
+inv_grid_y                               = 27
+inv_name                                 = st_addon_scope_1p78
+inv_name_short                           = st_addon_scope_1p78
+inv_weight                               = 0.75
+scope_texture                            = wpn_crosshair_1p78
+visual                                   = dynamics\weapons\wpn_upgrade\wpn_scope_1p78.ogf
+
+scope_zoom_factor	= 33
+scope_dynamic_zoom 	= true
+
+;Коллиматорный прицел ЭКП-8-02
+[wpn_addon_cobra]:weapon_immunities
+GroupControlSection                      = spawn_group
+discovery_dependency                     =
+cform                                    = skeleton
+class                                    = WP_SCOPE
+$spawn                                   = "mod\ekp"
+cost                                     = 2250
+description                              = st_addon-ekp-8-02_descr
+inv_grid_height                          = 1
+inv_grid_width                           = 1
+inv_grid_x                               = 68
+inv_grid_y                               = 28
+inv_name                                 = st_addon-ekp-8-02
+inv_name_short                           = st_addon-ekp-8-02
+inv_weight                               = 0.273
+visual                                   = dynamics\weapons\wpn_upgrade\wpn_scope_ekp.ogf
+scope_zoom_factor                        = 75
+holder_fov_modifier                      = 1.0
+holder_range_modifier                    = 1.0
+icon_group = 7
+
+;Прицел коллиматорный G36 Green Dot 
+[wpn_addon_g36l]:weapon_immunities
+GroupControlSection			= spawn_group
+discovery_dependency 		=
+$spawn						= "weapons\addons\scope_g36l" ; option for Level Editor
+class						= WP_SCOPE
+cform           			= skeleton
+visual          			= weapons\addons\ecp_1c_03_scope
+$prefetch 					= 32
+description					= enc_weapons1_wpn-addon-g36l
+cost						= 6500
+
+holder_range_modifier		= 1.2
+holder_fov_modifier			= 0.3
+
+inv_name					= wpn-addon-g36l
+inv_name_short				= wpn-addon-g36l
+inv_weight					= 0.3
+icon_group         			= 2
+inv_grid_width     			= 1
+inv_grid_height    			= 1
+inv_grid_x         			= 4
+inv_grid_y         			= 4
+
+scope_zoom_factor	    	= 75
+
+
+
+;Голографический коллиматорный прицел Eotech 553
+[wpn_addon_eotech]:weapon_immunities
+GroupControlSection                      = spawn_group
+discovery_dependency                     =
+cform                                    = skeleton
+class                                    = WP_SCOPE
+$spawn                                   = "mod\eotech"
+cost                                     = 3500
+description                              = st_addon_scope_eotech_descr
+inv_grid_height                          = 1
+inv_grid_width                           = 1
+inv_grid_x                               = 68
+inv_grid_y                               = 31
+inv_name                                 = st_addon_scope_eotech
+inv_name_short                           = st_addon_scope_eotech
+inv_weight                               = 0.255
+visual                                   = dynamics\weapons\wpn_upgrade\wpn_scope_eotech.ogf
+scope_zoom_factor                        = 75
+holder_fov_modifier                      = 1.0
+holder_range_modifier                    = 1.0
+icon_group = 7
+
+;Оптический прицел ПУ (3,5 крат)
+[wpn_addon_pe]:weapon_immunities
+GroupControlSection                      = spawn_group
+discovery_dependency                     =
+cform                                    = skeleton
+class                                    = WP_SCOPE
+$spawn                                   = "mod\pu"
+cost                                     = 3000
+crosshair_inertion                       = 9
+description                              = st_addon_scope_pu_descr
+inv_grid_height                          = 1
+inv_grid_width                           = 1
+inv_grid_x                               = 68
+inv_grid_y                               = 32
+inv_name                                 = st_addon_scope_pu
+inv_name_short                           = st_addon_scope_pu
+inv_weight                               = 0.27
+scope_texture                            = wpn_crosshair_pu
+visual                                   = dynamics\weapons\wpn_upgrade\wpn_scope_pu.ogf
+
+scope_zoom_factor	= 25
+scope_dynamic_zoom 	= true
+icon_group = 7
+
+;Коллиматорный прицел Aimpoint Micro T-1
+[wpn_addon_po]:weapon_immunities
+GroupControlSection			= spawn_group
+discovery_dependency		=
+$spawn						= "weapons\addons\po"
+class						= WP_SCOPE
+cform						= skeleton
+visual						= weapons\addons\aimpoint_scope
+$prefetch 					= 32
+description					= enc_weapons1_wpn-addon-po
+cost						= 8000
+
+holder_range_modifier		= 1.2
+holder_fov_modifier			= 0.3
+
+inv_name					= wpn-addon-po
+inv_name_short				= wpn-addon-po
+inv_weight					= 0.1
+icon_group         			= 3
+inv_grid_width     = 1
+inv_grid_height    = 1
+inv_grid_x         = 14
+inv_grid_y         = 10
+
+scope_zoom_factor	   		= 75
+
+
+[ac10632]:identity_immunities
+GroupControlSection                      = spawn_group
+discovery_dependency                     =
+cform                                    = skeleton
+class                                    = WP_SCOPE
+$spawn                                   = "mod\ac10632"
+cost                                     = 3500
+description                              = st_addon_scope_ac10632_descr
+inv_grid_height                          = 1
+inv_grid_width                           = 1
+inv_grid_x                               = 68
+inv_grid_y                               = 34
+inv_name                                 = st_addon_scope_ac10632
+inv_name_short                           = st_addon_scope_ac10632
+inv_weight                               = 0.132
+visual                                   = dynamics\weapons\wpn_upgrade\wpn_scope_ac10632.ogf
+scope_zoom_factor                        = 75
+holder_fov_modifier                      = 1.0
+holder_range_modifier                    = 1.0
+icon_group = 7
+
+[microt1]:identity_immunities
+GroupControlSection                      = spawn_group
+discovery_dependency                     =
+cform                                    = skeleton
+class                                    = WP_SCOPE
+$spawn                                   = "mod\microt1"
+cost                                     = 3500
+description                              = st_addon_scope_micro-t1_descr
+inv_grid_height                          = 1
+inv_grid_width                           = 1
+inv_grid_x                               = 67
+inv_grid_y                               = 26
+inv_name                                 = st_addon_scope_micro-t1
+inv_name_short                           = st_addon_scope_micro-t1
+inv_weight                               = 0.1
+visual                                   = dynamics\weapons\wpn_upgrade\wpn_scope_micro-t1.ogf
+scope_zoom_factor                        = 75
+holder_fov_modifier                      = 1.0
+holder_range_modifier                    = 1.0
+icon_group = 7
+
+[specter]:identity_immunities
+GroupControlSection                      = spawn_group
+discovery_dependency                     =
+cform                                    = skeleton
+class                                    = WP_SCOPE
+$spawn                                   = "mod\specter"
+cost                                     = 4500
+description                              = st_addon_scope_specter_descr
+inv_grid_height                          = 1
+inv_grid_width                           = 1
+inv_grid_x                               = 67
+inv_grid_y                               = 27
+inv_name                                 = st_addon_scope_specter
+inv_name_short                           = st_addon_scope_specter
+inv_weight                               = 0.64
+scope_texture                            = wpn_crosshair_specter
+visual                                   = dynamics\weapons\wpn_upgrade\wpn_scope_specter.ogf
+
+scope_zoom_factor	= 20
+scope_dynamic_zoom 	= true
+icon_group = 7
+
+[okp]:identity_immunities
+GroupControlSection                      = spawn_group
+discovery_dependency                     =
+cform                                    = skeleton
+class                                    = WP_SCOPE
+$spawn                                   = "mod\okp"
+cost                                     = 2700
+description                              = st_addon_scope_okp_descr
+inv_grid_height                          = 1
+inv_grid_width                           = 1
+inv_grid_x                               = 67
+inv_grid_y                               = 28
+inv_name                                 = st_addon_scope_okp
+inv_name_short                           = st_addon_scope_okp
+inv_weight                               = 0.295
+visual                                   = dynamics\weapons\wpn_upgrade\wpn_scope_okp.ogf
+scope_zoom_factor                        = 75
+holder_fov_modifier                      = 1.0
+holder_range_modifier                    = 1.0
+icon_group = 7
+
+[rakurs]:identity_immunities
+GroupControlSection                      = spawn_group
+discovery_dependency                     =
+cform                                    = skeleton
+class                                    = WP_SCOPE
+$spawn                                   = "mod\rakurs"
+cost                                     = 3000
+description                              = st_addon_scope_rakurs_descr
+inv_grid_height                          = 1
+inv_grid_width                           = 1
+inv_grid_x                               = 67
+inv_grid_y                               = 30
+inv_name                                 = st_addon_scope_rakurs
+inv_name_short                           = st_addon_scope_rakurs
+inv_weight                               = 0.55
+visual                                   = dynamics\weapons\wpn_upgrade\wpn_scope_rakurs.ogf
+scope_zoom_factor                        = 75
+holder_fov_modifier                      = 1.0
+holder_range_modifier                    = 1.0
+icon_group = 7
+
+[g28_scope]:identity_immunities
+GroupControlSection                      = spawn_group
+discovery_dependency                     =
+cform                                    = skeleton
+class                                    = WP_SCOPE
+$spawn                                   = "mod\g28_scope"
+cost                                     = 6000
+description                              = st_addon_scope_g28_descr
+inv_grid_width                           = 3
+inv_grid_height                          = 1
+inv_grid_x                               = 67
+inv_grid_y                               = 29
+inv_name                                 = st_addon_scope_g28
+inv_name_short                           = st_addon_scope_g28
+inv_weight                               = 0.95
+scope_texture                            = wpn_crosshair_g28
+visual                                   = dynamics\weapons\wpn_upgrade\wpn_scope_g28
+
+scope_zoom_factor	= 10.2
+scope_dynamic_zoom 	= true
+icon_group = 7

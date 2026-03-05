@@ -1,0 +1,1914 @@
+<?xml version="1.0" encoding="windows-1251"  ?>
+<game_dialogs>
+
+	<dialog id="agr_factory_krot_start_new">
+	<phrase_list>
+		<phrase id="0">
+			<action>dialogs.no_trade_trader</action>
+			<text></text>
+			<next>100</next>
+			<next>200</next>
+			<next>300</next>
+		</phrase>
+		<phrase id="100">
+			<text></text>
+			<dont_has_info>agr_krot_band_start</dont_has_info>
+			<dont_has_info>agr_krot_secret_info</dont_has_info>
+			<next>101</next>
+		</phrase>
+		<phrase id="200">
+			<text></text>
+			<has_info>agr_krot_band_start</has_info>
+			<dont_has_info>agr_krot_secret_info</dont_has_info>
+			<next>201</next>
+		</phrase>
+		<phrase id="300">
+			<text></text>
+			<has_info>agr_krot_secret_info</has_info>
+			<next>301</next>
+			<next>302</next>
+			<next>303</next>
+		</phrase>
+		<phrase id="101">
+			<text>agr_factory_krot_start_new_101</text>
+			<next>102</next>
+		</phrase>
+		<phrase id="102">
+			<text>agr_factory_krot_start_new_102</text>
+			<next>103</next>
+		</phrase>
+		<phrase id="103">
+			<text>agr_factory_krot_start_new_103</text>
+			<next>1041</next>
+			<next>1042</next>
+			<next>1043</next>
+			<next>1044</next>
+			<next>1045</next>
+		</phrase>
+		<phrase id="1041">
+			<has_info>agr_find_rygyi_2have</has_info>
+			<dont_has_info>agr_find_rygyi_done</dont_has_info>
+			<text>agr_factory_krot_start_new_1041</text>
+			<next>10511</next>
+		</phrase>
+		<phrase id="1042">
+			<has_info>agr_find_rygyi_done</has_info>
+			<text>agr_factory_krot_start_new_1042</text>
+			<next>1051</next>
+		</phrase>
+		<phrase id="1043">
+			<has_info>esc_fox_umer</has_info>
+			<text>agr_factory_krot_start_new_1043</text>
+			<next>1052</next>
+		</phrase>
+		<phrase id="1044">
+			<dont_has_info>agr_fox_ill</dont_has_info>
+			<text>agr_factory_krot_start_new_1044</text>
+			<next>1054</next>
+		</phrase>
+		<phrase id="1045">
+			<has_info>agr_fox_ill</has_info>
+			<dont_has_info>agr_find_rygyi_2have</dont_has_info>
+			<dont_has_info>agr_find_rygyi_done</dont_has_info>
+			<text>agr_factory_krot_start_new_1045</text>
+			<next>1055</next>
+		</phrase>
+		<phrase id="10511">
+			<text>agr_factory_krot_start_new_10511</text>
+			<next>1061</next>
+			<next>1062</next>
+		</phrase>
+		<phrase id="1061">
+			<precondition>sak_dialog.have_rygyi_med</precondition>
+			<text>agr_factory_krot_start_new_1061</text>
+			<action>sak_dialog.give_2_rygyi_krot</action>
+			<action>sak_dialog.rygyi_med_ok</action>
+			<give_info>agr_find_rygyi_done</give_info>
+			<give_info>krot_gg_med_rygyi_done</give_info>
+			<next>1051</next>
+		</phrase>
+		<phrase id="1062">
+			<text>agr_factory_krot_start_new_1062</text>
+			<next>1051</next>
+		</phrase>
+		<phrase id="1051">
+			<text>agr_factory_krot_start_new_1051</text>
+			<next>106</next>
+		</phrase>
+		<phrase id="1052">
+			<text>agr_factory_krot_start_new_1052</text>
+			<next>106</next>
+		</phrase>
+		<phrase id="1054">
+			<text>agr_factory_krot_start_new_1051</text>
+			<next>106</next>
+		</phrase>
+		<phrase id="1055">
+			<text>agr_factory_krot_start_new_1055</text>
+			<next>1065</next>
+		</phrase>
+		<phrase id="1065">
+			<text>agr_factory_krot_start_new_1065</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="106">
+			<text>agr_factory_krot_start_new_106</text>
+			<next>107</next>
+		</phrase>
+		<phrase id="107">
+			<text>agr_factory_krot_start_new_107</text>
+			<next>108</next>
+		</phrase>
+		<phrase id="108">
+			<text>agr_factory_krot_start_new_108</text>
+			<action>sak_spawn.agr_monsters_enteres</action>
+			<next>109</next>
+		</phrase>
+		<phrase id="109">
+			<text>agr_factory_krot_start_new_109</text>
+			<action>sak.create_items("drag_cat_eyes",1)</action>
+			<action>mike.not_bad_job</action>
+			<give_info>agr_krot_secret_info</give_info>
+			<next>208</next>
+		</phrase>
+		<phrase id="201">
+			<text>agr_factory_krot_start_new_201</text>
+			<next>202</next>
+		</phrase>
+		<phrase id="202">
+			<text>agr_factory_krot_start_new_202</text>
+			<next>203</next>
+		</phrase>
+		<phrase id="203">
+			<text>agr_factory_krot_start_new_103</text>
+			<next>1044</next> <!-- не ошибка -->
+			<next>1045</next> <!-- не ошибка -->
+			<next>2041</next>
+			<next>2042</next>
+		</phrase>
+		<phrase id="2041">
+			<has_info>agr_find_rygyi_2have</has_info>
+			<dont_has_info>agr_find_rygyi_done</dont_has_info>
+			<text>agr_factory_krot_start_new_1041</text>
+			<next>2051</next>
+		</phrase>
+		<phrase id="2042">
+			<has_info>agr_find_rygyi_done</has_info>
+			<text>agr_factory_krot_start_new_1042</text>
+			<next>2052</next>
+		</phrase>
+		<phrase id="2051">
+			<text>agr_factory_krot_start_new_10511</text>
+			<next>2061</next>
+			<next>2062</next>
+		</phrase>
+		<phrase id="2052">
+			<text>agr_factory_krot_start_new_2052</text>
+			<next>206</next>
+		</phrase>
+		<phrase id="2061">
+			<precondition>sak_dialog.have_rygyi_med</precondition>
+			<text>agr_factory_krot_start_new_1061</text>
+			<action>sak_dialog.give_2_rygyi_krot</action>
+			<action>sak_dialog.rygyi_med_ok</action>
+			<give_info>agr_find_rygyi_done</give_info>
+			<next>20611</next>
+		</phrase>
+		<phrase id="2062">
+			<text>agr_factory_krot_start_new_1062</text>
+			<next>20622</next>
+		</phrase>
+		<phrase id="20611">
+			<text>agr_factory_krot_start_new_2051</text>
+			<next>206</next>
+		</phrase>
+		<phrase id="20622">
+			<text>agr_factory_krot_start_new_2053</text>
+			<next>206</next>
+		</phrase>
+		<phrase id="206">
+			<text>agr_factory_krot_start_new_206</text>
+			<next>207</next>
+		</phrase>
+		<phrase id="207">
+			<text>agr_factory_krot_start_new_207</text>
+			<next>2071</next>
+		</phrase>
+		<phrase id="2071">
+			<text>agr_factory_krot_start_new_2071</text>
+			<next>2072</next>
+		</phrase>
+		<phrase id="2072">
+			<text>agr_factory_krot_start_new_2072</text>
+			<action>sak.create_items("drag_cat_eyes",1)</action>
+			<action>mike.good_job</action>
+			<give_info>agr_krot_secret_info</give_info>
+			<next>208</next>
+		</phrase>
+		<phrase id="208">
+			<text>agr_factory_krot_start_new_208</text>
+			<next>209</next>
+		</phrase>
+		<phrase id="209">
+			<text>agr_factory_krot_start_new_209</text>
+			<next>210</next>
+		</phrase>
+		<phrase id="210">
+			<text>agr_factory_krot_start_new_210</text>
+			<next>211</next>
+		</phrase>
+		<phrase id="211">
+			<text>agr_factory_krot_start_new_211</text>
+			<next>212</next>
+		</phrase>
+		<phrase id="212">
+			<text>agr_factory_krot_start_new_212</text>
+			<next>213</next>
+		</phrase>
+		<phrase id="213">
+			<text>agr_factory_krot_start_new_213</text>
+			<next>214</next>
+		</phrase>
+		<phrase id="214">
+			<text>agr_factory_krot_start_new_214</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="301">
+			<has_info>agr_find_rygyi_start</has_info>
+			<dont_has_info>agr_find_rygyi_done</dont_has_info>
+			<text>agr_factory_krot_start_new_301</text>
+			<next>3011</next>
+		</phrase>
+		<phrase id="302">
+			<dont_has_info>agr_find_rygyi_start</dont_has_info>
+			<text>agr_factory_krot_start_new_302</text>
+		</phrase>
+		<phrase id="303">
+			<has_info>agr_find_rygyi_done</has_info>
+			<text>agr_factory_krot_start_new_303</text>
+		</phrase>
+		<phrase id="3011">
+			<text>agr_factory_krot_start_new_3011</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+	</phrase_list>
+</dialog>	
+
+	<!-- new -->
+	<dialog id="agr_krot_after">
+			<phrase_list>
+			<phrase id="0">
+				<action>dialogs.no_trade_trader</action>
+				<text></text>
+				<next>100</next>
+				<next>200</next>
+				<next>300</next>
+			</phrase>
+			<phrase id="100">
+				<text></text>
+				<dont_has_info>agr_krot_new_place</dont_has_info>
+				<next>101</next>
+			</phrase>
+			<phrase id="200">
+				<text></text>
+				<has_info>agr_krot_new_place</has_info>
+				<dont_has_info>agr_krot_new_stalker</dont_has_info>
+				<next>201</next>
+			</phrase>
+			<phrase id="300">
+				<text></text>
+				<has_info>agr_krot_new_stalker</has_info>
+				<next>301</next>
+			</phrase>
+			<phrase id="101">
+				<text>agr_krot_after_101</text>
+				<next>102</next>
+			</phrase>
+			<phrase id="102">
+				<text>agr_krot_after_102</text>
+				<next>1031</next>
+				<next>1032</next>
+			</phrase>
+			<phrase id="1031">
+			<has_info>rygyi_umer</has_info>
+				<text>agr_krot_after_1031</text>
+				<next>104</next>
+			</phrase>
+			<phrase id="1032">
+			<dont_has_info>rygyi_umer</dont_has_info>
+				<text>agr_krot_after_1032</text>
+				<next>104</next>
+			</phrase>
+			<phrase id="104">
+				<text>agr_krot_after_104</text>
+				<next>105</next>
+			</phrase>
+			<phrase id="105">
+				<text>agr_krot_after_105</text>
+				<next>106</next>
+			</phrase>
+			<phrase id="106">
+				<text>agr_krot_after_106</text>
+				<next>107</next>
+			</phrase>
+			<phrase id="107">
+				<text>agr_krot_after_107</text>
+				<next>108</next>
+			</phrase>
+			<phrase id="108">
+				<text>agr_krot_after_108</text>
+				<next>109</next>
+			</phrase>
+			<phrase id="109">
+				<text>agr_krot_after_109</text>
+				<next>110</next>
+			</phrase>			
+			<phrase id="110">
+				<text>agr_krot_after_110</text>
+				<next>111</next>				
+			</phrase>
+			<phrase id="111">
+				<text>agr_krot_after_111</text>
+				<give_info>agr_krot_new_place</give_info>				
+			</phrase>			
+			<phrase id="201">
+				<text>agr_krot_after_201</text>
+				<next>202</next>
+			</phrase>
+			<phrase id="202">
+				<text>agr_krot_after_202</text>
+				<next>203</next>
+			</phrase>
+			<phrase id="203">
+				<text>agr_krot_after_203</text>
+				<next>204</next>
+			</phrase>
+			<phrase id="204">
+				<text>agr_krot_after_204</text>
+				<next>205</next>
+			</phrase>
+			<phrase id="205">
+				<text>agr_krot_after_205</text>
+				<next>206</next>
+			</phrase>
+			<phrase id="206">
+				<text>agr_krot_after_206</text>
+				<next>207</next>
+			</phrase>
+			<phrase id="207">
+				<text>agr_krot_after_207</text>				
+				<next>208</next>
+			</phrase>			
+			<phrase id="208">
+				<text>agr_krot_after_208</text>
+				<next>209</next>				
+			</phrase>
+			<phrase id="209">
+				<text>agr_krot_after_209</text>
+				<give_info>agr_krot_new_stalker</give_info>				
+			</phrase>			
+			<phrase id="301">
+				<text>agr_krot_after_301</text>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	
+	<dialog id="agr_krot_about_agroprom_new">
+	<has_info>agr_krot_secret_info</has_info>
+	<has_info>agr_krot_dezertir_info</has_info>
+	<dont_has_info>krot_about_agroprom_info</dont_has_info>
+	<precondition>sak_dialog.krot_dezertir_dialog</precondition>														 
+	<phrase_list>
+		<phrase id="0">
+			<text>agr_krot_about_agroprom_new_0</text>
+			<next>1</next>
+		</phrase>
+		<phrase id="1">
+			<text>agr_krot_about_agroprom_new_1</text>
+			<next>2</next>
+		</phrase>
+		<phrase id="2">
+			<text>agr_krot_about_agroprom_new_2</text>
+			<next>3</next>
+		</phrase>
+		<phrase id="3">
+			<text>agr_krot_about_agroprom_new_3</text>
+			<give_info>krot_about_agroprom_info</give_info>
+			<next>41</next>
+			<next>42</next>
+		</phrase>			
+		<phrase id="42">
+			<text>agr_krot_about_agroprom_new_42</text>
+		</phrase>
+		<phrase id="41">
+			<text>agr_krot_about_agroprom_new_41</text>
+			<next>5</next>
+		</phrase>
+		<phrase id="5">
+			<text>agr_krot_about_agroprom_new_5</text>
+			<next>61</next>
+			<next>62</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="61">
+			<text>agr_krot_about_agroprom_new_61</text>
+			<next>71</next>
+		</phrase>
+		<phrase id="62">
+			<text>agr_krot_about_agroprom_new_62</text>
+			<next>72</next>
+		</phrase>
+		<phrase id="71">
+			<text>agr_krot_about_agroprom_new_71</text>
+			<next>62</next>
+			<next>42</next>
+		</phrase>
+		<phrase id="72">
+			<text>agr_krot_about_agroprom_new_72</text>
+			<next>61</next>
+			<next>42</next>
+		</phrase>
+	</phrase_list>
+	</dialog>
+
+	<dialog id="agr_krot_dezertir">
+		<dont_has_info>agr_krot_dezertir_info</dont_has_info>
+		<precondition>sak_dialog.krot_dezertir_dialog</precondition>													 
+		<phrase_list>
+			<phrase id="0">
+				<text>agr_krot_dezertir_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>agr_krot_dezertir_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>agr_krot_dezertir_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>agr_krot_dezertir_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>agr_krot_dezertir_4</text>
+				<give_info>agr_krot_dezertir_info</give_info>
+			</phrase>
+		</phrase_list>
+	</dialog>
+
+	<dialog id="agr_krot_pda_start">
+		<dont_has_info>agr_krot_PDA_start</dont_has_info>
+		<dont_has_info>agr_krot_PDA_done</dont_has_info>
+		<has_info>krot_about_agroprom_info</has_info>
+		<precondition>sak_dialog.krot_dezertir_dialog</precondition>													 
+		<precondition>dialogs.is_not_wounded</precondition>
+		<phrase_list>
+			<phrase id="0">
+				<text>agr_krot_pda_start_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>agr_krot_pda_start_1</text>
+				<next>21</next>
+				<next>22</next>
+			</phrase>
+			<phrase id="21">
+				<text>agr_krot_pda_start_21</text>
+				<next>3</next>		
+			</phrase>
+			<phrase id="3">
+				<text>agr_krot_pda_start_3</text>
+				<action>sak.add_krot_pda</action>		
+				<give_info>agr_krot_PDA_start</give_info>		
+			</phrase>	
+			<phrase id="22">
+				<text>agr_krot_pda_start_22</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+		</phrase_list>
+	</dialog>
+
+	<dialog id="agr_krot_pda_done">
+		<precondition>sak_dialog.agr_krot_PDA_have</precondition>
+		<dont_has_info>agr_krot_PDA_done</dont_has_info>
+		<has_info>agr_krot_PDA_start</has_info>
+		<precondition>dialogs.is_not_wounded</precondition>
+		<phrase_list>
+			<phrase id="0">
+				<text>agr_krot_pda_done_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>agr_krot_pda_done_1</text>
+				<next>21</next>
+				<next>22</next>
+			</phrase>
+			<phrase id="21">
+			<precondition>sak_dialog.agr_krot_PDA_have</precondition>
+				<text>agr_krot_pda_done_21</text>
+				<action>sak_dialog.give_agr_krot_PDA</action>
+				<give_info>agr_krot_PDA_done</give_info>				
+				<next>3</next>
+			</phrase>
+			<phrase id="22">
+				<text>agr_krot_pda_done_22</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="3">
+				<text>agr_krot_pda_done_3</text>
+				<next>41</next>
+				<next>42</next>		
+			</phrase>
+			<phrase id="41">
+				<text>agr_krot_pda_done_41</text>
+				<next>51</next>		
+			</phrase>	
+			<phrase id="51">
+				<text>agr_krot_pda_done_51</text>
+				<give_info>info_artmod_mincer_meat_mosquito_bald</give_info>
+				<action>sak.create_items("medkit",2)</action>		
+				<action>sak.info_artmod</action>
+			</phrase>
+			<phrase id="42">
+				<text>agr_krot_pda_done_42</text>
+				<next>52</next>		
+			</phrase>	
+			<phrase id="52">
+				<text>agr_krot_pda_done_52</text>
+				<action>sak_dialog.take_mincer_meat_dyn3</action>
+			</phrase>	
+		</phrase_list>
+	</dialog>	
+	<!-- Дезертир -->
+	<dialog id="agr_ratcatcher_start">
+	<precondition>dialogs.is_not_wounded</precondition>
+		<phrase_list>
+			<phrase id="0">
+				<action>dialogs.no_trade_trader</action>
+				<text></text>
+				<next>100</next>
+				<next>200</next>
+				<next>250</next>
+				<next>300</next>
+				<next>400</next>
+			</phrase>
+			<phrase id="100">
+				<text></text>
+				<dont_has_info>agr_ratcatcher_new_gg</dont_has_info>
+				<next>101</next>
+			</phrase>
+			<phrase id="200">
+				<text></text>
+				<dont_has_info>agr_ratcatcher_ask_food</dont_has_info>
+				<has_info>agr_ratcatcher_new_gg</has_info>
+				<has_info>agroprom_military_case</has_info>
+				<dont_has_info>agr_ratcatcher_job_done</dont_has_info>
+				<next>201</next>
+			</phrase>
+			<phrase id="250">
+				<text></text>
+				<has_info>agr_ratcatcher_ask_food</has_info>
+				<has_info>agroprom_military_case</has_info>
+				<dont_has_info>agr_ratcatcher_job_done</dont_has_info>
+				<next>251</next>
+			</phrase>
+			<phrase id="300">
+				<text></text>
+				<has_info>agr_ratcatcher_new_gg</has_info>
+				<dont_has_info>agroprom_military_case</dont_has_info>
+				<next>301</next>
+			</phrase>
+			<phrase id="400">
+				<text></text>
+				<has_info>agr_ratcatcher_new_gg</has_info>
+				<has_info>agr_ratcatcher_job_done</has_info>
+				<next>401</next>
+			</phrase>
+			<phrase id="101">
+				<text>agr_ratcatcher_start_101</text>
+				<next>102</next>
+			</phrase>
+			<phrase id="102">
+				<text>agr_ratcatcher_start_102</text>
+				<next>103</next>
+			</phrase>
+			<phrase id="103">
+				<text>agr_ratcatcher_start_103</text>
+				<next>104</next>
+			</phrase>
+			<phrase id="104">
+				<text>agr_ratcatcher_start_104</text>
+				<next>105</next>
+			</phrase>
+			<phrase id="105">
+				<text>agr_ratcatcher_start_105</text>
+				<next>106</next>
+			</phrase>
+			<phrase id="106">
+				<text>agr_ratcatcher_start_106</text>
+				<next>107</next>
+			</phrase>
+			<phrase id="107">
+				<text>agr_ratcatcher_start_107</text>
+				<next>108</next>
+			</phrase>
+			<phrase id="108">
+				<text>agr_ratcatcher_start_108</text>
+				<next>109</next>
+			</phrase>
+			<phrase id="109">
+				<text>agr_ratcatcher_start_109</text>
+				<give_info>agr_ratcatcher_new_gg</give_info>
+				<next>1101</next>
+				<next>1102</next>
+			</phrase>
+			<phrase id="1101">
+			<has_info>agroprom_military_case</has_info>
+				<text>agr_ratcatcher_start_1101</text>
+				<next>203</next>
+			</phrase>
+			<phrase id="1102">
+			<dont_has_info>agroprom_military_case</dont_has_info>
+				<text>agr_ratcatcher_start_1102</text>
+				<next>111</next>
+			</phrase>
+			<phrase id="111">
+				<text>agr_ratcatcher_start_111</text>
+			</phrase>
+			<phrase id="201">
+				<text>agr_ratcatcher_start_201</text>
+				<next>202</next>
+			</phrase>
+			<phrase id="202">
+				<text>agr_ratcatcher_start_202</text>
+				<next>203</next>
+			</phrase>
+			<phrase id="203">
+				<text>agr_ratcatcher_start_203</text>
+				<next>204</next>
+			</phrase>
+			<phrase id="204">
+				<text>agr_ratcatcher_start_204</text>
+				<next>205</next>
+			</phrase>
+			<phrase id="205">
+				<text>agr_ratcatcher_start_205</text>
+				<next>206</next>
+			</phrase>
+			<phrase id="206">
+				<text>agr_ratcatcher_start_206</text>
+				<next>207</next>
+			</phrase>
+			<phrase id="207">
+				<text>agr_ratcatcher_start_207</text>
+				<next>208</next>
+			</phrase>
+			<phrase id="208">
+				<text>agr_ratcatcher_start_208</text>
+				<next>209</next>
+			</phrase>
+			<phrase id="209">
+				<text>agr_ratcatcher_start_209</text>
+				<next>210</next>
+			</phrase>
+			<phrase id="210">
+				<text>agr_ratcatcher_start_210</text>
+				<next>211</next>
+			</phrase>			
+			<phrase id="211">
+				<text>agr_ratcatcher_start_211</text>
+				<next>2111</next>
+				<next>2112</next>
+				<next>2113</next>
+				<next>2114</next>
+			</phrase>
+			<phrase id="2111">
+			<precondition>sak_dialog.kolbasa_have</precondition>
+				<text>agr_ratcatcher_start_2111</text>
+				<action>sak_dialog.give_kolbasa</action>
+				<next>252</next>
+			</phrase>
+			<phrase id="2112">
+			<precondition>sak_dialog.conserva_have</precondition>
+				<text>agr_ratcatcher_start_2112</text>
+				<action>sak_dialog.give_conserva</action>
+				<next>252</next>
+			</phrase>
+			<phrase id="2113">
+			<precondition>sak.have_items_count("bread",1)</precondition>
+				<text>agr_ratcatcher_start_2113</text>
+				<action>sak_inventory.release_actor_items("bread",1)</action>
+				<next>252</next>
+			</phrase>
+			<phrase id="2114">
+				<text>agr_ratcatcher_start_2114</text>
+				<give_info>agr_ratcatcher_ask_food</give_info>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			
+			<phrase id="251">
+				<text>agr_ratcatcher_start_251</text>
+				<next>2511</next>
+				<next>2512</next>
+				<next>2513</next>
+				<next>2514</next>
+			</phrase>
+			<phrase id="2511">
+			<precondition>sak_dialog.kolbasa_have</precondition>
+				<text>agr_ratcatcher_start_2511</text>
+				<action>sak_dialog.give_kolbasa</action>
+				<next>252</next>
+			</phrase>
+			<phrase id="2512">
+			<precondition>sak_dialog.conserva_have</precondition>
+				<text>agr_ratcatcher_start_2512</text>
+				<action>sak_dialog.give_conserva</action>
+				<next>252</next>
+			</phrase>
+			<phrase id="2513">
+			<precondition>sak.have_items_count("bread",1)</precondition>
+				<text>agr_ratcatcher_start_2513</text>
+				<action>sak_inventory.release_actor_items("bread",1)</action>
+				<next>252</next>
+			</phrase>
+			<phrase id="2514">
+				<text>agr_ratcatcher_start_2514</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="252">
+				<text>agr_ratcatcher_start_252</text>
+				<give_info>agr_ratcatcher_job_done</give_info>
+				<action>sak_dialog.fill_agr_u_treasure</action>
+				<next>253</next>
+			</phrase>			
+			<phrase id="253">
+				<text>agr_ratcatcher_start_253</text>
+				<next>254</next>
+			</phrase>
+			<phrase id="254">
+				<text>agr_ratcatcher_start_254</text>
+				<next>255</next>
+			</phrase>
+			<phrase id="255">
+				<text>agr_ratcatcher_start_255</text>
+			</phrase>
+			<phrase id="301">
+				<text>agr_ratcatcher_start_301</text>
+			</phrase>
+			<phrase id="401">
+				<text>agr_ratcatcher_start_401</text>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	
+	<dialog id="agr_01_dezertir">
+	<has_info>agr_ratcatcher_job_done</has_info>
+	<dont_has_info>agr_01_dezertir_info</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>agr_01_dezertir_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>agr_01_dezertir_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>agr_01_dezertir_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>agr_01_dezertir_3</text>
+				<give_info>agr_01_dezertir_info</give_info>
+			</phrase>
+		</phrase_list>
+	</dialog>
+
+	<dialog id="agr_02_dezertir">
+	<has_info>agr_01_dezertir_info</has_info>
+	<dont_has_info>agr_02_dezertir_info</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>agr_02_dezertir_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>agr_02_dezertir_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>agr_02_dezertir_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>agr_02_dezertir_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>agr_02_dezertir_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>agr_02_dezertir_5</text>
+				<next>6</next>
+			</phrase>
+			<phrase id="6">
+				<text>agr_02_dezertir_6</text>
+				<next>7</next>
+			</phrase>
+			<phrase id="7">
+				<text>agr_02_dezertir_7</text>
+				<next>8</next>
+			</phrase>
+			<phrase id="8">
+				<text>agr_02_dezertir_8</text>
+				<next>9</next>
+			</phrase>
+			<phrase id="9">
+				<text>agr_02_dezertir_9</text>
+				<give_info>agr_02_dezertir_info</give_info>		
+			</phrase>			
+		</phrase_list>
+	</dialog>
+
+	<dialog id="agr_03_dezertir">
+	<has_info>agr_02_dezertir_info</has_info>
+	<dont_has_info>agr_03_dezertir_info</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>agr_03_dezertir_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>agr_03_dezertir_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>agr_03_dezertir_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>agr_03_dezertir_3</text>
+				<next>41</next>
+				<next>42</next>
+			</phrase>
+			<phrase id="41">
+			<dont_has_info>info_way100a</dont_has_info>
+				<text>agr_03_dezertir_41</text>
+				<next>51</next>
+			</phrase>
+			<phrase id="42">
+			<has_info>info_way100a</has_info>
+				<text>agr_03_dezertir_42</text>
+				<next>52</next>
+			</phrase>
+			<phrase id="51">
+				<text>agr_03_dezertir_51</text>
+				<give_info>agr_03_dezertir_info</give_info>
+			</phrase>
+			<phrase id="52">
+				<text>agr_03_dezertir_52</text>
+				<give_info>agr_03_dezertir_info</give_info>
+			</phrase>
+		</phrase_list>
+	</dialog>
+
+	<dialog id="agr_desertir_shema_dialog">
+	<precondition>dialogs.is_not_wounded</precondition>
+	<has_info>volkodav_dt_shema_start</has_info>
+	<dont_has_info>volkodav_dt_shema_have</dont_has_info>
+	<dont_has_info>desertir_food_need</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>agr_desertir_shema_dialog_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>agr_desertir_shema_dialog_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>agr_desertir_shema_dialog_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>agr_desertir_shema_dialog_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>agr_desertir_shema_dialog_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>agr_desertir_shema_dialog_5</text>
+				<give_info>desertir_food_need</give_info>				
+				<next>6</next>
+			</phrase>
+			<phrase id="6">
+				<text>agr_desertir_shema_dialog_6</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+		</phrase_list>
+	</dialog>
+
+	<dialog id="agr_desertir_food_shema_dialog">
+	<precondition>dialogs.is_not_wounded</precondition>
+	<dont_has_info>volkodav_dt_shema_have</dont_has_info>
+	<has_info>desertir_food_need</has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>agr_desertir_food_shema_dialog_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>agr_desertir_food_shema_dialog_1</text>
+				<next>21</next>
+				<next>22</next>
+			</phrase>
+			<phrase id="21">
+			<precondition>sak_dialog.have_food_by_shema</precondition>
+				<text>agr_desertir_food_shema_dialog_21</text>
+				<action>sak_dialog.give_food_by_shema</action>
+				<give_info>desertir_food_need_done</give_info>			
+				<next>31</next>
+			</phrase>
+			<phrase id="31">
+				<text>agr_desertir_food_shema_dialog_31</text>
+				<action>sak_dialog.add_agr_shema</action>
+				<give_info>volkodav_dt_shema_have</give_info>
+				<next>41</next>
+			</phrase>
+			<phrase id="41">
+				<text>agr_desertir_food_shema_dialog_41</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>agr_desertir_food_shema_dialog_5</text>
+				<next>6</next>
+			</phrase>
+			<phrase id="6">
+				<text>agr_desertir_food_shema_dialog_6</text>
+				<next>7</next>			
+			</phrase>
+			<phrase id="7">
+				<text>agr_desertir_food_shema_dialog_7</text>
+				<next>81</next>
+				<next>82</next>			
+			</phrase>
+			<phrase id="81">
+				<text>agr_desertir_food_shema_dialog_81</text>
+				<next>9</next>
+			</phrase>
+			<phrase id="9">
+				<text>agr_desertir_food_shema_dialog_9</text>
+				<give_info>ratcatcher_order_start</give_info>
+			</phrase>
+			<phrase id="82">
+				<text>agr_desertir_food_shema_dialog_82</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>		
+			<phrase id="22">
+				<text>agr_desertir_food_shema_dialog_22</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+		</phrase_list>
+	</dialog>
+<!-- new -->
+	<dialog id="agr_desertir_way_start">
+	<precondition>dialogs.is_not_wounded</precondition>
+	<has_info>yan_scientist_find_case_start</has_info>
+	<dont_has_info>agr_desertir_way_start_info</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>agr_desertir_way_start_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>agr_desertir_way_start_1</text>
+			<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>agr_desertir_way_start_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>agr_desertir_way_start_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>agr_desertir_way_start_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>agr_desertir_way_start_5</text>
+				<give_info>agr_desertir_way_start_info</give_info>
+				<give_info>yan_scientist_find_case_done</give_info>				
+				<next>6</next>
+			</phrase>
+			<phrase id="6">
+				<text>agr_desertir_way_start_6</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+		</phrase_list>
+	</dialog>
+
+	<dialog id="agr_desertir_way_done">
+	<precondition>dialogs.is_not_wounded</precondition>
+	<has_info>agr_desertir_way_start_info</has_info>	
+	<dont_has_info>agr_desertir_way_done_info</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>agr_desertir_way_done_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>agr_desertir_way_done_1</text>
+				<next>21</next>
+				<next>22</next>
+			</phrase>
+			<phrase id="21">
+			<precondition>sak_dialog.have_food_by_shema</precondition>
+				<text>agr_desertir_way_done_21</text>
+				<action>sak_dialog.give_food_by_shema</action>
+				<give_info>agr_desertir_way_done_info</give_info>			
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>agr_desertir_way_done_3</text>
+				<action>sak.add_new_agroprom_103</action>
+				<action>sak.add_new_yantar_102</action>
+				<!-- <next>4</next> -->
+			</phrase>
+			<phrase id="4">
+				<text>agr_desertir_way_done_4</text>
+				<action>dialogs.break_dialog</action>				
+			</phrase>
+			<phrase id="5">
+				<text>agr_desertir_way_done_5</text>
+				<next>6</next>
+			</phrase>
+			<phrase id="6">
+				<text>agr_desertir_way_done_6</text>
+				<next>7</next>			
+			</phrase>
+			<phrase id="7">
+				<text>agr_desertir_way_done_7</text>
+				<next>81</next>
+				<next>82</next>			
+			</phrase>
+			<phrase id="81">
+				<text>agr_desertir_way_done_81</text>
+				<next>9</next>
+			</phrase>
+			<phrase id="9">
+				<text>agr_desertir_way_done_9</text>
+				<give_info>ratcatcher_order_start</give_info>
+			</phrase>
+			<phrase id="82">
+				<text>agr_desertir_way_done_82</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>		
+			<phrase id="22">
+				<text>agr_desertir_way_done_22</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+		</phrase_list>
+	</dialog>	
+<!-- Шерстюк -->
+	<dialog id="sak_military_stalker_dialog">
+	<precondition>dialogs.is_not_wounded</precondition>
+		<phrase_list>
+			<phrase id="0">
+				<action>dialogs.no_trade_trader</action>
+				<text></text>
+				<next>100</next>
+				<next>200</next>
+				<next>300</next>
+				<next>400</next>
+			</phrase>
+			<phrase id="100">
+				<text></text>
+				<dont_has_info>sherstyk_new_gg</dont_has_info>
+				<next>101</next>
+			</phrase>
+			<phrase id="200">
+				<text></text>
+				<has_info>sherstyk_new_gg</has_info>
+				<dont_has_info>sherstyk_job_start</dont_has_info>
+				<next>201</next>
+			</phrase>
+			<phrase id="300">
+				<text></text>
+				<has_info>sherstyk_new_gg</has_info>
+				<has_info>sherstyk_job_start</has_info>
+				<dont_has_info>sherstyk_job_done</dont_has_info>
+				<next>301</next>
+			</phrase>
+			<phrase id="400">
+				<text></text>
+				<has_info>sherstyk_new_gg</has_info>
+				<has_info>sherstyk_job_done</has_info>
+				<next>401</next>
+			</phrase>
+			<phrase id="101">
+				<text>sak_military_stalker_dialog_101</text>
+				<next>102</next>
+			</phrase>
+			<phrase id="102">
+				<text>sak_military_stalker_dialog_102</text>
+				<next>103</next>
+			</phrase>
+			<phrase id="103">
+				<text>sak_military_stalker_dialog_103</text>
+				<next>104</next>
+			</phrase>
+			<phrase id="104">
+				<text>sak_military_stalker_dialog_104</text>
+				<next>105</next>
+			</phrase>
+			<phrase id="105">
+				<text>sak_military_stalker_dialog_105</text>
+				<next>106</next>
+			</phrase>
+			<phrase id="106">
+				<text>sak_military_stalker_dialog_106</text>
+				<next>107</next>
+			</phrase>
+			<phrase id="107">
+				<text>sak_military_stalker_dialog_107</text>
+				<next>108</next>
+			</phrase>
+			<phrase id="108">
+				<text>sak_military_stalker_dialog_108</text>
+				<next>109</next>
+			</phrase>
+			<phrase id="109">
+				<text>sak_military_stalker_dialog_109</text>
+				<give_info>sherstyk_new_gg</give_info>
+				<next>1101</next>
+				<next>1102</next>
+			</phrase>
+			<phrase id="1101">
+				<text>sak_military_stalker_dialog_1101</text>
+				<next>203</next>
+			</phrase>
+			<phrase id="1102">
+				<text>sak_military_stalker_dialog_1102</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="201">
+				<text>sak_military_stalker_dialog_201</text>
+				<next>202</next>
+			</phrase>
+			<phrase id="202">
+				<text>sak_military_stalker_dialog_202</text>
+				<next>203</next>
+			</phrase>
+			<phrase id="203">
+				<text>sak_military_stalker_dialog_203</text>
+				<next>2041</next>
+				<next>2042</next>
+			</phrase>
+			<phrase id="2041">
+				<text>sak_military_stalker_dialog_2041</text>
+				<give_info>sherstyk_job_start</give_info>
+				<action>sak_spawn.agr_black_box_pseudodog</action>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="2042">
+				<text>sak_military_stalker_dialog_2042</text>
+			</phrase>
+			<phrase id="301">
+				<text>sak_military_stalker_dialog_301</text>
+				<action>dialogs.no_trade_trader</action>
+				<next>3021</next>
+				<next>3022</next>
+			</phrase>
+			<phrase id="3021">
+			<precondition>sak_dialog.agr_black_box_have</precondition>
+				<text>sak_military_stalker_dialog_3021</text>
+				<action>sak_dialog.give_agr_black_box</action>
+				<next>3031</next>
+			</phrase>
+			<phrase id="3031">
+				<text>sak_military_stalker_dialog_3031</text>
+				<action>sak_dialog.add_gift_sherstyk</action>
+				<give_info>sherstyk_job_done</give_info>
+				<next>304</next>
+			</phrase>				
+			<phrase id="304">
+				<text>sak_military_stalker_dialog_304</text>
+				<next>305</next>
+			</phrase>
+			<phrase id="305">
+				<text>sak_military_stalker_dialog_305</text>
+				<next>306</next>
+			</phrase>
+			<phrase id="306">
+				<text>sak_military_stalker_dialog_306</text>
+				<next>307</next>
+			</phrase>
+			<phrase id="307">
+				<text>sak_military_stalker_dialog_307</text>
+				<next>308</next>
+			</phrase>
+			<phrase id="308">
+				<text>sak_military_stalker_dialog_308</text>
+				<next>309</next>				
+			</phrase>
+			<phrase id="309">
+				<text>sak_military_stalker_dialog_309</text>
+				<action>doc.spawn_dumenko</action>
+				<next>310</next>
+			</phrase>
+			<phrase id="310">
+				<text>sak_military_stalker_dialog_310</text>
+				<next>311</next>
+			</phrase>
+			<phrase id="311">
+				<text>sak_military_stalker_dialog_311</text>
+				<next>312</next>
+			</phrase>
+			<phrase id="312">
+				<text>sak_military_stalker_dialog_312</text>
+				<action>dialogs.break_dialog</action>				
+			</phrase>
+			<phrase id="3022">
+				<text>sak_military_stalker_dialog_3022</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="401">
+				<text>sak_military_stalker_dialog_401</text>
+			</phrase>
+		</phrase_list>
+	</dialog>
+
+	<dialog id="agr_manometr_sherstyk">
+	<has_info>sherstyk_job_done</has_info>	
+	<has_info>flamethrower_quest_start</has_info>
+	<dont_has_info>manometr_sherstyk</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>agr_manometr_sherstyk_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>agr_manometr_sherstyk_1</text>
+				<next>2</next>
+			</phrase>		
+			<phrase id="2">
+				<text>agr_manometr_sherstyk_2</text>
+				<next>3</next>
+			</phrase>		
+			<phrase id="3">
+				<text>agr_manometr_sherstyk_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>agr_manometr_sherstyk_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>agr_manometr_sherstyk_5</text>
+				<give_info>manometr_sherstyk</give_info>
+				<next>61</next>
+				<next>62</next>
+			</phrase>		
+			<phrase id="61">
+			<precondition>mike.manometr_vodka_have</precondition>
+				<text>agr_manometr_sherstyk_61</text>
+				<action>mike.manometr_vodka_give</action>
+				<next>71</next>			
+			</phrase>
+			<phrase id="71">
+				<text>agr_manometr_sherstyk_71</text>
+				<action>mike.manometr_take</action>			
+				<give_info>manometr_sherstyk_done</give_info>			
+			</phrase>		
+			<phrase id="62">
+			<precondition>mike.manometr_vodka_no_have</precondition>
+				<text>agr_manometr_sherstyk_62</text>
+				<next>72</next>			
+			</phrase>
+			<phrase id="72">
+				<text>agr_manometr_sherstyk_72</text>
+			</phrase>		
+		</phrase_list>
+	</dialog>
+
+	<dialog id="agr_manometr_2_sherstyk">
+	<precondition>mike.manometr_vodka_have</precondition>
+	<has_info>manometr_sherstyk</has_info>
+	<dont_has_info>manometr_sherstyk_done</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>agr_manometr_2_sherstyk_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>agr_manometr_2_sherstyk_1</text>
+				<action>mike.manometr_vodka_give</action>
+				<action>mike.manometr_take</action>
+				<give_info>manometr_sherstyk_done</give_info>
+				<next>2</next>
+			</phrase>		
+			<phrase id="2">
+				<text>agr_manometr_2_sherstyk_2</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>		
+		</phrase_list>
+	</dialog>
+
+	<dialog id="sherstyk_lv_way_dlg">
+	<has_info>sherstyk_job_done</has_info>	
+	<has_info>agr_03_dezertir_info</has_info>
+	<dont_has_info>sherstyk_lv_way_done_info</dont_has_info>
+	<dont_has_info>info_way100a</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>sherstyk_lv_way_dlg_0</text>
+				<next>11</next>
+				<next>12</next>
+			</phrase>
+			<phrase id="11">
+			<dont_has_info>sherstyk_lv_way_start_info</dont_has_info>
+				<text>sherstyk_lv_way_dlg_11</text>
+				<next>21</next>
+			</phrase>
+			<phrase id="12">
+			<has_info>sherstyk_lv_way_start_info</has_info>
+				<text>sherstyk_lv_way_dlg_12</text>
+				<next>221</next>
+				<next>222</next>
+				<next>223</next>
+			</phrase>
+			<phrase id="21">
+				<text>sherstyk_lv_way_dlg_21</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="221">
+			<precondition>sak_dialog.have_10vodka</precondition>
+				<text>sherstyk_lv_way_dlg_221</text>
+				<action>sak_inventory.release_actor_items("vodka",10)</action>
+				<next>321</next>
+			</phrase>
+			<phrase id="222">
+				<text>sherstyk_lv_way_dlg_222</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="223">
+				<text>sherstyk_lv_way_dlg_223</text>
+				<give_info>sherstyk_lv_way_done_info</give_info>
+			</phrase>
+			<phrase id="3">
+				<text>sherstyk_lv_way_dlg_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="321">
+				<text>sherstyk_lv_way_dlg_321</text>
+				<action>sak.add_new_agr_lost</action>
+				<action>sak.add_new_lost_agr_176</action>
+				<give_info>sherstyk_lv_way_done_info</give_info>
+			</phrase>
+			<phrase id="4">
+				<text>sherstyk_lv_way_dlg_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>sherstyk_lv_way_dlg_5</text>
+				<next>6</next>
+			</phrase>
+			<phrase id="6">
+				<text>sherstyk_lv_way_dlg_6</text>
+				<next>7</next>
+			</phrase>
+			<phrase id="7">
+				<text>sherstyk_lv_way_dlg_7</text>
+				<next>81</next>
+				<next>82</next>
+			</phrase>
+			<phrase id="81">
+				<text>sherstyk_lv_way_dlg_81</text>
+				<give_info>sherstyk_lv_way_start_info</give_info>
+			</phrase>
+			<phrase id="82">
+				<text>sherstyk_lv_way_dlg_82</text>
+				<give_info>sherstyk_lv_way_done_info</give_info>
+			</phrase>
+		</phrase_list>
+	</dialog>
+
+	<dialog id="sherstyk_shkura_1_dialog">
+	<dont_has_info>sherstyk_shkura_info</dont_has_info>
+	<has_info>sidor_shkura_info</has_info>
+	<dont_has_info>sherstyk_shkura_done</dont_has_info>
+	<dont_has_info>kuznezov_shkura_info</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>sherstyk_shkura_1_dialog_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>sherstyk_shkura_1_dialog_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>sherstyk_shkura_1_dialog_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>sherstyk_shkura_1_dialog_3</text>
+				<give_info>sherstyk_shkura_info</give_info>
+				<next>41</next>
+				<next>42</next>
+			</phrase>
+			<phrase id="41">
+			<precondition>sak_dialog.have_5vodka</precondition>
+				<text>sherstyk_shkura_1_dialog_41</text>
+				<action>sak_dialog.give_5vodka</action>
+				<next>51</next>
+			</phrase>
+			<phrase id="51">
+				<text>sherstyk_shkura_1_dialog_51</text>
+				<action>sak_dialog.sherstyk_shkura_time</action>
+				<give_info>sherstyk_shkura_ok</give_info>
+				<next>6</next>
+			</phrase>
+			<phrase id="42">
+				<text>sherstyk_shkura_1_dialog_42</text>
+				<next>52</next>
+			</phrase>
+			<phrase id="52">
+				<text>sherstyk_shkura_1_dialog_52</text>
+				<next>6</next>
+			</phrase>
+			<phrase id="6">
+				<text>sherstyk_shkura_1_dialog_6</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+		</phrase_list>
+	</dialog>
+
+	<dialog id="sherstyk_shkura_2_dialog">
+	<dont_has_info>sherstyk_shkura_ok</dont_has_info>
+	<has_info>sherstyk_shkura_info</has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>sherstyk_shkura_2_dialog_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>sherstyk_shkura_2_dialog_1</text>
+				<give_info>sherstyk_shkura_info</give_info>
+				<next>21</next>
+				<next>22</next>
+			</phrase>
+			<phrase id="21">
+			<precondition>sak_dialog.have_5vodka</precondition>
+				<text>sherstyk_shkura_2_dialog_21</text>
+				<action>sak_dialog.give_5vodka</action>
+				<next>31</next>
+			</phrase>
+			<phrase id="31">
+				<text>sherstyk_shkura_2_dialog_31</text>
+				<action>sak_dialog.sherstyk_shkura_time</action>
+				<give_info>sherstyk_shkura_ok</give_info>
+				<next>4</next>
+			</phrase>
+			<phrase id="22">
+				<text>sherstyk_shkura_2_dialog_22</text>
+				<next>32</next>
+			</phrase>
+			<phrase id="32">
+				<text>sherstyk_shkura_2_dialog_32</text>
+			</phrase>
+			<phrase id="4">
+				<text>sherstyk_shkura_2_dialog_4</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+		</phrase_list>
+	</dialog>
+
+	<dialog id="sherstyk_shkura_done_dialog">
+	<has_info>sherstyk_shkura_ok</has_info>
+	<dont_has_info>sherstyk_shkura_done</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>sherstyk_shkura_done_0</text>
+				<next>11</next>
+				<next>12</next>
+			</phrase>
+			<phrase id="11">
+			<precondition>sak_dialog.not_ready_time_sherstyk_shkura</precondition>
+				<text>sherstyk_shkura_done_11</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="12">
+			<precondition>sak_dialog.is_ready_time_sherstyk_shkura</precondition>
+				<text>sherstyk_shkura_done_12</text>
+				<action>sak_dialog.add_acid_banka</action>
+				<action>sak_dialog.clear_ready_time_sherstyk_shkura</action>
+				<give_info>sherstyk_shkura_done</give_info>
+			</phrase>
+			<phrase id="2">
+				<text>sherstyk_shkura_done_2</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+		</phrase_list>
+	</dialog>	
+<!-- Рыжий -->
+	<dialog id="rygyi_hello_dialog">
+		<phrase_list>
+			<phrase id="0">
+			<action>dialogs.no_trade_trader</action>
+				<text></text>
+				<next>100</next>
+				<next>150</next>
+				<next>200</next>
+				<next>250</next>
+				<next>300</next>
+			</phrase>
+			<phrase id="100">
+				<text></text>
+				<dont_has_info>agr_find_rygyi_done</dont_has_info>
+				<next>101</next>
+			</phrase>
+			<phrase id="150">
+				<text></text>
+				<has_info>krot_gg_med_rygyi_done</has_info>
+				<dont_has_info>self_medkit_rygyi_done</dont_has_info>
+				<dont_has_info>agr_rygyi_new_gg</dont_has_info>
+				<next>151</next>
+			</phrase>
+			<phrase id="200">
+				<text></text>
+				<has_info>agr_find_rygyi_done</has_info>
+				<dont_has_info>self_medkit_rygyi_done</dont_has_info>
+				<dont_has_info>agr_rygyi_new_gg</dont_has_info>
+				<dont_has_info>krot_gg_med_rygyi_done</dont_has_info>
+				<next>201</next>
+			</phrase>
+			<phrase id="250">
+				<text></text>
+				<has_info>self_medkit_rygyi_done</has_info>
+				<dont_has_info>agr_rygyi_new_gg</dont_has_info>
+				<dont_has_info>krot_gg_med_rygyi_done</dont_has_info>
+				<next>251</next>
+			</phrase>
+			<phrase id="300">
+				<text></text>
+				<has_info>agr_rygyi_new_gg</has_info>
+				<next>301</next>
+			</phrase>
+			<phrase id="101">
+				<text>rygyi_hello_dialog_101</text>				
+			</phrase>
+			<phrase id="151">
+				<text>rygyi_hello_dialog_151</text>
+				<next>152</next>				
+			</phrase>
+			<phrase id="152">
+				<text>rygyi_hello_dialog_152</text>
+				<next>153</next>				
+			</phrase>
+			<phrase id="153">
+				<text>rygyi_hello_dialog_153</text>
+				<next>154</next>				
+			</phrase>
+			<phrase id="154">
+				<text>rygyi_hello_dialog_154</text>
+				<next>155</next>				
+			</phrase>
+			<phrase id="155">
+				<text>rygyi_hello_dialog_155</text>
+				<next>156</next>				
+			</phrase>
+			<phrase id="156">
+				<text>rygyi_hello_dialog_156</text>
+				<next>157</next>				
+			</phrase>
+			<phrase id="157">
+				<text>rygyi_hello_dialog_157</text>
+				<next>158</next>				
+			</phrase>
+			<phrase id="158">
+				<text>rygyi_hello_dialog_158</text>
+				<next>159</next>				
+			</phrase>
+			<phrase id="159">
+				<text>rygyi_hello_dialog_159</text>
+				<action>sak.create_items("grenade_rgd5",2)</action>
+				<action>sak.create_items("matches",5)</action>
+				<action>sak.create_items("energy_drink",3)</action>
+				<give_info>agr_rygyi_new_gg</give_info>
+				<next>160</next>				
+			</phrase>
+			<phrase id="160">
+				<text>rygyi_hello_dialog_160</text>
+				<action>dialogs.break_dialog</action>				
+			</phrase>
+			<phrase id="201">
+				<text>rygyi_hello_dialog_201</text>
+				<next>202</next>
+			</phrase>
+			<phrase id="202">
+				<text>rygyi_hello_dialog_202</text>
+				<next>203</next>
+			</phrase>
+			<phrase id="203">
+				<text>rygyi_hello_dialog_203</text>
+				<next>204</next>
+			</phrase>
+			<phrase id="204">
+				<text>rygyi_hello_dialog_204</text>
+				<next>205</next>
+			</phrase>
+			<phrase id="205">
+				<text>rygyi_hello_dialog_205</text>
+				<next>2061</next>
+				<next>2062</next>
+			</phrase>
+			<phrase id="2061">
+				<has_info>agr_fox_ill</has_info>
+				<text>rygyi_hello_dialog_2061</text>
+				<next>207</next>
+			</phrase>
+			<phrase id="2062">
+				<dont_has_info>agr_fox_ill</dont_has_info>
+				<text>rygyi_hello_dialog_2062</text>
+				<next>207</next>
+			</phrase>
+			<phrase id="207">
+				<text>rygyi_hello_dialog_207</text>				
+				<give_info>agr_rygyi_new_gg</give_info>
+				<next>2071</next>
+			</phrase>
+			<phrase id="2071">
+				<text>rygyi_hello_dialog_2071</text>
+				<next>2072</next>
+			</phrase>
+			<phrase id="2072">
+				<text>rygyi_hello_dialog_2072</text>
+				<action>sak_dialog.spawn_detector_sakbuzz_simple</action>
+				<next>208</next>
+			</phrase>
+			<phrase id="208">
+			<text>rygyi_hello_dialog_208</text>	
+				<action>dialogs.break_dialog</action>
+			</phrase>			
+			<phrase id="251">
+				<text>rygyi_hello_dialog_251</text>
+				<next>252</next>
+			</phrase>
+			<phrase id="252">
+				<text>rygyi_hello_dialog_252</text>
+				<next>253</next>
+			</phrase>
+			<phrase id="253">
+				<text>rygyi_hello_dialog_253</text>
+				<next>2541</next>
+				<next>2542</next>
+			</phrase>
+			<phrase id="2541">
+				<has_info>agr_fox_ill</has_info>
+				<text>rygyi_hello_dialog_2541</text>
+				<next>255</next>
+			</phrase>
+			<phrase id="2542">
+				<dont_has_info>agr_fox_ill</dont_has_info>
+				<text>rygyi_hello_dialog_2542</text>
+				<next>255</next>
+			</phrase>
+			<phrase id="255">
+				<text>rygyi_hello_dialog_255</text>
+				<give_info>agr_rygyi_new_gg</give_info>
+				<next>256</next>
+			</phrase>
+			<phrase id="256">
+				<text>rygyi_hello_dialog_256</text>
+			</phrase>
+			<phrase id="301">
+				<text>rygyi_hello_dialog_301</text>				
+			</phrase>
+		</phrase_list>
+	</dialog>
+	
+	<dialog id="rygyi_01_dialog">
+	<has_info>agr_find_rygyi_3have</has_info>
+	<dont_has_info>agr_find_rygyi_done</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>rygyi_01_dialog_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>rygyi_01_dialog_1</text>
+				<next>21</next>
+				<next>22</next>
+			</phrase>
+			<phrase id="21">
+			<precondition>sak_dialog.bandage_2_have</precondition>
+				<text>rygyi_01_dialog_21</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="22">
+			<precondition>sak_dialog.bandage_2_no_have</precondition>
+				<text>rygyi_01_dialog_22</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="3">
+				<text>rygyi_01_dialog_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>rygyi_01_dialog_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>rygyi_01_dialog_5</text>
+				<action>sak_dialog.give_2_rygyi</action>				
+				<give_info>agr_find_rygyi_done</give_info>
+			</phrase>
+			<phrase id="6">
+				<text>rygyi_01_dialog_6</text>
+			</phrase>
+		</phrase_list>
+	</dialog>
+
+	<dialog id="rygyi_02_dialog">
+	<dont_has_info>agr_find_rygyi_3have</dont_has_info>
+	<dont_has_info>agr_find_rygyi_done</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>rygyi_02_dialog_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>rygyi_02_dialog_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>rygyi_02_dialog_2</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+		</phrase_list>
+	</dialog>
+
+	<dialog id="rygyi_03_dialog">
+	<precondition>sak_dialog.have_rygyi_med</precondition>
+	<has_info>agr_find_rygyi_done</has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>rygyi_03_dialog_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>rygyi_03_dialog_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>rygyi_03_dialog_2</text>
+				<action>sak_dialog.give_2_rygyi_krot</action>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>rygyi_03_dialog_3</text>
+			</phrase>
+		</phrase_list>
+	</dialog>
+
+	<dialog id="rygyi_cars_dialog">
+	<precondition>dialogs.is_not_wounded</precondition>	
+	<dont_has_info>rygyi_cars_dialog_info</dont_has_info>
+	<has_info>agr_rygyi_new_gg</has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>rygyi_cars_dialog_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>rygyi_cars_dialog_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>rygyi_cars_dialog_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>rygyi_cars_dialog_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>rygyi_cars_dialog_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>rygyi_cars_dialog_5</text>
+				<give_info>rygyi_cars_dialog_info</give_info>
+				<next>6</next>
+			</phrase>
+			<phrase id="6">
+				<text>rygyi_cars_dialog_6</text>
+				<next>7</next>
+			</phrase>
+			<phrase id="7">
+				<text>rygyi_cars_dialog_7</text>
+				<next>8</next>
+			</phrase>
+			<phrase id="8">
+				<text>rygyi_cars_dialog_8</text>
+				<action>dialogs.break_dialog</action>				
+			</phrase>
+		</phrase_list>
+	</dialog>
+
+	<dialog id="rygyi_tesla_dialog">
+	<precondition>dialogs.is_not_wounded</precondition>
+	<has_info>tesla_in</has_info>
+	<dont_has_info>tesla_rygyi_info</dont_has_info>
+	<dont_has_info>tesla_provodnik_done</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+			<text>rygyi_tesla_dialog_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>rygyi_tesla_dialog_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>rygyi_tesla_dialog_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>rygyi_tesla_dialog_3</text>
+				<give_info>tesla_rygyi_info</give_info>
+			</phrase>
+		</phrase_list>
+	</dialog>
+
+	<dialog id="rygyi_black_tip">
+	<precondition>dialogs.is_not_wounded</precondition>	
+	<precondition>black_tip.have_black_tip</precondition>
+	<precondition>sak_dialog.black_tip_sid_bar_prec</precondition>
+	<dont_has_info>new_rygyi_black_tip</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+                <text>rygyi_black_tip_0</text>
+                <next>1</next>
+            </phrase>
+			<phrase id="1">
+                <text>rygyi_black_tip_1</text>
+				<next>2</next>
+            </phrase>
+			<phrase id="2">
+                <text>rygyi_black_tip_2</text>
+				<next>3</next>
+            </phrase>
+			<phrase id="3">
+                <text>rygyi_black_tip_3</text>
+				<give_info>new_rygyi_black_tip</give_info>
+            </phrase>
+        </phrase_list>
+    </dialog>	
+	
+	<dialog id="rygyi_red_spring_dummy">
+	<precondition>dialogs.is_not_wounded</precondition>	
+	<dont_has_info>info_red_spring</dont_has_info>
+	<has_info>mar_shtrek</has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>rygyi_red_spring_dummy_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>rygyi_red_spring_dummy_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>rygyi_red_spring_dummy_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>rygyi_red_spring_dummy_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>rygyi_red_spring_dummy_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>rygyi_red_spring_dummy_5</text>
+				<action>sak.info_artmod</action>			
+				<give_info>info_red_spring</give_info>
+				<next>6</next>
+			</phrase>
+			<phrase id="6">
+				<text>rygyi_red_spring_dummy_6</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+		</phrase_list>
+	</dialog>	
+</game_dialogs>

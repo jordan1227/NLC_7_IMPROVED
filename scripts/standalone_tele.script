@@ -1,0 +1,80 @@
+-- standalone_tele v. 0.2
+-- Sn: скорее заготовка на будущее, но уже вполне рабочая. Дополню потом, как времени больше будет.
+-- Суть: скриптовая обёртка для экспортированного класса CTelekineticObject, работает полностью самостоятельно.
+-- Что умеет: tele_object() - конструктор, init_by_id() - инициализация (по именам аргументов всё вроде и так понятно), raise() - поднимает объект с указанным id в воздух;
+-- keep() - удерживает объект в воздухе, rotate() - крутит-вертит рандомно, release() - опускает, поле target_height - получить/установить желаемую высоту после инита.
+-- Пример вызова: standalone_tele.get_standalone_tele(вписать_нужный_айди,10.0,2.0,10000,false)
+
+local standalone_tele_obj = nil
+
+function get_standalone_tele(id, strength, height, duration, rotation_flag)
+	standalone_tele_obj = standalone_tele(id, strength, height, duration, rotation_flag)
+	return standalone_tele_obj
+end
+
+class "standalone_tele"
+function standalone_tele:__init(id, strength, height, duration, rotation_flag)
+	self.id = id
+	self.obj = client_obj(id)
+	self.weap = self.obj:is_weapon() and self.obj:get_weapon()
+	self.fire_timeout = -1
+	self.strength = strength
+	self.height = height
+	self.duration = duration
+	self.rotation_flag = rotation_flag
+	self.tele_obj = tele_object()
+	self.tele_obj:init_by_id(id, strength, height, duration, rotation_flag)
+	self.sm = ogse_signals.get_mgr()
+	self.subscribed = {signal = "on_update", self = self, fun = self.update}
+	self.sm:subscribe(self.subscribed)
+	self.raised_time = -1
+	self.initialized = true
+end
+
+function standalone_tele:update()
+	if not self.initialized then return end
+	local cur_time = time_global()
+	if self.obj:parent() ~= nil then
+		self:deactivate()
+		return
+	end
+	if self.raised_time == -1 then
+		self.tele_obj:raise()
+		self.raised_time = cur_time
+	end
+	if cur_time > self.raised_time + self.duration then
+		self:deactivate()
+		return
+	end
+	if self.rotation_flag then
+		-- self.tele_obj:rotate()
+	else
+		self.tele_obj:keep()
+	end
+	if self.weap then
+		-- Sn: в текущем виде долбит со скоростью rpm ствола;
+		-- если раскомментить всё ниже, то будет постреливать с рандомными интервалами одиночными
+		-- if self.fire_timeout == -1 then
+			-- self.fire_timeout = cur_time + lua_random(1000,3000)
+		-- end
+		-- if cur_time > self.fire_timeout then
+			-- self.weap:start_fire_forced(false)
+			-- self.weap:stop_fire()
+			self.weap:start_fire_forced(true)
+			self.weap:start_fire()
+			-- self.fire_timeout = cur_time + lua_random(500,2000)
+		-- end
+	end
+end
+
+function standalone_tele:deactivate()
+	if not self.initialized then return end
+	if self.weap then
+		self.weap:start_fire_forced(false)
+		self.weap:stop_fire()
+	end
+	self.tele_obj:release()
+	self.initialized = false
+	self.sm:unsubscribe(self.subscribed)
+	standalone_tele_obj = nil
+end

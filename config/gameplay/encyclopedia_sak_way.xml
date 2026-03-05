@@ -1,0 +1,339 @@
+	<!-- Рецепты артефактов -->
+	
+	<!-- Рецепты 1 уровня -->
+	
+	<article id="enc_artmod_electra_sparkler_mosquito_bald" name="enc_artmod_electra_sparkler_mosquito_bald_name" group="enc_artmod/a_level_1">
+	    <texture x="0" y="600" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_electra_sparkler_mosquito_bald_text</text>
+    </article>
+	
+	<article id="enc_artmod_ameba_slime_gravi_zone" name="enc_artmod_ameba_slime_gravi_zone_name" group="enc_artmod/a_level_1">
+	    <texture x="0" y="650" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_ameba_slime_gravi_zone_text</text>
+    </article>
+	
+	<article id="enc_artmod_ameba_slime_zharka" name="enc_artmod_ameba_slime_zharka_name" group="enc_artmod/a_level_1">
+	    <texture x="0" y="800" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_ameba_slime_zharka_text</text>
+    </article>
+
+    <article id="enc_artmod_rusty_kristall_gravi_zone" name="enc_artmod_rusty_kristall_gravi_zone_name" group="enc_artmod/a_level_1">
+	    <texture x="0" y="650" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_rusty_kristall_gravi_zone_text</text>
+    </article>
+	
+	<article id="enc_artmod_drops_mincer" name="enc_artmod_drops_mincer_name" group="enc_artmod/a_level_1">
+	    <texture x="0" y="700" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_drops_mincer_text</text>
+    </article>
+	
+    <article id="enc_artmod_rusty_thorn_buzz" name="enc_artmod_rusty_thorn_buzz_name" group="enc_artmod/a_level_1">
+	    <texture x="0" y="750" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_rusty_thorn_buzz_text</text>
+    </article>
+	
+	<article id="enc_artmod_medusa_galant" name="enc_artmod_medusa_galant_name" group="enc_artmod/a_level_1">
+	    <texture x="350" y="550" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_medusa_galant_text</text>
+    </article>
+	
+	<article id="enc_info_artmod_vyvert_buzz" name="enc_info_artmod_vyvert_buzz_name" group="enc_artmod/a_level_1">
+	    <texture x="0" y="550" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_info_artmod_vyvert_buzz_text</text>
+    </article>
+	
+	<!-- Рецепты 2 уровня -->
+
+    <article id="enc_artmod_blood_ice" name="enc_artmod_blood_ice_name" group="enc_artmod/a_level_2">
+        <texture x="350" y="900" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_blood_ice_text</text>
+    </article>
+	
+	<article id="enc_artmod_mincer_meat_mosquito_bald" name="enc_artmod_mincer_meat_mosquito_bald_name" group="enc_artmod/a_level_2">
+	    <texture x="0" y="250" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_mincer_meat_mosquito_bald_text</text>
+    </article>
+	
+	<article id="enc_artmod_ameba_slug_mosquito_bald" name="enc_artmod_ameba_slug_mosquito_bald_name" group="enc_artmod/a_level_2">
+	    <texture x="350" y="300" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_ameba_slug_mosquito_bald_text</text>
+    </article>
+	
+	<article id="enc_artmod_ameba_slug_ice" name="enc_artmod_ameba_slug_ice_name" group="enc_artmod/a_level_2">
+	    <texture x="350" y="950" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_ameba_slug_ice_text</text>
+    </article>
+	
+	<article id="enc_artmod_gravi_gravi_zone" name="enc_artmod_gravi_gravi_zone_name" group="enc_artmod/a_level_2">
+	    <texture x="0" y="300" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_gravi_gravi_zone_text</text>
+    </article>
+	
+	<article id="enc_artmod_gravi_zharka" name="enc_artmod_gravi_zharka_name" group="enc_artmod/a_level_2">
+	    <texture x="350" y="450" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_gravi_zharka_text</text>
+    </article>
+	
+	<article id="enc_artmod_electra_flash_gravi_zone" name="enc_artmod_electra_flash_gravi_zone_name" group="enc_artmod/a_level_2">
+	    <texture x="350" y="250" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_electra_flash_gravi_zone_text</text>
+    </article>
+	
+	<article id="enc_artmod_electra_flash_zharka" name="enc_artmod_electra_flash_zharka_name" group="enc_artmod/a_level_2">
+	    <texture x="0" y="450" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_electra_flash_zharka_text</text>
+    </article>
+	
+	<article id="enc_artmod_rusty_kristall_mincer" name="enc_artmod_rusty_kristall_mincer_name" group="enc_artmod/a_level_2">
+	    <texture x="350" y="350" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_rusty_kristall_mincer_text</text>
+    </article>
+	
+	<article id="enc_artmod_rusty_kristall_buzz" name="enc_artmod_rusty_kristall_buzz_name" group="enc_artmod/a_level_2">
+	    <texture x="0" y="400" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_rusty_kristall_buzz_text</text>
+    </article>
+
+    <article id="enc_artmod_fireball_buzz" name="enc_artmod_fireball_buzz_name" group="enc_artmod/a_level_2">
+	    <texture x="350" y="400" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_fireball_buzz_text</text>
+    </article>
+	
+	<article id="enc_artmod_fireball_galant" name="enc_artmod_fireball_galant_name" group="enc_artmod/a_level_2">
+	    <texture x="0" y="500" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_fireball_galant_text</text>
+    </article>
+
+    <article id="enc_artmod_cristall_flower_galant" name="enc_artmod_cristall_flower_galant_name" group="enc_artmod/a_level_2">
+	    <texture x="0" y="850" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_cristall_flower_galant_text</text>
+    </article>
+	
+	<article id="enc_artmod_cristall_flower_mincer" name="enc_artmod_cristall_flower_mincer_name" group="enc_artmod/a_level_2">
+	    <texture x="0" y="350" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_cristall_flower_mincer_text</text>
+    </article>
+
+    <!-- Рецепты 3 уровня -->
+
+    <article id="enc_artmod_cristall_mosquito_bald" name="enc_artmod_cristall_mosquito_bald_name" group="enc_artmod/a_level_3">
+	    <texture x="350" y="600" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_cristall_mosquito_bald_text</text>
+    </article>
+	
+    <article id="enc_artmod_cristall_buzz" name="enc_artmod_cristall_buzz_name" group="enc_artmod/a_level_3">
+	    <texture x="350" y="750" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_cristall_buzz_text</text>
+    </article>
+
+    <article id="enc_artmod_rusty_sea-urchin_mosquito_bald" name="enc_artmod_rusty_sea-urchin_mosquito_bald_name" group="enc_artmod/a_level_3">
+	    <texture x="700" y="250" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_rusty_sea-urchin_mosquito_bald_text</text>
+    </article>
+	
+	<article id="enc_artmod_rusty_sea-urchin_ice" name="enc_artmod_rusty_sea-urchin_ice_name" group="enc_artmod/a_level_3">
+	    <texture x="700" y="900" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_rusty_sea-urchin_ice_text</text>
+    </article>
+	
+	<article id="enc_artmod_night_star_gravi_zone" name="enc_artmod_night_star_gravi_zone_name" group="enc_artmod/a_level_3">
+	    <texture x="350" y="650" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_night_star_gravi_zone_text</text>
+    </article>
+	
+	<article id="enc_artmod_night_star_zharka" name="enc_artmod_night_star_zharka_name" group="enc_artmod/a_level_3">
+	    <texture x="350" y="800" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_night_star_zharka_text</text>
+    </article>
+
+    <article id="enc_artmod_soul_gravi_zone" name="enc_artmod_soul_gravi_zone_name" group="enc_artmod/a_level_3">
+	    <texture x="700" y="300" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_soul_gravi_zone_text</text>
+    </article>
+	
+	<article id="enc_artmod_electra_moonlight_galant" name="enc_artmod_electra_moonlight_galant_name" group="enc_artmod/a_level_3">
+	    <texture x="350" y="850" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_electra_moonlight_galant_text</text>
+    </article>
+	
+	<article id="enc_artmod_electra_moonlight_mincer" name="enc_artmod_electra_moonlight_mincer_name" group="enc_artmod/a_level_3">
+	    <texture x="350" y="700" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_electra_moonlight_mincer_text</text>
+    </article>
+	
+	<article id="enc_artmod_electra_moonlight_zharka" name="enc_artmod_electra_moonlight_zharka_name" group="enc_artmod/a_level_3">
+	    <texture x="700" y="450" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_electra_moonlight_zharka_text</text>
+    </article>
+
+    <article id="enc_artmod_ameba_slug_mincer" name="enc_artmod_ameba_slug_mincer_name" group="enc_artmod/a_level_3">
+	    <texture x="700" y="350" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_ameba_slug_mincer_text</text>
+    </article>
+	
+	<article id="enc_artmod_ameba_mica_galant" name="enc_artmod_ameba_mica_galant_name" group="enc_artmod/a_level_3">
+	    <texture x="350" y="500" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_ameba_mica_galant_text</text>
+    </article>
+
+    <article id="enc_artmod_gold_fish_buzz" name="enc_artmod_gold_fish_buzz_name" group="enc_artmod/a_level_3">
+	    <texture x="700" y="400" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_gold_fish_buzz_text</text>
+    </article>
+	
+    <article id="enc_artmod_gold_fish_galant" name="enc_artmod_gold_fish_galant_name" group="enc_artmod/a_level_3">
+	    <texture x="700" y="500" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_gold_fish_galant_text</text>
+    </article>
+	
+    <!-- Рецепты Пустышек -->
+
+    <article id="enc_artmod_dummy_dummy_mosquito_bald" name="enc_artmod_dummy_dummy_mosquito_bald_name" group="enc_artmod/a_level_4">
+	    <texture x="700" y="600" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_dummy_dummy_mosquito_bald_text</text>
+    </article>
+
+    <article id="enc_artmod_dummy_pellicle_gravi_zone" name="enc_artmod_dummy_pellicle_gravi_zone_name" group="enc_artmod/a_level_4">
+	    <texture x="700" y="650" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_dummy_pellicle_gravi_zone_text</text>
+    </article>
+
+    <article id="enc_artmod_dummy_glassbeads_mincer" name="enc_artmod_dummy_glassbeads_mincer_name" group="enc_artmod/a_level_4">
+	    <texture x="700" y="700" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_dummy_glassbeads_mincer_text</text>
+    </article>
+
+    <article id="enc_artmod_fuzz_kolobok_buzz" name="enc_artmod_fuzz_kolobok_buzz_name" group="enc_artmod/a_level_4">
+	    <texture x="700" y="750" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_fuzz_kolobok_buzz_text</text>
+    </article>
+
+    <article id="enc_artmod_dummy_battery_zharka" name="enc_artmod_dummy_battery_zharka_name" group="enc_artmod/a_level_4">
+	    <texture x="700" y="800" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_dummy_battery_zharka_text</text>
+    </article>
+
+    <article id="enc_artmod_dummy_spring_galant" name="enc_artmod_dummy_spring_galant_name" group="enc_artmod/a_level_4">
+	    <texture x="700" y="850" width="300" height="50">ui\ui_sak</texture>
+	    <text>enc_artmod_dummy_spring_galant_text</text>
+    </article>
+	
+	<!-- Рецепты уникальных артефактов -->
+
+    <article id="resiept_activ_anom_info" name="resiept_activ_anom_info_name" group="enc_artmod/a_level_5">
+		<ltx>af_dummy_sparkler</ltx>
+	    <text>resiept_activ_anom_info_text</text>
+    </article>
+
+    <article id="enc_info_dummy_dummy_new" name="enc_info_dummy_dummy_new_name" group="enc_artmod/a_level_5">
+	    <texture x="150" y="800" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_info_dummy_dummy_new_text</text>
+    </article>
+
+    <article id="enc_info_red_battery" name="enc_info_red_battery_name" group="enc_artmod/a_level_5">
+	    <texture x="150" y="400" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_info_red_battery_text</text>
+    </article>
+
+    <article id="enc_info_red_spring" name="enc_info_red_spring_name" group="enc_artmod/a_level_5">
+	    <texture x="150" y="350" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_info_red_spring_text</text>
+    </article>
+
+    <article id="enc_info_red_pellicle" name="enc_info_red_pellicle_name" group="enc_artmod/a_level_5">
+	    <texture x="150" y="450" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_info_red_pellicle_text</text>
+    </article>
+
+    <article id="enc_info_green_blood" name="enc_info_green_blood_name" group="enc_artmod/a_level_5">
+	    <texture x="150" y="300" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_info_green_blood_text</text>
+    </article>
+
+    <article id="enc_info_green_medusa" name="enc_info_green_medusa_name" group="enc_artmod/a_level_5">
+	    <texture x="150" y="200" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_info_green_medusa_text</text>
+    </article>
+
+    <article id="enc_info_green_vyvert" name="enc_info_green_vyvert_name" group="enc_artmod/a_level_5">
+	    <texture x="150" y="250" width="50" height="50">ui\ui_icon_equipment</texture>
+	    <text>enc_info_green_vyvert_text</text>
+    </article>
+
+    <article id="enc_artmod_battery_jump" name="enc_artmod_battery_jump_name" group="enc_artmod/a_level_5">
+	    <texture x="350" y="150" width="300" height="50">ui\ui_icon_equipment_3</texture>
+	    <text>enc_artmod_battery_jump_text</text>
+    </article>
+
+    <article id="enc_artmod_glassbeads_ice" name="enc_artmod_glassbeads_ice_name" group="enc_artmod/a_level_5">
+	    <texture x="700" y="550" width="300" height="50">ui\ui_sak</texture>
+        <text>enc_artmod_glassbeads_ice_text</text>
+    </article>
+
+    <article id="enc_artmod_baloon_sakbuzz" name="enc_artmod_baloon_sakbuzz_name" group="enc_artmod/a_level_5">
+	    <texture x="0" y="200" width="300" height="50">ui\ui_icon_equipment_3</texture>
+	    <text>enc_artmod_baloon_sakbuzz_text</text>
+    </article>
+	
+	<article id="enc_info_medus_new" name="enc_info_medus_new_name" group="enc_artmod/a_level_5">
+		<texture x="0" y="150" width="300" height="50">ui\ui_icon_equipment_3</texture>
+	    <text>enc_info_medus_new_text</text>
+    </article>
+
+    <article id="enc_artmod_sul_new_ice" name="enc_artmod_sul_new_ice_name" group="enc_artmod/a_level_5">
+	    <texture x="0" y="250" width="300" height="50">ui\ui_icon_equipment_3</texture>
+	    <text>enc_artmod_sul_new_ice_text</text>
+    </article>
+
+    <article id="enc_artmod_eye_ice" name="enc_artmod_eye_ice_name" group="enc_artmod/a_level_5">
+	    <texture x="0" y="300" width="300" height="50">ui\ui_icon_equipment_3</texture>
+	    <text>enc_artmod_eye_ice_text</text>
+    </article>
+	
+	<article id="enc_fakeartmod1" name="ui_st_description" group="enc_artmod/a_level_1">
+	    <text>enc_fakeartmod1_text</text>
+    </article>
+	
+	<article id="enc_fakeartmod2" name="ui_st_description" group="enc_artmod/a_level_2">
+	    <text>enc_fakeartmod2_text</text>
+    </article>
+	
+	<article id="enc_fakeartmod3" name="ui_st_description" group="enc_artmod/a_level_3">
+	    <text>enc_fakeartmod3_text</text>
+    </article>
+	
+	<article id="enc_fakeartmod4" name="ui_st_description" group="enc_artmod/a_level_4">
+	    <text>enc_fakeartmod4_text</text>
+    </article>
+	
+	<article id="enc_fakeartmod5" name="ui_st_description" group="enc_artmod/a_level_5">
+	    <text>enc_fakeartmod5_text</text>
+    </article>
+	
+	<article id="enc_fakeartmod_m" name="ui_st_description" group="enc_recipts/mod">
+	    <text>enc_fakeartmod_m_text</text>
+    </article>
+	
+	<article id="enc_fakeartmod_mm" name="ui_st_description" group="enc_recipts/mezomod">
+	    <text>enc_fakeartmod_mm_text</text>
+    </article>
+	
+	<article id="enc_fakeartmod_gm" name="ui_st_description" group="enc_recipts/gipermod">
+	    <text>enc_fakeartmod_gm_text</text>
+    </article>
+	
+	<article id="enc_fakeartmod_a" name="ui_st_description" group="enc_recipts/absol">
+	    <text>enc_fakeartmod_a_text</text>
+    </article>
+	
+	<!-- Аномалии -->
+
+    <article id="zone_anomalies_greedy" name="greedy" group="Anomalies">
+	    <texture x="1350" y="450" width="200" height="150">ui\ui_sak</texture>
+	    <text>enc_zone_anomalies_greedy</text>
+    </article>
+
+    <article id="zone_anomalies_psi_field" name="psi_field" group="Anomalies">
+	    <texture x="1350" y="600" width="200" height="150">ui\ui_sak</texture>
+	    <text>enc_zone_anomalies_psi_field</text>
+    </article>

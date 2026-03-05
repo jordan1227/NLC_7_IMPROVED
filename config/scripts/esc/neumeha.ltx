@@ -1,0 +1,27 @@
+[logic]
+active = walker
+
+[walker]
+path_walk = neumeha_go_walk
+path_look = neumeha_go_look
+combat_ignore_cond = {!fighting_actor}
+on_info={+neumeha_go -kvest_art_done} walker2
+meet = no_meet
+
+[walker2]
+path_walk = neumeha_go_2walk
+path_look = neumeha_go_2look
+on_info={+kvest_art_no_good} walker4
+combat_ignore_cond = {!fighting_actor}
+meet = no_meet
+
+[walker4]
+path_walk = neumeha_go_2walk
+path_look = neumeha_go_2look
+on_info={+time_night} walker3
+combat_ignore_cond = {!fighting_actor}
+
+[walker3]
+path_walk = esc_neumeha_way
+path_look = esc_neumeha_look
+on_info={-time_night} walker4

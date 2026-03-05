@@ -1,0 +1,69 @@
+if coord_params == nil then
+ _G.coord_params = {}
+end
+
+
+-- Manool: здесь была функция, меняющая секцию предмета.
+-- Вместо неё теперь будет замена предмета другим с другой секцией.
+-- Всё-равно, в основном, функция используется для подмены артов.
+function replace_object(id, section)
+	local obj = g_sim:object(id)
+	if not obj then return end
+
+   local cd = obj.custom_data or ""
+   local cond = 1
+   local new_obj
+
+   local iitem = obj:get_inventory_item()
+   if iitem then
+      cond = iitem.item_condition
+   end
+
+   local clobj = client_obj(id)
+   local on_belt = clobj and clobj:parent() and clobj:parent():id() == db.actor:id() and db.actor:is_on_belt(clobj) 
+
+	if obj.parent_id == BAD_OBJ_ID then
+		new_obj = g_sim:create(section, obj.position, obj.m_level_vertex_id, obj.m_game_vertex_id)
+	else
+		new_obj = g_sim:create(section, obj.position, obj.m_level_vertex_id, obj.m_game_vertex_id, obj.parent_id)
+	end
+
+   new_obj = g_sim:object(new_obj.id)
+   if cd ~= "" then
+      new_obj.custom_data = cd
+   end
+   if cond < 1 then
+      local iitem = new_obj:get_inventory_item()
+      if iitem then
+         iitem.item_condition = cond
+      end
+   end
+   release(obj)
+
+   level.client_spawn_manager():add(new_obj.id, -1,
+      function(id, obj)
+         -- if on_belt then db.actor:move_to_belt(obj) end
+         -- Manool: нужна задержка
+         dsh.timeout(200, function() if on_belt then db.actor:move_to_belt(obj) end end)
+      end
+   )
+
+   return new_obj
+end
+
+function camera_angles(h_new, p_new)
+	-- alternate access to device().cam_pos
+	local cam = actor_camera(0)
+	if cam == nil then
+		return 0, 0
+	end
+
+	if h_new then
+		cam.yaw = h_new
+	end
+	if p_new then
+		cam.pitch = p_new
+	end
+
+	return cam.yaw, cam.pitch
+end

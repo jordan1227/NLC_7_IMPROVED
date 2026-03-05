@@ -1,0 +1,29 @@
+[logic]
+active = walker@bar_barin
+
+[walker@bar_barin]
+path_walk = bar_barin_walk_way
+path_look = bar_barin_way_look
+on_info = {=is_fri_day} walker@go
+meet = meet@bar
+
+[walker@go]
+path_walk = bar_bar_angar_zoneguard_walk
+path_look = bar_bar_angar_zoneguard_look
+on_info = {!is_fri_day} walker@bar_barin
+on_signal = angar_zoneguard_bar | walker@bar
+meet = no_meet
+
+[walker@bar]
+path_walk = bar_bar_angar_zoneguard_walk
+path_look = bar_bar_angar_zoneguard_look
+on_info = {!is_fri_day} walker@bar_barin
+soundgroup = bar_visitors1
+meet = meet@bar
+
+[meet@bar]
+use = true
+use_wpn = true
+meet_talk_enabled = true
+meet_state = ward
+meet_dialog = bar_barin_start

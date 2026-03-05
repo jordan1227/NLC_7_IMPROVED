@@ -1,0 +1,12 @@
+[trader]
+buy_condition = {+esc_bridge_pass_fire} trader_no_trade_buy, trader_generic_buy
+sell_condition = {+esc_bridge_pass_fire} trader_no_trade_sell, {+agr_mil_dumenko_gg} trader_after_dumenko_sell, {+esc_kill_bandits_quest_done -esc_bridge_pass_fire} trader_after_fabric_sell, trader_start_sell
+buy_supplies = {+esc_bridge_pass_fire} supplies_no_trade, {+agr_mil_dumenko_gg} supplies_after_dumenko, {+esc_kill_bandits_quest_done -esc_bridge_pass_fire} supplies_after_fabric, supplies_start
+
+
+#include "sidor_buy.ltx"
+#include "sidor_supl.ltx"
+#include "sidor_trade.ltx"
+
+
+

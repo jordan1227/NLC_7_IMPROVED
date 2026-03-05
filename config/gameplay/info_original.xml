@@ -1,0 +1,985 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<game_information_portions>
+
+<!-- info_l01escape -->
+	<!-- AMK Quest -->
+
+	<info_portion id="tutorial_wounded_start"></info_portion>
+	<info_portion id="esc_hit_bandits"></info_portion>
+	<info_portion id="esc_heli_attack"></info_portion>
+	<info_portion id="esc_heli_fire"></info_portion>
+	<info_portion id="esc_heli_direct"></info_portion>
+	<info_portion id="tutorial_wounded_give_info"><action>sak.esc_shustryi_stalker</action></info_portion>
+	<info_portion id="shustriy_move_out"></info_portion>
+	<info_portion id="shustriy_go_lager"></info_portion>
+	<info_portion id="tutorial_wounded_help"></info_portion>
+	<info_portion id="tutorial_wounded_die"></info_portion>
+	<info_portion id="tutorial_wounded_heal"></info_portion>
+	<info_portion id="esc_petruha_report"></info_portion>
+	<info_portion id="esc_petruha_friend_die"></info_portion>
+	<info_portion id="esc_petruha_report2"></info_portion>
+	<info_portion id="esc_report_send"></info_portion>
+	<info_portion id="esc_lager_friendship"></info_portion>
+	<info_portion id="tutorial_end"><article_disable>esc_flash_task_descr</article_disable></info_portion>
+	<info_portion id="esc_serious_talk"></info_portion>
+	<info_portion id="esc_wounded_arrive"></info_portion>
+
+	<!-- Fox -->
+	<info_portion id="escape_stalker_help"></info_portion>
+	<info_portion id="escape_fox_heal"></info_portion>
+	<info_portion id="escape_stalker_dog_die"></info_portion>	
+	<info_portion id="escape_stalker_meet">
+		<article>esc_fox_help</article>
+		<!--<article>sl_usefull_info</article> Fox -->
+	</info_portion>
+	<info_portion id="escape_stalker_done"><article_disable>esc_fox_help</article_disable></info_portion>
+	<info_portion id="esc_fox_thanks"></info_portion>
+	
+	
+	<!-- Blokpost_case -->
+	<info_portion id="escape_blockpost_case"><article>blockpost_case_article</article></info_portion>
+	
+	<info_portion id="escape_trader_case_have"></info_portion>	
+	
+	<info_portion id="escape_blockpost_case_have"></info_portion>
+	
+	<info_portion id="escape_blockpost_case_done"><article_disable>blockpost_case_article</article_disable></info_portion>
+	
+	<info_portion id="esc_matugalnik_off"></info_portion>
+
+	<info_portion id="esc_petruha_great"></info_portion>
+	<info_portion id="escape_factory_assault_say_hello"></info_portion>
+	<info_portion id="esc_petruha_die"></info_portion>
+	<info_portion id="esc_volk_reward"></info_portion>
+
+	<!-- Newbie_lager_help -->
+	<info_portion id="escape_lager_help"></info_portion>
+	<info_portion id="escape_lager_spawn_killers"></info_portion>
+	<info_portion id="escape_lager_failed"></info_portion>
+	<info_portion id="esc_killers_raid"></info_portion>
+	<info_portion id="escape_lager_killers_die"><disable>escape_lager_spawn_killers</disable></info_portion>
+	<info_portion id="escape_lager_complete"></info_portion>
+	<info_portion id="esc_fanat_spawn"></info_portion>
+	<info_portion id="esc_open_killer_fire"></info_portion>
+	<info_portion id="esc_open_lager_fire"></info_portion>
+	<info_portion id="esc_fanat_die"></info_portion>
+	<info_portion id="esc_path_to_lager"></info_portion>
+	<info_portion id="esc_wolf_dead"></info_portion>
+
+	<!-- Используется для отладки скрипта -->
+	<info_portion id="esc_trader_experienced"></info_portion>
+	<info_portion id="esc_trader_newbie"></info_portion>
+	<info_portion id="esc_trader_can_leave"></info_portion>
+
+	<!-- вспомогательные в лагере -->
+	<info_portion id="esc_darklab_documents_read"></info_portion>
+	<info_portion id="esc_trader_speak"></info_portion>
+
+	<!-- Приветствия торговца -->
+	<info_portion id="esc_trader_hello_played"></info_portion>
+	<info_portion id="esc_trader_bye_played"></info_portion>
+	<info_portion id="esc_close_door"></info_portion>
+
+	<!-- infoportions for factory on escape -->
+	<info_portion id="escape_factory_quest"></info_portion>
+	<info_portion id="esc_bandits_assault"></info_portion>
+	<info_portion id="esc_bandits_start"></info_portion>
+	<info_portion id="escape_assault_finished"></info_portion>
+	
+	<!-- infoportions for raid -->
+	<info_portion id="esc_raid1_start"></info_portion>
+
+	<!-- infoportions for blockpost -->
+	<info_portion id="esc_blockpost_alarm">
+		<disable>esc_blockpost_normal</disable>
+	</info_portion>
+	<info_portion id="esc_blockpost_normal">
+		<disable>esc_blockpost_alarm</disable>
+	</info_portion>
+	<info_portion id="esc_commander_die"></info_portion>
+
+	<!-- infoportions for bridge soldiers -->
+	<info_portion id="esc_bridge_pass_on">
+		<disable>esc_bridge_pass_off</disable>
+	</info_portion>
+	<info_portion id="esc_bridge_pass_off">
+		<disable>esc_bridge_pass_on</disable>
+		
+	</info_portion>
+	<info_portion id="esc_bridge_pass_fire"><disable>esc_kill_bandits_quest_done</disable></info_portion>
+
+	<!-- infoportions for restrictor -->
+	<info_portion id="esc_boar_dogs_restrictor"></info_portion>
+
+	<!-- trader bandits on factory -->
+	<info_portion id="esc_kill_bandits_quest_have"></info_portion>
+	<info_portion id="esc_kill_bandits_quest_kill"></info_portion>
+	<info_portion id="esc_kill_bandits_quest_done"></info_portion>
+	<info_portion id="esc_assault_start"></info_portion>
+	<info_portion id="esc_assault_charge"></info_portion>
+	<info_portion id="esc_heli_go"></info_portion>
+	
+	<!-- труп у аномалии -->
+	<info_portion id="esc_tutorial_dead_novice">
+		<article>tutorial_moving_anomaly</article>
+	</info_portion>
+
+	<info_portion id="esc_find_doctor_start"></info_portion>
+	<info_portion id="esc_find_doctor_done"><action>sak.add_doktor_attantion</action></info_portion>
+	<info_portion id="esc_dog_spawn"></info_portion>
+	<info_portion id="esc_tutorial_start"></info_portion>
+	
+	<info_portion id="esc_btr_killed"></info_portion>
+
+<!-- info_l02garbage -->
+	<!-- атака бандитов на Серого -->
+	<info_portion id="garbage_meetstalker_start"></info_portion>
+	<info_portion id="garbage_meetstalker_done"></info_portion>
+	
+	<info_portion id="garbage_meetstalker_die"><action>sak.gar_stalker_binoc_sos</action></info_portion>
+	<info_portion id="garbage_meetstalker_end"></info_portion>
+	
+	<info_portion id="gar_seryi_actor_enter"></info_portion>
+	<info_portion id="gar_distance_shooting"></info_portion>
+	<info_portion id="gar_seryi_ceitnot"></info_portion>
+	<info_portion id="gar_seryi_open_fire"></info_portion>
+	<info_portion id="gar_seryi_counter_fire"></info_portion>
+	<info_portion id="gar_begin_assault"></info_portion>
+	<info_portion id="gar_seryi_silence"></info_portion>
+	<info_portion id="gar_seryi_meet"></info_portion>
+	
+	<!-- атака сталкеров и бандитов -->
+	<info_portion id="gar_bandit_leader_dead"></info_portion>
+	<info_portion id="gar_alarm"></info_portion>
+	<info_portion id="gar_bandits_raid"></info_portion>
+	<info_portion id="gar_hellcar_help"></info_portion>
+	<info_portion id="gar_hellcar_reject"></info_portion>
+	<info_portion id="gar_open_fire"></info_portion>
+	<info_portion id="gar_counter_fire"></info_portion>
+	<info_portion id="gar_direction"></info_portion>
+	<info_portion id="gar_start_graveyard"></info_portion>
+	<info_portion id="gar_start_quest"></info_portion>
+	<info_portion id="gar_animation_radio"></info_portion>
+	<info_portion id="gar_bandits_killed"></info_portion>
+	<info_portion id="gar_hellcar_victory"></info_portion>
+	<info_portion id="gar_hellcar_dialog_end"></info_portion>
+	<info_portion id="gar_hellcar_death"></info_portion>
+	<info_portion id="gar_hellcar_thanks"></info_portion>
+	<info_portion id="gar_hellcar_alarm"></info_portion>
+	
+	<info_portion id="gar_free_pass"></info_portion>
+	
+	<!-- Псевдораненый -->
+	<info_portion id="gar_wounded_help"></info_portion>
+	<info_portion id="gar_wounded_fight"></info_portion>
+		
+	<!-- Драм-момент -->
+	<info_portion id="gar_dm_novice_asked_for_help"></info_portion>
+	<info_portion id="gar_dm_bandit_warned_plr"></info_portion>
+	<info_portion id="gar_dm_bandit1_dead"></info_portion>
+	<info_portion id="gar_dm_bandit2_dead"></info_portion>
+	<info_portion id="gar_dm_bandit3_dead"></info_portion>
+	<info_portion id="gar_dm_novice_dead"></info_portion>
+	<info_portion id="gar_dm_bandit2_warn_plr"></info_portion>
+	<info_portion id="gar_dm_bandit2_warned_plr"></info_portion>
+	<info_portion id="gar_dm_bandit1_demand"></info_portion>
+	<info_portion id="gar_dm_bandit2_demand"></info_portion>
+	<info_portion id="gar_dm_bandit3_demand"></info_portion>
+	<info_portion id="gar_dm_newbie_no_money"></info_portion>
+	<info_portion id="gar_dm_end"></info_portion>
+	<info_portion id="gar_dm_novice_change_st"></info_portion>
+	<info_portion id="gar_dm_bandits_change_st"></info_portion>
+	
+	<info_portion id="gar_hellcar_tips_end"></info_portion>
+
+<!-- info_l03agroprom -->
+	<info_portion id="agroprom_military_case"><article>sl_first_deep_raid</article></info_portion>
+	<info_portion id="agroprom_military_case_have"></info_portion>
+	<info_portion id="agroprom_military_case_done"></info_portion>
+	<info_portion id="agr_krot_band_start"></info_portion>
+	<info_portion id="agr_krot_secret_info"><article>agr_journal_krot</article><disable>agr_krot_band_start</disable></info_portion>
+	
+	<info_portion id="agr_find_gunslinger_cache_found"></info_portion>
+	
+	<info_portion id="agr_start_scene"></info_portion>
+	<info_portion id="agr_factory_assault_start">
+	</info_portion>
+	<info_portion id="agr_factory_assault_skirmish">
+	</info_portion>
+	<info_portion id="agr_help_stalkers_start">
+		<!--<task>agr_help_stalkers</task>-->
+	</info_portion>
+	<info_portion id="agr_help_stalkers_assault_dead">
+	</info_portion>
+	<info_portion id="agr_help_stalkers_defence_dead">
+	</info_portion>
+	<info_portion id="agr_help_stalkers_done">
+		<disable>agr_help_stalkers_start</disable>
+	</info_portion>
+
+	<info_portion id="agr_krot_skirmish_start">
+	</info_portion>
+	<info_portion id="agr_krot_dead">
+	</info_portion>
+	<info_portion id="agr_help_krot_start">
+		<!--<task>agr_help_krot</task>-->
+	</info_portion>
+	<info_portion id="agr_help_krot_done"><disable>agr_help_krot_start</disable><action>sak.make_any_npc_free("agr_defector_stalker1")</action></info_portion>
+	<info_portion id="agr_krot_met"></info_portion>
+
+	<info_portion id="agr_krot_go_to_well">
+	</info_portion>
+
+    <info_portion id="agr_nii_alarm">
+    </info_portion>
+    <info_portion id="agr_nii_rupor_off">
+    </info_portion>
+    <info_portion id="agr_nii_sniper_alarm">
+    </info_portion>
+    <info_portion id="agr_nii_sniper_hit">
+    </info_portion>
+
+    <info_portion id="agr_nii_helicopter_atack">
+    </info_portion>
+	
+	<info_portion id="agr_nii_fab_mil_task">
+		<article>agr_nii_fab_mil_task</article>
+	</info_portion>
+		
+	<info_portion id="agr_ratcatcher_friend">
+	</info_portion>
+ 		
+	<info_portion id="agr_knockdown">
+	</info_portion>	 
+	<info_portion id="agr_sniper_killed_1">
+	</info_portion>	 
+	<info_portion id="agr_sniper_killed_2">
+	</info_portion>	 
+	<info_portion id="agr_sniper_killed_3">
+	</info_portion>
+	<info_portion id="agr_doc_wakeup">
+	</info_portion>	
+	<info_portion id="agr_need_respawn">
+	</info_portion>
+	
+	<info_portion id="agr_u_bloodsucker_start"></info_portion>
+
+<!-- info_l05dark_valley -->
+	<!-- Сцена  - транспортировка пленного -->
+	<info_portion id="val_nap1_phrase1_end"></info_portion>
+	<info_portion id="val_halfdead_phrase_end"></info_portion>
+	<info_portion id="val_nap1_stop_talk_to_bandit"></info_portion>
+
+	<info_portion id="val_escort_begin"></info_portion>
+	<info_portion id="val_escort_show_tip"></info_portion>
+	<info_portion id="val_escort_task_start"></info_portion>
+	<info_portion id="val_escort_start"></info_portion>
+
+	<info_portion id="val_escort_actor_at_ambush"><action>sak.val_escort_actor_at_ambush</action></info_portion>
+
+	<info_portion id="val_escort_combat"></info_portion>
+	<info_portion id="val_escort_nap1_start_combat"></info_portion>
+	<info_portion id="val_escort_actor_helped"></info_portion>
+
+	<!-- Напарник 1 -->
+	<info_portion id="val_escort_nap1_go_rescue"></info_portion>
+	<info_portion id="val_escort_nap1_no_thanx"></info_portion>
+	<info_portion id="val_escort_nap1_phrase3"></info_portion>
+	<info_portion id="val_escort_nap1_phrase1_end"></info_portion>
+	<info_portion id="val_escort_nap1_phrase2_end"></info_portion>
+	<info_portion id="val_escort_nap1_dead"></info_portion>
+
+	<info_portion id="val_escort_guard1_combat"></info_portion>
+	<info_portion id="val_escort_guard2_combat"></info_portion>
+	<info_portion id="val_escort_guard3_dead"></info_portion>
+	<info_portion id="val_escort_guard3_combat"></info_portion>
+	<info_portion id="val_escort_guard1_dead"></info_portion>
+	<info_portion id="val_escort_guard2_dead"></info_portion>
+	<info_portion id="val_escort_guards_free"></info_portion>
+
+	<info_portion id="val_escort_captive_enemy"></info_portion>
+	<info_portion id="val_escort_captive_dead"></info_portion>
+	<info_portion id="val_escort_captive_phrase1_end"></info_portion>
+	<info_portion id="val_escort_captive_fight"></info_portion>
+	<info_portion id="val_escort_captive_can_leave"></info_portion>
+	<info_portion id="val_escort_captive_give_info"></info_portion>
+
+	<info_portion id="val_escort_got_reward"></info_portion>
+
+	<info_portion id="val_escort_help_prisoner_task">
+		<!--<task>val_prisoner_help</task> -->
+	</info_portion>
+
+	<info_portion id="val_escort_scene_end"></info_portion>
+
+	<!-- SOS на бензоколонке -->
+	<info_portion id="val_sos_actor_near_wounded"></info_portion>
+	<info_portion id="val_sos_give_tip"></info_portion>
+	<info_portion id="val_sos_give_tip_first"></info_portion>
+	<info_portion id="oksana_give_tip_first"></info_portion>
+	<info_portion id="val_sos_got_medkit"></info_portion>
+	<info_portion id="val_sos_dead"></info_portion>
+	<info_portion id="val_sos_task_finish"></info_portion>
+	<info_portion id="val_sos_give_info"></info_portion>
+	<info_portion id="val_sos_scene_end"></info_portion>
+
+	<!-- Рейд солдат -->
+	<info_portion id="val_raid_start"></info_portion>
+	<info_portion id="val_raid_move_out"></info_portion>
+	<info_portion id="val_raid_end"></info_portion>
+
+	<!-- Заключенный бандитов -->
+	<info_portion id="val_prisoner_sit"></info_portion>
+	<info_portion id="val_prisoner_raid"></info_portion>
+	<info_portion id="val_prisoner_wait_actor"></info_portion>
+	<info_portion id="val_prisoner_door_unlocked"></info_portion>
+	<info_portion id="val_prisoner_dead"></info_portion>
+	<info_portion id="val_prisoner_give_info"></info_portion>
+	<info_portion id="val_prisoner_thanks"></info_portion>
+	<info_portion id="val_prisoner_scene_end"></info_portion>
+
+	<info_portion id="val_come_to_trader_task"><action>sak.val_raid_move_info</action></info_portion>
+
+	<info_portion id="val_actor_on_bandits_base"></info_portion>
+
+	<info_portion id="val_lager_bandits_show_leader_company"></info_portion>
+	<info_portion id="val_lager_bandits_show_nedostroyka_company"></info_portion>
+
+	<!-- Игрок нашел флешку Борова -->
+	<info_portion id="val_borov_dead"></info_portion>
+	<info_portion id="val_actor_has_borov_key"><article>actor_has_borov_key</article></info_portion>
+	<info_portion id="val_actor_has_barman_key"></info_portion>
+
+	<!-- Игрок не ограблен Рашпилем -->
+	<info_portion id="krysyk_about_rashpil"></info_portion>
+
+	<info_portion id="val_actor_leave_bandits_base"></info_portion>
+
+	<info_portion id="val_x18_door_open"></info_portion>
+
+	<!-- Погоня -->
+	<info_portion id="val_chase_start"></info_portion>
+
+<!-- info_l06dark_valley_u -->
+
+	<!-- Кодовый замок 1 -->
+	<info_portion id="dar_codelock1_unlock"></info_portion>
+	<info_portion id="dar_codelock2_unlock"></info_portion>
+
+	<!-- Игрок нашел документы -->
+	<info_portion id="dar_actor_got_docs"></info_portion>
+
+	<!-- Игрок нашел флешку с паролем -->
+	<info_portion id="dar_password_info1">
+		<article>dar_password_info1</article>
+		<article>dar_password_info11</article>
+	</info_portion>
+
+	<info_portion id="dar_password_info1_know"></info_portion>
+
+	<!-- Игрок нашел документы с паролем -->
+	<info_portion id="dar_password_info2">
+		<article>dar_password_info2</article>
+		<article>dar_password_info22</article>
+	</info_portion>
+
+	<info_portion id="dar_password_info2_know"></info_portion>
+
+	<info_portion id="dar_document1">
+		<article>dar_document1</article>
+	</info_portion>
+
+	<info_portion id="dar_document2">
+		<article>dar_document2</article>
+	</info_portion>
+
+	<info_portion id="dar_document3">
+		<article>dar_document3</article>
+	</info_portion>
+
+	<info_portion id="dar_document4">
+		<article>dar_document4</article>
+	</info_portion>
+
+	<info_portion id="x18_actor_fall">
+	</info_portion>
+
+	<info_portion id="dar_x18_dream"></info_portion>
+
+	<!-- Игрок нашел документы 5 -->
+	<info_portion id="dar_document5"><article>dar_document5</article></info_portion>
+
+	<!-- Вспомогательные инфопоршены -->
+	<info_portion id="x18_door2"></info_portion>
+	<info_portion id="x18_door2_knock_stop"></info_portion>
+	<info_portion id="dar_open_door1"></info_portion>
+	<info_portion id="dar_open_door2"></info_portion>
+	<info_portion id="info_knock"></info_portion>
+	<info_portion id="dar_podval"></info_portion>
+
+	<!-- Кодовые двери -->
+	<info_portion id="dar_door1_closed">
+	<!-- <task>dar_codedoor_1</task> -->
+	</info_portion>
+	<info_portion id="dar_door2_closed">
+	<!-- <task>dar_codedoor_2</task> -->
+	</info_portion>
+
+	<!-- Дверь полтергейста -->
+	<info_portion id="dar_door3_closed"></info_portion>
+	<info_portion id="dar_door3_free"></info_portion>
+
+	<!-- Дверь полтергейста -->
+	<info_portion id="dar_ring_spawn1"></info_portion>
+	<info_portion id="dar_ring_spawn2_1"></info_portion>
+	<info_portion id="dar_ring_spawn2_2"></info_portion>
+	<info_portion id="dar_ring_spawn2"></info_portion>
+
+<!-- info_l07rostok -->
+
+	<!-- BAR -->
+    <info_portion id="bar_bar_square_1_state_1"></info_portion>
+    <info_portion id="bar_bar_square_1_state_2"></info_portion>
+    <info_portion id="bar_bar_square_1_state_3"></info_portion>
+
+    <info_portion id="bar_bar_square_2_state_1"></info_portion>
+    <info_portion id="bar_bar_square_2_state_2"></info_portion>
+    <info_portion id="bar_bar_square_2_state_3"></info_portion>
+
+    <info_portion id="bar_bar_square_3_state_1"></info_portion>
+    <info_portion id="bar_bar_square_3_state_2"></info_portion>
+    <info_portion id="bar_bar_square_3_state_3"></info_portion>
+	
+	<info_portion id="bar_barman_need_room"></info_portion>
+
+	<!-- BAR HUNTER QUEST -->
+	<info_portion id="bar_bar_hunter_quest_start"><article>tex_bar_hunter_quest</article>
+		<!--<task>bar_hunter_rifle</task>-->
+	</info_portion>
+	<info_portion id="bar_bar_hunter_quest_find_rifle"></info_portion>                                                     
+	<info_portion id="bar_bar_hunter_quest_finish"><article_disable>tex_bar_hunter_quest</article_disable></info_portion>
+
+	<!-- DOLG BASE -->
+	<info_portion id="bar_dolg_base_pass"></info_portion>
+
+        <!-- Отметиться у начальника охраны Долга -->
+	<info_portion id="bar_dolg_base_rules_start"></info_portion>
+	<info_portion id="bar_dolg_base_rules_talk"></info_portion>	
+	<info_portion id="bar_dolg_base_rules_finish"></info_portion>
+
+	<info_portion id="bar_dolg_bunker_pass"></info_portion>
+
+	<info_portion id="bar_dolg_community_leader"></info_portion>
+
+	<info_portion id="mil_kurjer_voronin_talk"><article>tex_mil_kurjer_voronin</article></info_portion>
+
+	<info_portion id="bar_voronin_dead"></info_portion>
+
+    <!-- BAR DOLG TERRITORY -->
+    <info_portion id="bar_dolg_territory_1_hit"></info_portion>
+    <info_portion id="bar_dolg_territory_2_hit"></info_portion>
+    <info_portion id="bar_dolg_territory_kill"></info_portion>
+    
+    <info_portion id="bar_territory_nodolg_1_hit"></info_portion>
+    <info_portion id="bar_territory_nodolg_2_hit"></info_portion>
+    <info_portion id="bar_territory_nodolg_kill"></info_portion>
+    <info_portion id="bar_dolg_territory_1_hit_notify"></info_portion>
+    <info_portion id="bar_dolg_territory_2_hit_notify"></info_portion>
+    <info_portion id="bar_dolg_territory_kill_notify"></info_portion>
+    
+	<!-- Круглов идёт на Янтарь/Круглов помер -->
+	<info_portion id="bar_kruglov_follow_actor"></info_portion>
+    <info_portion id="bar_heli_scene_professor_die"></info_portion>
+
+    <!-- экс-наёмники, ныне - бандиты -->
+    <info_portion id="rostok_sniper_cheat"></info_portion>
+    <info_portion id="rostok_sniper_to_walker"></info_portion>
+    <info_portion id="rostok_sniper_1_die"></info_portion>
+    <info_portion id="rostok_sniper_2_die"></info_portion>
+    <info_portion id="rostok_sniper_3_die"></info_portion>
+    <info_portion id="rostok_sniper_4_die"></info_portion>
+	
+	<!-- Волкодав и ко -->
+	<info_portion id="dt_merc_baze_pass_on"></info_portion>
+	<info_portion id="dt_merc_baze_pass_off"></info_portion>
+	<info_portion id="dt_merc_baze_pass_fire"></info_portion>
+	<info_portion id="sak_ros_merk_out"></info_portion>									
+    <info_portion id="rostok_ambush_killer_1_die"></info_portion>
+    <info_portion id="rostok_ambush_killer_2_die"></info_portion>
+    <info_portion id="rostok_ambush_killer_3_die"></info_portion>
+	<info_portion id="rostok_ambush_killer_4_die"></info_portion>
+
+    <!-- BAR BARMEN JOB -->
+
+        <!-- FIND DOCUMENTS -->
+    <info_portion id="bar_darklab_document_start">
+		<!--<task>bar_darklab_documents</task>-->
+		<article>journal_before_darklab_documents</article>
+    </info_portion>
+	<info_portion id="bar_darklab_document_gain">
+		<article>journal_bar_darklab_documents</article>
+	</info_portion>
+	<info_portion id="bar_darklab_document_done"></info_portion>
+
+		 <!-- X16 DOCUMENTS -->
+    <info_portion id="bar_x16_documents_start">
+		 <!--<task>bar_x16_documents</task>-->
+		<article>journal_bar_x16_documents</article>
+    </info_portion>
+	<info_portion id="yan_x16_documents_gain"></info_portion>
+    <info_portion id="bar_x16_documents_done"></info_portion>
+
+		<!-- DEACTIVATE RADAR -->
+    <info_portion id="bar_deactivate_radar_start">
+		 <!--<task>bar_radar_deactivate</task>-->
+		<article>descr_bar_radar_deactivate</article>
+		<article>x8_order_code</article>
+		<article>journal_before_radar_task</article>
+    </info_portion>
+	<info_portion id="bar_deactivate_radar_done"></info_portion>
+
+    <info_portion id="ros_zombied_spawn_01"></info_portion>
+    <info_portion id="rostok_kruglov_give_flash"></info_portion>
+  
+  <info_portion id="barman_job_1">
+		<!--<task>bar_barman_job_1</task>-->
+	</info_portion>
+	<info_portion id="barman_job_2">
+		<!--<task>bar_barman_job_2</task>-->
+	</info_portion>
+	<info_portion id="barman_job_3">
+		<!--<task>bar_barman_job_3</task>-->
+	</info_portion>
+
+<!-- info_l08yantar -->
+	<!-- mixture quest -->
+	<info_portion id="kruglov_yantar_talk"></info_portion>
+	<info_portion id="kruglov_yantar_talk2"></info_portion>
+	<info_portion id="drugs_receipt"></info_portion>
+	<info_portion id="mixture_drink_ready"></info_portion>
+	<info_portion id="mixture_too_late_timer"></info_portion>
+	<info_portion id="mixture_reward"><article>mixture_reward</article></info_portion>
+
+	<info_portion id="yan_kill_brain_task_start"></info_portion>
+
+	<info_portion id="yan_find_vasilyev_start">
+		<!--<task>yan_find_vasilyev_task</task>-->
+		<article>journal_before_vasilyev_pda</article>
+	</info_portion>
+	<info_portion id="yan_find_vasilyev_end"><action>xr_effects.yantar_vasilyev_spam</action></info_portion>
+	<info_portion id="yan_find_laboratory_end">
+	</info_portion>
+	<info_portion id="yantar_vasilyev_info">
+		<!--<task>yan_kill_brain_task</task>-->
+	</info_portion>
+
+	<info_portion id="yantar_find_ghost_task_start">
+		<!--<task>yan_find_ghost_task</task>-->
+	</info_portion>
+
+	<info_portion id="yantar_hello_scientist"></info_portion>	
+	<info_portion id="yan_find_vasilyev_done"></info_portion>
+	<info_portion id="yan_scientist_start_research"></info_portion>
+
+	<info_portion id="yan_scientist_die">
+		<disable>yan_scientist_door_2_open</disable>
+		<disable>yan_scientist_door_1_open</disable>
+	</info_portion>
+	<info_portion id="yan_scientist_door_2_open"></info_portion>
+	<info_portion id="yan_scientist_door_1_open"></info_portion>														 												 
+	<info_portion id="yantar_attack_start"></info_portion>
+	<info_portion id="yantar_ghost_talk_2"></info_portion>
+	<info_portion id="yantar_klyk_talk"></info_portion>
+	
+	<info_portion id="yan_bunker_door_1_open"></info_portion>
+	<info_portion id="yan_bunker_door_1_close"></info_portion>
+	<info_portion id="yan_bunker_door_2_open"></info_portion>
+	<info_portion id="yan_kill_brain_done"></info_portion>
+
+	<!-- Yantar zombied respawn -->
+	<info_portion id="yan_zombied_respawn_01"></info_portion>
+	<info_portion id="yan_zombied_respawn_02"></info_portion>
+	<info_portion id="yan_zombied_respawn_03"></info_portion>
+	<info_portion id="yan_zombied_respawn_04"></info_portion>
+	<info_portion id="yan_zombied_respawn_05"></info_portion>
+	<info_portion id="yan_zombied_respawn_06"></info_portion>
+	<info_portion id="yan_zombied_respawn_07"></info_portion>
+	<info_portion id="yan_zombied_respawn_08"></info_portion>
+
+	<!-- Yantar Tunnel start -->
+	<info_portion id="yantar_tunnel_start"></info_portion>
+	<info_portion id="yantar_tunnel_finish">
+		<article>journal_after_kill_brain</article>
+	</info_portion>
+
+	<!-- Lab X16 switchers -->
+	<info_portion id="yan_labx16_switcher_1_off"></info_portion>
+	<info_portion id="yan_labx16_switcher_2_off"></info_portion>
+	<info_portion id="yan_labx16_switcher_3_off"></info_portion>
+	<info_portion id="yan_labx16_switcher_primary_off"></info_portion>
+	
+	<info_portion id="yan_labx16_switcher_1_end"></info_portion>
+	<info_portion id="yan_labx16_switcher_2_end"></info_portion>
+	<info_portion id="yan_labx16_switcher_3_end"></info_portion>
+	<info_portion id="yan_labx16_switcher_primary_try"></info_portion>
+	
+	<!-- Spawn Provodnik -->
+	<info_portion id="yan_provodnik_spawn">
+		<!--<task>yan_provodnik_task</task>-->
+	</info_portion>
+	<info_portion id="yan_has_ghost_pda"></info_portion>
+	<info_portion id="yan_test_info"><action>sak_spawn.brainlab_zombied_zasada</action></info_portion>
+
+	<info_portion id="brain_snork_respawn_01"></info_portion>
+
+	<info_portion id="yan_giant_spawner_01"></info_portion>
+
+	<info_portion id="x16_zasada_2"></info_portion>
+	<info_portion id="x16_zasada_3"></info_portion>
+	<info_portion id="x16_zasada_4"></info_portion>
+	
+	<info_portion id="yan_tonnel_snork_spawn_1"></info_portion>
+	<info_portion id="yan_tonnel_snork_spawn_2"></info_portion>
+	<info_portion id="yan_tonnel_snork_spawn_3"></info_portion>
+	<info_portion id="yan_tonnel_snork_spawn_4"></info_portion>
+	<info_portion id="yan_tonnel_snork_spawn_5"></info_portion>
+
+<!-- info_l10military -->
+	<info_portion id="mil_first_visit"></info_portion>
+	<info_portion id="mil_dolg_freedom_done"></info_portion>
+	
+    <info_portion id="mil_kurjer_voronin_start"></info_portion>
+	<info_portion id="mil_kurjer_voronin_povar"></info_portion>
+
+	<!-- Выключение матюгальника -->
+	<info_portion id="mil_matugalnik_off"></info_portion>
+
+	<!-- Болтовня с охранником у ворот -->
+	<info_portion id="mil_cook_question_already"></info_portion>
+	<info_portion id="mil_lukash_question_already"></info_portion>
+	
+	<info_portion id="mil_ugrumy_dead"></info_portion>
+	
+	<info_portion id="mil_go_to_miser">
+		<!--<task>mil_go_to_miser</task>-->
+	</info_portion>
+	<info_portion id="mil_go_to_miser_end"></info_portion>
+	<info_portion id="mil_miser_dead"></info_portion>
+	
+	<!-- Нападение на базу Свободы -->
+	<info_portion id="mil_enemy_nearest"></info_portion>
+	
+	<info_portion id="mil_actor_nearest"></info_portion>
+	<info_portion id="mil_dolg_dialog_already"></info_portion>
+	
+	<!-- Разговоры с патрулями на базе Свободы -->
+	<info_portion id="mil_patrol1_talk"></info_portion>
+	<info_portion id="mil_patrol2_talk"></info_portion>
+	
+	<!-- Атака Долга -->
+	<info_portion id="mil_dolg_attack"></info_portion>
+	<info_portion id="mil_scull_dead"></info_portion>
+
+	<!-- База Свободы под атакой-->
+	<info_portion id="mil_freedom_under_attack"></info_portion>
+	
+	<!-- Диалоговые инфопоршены-->
+	<info_portion id="mil_lukash_guard_talked"></info_portion>
+	<!-- Диалог с долговцами-->
+	<info_portion id="mil_sniper_dead"></info_portion>
+	<info_portion id="mil_dolg_dead"></info_portion>
+	
+	<!-- Диалог с охранником у ворот-->
+	<info_portion id="mil_zoneguard_first"></info_portion>
+	<info_portion id="mil_zoneguard_talk"></info_portion>
+	<info_portion id="mil_zoneguard_dont_talk"></info_portion>
+	<info_portion id="mil_zoneguard_test1_passed"></info_portion>
+	<info_portion id="mil_zoneguard_test2_passed"></info_portion>
+
+	<!-- Диалог с патрулями-->
+	<info_portion id="mil_freedom_speak_patrol1"></info_portion>
+	<info_portion id="mil_freedom_speak_patrol2"></info_portion>
+	
+	<!-- Диалог с Максом-->
+	<info_portion id="mil_max_hello"></info_portion>
+	<info_portion id="mil_max_job"></info_portion>
+	<info_portion id="mil_max_job_complete"></info_portion>
+	<info_portion id="mil_max_dead"></info_portion>
+	
+	<!-- Диалог с Лукашем-->
+	<info_portion id="mil_lukash_dead"></info_portion>
+	<info_portion id="mil_blockpost_free_task"></info_portion>
+	<info_portion id="mil_lukash_dolg_task_complete"><action>sak.timer_max_things</action></info_portion>
+
+	<info_portion id="mil_cook_dead"></info_portion>
+	
+	<!-- Пьянка с поваром-->
+	<info_portion id="mil_freedom_cook_drink_1"></info_portion>
+	<info_portion id="mil_freedom_cook_drink_2"></info_portion>
+	<info_portion id="mil_freedom_cook_drink_3"></info_portion>
+
+	<info_portion id="mil_arsenal_inside"></info_portion>
+	
+	<!-- Гулаг Свободы у выхода на Радар -->
+	<info_portion id="mil_fblockpost_alarm"></info_portion>
+	<info_portion id="mil_fblockpost_quest"><article>journal_barier</article>		
+			<!--<task>mil_blockpost_job</task>-->
+	</info_portion>			
+	<info_portion id="mil_fblockpost_quest_complete"></info_portion>
+	<info_portion id="mil_fblockpost_quest_reward"></info_portion>
+	<info_portion id="mil_fblockpost_quest_fail"></info_portion>
+	<info_portion id="mil_fblockpost_rush_end"></info_portion>
+	<info_portion id="mil_fblockpost_ammo"></info_portion>
+	<info_portion id="mil_fblockpost_rush_wave1"></info_portion> <!-- см. эффекты в стейтах гулага -->
+	<info_portion id="mil_fblockpost_rush_wave2"><action>sak.barrier_spawn_effect(2)</action></info_portion>
+	<info_portion id="mil_fblockpost_rush_wave3"><action>sak.barrier_spawn_effect(3)</action></info_portion>
+	<info_portion id="mil_fblockpost_rush_wave4"></info_portion>
+	<info_portion id="mil_fblockpost_final"></info_portion>
+	<info_portion id="mil_fblockpost_spot"></info_portion>
+	<info_portion id="mil_fblockpost_spot_set"></info_portion>
+	<info_portion id="mil_fblockpost_spot_remove"></info_portion>
+	<info_portion id="mil_actor_blockpost"></info_portion>
+	<info_portion id="mil_neutral_commander_start"></info_portion>
+	<info_portion id="mil_fblockpost_actor_outside"></info_portion>
+	<info_portion id="mil_freedom_commander_talk"></info_portion>
+	<info_portion id="mil_fblockpost_commander_dead"></info_portion>
+	
+	<!-- Задача Cкряги -->
+	<info_portion id="mil_miser_task">
+		<!--<task>mil_hunters_task</task>-->
+	</info_portion>
+	<info_portion id="mil_controller_dead"></info_portion>
+	<info_portion id="mil_miser_task_complete"></info_portion>
+	<info_portion id="mil_miser_task_failed"></info_portion>
+	<info_portion id="mil_after_hunt_talked"></info_portion>
+	<info_portion id="mil_bloodsucker_dead"></info_portion>													 
+	<info_portion id="mil_bloodsucker1_dead"></info_portion>
+	<info_portion id="mil_bloodsucker2_dead"></info_portion>
+	<info_portion id="mil_bloodsucker3_dead"></info_portion>
+	<info_portion id="mil_bloodsucker4_dead"></info_portion>
+	<!-- Охотнички, мля -->
+	<info_portion id="mil_hunt_ready"></info_portion>
+	<info_portion id="mil_controller_ready">
+		<!--<task>mil_kill_controller</task>-->
+	</info_portion>
+	<info_portion id="mil_hunt_end"></info_portion>
+	<info_portion id="mil_hunter_after_dialog"></info_portion>
+
+	<info_portion id="mil_village_bloodsucker1"></info_portion>
+	<info_portion id="mil_village_bloodsucker2"></info_portion>
+	<info_portion id="mil_village_bloodsucker3"></info_portion>
+	
+	<info_portion id="mil_screw_talk"></info_portion>
+	<info_portion id="mil_screw_talk_short"></info_portion>
+	
+	<info_portion id="mil_actor_in_kamp_zone"></info_portion>
+	
+	<info_portion id="mil_crazy_dead"></info_portion>
+	
+	<info_portion id="mil_courier_doc">
+		<article>mil_courier_doc</article>
+	</info_portion>
+  
+<!-- info_l10radar -->
+
+	<info_portion id="rad_code_door_found">
+	</info_portion>
+	<info_portion id="rad_code_door_unlocked">
+	</info_portion>
+
+	<info_portion id="rad_lab_door_unlocked">
+	</info_portion>
+	
+	<info_portion id="rad_start_cache_guards">
+	</info_portion>
+	
+	<info_portion id="rad_alarm">
+	</info_portion>
+	
+	<info_portion id="rad_after_antenna_turned_off">
+	</info_portion>
+	
+	<info_portion id="rad_here_i_come">
+	</info_portion>	
+	
+	<info_portion id="rad_pre_drop_barrel3">
+	</info_portion>		
+
+	<info_portion id="rad_pre_drop_barrel4">
+	</info_portion>		
+
+	<info_portion id="rad_drop_barrel1">
+	</info_portion>	
+	
+	<info_portion id="rad_drop_barrel2">
+	</info_portion>	
+	
+	<info_portion id="rad_drop_barrel3">
+	</info_portion>
+	
+	<info_portion id="rad_drop_barrel4">
+	</info_portion>	
+	
+	<info_portion id="rad_drop_barrel5">
+	</info_portion>	
+	
+	<info_portion id="rad_start_ambush_after_tramplin">
+	</info_portion>
+	
+	<info_portion id="rad_start_far_road_ambush">
+	</info_portion>		
+	
+	<info_portion id="rad_start_far_road_btr_ambush">
+	</info_portion>	
+		
+	<info_portion id="rad_start_ambush_after_valley">
+	</info_portion>
+	
+	<info_portion id="rad_start_snork1_jumping">
+	</info_portion>	
+	
+	<info_portion id="rad_start_snork1_jumping2">
+	</info_portion>
+	
+	<info_portion id="bun_patrol_start">
+		<!--<article>rad_sleep_info</article>-->
+	</info_portion>	
+	
+	<info_portion id="bun_actor_fall">
+	</info_portion>	
+	
+	<info_portion id="bun_actor_vstal">
+	</info_portion>	
+	
+	<info_portion id="bun_ptr1">
+	        <article>bun_code</article>
+	</info_portion>
+	
+	<info_portion id="bun_ptr2">
+	</info_portion>
+	
+	<info_portion id="bun_ptr3">
+	</info_portion>
+	
+	<info_portion id="bun_ptr4">
+	</info_portion>
+
+<!-- info_l11pripyat -->
+    
+    <info_portion id="pri_monolith_spawn1"></info_portion>
+    <info_portion id="pri_monolith_spawn2"></info_portion>
+
+    <info_portion id="pri_monolith_respawn_1"></info_portion>
+
+<!-- info_l12u_sarcofag -->
+
+	<!-- поиск Монолита -->
+	<info_portion id="sar_monolith_call">
+		<!--<task>sar_monolith</task>-->
+	</info_portion>
+
+	<info_portion id="mon_ambush"></info_portion>	
+	<info_portion id="mon_1_trigger"></info_portion>
+	<info_portion id="mon_2_trigger"></info_portion>
+	<info_portion id="mon_3_trigger"></info_portion>
+	
+	<!-- Sarcofag 2 -->
+	<info_portion id="sar2_teleport_start"></info_portion>
+	<info_portion id="sar2_monolith_rock"></info_portion>
+	<info_portion id="sar2_monolith_end"></info_portion>
+
+	<info_portion id="sar2_monolith_miracle"></info_portion>
+
+	<info_portion id="mon_door_unlocked"></info_portion>
+	
+	<info_portion id="sar_mon_poltergeist_1_spawn"></info_portion>
+	<info_portion id="sar_mon_poltergeist_2_spawn"></info_portion>
+	<info_portion id="sar_mon_poltergeist_3_spawn"></info_portion>
+	<info_portion id="sar_mon_poltergeist_1_dead"></info_portion>
+	<info_portion id="sar_mon_poltergeist_2_dead"></info_portion>
+	<info_portion id="sar_mon_poltergeist_3_dead"></info_portion>
+
+<!-- info_portions -->
+    <info_portion id="storyline_actor_start">
+    <!--<task>storyline_eliminate_gunslinger</task>-->
+    </info_portion>
+
+    <info_portion id="global_dialogs">
+    <dialog>actor_break_dialog</dialog>
+<!--    <dialog>actor_help_wounded</dialog>   -->
+    </info_portion>
+
+  <!-- special info portion that sends to actor when it
+    use in-game UI (PDA, Inventory, etc)-->
+    
+    <info_portion id="ui_pda">
+		<disable>ui_pda_hide</disable>
+    </info_portion>
+    <info_portion id="ui_pda_hide">
+		<disable>ui_pda</disable>
+    </info_portion>
+          
+   <info_portion id="ui_pda_contacts"></info_portion>
+   <info_portion id="ui_pda_contacts_hide"></info_portion>
+   
+   <info_portion id="ui_pda_map_local"></info_portion>
+   <info_portion id="ui_pda_map_global"></info_portion>
+   
+   <info_portion id="ui_pda_news"></info_portion>
+   <info_portion id="ui_pda_news_hide"></info_portion>
+   
+   <info_portion id="ui_pda_jobs_failed"></info_portion>
+   <info_portion id="ui_pda_jobs_accomplished"></info_portion>
+   <info_portion id="ui_pda_jobs_current"></info_portion>
+   
+    <info_portion id="ui_pda_jobs">
+		<disable>ui_pda_jobs_hide</disable>
+    </info_portion>
+    <info_portion id="ui_pda_jobs_hide">
+		<disable>ui_pda_jobs</disable>
+    </info_portion>
+
+   
+   <info_portion id="ui_pda_contracts"></info_portion>
+   
+   <info_portion id="ui_pda_diary"></info_portion>
+   <info_portion id="ui_pda_diary_hide"></info_portion>
+      
+   
+   <info_portion id="ui_pda_encyclopedia"></info_portion>
+   <info_portion id="ui_pda_encyclopedia_hide"></info_portion>
+   
+   <info_portion id="ui_pda_actor_info"></info_portion>
+   <info_portion id="ui_pda_ranking"></info_portion>
+   <info_portion id="ui_pda_events"></info_portion>
+   
+   <info_portion id="ui_inventory">
+		<disable>ui_inventory_hide</disable>
+   </info_portion>
+   <info_portion id="ui_inventory_hide">
+		<disable>ui_inventory</disable>
+   </info_portion>
+
+    <info_portion id="ui_talk">
+		<disable>ui_talk_hide</disable>
+    </info_portion>
+    <info_portion id="ui_talk_hide">
+		<disable>ui_talk</disable>
+    </info_portion>
+
+    <info_portion id="ui_trade">
+		<disable>ui_trade_hide</disable>
+    </info_portion>
+    <info_portion id="ui_trade_hide">
+		<disable>ui_trade</disable>
+    </info_portion>
+
+    <info_portion id="ui_car_body">
+		<disable>ui_car_body_hide</disable>
+    </info_portion>
+    <info_portion id="ui_car_body_hide">
+		<disable>ui_car_body</disable>
+    </info_portion>
+	
+</game_information_portions>

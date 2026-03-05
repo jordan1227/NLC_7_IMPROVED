@@ -1,0 +1,10 @@
+[logic]
+active = ph_idle@idle
+
+[ph_idle@idle]
+on_info = {+prizrak_news_info} ph_idle@work
+tips = block_door
+
+[ph_idle@work]
+tips = enter_to
+on_use = %=sak.add_new_dv_x10%

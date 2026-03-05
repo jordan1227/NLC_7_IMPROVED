@@ -1,0 +1,5 @@
+[logic]
+active = sr_idle
+
+[sr_idle]
+on_actor_inside = {+deactivate_radar_fall -war_zone_sleeps} nil %+war_zone_sleeps =sleep_manager.sleep_hits() +vergas_repair_end%

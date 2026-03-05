@@ -1,0 +1,21 @@
+[logic]
+active = ph_door@idle
+
+[ph_door@idle]
+on_info = {+strelok_red_info} ph_door@close
+
+[ph_door@close]
+locked = false
+closed = true
+snd_open_start = trader_door_open_start
+snd_close_start = trader_door_close_start
+snd_close_stop = trader_door_close_stop
+on_use = {=have_mil_crazy_key} %=remove_mil_crazy_key()% ph_door@open, ph_door@open
+
+[ph_door@open]
+locked = false
+closed = false
+snd_open_start = trader_door_open_start
+snd_close_start = trader_door_close_start
+snd_close_stop = trader_door_close_stop
+on_use = ph_door@close

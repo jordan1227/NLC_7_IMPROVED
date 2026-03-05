@@ -1,0 +1,1030 @@
+
+[logic@art_exchanger_mil]
+active = walker@art_exchanger_mil_day
+trade = misc\shop_other\trade_art_exchanger.ltx
+on_death = death@art_exchanger_bar
+
+[walker@art_exchanger_mil_day]
+path_walk = day_walk_way
+path_look = day_way_look
+meet = meet@art_exchanger_mil
+danger = danger_condition@art_exchanger_bar
+on_info = {!is_day}  walker@art_exchanger_mil_nig
+
+
+[walker@art_exchanger_mil_nig]
+path_walk = nig_walk_way
+path_look = nig_way_look
+meet = meet@art_exchanger_mil
+danger = danger_condition@art_exchanger_bar
+on_info = {=is_day}  walker@art_exchanger_mil_day
+
+[logic@art_exchanger_bar]
+active = walker@art_exchanger_bar
+trade = misc\shop_other\trade_art_exchanger.ltx
+on_death = death@art_exchanger_bar
+
+[walker@art_exchanger_bar]
+path_walk = walk_way
+path_look = way_look
+meet = meet@art_exchanger_guard
+danger = danger_condition@art_exchanger_bar
+
+[meet@art_exchanger_guard]
+use			= true
+use_wpn		= false
+abuse       = true
+meet_dialog	= art_exchanger_dialog_start
+
+[meet@art_exchanger_mil]
+use			= true
+use_wpn		= false
+abuse       = true
+meet_dialog	= art_exchanger_dialog_start
+
+[danger_condition@art_exchanger_bar]
+ignore_distance = 1
+
+[death@art_exchanger_bar]
+on_info = {=killed_by_actor} %+art_exchanger_umer =sak.gg_bandit()%, %+art_exchanger_umer%
+
+[logic@bar_dolg_petrenko]
+active = walker@bar_dolg_petrenko
+trade = misc\shop_petrenko\trade_petrenko.ltx
+on_death = death@bar_dolg_petrenko
+inv_max_weight = 10000
+
+[death@bar_dolg_petrenko]
+on_info = %+petrenko_dead%
+
+[walker@bar_dolg_petrenko]
+path_walk = walk
+path_look = look
+meet = meet@bar_dolg_petrenko
+on_actor_dist_le_nvis = 5 | remark@bar_dolg_petrenko
+
+[remark@bar_dolg_petrenko]
+anim = guard
+target = actor
+snd = bar_dolg_petrenko_hello
+meet = meet@bar_dolg_petrenko
+on_timer = 5000|walker@bar_dolg_petrenko2
+on_signal = sound_end| walker@bar_dolg_petrenko2
+
+[walker@bar_dolg_petrenko2]
+target = actor
+path_walk = walk
+path_look = look
+meet = meet@bar_dolg_petrenko
+
+[meet@bar_dolg_petrenko]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+victim = 3|actor
+victim_wpn = 3|actor
+
+[logic@bar_dolg_petrenko_off]
+active = kamp@bar_dolg_petrenko_kamp_offline
+
+[kamp@bar_dolg_petrenko_kamp_offline]
+center_point = kamp_wait
+
+
+[logic@dt_merc_baze_post1]
+active = walker@dt_merc_baze_post1
+combat_ignore = combat_ignore@dt_merc_baze
+danger = danger_condition@dt_merc_baze
+on_hit = hit@volkodav
+on_death = death@volkodav
+
+[walker@dt_merc_baze_post1]
+path_walk = volkodav_walk_way
+path_look = volkodav_way_look
+meet = meet@volkodav
+combat_ignore_cond = {-dt_merc_baze_pass_fire =fighting_actor}
+;on_info = {+dt_merc_baze_pass_fire} %=fighting_actor%
+danger = danger_condition@dt_merc_baze
+
+[logic@dt_merc_baze_post2]
+active = walker@dt_merc_baze_post2
+combat_ignore = combat_ignore@dt_merc_baze
+danger = danger_condition@dt_merc_baze
+on_hit = hit@volkodav
+on_death = death@merc1
+
+[walker@dt_merc_baze_post2]
+path_walk = merc1_walk_way
+path_look = merc1_way_look
+meet = meet@merc1
+combat_ignore_cond = {-dt_merc_baze_pass_fire =fighting_actor}
+danger = danger_condition@dt_merc_baze
+
+[logic@dt_merc_baze_post3]
+active = walker@dt_merc_baze_post3
+combat_ignore = combat_ignore@dt_merc_baze
+danger = danger_condition@dt_merc_baze
+on_hit = hit@volkodav
+on_death = death@merc2
+
+[walker@dt_merc_baze_post3]
+path_walk = merc2_walk_way
+path_look = merc2_way_look
+combat_ignore_cond = {-dt_merc_baze_pass_fire =fighting_actor}
+danger = danger_condition@dt_merc_baze
+
+
+[logic@dt_merc_baze_post4]
+active = walker@dt_merc_baze_post4
+combat_ignore = combat_ignore@dt_merc_baze
+danger = danger_condition@dt_merc_baze
+on_hit = hit@volkodav
+on_death = death@merc3
+
+[walker@dt_merc_baze_post4]
+path_walk = merc3_walk_way
+path_look = merc3_way_look
+meet = meet@merc1
+combat_ignore_cond = {-dt_merc_baze_pass_fire =fighting_actor}
+danger = danger_condition@dt_merc_baze
+
+
+[logic@dt_merc_baze_post5]
+active = walker@dt_merc_baze_post5
+combat_ignore = combat_ignore@dt_merc_baze
+
+on_hit = hit@volkodav
+on_death = death@merc4
+
+[walker@dt_merc_baze_post5]
+path_walk = merc4_walk_way
+path_look = merc4_way_look
+combat_ignore_cond = {-dt_merc_baze_pass_fire =fighting_actor}
+danger = danger_condition@dt_merc_baze
+
+
+[meet@volkodav]
+meet_state 		= 5| {+dt_merc_baze_pass_on} guard, wait
+meet_state_wpn 	= 5| {+dt_merc_baze_pass_on} guard, wait
+victim 			= 5| actor
+victim_wpn 		= 5| actor
+use			= true
+use_wpn		= false
+abuse       = true
+meet_dialog		= volkodav_dt_dialog_start
+precond = visibility
+
+[meet@merc1]
+meet_state 		= 10| {+dt_merc_baze_pass_on} guard, wait
+meet_state_wpn 	= 10| {+dt_merc_baze_pass_on} guard, wait
+victim 			= 10| actor
+victim_wpn 		= 10| actor
+use			= true
+use_wpn		= false
+abuse       = true
+meet_dialog		= merc_dt_dialog_start
+precond = visibility
+
+[combat_ignore@dt_merc_baze]
+combat_ignore_cond = {-dt_merc_baze_pass_fire =fighting_actor}
+
+[danger_condition@dt_merc_baze]
+ignore_distance       = 10
+ignore_distance_grenade = 10
+ignore_types = corpse, sound
+danger_inertion_time_grenade = 0
+danger_inertion_time_corpse = 0
+danger_inertion_time_hit = 0
+
+[hit@volkodav]
+on_info = {=hit_by_actor} %+dt_merc_baze_pass_fire =sak.mil_abuse()%
+
+[death@volkodav]
+on_info = {=killed_by_actor} %+volkodav_umer +volkodav_killed_by_actor +dt_merc_baze_pass_fire =sak.mil_abuse()%, %+volkodav_umer%
+
+[death@merc1]
+on_info = {=killed_by_actor} %+rostok_ambush_killer_1_die +dt_merc_baze_pass_fire =sak.mil_abuse()%, %+rostok_ambush_killer_1_die%
+
+[death@merc2]
+on_info = {=killed_by_actor} %+rostok_ambush_killer_2_die +dt_merc_baze_pass_fire =sak.mil_abuse()%, %+rostok_ambush_killer_2_die%
+
+[death@merc3]
+on_info = {=killed_by_actor} %+rostok_ambush_killer_3_die +dt_merc_baze_pass_fire =sak.mil_abuse()%, %+rostok_ambush_killer_3_die%
+
+[death@merc4]
+on_info = {=killed_by_actor} %+rostok_ambush_killer_4_die +dt_merc_baze_pass_fire =sak.mil_abuse()%, %+rostok_ambush_killer_4_die%
+
+
+[danger@bar_inside]
+ignore_distance = 40
+
+[logic@bar_visitors_kamp1]
+active = kamp@bar_visitors_kamp1
+
+[kamp@bar_visitors_kamp1]
+center_point = kamp_1
+soundgroup = bar_visitors_kamp1
+danger = danger@bar_inside
+
+[logic@bar_visitors_kamp2]
+active = kamp@bar_visitors_kamp2
+
+[kamp@bar_visitors_kamp2]
+center_point = kamp_2
+soundgroup = bar_visitors_kamp2
+danger = danger@bar_inside
+
+[logic@bar_visitors_kamp3]
+active = kamp@bar_visitors_kamp3
+
+[kamp@bar_visitors_kamp3]
+center_point = kamp_3
+soundgroup = bar_visitors_kamp3
+danger = danger@bar_inside
+
+[logic@bar_visitors_walker]
+active = walker@bar_visitors_walker
+
+[walker@bar_visitors_walker]
+path_walk = walker_walk
+meet = meet@bar_visitors_walker
+danger = danger@bar_inside
+sound_idle = state
+
+[meet@bar_visitors_walker]
+meet_state 		= 3| guard@talk_hello|4| guard
+meet_state_wpn 	= 3| guard@talk_hello|4| guard
+victim 			= 3| actor
+victim_wpn 		= 3| actor
+use = true
+use_wpn = true
+
+; пост перед входом во двор "долга"
+
+[logic1@bar_dolg_general_guard_left]
+active = walker@bar_dolg_general_guard_left
+
+[walker@bar_dolg_general_guard_left]
+path_walk = guard_left_walk
+path_look = guard_left_look
+meet = meet@bar_dolg_general_guard_busy
+combat_ignore_cond = {=check_fighting(9524)}
+soundgroup = bar_dolg_base_guard1
+
+[logic2@bar_dolg_general_guard_right]
+active = walker@bar_dolg_general_guard_right
+
+[walker@bar_dolg_general_guard_right]
+path_walk = guard_right_walk
+path_look = guard_right_look
+meet = meet@bar_dolg_general_guard_busy
+combat_ignore_cond = {=check_fighting(9524)}
+soundgroup = bar_dolg_base_guard1
+
+[logic3@bar_dolg_general_guard_center]
+active = walker@bar_dolg_general_guard_center
+on_death = death@plichko
+
+[walker@bar_dolg_general_guard_center]
+path_walk = guard_center_walk
+path_look = guard_center_look
+meet = meet@bar_dolg_general_guard
+combat_ignore_cond = {=check_fighting(9524)}
+on_info = {+bar_dolg_base_guard_art_done} walker@plichko_zastava
+soundgroup = bar_dolg_base_guard1
+
+[walker@plichko_zastava]
+path_walk = plichko_walk_way
+path_look = plichko_way_look
+meet = meet@plichko_zastava
+danger = danger_condition@plichko_zastava
+
+[danger_condition@plichko_zastava]
+ignore_distance = 5
+
+[meet@plichko_zastava]
+use = true
+use_wpn = false
+abuse = true
+meet_talk_enabled = true
+victim 			= 5| actor
+victim_wpn 		= 5| actor
+precond			= visibility
+
+[death@plichko]
+on_info = %+plichko_dead%
+
+[meet@bar_dolg_general_guard]
+meet_dialog = bar_dolg_base_guard_start
+use = true
+use_wpn = true
+victim 			= 15| actor
+victim_wpn 		= 15| actor
+zone = bar_dolg_general_warn_zone|{+bar_dolg_base_pass}guard,threat@{+bar_dolg_base_pass}talk_hello,bar_dolg_guard_stop
+precond			= visibility
+
+[meet@bar_dolg_general_guard_busy]
+abuse = true
+use = false
+use_wpn = false
+victim 			= nil
+victim_wpn 		= nil
+meet_state 		= 5|guard@bar_dolg_guard_busy
+meet_state_wpn 	= 5|guard@bar_dolg_guard_busy
+precond			= usability
+
+[logic4@bar_dolg_general_kamp]
+active = kamp1@bar_dolg_general_kamp
+
+[kamp1@bar_dolg_general_kamp]
+center_point = kamp_center
+soundgroup = bar_dolg_general_kamp
+danger = danger@bar_inside
+
+[logic5@bar_dolg_general_patrol1]
+active = walker4@bar_dolg_general_patrol1
+
+[walker4@bar_dolg_general_patrol1]
+path_walk = patrol_1_walk
+path_look = patrol_1_look
+soundgroup = bar_dolg_general_patrol1
+combat_ignore_cond = {=check_fighting(9524)}
+danger = danger@bar_inside
+
+[logic6@bar_dolg_general_patrol2]
+active = walker5@bar_dolg_general_patrol2
+
+[walker5@bar_dolg_general_patrol2]
+path_walk = patrol_2_walk
+path_look = patrol_2_look
+soundgroup = bar_dolg_general_patrol1
+combat_ignore_cond = {=check_fighting(9524)}
+danger = danger@bar_inside
+
+[logic6@bar_dolg_general_camper]
+active = walker1@bar_dolg_general_camper
+
+[walker1@bar_dolg_general_camper]
+path_walk = camper_1_walk
+path_look = camper_1_look
+def_state_moving = assault
+def_state_moving_fire = assault_fire
+def_state_campering = hide
+def_state_campering_fire = hide_fire
+soundgroup = bar_dolg_general_patrol1
+combat_ignore_cond = {=check_fighting(9524)}
+danger = danger@bar_inside
+
+[logic7@bar_dolg_general_camper]
+active = walker2@bar_dolg_general_camper
+
+[walker2@bar_dolg_general_camper]
+path_walk = camper_2_walk
+path_look = camper_2_look
+def_state_moving = assault
+def_state_moving_fire = assault_fire
+def_state_campering = hide
+def_state_campering_fire = hide_fire
+soundgroup = bar_dolg_general_camper
+combat_ignore_cond = {=check_fighting(9524)}
+danger = danger@bar_inside
+
+[logic8@bar_dolg_general_camper]
+active = walker3@bar_dolg_general_camper
+
+[walker3@bar_dolg_general_camper]
+path_walk = camper_3_walk
+path_look = camper_3_look
+def_state_moving = assault
+def_state_moving_fire = assault_fire
+def_state_campering = hide
+def_state_campering_fire = hide_fire
+soundgroup = bar_dolg_general_camper
+combat_ignore_cond = {=check_fighting(9524)}
+danger = danger@bar_inside
+
+[logic9@bar_dolg_general_camper]
+active = walker4@bar_dolg_general_camper
+
+[walker4@bar_dolg_general_camper]
+path_walk = camper_4_walk
+path_look = camper_4_look
+def_state_moving = assault
+def_state_moving_fire = assault_fire
+def_state_campering = hide
+def_state_campering_fire = hide_fire
+soundgroup = bar_dolg_general_camper
+combat_ignore_cond = {=check_fighting(9524)}
+danger = danger@bar_inside
+
+[logic10@bar_dolg_general_camper]
+active = walker5@bar_dolg_general_camper
+
+[walker5@bar_dolg_general_camper]
+path_walk = camper_5_walk
+path_look = camper_5_look
+def_state_moving = assault
+def_state_moving_fire = assault_fire
+def_state_campering = hide
+def_state_campering_fire = hide_fire
+soundgroup = bar_dolg_general_camper
+combat_ignore_cond = {=check_fighting(9524)}
+danger = danger@bar_inside
+
+; ВЕТЕРАНЫ ДОЛГА
+
+[logic1@bar_dolg_veterans_guard_bunker1]
+active = walker@bar_dolg_veterans_guard_bunker
+
+[walker@bar_dolg_veterans_guard_bunker]
+path_walk = guard_bunker_1_walk
+path_look = guard_bunker_1_look
+meet = meet@bar_dolg_veterans_guard_bunker
+soundgroup = bar_dolg_veterans_guard_bunker
+combat_ignore_cond = {=check_fighting(9524)}
+danger = danger@bar_inside
+def_state_standing = guard
+
+[meet@bar_dolg_veterans_guard_bunker]
+meet_state 		= 5|guard
+meet_state_wpn 	= 5|guard
+meet_dialog = bar_dolg_guard_bunker_start 
+use = true
+use_wpn = true
+victim 			= 1| actor
+victim_wpn 		= 1| actor
+zone = bar_dolg_veterans_bunker_warn_zone|{-bar_dolg_community_leader}threat@bar_dolg_guard_stop,{+bar_dolg_community_leader}guard@talk_hello
+precond			= usability
+
+[logic2@bar_dolg_veterans_guard_bunker2]
+active = walker2@bar_dolg_veterans_guard_bunker
+
+[walker2@bar_dolg_veterans_guard_bunker]
+path_walk = guard_bunker_2_walk
+path_look = guard_bunker_2_look
+meet = meet@bar_dolg_veterans_guard_bunker
+soundgroup = bar_dolg_veterans_guard_bunker
+danger = danger@bar_inside
+combat_ignore_cond = {=check_fighting(9524)}
+def_state_standing = guard
+
+[logic3@bar_dolg_veterans_gates1]
+active = walker2@bar_dolg_veterans_gates1
+
+[walker2@bar_dolg_veterans_gates1]
+path_walk = guard_gates_walk1
+path_look = guard_gates_look1
+soundgroup = bar_dolg_veterans_gates1
+combat_ignore_cond = {=check_fighting(9524)}
+danger = danger@bar_inside
+
+[logic4@bar_dolg_veterans_gates2]
+active = walker3@bar_dolg_veterans_gates2
+
+[walker3@bar_dolg_veterans_gates2]
+path_walk = guard_gates_walk2
+path_look = guard_gates_look2
+soundgroup = bar_dolg_veterans_gates1
+combat_ignore_cond = {=check_fighting(9524)}
+danger = danger@bar_inside
+
+[logic5@bar_dolg_veterans_gates_alarm1]
+active = walker6@bar_dolg_veterans_gates_alarm1
+
+[walker6@bar_dolg_veterans_gates_alarm1]
+path_walk = guard_gates_walk1
+path_look = guard1_alarm
+soundgroup = bar_dolg_veterans_gates1
+combat_ignore_cond = {=check_fighting(9524)}
+danger = danger@bar_inside
+
+[logic6@bar_dolg_veterans_gates_alarm2]
+active = walker7@bar_dolg_veterans_gates_alarm2
+
+[walker7@bar_dolg_veterans_gates_alarm2]
+path_walk = guard_gates_walk2
+path_look = guard2_alarm
+soundgroup = bar_dolg_veterans_gates1
+combat_ignore_cond = {=check_fighting(9524)}
+danger = danger@bar_inside
+
+; БУНКЕР ДОЛГА
+
+[logic2@bar_dolg_bunker]
+active = walker2@bar_dolg_bunker
+
+[walker2@bar_dolg_bunker]
+path_walk = guard_2_walk
+path_look = guard_2_look
+meet = meet@bar_dolg_bunker
+soundgroup = bar_dolg_bunker
+combat_ignore_cond = {=check_fighting(9524)}
+danger = danger@bar_inside
+
+[logic3@bar_dolg_bunker]
+active = walker3@bar_dolg_bunker
+
+[walker3@bar_dolg_bunker]
+path_walk = rest_2_walk
+path_look = rest_2_look
+soundgroup = bar_dolg_bunker
+combat_ignore_cond = {=check_fighting(9524)}
+danger = danger@bar_inside
+
+[logic4@bar_dolg_bunker]
+active = walker4@bar_dolg_bunker
+
+[walker4@bar_dolg_bunker]
+path_walk = rest_1_walk
+path_look = rest_1_look
+soundgroup = bar_dolg_bunker
+combat_ignore_cond = {=check_fighting(9524)}
+danger = danger@bar_inside
+
+[logic5@bar_dolg_bunker]
+active = sleeper1@bar_dolg_bunker
+
+[sleeper1@bar_dolg_bunker]
+path_main = sleeper_1
+soundgroup = bar_dolg_bunker
+combat_ignore_cond = {=check_fighting(9524)}
+danger = danger@bar_inside
+
+[meet@bar_dolg_bunker]
+use = true
+use_wpn = true
+victim 			= 10| actor
+victim_wpn 		= 10| actor
+meet_state 		= 5|guard
+meet_state_wpn 	= 10|guard@threat_weap|7|threat@threat_weap|5|threat@threat_weap
+precond			= usability
+
+
+
+; Застава 1
+
+[logic@bar_dolg_zastava1_cammander_1]
+active = walker1@bar_dolg_zastava1_cammander_1
+on_death = death@kicenko
+
+[walker1@bar_dolg_zastava1_cammander_1]
+path_walk = commander_1_walk
+path_look = commander_1_look
+meet = meet@bar_dolg_zastava_comander1
+soundgroup = bar_dolg_zastava1
+danger = danger@zastava_1
+
+[death@kicenko]
+on_info = %+kicenko_dead%
+
+[logic@bar_dolg_zastava1_walker1]
+active = walker1@bar_dolg_zastava1_walker1
+
+[walker1@bar_dolg_zastava1_walker1]
+path_walk = guard_1_walk
+path_look = guard_1_look
+meet = meet@bar_dolg_zastava1
+soundgroup = bar_dolg_zastava1
+danger = danger@zastava_1
+
+[logic@bar_dolg_zastava1_walker2]
+active = walker2@bar_dolg_zastava1_walker2
+
+[walker2@bar_dolg_zastava1_walker2]
+path_walk = guard_2_walk
+path_look = guard_2_look
+meet = meet@bar_dolg_zastava1
+soundgroup = bar_dolg_zastava1
+danger = danger@zastava_1
+
+[logic@bar_dolg_zastava1_walker3]
+active = walker3@bar_dolg_zastava1_walker3
+
+[walker3@bar_dolg_zastava1_walker3]
+path_walk = guard_3_walk
+;path_look = guard_3_look
+meet = meet@bar_dolg_zastava1
+soundgroup = bar_dolg_zastava1
+danger = danger@zastava_1
+
+[meet@bar_dolg_zastava1]
+meet_state 		= 20| guard@wait|4| guard
+meet_state_wpn 	= 20| guard@wait| 15| threat@threat_weap
+victim 			= 20| actor
+victim_wpn 		= 20| actor
+use = true
+use_wpn = true
+meet_dialog = bar_dolg_zastava1
+precond			= visibility
+
+[meet@bar_dolg_zastava_comander1]
+meet_state 		= 10| guard@wait|4| guard
+meet_state_wpn 	= 10| guard@wait| 7| threat@threat_weap
+victim 			= 10| actor
+victim_wpn 		= 10| actor
+use = true
+use_wpn = false
+precond			= usability
+
+[danger@zastava_1]
+ignore_distance = 10
+
+; Застава 2
+
+[logic@bar_dolg_zastava2_walker1]
+active = walker@bar_dolg_zastava2_walker1
+
+[walker@bar_dolg_zastava2_walker1]
+path_walk = square_1_place_4_walk
+path_look = square_1_place_1_look
+meet = meet@bar_dolg_zastava2
+soundgroup = bar_dolg_zastava2
+danger = danger@zastava_1
+
+[logic@bar_dolg_zastava2_walker2]
+active = walker@bar_dolg_zastava2_walker2
+
+[walker@bar_dolg_zastava2_walker2]
+path_walk = square_1_place_6_walk
+path_look = square_1_place_6_look
+meet = meet@bar_dolg_zastava2
+soundgroup = bar_dolg_zastava2
+danger = danger@zastava_1
+
+[logic@bar_dolg_zastava2_walker3]
+active = walker@bar_dolg_zastava2_walker3
+
+[walker@bar_dolg_zastava2_walker3]
+path_walk = square_1_place_2_walk
+path_look = square_1_place_1_look
+meet = meet@bar_dolg_zastava2
+soundgroup = bar_dolg_zastava2
+danger = danger@zastava_1
+
+[meet@bar_dolg_zastava2]
+meet_state 		= 50| guard@talk_hello|4| guard
+meet_state_wpn 	= 50| guard@talk_hello| 20| threat@threat_weap
+victim 			= 20| actor
+victim_wpn 		= 20| actor
+use = true
+use_wpn = true
+meet_dialog = bar_dolg_zastava2
+precond			= usability
+
+;*******************************************************************
+; бандиты на стройке
+;*******************************************************************														
+
+[logic@bar_freedom_chaser_attack_hide_1]
+active = camper@bar_freedom_chaser_attack_hide_1
+
+[camper@bar_freedom_chaser_attack_hide_1]
+path_walk = hide_1_walk
+path_look = hide_1_look
+radius = 10
+def_state_moving = rush
+
+[logic@bar_freedom_chaser_attack_hide_2]
+active = camper@bar_freedom_chaser_attack_hide_2
+
+[camper@bar_freedom_chaser_attack_hide_2]
+path_walk = hide_2_walk
+path_look = hide_2_look
+radius = 10
+def_state_moving = rush
+
+[logic@bar_freedom_chaser_attack_hide_3]
+active = camper@bar_freedom_chaser_attack_hide_3
+
+[camper@bar_freedom_chaser_attack_hide_3]
+path_walk = hide_3_walk
+path_look = hide_3_look
+radius = 10
+def_state_moving = rush
+
+[logic@bar_freedom_chaser_attack_hide_4]
+active = camper@bar_freedom_chaser_attack_hide_4
+
+[camper@bar_freedom_chaser_attack_hide_4]
+path_walk = hide_4_walk
+path_look = hide_4_look
+radius = 10
+def_state_moving = rush
+
+;*******************************************************************
+; Ученные
+;*******************************************************************
+
+
+[meet@ecolog_2_crush]
+meet_state = 2|hide
+meet_state_wpn = 2|hide
+victim = actor
+victim_wpn = actor
+use = true
+use_wpn = true
+meet_dialog = bar_ecolog_crush_start_dialog
+precond			= visibility
+
+[meet@ecolog_3_crush]
+meet_state = 2|hide
+meet_state_wpn = 2|hide
+victim = actor
+victim_wpn = actor
+use = true
+use_wpn = true
+meet_dialog = bar_ecolog_crush_start_dialog
+precond			= visibility
+
+[meet@ecolog_4_crush]
+meet_state = 2|hide
+meet_state_wpn = 2|hide
+victim = actor
+victim_wpn = actor
+use = true
+use_wpn = true
+meet_dialog = bar_ecolog_crush_start_dialog
+precond			= visibility
+
+[meet@ecolog_kruglov]
+use = true
+use_wpn = true
+precond			= visibility
+
+[combat_ignore@botans]
+combat_ignore_cond = {!actor_enemy}
+
+[logic@bar_ecolog_crush_sniper_1]
+active = camper@bar_ecolog_crush_sniper_1
+on_hit = hit@ecolog_crush
+combat_ignore = combat_ignore@botans
+
+[camper@bar_ecolog_crush_sniper_1]
+path_walk = 1_walk_way
+path_look = 1_way_look
+danger = danger_condition@shustryi
+on_info = {+kruglov_follow_start} patrol@bar_ecolog_professor_companion_1
+meet = meet@ecolog_2_crush
+
+;***добавка фолловера****
+[patrol@bar_ecolog_professor_companion_1]
+path_walk = kruglov_way_1
+path_look = kruglov_look_1
+combat_ignore_cond = {!actor_enemy}
+on_info = {+kruglov_go_way_2} patrol@way_2_professor_companion_1
+danger = danger_condition@2
+wounded = wounded@ignore_kruglov
+meet = no_meet
+def_state_moving1 = assault
+def_state_moving2 = assault
+def_state_moving3 = assault
+formation = back
+commander = false
+
+[patrol@way_2_professor_companion_1]
+path_walk = kruglov_way_2
+path_look = kruglov_look_2
+combat_ignore_cond = {!actor_enemy}
+on_info = {+kruglov_way_2_end} kamp@way_2_end_companion
+danger = danger_condition@2
+wounded = wounded@ignore_kruglov
+meet = no_meet
+def_state_moving1 = assault
+def_state_moving2 = assault
+def_state_moving3 = assault
+formation = back
+commander = false
+
+[kamp@way_2_end_companion]
+center_point = kruglov_kamp_1
+combat_ignore_cond = {!actor_enemy}
+danger = danger_condition@2
+wounded = wounded@ignore_kruglov
+meet = no_meet
+
+;***end фолловера****
+
+[logic@bar_ecolog_crush_sniper_2]
+active = camper@bar_ecolog_crush_sniper_2
+on_hit = hit@ecolog_crush
+combat_ignore = combat_ignore@botans
+
+[camper@bar_ecolog_crush_sniper_2]
+path_walk = 2_walk_way
+path_look = 2_way_look
+danger = danger_condition@shustryi
+on_info = {+kruglov_follow_start} patrol@bar_ecolog_professor_companion_2
+meet = meet@ecolog_3_crush
+
+;***добавка фолловера****
+[patrol@bar_ecolog_professor_companion_2]
+path_walk = kruglov_way_1
+path_look = kruglov_look_1
+combat_ignore_cond = {!actor_enemy}
+on_info = {+kruglov_go_way_2} patrol@way_2_professor_companion_2
+danger = danger_condition@2
+wounded = wounded@ignore_kruglov
+meet = no_meet
+def_state_moving1 = assault
+def_state_moving2 = assault
+def_state_moving3 = assault
+formation = back
+commander = false
+
+[patrol@way_2_professor_companion_2]
+path_walk = kruglov_way_2
+path_look = kruglov_look_2
+combat_ignore_cond = {!actor_enemy}
+on_info = {+kruglov_way_2_end} kamp@way_2_end_companion
+danger = danger_condition@2
+wounded = wounded@ignore_kruglov
+meet = no_meet
+def_state_moving1 = assault
+def_state_moving2 = assault
+def_state_moving3 = assault
+formation = back
+commander = false
+
+;***end фолловера****
+
+[logic@bar_ecolog_crush_sniper_3]
+active = camper@bar_ecolog_crush_sniper_3
+on_hit = hit@ecolog_crush
+combat_ignore = combat_ignore@botans
+
+[camper@bar_ecolog_crush_sniper_3]
+path_walk = 3_walk_way
+path_look = 3_way_look
+danger = danger_condition@shustryi
+on_info = {+kruglov_follow_start} patrol@bar_ecolog_professor_companion_3
+meet = meet@ecolog_4_crush
+
+;***добавка фолловера****
+[patrol@bar_ecolog_professor_companion_3]
+path_walk = kruglov_way_1
+path_look = kruglov_look_1
+combat_ignore_cond = {!actor_enemy}
+on_info = {+kruglov_go_way_2} patrol@way_2_professor_companion_3
+danger = danger_condition@2
+wounded = wounded@ignore_kruglov
+meet = no_meet
+def_state_moving1 = assault
+def_state_moving2 = assault
+def_state_moving3 = assault
+formation = back
+commander = false
+
+[patrol@way_2_professor_companion_3]
+path_walk = kruglov_way_2
+path_look = kruglov_look_2
+combat_ignore_cond = {!actor_enemy}
+on_info = {+kruglov_way_2_end} kamp@way_2_end_companion
+danger = danger_condition@2
+wounded = wounded@ignore_kruglov
+meet = no_meet
+def_state_moving1 = assault
+def_state_moving2 = assault
+def_state_moving3 = assault
+formation = back
+commander = false
+
+;***end фолловера****
+
+;KRUGLOV
+[hit@ecolog_professor]
+
+[wounded@ignore_kruglov]
+hp_state        = 0|wounded_heavy@help_heavy
+hp_state_see    = 0|wounded_heavy@help_heavy
+hp_victim       = 0|nil
+hp_fight        = 0|false
+hp_cover        = 0|false
+
+[logic@bar_ecolog_professor]
+active = camper@bar_ecolog_professor
+on_death = death@ecolog_crush
+combat_ignore = combat_ignore@botans
+
+[camper@bar_ecolog_professor]
+path_walk = kruglov_walk_way
+path_look = kruglov_way_look
+danger = danger_condition@shustryi
+on_info = {=rostok_dist_to_actor_le(5) -ecolog_crush_professor_gg_know} remark@kruglov_dialog_1
+on_info2 = {+ecolog_crush_professor_gg_know -bar_kruglov_follow_actor -kruglov_follow_start} camper@bar_ecolog_professor_2
+on_info3 = {+bar_kruglov_follow_actor -kruglov_follow_start} remark@kruglov_dialog_2
+on_info4 = {+kruglov_follow_start} patrol@bar_ecolog_professor_companion
+meet = no_meet
+wounded = wounded@ignore_kruglov
+
+[camper@bar_ecolog_professor_2]
+path_walk = kruglov_walk_way
+path_look = kruglov_way_look
+danger = danger_condition@shustryi
+on_info = {+bar_kruglov_follow_actor -kruglov_follow_start} remark@kruglov_dialog_2
+on_info2 = {+kruglov_follow_start} patrol@bar_ecolog_professor_companion
+meet = meet@ecolog_kruglov
+wounded = wounded@ignore_kruglov
+
+[remark@kruglov_dialog_1]
+snd = kruglov_pda_help
+anim = hello
+target = actor
+meet = no_meet
+danger = danger_condition@2
+wounded = wounded@ignore_kruglov
+on_signal = sound_end| camper@bar_ecolog_professor_2
+
+[remark@kruglov_dialog_2]
+anim = guard_na
+target = actor
+meet = no_meet
+on_timer = 12000 |%+kruglov_follow_start% patrol@bar_ecolog_professor_companion
+danger = danger_condition@2
+wounded = wounded@ignore_kruglov
+
+
+;***добавка фолловера****
+[patrol@bar_ecolog_professor_companion]
+path_walk = kruglov_way_1
+path_look = kruglov_look_1
+on_signal = way_1_end | walker@kruglov_way_1_end
+combat_ignore_cond = {!actor_enemy}
+danger = danger_condition@2
+wounded = wounded@ignore_kruglov
+meet = no_meet
+def_state_moving1 = assault
+def_state_moving2 = assault
+def_state_moving3 = assault
+formation = back
+commander = true
+
+[walker@kruglov_way_1_end]
+path_walk = kruglov_way_1_end
+path_look = kruglov_look_1_end
+on_info = {+kruglov_go_way_2} patrol@go_way_2
+combat_ignore_cond = {!actor_enemy}
+danger = danger_condition@2
+wounded = wounded@ignore_kruglov
+meet = meet@kruglov_go_way_2
+
+[patrol@go_way_2]
+path_walk = kruglov_way_2
+path_look = kruglov_look_2
+on_signal = way_2_end | walker@kruglov_way_2_end
+combat_ignore_cond = {!actor_enemy}
+danger = danger_condition@2
+wounded = wounded@ignore_kruglov
+meet = no_meet
+def_state_moving1 = assault
+def_state_moving2 = assault
+def_state_moving3 = assault
+formation = back
+commander = true
+
+[walker@kruglov_way_2_end]
+path_walk = kruglov_way_2_end
+path_look = kruglov_look_2_end
+on_info = {+kruglov_way_2_end} kamp@way_2_end
+combat_ignore_cond = {!actor_enemy}
+danger = danger_condition@2
+wounded = wounded@ignore_kruglov
+meet = meet@way_2_end
+
+[kamp@way_2_end]
+center_point = kruglov_kamp_1
+combat_ignore_cond = {!actor_enemy}
+danger = danger_condition@2
+wounded = wounded@ignore_kruglov
+meet = meet@way_2_end
+
+[meet@kruglov_go_way_2]
+meet_state =  6|wait
+meet_state_wpn =  6|wait
+victim = actor
+victim_wpn = actor
+use = true
+use_wpn = true
+precond			= visibility
+meet_dialog	= kruglov_way_1_end_dialog
+
+[meet@way_2_end]
+use = true
+use_wpn = true
+precond			= visibility
+meet_dialog	= kruglov_way_2_end_dialog
+
+;***end фолловера****
+
+[death@ecolog_crush]
+on_info = {-kruglov_is_fly} %+bar_heli_scene_professor_die%
+
+[danger_condition@2]
+ignore_distance       = 0
+ignore_distance_grenade = 0
+ignore_distance_corpse  = 0
+ignore_distance_danger_hit= 0
+ignore_distance_sound   = 0
+danger_inertion_time_grenade = 0
+danger_inertion_time_corpse = 0
+danger_inertion_time_hit = 0
+danger_inertion_time_sound = 0

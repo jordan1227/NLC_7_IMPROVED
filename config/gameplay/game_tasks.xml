@@ -1,0 +1,919 @@
+<?xml version='1.0' encoding="windows-1251" ?>
+<game_tasks_data>
+#include "gameplay\game_tasks_by_vendor.xml"
+
+	<game_task id="semena_task">
+	<title>tex_semena_task_name</title>
+	<objective>
+		<text>tex_semena_task_name</text>
+		<icon>ui_iconsTotal_sar_monolith</icon>
+		<infoportion_complete>gg_has_pass_info</infoportion_complete>
+		<article>tex_semena_task</article>
+	</objective>
+	<objective>
+		<text>semena_task_obj_1</text>
+		<infoportion_complete>sema_one_info</infoportion_complete>			
+	</objective>
+	<objective>
+		<text>semena_task_obj_2</text>
+		<infoportion_complete>sema_two_info</infoportion_complete>			
+	</objective>
+	<objective>
+		<text>semena_task_obj_3</text>
+		<infoportion_complete>sema_three_info</infoportion_complete>			
+	</objective>
+	<objective>
+		<text>semena_task_obj_4</text>
+		<infoportion_complete>lebedev_message</infoportion_complete>			
+	</objective>	
+	<objective>
+		<text>semena_task_obj_5</text>
+		<infoportion_complete>gg_has_pass_info</infoportion_complete>			
+	</objective>
+        </game_task>
+
+         <game_task id="yan_semenov_resiept">
+		<title>Получить рецепт Электробус</title>
+		<objective>
+			<text>Добыть почку электрохимеры</text>
+			<icon>ui_iconsTotal_monster_part</icon>
+			<infoportion_complete>yan_semenov_resiept_done</infoportion_complete>
+			<infoportion_fail>yan_semenov_umer</infoportion_fail>
+			<article>tex_yan_semenov_resiept</article>
+		</objective>
+		<objective>
+			<text>Добыть почку ЭХ</text>
+			<function_complete>sak_dialog.have_mutant_e_chimera_kidney</function_complete>
+			<infoportion_set_complete>yan_semenov_resiept_have</infoportion_set_complete>
+		</objective>
+		<objective>
+			<text>Принести Семенову</text>
+			<map_location_type hint="Семенов">blue_location</map_location_type>
+			<object_story_id>yan_semenov_help</object_story_id>
+			<infoportion_complete>yan_semenov_resiept_done</infoportion_complete>		
+		</objective>
+	</game_task>
+	
+	<game_task id="bar_korovan">
+		<title>Пропавший караван с оружием</title>
+		<objective key="0">
+			<text>Найти караван с оружием</text>
+			<icon>ui_iconsTotal_find_item</icon>
+			<infoportion_complete>bar_korovan_done</infoportion_complete>
+			<infoportion_fail>muller_umer</infoportion_fail>
+			<article>tex_bar_korovan_0</article>
+		</objective>
+		<objective key="1">
+			<text>Узнать судьбу сопровождающего</text>
+			<infoportion_complete>bar_korovan_info1</infoportion_complete>
+		</objective>
+		<objective key="2">
+			<text>Получить информацию о караване</text>
+			<infoportion_complete>bar_korovan_info2</infoportion_complete>	
+
+		</objective>
+		<objective key="3">
+			<text>Рассказать о караване Информатору</text>
+			<infoportion_complete>bar_korovan_info3</infoportion_complete>	
+
+		</objective>
+		<objective key="4">
+			<text>Проверить наличие груза</text>
+			<map_location_type hint="Груз каравана">crlc_big</map_location_type>
+			<object_story_id>agr_secret_0020</object_story_id>
+			<map_location_hidden>1</map_location_hidden>
+			<infoportion_complete>bar_korovan_info4</infoportion_complete>
+		</objective>
+		<objective key="5">
+			<text>Рассказать о грузе Информатору</text>
+			<map_location_type hint="Информатор">blue_location</map_location_type>
+			<object_story_id>bar_bar_osvedomitel</object_story_id>
+			<infoportion_complete>bar_korovan_done</infoportion_complete>		
+		</objective>
+	</game_task>
+	
+	<game_task id="rygyi_help">
+		<title>Помочь Рыжему</title>
+		<objective>
+			<text>Узнать о Рыжем</text>
+			<icon>rygyi_med_r</icon>
+			<infoportion_complete>self_medkit_rygyi_done</infoportion_complete>
+			<infoportion_fail>rygyi_umer</infoportion_fail>
+			<article>tex_rygyi_help</article>
+		</objective>
+		<objective>
+			<text>Найти Рыжего</text>
+			<function_complete>sak_dialog.give_2_rygyi_krot</function_complete>
+		</objective>
+		<objective>
+			<text>Помочь Рыжему</text>
+			<infoportion_complete>self_medkit_rygyi_done</infoportion_complete>		
+		</objective>
+	</game_task>
+	
+	<game_task id="sherstyk_job">
+		<title>"Чёрный ящик"</title>
+		<objective>
+			<text>Найти "чёрный ящик"</text>
+			<icon>agr_black_box</icon>
+			<infoportion_complete>sherstyk_job_done</infoportion_complete>
+			<article>tex_sherstyk_job</article>
+		</objective>
+		<objective>
+			<text>Принести "чёрный ящик"</text>
+			<function_complete>sak_dialog.give_agr_black_box</function_complete>
+		</objective>
+		<objective>
+			<text>Отдать "чёрный ящик"</text>
+			<infoportion_complete>sherstyk_job_done</infoportion_complete>		
+		</objective>
+	</game_task>
+	
+	<game_task id="eliminate_lager_voron">
+		<title>title</title>
+		<objective>
+			<text>objective</text>
+			<icon>ui_iconsTotal_eliminate_lager</icon>
+			<function_complete>task_manager.task_complete</function_complete>
+			<function_fail>task_manager.task_fail</function_fail>
+		</objective>
+	</game_task>
+
+	<game_task id="defend_lager_voron">
+		<title>title</title>
+		<objective>
+			<text>objective</text>
+			<icon>ui_iconsTotal_defend_lager</icon>
+			<function_complete>task_manager.task_complete</function_complete>
+			<function_fail>task_manager.task_fail</function_fail>
+		</objective>
+	</game_task>
+		<game_task id="artefact_voron">
+		<title>title</title>
+		<objective>
+			<text>objective</text>
+			<icon>ui_iconsTotal_artefact</icon>
+			<function_complete>task_manager.task_complete</function_complete>
+			<function_fail>task_manager.task_fail</function_fail>
+		</objective>
+	</game_task>
+
+	<game_task id="kill_stalker_voron">
+		<title>title</title>
+		<objective>
+			<text>objective</text>
+			<icon>ui_iconsTotal_kill_stalker</icon>
+			<function_complete>task_manager.task_complete</function_complete>
+			<function_fail>task_manager.task_fail</function_fail>
+		</objective>
+	</game_task>
+
+	<game_task id="monster_part_voron">
+		<title>title</title>
+		<objective>
+			<text>objective</text>
+			<icon>ui_iconsTotal_monster_part</icon>
+			<function_complete>task_manager.task_complete</function_complete>
+			<function_fail>task_manager.task_fail</function_fail>
+		</objective>
+	</game_task>
+
+	<game_task id="find_item_voron">
+		<title>title</title>
+		<objective>
+			<text>objective</text>
+			<icon>ui_iconsTotal_find_item</icon>
+			<function_complete>task_manager.task_complete</function_complete>
+			<function_fail>task_manager.task_fail</function_fail>
+		</objective>
+	</game_task>
+	
+	<game_task id="eliminate_lager_volkodav">
+		<title>title</title>
+		<objective>
+			<text>objective</text>
+			<icon>ui_iconsTotal_eliminate_lager</icon>
+			<function_complete>task_manager.task_complete</function_complete>
+			<function_fail>task_manager.task_fail</function_fail>
+		</objective>
+	</game_task>
+
+	<game_task id="defend_lager_volkodav">
+		<title>title</title>
+		<objective>
+			<text>objective</text>
+			<icon>ui_iconsTotal_defend_lager</icon>
+			<function_complete>task_manager.task_complete</function_complete>
+			<function_fail>task_manager.task_fail</function_fail>
+		</objective>
+	</game_task>
+		<game_task id="artefact_volkodav">
+		<title>title</title>
+		<objective>
+			<text>objective</text>
+			<icon>ui_iconsTotal_artefact</icon>
+			<function_complete>task_manager.task_complete</function_complete>
+			<function_fail>task_manager.task_fail</function_fail>
+		</objective>
+	</game_task>
+
+	<game_task id="kill_stalker_volkodav">
+		<title>title</title>
+		<objective>
+			<text>objective</text>
+			<icon>ui_iconsTotal_kill_stalker</icon>
+			<function_complete>task_manager.task_complete</function_complete>
+			<function_fail>task_manager.task_fail</function_fail>
+		</objective>
+	</game_task>
+
+	<game_task id="monster_part_volkodav">
+		<title>title</title>
+		<objective>
+			<text>objective</text>
+			<icon>ui_iconsTotal_monster_part</icon>
+			<function_complete>task_manager.task_complete</function_complete>
+			<function_fail>task_manager.task_fail</function_fail>
+		</objective>
+	</game_task>
+
+	<game_task id="find_item_volkodav">
+		<title>title</title>
+		<objective>
+			<text>objective</text>
+			<icon>ui_iconsTotal_find_item</icon>
+			<function_complete>task_manager.task_complete</function_complete>
+			<function_fail>task_manager.task_fail</function_fail>
+		</objective>
+	</game_task>
+
+	<game_task id="gar_dm_bandits">
+		<title>Вернуть ружье Ореху</title>
+		<objective>
+			<text>Вернуть украденное ружье</text>
+			<icon>ui_iconsTotal_bar_hunter_rifle</icon>
+			<infoportion_complete>gar_dm_bandits_done</infoportion_complete>
+			<infoportion_fail>gar_dm_bandits_failed</infoportion_fail>
+			<article>tex_gar_dm_bandits_0</article>
+		</objective>
+		<objective>
+			<text>Найти ворюгу</text>
+			<infoportion_complete>gar_dm_bandits_1have</infoportion_complete>
+		</objective>
+		<objective>
+			<text>Разыскать уникальный ствол</text>
+			<infoportion_complete>ivan_info</infoportion_complete>
+		</objective>
+		<objective>
+			<text>Забрать улучшенный ТОЗ</text>
+			<function_complete>sak_dialog.have_1_dm_bandits</function_complete>
+			<infoportion_set_complete>gar_dm_bandits_2have</infoportion_set_complete>
+		</objective>
+		<objective>
+			<text>Вернуть ствол Ореху</text>
+			<map_location_type hint="Орех">blue_location</map_location_type>
+			<object_story_id>gar_dm_bandit2</object_story_id>
+			<infoportion_complete>gar_dm_bandits_done</infoportion_complete>
+		</objective>
+	</game_task>
+
+	<game_task id="orex_shkury">
+		<title>Принести ореху две шкуры</title>
+		<objective>
+			<text>Найти 2 шкуры</text>
+			<infoportion_complete>gar_dm_bandits_secret_done</infoportion_complete>	
+			<article>tex_orex_shkury</article>
+		</objective>
+		<objective>
+			<text>Собрать 2 шкуры</text>
+			<function_complete>sak_dialog.flesh_2leather_have</function_complete>
+			<infoportion_set_complete>orex_shkury_have</infoportion_set_complete>
+		</objective>
+		<objective>
+			<text>Принести 2 шкуры</text>
+			<object_story_id>Escape_Trader</object_story_id>
+			<infoportion_complete>gar_dm_bandits_secret_done</infoportion_complete>			
+		</objective>
+	</game_task>
+	
+	<game_task id="bar_hunter_quest">
+		<title>Вернуть охотнику ружьё</title>
+		<objective>
+			<text>Найти 2 шкуры</text>
+			<infoportion_complete>bar_bar_hunter_quest_finish</infoportion_complete>	
+			<article>tex_bar_hunter_quest</article>
+		</objective>
+		<objective>
+			<text>Собрать 2 шкуры</text>
+			<function_complete>bar_dialogs.give_hunters_toz</function_complete>
+			<infoportion_set_complete>bar_hunter_quest_have</infoportion_set_complete>
+		</objective>
+		<objective>
+			<text>Принести 2 шкуры</text>
+			<object_story_id>Escape_Trader</object_story_id>
+			<infoportion_complete>bar_bar_hunter_quest_finish</infoportion_complete>			
+		</objective>
+	</game_task>
+	
+	<game_task id="saharov_pda">
+				<title>Принести пда призрака Сахарову</title>
+		<objective>
+				<text>Найти пда призрака</text>
+				<icon>ui_iconsTotal_artefact</icon>
+				<infoportion_complete>saharov_pda_done</infoportion_complete>
+		</objective>
+		<objective>
+				<text>Найти пда призрака</text>
+				<icon height="50" width="50" x="100" y="50">ui\ui_icons_task</icon>
+				<function_complete>new_dialog.saharov_pda_have</function_complete>
+				<infoportion_set_complete>saharov_pda_have</infoportion_set_complete>
+		</objective>
+		<objective>
+				<text>Принести пда призрака Сахарову</text>
+				<map_location_type hint="Сахаров">blue_location</map_location_type>
+				<object_story_id>yan_general_ecolog</object_story_id>
+				<infoportion_complete>saharov_pda_done</infoportion_complete>
+	   </objective>
+	</game_task>
+
+	<game_task id="yan_scientist_teleport_01">
+		<title>Доставить прибор</title>
+		<objective>
+			<text>Доставить прибор</text>
+			<icon>ui_iconsTotal_found_thing</icon>
+			<infoportion_complete>yan_scientist_teleport_01_done</infoportion_complete>
+			<article>tex_yan_scientist_teleport_01</article>
+		</objective>
+		<objective>
+			<text>Установить прибор</text>
+			<infoportion_complete>yan_scientist_teleport_01_done</infoportion_complete>			
+		</objective>
+	</game_task>
+	
+	<game_task id="yan_scientist_teleport_02">
+		<title>Доставить прибор</title>
+		<objective>
+			<text>Доставить прибор</text>
+			<icon>ui_iconsTotal_found_thing</icon>
+			<infoportion_complete>yan_scientist_teleport_02_done</infoportion_complete>
+			<article>tex_yan_scientist_teleport_02</article>
+		</objective>
+		<objective>
+			<text>Установить прибор</text>
+			<infoportion_complete>yan_scientist_teleport_02_done</infoportion_complete>			
+		</objective>
+	</game_task>
+	<game_task id="yan_scientist_teleport_03">
+		<title>Доставить прибор</title>
+		<objective>
+			<text>Доставить прибор</text>
+			<icon>ui_iconsTotal_found_thing</icon>
+			<infoportion_complete>yan_scientist_teleport_03_done</infoportion_complete>
+			<article>tex_yan_scientist_teleport_03</article>
+		</objective>
+		<objective>
+			<text>Установить прибор</text>
+			<infoportion_complete>yan_scientist_teleport_03_done</infoportion_complete>			
+		</objective>
+	</game_task>
+	
+	<game_task id="mil_max_teleport_08">
+		<title>Принести Плейбой</title>
+		<objective>
+			<text>Принести Плейбой</text>
+			<icon>ui_iconsTotal_found_thing</icon>
+			<infoportion_complete>mil_max_teleport_08_done</infoportion_complete>
+			<infoportion_fail>mil_freedom_member0018_umer</infoportion_fail>
+			<article>tex_mil_max_teleport_08</article>
+		</objective>
+		<objective>
+			<text>Взять у Круглова журналы</text>
+			<infoportion_complete>mil_max_teleport_08_have</infoportion_complete>
+		</objective>
+		<objective>
+			<text>Принести журналы Максу</text>
+			<map_location_type hint="Макс">blue_location</map_location_type>
+			<object_story_id>Mil_Master_Max</object_story_id>
+			<infoportion_complete>mil_max_teleport_08_done</infoportion_complete>
+		</objective>
+	</game_task>
+	
+	<game_task id="fanat_teleport_04">
+		<title>Найти сейсмокарты АС</title>
+		<objective>
+			<text>Принести ноутбук</text>
+			<icon>ui_iconsTotal_found_thing</icon>
+			<infoportion_complete>fanat_teleport_04_done</infoportion_complete>
+			<infoportion_fail>esc_stalker_fanat_umer</infoportion_fail>
+			<article>tex_fanat_teleport_04</article>
+		</objective>
+		<objective>
+			<text>Найти ноутбук в лаб. Х-18</text>
+			<function_complete>sak_dialog.notebook_have</function_complete>
+			<infoportion_set_complete>fanat_teleport_04_have</infoportion_set_complete>
+		</objective>
+		<objective>
+			<text>Принести ноутбук Фанату</text>
+			<map_location_type hint="Фанат">blue_location</map_location_type>
+			<object_story_id>esc_lager_leader</object_story_id>
+			<infoportion_complete>fanat_teleport_04_done</infoportion_complete>
+		</objective>
+	</game_task>
+	
+	<game_task id="escape_lager_volk_document">
+		<title>Найти потерянный документ</title>
+		<objective>
+			<text>Найти потерянный документ</text>
+			<icon>ui_iconsTotal_found_thing</icon>
+			<infoportion_complete>escape_lager_volk_document_done</infoportion_complete>
+			<infoportion_fail>esc_wolf_umer</infoportion_fail>
+			<article>tex_escape_lager_volk_document</article>
+		</objective>
+		<objective>
+			<text>Найти документ</text>
+			<function_complete>sak_dialog.escape_lager_volk_document_have</function_complete>
+			<infoportion_set_complete>escape_lager_volk_document_have</infoportion_set_complete>
+		</objective>
+		<objective>
+			<text>Принести документ Волку</text>
+			<map_location_type hint="Волк">blue_location</map_location_type>
+			<object_story_id>Escape_novice_lager_volk</object_story_id>
+			<infoportion_complete>escape_lager_volk_document_done</infoportion_complete>
+		</objective>
+	</game_task>
+	
+	<game_task id="sidor_conserv">
+		<title>Принести посылку для Сидоровича на Свиноферме</title>
+		<objective>
+			<text>Найти посылку для Сидоровича на Свиноферме</text>
+			<infoportion_complete>info_box_conserv_done</infoportion_complete>	
+			<article>tex_sidor_conserv</article>
+		</objective>
+		<objective>
+			<text>Забрать посылку для Сидоровича на Свиноферме</text>
+			<function_complete>sak_dialog.have_box_conserv</function_complete>
+			<infoportion_set_complete>sidor_conserv_have</infoportion_set_complete>
+		</objective>
+		<objective>
+			<text>Принести посылку для Сидоровича со Свинофермы</text>
+			<object_story_id>Escape_Trader</object_story_id>
+			<infoportion_complete>info_box_conserv_done</infoportion_complete>			
+		</objective>
+	</game_task>
+	
+	<game_task id="sidor_kishka">
+		<title>Принести Сидоровичу колбасу из Кишки</title>
+		<objective>
+			<text>Взять на пробу колбасу у Игната</text>
+			<infoportion_complete>info_sidor_kishka_done</infoportion_complete>	
+			<article>tex_sidor_kishka</article>
+		</objective>
+		<objective>
+			<text>Забрать колбасу у Игната</text>
+			<function_complete>sak_dialog.green_kolbasa_10have</function_complete>
+			<infoportion_set_complete>sidor_kishka_have</infoportion_set_complete>
+		</objective>
+		<objective>
+			<text>Принести колбасу Сидоровичу</text>
+			<object_story_id>Escape_Trader</object_story_id>
+			<infoportion_complete>info_sidor_kishka_done</infoportion_complete>			
+		</objective>
+	</game_task>
+	
+	<game_task id="esc_tolik_five_teil">
+		<title>Найти пять хвостов Толику</title>
+		<objective>
+			<text>Найти пять хвостов</text>
+			<icon>ui_iconsTotal_tutorial_help_wounded</icon>
+			<infoportion_complete>esc_tolik_five_teil_done</infoportion_complete>
+			<infoportion_fail>esc_vagon_wounded_umer</infoportion_fail>
+			<article>tex_esc_tolik_five_teily</article>
+		</objective>
+		<objective>
+			<text>Собрать пять собачьих хвостов</text>
+			<function_complete>sak_dialog.five_teil_have</function_complete>
+			<infoportion_set_complete>esc_tolik_five_teil_have</infoportion_set_complete>
+		</objective>
+		<objective>
+			<text>Принести пять хвостов Толику</text>
+			<map_location_type hint="Толик">blue_location</map_location_type>
+			<object_story_id>Escape_dinamite</object_story_id>
+			<infoportion_complete>esc_tolik_five_teil_done</infoportion_complete>
+		</objective>
+	</game_task>
+	
+	<game_task id="esc_shustryi_medusa">
+		<title>Найти артефакт Медуза</title>
+		<objective>
+			<text>Добыть артефакт Медуза Шустрому</text>
+			<icon>ui_iconsTotal_artefact</icon>
+			<infoportion_complete>esc_shustryi_medusa_done</infoportion_complete>
+			<infoportion_fail>esc_shustryi_umer</infoportion_fail>
+			<article>tex_esc_shustryi_medusa</article>
+		</objective>
+		<objective>
+			<text>Найти артефакт Медуза</text>
+			<function_complete>sak_dialog.esc_shustryi_medusa_have</function_complete>
+			<infoportion_set_complete>esc_shustryi_medusa_have</infoportion_set_complete>
+		</objective>
+		<objective>
+			<text>Принести артефакт Медуза Шустрому</text>
+			<map_location_type hint="Шустрый">blue_location</map_location_type>
+			<object_story_id>Escape_tutorial_wounded</object_story_id>
+			<infoportion_complete>esc_shustryi_medusa_done</infoportion_complete>		
+		</objective>
+	</game_task>
+	
+	<game_task id="esc_fox_medkit">
+		<title>Принести 10 аптечек Лису</title>
+		<objective>
+			<text>Принести 10 аптечек</text>
+			<icon>ui_iconsTotal_esc_help_wounded_from_raid</icon>
+			<infoportion_complete>esc_fox_medkit_done</infoportion_complete>
+			<infoportion_fail>esc_fox_umer</infoportion_fail>
+			<article>tex_esc_fox_medkit</article>
+		</objective>
+		<objective>
+			<text>Собрать 10 аптечек</text>
+			<function_complete>sak_dialog.esc_fox_medkit_have</function_complete>
+			<infoportion_set_complete>esc_fox_medkit_have</infoportion_set_complete>
+		</objective>
+		<objective>
+			<text>Принести аптечки Лису</text>
+			<map_location_type hint="Лис">blue_location</map_location_type>
+			<object_story_id>Escape_stalker_from_raid</object_story_id>
+			<infoportion_complete>esc_fox_medkit_done</infoportion_complete>		
+		</objective>
+	</game_task>
+
+	<game_task id="gar_dram_novice_mp5_m1">
+		<title>Добыть модифицированный mp5 Юрику</title>
+		<objective>
+			<text>Добыть модифицированный mp5</text>
+			<icon>ui_iconsTotal_weapons</icon>
+			<infoportion_complete>gar_dram_novice_mp5_m1_done</infoportion_complete>
+			<infoportion_fail>gar_dm_novice_umer</infoportion_fail>
+			<article>tex_gar_dram_novice_mp5_m1</article>
+		</objective>
+		<objective>
+			<text>Найти модифицированный mp5</text>
+			<function_complete>sak_dialog.gar_dram_novice_mp5_m1_have</function_complete>
+			<infoportion_set_complete>gar_dram_novice_mp5_m1_have</infoportion_set_complete>
+		</objective>
+		<objective>
+			<text>Принести модифицированный mp5 Юрику</text>
+			<map_location_type hint="Юрик">blue_location</map_location_type>
+			<object_story_id>gar_dm_novice</object_story_id>
+			<infoportion_complete>gar_dram_novice_mp5_m1_done</infoportion_complete>		
+		</objective>
+	</game_task>
+	
+	<game_task id="gar_dram_novice_burer_hand">
+		<title>Добыть Юрику часть монстра</title>
+		<objective>
+			<text>Добыть часть монстра</text>
+			<icon>ui_iconsTotal_monster_part</icon>
+			<infoportion_complete>gar_dram_novice_burer_hand_done</infoportion_complete>
+			<infoportion_fail>gar_dm_novice_umer</infoportion_fail>
+			<article>tex_gar_dram_novice_burer_hand</article>
+		</objective>
+		<objective>
+			<text>Найти часть монстра</text>
+			<function_complete>sak_dialog.gar_dram_novice_burer_hand_have</function_complete>
+			<infoportion_set_complete>gar_dram_novice_burer_hand_have</infoportion_set_complete>
+		</objective>
+		<objective>
+			<text>Принести часть монстра Юрику</text>
+			<map_location_type hint="Юрик">blue_location</map_location_type>
+			<object_story_id>gar_dm_novice</object_story_id>
+			<infoportion_complete>gar_dram_novice_burer_hand_done</infoportion_complete>		
+		</objective>
+	</game_task>
+
+	<game_task id="gar_dolg_flesh_eye">
+		<title>Принести четыре глаза псевдоплоти Прапору</title>
+		<objective>
+			<text>Добыть четыре глаза псевдоплоти</text>
+			<icon>ui_iconsTotal_monster_part</icon>
+			<infoportion_complete>gar_dolg_flesh_eye_done</infoportion_complete>
+			<infoportion_fail>gar_dolg_blokpost_4_umer</infoportion_fail>
+			<article>tex_gar_dolg_flesh_eye</article>
+		</objective>
+		<objective>
+			<text>Добыть глаза псевдоплоти</text>
+			<function_complete>sak_dialog.gar_dolg_flesh_eye_have</function_complete>
+			<infoportion_set_complete>gar_dolg_flesh_eye_have</infoportion_set_complete>
+		</objective>
+		<objective>
+			<text>Принести глаза Прапору</text>
+			<infoportion_complete>gar_dolg_flesh_eye_done</infoportion_complete>		
+		</objective>
+	</game_task>
+	
+	<game_task id="gar_dolg_krovosos_jaw">
+		<title>Принести щупальца кровососа Прапору</title>
+		<objective>
+			<text>Добыть три щупальца кровососа</text>
+			<icon>ui_iconsTotal_monster_part</icon>
+			<infoportion_complete>gar_dolg_krovosos_jaw_done</infoportion_complete>
+			<infoportion_fail>gar_dolg_blokpost_4_umer</infoportion_fail>
+			<article>tex_gar_dolg_krovosos_jaw</article>
+		</objective>
+		<objective>
+			<text>Добыть щупальца кровососа</text>
+			<function_complete>sak_dialog.gar_dolg_krovosos_jaw_have</function_complete>
+			<infoportion_set_complete>gar_dolg_krovosos_jaw_have</infoportion_set_complete>
+		</objective>
+		<objective>
+			<text>Принести щупальца Прапору</text>
+			<infoportion_complete>gar_dolg_krovosos_jaw_done</infoportion_complete>		
+		</objective>
+	</game_task>
+	
+	<game_task id="gar_dolg_psevdodog_tail">
+		<title>Принести пять хвостов Прапору</title>
+		<objective>
+			<text>Добыть хвосты псевдопса</text>
+			<icon>ui_iconsTotal_monster_part</icon>
+			<infoportion_complete>gar_dolg_psevdodog_tail_done</infoportion_complete>
+			<infoportion_fail>gar_dolg_blokpost_4_umer</infoportion_fail>
+			<article>tex_gar_dolg_psevdodog_tail</article>
+		</objective>
+		<objective>
+			<text>Добыть пять хвостов псевдопса</text>
+			<function_complete>sak_dialog.gar_dolg_psevdodog_tail_have</function_complete>
+			<infoportion_set_complete>gar_dolg_psevdodog_tail_have</infoportion_set_complete>
+		</objective>
+		<objective>
+			<text>Принести хвосты Прапору</text>
+			<infoportion_complete>gar_dolg_psevdodog_tail_done</infoportion_complete>		
+		</objective>
+	</game_task>
+	
+	<game_task id="agr_krot_PDA">
+		<title>Найти потерянный ПДА Крота</title>
+		<objective>
+			<text>Найти ПДА Крота</text>
+			<icon>ui_iconsTotal_found_thing</icon>
+			<infoportion_complete>agr_krot_PDA_done</infoportion_complete>
+			<infoportion_fail>agr_krot_umer</infoportion_fail>
+			<article>tex_agr_krot_PDA</article>
+		</objective>
+		<objective>
+			<text>Найти ПДА</text>
+			<function_complete>sak_dialog.agr_krot_PDA_have</function_complete>
+			<infoportion_set_complete>agr_krot_PDA_have</infoportion_set_complete>
+		</objective>
+		<objective>
+			<text>Принести ПДА Кроту</text>
+			<map_location_type hint="Крот">blue_location</map_location_type>
+			<object_story_id>agr_krot</object_story_id>
+			<infoportion_complete>agr_krot_PDA_done</infoportion_complete>		
+		</objective>
+	</game_task>
+	
+	<game_task id="val_pula_ammo">
+		<title>Доставить боеприпасы</title>
+		<objective>
+			<text>Отнести ящик боеприпасов</text>
+			<icon>ui_iconsTotal_found_thing</icon>
+			<infoportion_complete>val_pula_ammo_done</infoportion_complete>
+			<article>tex_val_pula_ammo</article>
+			<infoportion_fail>gar_hellcar_umer</infoportion_fail>
+		</objective>
+		<objective>
+			<text>Доставить патроны Бесу</text>
+			<map_location_type hint="Бес">blue_location</map_location_type>
+			<object_story_id>gar_hellcar</object_story_id>
+			<infoportion_complete>val_pula_ammo_done</infoportion_complete>		
+		</objective>
+	</game_task>
+	
+	<game_task id="val_escort_PDA">
+		<title>Вернуть ПДА</title>
+		<objective>
+			<text>Найти ПДА</text>
+			<icon>ui_iconsTotal_found_thing</icon>
+			<infoportion_complete>val_escort_PDA_done</infoportion_complete>
+			<infoportion_fail>val_escort_captive_umer</infoportion_fail>
+			<article>tex_val_escort_PDA</article>
+		</objective>
+		<objective>
+			<text>Найти отобранный ПДА</text>
+			<function_complete>sak_dialog.val_escort_PDA_have</function_complete>
+			<infoportion_set_complete>val_escort_PDA_have</infoportion_set_complete>
+		</objective>
+		<objective>
+			<text>Вернуть ПДА Максу Люберу</text>
+			<map_location_type hint="Макс Любер">blue_location</map_location_type>
+			<object_story_id>val_escort_captive</object_story_id>
+			<infoportion_complete>val_escort_PDA_done</infoportion_complete>		
+		</objective>
+	</game_task>
+
+	<game_task id="bar_dolg_petrenko_gaussgan">
+		<title>Вернуть прототип Гаусс-пистолета</title>
+		<objective>
+			<text>Найти Гаусс-пистолет</text>
+			<icon>ui_iconsTotal_weapons</icon>
+			<infoportion_complete>bar_dolg_petrenko_gaussgan_done</infoportion_complete>
+			<!--<infoportion_fail>bar_dolg_petrenko_umer</infoportion_fail> -->
+			<article>tex_bar_dolg_petrenko_gaussgan</article>
+		</objective>
+		<objective>
+			<text>Найти Гаусс-пистолет на свиноферме</text>
+			<function_complete>sak_dialog.bar_dolg_petrenko_gaussgan_have</function_complete>
+			<infoportion_set_complete>bar_dolg_petrenko_gaussgan_have</infoportion_set_complete>
+		</objective>
+		<objective>
+			<text>Вернуть Гаусс-пистолет Петренко</text>
+			<map_location_type hint="Петренко">blue_location</map_location_type>
+			<object_story_id>bar_dolg_polkovnik_petrenko</object_story_id>
+			<infoportion_complete>bar_dolg_petrenko_gaussgan_done</infoportion_complete>		
+		</objective>
+	</game_task>
+	
+	<game_task id="bar_dolg_petrenko_electra_flash">
+		<title>Принести артефакт "Вспышка"</title>
+		<objective>
+			<text>Найти артефакт Вспышка</text>
+			<icon>ui_iconsTotal_artefact</icon>
+			<infoportion_complete>bar_dolg_petrenko_electra_flash_done</infoportion_complete>
+			<!--<infoportion_fail>bar_dolg_petrenko_umer</infoportion_fail>-->
+			<article>tex_bar_dolg_petrenko_electra_flash</article>
+		</objective>
+		<objective>
+			<text>Найти артефакт Вспышка</text>
+			<function_complete>sak_dialog.bar_dolg_petrenko_electra_flash_have</function_complete>
+			<infoportion_set_complete>bar_dolg_petrenko_electra_flash_have</infoportion_set_complete>
+		</objective>
+		<objective>
+			<text>Принести Вспышку Петренко</text>
+			<map_location_type hint="Петренко">blue_location</map_location_type>
+			<object_story_id>bar_dolg_polkovnik_petrenko</object_story_id>
+			<infoportion_complete>bar_dolg_petrenko_electra_flash_done</infoportion_complete>		
+		</objective>
+	</game_task>
+	
+<game_task id="bar_dolg_leader_find_case">
+		<title>Найти Документы для Воронина</title>	
+		<objective>
+			<text>Найти документы</text>	
+			<icon>ui_iconsTotal_find_item</icon>
+			<infoportion_complete>bar_dolg_leader_find_case_done</infoportion_complete>
+			<article>tex_bar_dolg_leader_find_case</article>
+		</objective>
+		<objective>
+			<text>Найти документы</text>
+			<map_location_type hint="Предполагаемое место документов">crlc_big</map_location_type>
+			<object_story_id>val_secret_0018</object_story_id>
+			<function_complete>sak_dialog.bar_dolg_leader_find_case_have</function_complete>
+			<infoportion_set_complete>bar_dolg_leader_find_case_have</infoportion_set_complete>
+		</objective>
+		<objective>
+			<text>Принести лидеру Долга кейс с документами</text>
+			<map_location_type hint="Воронин">blue_location</map_location_type>
+			<object_story_id>bar_dolg_general_voronin</object_story_id>
+			<infoportion_complete>bar_dolg_leader_find_case_done</infoportion_complete>
+		</objective>
+	</game_task>
+
+<game_task id="esc_reward_case">
+		<title>Передать ящик с блок поста Бармену</title>	
+		<objective>
+			<text>Передать кейс</text>	
+			<icon>ui_iconsTotal_find_item</icon>
+			<infoportion_complete>esc_reward_case_done</infoportion_complete>
+			<article>tex_esc_reward_case</article>
+		</objective>
+		<objective>
+			<text>Принести ящик с блок поста Бармену</text>
+			<map_location_type hint="Бармен">blue_location</map_location_type>
+			<object_story_id>bar_Barman</object_story_id>
+			<infoportion_complete>esc_reward_case_done</infoportion_complete>
+		</objective>
+	</game_task>
+
+	<game_task id="user_task">
+		<title>My map task</title>
+		<objective>
+			<text>user defined map location</text>
+			<icon x="350" y="50" width="50" height="50">ui\ui_icons_task</icon>
+		</objective>
+	</game_task>
+	
+	<!-- DELME:for andy -->
+	
+	<game_task id="pl_task_2" prio="2">
+		<title>task_2</title>
+		<objective>
+			<text>objective_1</text>
+			<icon>ui_iconsTotal_find_item</icon>
+			<infoportion_complete>yan_labx16_switcher_2_off</infoportion_complete>
+		</objective>
+		<objective>
+			<text>objective_1</text>
+			<map_location_type>green_location</map_location_type>
+			<object_story_id>yan_labx16switcher_lamp2</object_story_id>
+			<infoportion_complete>yan_labx16_switcher_2_off</infoportion_complete>
+		</objective>
+	</game_task>
+	<game_task id="pl_task_3" prio="1">
+		<title>task_3</title>
+		<objective>
+			<text>objective_1</text>
+			<icon>ui_iconsTotal_find_item</icon>
+			<infoportion_complete>yan_labx16_switcher_3_off</infoportion_complete>
+		</objective>
+		<objective>
+			<text>objective_1</text>
+			<map_location_type>green_location</map_location_type>
+			<object_story_id>yan_labx16switcher_lamp3</object_story_id>
+			<infoportion_complete>yan_labx16_switcher_3_off</infoportion_complete>
+		</objective>
+	</game_task>
+
+<!-- temporary for andy, do not delete !!! -->
+	<game_task id="task_1" prio="1">
+		<title>task_1_title</title>
+		<objective>
+			<text>task_1_0</text>
+			<icon x="0" y="0" width="50" height="50">ui\ui_icons_task</icon>
+		</objective>
+		<objective>
+			<text>task_1_1</text>
+			<map_location_type>green_location</map_location_type>
+			<object_story_id>Escape_Trader</object_story_id>
+		</objective>
+		<objective>
+			<text>task_1_2</text>
+			<map_location_type>green_location</map_location_type>
+			<object_story_id>Escape_Tutorial_Artefact</object_story_id>
+		</objective>
+	</game_task>
+
+	<game_task id="task_2" prio="2">
+		<title>task_2_title</title>
+		<objective>
+			<text>task_2_0</text>
+			<icon x="0" y="0" width="50" height="50">ui\ui_icons_task</icon>
+		</objective>
+		<objective>
+			<text>task_2_1</text>
+			<map_location_type>green_location</map_location_type>
+			<object_story_id>Escape_anomaly_field</object_story_id>
+		</objective>
+		<objective>
+			<text>task_2_2</text>
+			<map_location_type>green_location</map_location_type>
+			<object_story_id>Escape_blockpost_case</object_story_id>
+		</objective>
+	</game_task>
+
+	<game_task id="task_3" prio="3">
+		<title>task_3_title</title>
+		<objective>
+			<text>task_3_0</text>
+			<icon x="0" y="0" width="50" height="50">ui\ui_icons_task</icon>
+		</objective>
+		<!--<objective>
+			<text>task_3_1</text>
+			<map_location_type>green_location</map_location_type>
+			<object_story_id>Escape_bridge_stalkers</object_story_id>
+		</objective>
+		<objective>
+			<text>task_3_2</text>
+			<map_location_type>green_location</map_location_type>
+			<object_story_id>Escape_dinamite</object_story_id>
+		</objective> -->
+	</game_task>
+
+       <game_task id="courier_volkodav">
+	<title>title</title>
+	<objective>
+		<text>objective</text>
+		<icon>ui_iconsTotal_courier</icon>
+		<function_complete>task_manager.task_complete</function_complete>
+		<function_fail>task_manager.task_fail</function_fail>
+	</objective>
+</game_task>
+
+	<game_task id="petrenko_yantar_way">
+		<title>Колбасу Петренко</title>
+		<objective>
+			<text>Сходить к охотникам</text>
+			<icon>ui_iconsTotal_found_thing</icon>
+			<infoportion_complete>petrenko_yantar_way_done</infoportion_complete>
+			<article>tex_petrenko_yantar_way</article>
+		</objective>
+		<objective>
+			<text>Получить колбасу от охотников</text>
+			<function_complete>sak_dialog.give_paper_box</function_complete>
+			<infoportion_set_complete>petrenko_yantar_way_have</infoportion_set_complete>
+		</objective>
+		<objective>
+			<text>Принести колбасу Петренко</text>
+			<infoportion_complete>petrenko_yantar_way_done</infoportion_complete>		
+		</objective>
+	</game_task>
+</game_tasks_data>

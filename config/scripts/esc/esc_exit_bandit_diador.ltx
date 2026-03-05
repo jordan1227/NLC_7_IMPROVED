@@ -1,0 +1,27 @@
+[logic]
+active = kamp
+on_death = death
+
+[kamp]
+center_point = esc2_smart_stalker_exit_kamp_1
+path_walk = esc2_smart_stalker_exit_kamp_1
+danger = danger_condition
+meet = meet
+
+[meet]
+victim = 3| actor
+victim_wpn = 3| actor
+use = true
+use_wpn = false
+abuse = true
+meet_dialog	= esc_diador_start_dialog
+
+[death]
+on_info = {=killed_by_actor} %=sak_dialog.sid_repa_no_good() +diador_umer%, %+diador_umer%
+
+
+[danger_condition]
+ignore_distance = 3
+ignore_distance_grenade = 5
+ignore_distance_corpse = 3
+ignore_distance_sound = 5

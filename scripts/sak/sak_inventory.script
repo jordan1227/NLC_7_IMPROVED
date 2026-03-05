@@ -1,0 +1,329 @@
+all_items = {}             -- все предметы без разбора
+belt_items = {}                  -- все предметы на поясе
+slots = {}                 -- все предметы в слотах (оружие, бинокль, фонарь)
+rucksack = {}              -- все остальное
+eatable = {}               -- все что "кушается" (еда, бинты, аптеки)
+no_leds_flag = false
+leds_reset_flag = false
+
+function inventory_control()
+	if db.actor == nil then return end
+  
+	belt_items = {}
+	slots = {}
+	rucksack = {}
+	eatable = {}
+	all_items = {}
+	local inv_items = get_shadow_inv():get_content(false)
+
+	for i, rec in inv_items:ipairs() do
+		local vItem = client_obj(rec.id)             
+		if not vItem or (vItem:section()==nil and vItem:section_name()==nil) then return end
+		local vItemSection=vItem:section() or vItem:section_name()
+		local vItemID = rec.id
+		local clid = vItem:clsid()
+		local id_class = "?"
+		local ignore = false
+		local flag = nil
+       
+		if vItem:is_eatable_item() then
+			insert_to_table(eatable, vItemSection, vItemID)
+		elseif db.actor:is_in_ruck(vItem) then
+			insert_to_table(rucksack, vItemSection, vItemID)
+		elseif db.actor:is_on_belt(vItem) then
+			insert_to_table(belt_items, vItemSection, vItemID)
+			flag = 2
+		elseif db.actor:is_in_slot(vItem) then
+			insert_to_table(slots, vItemSection, vItemID)
+			flag = 1
+		else
+			ignore = true                                     
+		end
+       
+		if not ignore then
+			insert_to_table(all_items, vItemSection, vItemID)
+		end
+		
+		sak.cant_trade(vItem,vItemSection,vItemID,flag)
+	end
+
+	--[[
+	wprintf(" inventory_control dump rucksack:")
+	dump_table(rucksack)
+	wprintf(" inventory_control dump slots:")
+	dump_table(slots)
+	wprintf(" inventory_control dump belt_items:")
+	dump_table(belt_items)
+	wprintf(" executed from\n %s", lua_traceback('               '))
+	--]]
+end
+
+function belt_need_update_razgr(inv_open)
+	if inv_open==false then
+		inventory_control()
+		sak_artmods.artCollections_close()
+		mike.art_new_collection()
+	elseif inv_open==true then
+		arc_arts.check_artefact()
+		sak_artmods.artCollections_open()
+	end
+end
+
+function need_update_inventory() -- функция выполняется раз в игровую минуту
+	if razgruzka.open_inv_raz_pod then
+		return    
+	end     
+
+	razgruzka.open_inv_raz_pod=true
+	inventory_control()
+	params.repbox_weight_add()
+	arc_arts.check_artefact()
+end
+
+function insert_to_table(tbl, section, id)
+	if tbl[section]==nil then
+		tbl[section] = {}
+	end
+	table.insert(tbl[section], id)
+end
+
+function inventory_visible()
+	local wnd = level.get_inventory_wnd()
+	if wnd then
+		return wnd:IsShown()
+	end
+	return false
+end
+
+local active_led_tex = ""
+
+function sak_inventory.update_accum_leds()  
+	local cl = 0 -- charge level in %
+	local path   = "ui\\accum_leds\\"
+	local prefix = "cl_"
+	local tr = prefix.."000"
+	local accum = sak.get_accum()
+	if accum then
+		local rc = 0    
+		local cf = accum:condition()
+		rc = math.floor(cf * 100.0)
+		cl = math.ceil(cf * 10.0) * 10
+		tr = sprintf(prefix.."%03d", cl)                            
+		-- wprintf("[~T]. ~CF0 #DBG:~C07 cf =~C0D %.4f~C07, rc =~C0D %.0f~C07, cl = %.0f, tr =~C0F %s~C07", cf, rc, cl, tr)
+	else  
+		-- wprintf("[~T]. #DBG: no accum in slot detected!")                 
+	end                     
+ 
+	if tr == active_led_tex and not leds_reset_flag then
+		return
+	end
+
+	active_led_tex = tr
+
+	local tlist = texture_find (path) 
+	tr = path..tr
+
+	local wnd = level.get_inventory_wnd()
+	if wnd then
+		local fch = wnd:FindChild("accum_static")
+		if fch then
+			local guis = fch:GetCUIStatic()
+			guis:InitTexture(tr)
+			if accum and not no_leds_flag then
+				guis:Show(true)
+			else
+				guis:Show(false)
+			end
+		end
+		leds_reset_flag = false
+	end	
+end
+
+local last_accum_id = BAD_OBJ_ID
+local prev_b_allow
+function sak_inventory.check_accum_change()
+	ogse_signals.get_mgr():reschedule(500)
+	local id = 0 -- BAD_OBJ_ID -- Manool: чтобы обновить при загрузке
+	local accum, cond = sak.get_accum(), 0
+	if accum then
+		id, cond = accum:id(), accum:condition()
+	end 
+
+	-- Manool: запрет на работу артефактов без заряженного аккума
+	local b_allow = cond > 0.071
+	db.actor.inventory.allow_af_effects = b_allow
+	if prev_b_allow ~= b_allow then
+		update_inventory_weight()
+		prev_b_allow = b_allow
+	end
+
+	if (id ~= last_accum_id) then
+		sak_inventory.update_accum_leds()
+		last_accum_id = id
+	end
+end
+
+function show_inventory()
+	local wnd = level.get_inventory_wnd()
+	if wnd then
+		--wprintf("[~T].~CF0 #DBG: show_inventory from ~C0F\n %s~C07 ", lua_traceback(' '))
+		update_accum_leds()       
+		if get_shadow_inv().items_restored then
+			razgruzka.hide_in_shadow_inv("show_inventory", 1) -- спрятать используемые предметы в разгрузке/подсумке/НЗ
+		end                            
+		params.start_dialog(wnd, true)
+		belt_need_update_razgr(true)
+	end
+end
+
+-- dialog used functions
+
+function dyn_art_base(section) -- получение базовой секции артефакта    
+	if section:sub(1, 3) == "af_" then
+		local ss = section:match ("_dyn%dd")
+		if ss then section = section:gsub(ss, "") end
+	end
+	return section 
+end
+
+function release_actor_items(section, count, exact_sec, new_flag) -- уничтожение у игрока предметов в диалоге, скрытых или в инвентаре  
+	local items = get_shadow_inv():get_content(true) -- сначала идут объекты из рюкзака, потом из инвентаря
+ 
+	local real = 0
+	
+	local exact, n_flag = false, false
+	if exact_sec ~= nil and type(exact_sec) == "boolean" then
+		exact = exact_sec
+	end
+	if new_flag ~= nil and type(new_flag) == "boolean" then
+		n_flag = new_flag
+	end
+	
+	wprintf(" trying release~C0D %s~C0B x~C0D %d~C07, exact_sec = %s, new_flag = %s", section, count, tostring(exact), tostring(n_flag))
+	
+	local flt = nil
+	if n_flag then
+		flt = function(sect) return not strposx(sect,"_new") and not strposx(section, "_capsule") end
+	else
+		if section=="bandit_master_outfit" then
+			flt = function(sect) return not strposx(sect,"_m1") and not strposx(sect,"_gas") end
+		elseif section=="bandit_veteran_outfit" then
+			flt = function(sect) return not strposx(sect,"_gas") end
+		else
+			flt = function(sect) return true end
+		end
+	end
+	
+	local real_sect
+	for i, rec in items:ipairs() do
+		local go_on = false
+		local sect = ""
+		if exact then 
+			sect = rec.sect
+			if sect == section then
+				go_on = true
+			end
+		else
+			sect = dyn_art_base(rec.sect)
+			if strposx(sect, section) and flt(sect) then
+				real_sect = sect
+				go_on = true
+			end
+		end
+		if go_on then
+			local amount =  nlc_container.amount_in_batch(rec.obj)
+			local need_release = count - real
+			if need_release < amount then            
+				nlc_container.amount_in_batch(rec.obj, amount - need_release) -- вычитание из пачки уничтожаемого количества
+				amount = need_release                          
+			else 
+				misc.release_obj(rec.id, "sak_inventory.release_actor_items")
+			end   
+			real = real + amount  
+			wprintf(" dialog-release~C0A %-27s~C07 has planned amount = %d ", rec.obj:name(), amount)
+			if real >= count then break end
+		else
+		-- wprintf(" unaccepted~C0A %s~C07", sect)
+		end
+	end
+	if real > 0 then
+		sak.relocate_item("out", real_sect or section, real, true) -- real is ammo amount also!   
+		sak_inventory.need_update_inventory()
+	else
+		wprintf("~C0C #ERROR:~C07 was released~C0D %d~C07 x ~C0A %s~C07 from~C0D %d~C07 required ", real, section, count)
+	end  
+ 
+	return (real == count) -- возвращает true, если уничтожено ровно столько, сколько заказано
+end
+
+
+function relocate_actor_items(npc, section, count, all_sect) -- отбирание у игрока предметов в пользу непися
+	local items = get_shadow_inv():get_content(true)
+	sak.relocate_item("out", section, count)
+ 
+	for i, rec in items:ipairs() do
+		local sect = dyn_art_base(rec.sect)
+		if strposx(section, sect) then
+			count = count - 1 -- amount_in_batch(rec.obj)
+			local owner = rec.obj:parent()
+			if owner then
+				wprintf(" dialog-relocate~C0A %-27s~C07 has planned ", rec.obj:name())
+				owner:transfer_item(rec.obj, npc)    
+				if count <= 0 then break end
+			end   
+		end
+	end
+ 
+	sak_inventory.need_update_inventory()
+	return (count == 0)
+end
+
+function fast_update_inventory()
+	ogse_signals.get_mgr():reschedule(70)
+	if razgruzka.open_inv_raz_pod==false then
+		sak_inventory.need_update_inventory()
+		razgruzka.open_inv_raz_pod=true
+	end
+end
+
+function init_module()
+end
+
+function attach(sm)
+	sm:subscribe({signal = "on_update", fun = this.check_accum_change})
+	sm:subscribe({signal = "on_update", fun = this.fast_update_inventory})
+end
+
+local containers = {
+  ["arc_art_box_1basic"] = true,
+  ["arc_art_box_basic"] = true,
+  ["arc_art_box_8basic"] = true,
+}
+
+function on_cl_spawned(list) -- глобальный колбек на появление объектов в онлайне
+	local actor_items = 0 
+	for i, id in ipairs(list) do
+		local obj = client_obj(id)
+		if obj then  
+			local p = obj:parent()
+
+			-- Manool: учёт веса контейнера при нетспавне
+			if containers[obj:section()] then
+				if not p or not p:is_actor() then
+					arc_containers.inv_containers:register(id) -- регистарция, чтобы обновить вес
+					arc_containers.on_drop_container(id) -- отрегистрация
+				end
+			end
+			--
+
+			if p and p:id() == 0 then
+				actor_items = actor_items + 1
+			end
+		else
+			wprintf("[~T].~C0C #WARN:~C07 on_cl_spawned no client object~C0D %d~C07 found. Possible destroyed?", id)
+		end                                                                                                           
+	end
+	if actor_items > 0 then
+		need_update_inventory()
+	end
+end

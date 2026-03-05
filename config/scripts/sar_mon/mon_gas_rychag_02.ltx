@@ -1,0 +1,14 @@
+[logic]
+active = ph_button@stop
+
+[ph_button@stop]
+tooltip = gas_ventil_rotate
+anim = gas_cisterna_stop
+on_press = ph_button@rotate %=sak.labx10_ventil()%
+
+[ph_button@rotate]
+anim = gas_cisterna_open
+on_timer = 15000 | ph_button@stop2 %+mon_gas_on =sak.restore_weap()%
+
+[ph_button@stop2]
+anim = gas_cisterna_stop

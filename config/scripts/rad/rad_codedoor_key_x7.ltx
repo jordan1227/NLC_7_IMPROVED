@@ -1,0 +1,16 @@
+[logic]
+active = ph_idle@lock
+
+[ph_idle@lock]
+tips = no_supply
+on_info = {+supply_radar_on -mercs_gun_1_info} ph_code@lock
+on_info2 = {+mercs_gun_1_info} ph_idle@free
+
+[ph_code@lock]
+on_check_code1 = 3569811289 | %=play_snd(device\door_servomotor) =sak.add_new_x10_130%
+on_check_code2 = 1455987401 | %=play_snd(device\door_servomotor) =sak.add_new_x10_130%
+on_info = {+mercs_gun_1_info} ph_idle@free
+
+[ph_idle@free]
+tips = free_enter
+on_use = %=play_snd(device\door_servomotor) =sak.add_new_x10_130%

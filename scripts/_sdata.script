@@ -1,0 +1,808 @@
+
+
+-- File:        _sData.SCRIPT
+-- Copyright:   2009 Singapur22
+-- Authors:     Singapur22, Gun12
+-- Last edit:	KamikaZze (11.06.14)
+-- Global Description: Отладочная информация
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+GlobalEnable = false		--Включить скрипт? Подробные настройки смотрите ниже
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------
+-- ПОДРОБНОЕ ОПИСАНИЕ:
+
+-- Показывает позицию актора
+-- Показывает полученные инфопоршни
+-- Показывает информацию о НПС - Имя(указаное в ресурсах игры), смарт (в котором находится НПС), количество НПС в смарте, активную секцию логики, здоровье, противника
+-- Сохраняет в логе позицию НПС, на которых наведен прицел
+-- Показывает зоны, в которых находится актор
+-- Показывает информацию о ГГ - здоровье, сила, радиация, сытость, жажда, сонливость, наличные, пси-здоровье, мораль, ранг, группировка, репутация. Все параметры настраиваются
+-- Показывает счетчиков новых амчивок
+-- Показывает состояние предметов в слотах
+----------------------------------------------------------------------------
+
+local subscribed
+function subscribe()
+	GlobalEnable = true
+	ogse_benchmark.subscribe()
+	subscribed = {
+		{ signal = "on_info_2",   fun = this.infos },
+		{ signal = "on_update", fun = this.vis_int },
+	}
+	for _, s in ipairs( subscribed ) do
+		ogse_signals.get_mgr():subscribe( s )
+	end
+end
+
+function unsubscribe()
+	for _, s in ipairs( subscribed ) do
+		ogse_signals.get_mgr():unsubscribe( s )
+	end
+	subscribed = nil
+	switch_off()
+	ogse_benchmark.unsubscribe()
+	GlobalEnable = false
+end
+
+----------------------------------------------------------------------------
+-- ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ! НЕ УДАЛЯТЬ
+local hud = get_hud()
+----------------------------------------------------------------------------
+
+----------------------------------------------------------------------------
+-- ОБЩИЕ НАСТРОЙКИ
+-- False - выключить, true - включить
+----------------------------------------------------------------------------
+local bPosition		= true  -- включение схемы показа координат
+local bInfos		= true	-- включение схемы показа состояний инфопоршнэй
+local bInfoAbout	= true	-- включение схемы показа информации о НПС
+local bZones		= true	-- включение схемы показа попадания ГГ в зону
+local bActorData	= false  -- включение всей схемы показа данных ГГ.
+local bAchmData		= false	-- включение схемы показа счетчиков новых амчивок
+local bSlotsData	= false	-- включение всей схемы показа состояния предметов в активных слотах
+
+-- ГУЛАГИ
+----------------------------------------------------------------------------
+-- Проверка численности гулагов, с выводом результата на монитор.
+-- Возможна проверка не ограниченного колличества гулагов, одновременно.
+-- Результат выводится не зависимо от того, находятся нпс в online или offline.
+-- Но только, если локация, на которой гулаг находится, активна.
+-- Отключать схему не обязательно. При пустой таблице, схема не показывается.
+-- Имена гулагов, писать в кавычках, через запятую.
+-- Пример: local GulagsTbl = {"name1","name2","name3"}
+local GulagsTbl = {}
+local bGulags = false
+----------------------------------------------------------------------------
+-- НАСТРОЙКИ АКТОР
+----------------------------------------------------------------------------
+local aHealth		= true	-- включение показа здоровья
+local aPower		= true	-- включение показа силы
+local aRadiation 	= true	-- включение показа радиационного облучения
+local aSatiety		= true	-- включение показа сытости
+local aDrinky		= false	-- включение показа жажды
+local aSleepy		= true	-- включение показа сонливости
+local aMoney		= true	-- включение показа суммы наличных (денег)
+local aPsyHealth	= true	-- включение показа пси-здоровья
+local aMorale		= true	-- включение показа морали
+local aRang			= false	-- включение показа ранга
+local aCommunity	= true	-- включение показа группировки
+local aReputation	= true	-- включение показа репутации
+
+----------------------------------------------------------------------------
+-- ПРЕДМТЫ В СЛОТАХ
+----------------------------------------------------------------------------
+local bSlot1		= true  -- включение показа слота 1 (пистолет)
+local bSlot2		= true  -- включение показа слота 2 (автомат)
+local bSlot7 		= true  -- включение показа слота 7 (броня)
+local bSlot12		= true	-- включение показа слота 12 (шлем)
+
+----------------------------------------------------------------------------
+-- ВЫВОД СТАТИСТИКИ НА HUD
+----------------------------------------------------------------------------
+
+----------------------------------------------------------------------------
+local SGameMtlFlagKeys = {
+	"flActorObstacle",
+	"flBloodmark",
+	"flBounceable",
+	"flClimable",
+	"flDynamic",
+	"flInjurious",
+	"flLiquid",
+	"flPassable",
+	"flSlowDown",
+	"flSuppressShadows",
+	"flSuppressWallmarks" 
+}
+
+local function get_mtl_flags(Flags)
+	local str
+	for _, k in ipairs(SGameMtlFlagKeys) do
+		local fv = SGameMtlFlags[k]
+		if Flags:test(fv) then
+			if not str then
+				str = k
+			else
+				str = str .. "," .. k
+			end
+		end
+	end
+	return str or "<none>"
+end
+----------------------------------------------------------------------------
+
+function switch_off()
+	
+	local statics = {
+		["gul_debug"] = true,
+		["prs_debug"] = true,
+		["logic_debug"] = true,
+		["cs_debug"] = true,
+		["act_debug"] = true,
+		["ach_debug"] = true,
+		["slots_debug"] = true
+	}
+	
+	for k, v in pairs(statics) do
+		local Static = hud:GetCustomStatic(k)
+		if Static then
+			hud:RemoveCustomStatic(k)
+		end
+	end
+	
+end
+
+local zones_time = 0
+function zones()
+
+    local ZonesText
+	
+	local ZoneCS = hud:GetCustomStatic("gul_debug")
+	if ZoneCS == nil then
+		hud:AddCustomStatic("gul_debug",true)
+		ZoneCS = hud:GetCustomStatic("gul_debug")
+	end
+	
+	ZoneCS:wnd():SetText("Актор в зоне:\\n")
+	
+	for name,zone in pairs (db.zone_by_name) do
+		if utils.npc_in_zone(db.actor,zone) then
+			if string.find(zone:section(),"space_restrictor") then
+			    ZonesText = string.format(ZoneCS:wnd():GetText())..
+				string.format("%s (%s) (sr)\\n",tostring(name),tostring(db.storage[zone:id()].active_section))
+			elseif string.find(zone:section(),"smart_terrain") then
+			    ZonesText = string.format(ZoneCS:wnd():GetText())..
+				string.format("%s (st)\\n",tostring(name))
+			else
+			    ZonesText = string.format(ZoneCS:wnd():GetText())..
+			    string.format("%s (anom)\\n",tostring(name))
+			end
+		    if ZoneCS ~= nil then ZoneCS:wnd():SetText(ZonesText) end  		
+	    end
+	end
+end
+
+
+local infos_time = 0
+local k=0
+function infos(npc, info_id)
+	log1("infos_"..info_id)
+
+	if bInfos then
+		local InfoCS = hud:GetCustomStatic("prs_debug")
+		if InfoCS == nil then
+			hud:AddCustomStatic("prs_debug",true)
+			InfoCS = hud:GetCustomStatic("prs_debug")
+		end
+		local OrigInfoText=InfoCS:wnd():GetText()
+		k=k+1
+		if k>12 then
+			OrigInfoText=string.sub(OrigInfoText,(string.find(OrigInfoText, "\\n") or 0)+2,string.len(OrigInfoText))
+			k=k-1
+		end
+		local InfoText = string.format("%s%s\\n",tostring(OrigInfoText),tostring(info_id))
+		if InfoCS ~= nil then InfoCS:wnd():SetText(InfoText) end
+	end
+end
+
+local mental_anims = {
+    [0]="danger",
+    [1]="free",
+    [2]="panic"
+}
+
+function info_about_npc()	
+	clear_info_about_npc()
+
+	local PosLogic = hud:GetCustomStatic("logic_debug")
+	if PosLogic == nil then
+		hud:AddCustomStatic("logic_debug",true)
+		PosLogic = hud:GetCustomStatic("logic_debug")
+	end
+
+	local LogicText = ""
+
+	local rq = level.get_current_ray_query()
+	local target_obj = rq.object
+
+	if target_obj then 
+		if target_obj:is_stalker() or target_obj:is_monster() or target_obj:is_trader() then
+
+			local gulag_val,scheme1,scheme2,anim,mental,pos,lv,gv
+		
+			local gulag = xr_gulag.get_npc_gulag(target_obj)
+			if gulag then
+				gulag = gulag.name
+				gulag_val = xr_gulag.getGulagPopulation(gulag)
+			end
+			if db.storage[target_obj:id()] then
+				scheme1 = tostring(db.storage[target_obj:id()].active_section)
+				scheme2 = tostring(db.storage[target_obj:id()].section_logic)
+				if db.storage[target_obj:id()].state_mgr then
+					anim = db.storage[target_obj:id()].state_mgr.animstate:state()
+					mental = state_lib.states[db.storage[target_obj:id()].state_mgr.target_state].mental
+					if mental_anims[mental] then
+						mental = mental_anims[mental]
+					else
+						mental = tostring(mental).." (unknown state!)"
+					end
+				end
+			end
+			local be = target_obj:best_enemy()
+			if be then
+				be = target_obj:best_enemy():name()
+			end
+			local best_danger = target_obj:best_danger()
+			local best_danger_name = nil
+			local best_danger_type = nil
+			if best_danger and best_danger:object() then
+				best_danger_name = best_danger:object():name()
+			end
+			if best_danger then
+				best_danger_type = "not specified"
+				local bd_type = best_danger:type()
+				if bd_type == danger_object.attack_sound then
+					best_danger_type = "attack sound"
+				elseif bd_type == danger_object.bullet_ricochet then
+					best_danger_type = "bullet ricochet"
+				elseif bd_type == danger_object.grenade then
+					best_danger_type = "grenade"
+				elseif bd_type == danger_object.entity_corpse then
+					best_danger_type = "entity corpse"
+				elseif bd_type == danger_object.entity_attacked then
+					best_danger_type = "entity attacked"
+				elseif bd_type == danger_object.attacked then
+					best_danger_type = "attacked"
+				elseif bd_type == danger_object.enemy_sound then
+					best_danger_type = "enemy sound"
+				elseif bd_type == danger_object.entity_death then
+					best_danger_type = "entity death"
+				end
+			end
+			local community = "monster"
+			if target_obj:is_stalker() then
+				community = target_obj:character_community()
+			end
+			local storage = db.storage[target_obj:id()]
+			local scheme = storage.active_scheme
+			local state = state_mgr.get_state(target_obj)
+			local active_evaluator
+			if ogse_debug.active_evaluators and ogse_debug.active_evaluators[target_obj:id()] then
+				active_evaluator = ogse_debug.active_evaluators[target_obj:id()]			
+			end
+			local active_danger
+			if ogse_debug.active_dangers and ogse_debug.active_dangers[target_obj:id()] then
+				active_danger = ogse_debug.active_dangers[target_obj:id()]			
+			end	
+			local active_anim
+			if ogse_debug.active_anim and ogse_debug.active_anim[target_obj:id()] then
+				active_anim = ogse_debug.active_anim[target_obj:id()]			
+			end				
+			LogicText = LogicText..
+				"npc: sect: ["..target_obj:section().."] ".."name: ["..target_obj:name().."]\\n"..
+				"npc: id: "..target_obj:id().." ".."story_id: "..target_obj:story_id().." ".."comm: ["..community.."]\\n"..
+				"npc: behave scheme: ["..tostring(scheme).."], fov: "..target_obj:fov()..", range: "..target_obj:range().."\\n"..
+				"npc: st_mgr state: ["..tostring(state).."] ".."anim: ["..tostring(anim).."] ".."mental: ["..tostring(mental).."]\\n"..
+				"npc: last active eval: "..tostring(active_evaluator).."\\n"..
+				"npc: last active danger: "..tostring(active_danger).."\\n"..
+				"npc: last active anim_eval: "..tostring(active_anim).."\\n"..						
+				"------------------\\n"..
+				"best_enemy: "..tostring(be).."\\n"..
+				"best_danger: "..tostring(best_danger_name).."\\n"..
+				"best_danger_type: "..tostring(best_danger_type).."\\n"..
+				"is wounded: "..tostring(xr_wounded.is_wounded(target_obj))..", health: "..target_obj.health..", bleeding: "..target_obj:get_bleeding().."\\n"..
+				"------------------\\n"..
+				"profile name: "..tostring(target_obj:profile_name()).."\\n"..
+				"gulag: "..tostring(gulag).."\\n"..
+				"gulag val: "..tostring(gulag_val).."\\n"..
+				"gulag job: "..scheme1.."\\n"..
+				"global job: "..scheme2.."\\n"..
+				"coords: X "..target_obj:position().x..", Y "..target_obj:position().y..", Z "..target_obj:position().z.."\\n"..
+				"level_vertex: "..target_obj:level_vertex_id()..", game_vertex: "..target_obj:game_vertex_id().."\\n"..
+				"visual name: "..tostring(target_obj:get_visual_name()):gsub("%\\", "\\ ")
+		else
+			local scheme1, scheme2, scheme3
+			if db.storage[target_obj:id()] then
+				scheme1 = tostring(db.storage[target_obj:id()].active_section)
+				scheme2 = tostring(db.storage[target_obj:id()].section_logic)			
+				scheme3 = tostring(db.storage[target_obj:id()].ini_filename)			
+			end
+			LogicText = LogicText..
+				"obj: section: "..target_obj:section().."\\n"..
+				"obj: name: "..target_obj:name().."\\n"..
+				"obj: id: "..target_obj:id().."\\n"..
+				"story_id: "..target_obj:story_id().."\\n"..
+				"visual name: "..tostring(target_obj:get_visual_name()):gsub("%\\", "\\ ").."\\n"..
+				"------------------\\n"..
+				"coords: X "..target_obj:position().x..", Y "..target_obj:position().y..", Z "..target_obj:position().z.."\\n"..
+				"dir: X "..target_obj:direction().x..", Y "..target_obj:direction().y..", Z "..target_obj:direction().z.."\\n"..
+				"Active logic: "..tostring(scheme2).."\\n"..
+				"Logic Section: "..tostring(scheme1)..", ini_filename: "..tostring(scheme3).."\\n"..
+				"level_vertex: "..target_obj:level_vertex_id().."\\n"..
+				"game_vertex: "..target_obj:game_vertex_id()
+
+			if target_obj:is_ammo() then
+				LogicText = LogicText.."\\n \\nbullets in pack:"..target_obj:get_current_ammo()
+			end
+		end
+
+		local bone  = rq.element
+		if bone then
+			local bone_name = target_obj:get_bone_name(bone)
+			LogicText = LogicText.."\\n\\nbone index=".. bone ..", name="..bone_name
+		end
+
+		-- local sobj = alife():object(target_obj:id())
+		-- local cd = sobj and sobj.custom_data or ""
+		-- LogicText = LogicText.."\\n\\nCustom data="..cd
+		
+	elseif rq.mtl then
+		local mtl = rq.mtl
+		LogicText = LogicText.."mtl: m_Name: "..tostring(mtl.m_Name).."\\n"..
+			"mtl: m_Desc: "..tostring(mtl.m_Desc).."\\n"..
+			"------------------\\n"..
+			"Flags: "..get_mtl_flags(mtl.Flags).."\\n"..
+			"------------------\\n"..
+			"mtl: fFlotationFactor: "..mtl.fFlotationFactor.."\\n"..
+			"mtl: fShootFactor: "..mtl.fShootFactor.."\\n"..
+			"mtl: fBounceDamageFactor: "..mtl.fBounceDamageFactor.."\\n"..
+			"mtl: fInjuriousSpeed: "..mtl.fInjuriousSpeed.."\\n"..
+			"mtl: fVisTransparencyFactor: "..mtl.fVisTransparencyFactor.."\\n"..
+			"mtl: fSndOcclusionFactor: "..mtl.fSndOcclusionFactor.."\\n"..
+			"------------------\\n"..
+			"mtl: fPHFriction: "..mtl.fPHFriction.."\\n"..
+			"mtl: fPHDamping: "..mtl.fPHDamping.."\\n"..
+			"mtl: fPHSpring: "..mtl.fPHSpring.."\\n"..
+			"mtl: fPHBounceStartVelocity: "..mtl.fPHBounceStartVelocity.."\\n"..
+			"mtl: fPHBouncing: "..mtl.fPHBouncing.."\\n"..
+			"------------------"
+    end
+
+	local dist = rq.range
+	if dist then 
+		LogicText = LogicText.."\\n\\ndistance: ".. dist
+	end
+	LogicText = LogicText.."\\n\\nweather: ".. level.get_weather()
+
+	if PosLogic then
+		PosLogic:wnd():SetText(LogicText)
+	end
+end
+
+local show_info_about_time = 0
+function clear_info_about_npc()
+	 if show_info_about_time < time_global() then
+        local PosLogic = hud:GetCustomStatic("logic_debug")
+    	if PosLogic == nil then
+			hud:AddCustomStatic("logic_debug",true)
+		    PosLogic = hud:GetCustomStatic("logic_debug")
+	    end
+        PosLogic:wnd():SetText("")
+		show_info_about_time = time_global() + 2500
+    end
+end
+
+function vis_int()
+	ogse_signals.get_mgr():reschedule( 200 )
+
+	if bInfoAbout then
+		info_about_npc()
+	end
+
+	-- зоны
+	if bZones then
+	    this.zones()
+	end
+
+	-- Координаты
+	if bPosition == true then
+		local PosCS = hud:GetCustomStatic("cs_debug")
+		if PosCS == nil then
+			hud:AddCustomStatic("cs_debug",true)
+			PosCS = hud:GetCustomStatic("cs_debug")
+		end
+		local lvid,gvid = db.actor:level_vertex_id(),db.actor:game_vertex_id()
+		local pos,dir,campos = db.actor:position(),device().cam_dir,device().cam_pos
+		--local valid = level.vertex_position(lvid):distance_to(pos)<=0.7
+		local valid = level.valid_vertex_id( level.vertex_id( pos ) )
+ 		local fps_check = ogse_benchmark.get_fps()
+		local PosText = string.format("pos: %f,%f,%f\\n",pos.x,pos.y,pos.z)..	-- позиция ГГ (x,y,z)
+						string.format("cam_pos: %f,%f,%f\\n",campos.x,campos.y,campos.z)..	-- позиция камеры (x,y,z)
+						string.format("dir: %f,%f,%f\\n",dir.x,dir.y,dir.z)..	-- поворот ГГ вокруг осей (x,y,z) (гонит)
+		                string.format("lvid: %d\\n",lvid)..								-- левел вертекс
+						string.format("gvid: %d\\n",gvid)..								-- гейм вертекс
+						string.format("valid: %s\\n",tostring(valid))..					-- наличие AI-сетки в данной координате
+						string.format("fps: %d\\n",fps_check)							-- наличие AI-сетки в данной координате
+		if PosCS ~= nil then PosCS:wnd():SetText(PosText) end
+	end
+
+	-- гулаги
+	if bGulags then
+		local GlgCS = hud:GetCustomStatic("gul_debug")
+		if GlgCS == nil then
+			hud:AddCustomStatic("gul_debug",true)
+			GlgCS = hud:GetCustomStatic("gul_debug")
+		end
+		local GlgText =" " 
+		local name_g = ""
+		for k,name_g in ipairs(GulagsTbl) do
+		    local val = xr_gulag.getGulagPopulationComed(name_g)
+			--local cas = smart_terrain.getCasualities(name_g)
+		    if val ~= nil  then
+		        GlgText = GlgText.. string.format("%s\\n", tostring(name_g.." = ".. val))
+		    end
+		end
+		if GlgCS ~= nil then GlgCS:wnd():SetText(GlgText) end
+	end
+
+	-- параметры ГГ
+	if bActorData == true then
+		local ActCS = hud:GetCustomStatic("act_debug")
+		if ActCS == nil then
+			hud:AddCustomStatic("act_debug", true)
+			ActCS = hud:GetCustomStatic("act_debug")
+		end
+		local str
+		local ActText = ""
+		local aCommun = db.actor:character_community()
+		if string.find(aCommun,"actor") then
+			aCommun = GetString("stalker")
+		elseif string.find(aCommun,"dolg") then
+			aCommun = GetString("dolg")
+		elseif string.find(aCommun,"freedom") then
+			aCommun = GetString("freedom")
+		elseif string.find(aCommun,"bandit") then
+			aCommun = GetString("bandit")
+		elseif string.find(aCommun,"killer") then
+			aCommun = GetString("killer")
+		elseif string.find(aCommun,"military") then
+			aCommun = GetString("army")
+		elseif string.find(aCommun,"ecolog") then
+			aCommun = GetString("ecolog")
+		elseif string.find(aCommun,"stranger") then
+			aCommun = GetString("stranger")
+		elseif string.find(aCommun,"monolith") then
+			aCommun = GetString("monolit")
+		elseif string.find(aCommun,"zombied") then
+			aCommun = GetString("zombied")
+		elseif string.find(aCommun,"trader") then
+			aCommun = GetString("trader")
+		end
+		if aHealth == true then
+			str = string.format(" %f",db.actor.health)
+			ActText = ActText.. GetString("sdata_actor_health").. tostring(str).."("..math.ceil(tonumber(str)*100).."%)\\n"
+		end
+		if aPower == true then
+			str=string.format(" %f",db.actor.power)
+			ActText = ActText.. GetString("sdata_actor_power").. tostring(str).." ("..math.ceil(tonumber(str)*100).."%)\\n"
+		end
+		if aRadiation == true then
+			str = string.format(" %f",db.actor.radiation)
+			ActText = ActText.. GetString("sdata_actor_radiation").. tostring(str).." ("..math.ceil(tonumber(str)*100).."%)\\n"
+		end
+		if aSatiety == true then
+			str = string.format(" %f",db.actor.satiety)
+			ActText = ActText.. GetString("sdata_actor_satiety").. tostring(str).." ("..math.ceil(tonumber(str)*100).."%)\\n"
+		end
+		if aDrinky==true then
+			ActText = ActText.. string.format(GetString("sdata_actor_drinky").." %d",ars_mod.get_actor_drinky()).."%\\n"
+		end
+		if aSleepy==true then
+			ActText = ActText.. string.format(GetString("sdata_actor_sleepy").." %d",ars_mod.get_actor_sleepy()).."%\\n"
+		end
+		if aMoney==true then
+			ActText = ActText.. string.format(GetString("sdata_actor_money").." %d\\n",db.actor:money())
+		end
+		if aPsyHealth==true then
+			str = string.format(" %f",db.actor.psy_health)
+			ActText = ActText.. GetString("sdata_actor_psy_health").. tostring(str).." ("..math.ceil(tonumber(str)*100).."%)\\n"
+		end
+		if aMorale == true then
+			ActText = ActText.. string.format(GetString("sdata_actor_morale").." %s\\n",tostring(db.actor.morale))
+		end
+		if aRang == true then
+			ActText = ActText.. string.format(GetString("sdata_actor_rang").." %d\\n",db.actor:character_rank())
+		end
+		if aCommunity == true then
+			ActText = ActText.. string.format(GetString("sdata_actor_community").." %s\\n",tostring(aCommun))
+		end
+		if aReputation == true then
+			ActText = ActText.. string.format(GetString("sdata_actor_reputation").." %d\\n",db.actor:character_reputation())
+		end
+		if ActCS ~= nil then ActCS:wnd():SetText(ActText) end
+	end
+
+	-- новые амчики
+	if bAchmData == true then
+		local AchCS=hud:GetCustomStatic("ach_debug")
+		if AchCS == nil then
+			hud:AddCustomStatic("ach_debug",true)
+			AchCS=hud:GetCustomStatic("ach_debug")
+		end
+		local AchText = ""
+		AchText = AchText.. string.format(GetString("sdata_achievement_headshots").." %d\\n",ars_achievements.ars_statistic.headshot)
+		AchText = AchText.. string.format(GetString("sdata_achievement_medkits").." %d\\n",ars_achievements.ars_statistic.medkit)
+		AchText = AchText.. string.format(GetString("sdata_achievement_mitems").." %d\\n",ars_achievements.ars_statistic.m_item)
+		AchText = AchText.. string.format(GetString("sdata_achievement_mobjects").." %d\\n",ars_achievements.ars_statistic.objects)
+		AchText = AchText.. string.format(GetString("sdata_achievement_crows").." %d\\n",ars.read_variable("ArsCrowCount",0))
+		if AchCS ~= nil then AchCS:wnd():SetText(AchText) end
+	end
+
+	-- активные слоты
+	if bSlotsData == true then
+		if bSlot1 == true or bSlot2 == true or bSlot7 == true or bSlot12 == true then
+			local SlotCS = hud:GetCustomStatic("slots_debug")
+			if SlotCS == nil then
+				hud:AddCustomStatic("slots_debug", true)
+				SlotCS = hud:GetCustomStatic("slots_debug")
+			end
+			local SlotText = ""
+			for i = 1,12 do
+				local slot
+				local name_str = ""
+				local cond_str = ""
+				if i == 2 or i == 3 or i == 7 or i == 12 then
+					slot = db.actor:item_in_slot(i)
+					if slot then
+						name_str = string.format("%s\\n", GetString(GetItemName(slot:section())))
+						cond_str = string.format("State: %1.2f\\n", slot:condition())
+					else
+						name_str = "empty"
+					end
+					SlotText = SlotText.. GetString("Slot "..i..": ").. name_str.."\\n"..cond_str.."\\n\\n"
+				end
+			end
+			if SlotCS ~= nil then SlotCS:wnd():SetText(SlotText) end
+		end
+	end
+	-- Eof
+end
+
+local pcnt = 0
+local function get_target_info()
+	local rq = level.get_current_ray_query()
+	local dist = rq.range
+	if rq and rq.object then log1(get_obj_info(rq.object)) end
+	if dist then
+		local pos = vector():mad(device().cam_pos, device().cam_dir, dist)
+		local lv = level.nearest_vertex_id(pos) -- Возвращает ближайший вертекс к этой позиции. Использует тупой перебор всех вертексов.
+		local gv = cross_table():vertex(lv):game_vertex_id() -- Для переданного level_vertex_id возвращает соответствующий ему game_vertex_id(). Конечно же это работает только для текущей локации.
+		log1("----------GET_TARGET_INFO START----------")
+		log2("target pos: %s,%s,%s,%s,%s", pos.x, pos.y, pos.z, lv, gv)
+		log2("{%s,%s,%s,%s,%s},", pos.x, pos.y, pos.z, lv, gv)
+		log2("alife():create(\"section_%s\",vector():set(%s,%s,%s),%s,%s)", pcnt, pos.x, pos.y, pos.z, lv, gv)
+		log2("position={x=%s,y=%s,z=%s},gv=%s,lv=%s", pos.x, pos.y, pos.z, gv, lv)
+		log1("-----------GET_TARGET_INFO END-----------")
+		pcnt = pcnt + 1
+	end
+end
+
+local point_count = 0
+function print_actor_info_dbg()
+    get_target_info()
+	-- Выдадим сообщение о нашем местоположении
+	local act = db.actor
+	if not act then return end
+	local actor_vid = game_graph():vertex(alife():actor().m_game_vertex_id):level_id()
+	local dir = act:direction()
+	local a = act:position() -- Наше положение в координатах
+	local vid = act:level_vertex_id() -- секция уровня
+	local gvid = act:game_vertex_id() -- секция карты
+	local text = "Позиция:\\nX= " .. a.x .. "\\nY= " .. a.y .. "\\nZ= " .. a.z .. "\\nV= " .. vid .. "\\nG= " .. gvid .. "\\nLEVEL= " .. actor_vid
+	log1("############################################")
+	log1("--------------------------------------------")
+	log1("[waypoint" .. tostring(point_count) .. "]")
+	log1("points = p0")
+	log1("p0:name = wp00")
+	log1("p0:flags = 0x1")
+	log1("p0:position = " .. a.x .. ", " .. a.y .. ", " .. a.z)
+	log1("p0:game_vertex_id = " .. gvid)
+	log1("p0:level_vertex_id = " .. vid)
+	local lvid_pos = level.vertex_position(vid)
+	log2("; level.vertex_position() = %f, %f, %f", lvid_pos.x, lvid_pos.y, lvid_pos.z)
+	log1("--------------------------------------------")
+	log1("-- готовая функция для спавна предметов")
+	log1('alife():create("section_' .. tostring(point_count) .. '",vector():set(' .. a.x .. "," .. a.y .. "," .. a.z .. ")," .. vid .. "," .. gvid .. ")")
+	log1('local obj = alife():create("section_' .. tostring(point_count) .. '",vector():set(' .. a.x .. "," .. a.y .. "," .. a.z .. ")," .. vid .. "," .. gvid .. ")")
+	log1("--------------------------------------------")
+	log1("-- для вставки в таблицы")
+	log1("{position={x=" .. a.x .. ",y=" .. a.y .. ",z=" .. a.z .. "},gv=" .. gvid .. ",lv=" .. vid .. "}")
+	log2("{%s,%s,%s,%s,%s},", a.x, a.y, a.z, vid, gvid)
+	log1("--------------------------------------------")
+	log1("-- для вставки в all.spawn")
+	log1("position = " .. a.x .. "," .. a.y .. "," .. a.z)
+	log1("direction = " .. dir.x .. "," .. dir.y .. "," .. dir.z)
+	log1("--------------------------------------------")
+	log1("Level vertex count: " .. tostring(level.vertex_count()))
+	log1("Level name: " .. tostring(level.name()))
+	log1("Level weather: " .. tostring(level.get_weather()))
+	log1("############################################")
+	point_count = point_count + 1
+	amk.send_tip(text)
+end
+
+-- Вернуть строку с подробной информацией об объекте
+function get_obj_info(data)
+	local sobj
+	if type(data) ~= "userdata" then -- id или name
+		sobj = alife():object(data)
+	elseif data.section_name then -- серверный объект
+		sobj = data
+	else -- клиентский объект
+		sobj = alife():object(data:id())
+	end
+	if type(sobj) ~= "userdata" then return "Object not defined!" end
+
+	local parent = sobj.parent_id
+	if parent and parent ~= 65535 then
+		parent = alife():object(parent)
+		parent = parent:name()
+	end
+    local class, sect = sobj:clsid(), sobj:section_name()
+
+	local txt = "Obj info! "
+	.."name: ["..tostring(sobj:name()).."], "
+	.."sect: ["..tostring(sect).."], "
+	.."id: ["..tostring(sobj.id).."], "
+	.."level: ["..tostring(sobj.level_name).."], "
+	.."parent: ["..tostring(parent).."], "
+	.."alive: ["..tostring(sobj.is_alive).."], "
+	.."clsid: ["..tostring(class).."], "
+	.."sid: ["..tostring(sobj.m_story_id).."], "
+
+    if class == clsid.script_stalker then
+        txt = txt.."prof: ["..tostring(sobj:profile_name()).."], "
+        txt = txt.."health: ["..tostring(sobj.health and sobj:health()).."], "
+		local trader = sobj:get_trader()
+		if trader then txt = txt.."chr name: ["..tostring(trader.character_name).."], " end
+    end
+
+	local inv_name = get_string(sect, "inv_name")
+	if type(inv_name) == "string" then
+		local name = game.translate_string(inv_name)
+		if string.find(sect, "capsule") then
+			name = name..": "..game.translate_string(get_string(string.gsub(sect, "_capsule", ""), "inv_name", ""))
+		end
+		txt = txt.."in: ["..name.."], "
+	end
+
+	return string.sub(txt, 1, -3)
+end
+
+-- Найти объект по части имени
+function find_obj(name)
+	if not level.present() then return end
+	local cnt = 0
+	for id, sobj in alife():objects() do
+		if string.find(sobj:name(), name) then
+			local s = get_obj_info(sobj)
+			log1(s)
+			level.map_add_object_spot(sobj.id, "yellow_flag_location", s)
+			cnt = cnt + 1
+		end
+	end
+	log1("Total objects found: "..cnt)
+end
+
+-- Найти объект по части секции
+function find_obj_sect(name)
+	if not level.present() then return end
+	local cnt = 0
+	for id, sobj in alife():objects() do
+		if string.find(sobj:section_name(), name) then
+			local s = get_obj_info(sobj)
+			log1(s)
+			level.map_add_object_spot(sobj.id, "yellow_flag_location", s)
+			cnt = cnt + 1
+		end
+	end
+	log1("Total objects found: "..cnt)
+end
+
+-- Найти НПС по имени профиля
+function find_npc_ch(name)
+	if not level.present() then return end
+	local cnt = 0
+	for id, sobj in alife():objects() do
+	    local trader = IsStalker(sobj) and sobj:get_trader()
+	    if trader and string.find(string.lower((trader.character_name or "")), string.lower(name)) then
+			local s = get_obj_info(sobj)
+			log1(s)
+			level.map_add_object_spot(sobj.id, "yellow_flag_location", s)
+			cnt = cnt + 1
+	    end
+	end
+	log1("Total objects found: "..cnt)
+end
+
+-- Найти артефакты на локации на земле
+function find_arts()
+	if not level.present() then return end
+	local cnt = 0
+	for id, sobj in alife():objects() do
+	    if sobj.level_name == level.name() and sobj:clsid() == clsid.artefact and sobj.parent_id == 65535 then
+			local s = get_obj_info(sobj)
+			log1(s)
+			level.map_add_object_spot(sobj.id, "yellow_flag_location", s)
+			cnt = cnt + 1
+	    end
+	end
+	log1("Total objects found: "..cnt)
+end
+
+-- Найти объекты на определённом расстоянии
+function find_nearest_obj(dist)
+	if not level.present() then return end
+	local cnt = 0
+    for id, sobj in alife():objects() do
+        local obj = level.object_by_id(id)
+        if obj and obj:position():distance_to(db.actor:position()) <= (dist or 5) and sobj.parent_id ~= db.actor:id() then
+			local s = get_obj_info(sobj)
+			log1(s)
+			level.map_add_object_spot(sobj.id, "yellow_flag_location", s)
+			cnt = cnt + 1
+        end
+    end
+	log1("Total objects found: "..cnt)
+end
+
+-- Проверить наличие инфопоршня
+function log_info(s)
+	if not level.present() then return end
+	log1("~~ INFO: ["..tostring(s).."] = ["..tostring(has_alife_info(s)).."]")
+end
+
+function parent_info(id)
+	local sobj = id and alife():object(id)
+	if not sobj then log1("!!Object not found!") return end
+	local cnt, cnt2, sect_cnt = 0, 0, {}
+	for id, obj in alife():objects() do
+		if obj.parent_id == sobj.id then
+			local sect = obj:section_name()
+			local t = sect_cnt[sect]
+			sect_cnt[sect] = (t and t + 1) or 1
+			cnt = cnt + 1
+		end
+	end
+	for s, c in pairs(sect_cnt) do
+		log1(game.translate_string(g_inv_name(s)).." - ["..s.."]".." ("..c..")")
+		cnt2 = cnt2 + 1
+	end
+	log1("Total objects found: "..cnt.." ("..cnt2..")")
+end
+
+-- Скопировать файл из закрытых архивов:
+-- _sdata.unpack_file("$game_meshes$", "dynamics\\weapons\\wpn_ak74\\wpn_ak74.ogf")
+function unpack_file(fa, dir)
+	local fs = getFS()
+	local f1 = fs:update_path(fa, dir)
+	local f2 = f1:gsub("gamedata\\", "_unpacked\\", 1)
+	fs:file_copy(f1, f2)
+	log1(string.format("Copied: [%s]: [%s] -> [%s]", fa, f1, f2))
+end

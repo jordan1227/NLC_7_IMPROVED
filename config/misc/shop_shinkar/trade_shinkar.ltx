@@ -1,0 +1,9 @@
+[trader]
+buy_condition = freedom_generic_buy
+sell_condition = {+mil_lukash_dolg_task_complete} freedom_sell_after_dolg, freedom_sell_start
+buy_supplies = {+mil_lukash_dolg_task_complete} supplies_after_dolg, supplies_start
+
+
+#include "shinkar_buy.ltx"
+#include "shinkar_supl.ltx"
+#include "shinkar_trade.ltx"

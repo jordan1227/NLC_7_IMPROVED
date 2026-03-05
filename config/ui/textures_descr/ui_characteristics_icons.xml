@@ -1,0 +1,52 @@
+<w>
+	<file name="ui\ui_characteristics_icons">
+		<!-- Для всплывающего окна описания -->
+		<texture id="ui_inv_icon_shock" x="285" y="114" width="19" height="19" />
+		<texture id="ui_inv_icon_burn" x="323" y="38" width="19" height="19" />
+		<texture id="ui_inv_icon_strike" x="117" y="38" width="19" height="19" />
+		<texture id="ui_inv_icon_wound" x="285" y="57" width="19" height="19" />
+		<texture id="ui_inv_icon_telepatic" x="155" y="0" width="19" height="19" />
+		<texture id="ui_inv_icon_chemical_burn" x="155" y="38" width="19" height="19" />
+		<texture id="ui_inv_icon_explosion" x="342" y="114" width="19" height="19" />
+		<texture id="ui_inv_icon_fire_wound" x="285" y="0" width="19" height="19" />
+		<texture id="ui_inv_icon_health" x="117" y="76" width="19" height="19" />
+		<texture id="ui_inv_icon_bleeding" x="117" y="19" width="19" height="19" />
+		<texture id="ui_inv_icon_satiety" x="304" y="133" width="19" height="19" />
+		<texture id="ui_inv_icon_power" x="136" y="19" width="19" height="19" />
+		<texture id="ui_inv_icon_speed" x="361" y="19" width="19" height="19" />
+		<texture id="ui_inv_icon_alcohol" x="155" y="57" width="19" height="19" />
+		<texture id="ui_inv_icon_radiation" x="285" y="133" width="19" height="19" />
+		<texture id="ui_inv_icon_radiation_2" x="136" y="57" width="19" height="19" />
+		<texture id="ui_inv_icon_power_loss" x="323" y="76" width="19" height="19" />
+		<texture id="ui_inv_icon_additional_weight" x="136" y="38" width="19" height="19" />
+		<texture id="ui_inv_icon_physic_strike" x="117" y="38" width="19" height="19" />
+		<texture id="ui_inv_icon_psy_health" x="285" y="95" width="19" height="19" />
+		<texture id="ui_inv_icon_thirst" x="155" y="76" width="19" height="19" />
+		<texture id="ui_inv_icon_jump" x="342" y="95" width="19" height="19" />
+		
+		<texture id="ui_inv_icon_accuracy" x="266" y="38" width="19" height="19" />
+		<texture id="ui_inv_icon_ammo_mag_size" x="247" y="19" width="19" height="19" />
+		<texture id="ui_inv_icon_rpm" x="209" y="0" width="19" height="19" />
+		<texture id="ui_inv_icon_fire_distance" x="209" y="76" width="19" height="19" />
+		<texture id="ui_inv_icon_scope" x="98" y="38" width="19" height="19" />
+		<texture id="ui_inv_icon_adjust_scope" x="266" y="114" width="19" height="19" />
+		<texture id="ui_inv_icon_comp_scope" x="228" y="95" width="19" height="19" />
+		<texture id="ui_inv_icon_nv_scope" x="228" y="133" width="19" height="19" />
+		<texture id="ui_inv_icon_kalibr" x="98" y="19" width="19" height="19" />
+		<texture id="ui_inv_icon_otdaca" x="209" y="57" width="19" height="19" />
+		<texture id="ui_inv_icon_ves" x="60" y="0" width="19" height="19" />
+		<texture id="ui_inv_icon_fire_distance_knife" x="247" y="0" width="19" height="19" />
+		<texture id="ui_inv_icon_hit_power" x="209" y="19" width="19" height="19" />
+		<texture id="ui_inv_icon_f_mode" x="98" y="76" width="19" height="19" />
+
+		<texture id="ui_inv_icon_timer" x="361" y="0" width="19" height="19" />
+		
+		<texture id="ui_inv_icon_condition_shot_dec" x="209" y="38" width="19" height="19" />
+		
+		<texture id="ui_inventory_progress_bar" x="6" y="257" width="172" height="16" />
+		<texture id="ui_inventory_progress_bar_16" x="6" y="257" width="122" height="16" />
+		
+		<texture id="ui_inventory_item_status_bar" x="16" y="344" width="38" height="5" />
+		<texture id="ui_inventory_item_status_bar_16" x="16" y="354" width="30" height="5" />
+	</file>
+</w>

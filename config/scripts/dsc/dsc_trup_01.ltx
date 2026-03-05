@@ -1,0 +1,12 @@
+[logic]
+active = ph_idle@idle
+
+[ph_idle@idle]
+on_info = {+voron_artist_start} ph_idle@idle1
+
+[ph_idle@idle1]
+tips = dead_character_use
+on_use = {-voron_artist_have} %=sak.artist_body_handle() +voron_artist_have% ph_idle@idle2, nil
+
+[ph_idle@idle2]
+on_timer = 5000 | %=sak.artist_body_handle_end()% nil

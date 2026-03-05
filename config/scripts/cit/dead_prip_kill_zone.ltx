@@ -1,0 +1,9 @@
+[logic]
+active = sr_idle1
+
+[sr_idle1]
+on_info = {-deactivate_radar_fall} sr_idle2, nil
+
+[sr_idle2]
+on_actor_inside = %=sak.dead_prip_kill_zone()%
+on_info = {+deactivate_radar_fall} nil

@@ -1,0 +1,37 @@
+[logic]
+active = walker@lisiy
+on_death = on_death@lisiy
+
+[on_death@lisiy]
+on_info = %+lisiy_umer%
+
+[walker@lisiy]
+path_walk = bar_bar_square_3_place_1_walk
+path_look = bar_bar_square_3_place_1_look
+on_info = {!is_agr_day} walker@prapor
+soundgroup = bar_visitors1
+meet = meet@bar
+danger = danger_condition
+
+[walker@prapor]
+path_walk = bar_prapor_walker_1_walk
+path_look = bar_prapor_walker_1_look
+on_info = {=is_agr_day} walker@lisiy
+meet = meet@patrul
+
+[danger_condition]
+ignore_distance = 0
+
+[meet@bar]
+use = true
+use_wpn = true
+meet_talk_enabled = true
+meet_state = ward
+meet_dialog = lisiy_bar_start
+
+
+[meet@patrul]
+use = true
+use_wpn = true
+meet_talk_enabled = true
+meet_dialog = lisiy_patrul_start

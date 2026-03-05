@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding="windows-1251"?>
+<encyclopedia>
+    <!-- LIST OF ENCYCLOPEDIA ENTRIES -->
+
+   <article id="tutorial_overload" name="overload" group="tutorial">
+        <text>overload_tutorial</text>
+    </article>
+	
+   <article id="tutorial_radiation" name="radiation" group="tutorial">
+        <text>radiation_tutorial</text>
+    </article>
+
+   <article id="tutorial_weakness" name="weakness" group="tutorial">
+        <text>weakness_tutorial</text>
+    </article>
+
+   <article id="tutorial_wound" name="wound" group="tutorial">
+        <text>wound_tutorial</text>
+    </article>
+
+</encyclopedia>
+

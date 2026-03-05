@@ -1,0 +1,20 @@
+[logic]
+active = walker
+
+[walker]
+path_walk = gar_angar_seryi_drug4_walk
+path_look = gar_angar_seryi_drug4_look
+meet = meet1
+danger = danger_condition
+
+[meet1]
+meet_state = 3|wait@wait
+meet_state_wpn = 3|wait@wait
+victim = 3|actor
+victim_wpn = 3|actor
+use = true
+use_wpn = true
+meet_dialog	= gar_stalker_les_dialog
+
+[danger_condition]
+ignore_distance = 5

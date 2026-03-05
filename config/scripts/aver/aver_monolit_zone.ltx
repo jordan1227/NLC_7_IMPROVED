@@ -1,0 +1,8 @@
+[logic]
+active = sr_idle@in
+
+[sr_idle@in]
+on_actor_inside = %=sak.monolit_zone_in% sr_idle@out
+
+[sr_idle@out]
+on_actor_outside = %=sak.monolit_zone_out% sr_idle@in

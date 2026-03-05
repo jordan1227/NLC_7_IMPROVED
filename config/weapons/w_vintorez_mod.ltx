@@ -1,0 +1,203 @@
+;Винтовка "ВССМ"
+[wpn_vintorez_m1]:wpn_vintorez
+$spawn						= "weapons\uniq\wpn_vintorez_m1"
+
+inv_name					= wpn-vintorez_m1
+inv_name_short				= wpn-vintorez_m1
+description					= enc_weapons1_wpn-vintorez_m1
+dialog_description		    = desc_dialog_wpn-vintorez_m1
+
+
+default_to_ruck				= false
+slot 			         	= 2
+
+cost						= 35000
+
+ammo_class					= ammo_9x39_sp5,ammo_9x39_ap,ammo_9x39_pab9
+
+inv_weight		         	= 2.8
+
+
+ammo_mag_size				= 20
+
+inv_grid_height                                    = 2
+inv_grid_width                                     = 6
+inv_grid_x                                         = 58
+inv_grid_y                                         = 16
+
+fire_dispersion_base		= 0.14
+
+condition_shot_dec			= 0.00025
+misfire_probability 		= 0.004
+misfire_condition_k 		= 0.50
+
+cam_relax_speed         	= 4
+cam_dispersion          	= 0.16
+cam_dispersion_inc			= 0.17
+
+flame_particles				= weapons\generic_weapon00 ; weapons\generic_weapon03
+smoke_particles         	= weapons\generic_shoot_00
+
+
+hit_power           		= 1.2
+fire_distance				= 150
+bullet_speed				= 230
+rpm                     	= 700
+
+
+shell_point		 			= 0,0.190,0.120
+shell_dir		 			= 0.0, 1.0, 0.0
+direction               	= 0, 0, 1
+fire_point           		= 0.0, 0.175, 0.580
+normal                  	= 0, 1, 0
+position        			= -0.026, -0.131, -0.016
+orientation     			= 0, 0, 0
+strap_position         		= -0.02,-0.21,0.32
+strap_orientation      		= 05,-182, -103
+
+hud  						= wpn_vintorez_m1_hud
+
+visual						= dynamics\weapons\wpn_vintorez\wpn_vintorez_nimble
+
+scope_status				= 2
+silencer_status				= 1
+grenade_launcher_status		= 0
+
+scope_name 					= specter
+scope_names 				= ac10632, wpn_addon_eotech, microt1, specter
+
+scope_respawn_ac10632 = wpn_vintorez_nimble_ac10632
+scope_respawn_wpn_addon_eotech = wpn_vintorez_nimble_eot
+scope_respawn_microt1 = wpn_vintorez_nimble_microt1
+scope_respawn_specter = wpn_vintorez_nimble_specter
+
+scope_mode 					= 3
+
+silencer_name  				= wpn_addon_sil_vsk
+scope_x                     = 73		; offset in inventory icon
+scope_y                     = -5
+silencer_x                  = 185		; offset in inventory icon
+silencer_y                  = 6
+grenade_launcher_x          = 0		; offset in inventory icon
+grenade_launcher_y          = 0
+
+
+; snd_shoot					= weapons\9a91\9a91_shot
+; snd_silncer_shot			= weapons\9a91\9a91_shot_suppressed
+
+silencer_flame_particles		= weapons\generic_weapon00
+silencer_smoke_particles 		= weapons\generic_shoot_00
+
+[wpn_vintorez_m1_hud]:wpn_vintorez_hud
+aim_hud_offset_pos = -0.068000,0.035500,-0.09
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.068000,0.035500,-0.09
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+anm_reload              						   = val_reload, reload
+anm_reload_empty        						   = val_reload_full, reload_empty
+item_visual                                        = dynamics\weapons\wpn_vintorez\wpn_vintorez_nimble_hud.ogf
+
+[wpn_vintorez_nimble_ac10632]:wpn_vintorez_m1
+$spawn                                             = "weapons\wpn_vintorez_nimble_ac10632"
+hud												   = wpn_vintorez_nimble_ac10632_hud
+scope_x                                      	   = 90
+scope_y                                      	   = -6
+visual											   = dynamics\weapons\wpn_vintorez\wpn_vintorez_nimble_ac10632.ogf
+
+scope_respawn = wpn_vintorez_m1
+scope_name = ac10632
+
+[wpn_vintorez_nimble_ac10632_hud]:wpn_vintorez_m1_hud
+item_visual            	 						   = dynamics\weapons\wpn_vintorez\wpn_vintorez_nimble_ac10632_hud.ogf
+
+aim_hud_offset_pos = -0.068000,0.008000,-0.07
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.068000,0.008000,-0.07
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+
+; anim_aim_start 									   = aim_start_vss_scope, 1, 1, 0.14, 0.15
+; anim_aim_idle  									   = aim_idle_vss_scope, 1, 1, 0.2, 0.2
+; anim_aim_end   									   = aim_end_vss_scope, 1, 1, 0.14, 0.15
+
+[wpn_vintorez_nimble_eot]:wpn_vintorez_m1
+$spawn                                             = "weapons\wpn_vintorez_nimble_eot"
+hud												   = wpn_vintorez_nimble_eot_hud
+scope_x                                      	   = 102
+scope_y                                     	   = -6
+visual												= dynamics\weapons\wpn_vintorez\wpn_vintorez_nimble_eot.ogf
+
+scope_respawn = wpn_vintorez_m1
+scope_name = wpn_addon_eotech
+
+[wpn_vintorez_nimble_eot_hud]:wpn_vintorez_m1_hud
+item_visual            	 						   = dynamics\weapons\wpn_vintorez\wpn_vintorez_nimble_eot_hud.ogf
+
+aim_hud_offset_pos = -0.068000,0.005000,-0.07
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+
+aim_hud_offset_pos_16x9 = -0.068000,0.005000,-0.07
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+
+; anim_aim_start 									   = aim_start_vss_scope, 1, 1, 0.14, 0.15
+; anim_aim_idle  									   = aim_idle_vss_scope, 1, 1, 0.2, 0.2
+; anim_aim_end   									   = aim_end_vss_scope, 1, 1, 0.14, 0.15
+
+[wpn_vintorez_nimble_microt1]:wpn_vintorez_m1
+$spawn                                             = "weapons\wpn_vintorez_nimble_microt1"
+hud												   = wpn_vintorez_nimble_microt1_hud
+scope_x                                      	   = 99
+scope_y                                      	   = -7
+visual											   = dynamics\weapons\wpn_vintorez\wpn_vintorez_nimble_micro-t1.ogf
+
+scope_respawn = wpn_vintorez_m1
+scope_name = microt1
+
+[wpn_vintorez_nimble_microt1_hud]:wpn_vintorez_m1_hud
+item_visual            	 						   = dynamics\weapons\wpn_vintorez\wpn_vintorez_nimble_micro-t1_hud.ogf
+
+aim_hud_offset_pos = -0.067000,0.004000,-0.07
+aim_hud_offset_rot = 0.000000,0.000000,0.000000
+
+aim_hud_offset_pos_16x9 = -0.067000,0.004000,-0.07
+aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000
+
+
+; anim_aim_start 									   = aim_start_vss_scope, 1, 1, 0.14, 0.15
+; anim_aim_idle  									   = aim_idle_vss_scope, 1, 1, 0.2, 0.2
+; anim_aim_end   									   = aim_end_vss_scope, 1, 1, 0.14, 0.15
+
+
+[wpn_vintorez_nimble_specter]:wpn_vintorez_m1
+$spawn             							 	   = "weapons\wpn_vintorez_nimble_specter"
+hud											 	   = wpn_vintorez_nimble_specter_hud
+visual										 	   = dynamics\weapons\wpn_vintorez\wpn_vintorez_nimble_specter.ogf
+scope_x                                      	   = 87
+scope_y                                      	   = -8
+
+3d_reticle_size = 5
+3dss_gen_zoom_enable = true
+
+scope_respawn = wpn_vintorez_m1
+scope_name = specter
+
+[wpn_vintorez_nimble_specter_hud]:wpn_vintorez_m1_hud
+item_visual										   = dynamics\weapons\wpn_vintorez\wpn_vintorez_nimble_specter_hud.ogf
+anm_shots_when_aim               				   = vss_aim_shoot_scope, shoot
+
+aim_hud_offset_pos = -0.068,0.0025,-0.0880001
+aim_hud_offset_rot = 0.005,-0.0015,0
+aim_hud_offset_pos_16x9 = -0.068,0.0025,-0.0880001
+aim_hud_offset_rot_16x9 = 0.005,-0.0015,0
+
+; anim_aim_start 									   = aim_start_vss_scope, 1, 1, 0.14, 0.15
+; anim_aim_idle  									   = aim_idle_vss_scope, 1, 1, 0.2, 0.2
+; anim_aim_end   									   = aim_end_vss_scope, 1, 1, 0.14, 0.15
+
+use_alt_aim_zoom = true
+alt_aim_hud_offset_pos = -0.067525,-0.023075,-0.022955
+alt_aim_hud_offset_rot = 0.000000,0.000000,0.000000
+alt_aim_hud_offset_pos_16x9 = -0.067525,-0.023075,-0.022955
+alt_aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000

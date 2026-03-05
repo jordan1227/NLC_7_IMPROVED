@@ -1,0 +1,51 @@
+function give_agroprom_reward()
+	sak.create_items("vodka",1)
+	sak.create_items("conserva",2)
+	sak.create_items("medkit",2)
+	sak.create_items("antirad",2)	
+    dialogs.relocate_money(db.actor, 5000, "in")
+end
+
+function have_darklab_documents(first_speaker, second_speaker)
+	return first_speaker:object("dar_document4")~=nil
+end
+
+function hasnt_darklab_documents(first_speaker, second_speaker)
+	return first_speaker:object("dar_document4")==nil
+end
+
+function give_darklab_documents(first_speaker, second_speaker)
+	dialogs.relocate_item_section(second_speaker, "dar_document4", "out")
+end
+
+function not_have_spec_outfit_m1()
+	return not have_spec_outfit_m1()
+end
+
+--это чтобы Сахаров забрал и намазанный костюм
+function have_spec_outfit_m1()
+  return sak.have_items_count("ecolog_outfit_m1",1)~=false or sak.have_items_count("ecolog_q_outfit_q_m1",1)~=false
+end
+function give_spec_outfit_m1()
+	if sak.have_items_count("ecolog_outfit_m1",1) then
+		sak_inventory.release_actor_items("ecolog_outfit_m1",1)
+	elseif sak.have_items_count("ecolog_q_outfit_q_m1",1) then
+		sak_inventory.release_actor_items("ecolog_q_outfit_q_m1",1)
+	end
+end
+
+function actor_have_research(first_speaker, second_speaker)
+	return first_speaker:object("kruglov_pda")~=nil
+end
+function actor_not_have_research(first_speaker, second_speaker)
+	return not first_speaker:object("kruglov_pda")~=nil
+end
+
+--Фамильное ружье охотника
+function have_hunters_toz(first_speaker, second_speaker)
+	return first_speaker:object("wpn_toz34_m1")~=nil
+end
+function give_hunters_toz(first_speaker, second_speaker)
+	dialogs.relocate_item_section(second_speaker, "wpn_toz34_m1", "out")
+end
+

@@ -1,0 +1,109 @@
+#include "m_stalker.ltx"
+#include "m_person.ltx"
+#include "immunities.ltx"
+#include "damages.ltx"
+#include "m_stalker_zombied.ltx"
+#include "m_stalker_monolith.ltx"
+#include "m_stalker_sniper.ltx"
+#include "m_stalker_antisniper.ltx"
+
+[stalkers_common]
+	corpse_remove_game_time_interval	= 12 ; in hours
+	stay_after_death_time_interval		= 12 ; in hours
+	
+;-------------------секции для задания игнорирования врагов--------------------- 
+;------------ обрабатываются в dsh_enemies, мирить можно по секции,-------------
+;------------ имени из аллспавна, группировке-----------------------------------
+;------------ указывать "примирение" нужно для каждой локации ------------------
+
+;замирить НПС с мобами до получения поршня
+[dsh.enemy.ignore.info]
+esc_novice_attacker1 = esc_kill_bandits_quest_done
+esc_novice_attacker2 = esc_kill_bandits_quest_done
+esc_novice_attacker3 = esc_kill_bandits_quest_done
+
+[dsh.enemy.ignore.av_peshera]
+ecolog = monster
+
+[dsh.enemy.ignore.l01_escape]
+esc_bridge = esc2_st_fox_place, esc_farm_lager, esc_stalker_camp, doktor1, esc_wolf, esc_shustryi, esc_stone_lager, esc_provodnik, marsh_oksana2, esc_vagon_wounded, gar_dm_novice, val_vlad, bandit
+esc_blokpost = esc_lager, doktor1, esc_provodnik, marsh_oksana2, esc_vagon_wounded, esc_vergas, esc_shustryi, esc_wolf, gar_dm_novice, val_vlad
+esc_sid_guard = military ; Стас и вояки не враги
+esc_soldier_commander_sub = esc_lager, doktor1, esc_provodnik, marsh_oksana2, esc_vagon_wounded, esc_vergas, esc_shustryi, esc_wolf, gar_dm_novice, val_vlad
+esc_dram = stalker
+esc_bandit_klava = monster, military
+
+[dsh.enemy.ignore.l02_garbage]
+stalker = military
+; Долг и вояки на Свалке не воюют
+dolg = military
+; Юрик на Свалке не воюет с мутантами
+gar_dm_novice = monster
+
+[dsh.enemy.ignore.limansk]
+; Бандиты в лагере в Лиманске не воюют со Свободой
+lim_lager_freedom_stalkers = lim_lager_bandits
+; Боров в Лиманске не воюет с мутами
+val_lager_borov = monster, lim_lager_freedom_stalkers 
+
+[dsh.enemy.ignore.l04_darkvalley]
+; Монгол
+mongol = monster, val_escort_captive, val_escort_nap1, val_escort_guard1, val_escort_guard2, val_escort_guard3
+val_vlad 				= bandit
+val_escort_captive 		= monster
+val_escort_guard1 		= monster
+val_escort_guard2 		= monster
+val_escort_guard3 		= monster
+val_bandit_trader		= dolg
+val_watchtower4_bandit_guard = dolg
+val_watchtower5_bandit_guard = dolg
+
+[dsh.enemy.ignore.l03_agroprom]
+agr_ratcatcher          = bandit, monster
+; вояки с НИИ не воюют с мутами
+agr_nii					= monster
+agr2_st_nii             = monster
+; снайпера на вышках
+agr_tower1_soldier      = monster
+agr_tower2_soldier      = monster
+agr_tower3_soldier      = monster
+
+[dsh.enemy.ignore.marsh]
+agr_muller              = sanek2, monster
+shersh                  = monster
+marsh_oksana            = mar_factory
+mar_military_glavn      = monster, stalker, green
+mar_factory             = stalker, green
+
+;Толян на ДТ нейтрален с мутантами.
+[dsh.enemy.ignore.l06_rostok]
+dt_merc_baze 			= ecolog
+esc_vagon_wounded       = monster, bandit
+td_stalker_fraer       	= monster, bandit
+td_kocherga       		= monster, bandit
+
+[dsh.enemy.ignore.l08_yantar]
+ecolog             		= military, bandit, monster
+yan_dolg_petrenko  		= monster, ecolog, dolg, zombied
+my_prizrak				= monster, zombied
+
+[dsh.enemy.ignore.l07_military]
+mil_mercs				= stalker, freedom
+
+[dsh.enemy.ignore.red_forest]
+serafim					= monster
+
+[dsh.enemy.ignore.l03u_agr_underground]
+klyk                	= monster
+kat_stalker         	= monster
+
+[dsh.enemy.ignore.lost_village]
+stalker            		= military
+sanek              		= military
+
+[dsh.enemy.ignore.k01_darkscape]
+dsc_ecolog_glavn 		= monster
+bandit 			 		= monster
+
+[dsh.enemy.ignore.l10_radar]
+rad_ivar_drug			= zombied

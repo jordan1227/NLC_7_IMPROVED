@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding="windows-1251"?>
+<encyclopedia>
+    <article id="zone_anomalies_bald" name="Bald" group="Anomalies">
+        <texture x="0" y="400" width="200" height="150">ui\ui_icon_photo</texture>
+        <text>enc_zone_anomalies_bald</text>
+    </article>
+    <article id="zone_anomalies_gravi" name="Gravi" group="Anomalies">
+        <texture x="0" y="850" width="200" height="150">ui\ui_icon_photo</texture>
+        <text>enc_zone_anomalies_gravi</text>
+    </article>
+    <article id="zone_anomalies_meat" name="Meat" group="Anomalies">
+        <texture x="1020" y="300" width="200" height="150">ui\ui_icon_photo</texture>
+        <text>enc_zone_anomalies_meat</text>
+    </article>
+    <article id="zone_anomalies_zharka" name="Zharka" group="Anomalies">
+        <texture x="1020" y="450" width="150" height="150">ui\ui_icon_photo</texture>
+        <text>enc_zone_anomalies_zharka</text>
+    </article>
+    <article id="zone_anomalies_electra" name="Electra" group="Anomalies">
+        <texture x="0" y="700" width="200" height="150">ui\ui_icon_photo</texture>
+        <text>enc_zone_anomalies_electra</text>
+    </article>
+    <article id="zone_anomalies_rusty" name="Rusty" group="Anomalies">
+        <texture x="500" y="150" width="100" height="100">ui\ui_icon_photo</texture>
+        <text>enc_zone_anomalies_rusty</text>
+    </article>
+    <article id="zone_anomalies_fuzz" name="Fuzz" group="Anomalies">
+        <texture x="1550" y="150" width="200" height="200">ui\ui_icon_photo</texture>
+        <text>enc_zone_anomalies_fuzz</text>
+    </article>
+    <article id="zone_anomalies_radioactive" name="Radioactive" group="Anomalies">
+        <texture x="500" y="150" width="100" height="100">ui\ui_icon_photo</texture>
+        <text>enc_zone_anomalies_radioactive</text>
+    </article>
+    <article id="zone_anomalies_ameba" name="Ameba" group="Anomalies">
+        <texture x="400" y="400" width="200" height="200">ui\ui_icon_photo</texture>
+        <text>enc_zone_anomalies_ameba</text>
+    </article>
+    <article id="zone_anomalies_time" name="Time" group="Anomalies">
+        <texture x="500" y="150" width="100" height="100">ui\ui_icon_photo</texture>
+        <text>enc_zone_anomalies_time</text>
+    </article>
+    <article id="zone_anomalies_lift" name="Lift" group="Anomalies">
+        <texture x="500" y="150" width="100" height="100">ui\ui_icon_photo</texture>
+        <text>enc_zone_anomalies_lift</text>
+    </article>
+    <article id="zone_locations_escape" name="Escape" group="Locations">
+        <texture x="600" y="150" width="150" height="100">ui\ui_icon_photo</texture>
+        <text>enc_zone_locations_escape</text>
+    </article>
+    <article id="zone_locations_garbage" name="Garbage" group="Locations">
+        <texture x="750" y="150" width="150" height="100">ui\ui_icon_photo</texture>
+        <text>enc_zone_locations_garbage</text>
+    </article>
+    <article id="zone_locations_agroprom" name="Agroprom" group="Locations">
+        <texture x="600" y="250" width="150" height="100">ui\ui_icon_photo</texture>
+        <text>enc_zone_locations_agroprom</text>
+    </article>
+    <article id="zone_locations_darkdolina" name="Darkdolina" group="Locations">
+        <texture x="500" y="150" width="100" height="100">ui\ui_icon_photo</texture>
+        <text>enc_zone_locations_darkdolina</text>
+    </article>
+    <article id="zone_locations_stancia" name="Stancia" group="Locations">
+        <texture x="500" y="150" width="100" height="100">ui\ui_icon_photo</texture>
+        <text>enc_zone_locations_stancia</text>
+    </article>
+    <article id="zone_locations_bar" name="Bar" group="Locations">
+        <texture x="500" y="150" width="100" height="100">ui\ui_icon_photo</texture>
+        <text>enc_zone_locations_bar</text>
+    </article>
+    <article id="zone_locations_rostok" name="Rostok" group="Locations">
+        <texture x="500" y="150" width="100" height="100">ui\ui_icon_photo</texture>
+        <text>enc_zone_locations_rostok</text>
+    </article>
+    <article id="zone_locations_yantar" name="Yantar" group="Locations">
+        <texture x="500" y="150" width="100" height="100">ui\ui_icon_photo</texture>
+        <text>enc_zone_locations_yantar</text>
+    </article>
+    <article id="zone_locations_military-loc" name="Military-loc" group="Locations">
+        <texture x="500" y="150" width="100" height="100">ui\ui_icon_photo</texture>
+        <text>enc_zone_locations_military-loc</text>
+    </article>
+    <article id="zone_locations_pripiat" name="Pripiat" group="Locations">
+        <texture x="500" y="150" width="100" height="100">ui\ui_icon_photo</texture>
+        <text>enc_zone_locations_pripiat</text>
+    </article>
+    <article id="zone_locations_radar" name="Radar" group="Locations">
+        <texture x="500" y="150" width="100" height="100">ui\ui_icon_photo</texture>
+        <text>enc_zone_locations_radar</text>
+    </article>
+    <article id="zone_zone-story_story-2006" name="Story-2006" group="Zone-story">
+        <texture x="500" y="150" width="100" height="100">ui\ui_icon_photo</texture>
+        <text>enc_zone_zone-story_story-2006</text>
+    </article>
+    <article id="zone_zone-story_story-2008" name="Story-2008" group="Zone-story">
+        <texture x="500" y="150" width="100" height="100">ui\ui_icon_photo</texture>
+        <text>enc_zone_zone-story_story-2008</text>
+    </article>
+
+    <article id="zone_zone-story_story-2010" name="Story-2010" group="Zone-story">
+        <texture x="500" y="150" width="100" height="100">ui\ui_icon_photo</texture>
+        <text>enc_zone_zone-story_story-2010</text>
+    </article>
+    <article id="zone_zone-story_story-raid" name="Story-raid" group="Zone-story">
+        <texture x="500" y="150" width="100" height="100">ui\ui_icon_photo</texture>
+        <text>enc_zone_zone-story_story-raid</text>
+    </article>
+	<article id="many_in_zone" name="enc_many_in_zone" group="Zone-story">
+        <ltx>lot_many</ltx>
+        <text>enc_many_in_zone_text</text>
+    </article>
+	<article id="merc_monolit_weapon" name="enc_zone_mercenary" group="Zone-story">
+        <ltx>lot_many</ltx>
+        <text>enc_zone_mercenary_text</text>
+    </article>
+	<article id="art_belt" name="enc_art_belt" group="Zone-story">
+        <text>enc_art_belt_text</text>
+    </article>
+	<article id="zone_pda" name="enc_zone_pda" group="Zone-story">
+        <text>enc_zone_pda_text</text>
+    </article>
+	<article id="zone_weapons" name="enc_zone_weapons" group="Zone-story">
+        <text>enc_zone_weapons_text</text>
+    </article>
+	<article id="zone_theory" name="enc_zone_theory" group="Zone-story">
+        <text>enc_zone_theory_text</text>
+    </article>
+	<article id="zone_mask_theory" name="enc_zone_mask_theory" group="Zone-story">
+        <text>enc_zone_mask_theory_text</text>
+    </article>
+	<article id="zone_teleport_theory" name="enc_zone_teleport_theory" group="Zone-story">
+        <text>enc_zone_teleport_theory_text</text>
+    </article>
+	<article id="zone_teleport" name="enc_zone_teleport" group="Zone-story">
+        <text>enc_zone_teleport_text</text>
+    </article>
+	<article id="flesh_mackintosh" name="enc_flesh_mackintosh" group="Zone-story">
+        <ltx>bandit_master_outfit</ltx>
+        <text>enc_flesh_mackintosh_text</text>
+    </article>
+	
+
+</encyclopedia>
+

@@ -1,0 +1,12 @@
+[logic@val_sacrifice_guard1]
+active          = walker@val_sacrifice_guard1
+combat_ignore   = combat_ignore@val_sacrifice
+
+[walker@val_sacrifice_guard1]
+path_walk                   = guard1_walk 
+path_look                   = guard1_look
+meet                        = no_meet
+combat_ignore_cond  		= {=check_fighting(402)}
+
+[combat_ignore@val_sacrifice]
+combat_ignore_cond  = {=check_fighting(402)}

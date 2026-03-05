@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+
+<blank>
+		
+		<background x="300" y="130" width="400" height="570" stretch="1" complex_mode="1">
+			<texture x="56" y="224" width="476" height="560">ui\ui_notebook_arts</texture>
+			<!-- <text x="40" y="30" complex_mode="1" stretch="1"/> -->
+		</background>
+		
+		<btn_leave x="432" y="108" width="200" height="35">
+			<texture>ui_icons_notebook_leave</texture>
+			<texture_e>ui_icons_notebook_leave_e</texture_e>	
+			<texture_d>ui_icons_notebook_leave_d</texture_d>			
+			<texture_t>ui_icons_notebook_leave_t</texture_t>
+			<texture_h>ui_icons_notebook_leave_h</texture_h>
+		</btn_leave>
+		
+		<btn_prev x="510" y="620" width="50" height="35">
+			<texture>ui_icons_notebook_prev</texture>
+			<texture_e>ui_icons_notebook_prev_e</texture_e>	
+			<texture_d>ui_icons_notebook_prev_d</texture_d>			
+			<texture_t>ui_icons_notebook_prev_t</texture_t>
+			<texture_h>ui_icons_notebook_prev_h</texture_h>
+		</btn_prev>
+
+		<btn_next x="580" y="620" width="50" height="35">
+			<texture>ui_icons_notebook_next</texture>
+			<texture_e>ui_icons_notebook_next_e</texture_e>	
+			<texture_d>ui_icons_notebook_next_d</texture_d>			
+			<texture_t>ui_icons_notebook_next_t</texture_t>
+			<texture_h>ui_icons_notebook_next_h</texture_h>
+		</btn_next>		
+
+		<btn_page_1 x="674" y="150" width="50" height="40">
+			<texture>ui_icons_notebook_page_1</texture>
+			<texture_e>ui_icons_notebook_page_1_e</texture_e>	
+			<texture_d>ui_icons_notebook_page_1_d</texture_d>			
+			<texture_t>ui_icons_notebook_page_1_t</texture_t>
+			<texture_h>ui_icons_notebook_page_1_h</texture_h>
+		</btn_page_1>		
+
+		<btn_page_2 x="674" y="225" width="50" height="40">
+			<texture>ui_icons_notebook_page_2</texture>
+			<texture_e>ui_icons_notebook_page_2_e</texture_e>	
+			<texture_d>ui_icons_notebook_page_2_d</texture_d>			
+			<texture_t>ui_icons_notebook_page_2_t</texture_t>
+			<texture_h>ui_icons_notebook_page_2_h</texture_h>
+		</btn_page_2>				
+		
+		<btn_page_3 x="674" y="260" width="50" height="40">
+			<texture>ui_icons_notebook_page_3</texture>
+			<texture_e>ui_icons_notebook_page_3_e</texture_e>	
+			<texture_d>ui_icons_notebook_page_3_d</texture_d>			
+			<texture_t>ui_icons_notebook_page_3_t</texture_t>
+			<texture_h>ui_icons_notebook_page_3_h</texture_h>
+		</btn_page_3>				
+		
+		<btn_page_4 x="674" y="320" width="50" height="40">
+			<texture>ui_icons_notebook_page_4</texture>
+			<texture_e>ui_icons_notebook_page_4_e</texture_e>	
+			<texture_d>ui_icons_notebook_page_4_d</texture_d>			
+			<texture_t>ui_icons_notebook_page_4_t</texture_t>
+			<texture_h>ui_icons_notebook_page_4_h</texture_h>
+		</btn_page_4>	
+
+		<btn_page_5 x="674" y="385" width="50" height="40">
+			<texture>ui_icons_notebook_page_5</texture>
+			<texture_e>ui_icons_notebook_page_5_e</texture_e>	
+			<texture_d>ui_icons_notebook_page_5_d</texture_d>			
+			<texture_t>ui_icons_notebook_page_5_t</texture_t>
+			<texture_h>ui_icons_notebook_page_5_h</texture_h>
+		</btn_page_5>	
+
+		<btn_page_6 x="674" y="440" width="50" height="40">
+			<texture>ui_icons_notebook_page_6</texture>
+			<texture_e>ui_icons_notebook_page_6_e</texture_e>	
+			<texture_d>ui_icons_notebook_page_6_d</texture_d>			
+			<texture_t>ui_icons_notebook_page_6_t</texture_t>
+			<texture_h>ui_icons_notebook_page_6_h</texture_h>
+		</btn_page_6>	
+
+		<btn_page_7 x="674" y="500" width="50" height="40">
+			<texture>ui_icons_notebook_page_7</texture>
+			<texture_e>ui_icons_notebook_page_7_e</texture_e>	
+			<texture_d>ui_icons_notebook_page_7_d</texture_d>			
+			<texture_t>ui_icons_notebook_page_7_t</texture_t>
+			<texture_h>ui_icons_notebook_page_7_h</texture_h>
+		</btn_page_7>	
+
+		<btn_page_8 x="674" y="535" width="50" height="40">
+			<texture>ui_icons_notebook_page_8</texture>
+			<texture_e>ui_icons_notebook_page_8_e</texture_e>	
+			<texture_d>ui_icons_notebook_page_8_d</texture_d>			
+			<texture_t>ui_icons_notebook_page_8_t</texture_t>
+			<texture_h>ui_icons_notebook_page_8_h</texture_h>
+		</btn_page_8>	
+
+		<btn_page_9 x="674" y="600" width="50" height="40">
+			<texture>ui_icons_notebook_page_9</texture>
+			<texture_e>ui_icons_notebook_page_9_e</texture_e>	
+			<texture_d>ui_icons_notebook_page_9_d</texture_d>			
+			<texture_t>ui_icons_notebook_page_9_t</texture_t>
+			<texture_h>ui_icons_notebook_page_9_h</texture_h>
+		</btn_page_9>			
+			
+</blank>

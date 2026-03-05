@@ -1,0 +1,355 @@
+;HK G36
+[wpn_g36]:weapon_immunities
+GroupControlSection					= spawn_group
+discovery_dependency				= 
+$spawn								= "weapons\g36"
+$npc								= on	
+$prefetch							= 8
+scheduled							= off
+cform								= skeleton
+class								= WP_AK74
+min_radius							= 0
+max_radius							= 150
+description							= enc_weapons1_wpn-g36
+
+default_to_ruck						= false
+
+launch_speed						= 0
+ef_main_weapon_type					= 2
+ef_weapon_type						= 6
+
+holder_range_modifier				= 1.85
+holder_fov_modifier					= 0.3
+
+cost								= 8000
+weapon_class						= assault_rifle
+
+ammo_limit							= 210
+ammo_current						= 180
+ammo_elapsed						= 30
+	
+ammo_mag_size						= 30
+ammo_class							= ammo_5.56x45_ss190,ammo_5.56x45_ap,ammo_5.56x45_merc
+grenade_class						= ammo_m209
+fire_modes							= 1, -1
+f_mode								= 2
+
+hand_dependence						= 1
+single_handed						= 0	
+
+slot				    			= 2
+animation_slot						= 2
+
+inv_name							= wpn-g36
+inv_name_short						= wpn-g36
+inv_weight							= 3.63
+icon_group          				= 7
+inv_grid_height                                    = 2
+inv_grid_width                                     = 7
+inv_grid_x                                         = 59
+inv_grid_y                                         = 18
+
+kill_msg_x							= 157
+kill_msg_y							= 29
+kill_msg_width						= 78
+kill_msg_height						= 31
+
+fire_dispersion_base				= 0.16
+control_inertion_factor				= 1.35f
+
+cam_relax_speed						= 5.0	
+cam_dispersion						= 0.2	
+cam_dispersion_inc					= 0.25
+cam_dispertion_frac					= 0.6
+cam_max_angle						= 15
+cam_max_angle_horz					= 7.5
+cam_step_angle_horz					= 0.33
+
+fire_dispersion_condition_factor 	= 1.5	
+misfire_probability					= 0.003	
+misfire_condition_k					= 0.05
+condition_shot_dec					= 0.0002
+
+direction							= 0, 0, 1
+fire_point							= 0.0, 0.21, 0.58
+fire_point2							= 0.0, 0.21, 0.71
+
+flame_particles						= weapons\generic_weapon05
+smoke_particles						= weapons\generic_shoot_00
+grenade_flame_particles				= weapons\generic_weapon01
+	
+shell_point							= 0.0, 0.21, 0.13
+shell_dir							= 0.0, 0.0, 0.4
+shell_particles						= ;
+
+rpm_empty_click						= 200
+
+PDM_disp_base 						= 2.0
+PDM_disp_vel_factor 				= 3.0
+PDM_disp_accel_factor 				= 4.0
+PDM_crouch							= 1.7
+PDM_crouch_no_acc					= 0.63
+
+hit_power							= 1.05
+hit_impulse							= 1
+hit_type							= fire_wound
+
+fire_distance						= 170
+bullet_speed						= 700
+rpm									= 750
+
+use_aim_bullet						= false
+time_to_aim							= 1.0	
+
+hud									= wpn_g36_hud
+normal								= 0, 1, 0
+
+position                			= -0.026, -0.138, 0.0
+orientation             			= 0, 0, 0
+
+strap_orientation                                  = -15,-9,110
+strap_position                                     = -0.26,-0.11,0.25
+strap_bone0							= bip01_spine2
+strap_bone1							= bip01_spine1
+
+startup_ammo						= 90
+visual								= dynamics\weapons\wpn_g36\wpn_g36
+
+light_color							= 0.6,0.5,0.3
+light_range							= 5
+light_var_color						= 0.05
+light_var_range						= 0.5
+light_time							= 0.2
+
+ph_mass								= 4
+
+scope_status						= 1
+silencer_status						= 2
+grenade_launcher_status				= 2
+
+scope_mode 							= 3
+scope_name 							= wpn_addon_g36l
+
+scope_x 							= 76
+scope_y		 				    	= -15
+silencer_name  						= wpn_addon_sil_556_ar
+silencer_x 							= 249	
+silencer_y 							= 17
+silencer_x_offset			= -2
+silencer_y_offset			= 0
+grenade_launcher_name 				= wpn_addon_grenade_launcher_ag36
+grenade_launcher_x 					= 128
+grenade_launcher_y 					= 2
+
+scope_zoom_factor	    			= 40
+scope_dynamic_zoom = true
+scope_texture                                      = wpn_crosshair_g36
+
+3d_reticle_size = 4.2
+3dss_gen_zoom_enable = true
+
+snd_shoot							= weapons\g36\muzzle_g36_mono
+snd_silncer_shot					= weapons\g36\silencer_g36_mono
+
+snd_draw                                           = weapons\assault_draw
+snd_empty                                          = weapons\g36\g36_empty, 0.5
+snd_holster                                        = weapons\assault_holster
+snd_reload                                         = weapons\g36\g36_reload
+snd_reload_empty                                   = weapons\g36\g36_reload_empty
+snd_reload_jammed                                 = weapons\g36\g36_misfire
+snd_shoot_grenade                                  = weapons\m203_shoot_mono
+snd_reload_grenade                                 = weapons\l85\l85_gl_reload
+snd_switch                                         = weapons\l85\l85_gl_deactivate
+snd_switch_g                                       = weapons\l85\l85_gl_activate
+snd_firemode                                       = weapons\l85\l85_firemode
+snd_firemode_w_gl                                  = weapons\l85\l85_firemode
+snd_sprint_idle								   	   = weapons\sprint_assault
+
+
+;silencer_flame_particles			= weapons\generic_weapon01
+silencer_smoke_particles			= weapons\generic_shoot_00
+
+silencer_light_color				= 0.6,0.5,0.3
+silencer_light_range				= 0.01
+silencer_light_var_color			= 0.05
+silencer_light_var_range			= 0.5
+silencer_light_time					= 0.2
+
+[wpn_g36_hud]:hud_base
+
+aim_hud_offset_pos = -0.063,0.0192,-0.0835001
+aim_hud_offset_rot = 0.002,-0.003,0
+aim_hud_offset_pos_16x9 = -0.063,0.0192,-0.0835001
+aim_hud_offset_rot_16x9 = 0.002,-0.003,0
+
+anm_bore                                           = g36_idle_aim
+anm_bore_empty                                     = g36_idle_aim, idle_empty
+anm_hide                                           = g36_holster
+anm_hide_empty                                     = g36_holster, idle_empty
+anm_idle                                           = g36_idle
+anm_idle_empty                                     = g36_idle, idle_empty
+anm_idle_aim                                       = g36_idle_aim
+anm_idle_aim_empty                                 = g36_idle_aim, idle_empty
+anm_idle_moving_slow                               = g36_moving_slow
+anm_idle_moving_slow_empty                         = g36_moving_slow, idle_empty
+anm_idle_moving                                    = g36_moving
+anm_idle_moving_empty                              = g36_moving, idle_empty
+anm_idle_moving_crouch                             = g36_crouch
+anm_idle_moving_crouch_empty                       = g36_crouch, idle_empty
+anm_idle_aim_moving                                = g36_moving_aim
+anm_idle_aim_moving_empty                          = g36_moving_aim, idle_empty
+anm_reload                                         = g36_reload, reload
+anm_reload_empty                                   = g36_reload_empty, reload_empty
+anm_reload_jammed								   = g36_misfire, misfire
+anm_firemode                					   = g36_firemode
+anm_firemode_empty                				   = g36_firemode, idle_empty
+anm_shots                                          = g36_shoot, shoot
+anm_shots_last                                 	   = g36_shoot, idle_empty
+anm_shots_when_aim								   = g36_shoot_scope, shoot
+anm_shots_when_aim_last                            = g36_shoot_scope, idle_empty
+anm_show                                           = g36_draw
+anm_show_empty                                     = g36_draw, idle_empty
+
+anm_idle_sprint_start         						   = g36_sprint_start
+anm_idle_sprint         						   = g36_sprint
+anm_idle_sprint_end         						   	   = g36_sprint_end
+
+anm_idle_sprint_start_empty         					   = g36_sprint_start, idle_empty
+anm_idle_sprint_empty         					   = g36_sprint, idle_empty
+anm_idle_sprint_end_empty         					   = g36_sprint_end, idle_empty
+
+anm_idle_w_gl_aim_moving						   = g36_gl_moving_aim
+anm_show_w_gl									   = g36_gl_draw
+anm_hide_w_gl                					   = g36_gl_holster
+anm_idle_w_gl                					   = g36_gl_idle
+anm_idle_moving_slow_w_gl         				   = g36_gl_moving_slow
+anm_idle_moving_w_gl         					   = g36_gl_moving
+anm_shots_w_gl               					   = g36_gl_shoot, shoot
+anm_shots_w_gl_when_aim              			   = g36_gl_shoot_scope, shoot
+anm_reload_w_gl	        						   = g36_gl_reload, reload
+anm_reload_empty_w_gl	        				   = g36_gl_reload_empty, reload_empty
+anm_reload_jammed_w_gl						       = g36_gl_misfire, misfire
+anm_idle_moving_crouch_w_gl  					   = g36_gl_crouch
+anm_idle_w_gl_aim           					   = g36_gl_idle_aim
+anm_bore_w_gl                					   = g36_gl_idle_aim
+anm_firemode_w_gl                				   = g36_gl_firemode
+
+anm_idle_w_gl_aim_moving_empty					   = g36_gl_moving_aim, idle_empty
+anm_show_w_gl_empty								   = g36_gl_draw, idle_empty
+anm_hide_w_gl_empty                				   = g36_gl_holster, idle_empty
+anm_idle_w_gl_empty                				   = g36_gl_idle, idle_empty
+anm_idle_moving_slow_w_gl_empty         		   = g36_gl_moving_slow, idle_empty
+anm_idle_moving_w_gl_empty         				   = g36_gl_moving, idle_empty
+anm_shots_w_gl_last                     		   = g36_gl_shoot, idle_empty
+anm_shots_when_aim_w_gl_last            		   = g36_gl_shoot_scope, idle_empty
+anm_reload_w_gl_empty	        				   = g36_gl_reload, reload
+anm_reload_empty_w_gl_empty	        			   = g36_gl_reload_empty, reload_empty
+anm_reload_jammed_w_gl_empty					   = g36_gl_misfire, misfire
+anm_idle_moving_crouch_w_gl_empty  				   = g36_gl_crouch, idle_empty
+anm_idle_w_gl_aim_empty           				   = g36_gl_idle_aim, idle_empty
+anm_bore_w_gl_empty                				   = g36_gl_idle_aim, idle_empty
+anm_firemode_empty_w_gl                			   = g36_gl_firemode, idle_empty
+anm_firemode_aim = g36_firemode
+anm_firemode_aim_empty = g36_firemode, idle_empty
+
+anm_firemode_aim_w_gl = g36_gl_firemode
+anm_firemode_empty_w_gl = g36_gl_firemode, idle_empty
+anm_firemode_aim_empty_w_gl = g36_gl_firemode, idle_empty
+
+anm_idle_sprint_start_w_gl         						   = g36_sprint_w_gl_start
+anm_idle_sprint_w_gl         						   = g36_sprint_w_gl
+anm_idle_sprint_end_w_gl         						   = g36_sprint_w_gl_end
+
+anm_idle_sprint_start_empty_w_gl         				   = g36_sprint_w_gl_start, idle_empty
+anm_idle_sprint_empty_w_gl         					   = g36_sprint_w_gl, idle_empty
+anm_idle_sprint_end_empty_w_gl         				       = g36_sprint_w_gl_end, idle_empty
+
+anm_switch              						   = g36_g_off, g_off
+anm_switch_g            						   = g36_g_on, g_on
+anm_show_g              						   = g36_g_draw, g_idle
+anm_hide_g              						   = g36_g_holster, g_idle
+anm_idle_g              						   = g36_g_idle, g_idle
+anm_reload_g            						   = g36_g_reload, g_reload
+anm_idle_g_aim          						   = g36_g_idle_aim, g_idle
+anm_shots_g             						   = g36_g_shoot, g_shoot
+anm_idle_moving_g       						   = g36_g_moving, g_idle
+anm_idle_moving_slow_g   						   = g36_g_moving_slow, g_idle
+anm_idle_moving_crouch_g						   = g36_g_crouch, g_idle
+anm_idle_g_aim_moving							   = g36_g_moving_aim, g_idle
+anm_bore_g              						   = g36_g_idle_aim, g_idle
+
+anm_switch_empty              					   = g36_g_off, g_off_empty
+anm_switch_g_empty            					   = g36_g_on, g_on_empty
+anm_show_g_empty              					   = g36_g_draw, g_idle_empty
+anm_hide_g_empty              					   = g36_g_holster, g_idle_empty
+anm_idle_g_empty              					   = g36_g_idle, g_idle_empty
+anm_reload_g_empty            					   = g36_g_reload, g_reload_empty
+anm_idle_g_aim_empty          					   = g36_g_idle_aim, g_idle_empty
+anm_shots_g_empty             					   = g36_g_shoot, g_shoot_empty
+anm_idle_moving_g_empty       					   = g36_g_moving, g_idle_empty
+anm_idle_moving_slow_g_empty   					   = g36_g_moving_slow, g_idle_empty
+anm_idle_moving_crouch_g_empty					   = g36_g_crouch, g_idle_empty
+anm_idle_g_aim_moving_empty						   = g36_g_moving_aim, g_idle_empty
+anm_bore_g_empty              					   = g36_g_idle_aim, g_idle_empty
+
+anm_idle_sprint_start_g         						   = g36_sprint_g_start, g_idle
+anm_idle_sprint_g         						   = g36_sprint_g, g_idle
+anm_idle_sprint_end_g         						   = g36_sprint_g_end, g_idle
+
+anm_idle_sprint_start_empty_g         				   = g36_sprint_g_start, g_idle_empty
+anm_idle_sprint_empty_g         				   = g36_sprint_g, g_idle_empty
+anm_idle_sprint_end_empty_g         					   = g36_sprint_g_end, g_idle_empty
+
+anm_idle_sprint_start_jammed      = g36_sprint_start
+anm_idle_sprint_end_jammed       = g36_sprint_end
+anm_idle_sprint_start_jammed_w_gl = g36_sprint_w_gl_start
+anm_idle_sprint_start_jammed_g    = g36_sprint_g_start, g_idle
+anm_idle_sprint_end_jammed_w_gl  = g36_sprint_w_gl_end
+anm_idle_sprint_end_jammed_g     = g36_sprint_g_end, g_idle
+
+anm_headlamp_on                                = g36_flash
+anm_gasmask                                      = g36_clear
+
+anm_headlamp_on_w_gl                           = g36_flash_w_gl
+anm_gasmask_w_gl                                 = g36_clear_w_gl
+
+anm_headlamp_on_g                              = g36_flash_g, g_idle
+anm_gasmask_g                                    = g36_clear_g, g_idle
+
+anm_headlamp_on_empty                          = g36_flash, idle_empty
+anm_gasmask_empty                                = g36_clear, idle_empty
+
+anm_headlamp_on_w_gl_empty                     = g36_flash_w_gl, idle_empty
+anm_gasmask_w_gl_empty                           = g36_clear_w_gl, idle_empty
+
+anm_headlamp_on_g_empty                        = g36_flash_g, g_idle_empty
+anm_gasmask_g_empty                              = g36_clear_g, g_idle_empty
+
+attach_place_idx                                   = 0
+fire_bone                                          = muzzle
+fire_bone2                                         = wpn_launcher
+fire_point                                         = 0,0,0
+fire_point2                                        = 0,0,0.179
+gl_hud_offset_pos                                  = -0.028600,-0.008200,0.000000
+gl_hud_offset_pos_16x9                             = -0.028600,-0.008200,0.000000
+gl_hud_offset_rot                                  = -0.042000,-0.005250,0.087500
+gl_hud_offset_rot_16x9                             = -0.042000,-0.005250,0.087500
+hands_orientation                                  = 0,0,0
+hands_orientation_16x9                             = 0,0,0
+hands_position                                     = 0.063350,-0.142375,0.151976
+hands_position_16x9                                = 0.063350,-0.142375,0.151976
+item_orientation                                   = 0,0,0
+item_position                                      = 0,0,0
+item_visual                                        = dynamics\weapons\wpn_g36\wpn_g36_hud.ogf
+lean_hud_offset_pos                                = 0,0,0
+lean_hud_offset_rot                                = 0,0,0
+shell_bone                                         = wpn_body
+shell_dir                                          = 0.0, 1.0, 0.0
+shell_point                                        = 0,0.038000,-0.020000
+zoom_hide_crosshair                                = true
+
+use_alt_aim_zoom = true
+alt_aim_hud_offset_pos = -0.063525,-0.000575,-0.05
+alt_aim_hud_offset_rot = 0.000000,0.000000,0.000000
+alt_aim_hud_offset_pos_16x9 = -0.063525,-0.000575,-0.05
+alt_aim_hud_offset_rot_16x9 = 0.000000,0.000000,0.000000

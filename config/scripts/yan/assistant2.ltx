@@ -1,0 +1,31 @@
+[logic]
+active = walker@yan
+on_death = death
+
+[walker@yan]
+path_walk = yan_assistant2_walk
+path_look = yan_assistant2_look
+on_info  = {+assistant_go_to_mil} companion@to_mil
+meet = meet@begin
+danger = danger_condition
+show_spot = false 
+
+[companion@to_mil]
+path_walk = yan_assistant2_walk
+path_look = yan_assistant2_look
+on_actor_dist_ge_nvis = 80 | {-assistant_go_to_bar} %=kill%
+meet = meet@begin
+danger = danger_condition
+show_spot = false 
+
+[meet@begin]
+use = true
+use_wpn = true
+meet_talk_enabled = true
+meet_dialog	= yan_assistant2_start_dialog
+
+[danger_condition]
+ignore_distance = 6
+
+[death]
+on_info = %+assistant2_umer%

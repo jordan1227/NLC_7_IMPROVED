@@ -1,0 +1,26 @@
+[logic]
+active = ph_idle@idle0
+
+[ph_idle@idle0]
+tips = no_supply
+on_info = {+supply_x12_on} ph_idle@idle1
+
+[ph_idle@idle1]
+tips = pult_on
+on_use = %=sak.actor_hide_weapon()% ph_idle@idle2_1
+
+[ph_idle@idle2_1]
+on_timer = 1000| %+bun_pult_on% ph_idle@idle2
+
+[ph_idle@idle2]
+on_timer = 5000| ph_idle@idle3
+
+[ph_idle@idle3]
+tips = pult_off
+on_use = %=sak.actor_hide_weapon()% ph_idle@idle4_1
+
+[ph_idle@idle4_1]
+on_timer = 1000| %+bun_pult_off% ph_idle@idle4
+
+[ph_idle@idle4]
+on_timer = 5000| ph_idle@idle1

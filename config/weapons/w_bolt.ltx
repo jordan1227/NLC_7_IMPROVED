@@ -1,0 +1,89 @@
+[bolt]:weapon_immunities
+class					= II_BOLT
+cform					= skeleton
+visual					= dynamics\devices\dev_bolt\dev_bolt
+inv_name				= st_bolt
+$prefetch 				= 16
+inv_name_short			= st_bolt
+inv_weight				= .0
+can_be_unlimited		= false
+default_to_ruck			= false
+ef_weapon_type			= 1
+
+inv_grid_width			= 0
+inv_grid_height			= 0
+inv_grid_x				= 0
+inv_grid_y				= 0
+
+animation_slot			= 7 ;6
+single_handed			= 0
+
+slot					= 5
+hud						= bolt_hud
+force_min				= 10
+force_const				= 20
+force_max				= 30
+force_grow_speed		= 30
+
+destroy_time			= 9000
+
+attach_position_offset	= -0.028, -0.084, 0.030
+attach_angle_offset		= 0,0,0
+attach_bone_name		= 
+
+position_offset			= 0.0,0.0,0.0
+angle_offset			= 1.570790,1.570790,3.92699
+
+cost					= 0
+
+throw_point				= 0,0.4,0.5
+throw_dir				= 0,0,1
+
+
+[bolt_hud]:hud_base
+
+anm_bore                                           = bolt_bore
+anm_hide                                           = bolt_holster
+anm_idle                                           = bolt_idle
+anm_idle_moving                                    = bolt_moving
+anm_idle_moving_slow                               = bolt_moving_slow
+anm_idle_moving_crouch                             = bolt_crouch
+anm_idle_sprint_start         						   = bolt_sprint_start
+anm_idle_sprint         						   = bolt_sprint
+anm_idle_sprint_end         						   	   = bolt_sprint_end
+anm_show                                           = bolt_draw
+anm_throw                                          = bolt_throw_end
+anm_throw_begin                                    = bolt_throw_start
+anm_throw_idle                                     = bolt_throw_idle
+
+anm_throw_speed_k = 1.4
+anm_throw_begin_speed_k = 1.4
+anm_throw_idle_speed_k = 1.4
+
+anm_prepare_detector                               = bolt_hand_holster
+anm_finish_detector                                = bolt_hand_draw
+
+anm_headlamp_on                                  = bolt_flash
+anm_gasmask                                        = bolt_clear
+
+attach_place_idx                                   = 0
+fire_bone                                          = wpn_body
+fire_point                                         = 0,0,0
+hands_orientation                                  = 0,0,0
+hands_orientation_16x9                             = 0,0,0
+hands_position                                     = -0.009900,-0.103700,-0.212250
+hands_position_16x9                                = -0.009900,-0.103700,-0.212250
+item_orientation                                   = 0,0,0
+item_position                                      = 0,0,0
+item_visual                                        = dynamics\devices\dev_bolt\dev_bolt_hud
+throw_dir                                          = 0,0,1
+throw_point                                        = 0.0,0.4,0.3
+
+strafe_transition_time 					 		   = 0.5 ;Скорость эффекта
+strafe_hud_offset_pos 					 		   = 0.015, 0.0, 0.0 ;Смещение худа при стрейфах
+strafe_hud_offset_rot 					 		   = 0.0, 0.0, 4.5 ;Поворот худа при стрейфах
+
+nearwall_target_hud_fov 			     		   = 0.5; - HUD FOV когда ГГ полностью уперся в стену
+nearwall_dist_min 						 		   = 0.5;  - мин расстояние когда уже дошли до nearwall_target_hud_fov
+nearwall_dist_max 						 		   = 1.0; - макс рассятоние с которого текущий HUD FOV начинает меняться к nearwall_target_hud_fov
+nearwall_speed_mod 						 		   = 10.0; - скорость изменения HUD FOV

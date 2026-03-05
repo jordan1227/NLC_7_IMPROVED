@@ -1,0 +1,303 @@
+;ÏÏ-19 "Áèçîí-2"
+[wpn_bizon]:weapon_immunities
+GroupControlSection			= spawn_group
+discovery_dependency 		= 
+$spawn                  	= "weapons\pp19"
+$npc			 			= on
+$prefetch 		 			= 8
+scheduled               	= off
+cform                   	= skeleton
+class                   	= WP_LR300
+min_radius              	= 0
+max_radius              	= 75
+description					= enc_weapons_wpn_bizon
+
+default_to_ruck				= false
+
+ef_main_weapon_type			= 2
+ef_weapon_type				= 6
+
+holder_range_modifier		= 1.0
+holder_fov_modifier			= 0.7
+weapon_class				= assault_rifle
+
+cost						= 11500
+
+ammo_limit		 			= 210
+ammo_current				= 30
+ammo_elapsed		 		= 30
+
+ammo_mag_size		 		= 64
+ammo_class		 			= ammo_9x18_fmj, ammo_9x18_pmm
+fire_modes					= 1, -1
+
+hand_dependence		 		= 1
+single_handed				= 0
+
+inv_name					= wpn_bizon
+inv_name_short				= wpn_bizon
+
+inv_weight					= 2.9
+
+icon_group                  = 7
+inv_grid_height                                    = 2
+inv_grid_width                                     = 6
+inv_grid_x                                         = 63
+inv_grid_y                                         = 2
+
+kill_msg_x					= 72
+kill_msg_y					= 82
+kill_msg_width				= 56
+kill_msg_height				= 23
+
+slot 						= 1,2
+animation_slot				= 2
+disable_detector = true
+fire_dispersion_base		= 0.26
+control_inertion_factor		= 1.2f
+
+cam_relax_speed        		= 6.0
+cam_dispersion          	= 0.2
+cam_dispersion_inc			= 0.1
+cam_dispertion_frac			= 0.5
+cam_max_angle				= 30
+cam_max_angle_horz			= 10
+cam_step_angle_horz			= 0.5
+
+fire_dispersion_condition_factor = 2 
+misfire_probability 		= 0.006
+misfire_condition_k			= 0.05
+condition_shot_dec 			= 0.0002
+
+direction               	= 0, 0, 1
+
+fire_point              	= 0.0, 0.188, 0.392
+
+flame_particles				= weapons\generic_weapon05
+smoke_particles         	= weapons\generic_shoot_00
+
+shell_point		 			= 0.0, 0.188, 0.082
+shell_dir		 			= 0.0, 1.0, 0.0
+shell_particles	 			= amik\weapons\9x18\9x18_r_02
+
+rpm_empty_click 	 		= 200
+
+PDM_disp_base 				= 1.7
+PDM_disp_vel_factor 		= 2.0
+PDM_disp_accel_factor 		= 3.0
+PDM_crouch					= 1.1
+PDM_crouch_no_acc			= 0.5
+
+hit_power        			= 1.2
+hit_impulse		 			= 1.1
+hit_type 					= fire_wound
+
+fire_distance      			= 100
+bullet_speed				= 265
+rpm               			= 680
+
+use_aim_bullet				= false
+time_to_aim					= 1.0	
+
+hud                     	= wpn_bizon_hud
+normal                  	= 0, 1, 0
+position                	= -0.026,-0.215,0
+orientation             	= 0, 0, 0
+
+strap_orientation                                  = -10,-5,10
+strap_position                                     = -0.16,-0.36,0.15
+strap_bone0					= bip01_spine2
+strap_bone1					= bip01_spine1
+
+startup_ammo           		= 1000
+visual                  	= dynamics\weapons\wpn_bizon\wpn_bizon
+
+
+light_color		 			= 0.6,0.5,0.3
+light_range		 			= 5
+light_var_color		 		= 0.05
+light_var_range		 		= 0.1
+light_time 		 			= 0.2
+
+ph_mass			 			= 3
+
+scope_status				= 2
+silencer_status				= 2
+grenade_launcher_status		= 0
+scope_mode 					= 3
+scope_name 					= wpn_addon_cobra
+scope_names 					= okp, wpn_addon_cobra, rakurs
+
+scope_respawn_okp = wpn_bizon_okp
+scope_respawn_wpn_addon_cobra = wpn_bizon_ekp
+scope_respawn_rakurs = wpn_bizon_rakurs
+
+scope_x						= 54
+scope_y						= 5
+
+scope_zoom_factor           = 90	
+zoom_enabled				= true
+
+silencer_name  				= wpn_addon_sil_9_p
+silencer_x 					= 195
+silencer_y 					= 22
+silencer_x_offset			= -3
+silencer_y_offset			= 0
+
+silencer_smoke_particles 	= weapons\generic_shoot_00
+
+silencer_light_color		= 0.6,0.5,0.3
+silencer_light_range		= 0.01
+silencer_light_var_color	= 0.05
+silencer_light_var_range	= 0.5
+silencer_light_time 		= 0.2
+
+snd_shoot					= weapons\vityaz\pp1901_muzzle_mono
+snd_shoot1					= weapons\vityaz\pp1901_muzzle_mono1
+snd_silncer_shot			= weapons\vityaz\pp1901_silencer_mono
+
+snd_bore                                           = weapons\generic_draw
+snd_draw                                           = weapons\bizon\bizon_draw
+snd_empty                                          = weapons\ak_empty, 0.5
+snd_holster                                        = weapons\bizon\bizon_hide
+snd_reload                                         = weapons\bizon\bizon_reload
+snd_reload_empty                                   = weapons\bizon\bizon_reload_empty
+snd_reload_jammed                                 = weapons\bizon\bizon_misfire
+snd_reload_grenade                                 = weapons\gp25_grenload
+snd_firemode                                       = weapons\bizon\bizon_firemode
+snd_sprint_idle								   	   = weapons\sprint_assault
+
+[wpn_bizon_hud]:hud_base
+
+aim_hud_offset_pos = -0.066500,0.025500,-0.09
+aim_hud_offset_rot = -0.006850,0.000000,0.000000
+
+aim_hud_offset_pos_16x9 = -0.066500,0.025500,-0.09
+aim_hud_offset_rot_16x9 = -0.006850,0.000000,0.000000
+
+anm_bore                                           = bizon_idle_aim
+anm_show                                           = bizon_draw
+anm_hide                                           = bizon_holster
+anm_idle                                           = bizon_idle
+anm_idle_aim                                       = bizon_idle_aim
+anm_idle_aim_moving                                = bizon_moving_aim
+anm_idle_moving_slow                               = bizon_moving_slow
+anm_idle_moving                                    = bizon_moving
+anm_idle_moving_crouch                             = bizon_crouch
+anm_reload                                         = bizon_reload, reload
+anm_reload_empty                                   = bizon_reload_empty, reload_empty
+anm_reload_jammed								   = bizon_misfire, misfire
+anm_shots                                          = bizon_shoot, shoot
+anm_shots_when_aim				   				   = bizon_shoot_aim, shoot
+anm_firemode                                       = bizon_firemode
+anm_firemode_aim = bizon_firemode
+anm_firemode_empty = bizon_firemode
+anm_firemode_aim_empty = bizon_firemode
+
+anm_idle_sprint_start         						   = bizon_sprint_start
+anm_idle_sprint         						   = bizon_sprint
+anm_idle_sprint_end         						   	   = bizon_sprint_end
+anm_idle_sprint_start_jammed      = bizon_sprint_start
+anm_idle_sprint_end_jammed       = bizon_sprint_end
+anm_headlamp_on                                  = bizon_flash
+anm_gasmask                                        = bizon_clear
+
+anm_headlamp_on_empty                                  = bizon_flash
+anm_gasmask_empty                                        = bizon_clear
+
+attach_place_idx                                   = 0
+fire_bone                                          = wpn_body
+fire_bone2                                         = wpn_body
+fire_point                                         = 0.000000,-0.006600,0.344700
+fire_point2                                        = 0,0,0
+gl_hud_offset_pos                                  = 0,0,0
+gl_hud_offset_pos_16x9                             = 0,0,0
+gl_hud_offset_rot                                  = 0,0,0
+gl_hud_offset_rot_16x9                             = 0,0,0
+hands_position							   		   = -0.025625,0.016275,-0.191324
+hands_position_16x9								   = -0.025625,0.016275,-0.191324
+hands_orientation								   = 0,0,0
+hands_orientation_16x9							   = 0,0,0
+item_orientation                                   = 0,0,0
+item_position                                      = 0,0,0
+item_visual                                        = dynamics\weapons\wpn_bizon\wpn_bizon_hud.ogf
+lean_hud_offset_pos                                = 0,0,0
+lean_hud_offset_rot                                = 0,0,0
+shell_bone                                         = shell
+shell_dir                                          = 0.0, 1.0, 0.0
+shell_point                                        = 0.000000,0.020000,0.020000
+zoom_hide_crosshair                                = true
+
+[wpn_bizon_ekp]:wpn_bizon
+$spawn             						     	   = "weapons\wpn_bizon_ekp"
+hud										     	   = wpn_bizon_ekp_hud
+visual									     	   = dynamics\weapons\wpn_bizon\wpn_bizon_ekp.ogf
+scope_x                                      	   = 89
+scope_y                                      	   = 9
+
+
+scope_respawn = wpn_bizon
+scope_name = wpn_addon_cobra
+
+[wpn_bizon_ekp_hud]:wpn_bizon_hud
+item_visual                						   = dynamics\weapons\wpn_bizon\wpn_bizon_ekp_hud.ogf
+
+aim_hud_offset_pos = -0.062500,-0.002500,-0.07
+aim_hud_offset_rot = -0.006850,0.000000,0.000000
+
+aim_hud_offset_pos_16x9 = -0.062500,-0.002500,-0.07
+aim_hud_offset_rot_16x9 = -0.006850,0.000000,0.000000
+
+
+; anim_aim_start 									   = aim_start_bizon_scope, 1.05, 1, 0.14, 0.15
+; anim_aim_idle  									   = aim_idle_bizon_scope, 1, 1, 0.2, 0.2
+; anim_aim_end   									   = aim_end_bizon_scope, 1.03, 1, 0.14, 0.15
+
+[wpn_bizon_okp]:wpn_bizon
+$spawn             								   = "weapons\wpn_bizon_okp"
+hud												   = wpn_bizon_okp_hud
+visual											   = dynamics\weapons\wpn_bizon\wpn_bizon_okp.ogf
+scope_x                                     	   = 83
+scope_y                                     	   = 5
+
+
+scope_respawn = wpn_bizon
+scope_name = okp
+
+[wpn_bizon_okp_hud]:wpn_bizon_hud
+item_visual               						   = dynamics\weapons\wpn_bizon\wpn_bizon_okp_hud.ogf
+
+aim_hud_offset_pos = -0.059500,0.012000,-0.07
+aim_hud_offset_rot = -0.006850,0.000000,0.000000
+
+aim_hud_offset_pos_16x9 = -0.059500,0.012000,-0.07
+aim_hud_offset_rot_16x9 = -0.006850,0.000000,0.000000
+
+
+; anim_aim_start 									   = aim_start_bizon_scope, 1.05, 1, 0.14, 0.15
+; anim_aim_idle  									   = aim_idle_bizon_scope, 1, 1, 0.2, 0.2
+; anim_aim_end   									   = aim_end_bizon_scope, 1.03, 1, 0.14, 0.15
+
+[wpn_bizon_rakurs]:wpn_bizon
+$spawn             							 	   = "weapons\wpn_bizon_rakurs"
+hud											 	   = wpn_bizon_rakurs_hud
+visual										 	   = dynamics\weapons\wpn_bizon\wpn_bizon_rakurs.ogf
+scope_x                                      	   = 88
+scope_y                                      	   = 8
+
+
+scope_respawn = wpn_bizon
+scope_name = rakurs
+
+[wpn_bizon_rakurs_hud]:wpn_bizon_hud
+item_visual               						   = dynamics\weapons\wpn_bizon\wpn_bizon_rakurs_hud.ogf
+
+aim_hud_offset_pos = -0.065000,-0.006500,-0.07
+aim_hud_offset_rot = -0.006850,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.065000,-0.006500,-0.07
+aim_hud_offset_rot_16x9 = -0.006850,0.000000,0.000000
+
+
+; anim_aim_start 									   = aim_start_bizon_scope, 1.05, 1, 0.14, 0.15
+; anim_aim_idle  									   = aim_idle_bizon_scope, 1, 1, 0.2, 0.2
+; anim_aim_end   									   = aim_end_bizon_scope, 1.03, 1, 0.14, 0.15

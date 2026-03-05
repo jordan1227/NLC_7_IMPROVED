@@ -1,0 +1,26 @@
+[logic]
+active = walker@job
+combat_ignore = combat_ignore
+trade = misc\shop_other\trade_dsc_part_exchanger.ltx
+inv_max_weight = 1000
+on_death = death@dsc_part_exchanger
+
+[walker@job]
+path_walk = dsc_part_exchanger_walk
+path_look = dsc_part_exchanger_look
+
+[death@dsc_part_exchanger]
+on_info = {=killed_by_actor} %+dsc_part_exchanger_umer =sak.gg_bandit()%, %+dsc_part_exchanger_umer%
+ 
+[danger_condition]
+ignore_types = corpse
+ignore_distance_corpse = 0
+ignore_distance_sound = 0
+ignore_distance = 1
+danger_inertion_time_grenade = 0
+danger_inertion_time_hit = 4000
+danger_inertion_time_ricochet = 0
+danger_inertion_time_corpse = 0
+danger_inertion_time_sound = 0
+ 
+[combat_ignore]

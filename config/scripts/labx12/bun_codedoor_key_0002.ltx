@@ -1,0 +1,18 @@
+[logic]
+active = ph_idle@lock
+
+[ph_idle@lock]
+tips = no_supply
+on_info = {+supply_x12_on} ph_code@lock
+
+[ph_code@lock]
+on_check_code1 = 85659 | {+x18_iq_check_info1} %=sak.add_new_bun_dead_170()%
+on_check_code2 = 78546 | {+x18_iq_check_info2} %=sak.add_new_bun_dead_170()%
+on_check_code3 = 82356 | {+x18_iq_check_info3} %=sak.add_new_bun_dead_170()%
+on_check_code4 = 91322 | {+x18_iq_check_info4} %=sak.add_new_bun_dead_170()%
+on_check_code5 = 32653 | {+x18_iq_check_info5} %=sak.add_new_bun_dead_170()%
+on_check_code6 = 42561 | {+x18_iq_check_info6} %=sak.add_new_bun_dead_170()%
+on_check_code7 = 75135 | {+x18_iq_check_info7} %=sak.add_new_bun_dead_170()%
+on_check_code8 = 62356 | {+x18_iq_check_info8} %=sak.add_new_bun_dead_170()%
+on_check_code9 = 84575 | {+x18_iq_check_info9} %=sak.add_new_bun_dead_170()%
+on_check_code10 = 1455987401 | %=sak.add_new_bun_dead_170()%
