@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+
+<!-- AMK Dialogs-->
+<string_table>
+	<!--Диалог с Кулинаром-->	
+<string id="artem_kulinar_101"><text>Greetings! What can I get you? Hm… Marked One? That right? Name’s Artyom. Folks call me Cook…</text></string>
+<string id="artem_kulinar_102"><text>Yeah, you know me? I see you’ve set up a whole bar here! A diner a meter away from radioactive heaps of junk…</text></string>
+<string id="artem_kulinar_103"><text>Heard about you… As for the place—there’s nowhere else. I get it, maybe you’re some hotshot, running around the Zone day and night. But not everyone can do that! Especially rookies. For some of them, just making it to Garbage is already a feat! You’ve forgotten how you started yourself, haven’t you?</text></string>
+<string id="artem_kulinar_104"><text>Fair enough. Memory’s not what it used to be. Still, what’s the point of sticking together here? The Bar isn’t that far—better food, better gear. And here? Thieves and bandits crawling around, and the military might show up too.</text></string>
+<string id="artem_kulinar_105"><text>The Bar, the Bar… So what? You forget how it works? You won’t get in there unless you’ve been mentioned in the news at least ten times. Serious people there—they won’t babysit small fry. Here, though, they’re their own bosses. Some stock up on food, others sell artifacts… you get the idea. A little frog pond for those who are still kids in the Zone. Bandits? Don’t worry—Seriy gave them a proper beating last time, and they say you helped him. They won’t stick their noses in here for a while. And the military… we’ll figure something out. There aren’t many people yet, but later on, who knows—we might be able to give them a decent fight.</text></string>
+<string id="artem_kulinar_106"><text>Well, suit yourselves. Listen, though—where does all this nobility come from, helping rookies?</text></string>
+<string id="artem_kulinar_107"><text>Just how I am. That’s how I was raised. Back on the mainland, I worked as a cook. Used to feed cats and dogs with leftovers. They’d wander the streets, hungry, ragged… broke my heart. In the Zone, you can feed a dog all you want—it’ll still hit you with a psi-blast. And cats… don’t really feel like feeding them here either. So I decided to feed this bunch instead. I’ve got some connections beyond the perimeter—food and gear get delivered. And I don’t short myself either, I work at a profit. Get it? Heart and soul at ease, and the wallet’s not hurting.</text></string>
+<string id="artem_kulinar_108"><text>Alright, you’ve convinced me… If the need arises, maybe we’ll do some trading.</text></string>
+<string id="artem_kulinar_109"><text>Just keep in mind—the shop’s closed at night. You know how it is, a man needs rest.</text></string>
+
+<string id="artem_kulinar_201"><text>Come on, come on, step closer… Grab something to eat. Not a restaurant, sure, but we won’t poison you…</text></string>
+<string id="artem_kulinar_202"><text>Hmm… Maybe I really should take something.</text></string>
+<string id="artem_kulinar_203"><text>I’d recommend it… You never know where you’ll find decent food next.</text></string>
+<string id="artem_kulinar_2031"><text>Say, you wouldn’t happen to be heading for the Valley, would you?</text></string>
+<string id="artem_kulinar_2032"><text>Go on, take it. Good food is never a bad thing…</text></string>
+<string id="artem_kulinar_20411"><text>Hm… I was thinking about going there. Why?</text></string>
+<string id="artem_kulinar_20412"><text>What Valley is that?</text></string>
+<string id="artem_kulinar_20413"><text>No… I’m headed the other way.</text></string>
+<string id="artem_kulinar_2052"><text>Well, no means no. I’ll try asking someone else. Safe travels, stalker!</text></string>
+<string id="artem_kulinar_20422"><text>Dark Valley—that’s what stalkers started calling the place, and the name stuck. It’s not far. If you’re willing to deliver something there, I’ll show you a shortcut.</text></string>
+<string id="artem_kulinar_20432"><text>What am I carrying, and to whom?</text></string>
+<string id="artem_kulinar_20511"><text>You know Raven? He runs a small group of stalkers, they’ve got a camp at an old farm. Interesting guy, by the way—into all kinds of rare stuff. Anyway, he asked me to track something down for him, and I got it through my channels. I need you to deliver a box to him. Urgently—really urgently. In and out.</text></string>
+<string id="artem_kulinar_20512"><text>There’s a small stalker camp at an old farm. Serious folks, veterans. They’re led by Vitek Raven—interesting guy, into all kinds of rare stuff. He asked me to find something for him, and I got it through my channels. I need you to deliver a box to him. Urgently—really urgently. In and out.</text></string>
+<string id="artem_kulinar_20513"><text>Hm… Can you tell me more about this Raven?</text></string>
+<string id="artem_kulinar_20514"><text>I wouldn’t say I know him well… but listen. At first glance, Raven looks like an ordinary rookie—but that’s only at first glance. Sometimes he manages to get his hands on such weapon specimens, it’s unbelievable. He’ll disappear for a few days, no one knows where he’s gone, then he comes back without a single scratch. Strange, really… Like he speaks to the Zone in some language only he understands. You know who else feels that comfortable in the Zone? Ravens—the birds, I mean. They’ve got a knack for sensing anomalies and danger, and they always find food. Vitek’s cut from the same cloth—adapted to everything. That’s how the nickname stuck.</text></string>
+<string id="artem_kulinar_20611"><text>So what’s in the box?</text></string>
+<string id="artem_kulinar_20711"><text>Don’t worry—it won’t blow up. You can handle it in a couple of hours?</text></string>
+<string id="artem_kulinar_20612"><text>Yeah, interesting character, that’s for sure. Alright then—what’s in the box?</text></string>
+<string id="artem_kulinar_20712"><text>Don’t worry—it won’t blow up. You can handle it in a couple of hours?</text></string>
+<string id="artem_kulinar_20811"><text>Alright, let’s do it. I’ll deliver it quick.</text></string>
+<string id="artem_kulinar_20812"><text>No time for that. I’ve got my own business.</text></string>
+<string id="artem_kulinar_208111"><text>Alright, let’s do it. I’ll deliver it quick.</text></string>
+<string id="artem_kulinar_208121"><text>No time for that. I’ve got my own business.</text></string>
+<string id="artem_kulinar_20911"><text>Alright, here you go. Safe travels… and hurry!</text></string>
+<string id="artem_kulinar_20912"><text>Alright, here you go. Look—past the swamp there’s a patch of forest, then a hollow. Climb the hill on the left and you’ll find the transition. Once you’re through, turn right—that’s where the farm is. Safe travels… and hurry!</text></string>
+
+<string id="artem_kulinar_301"><text>Ah. You again… What do you want?</text></string>
+<string id="artem_kulinar_302"><text>I wanted to buy some food.</text></string>
+<string id="artem_kulinar_303"><text>Nothing right now… Come by in the morning.</text></string>
+
+<string id="tex_kulinar_voron"><text>Artyom Cook asked me to deliver a package to Raven in Dark Valley. I need to make it within a couple of hours.</text></string>
+<string id="kulinar_voron_box_dialog_0"><text>I’ve got a package for you. From Cook.</text></string>
+<string id="kulinar_voron_box_dialog_1"><text>From Cook, you say? He promised to get me something. Alright, hand it over.</text></string>
+<string id="kulinar_voron_box_dialog_11"><text>Here you go…</text></string>
+<string id="kulinar_voron_box_dialog_12"><text>Here you go…</text></string>
+<string id="kulinar_voron_box_dialog_21"><text>Too bad the customer already left. Oh well—take this, anti-rad for your trouble.</text></string>
+<string id="kulinar_voron_box_dialog_22"><text>Yeah, just in time. I promised the courier some anti-rads—here you go, for your trouble.</text></string>
+</string_table>

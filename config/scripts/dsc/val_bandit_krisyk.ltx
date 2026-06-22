@@ -1,6 +1,7 @@
 [logic]
 active = walker@day
-on_hit = hit@soldier
+on_hit = hit@krys
+on_death = death@krys
 combat_ignore = combat_ignore@bandit_krisyk
 danger = danger_condition@bandit_krisyk
 
@@ -48,8 +49,11 @@ ignore_distance = 2
 [combat_ignore@bandit_krisyk]
 combat_ignore_cond = {-bandit_krisyk_enemy =fighting_actor}
 
-[hit@soldier]
+[hit@krys]
 on_info = {=hit_by_actor} %+bandit_krisyk_enemy%
+
+[death@krys]
+on_info = {=killed_by_actor} %+krisyk_killed_by_actor +bandit_krisyk_umer%, %=sak.check_krisyk_pda() +bandit_krisyk_umer%
 
 [meet_day]
 use = true

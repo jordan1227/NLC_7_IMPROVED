@@ -4,6 +4,8 @@
 -- Разработчик: Evgeniy Negrobov(Jon) jon@gsc-game.kiev.ua
 -- Доработки: Andrey Fidrya(Zmey) af@svitonline.com
 ----------------------------------------------------------------------------------------------------
+
+local cur_ignite_try = 0
 local ruck_id = nil
 local ret_item_name = nil
 
@@ -208,22 +210,24 @@ function generic_physics_binder:try_ignite_flame()
 	end
 	if kamp.has_users or (kamp.ignite_time or 0) > 1 then return end
 	if not self:use_matches() then return end
+	
 	local delay = sak.scratch_match_sound()
 	level.disable_input()
 	bind_stalker.hide_weapon()
 	dsh.timeout(delay + 2500, function() sak.restore_weap() end)
 	
+	cur_ignite_try = cur_ignite_try + 1
 	local r = db.actor:character_rank()
-	local add_factor = math.floor(r/300)
-	local rnd_add = 5 * add_factor
-	if rnd_add > 20 then
-		rnd_add = 20
+	local base_cap = 6
+	local dec_factor = math.floor(r/300)
+	local cap = base_cap - dec_factor
+	if cap < 3 then
+		cap = 3
 	end
 	local rnd = 40 -- базовый шанс разжечь костёр
 	if black_tip.have_black_tip() then
 		rnd = 30
 	end
-	rnd = rnd + rnd_add
 
 	local is_rain
 	if level.rain_factor() > 0 and not is_obj_in_hide(self.object) then
@@ -238,17 +242,22 @@ function generic_physics_binder:try_ignite_flame()
 	end
 	rnd = math.floor(rnd)
 	local res = (lua_random(100) < rnd)
+	
+	if cur_ignite_try >= cap then
+		res = true
+	end
 
 	log2("Chance to light a fire: [%s / %s], result: %s", rnd, 100, tostring(res))
 	if res then
 		dsh.timeout(delay + 2700, function()
 			kamp.update_now = true
-			local time_add = 12 * add_factor
+			local time_add = 12 * dec_factor
 			if time_add > 48 then
 				time_add = 48
 			end
 			kamp.ignite_time = ogse_campfire.total_ignite_time + time_add
 		end)
+		cur_ignite_try = 0
 		return
 	end
 	dsh.timeout(delay + 2500, function() sak.actor_grumble(is_rain) end)
@@ -257,7 +266,7 @@ end
 local max_cnt_use = 5 -- кол-во спичек в коробке
 function generic_physics_binder:use_matches()
 	local obj = db.actor:object("matches")
-	if not obj then return end
+	if not obj then return false end
 	local sobj = g_sim:object(obj:id())
 	local ini = sobj:spawn_ini()
 	local cnt = ini:section_exist("use") and get_u32("use", "c", 0, ini) or 0

@@ -1,0 +1,47 @@
+[logic]
+active = ph_idle@idle
+
+[ph_idle@idle]
+tips = rad_pribor
+on_info = {+radar_pribor2_on} ph_button@idle9
+on_use = {=actor_has_battery()} %=sak.rad_pribor_on()%  ph_button@door_open, ph_idle@idle %=sak.info_no_battery()%
+
+[ph_button@door_open]
+tooltip =
+anim = door_open_close
+on_timer = 2500| ph_button@start
+
+[ph_button@start]
+tooltip =
+anim = skaner_station_start
+on_timer = 5000| ph_button@work
+
+[ph_button@work]
+tooltip =
+anim = skaner_station_rotate
+on_timer = 5000| ph_button@idle9 %=sak.rad_pribor2_yes() =sak_dialog.remove_rad_izm_spot2()%
+
+[ph_button@idle9]
+tooltip = rad_pribor_ready
+anim = skaner_station_rotate
+on_press = {+rad_pribor2_ready} ph_button@stop1 %=sak.actor_hide_weapon()%, %=sak.info_not_ready()%
+
+[ph_button@stop1]
+tooltip =
+anim = skaner_station_stop
+on_timer = 5000| ph_button@stop2
+
+[ph_button@stop2]
+tooltip =
+anim = door_open_close
+on_timer = 2500| ph_button@stop
+
+[ph_button@stop]
+tooltip =
+anim = skaner_station_static
+on_timer = 500| ph_button@stop3 %=sak.rad_pribor_cart_on()%
+
+[ph_button@stop3]
+tooltip =
+anim = skaner_station_static
+on_info = {-radar_pribor2_on} ph_idle@idle

@@ -105,9 +105,9 @@
 	<actor_dialog>sakharov_capsule_already_dialog</actor_dialog>
 	<actor_dialog>sakharov_capsule_have_dialog</actor_dialog>
 	<actor_dialog>sakharov_mil_kurjer_nagrad</actor_dialog>
-	<actor_dialog>borov_11_saharov</actor_dialog>
+	<actor_dialog>sakharov_val_container_dlg</actor_dialog>
+	<actor_dialog>sakharov_val_container_re_dlg</actor_dialog>
 	<actor_dialog>yan_vasilyev_search</actor_dialog>
-	<actor_dialog>borov_11_saharov_no</actor_dialog>
 	<actor_dialog>yan_klyk_med1</actor_dialog>
 	<actor_dialog>yan_klyk_med3</actor_dialog>
 	<actor_dialog>yan_klyk_med4</actor_dialog>

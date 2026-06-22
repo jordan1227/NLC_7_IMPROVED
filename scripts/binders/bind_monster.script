@@ -109,13 +109,6 @@ function generic_object_binder:update( delta )
 		self.last_pos:set( sfpos )
 	end
 
-	-- if not self.first_update then
-		-- self.first_update = true
-		-- if classid == CLID_POLTERGEIST then
-			-- make_impulse(self.object)
-		-- end
-	-- end
-
 	if particles[sfobj:id()] and table.getn(particles[sfobj:id()])>0 then
 		for kk,vv in pairs(particles[sfobj:id()]) do
 			table.insert(self.particles,amk_particle.amk_particle(vv))
@@ -218,11 +211,24 @@ function generic_object_binder:update( delta )
 	end
 
 	if classid == CLID_POLTERGEIST and sfobj:alive() then
-		local posit = sfobj:position()
 		local enemy = sfobj:best_enemy()
-		if enemy and posit:distance_to( enemy:position() ) < 3 and sfobj:see(enemy) then
+		if enemy and sfpos:distance_to( enemy:position() ) < 3 and sfobj:see(enemy) then
 			charge_tushkano( sfobj )
 		end
+		local bobj = self.object:get_base_monster()
+		if not bobj then return end
+		if db.actor then
+			local armor = db.actor:item_in_slot(6)
+			if armor and (armor:section() == 'ecolog_outfit' or armor:section() == 'protection_outfit') then
+				bobj:enable_aura(CBaseMonster.ePsyTypeAura,false)
+				bobj:enable_aura(CBaseMonster.eFireTypeAura,false)
+				-- log2("[%s] disabled aura",self.object:name())
+				return
+			end
+		end
+		bobj:enable_aura(CBaseMonster.ePsyTypeAura,true)
+		bobj:enable_aura(CBaseMonster.eFireTypeAura,true)
+		-- log2("[%s] enabled aura",self.object:name())
 		return
 	end
 	

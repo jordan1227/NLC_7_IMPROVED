@@ -1,0 +1,94 @@
+<string id="killer_000"><text>Log:\nNo extra payment has been received for the last contract. Deal with the client.</text></string>
+
+<string id="killer_001"><text>Log:\nWestern stash. Yantar\nRestock:\nassault rifle ammo\nmedkits\nrepair kits\nTook the last of it.</text></string>
+
+<string id="killer_002"><text>Log:\nIntercept (from maxek@iborn.com):\nCaravan — 4 carriers (liquidate). Blue case on a chain. Do not open.\nExtraction point: Swamps, Burned Farmstead. Three days.\n$5000 (advance $1500)</text></string>
+
+<string id="killer_004"><text>Log:\nSergachov!!!\nDo not take contracts. No contact. Possible setup (working for special services? Verify).</text></string>
+
+<string id="killer_005"><text>Log:\nBar. Sultan. Special weapons.\nTry placing an order through a proxy (Frantic? Rychagirsky?).</text></string>
+
+<string id="killer_006"><text>Incoming:\nGreetings.</text></string>
+<string id="killer_006_1"><text>Outgoing:\nGood afternoon.</text></string>
+<string id="killer_006_2"><text>Incoming:\nSo what’s the situation? Report.</text></string>
+<string id="killer_006_3"><text>Outgoing:\nNothing worked out.</text></string>
+<string id="killer_006_4"><text>Incoming:\nHow is that possible?!</text></string>
+<string id="killer_006_5"><text>Outgoing:\nThat’s how. You think it’s all that simple? Interested parties interfered, everything stalled...</text></string>
+<string id="killer_006_6"><text>Incoming:\nWhat nonsense are you talking?! Who could possibly be more interested than us?</text></string>
+<string id="killer_006_7"><text>Outgoing:\nI can’t name them right now. In person...</text></string>
+<string id="killer_006_8"><text>Incoming:\nAre you out of your mind?! Who are these people who can shut everything down like that?!</text></string>
+<string id="killer_006_9"><text>Outgoing:\nDon’t push me. I’m telling you — there’s interference. I can’t overcome it. Neither can you. Force majeure. And these are very serious people — not your weight class. If we push, we’ll both end up feathered.</text></string>
+<string id="killer_006_10"><text>Incoming:\nIf this collapses today, feathers will fly from me for sure. And you won’t be spared either!</text></string>
+<string id="killer_006_11"><text>Outgoing:\nI doubt it. Tell your boss the truth — let him deal with them. He should know who they are.</text></string>
+<string id="killer_006_12"><text>Incoming:\nYou don’t doubt anything when it comes to taking money. That’s it — you’ve pissed me off. It’ll be a miracle if you live past the day after tomorrow.</text></string>
+<string id="killer_006_13"><text>Outgoing:\nMiracles do happen sometimes... I don’t have time to argue with you. Excuse me — I don’t know you.</text></string>
+<string id="killer_006_14"><text>Incoming:\nWell, well... So that’s your tune now? Find yourself a sturdier bunker, you scum.</text></string>
+<string id="killer_006_15"><text>Outgoing:\nRude. Someone will contact you today and tell you where to bring the money for that kind of attitude. End of transmission.</text></string>
+
+<string id="killer_007"><text>Incoming:\nGood afternoon!</text></string>
+<string id="killer_007_1"><text>Outgoing:\nHello. I’m listening.</text></string>
+<string id="killer_007_2"><text>Incoming:\nStarting tomorrow, we begin a large-scale artifact buyout operation.</text></string>
+<string id="killer_007_3"><text>Outgoing:\nOur task?</text></string>
+<string id="killer_007_4"><text>Incoming:\nFirst, eliminate the possibility of selling to the Bootlegger, so all artifacts go exclusively through us.</text></string>
+<string id="killer_007_5"><text>Outgoing:\nStart a shootout?</text></string>
+<string id="killer_007_6"><text>Incoming:\nYes. But don’t overdo it. Your task is to observe and intervene only in critical situations. Fighting will be done by Cherepanov and his psychos.</text></string>
+<string id="killer_007_7"><text>Outgoing:\nDuration of the operation?</text></string>
+<string id="killer_007_8"><text>Incoming:\nTwo to three weeks. We expect to crash the market in that time and buy artifacts from stalkers at prices that suit us.</text></string>
+<string id="killer_007_9"><text>Outgoing:\nAren’t you worried new buyers will replace the neutralized ones?</text></string>
+<string id="killer_007_10"><text>Incoming:\nNot your concern. Do your job. Neither side should win. Especially Cherepanov. But the Warehouses must be dangerous — very dangerous.</text></string>
+<string id="killer_007_11"><text>Outgoing:\nAnd if Cherepanov gains the upper hand?</text></string>
+<string id="killer_007_12"><text>Incoming:\nUnder no circumstances! We need Freedom here to maintain regional stability. If necessary — eliminate Cherepanov’s men.</text></string>
+<string id="killer_007_13"><text>Outgoing:\nUnderstood.</text></string>
+<string id="killer_007_14"><text>Incoming:\nLone stalkers will start moving through your checkpoint en masse. Do not interfere. Spread rumors that the road to our bunker is scouted and safe.</text></string>
+<string id="killer_007_15"><text>Outgoing:\nIs it actually safe?</text></string>
+<string id="killer_007_16"><text>Incoming:\nYes. Marked with stakes. But let only loners through.</text></string>
+<string id="killer_007_17"><text>Outgoing:\nWhat about everyone else?</text></string>
+<string id="killer_007_18"><text>Incoming:\nMost likely Borov’s people or envoys from the Barkeep will approach you, asking to pass their artifact courier to us. Refuse.</text></string>
+<string id="killer_007_19"><text>Outgoing:\nLiquidation?</text></string>
+<string id="killer_007_20"><text>Incoming:\nNo. Offer to buy the artifacts yourselves. Set a reasonable price — you won’t lose out.</text></string>
+<string id="killer_007_21"><text>Outgoing:\nWho starts first — us or Cherepanov’s people? And how do we coordinate?</text></string>
+<string id="killer_007_22"><text>Incoming:\nNo coordination. We’re playing Cherepanov blind. Disinformation has been planted that Lukash is planning an attack on the farmstead. Expect the mess to start tomorrow around noon.</text></string>
+<string id="killer_007_23"><text>Outgoing:\nCopy that. Preparing for the operation.</text></string>
+<string id="killer_007_24"><text>Incoming:\nGood luck! Use this channel only in extreme cases.</text></string>
+
+<string id="killer_008"><text>Incoming:\nHello.</text></string>
+<string id="killer_008_1"><text>Outgoing:\nWho are you?</text></string>
+<string id="killer_008_2"><text>Incoming:\nI’m from Black. “Clouds fly over the rose...”</text></string>
+<string id="killer_008_3"><text>Outgoing:\nGot it. Get to the point.</text></string>
+<string id="killer_008_4"><text>Incoming:\nStill taking contracts?</text></string>
+<string id="killer_008_5"><text>Outgoing:\nNot officially. Command doesn’t like distractions.</text></string>
+<string id="killer_008_6"><text>Incoming:\nPity...</text></string>
+<string id="killer_008_7"><text>Outgoing:\nWait. Let’s talk. Contracts vary. No need for the top to know everything.</text></string>
+<string id="killer_008_8"><text>Incoming:\nUnderstood... 50. Everything’s in place.</text></string>
+<string id="killer_008_9"><text>Outgoing:\n100.</text></string>
+<string id="killer_008_10"><text>Incoming:\n70.</text></string>
+<string id="killer_008_11"><text>Outgoing:\nDeal. Instructions?</text></string>
+<string id="killer_008_12"><text>Incoming:\nSame location. Nothing unusual, just don’t go alone — take at least three more people. A sniper is preferable.</text></string>
+<string id="killer_008_13"><text>Outgoing:\nThat’s “nothing unusual”? No. Let’s settle this properly.</text></string>
+<string id="killer_008_14"><text>Incoming:\nFor you it’s nothing unusual... Fine. I agree to 100.</text></string>
+<string id="killer_008_15"><text>Outgoing:\nNow I don’t agree. We have rules — no clashes with the army.</text></string>
+<string id="killer_008_16"><text>Incoming:\nCome on, this isn’t a marketplace. Final price. And it’s not the army. I assure you — nothing serious. Extra people are just a precaution.</text></string>
+<string id="killer_008_17"><text>Outgoing:\nFine. 100 and weapons — same drop point. And clear instructions. If something’s off... we’ll talk later.</text></string>
+<string id="killer_008_18"><text>Incoming:\nEverything will be as agreed. Instructions will follow. Deadline — 48 hours from now. Goodbye.</text></string>
+
+<string id="killer_009"><text>Incoming:\nLovely weather, wouldn’t you say?</text></string>
+<string id="killer_009_1"><text>Outgoing:\nSomething happened? Any news?</text></string>
+<string id="killer_009_2"><text>Incoming:\nTwo pieces. Which one first? As usual?</text></string>
+<string id="killer_009_3"><text>Outgoing:\nEnough already. Get to the point.</text></string>
+<string id="killer_009_4"><text>Incoming:\nAlright. I’ll give you the collected intel with a preliminary analysis. Long ago — about a year and a half or two — a group with the poetic name “Clear Sky” appeared in the Swamps, led by a certain Mr. Lebedev...</text></string>
+<string id="killer_009_5"><text>Incoming:\nThis group handled practical research tasks related to studying the Zone. On the surface, simple information gathering. What exactly they collected, however, remains unclear. Scientists or not — hard to say. And then someone appears among them...</text></string>
+<string id="killer_009_6"><text>Outgoing:\nNow it’s getting interesting...</text></string>
+<string id="killer_009_7"><text>Incoming:\nThis someone suddenly starts actively working with these scientists. Apparently, he was very interested in strengthening the clan’s position.</text></string>
+<string id="killer_009_8"><text>Outgoing:\nAnd?</text></string>
+<string id="killer_009_9"><text>Incoming:\nThat someone develops a strong desire to reach the center of the Zone. From that moment, Lebedev turns against him and the group he assembled, despite all the prior assistance this someone had given Clear Sky...</text></string>
+<string id="killer_009_10"><text>Outgoing:\nI still don’t see where this is going...</text></string>
+<string id="killer_009_11"><text>Incoming:\nHere’s the point. Lebedev gives off very bad vibes. I was discreetly told FROM ABOVE that the name is familiar to them. Very familiar. Especially since his associates — Kalanch and Suslov — are also known and officially listed as dead. Do you follow?</text></string>
+<string id="killer_009_12"><text>Outgoing:\nNot quite. Officially dead how?</text></string>
+<string id="killer_009_13"><text>Incoming:\nConfirmed deaths. Recorded. Families mourned. They’re gone — yet they exist. But the key figure is Lebedev: messages are still being intercepted from him. To whom? From where? How did he reappear after his first death, and where did he vanish after the supposed second?</text></string>
+<string id="killer_009_14"><text>Incoming:\nAnd the sweetest part: the messages show he’s talking about the object we’re interested in — and speaking as if he HAS it.</text></string>
+<string id="killer_009_15"><text>Outgoing:\nCan those messages be trusted?</text></string>
+<string id="killer_009_16"><text>Incoming:\nDoesn’t matter anymore. What matters is a real lead. Right now, priority one is finding this guy and taking a look at him. Very interesting.</text></string>
+<string id="killer_009_17"><text>Outgoing:\nThen we need more data on these “blues” — I mean Clear Sky. Who that someone was, why Lebedev turned on him... and where to find them. Both of them.</text></string>
+<string id="killer_009_18"><text>Incoming:\nWorking on it. Await instructions.</text></string>
+
+

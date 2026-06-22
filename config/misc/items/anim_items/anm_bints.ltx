@@ -2,8 +2,6 @@
 item_attached							 = true
 item_visual             			     = dynamics\weapons\wpn_eat\bints\wpn_bint_basic_hud.ogf
 
-hands_orientation						 = 0.000000,0.000000,0.000000
-hands_orientation_16x9					 = 0.000000,0.000000,0.000000
 hands_position	                         = 0.000000,0.007000,0.040750
 hands_position_16x9                      = 0.000000,0.007000,0.040750
 
@@ -11,33 +9,7 @@ sound_1   								 = interface\item_usage\bandage_use
 
 anm_show								 = bint
 
-dof                                      = 0.0, 0.5, 5, 4
-
-disable_ui_input						 = true
-
 exo_anim_section 						 = bandage_use_exo
-right_lua_callback						 = animator_callbacks.spawn_trash
-trash_object                             = bandage_trash
-modify_sect_lua_callback                 = animator_callbacks.modify_exo_sect_bandage
-
-[bandage_trash]:trash_base
-visual                        			 = dynamics\devices\dev_bandage\dev_bandage_trash.ogf
-
-;направление, в котором предмет отбрасывается
-throw_dir = right
-;смещение точки спавна относительно камеры
-throw_offset_y = -0.6	//вверх-вниз
-throw_offset_x = -0.2	//вперед-назад
-throw_offset_z = -0.6	//положительные - в сторону броска, отрицательное - в противоположную
-
-;throw_impulse_y = -90
-;throw_impulse_z = 180
-
-throw_impulse_y = -9
-throw_impulse_z = 18
 
 [bandage_use_exo]:bandage_use
 anm_show								 = bint_exo, bint_exo_hud
-
-start_lua_callback						 = null
-modify_sect_lua_callback                 = null

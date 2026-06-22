@@ -95,6 +95,37 @@
 		<texture>ui_hud_icon_sleep</texture>
 	</sleep_static>
 
+<!-- ================ -->
+	<rad_weapon_jammed_static x="0" y="0" width="45" height="45" stretch="1" sector_count="28" clockwise="1" blend="1">
+		<front x="7" y="14" width="31" height="16" stretch="1"><texture>ui_radial_front</texture></front>
+		<back  x="7" y="2" width="31" height="41" stretch="1"><texture>ui_radial_back</texture></back>
+	</rad_weapon_jammed_static>
+	<rad_radiation_static x="0" y="0" width="45" height="45" stretch="1" sector_count="28" clockwise="1" blend="1">
+		<front x="7" y="14" width="31" height="16" stretch="1"><texture>ui_radial_front</texture></front>
+		<back  x="7" y="2" width="31" height="41" stretch="1"><texture>ui_radial_back</texture></back>
+	</rad_radiation_static>
+	<rad_wound_static x="0" y="0" width="45" height="45" stretch="1" sector_count="28" clockwise="1" blend="1">
+		<front x="7" y="14" width="31" height="16" stretch="1"><texture>ui_radial_front</texture></front>
+		<back  x="7" y="2" width="31" height="41" stretch="1"><texture>ui_radial_back</texture></back>
+	</rad_wound_static>
+	<rad_starvation_static x="0" y="0" width="45" height="45" stretch="1" sector_count="28" clockwise="1" blend="1">
+		<front x="7" y="14" width="31" height="16" stretch="1"><texture>ui_radial_front</texture></front>
+		<back  x="7" y="2" width="31" height="41" stretch="1"><texture>ui_radial_back</texture></back>
+	</rad_starvation_static>
+	<rad_psy_health_static x="0" y="0" width="45" height="45" stretch="1" sector_count="28" clockwise="1" blend="1">
+		<front x="7" y="14" width="31" height="16" stretch="1"><texture>ui_radial_front</texture></front>
+		<back  x="7" y="2" width="31" height="41" stretch="1"><texture>ui_radial_back</texture></back>
+	</rad_psy_health_static>
+	<rad_invincible_static x="0" y="0" width="45" height="45" stretch="1" sector_count="28" clockwise="1" blend="1">
+		<front x="7" y="14" width="31" height="16" stretch="1"><texture>ui_radial_front</texture></front>
+		<back  x="7" y="2" width="31" height="41" stretch="1"><texture>ui_radial_back</texture></back>
+	</rad_invincible_static>
+	<rad_sleep_static x="0" y="0" width="45" height="45" stretch="1" sector_count="28" clockwise="1" blend="1">
+		<front x="7" y="14" width="31" height="16" stretch="1"><texture>ui_radial_front</texture></front>
+		<back  x="7" y="2" width="31" height="41" stretch="1"><texture>ui_radial_back</texture></back>
+	</rad_sleep_static>
+<!-- ================ -->
+
 	<flashing_icons>
 		<flashing_icon x="165" y="110" width="0" height="0" stretch="1" type="pda" light_anim="ui_slow_blinking_alpha">
 			<texture></texture>

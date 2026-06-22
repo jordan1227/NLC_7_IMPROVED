@@ -559,7 +559,7 @@ function update_gps_state()
 				aobj = alife():object(i)
 				lvname = ""
 				if aobj then
-					lvname = news_data.level_name[alife():level_name(game_graph():vertex(aobj.m_game_vertex_id):level_id())][2]
+					lvname = news_data.level_name[aobj.level_name][2]
 				end
 				v.is_warned = 1
 				send_tip(string.format(game.translate_string("gps_4"),lvname), nil, nil, 5) 
@@ -568,7 +568,7 @@ function update_gps_state()
 				aobj = alife():object(i)
 				lvname = ""
 				if aobj then
-					lvname = news_data.level_name[alife():level_name(game_graph():vertex(aobj.m_game_vertex_id):level_id())][2]
+					lvname = news_data.level_name[aobj.level_name][2]
 				end
 				send_tip(string.format(game.translate_string("gps_5"),lvname), nil, nil, 5)
 				remove_all_spots(i)

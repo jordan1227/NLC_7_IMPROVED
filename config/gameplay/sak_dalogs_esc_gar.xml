@@ -939,7 +939,6 @@
 		</phrase>
 		<phrase id="61">
 			<text>stas_dialog_2_61</text>
-			<action>sak_dialog.text_money_stas_seif_dialog</action>
 			<next>71</next>
 			<next>72</next>
 		</phrase>
@@ -1221,7 +1220,6 @@
 		</phrase>
 		<phrase id="23">
 			<text>lukash_dialog_2_23</text>
-			<action>sak_dialog.text_money_lukash_seif_dialog</action>
 			<next>241</next>
 			<next>242</next>
 		</phrase>
@@ -4940,34 +4938,39 @@
 			<next>20714</next>
 			<next>20711</next>
 		</phrase>
+		<phrase id="20712">
+		<precondition>sak.is_alive_npc("gar_hellcar",false)</precondition>
+			<text>gar_seriy_new_start_20712</text>
+			<next>20812</next>
+		</phrase>
+		<phrase id="20713">
+		<precondition>sak.is_alive_npc("gar_hellcar",true)</precondition>
+		<has_info>gar_hellcar_1_dialog</has_info>
+			<text>gar_seriy_new_start_20713</text>
+			<next>20813</next>
+		</phrase>
+		<phrase id="20714">
+		<precondition>sak.is_alive_npc("gar_hellcar",true)</precondition>
+		<dont_has_info>gar_hellcar_1_dialog</dont_has_info>
+		<has_info>gar_hellcar_help</has_info>
+			<text>gar_seriy_new_start_20714</text>
+			<next>20814</next>
+		</phrase>
 		<phrase id="20711">
+		<precondition>sak.is_alive_npc("gar_hellcar",true)</precondition>
+		<dont_has_info>gar_hellcar_1_dialog</dont_has_info>
+		<dont_has_info>gar_hellcar_help</dont_has_info>
 			<text>gar_seriy_new_start_20711</text>
 			<next>20811</next>
 		</phrase>
 		<phrase id="20811">
 			<text>gar_seriy_new_start_20811</text>
 		</phrase>
-		<phrase id="20712">
-		<precondition>sak.is_alive_npc("gar_hellcar",false)</precondition>
-			<text>gar_seriy_new_start_20712</text>
-			<next>20812</next>
-		</phrase>
 		<phrase id="20812">
 			<text>gar_seriy_new_start_20812</text>
 		</phrase>
-		<phrase id="20713">
-		<has_info>gar_hellcar_1_dialog</has_info>
-			<text>gar_seriy_new_start_20713</text>
-			<next>20813</next>
-		</phrase>
 		<phrase id="20813">
 			<text>gar_seriy_new_start_20813</text>
-		</phrase>
-		<phrase id="20714">
-		<dont_has_info>hellcar_raid_start</dont_has_info>
-		<has_info>gar_hellcar_help</has_info>
-			<text>gar_seriy_new_start_20714</text>
-			<next>20814</next>
 		</phrase>
 		<phrase id="20814">
 			<text>gar_seriy_new_start_20814</text>
@@ -6750,6 +6753,7 @@
 			<next>31</next>
 			<next>32</next>
 			<next>33</next>
+			<next>34</next>
 		</phrase>
 		<phrase id="31">
 		<precondition>sak_dialog.rand_game_1</precondition>
@@ -6759,15 +6763,23 @@
 		</phrase>
 		<phrase id="32">
 		<precondition>sak_dialog.rand_game_2</precondition>
+		<has_info>actor_has_fraer</has_info>
 			<text>gar_dm_bandits_dialog_8_32</text>
 			<next>421</next>
 			<next>422</next>
 		</phrase>
 		<phrase id="33">
-		<precondition>sak_dialog.rand_game_3</precondition>		
-			<text>gar_dm_bandits_dialog_8_33</text>
+		<precondition>sak_dialog.rand_game_2</precondition>
+		<dont_has_info>actor_has_fraer</dont_has_info>
+			<text>gar_dm_bandits_dialog_8_32</text> <!-- отсюда и ниже по 33 ветке - не ошибка -->
 			<next>431</next>
 			<next>432</next>
+		</phrase>
+		<phrase id="34">
+		<precondition>sak_dialog.rand_game_3</precondition>		
+			<text>gar_dm_bandits_dialog_8_34</text>
+			<next>441</next>
+			<next>442</next>
 		</phrase>
 		<phrase id="411">
 		<precondition>sak_dialog.have_any_x_art("b",true)</precondition>
@@ -6790,14 +6802,23 @@
 			<action>dialogs.break_dialog</action>
 		</phrase>
 		<phrase id="431">
-		<precondition>sak.have_items_count("alko_banka",1,true)</precondition>
-			<text>gar_dm_bandits_dialog_8_431</text>
-			<action>sak_inventory.release_actor_items("alko_banka",1)</action>
+			<text>gar_dm_bandits_dialog_8_421</text>
 			<action>sak_dialog.give_flesh_2leather</action>
 			<next>53</next>
 		</phrase>
 		<phrase id="432">
-			<text>gar_dm_bandits_dialog_8_432</text>
+			<text>gar_dm_bandits_dialog_8_422</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="441">
+		<precondition>sak.have_items_count("alko_banka",1,true)</precondition>
+			<text>gar_dm_bandits_dialog_8_441</text>
+			<action>sak_inventory.release_actor_items("alko_banka",1)</action>
+			<action>sak_dialog.give_flesh_2leather</action>
+			<next>54</next>
+		</phrase>
+		<phrase id="442">
+			<text>gar_dm_bandits_dialog_8_442</text>
 			<action>dialogs.break_dialog</action>
 		</phrase>
 		<phrase id="51">
@@ -6809,8 +6830,12 @@
 			<next>62</next>
 		</phrase>
 		<phrase id="53">
-			<text>gar_dm_bandits_dialog_8_53</text>
+			<text>gar_dm_bandits_dialog_8_52</text>
 			<next>63</next>
+		</phrase>
+		<phrase id="54">
+			<text>gar_dm_bandits_dialog_8_54</text>
+			<next>64</next>
 		</phrase>
 		<phrase id="61">
 			<text>gar_dm_bandits_dialog_8_61</text>
@@ -6821,25 +6846,36 @@
 			<next>72</next>
 		</phrase>
 		<phrase id="63">
-			<text>gar_dm_bandits_dialog_8_63</text>
+			<text>gar_dm_bandits_dialog_8_62</text>
 			<next>73</next>
+		</phrase>
+		<phrase id="64">
+			<text>gar_dm_bandits_dialog_8_64</text>
+			<next>74</next>
 		</phrase>
 		<phrase id="71">
 			<text>gar_dm_bandits_dialog_8_71</text>
 			<action>sak_dialog.add_oreh_treasure(1)</action>
-			<give_info>gar_dm_bandits_secret_done</give_info>			
+			<give_info>gar_dm_bandits_secret_done</give_info>
 			<next>81</next>
 		</phrase>
 		<phrase id="72">
 			<text>gar_dm_bandits_dialog_8_72</text>
-			<give_info>dt_kocherga_secret_start</give_info>			
+			<give_info>dt_kocherga_secret_start</give_info>
 			<next>82</next>
 		</phrase>
 		<phrase id="73">
 			<text>gar_dm_bandits_dialog_8_73</text>
-			<action>sak_dialog.add_oreh_treasure(3)</action>
-			<give_info>gar_dm_bandits_secret_done</give_info>			
+			<action>sak_dialog.add_oreh_treasure(2)</action>
+			<give_info>gar_dm_bandits_secret_done</give_info>
+			<give_info>dt_kocherga_secret_done</give_info>
 			<next>83</next>
+		</phrase>
+		<phrase id="74">
+			<text>gar_dm_bandits_dialog_8_74</text>
+			<action>sak_dialog.add_oreh_treasure(3)</action>
+			<give_info>gar_dm_bandits_secret_done</give_info>
+			<next>84</next>
 		</phrase>
 		<phrase id="81">
 			<text>gar_dm_bandits_dialog_8_81</text>
@@ -6851,6 +6887,10 @@
 		</phrase>
 		<phrase id="83">
 			<text>gar_dm_bandits_dialog_8_83</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="84">
+			<text>gar_dm_bandits_dialog_8_84</text>
 			<action>dialogs.break_dialog</action>
 		</phrase>
 	</phrase_list>
@@ -7081,7 +7121,7 @@
 		</phrase>
 		<phrase id="205">
 			<text>esc_lager_generator_205</text>
-			<give_info>price_kanistra_esc</give_info>  <!-- делаем запись в ПДА -->
+			<action>_G.give_article("price_kanistra_esc")</action>
 			<next>206</next>
 		</phrase>
 		<phrase id="206">
@@ -7103,7 +7143,7 @@
 		</phrase>
 		<phrase id="401">
 			<text>esc_lager_generator_401</text>
-			<give_info>price_kanistra_esc</give_info>  <!-- делаем запись в ПДА -->
+			<action>_G.give_article("price_kanistra_esc")</action>
 			<next>421</next>
 			<next>422</next>
 			<next>424</next>
@@ -7241,7 +7281,6 @@
 		<phrase id="4241">
 		<dont_has_info>black_tip_no</dont_has_info>
 			<text>esc_lager_generator_4241</text>
-			<action>sak_dialog.text_money_esc_water_dialog</action>
 			<next>42411</next>
 			<next>42412</next>
 			<next>42413</next>
@@ -7336,7 +7375,6 @@
 		<dont_has_info>esc_lager_generator_shara</dont_has_info>
 		<dont_has_info>esc_no_charge</dont_has_info>
 			<text>esc_lager_generator_42511</text>
-			<action>sak_dialog.text_money_esc_akkum_dialog</action>
 			<next>42521</next>
 			<next>42522</next>
 			<next>42523</next>
@@ -7345,7 +7383,6 @@
 		<has_info>esc_lager_generator_shara</has_info>
 		<dont_has_info>esc_no_charge</dont_has_info>
 			<text>esc_lager_generator_42512</text>
-			<action>sak_dialog.text_money_esc_akkum_dialog</action>
 			<next>42521</next>
 			<next>42522</next>
 			<next>42524</next>
@@ -7478,7 +7515,6 @@
 		<phrase id="1">
 		<dont_has_info>capsule_not_ready</dont_has_info>
 			<text>sidor_capsule_have_dialog_1</text>
-			<action>sak_dialog.text_money_sidor_capsule_dialog</action>
 			<next>21</next>
 			<next>22</next>
 			<next>23</next>
@@ -7575,7 +7611,6 @@
 		</phrase>
 		<phrase id="31">
 			<text>sidor_flame_reload_dialog_31</text>
-			<action>sak_dialog.text_money_sidor_flame_load_dialog</action>
 			<give_info>sidor_flame_reload_rules</give_info>
 			<next>41</next>
 			<next>42</next>
@@ -7589,7 +7624,6 @@
 		<phrase id="322">
 		<dont_has_info>flame_reload_not_ready_sid</dont_has_info>
 			<text>sidor_flame_reload_dialog_322</text>
-			<action>sak_dialog.text_money_sidor_flame_load_dialog</action>
 			<next>41</next>
 			<next>42</next>
 			<next>43</next>
@@ -8372,7 +8406,6 @@
 		<phrase id="12">
 		<precondition>sak_dialog.vergas_rep_have</precondition>
 			<text>vergas_rep_item_have_12</text>
-			<action>sak_dialog.text_money_item_dialog</action>
 			<next>21</next>
 			<next>22</next>
 			<next>23</next>
@@ -9886,7 +9919,6 @@
 		</phrase>
 		<phrase id="109">
 			<text>scarman_dialog_109</text>
-			<action>sak_dialog.scarman_2_show</action>
 			<give_info>tomber_scarman_start</give_info>
 			<next>110</next>
 		</phrase>
@@ -10947,7 +10979,6 @@
 </dialog>
 
 <dialog id="krysyk_13_dialog">
-	<precondition>dialogs.is_not_wounded</precondition>
 	<has_info>krysyk_11_pda</has_info>
 	<dont_has_info>krysyk_12_pda</dont_has_info>
 	<phrase_list>
@@ -11004,6 +11035,7 @@
 	<precondition>sak_dialog.have_krysyk_goodses</precondition>
 	<has_info>krysyk_12_pda</has_info>
 	<dont_has_info>krysyk_have_good</dont_has_info>
+	<dont_has_info>bandit_krisyk_umer</dont_has_info>
 	<phrase_list>
 		<phrase id="0">
 			<text>krysyk_14_dialog_0</text>
@@ -13539,7 +13571,7 @@
 			<text>ignat_kishka_start_6</text>
 			<give_info>info_ignat_kishka_done</give_info>
 			<action>sak_dialog.transfer_any_x_art("b")</action>
-			<action>sak_dialog.add_greens_kolbasa10</action>
+			<action>sak.create_items("green_kolbasa",10)</action>
 			<give_info>info_sidor_nagrad_min</give_info>
 			<next>7</next>
 		</phrase>
@@ -13641,7 +13673,7 @@
 		</phrase>
 		<phrase id="5">
 			<text>ignat_kishka_done_5</text>
-			<action>sak_dialog.add_greens_kolbasa10</action>
+			<action>sak.create_items("green_kolbasa",10)</action>
 			<give_info>info_sidor_nagrad_max</give_info>		
 			<next>6</next>
 		</phrase>

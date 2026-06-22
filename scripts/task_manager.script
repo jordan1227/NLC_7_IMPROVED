@@ -333,10 +333,12 @@ end
 function Clua_randomTask:parent_can_task(actor, npc, p1, p2, p3)
 	local parent = self:get_parent(npc)
 	local avail = false
-	self:task_avail(actor, npc, nil, nil, nil, "reset")
-	for k,v in pairs(self.task_id_by_parent[parent]) do
-		if self:task_avail(actor, npc, nil, nil, self.task_info[v].init_phrase_id, true) and alife():story_object(tonumber(story_by_parent[self.task_info[v].rewarder]))~= nil and not has_alife_info(parent.."_task_failed") then
-			avail = true
+	if sak_dialog.is_ready_time_to_treasure() then
+		self:task_avail(actor, npc, nil, nil, nil, "reset")
+		for k,v in pairs(self.task_id_by_parent[parent]) do
+			if self:task_avail(actor, npc, nil, nil, self.task_info[v].init_phrase_id, true) and alife():story_object(tonumber(story_by_parent[self.task_info[v].rewarder]))~= nil and not has_alife_info(parent.."_task_failed") then
+				avail = true
+			end
 		end
 	end
 	return avail
@@ -550,7 +552,8 @@ function Clua_randomTask:task_complete(p1, p2)
 		if string.find(p1, "eliminate_lager",1,true)~=nil then
 			if not sak.game_began then return end
 			local oo = alife():object(sel_task.selected_target)
-			if g_sim:level_name(game_graph():vertex(oo.m_game_vertex_id):level_id()) ~= level.name() then return end
+			-- if g_sim:level_name(game_graph():vertex(oo.m_game_vertex_id):level_id()) ~= level.name() then return end
+			if oo.level_name ~= level.name() then return end
 			if oo and oo.gulag:get_population_comed()==0 then
 				self.task_info[self.active_task_by_type[p1]].status = "completed"
 				return true

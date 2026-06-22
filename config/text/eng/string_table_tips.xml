@@ -1,0 +1,39 @@
+<!-- Agroprom -->
+<string id="tips_agr_krot_sos"><text>Anyone who can hear me—guys, help!</text></string>
+<string id="tips_agr_krot_sos1"><text>I’m pinned down in a yard. Help me out, brothers!</text></string>
+<!-- Army Warehouses -->
+<string id="mil_info_max_mines"><text>Watch out for mines—a sapper only makes one mistake...</text></string>
+<string id="mil_actor_blockpost"><text>Stalker, you’re approaching the Barrier. Don’t try anything funny, but we welcome any help.</text></string>
+<!-- Bar -->
+<string id="bar_territory_nodolg_1_hit"><text>Cease fire immediately! Disobedience will be punished by death!</text></string>
+<string id="bar_territory_nodolg_2_hit"><text>Attention! For violating the law on the use of weapons on Duty territory, stalker Marked One has been declared a criminal.</text></string>
+<string id="bar_territory_nodolg_kill"><text>Attention! Order to all personnel on Duty territory! Eliminate the Marked One immediately!</text></string>
+<!-- Cordon -->
+<string id="escape_fox_quest"><text>Marked One, about Strelok. A stalker came back from a deep raid—goes by Fox. Looks like he’s in bad shape and asking for help. Says he dragged a pack of some creatures right on his tail and won’t hold out for long. He might know something about Strelok. Move it—I’m sending you the coordinates.</text></string>
+<string id="esc_direction_fire"><text>Stay sharp. We attack strictly on my command.</text></string>
+<string id="esc_fanat_victory"><text>Victory! Marked One, come here—we need to talk.</text></string>
+<string id="esc_return_dv"><text>Hey there, Marked One! Glad you’re alive and made it back to the Cordon. Drop by, we’ll have a chat. Another job’s shaping up.</text></string>
+<!-- Radar -->
+<string id="rad_pribor"><text>Activate the scanner</text></string>
+<string id="rad_pribor_ready"><text>Retrieve data</text></string>
+<!-- Garbage -->
+<string id="gar_direction_fire"><text>Everyone, take positions. Let them come closer so we finish them for sure.</text></string>
+<string id="gar_hellcar_victory"><text>Good job, guys—we took them down! Everyone rest up, and you, stalker, come over here. Let’s talk.</text></string>
+<string id="tips_gar_hellcar_alarm"><text>Attention everyone! This is Bes, commander of the neutral squad. We pushed the bandits out of the abandoned vehicle lot, but we expect a counterattack. We’re short on manpower, so anyone who can help—join us.</text></string>
+<!-- Dark Valley -->
+<string id="val_monolith_trader_pda1"><text>Marked One! The military attacked the bandit base. They’ve blocked the exit to Garbage. But there’s an old road leading south. Try to get out that way, and be careful. Good luck.</text></string>
+<string id="val_sos_pda"><text>People, help! A bloodsucker tore me up bad... I’m dying!\nI’m in the building near the gas station, on the second floor... won’t last long... hurry...</text></string>
+<!-- Yantar -->
+<string id="storyline_vasilyev_tip"><text>Vasilyev’s audio recording</text></string>
+<string id="tips_labx16switcher_press"><text>Disable the installation ($$ACTION_USE$$)</text></string>
+<string id="yan_saharov_message_3"><text>Excellent, Marked One! The emission has been shut down, and you’re alive. We’ve called in a couple of military helicopters to clear the nearby area of zombies, so be careful—don’t get caught in the crossfire. And please, drop by our bunker when you have the chance.</text></string>
+<!-- Misc -->
+<string id="oksana_sos_pda"><text>Help! Can anyone see this message?! Monsters attacked us...\nI don’t know where I am. I’m hiding on the roof of an old shed for now. I can see a tower nearby—probably a water tower. Save me!</text></string>
+<string id="gar_binoc_sos_tip"><text>People, save me! I’m in bad shape... bandits beat me up and left me to die. Coordinates attached.</text></string>
+<string id="gar_tunnel"><text>Railway tunnel</text></string>
+<string id="gar_dogs_in_forest"><text>Forest swarming with dogs</text></string>
+<string id="gar_dolg_blokpost"><text>Duty checkpoint on the road to the Bar</text></string>
+<string id="sos_location"><text>SOS signal source</text></string>
+<string id="btr_look"><text>Search the wrecked APC</text></string>
+<string id="vert_look"><text>Inspect the helicopter</text></string>
+<string id="aes_treasure_tip"><text>If Rasp says so, the legendary Klondike of artifacts is located here</text></string>

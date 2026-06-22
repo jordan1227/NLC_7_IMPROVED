@@ -454,23 +454,23 @@ function spn_cont_with_arts_in_invent_box()
 	["af_blood_dyn5d"]	= 60,
 	["af_rusty_thorn_dyn1d"] = 80,
 		}
-	-- таблица имен инв.ящиков-рюкзаков на ЗХ - из аллспавна
+	-- таблица имен инв.ящиков-рюкзаков на «’ - из аллспавна
 	local tbl_inv_box = {
 	"lost_inventory_box_03",
 	"lost_inventory_box_05",
 	"lost_inventory_box_06",
 	"lost_inventory_box_08",
 	"lost_inventory_box_09",
-	"lost_inventory_box_10",
+	-- "lost_inventory_box_10",
 	"lost_inventory_box_11",
 	"lost_inventory_box_12",
 	"lost_inventory_box_13",
 	}
 
-	local index_in_tbl = get_value("x18_iq_check", 1)
+	local index_in_tbl = math.clamp(get_value("x18_iq_check", 1), 1, #tbl_inv_box)
 	local sobj_cont, lst_of_arts
 	local sobj_box = alife():object( tbl_inv_box[ index_in_tbl ] )
-	-- получили серверный объект случайного инв. €щика на ЗХ
+	-- получили серверный объект случайного инв. €щика на «’
 	if sobj_box then
 		lst_of_arts = lst_of_arts_in_cont( tbl_arts_with_dyn, "arc_art_box_8basic" )			
 		-- спавним в выбранный €щик сам контейнер 
@@ -490,10 +490,14 @@ function spn_cont_with_arts_in_invent_box()
     sak.add_vil_ranger_treasure()	
 end
 
-function check_knife_to_repair(mode)
+function check_knife_to_repair(mode,rel_flag)
+	local res, rel = false, false
 	local m = 1
 	if mode and type(mode) == 'number' then
 		m = mode
+	end
+	if rel_flag and type(rel_flag) == 'boolean' then
+		rel = rel_flag
 	end
 	local sec = "wpn_knife"
 	if m == 2 then
@@ -503,12 +507,16 @@ function check_knife_to_repair(mode)
 	local current_knife = db.actor:item_in_slot( 0 )
 	if current_knife and current_knife:section() == sec then
 		if m == 1 then
-			return current_knife:condition() <= 0.75
+			res = current_knife:condition() <= 0.75
 		else
-			return current_knife:condition() <= 0.95
+			res = current_knife:condition() <= 0.95
+		end
+		if res and rel then
+			misc.release_obj(current_knife:id())
+			sak.relocate_item("out", sec, 1)
 		end
 	end
-	return false
+	return res
 end
 function check_knife_to_repair_any()
 	return check_knife_to_repair(1) or check_knife_to_repair(2)

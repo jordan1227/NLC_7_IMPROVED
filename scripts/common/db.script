@@ -17,15 +17,10 @@ trader				= nil
 info_restr			= {}
 strn_by_respawn		= {}
 creatures			= {}
-script_files        = {}
 oGameStartTime 		= nil
 sMapNow     		= "" --/ current level name
-sMapSav     		= "" --/ pre level name
 idMapNow    		= 0 --/ ID for current level
 tMapNew				= {}
-blowout_active		= false
-
-stor_ltx            = "$mod_dir$/nlc/stor.ltx"
 
 function add_obj(obj)
 	creatures[obj:id()]=obj

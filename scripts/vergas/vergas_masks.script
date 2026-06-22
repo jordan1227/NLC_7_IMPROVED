@@ -488,7 +488,8 @@ function on_off_mask()
 	local ms = out and get_mask_config(out:section()) or "?"
 	if ms == "?" then return end
 
-	sak.actor_hide_weapon()
+	level.only_allow_movekeys(true)
+	bind_stalker.hide_weapon()
     local timeout = 50
 	
 	--schedule.add("off_eye", "vergas_masks.on_off_mask_eye()", 1500)
@@ -522,7 +523,10 @@ function on_off_mask_end()
 	else
 		mask_on_off = true
 	end
-	schedule.add("off_mask_end", "sak.restore_weap()", timeout)
+	dsh.timeout(timeout, function()
+		bind_stalker.restore_weapon()
+		level.only_allow_movekeys(false)
+	end)
     flag_blurs, flag_cmd = false, false 
 end
 

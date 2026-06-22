@@ -1,0 +1,749 @@
+                                                       <!-- Sidor's Barter -->
+
+<string id="trade_dialog_sidor_0"><text>I need some equipment.</text></string>
+<string id="trade_dialog_sidor_1"><text>You understand, normal stuff is only available for artifacts and only in good condition, you can pawn off the rotten crap to the youngsters in the village...\nSo what exactly do you need?</text></string>
+<string id="trade_dialog_sidor_2"><text>Ammo, equipment...</text></string>
+<string id="trade_dialog_sidor_3"><text>Good weapons...</text></string>
+<string id="trade_dialog_sidor_4"><text>To fix my health...</text></string>
+<string id="trade_dialog_sidor_5"><text>Repair kits...</text></string>
+<string id="trade_dialog_sidor_211"><text>From ammo I can offer for first level artifacts:\n1. 12x70 buckshot cartridges\n2. 12x76 canister shot cartridges\n3. 12x76 zhekan cartridges</text></string>
+<string id="trade_dialog_sidor_212"><text>From ammo I can offer for first level artifacts:\n1. 12x70 buckshot cartridges\n2. 12x76 canister shot cartridges\n3. 12x76 zhekan cartridges\n4. Dynamite</text></string>
+<string id="trade_dialog_sidor_54"><text>Alright, I won't buy anything for now...</text></string>
+<string id="trade_dialog_sidor_22"><text>Give me the buckshot...</text></string>
+<string id="trade_dialog_sidor_23"><text>Need canister shot...</text></string>
+<string id="trade_dialog_sidor_24"><text>I'll take the zhekans...</text></string>
+<string id="trade_dialog_sidor_26"><text>Need explosives...</text></string>
+<string id="trade_dialog_sidor_222"><text>For an artifact I give five packs of buckshot... Agreed?</text></string>
+<string id="trade_dialog_sidor_221"><text>Take this, whatever you do...</text></string>
+<string id="trade_dialog_sidor_223"><text>I have an artifact, take it...</text></string>
+<string id="trade_dialog_sidor_232"><text>Three packs of canister shot for an artifact... You taking it?</text></string>
+<string id="trade_dialog_sidor_231"><text>Need canister shot, otherwise I wouldn't even bother asking...</text></string>
+<string id="trade_dialog_sidor_242"><text>Two packs of cartridges for a first level artifact... You taking it?</text></string>
+<string id="trade_dialog_sidor_241"><text>I'll take them, can't do without them...</text></string>
+<string id="trade_dialog_sidor_262"><text>A crate of dynamite will cost you a "Dummy" class artifact... Got one?</text></string>
+<string id="trade_dialog_sidor_261"><text>Expensive, but the need is strong. Here...</text></string>
+<string id="trade_dialog_sidor_263"><text>Well, look. Dynamite's in the old place, in the first house from the road. Hurry up, get it out of there as far as possible. You never know...</text></string>
+<string id="trade_dialog_sidor_666"><text>No, maybe next time...</text></string>
+
+<string id="trade_dialog_sidor_31"><text>For now I can offer for artifacts:\n1. TOZ-34 "Vertikalka"\n2. TOZ-66\n3. Short-barreled MP-133 shotgun</text></string>
+<string id="trade_dialog_sidor_32"><text>I'll take the TOZ-34...</text></string>
+<string id="trade_dialog_sidor_32001"><text>Perhaps, I'll take the TOZ-66...</text></string>
+<string id="trade_dialog_sidor_33"><text>Let me try the MP-133...</text></string>
+<string id="trade_dialog_sidor_322"><text>For the TOZ-34 two simple artifacts, first level, or one good one. Agreed?</text></string>
+<string id="trade_dialog_sidor_32202"><text>TOZ-66 - for it two simple artifacts or one better one, second level. Does that work?</text></string>
+<string id="trade_dialog_sidor_321"><text>Yeah, here's a pair, take it, whatever you do...</text></string>
+<string id="trade_dialog_sidor_323"><text>I have a second level artifact, will it work?</text></string>
+<string id="trade_dialog_sidor_32103"><text>Yes, here's a pair of simple ones..., take them.</text></string>
+<string id="trade_dialog_sidor_32304"><text>Here's a second level artifact, take it.</text></string>
+<string id="trade_dialog_sidor_332"><text>The shortened MP-133 only in exchange for two second level artifacts... Well, or four first level artifacts. You taking it?</text></string>
+<string id="trade_dialog_sidor_333"><text>Four first level artifacts, here...</text></string>
+<string id="trade_dialog_sidor_331"><text>Here are two good artifacts...</text></string>
+
+<string id="trade_dialog_sidor_41"><text>For now I can offer medkits or, heh-heh, vodka...\nAlright, just for you - got a bit of antirad...</text></string>
+<string id="trade_dialog_sidor_42"><text>I'll take medkits...</text></string>
+<string id="trade_dialog_sidor_43"><text>Can't survive in the Zone without vodka...</text></string>
+<string id="trade_dialog_sidor_44"><text>Give me antirad! Tired of treating myself with vodka.</text></string>
+<string id="trade_dialog_sidor_422"><text>For ten medkits one second level artifact, or five for a simple artifact... Agreed?</text></string>
+<string id="trade_dialog_sidor_421"><text>Five is enough, take the simple one...</text></string>
+<string id="trade_dialog_sidor_423"><text>Here's a good artifact, give me the medkits...</text></string>
+
+<string id="trade_dialog_sidor_432"><text>Three bottles in exchange for an artifact! You taking it?</text></string>
+<string id="trade_dialog_sidor_431"><text>I'll take it, I'll take it... Here's... an "artifact".</text></string>
+
+<string id="trade_dialog_sidor_442"><text>So, for a simple artifact I give a couple of antirads. For a second level artifact - five pieces... And if you don't mind parting with a rare, third level artifact, I'll give a dozen and a half.</text></string>
+<string id="trade_dialog_sidor_4411"><text>I'll take it, I'll take it... Here's a simple artifact...</text></string>
+<string id="trade_dialog_sidor_4412"><text>Here I have a second level artifact.</text></string>
+<string id="trade_dialog_sidor_4413"><text>Don't mind... Here's third level!</text></string>
+
+<string id="trade_dialog_sidor_51"><text>I can offer:\n1. Repair kits for armor\n2. Repair kits for weapons\n3. Case for repair kits</text></string>
+<string id="trade_dialog_sidor_52"><text>I'll take the armor ones.</text></string>
+<string id="trade_dialog_sidor_53"><text>Weapon ones are more needed.</text></string>
+<string id="trade_dialog_sidor_57"><text>Probably I'll take the case.</text></string>
+<string id="trade_dialog_sidor_522"><text>For five kits one second level artifact... Agreed?</text></string>
+<string id="trade_dialog_sidor_521"><text>Agreed, whatever you do...</text></string>
+<string id="trade_dialog_sidor_532"><text>Five weapon kits in exchange for one second level artifact... You taking it?</text></string>
+<string id="trade_dialog_sidor_531"><text>Yes, I'll take them. Weapons break down often...</text></string>
+<string id="trade_dialog_sidor_572"><text>Two artifacts...</text></string>
+<string id="trade_dialog_sidor_571"><text>Yes, yes, here take a couple...</text></string>
+
+                                                              <!-- Barkeep's Barter -->
+
+<string id="trade_dialog_barman_0"><text>I want to buy some equipment.</text></string>
+<string id="trade_dialog_barman_1"><text>The main currency in the Zone - artifacts! I run this like an exchange: won't take torn and crumpled currency. In other words, don't bring me any used junk, got it?\nSo what interests you?</text></string>
+<string id="trade_dialog_barman_2"><text>Ammo, equipment...</text></string>
+<string id="trade_dialog_barman_3"><text>Good weapons...</text></string>
+<string id="trade_dialog_barman_4"><text>To fix my health...</text></string>
+<string id="trade_dialog_barman_5"><text>Repair kits...</text></string>
+<string id="trade_dialog_barman_21"><text>Well... From ammo there's:\n1. .357 Magnum cartridges\n2. 12-gauge cartridges\n3. Grenades for NATO underbarrel launcher\n4. Silencer for Glock 18C pistol</text></string>
+<string id="trade_dialog_barman_54"><text>Don't need anything for now...</text></string>
+<string id="trade_dialog_barman_25"><text>Give me .357 Magnum cartridges...</text></string>
+<string id="trade_dialog_barman_26"><text>How much will you give for smooth-bore?</text></string>
+<string id="trade_dialog_barman_27"><text>How many grenades for underbarrel will you give?</text></string>
+<string id="trade_dialog_barman_28"><text>What kind of silencer do you want?</text></string>
+<string id="trade_dialog_barman_252"><text>Three packs for a first level artifact.</text></string>
+<string id="trade_dialog_barman_262"><text>For a second level artifact - nine packs of buckshot, six packs of canister shot or four packs of zhekans...</text></string>
+<string id="trade_dialog_barman_261"><text>Give me buckshot. Here's the artifact...</text></string>
+<string id="trade_dialog_barman_2611"><text>I'll take canister shot, here you go.</text></string>
+<string id="trade_dialog_barman_26111"><text>Give me zhekans, here you go.</text></string>
+<string id="trade_dialog_barman_251"><text>I'll take them, here's the artifact.</text></string>
+
+<string id="trade_dialog_barman_271"><text>For four grenades - I ask for one simple artifact.</text></string>
+<string id="trade_dialog_barman_272"><text>Well, if it's simple - let's do it.</text></string>
+
+<string id="trade_dialog_barman_282"><text>A mere trifle - any second level artifact.</text></string>
+<string id="trade_dialog_barman_281"><text>For some a trifle, for others not so much. But it's a really necessary gadget. Agreed.</text></string>
+
+<string id="trade_dialog_barman_666"><text>No, maybe next time...</text></string>
+<string id="trade_dialog_barman_31"><text>From "good" weapons:\n1. Glock 17 pistol\n2. Glock 18C pistol\n3. BT MP9 submachine gun\n4. MP-153 shotgun</text></string>
+<string id="trade_dialog_barman_32"><text>Need a Glock!</text></string>
+<string id="trade_dialog_barman_33"><text>Glock 18C, let's go!</text></string>
+<string id="trade_dialog_barman_34"><text>I'll take the MP9!</text></string>
+<string id="trade_dialog_barman_35"><text>I'll take the shotgun!</text></string>
+<string id="trade_dialog_barman_322"><text>For Glock 17 three first level artifacts. Agreed?</text></string>
+<string id="trade_dialog_barman_321"><text>I have three simple ones, the Glock is worth it... I hope.</text></string>
+<string id="trade_dialog_barman_332"><text>Glock 18C in exchange for one third level artifact plus one second level... How about it?</text></string>
+<string id="trade_dialog_barman_331"><text>Agreed! Here are the artifacts.</text></string>
+<string id="trade_dialog_barman_342"><text>BT MP9 submachine gun in exchange for a third level artifact... You taking it?</text></string>
+<string id="trade_dialog_barman_341"><text>I have an excellent artifact. Here.</text></string>
+<string id="trade_dialog_barman_352"><text>For the shotgun - four second level artifacts. Well, if you're not being cheap, you can pay with one third level artifact plus one first level.</text></string>
+<string id="trade_dialog_barman_351"><text>Here are four second level artifacts, the MP-153 is worth it...</text></string>
+<string id="trade_dialog_barman_3511"><text>One third level, one first level. Take them...</text></string>
+<string id="trade_dialog_barman_41"><text>For health improvement I offer either medkits, vodka, or antirad.</text></string>
+<string id="trade_dialog_barman_42"><text>I'll take medkits...</text></string>
+<string id="trade_dialog_barman_43"><text>I'll take vodka, anti-stress, you understand!...</text></string>
+<string id="trade_dialog_barman_44"><text>Give me antirad!</text></string>
+<string id="trade_dialog_barman_422"><text>For four medkits one "Jellyfish" class artifact, well, or 10 at once - for one higher level artifact.</text></string>
+<string id="trade_dialog_barman_441"><text>Here's a good artifact, give me ten medkits.</text></string>
+<string id="trade_dialog_barman_421"><text>Give me four, here's a simple artifact.</text></string>
+<string id="trade_dialog_barman_432"><text>Two bottles for a simple artifact, or seven half-liters for a good one. You taking it?</text></string>
+<string id="trade_dialog_barman_431"><text>Here's a simple one. That'll do for now.</text></string>
+<string id="trade_dialog_barman_442"><text>So: one antirad for a simple artifact, four for a second level artifact, ten for a third level... Well what?</text></string>
+<string id="trade_dialog_barman_4411"><text>Here's a simple one. That'll do for now.</text></string>
+<string id="trade_dialog_barman_4412"><text>Got a second level one... That'll do for now.</text></string>
+<string id="trade_dialog_barman_4413"><text>Give me ten! Here's the artifact...</text></string>
+<string id="trade_dialog_barman_451"><text>Give me more - here take the artifact!</text></string>
+<string id="trade_dialog_barman_51"><text>For repair I can offer repair kits for armor and weapons. Well, and a case for repair kits.</text></string>
+<string id="trade_dialog_barman_52"><text>I'll take the armor ones.</text></string>
+<string id="trade_dialog_barman_53"><text>Weapon ones are more needed.</text></string>
+<string id="trade_dialog_barman_57"><text>Give me the case.</text></string>
+<string id="trade_dialog_barman_522"><text>For three kits one second level artifact. Or for a simple artifact one kit. What do we decide?</text></string>
+<string id="trade_dialog_barman_521"><text>Give me three. They'll come in handy...</text></string>
+<string id="trade_dialog_barman_541"><text>Ah! I'll make do with one for now...</text></string>
+<string id="trade_dialog_barman_572"><text>For the case I ask you to pile on simple artifacts - 3 pieces, you taking it?</text></string>
+<string id="trade_dialog_barman_571"><text>Simple artifacts... Well, here take these...</text></string>
+<string id="trade_dialog_barman_532"><text>For three kits one second level artifact. Or for a simple artifact one kit. What do we decide?</text></string>
+<string id="trade_dialog_barman_531"><text>Give me three, here you go...</text></string>
+<string id="trade_dialog_barman_551"><text>Eh, having trouble with artifacts, one will do for now.</text></string>
+
+                                                             <!-- Petrenko's Barter -->
+
+<string id="trade_dialog_petrenko_0"><text>I need some equipment.</text></string>
+<string id="trade_dialog_petrenko_1"><text>If you have artifacts, then no problem. But keep in mind, worn ones don't interest me...\nSo what do you want to get?</text></string>
+<string id="trade_dialog_petrenko_2"><text>Ammo...</text></string>
+<string id="trade_dialog_petrenko_3"><text>Good weapons...</text></string>
+<string id="trade_dialog_petrenko_4"><text>Something for health...</text></string>
+<string id="trade_dialog_petrenko_5"><text>Weapon attachments...</text></string>
+<string id="trade_dialog_petrenko_21"><text>I can offer:\n1. 7.62x54 mm cartridges\n2. 7.62x39 mm cartridges\n3. 9x39 mm cartridges\n4. 5.45x39 mm cartridges\n5. VOG-25 shots for underbarrel grenade launcher</text></string>
+<string id="trade_dialog_petrenko_31"><text>I have this to offer:\n1. "Vityaz-SN" submachine gun\n2. AK-104 "Tactic" assault rifle\n3. VSS "Vintorez" rifle\n4. AS "Val" assault rifle</text></string>
+<string id="trade_dialog_petrenko_41"><text>I only have military medkits...</text></string>
+<string id="trade_dialog_petrenko_51"><text>Currently I have in stock:\n1. "Kobra", "Rakurs", "OKP" collimator sights\n2. Silencers for 5.45 and 7.62, including for SVD.</text></string>
+
+<string id="trade_dialog_petrenko_221"><text>Need cartridges for SVD.</text></string>
+<string id="trade_dialog_petrenko_222"><text>I'll take underbarrel grenades.</text></string>
+<string id="trade_dialog_petrenko_223"><text>Give me cartridges for AKM...</text></string>
+<string id="trade_dialog_petrenko_224"><text>Give me 9x39 cartridges for "Vintorez"...</text></string>
+<string id="trade_dialog_petrenko_225"><text>I'll take cartridges for AK-74...</text></string>
+
+<string id="trade_dialog_petrenko_231"><text>For one first level artifact I give three packs of 7N1 or two 7N14, well or one pack of armor-piercing 7N26. What will you choose?</text></string>
+<string id="trade_dialog_petrenko_232"><text>For one first level artifact I can offer four VOG-25. You taking it?</text></string>
+<string id="trade_dialog_petrenko_233"><text>Four packs of standard cartridges for one simple artifact.</text></string>
+<string id="trade_dialog_petrenko_234"><text>Five packs of simple ones, four sniper ones or three armor-piercing for a second level artifact... Which will you choose?</text></string>
+<string id="trade_dialog_petrenko_235"><text>I give one hundred fifty simple cartridges for a first level artifact.</text></string>
+
+<string id="trade_dialog_petrenko_2311"><text>Give me standard sniper 7N1...</text></string>
+<string id="trade_dialog_petrenko_2312"><text>I need sniper armor-piercing 7N14 cartridges...</text></string>
+<string id="trade_dialog_petrenko_2313"><text>I'll take armor-piercing 7N26...</text></string>
+<string id="trade_dialog_petrenko_2321"><text>Deal.</text></string>
+<string id="trade_dialog_petrenko_2331"><text>One hundred twenty pieces... I'll take them.</text></string>
+<string id="trade_dialog_petrenko_2341"><text>Give me five simple ones, here's the artifact.</text></string>
+<string id="trade_dialog_petrenko_2342"><text>Here's the artifact. I'll take sniper ones.</text></string>
+<string id="trade_dialog_petrenko_2343"><text>Armor-piercing - they drop a bloodsucker instantly. Take the artifact...</text></string>
+<string id="trade_dialog_petrenko_2351"><text>I have a simple artifact, I'll take them.</text></string>
+
+<string id="trade_dialog_petrenko_321"><text>"Vityaz"? Excellent gun, I'll take it...</text></string>
+<string id="trade_dialog_petrenko_322"><text>I'll take the AK-104 "Tactic"...</text></string>
+<string id="trade_dialog_petrenko_323"><text>All my life I've dreamed of shooting a "Vintorez"...</text></string>
+<string id="trade_dialog_petrenko_323_2"><text>The Val should be a good gun...</text></string>
+
+<string id="trade_dialog_petrenko_331"><text>For "Vityaz" - I'll take a third level artifact. Agreed?</text></string>
+<string id="trade_dialog_petrenko_332"><text>AK-104 "Tactic" in exchange for two third level artifacts. Got any?</text></string>
+<string id="trade_dialog_petrenko_333"><text>"Vintorez" only in exchange for one excellent artifact and one simpler one. Just look, optics aren't included, you'll have to pay separately for the collimator sight... You taking it?</text></string>
+<string id="trade_dialog_petrenko_333_2"><text>"Val" only in exchange for one excellent artifact and two simpler ones. Just look, optics aren't included, you'll have to pay separately for the collimator sight... You taking it?</text></string>
+
+<string id="trade_dialog_petrenko_3311"><text>Yes, agreed...</text></string>
+<string id="trade_dialog_petrenko_3321"><text>Yes, I have them...</text></string>
+<string id="trade_dialog_petrenko_3331"><text>Of course, I'll take it!</text></string>
+
+<string id="trade_dialog_petrenko_42"><text>What do you want for them?</text></string>
+<string id="trade_dialog_petrenko_43"><text>For three medkits one second level artifact or two first level... Agreed?</text></string>
+<string id="trade_dialog_petrenko_441"><text>Take it, here's a second level one, whatever you do...</text></string>
+<string id="trade_dialog_petrenko_442"><text>Here's a pair of first level ones, take them...</text></string>
+
+<string id="trade_dialog_petrenko_521"><text>"Kobra" wouldn't hurt...</text></string>
+<string id="trade_dialog_petrenko_521_2"><text>I'd like "Rakurs"...</text></string>
+<string id="trade_dialog_petrenko_521_3"><text>"OKP" is a good sight...</text></string>
+<string id="trade_dialog_petrenko_522"><text>Want a silencer for SVD...</text></string>
+<string id="trade_dialog_petrenko_523"><text>Silencer for AK-74 will definitely come in handy...</text></string>
+<string id="trade_dialog_petrenko_524"><text>Need a silencer for 7.62 assault rifles...</text></string>
+<string id="trade_dialog_petrenko_525"><text>Got anything... unusual?</text></string>
+
+<string id="trade_dialog_petrenko_531"><text>Such a sight will cost you two second level artifacts. What do you say?</text></string>
+<string id="trade_dialog_petrenko_532"><text>Even now I'll exchange it for a second level artifact.</text></string>
+<string id="trade_dialog_petrenko_5351"><text>Unusual? Well, there's an underbarrel grenade launcher for "Groza". Last one left. There were only a few pieces total. Such weapons are rare, purely for specialists. Interested? I'll give it for a third level artifact.</text></string>
+<string id="trade_dialog_petrenko_5352"><text>Hmm... right now, probably nothing. Though sometimes they bring quite rare specimens. Drop by more often, you know the way.</text></string>
+
+<string id="trade_dialog_petrenko_5361"><text>Well, I'll take it, I guess. Here's the artifact.</text></string>
+<string id="trade_dialog_petrenko_5362"><text>Alright, then see you later.</text></string>
+
+<string id="trade_dialog_petrenko_5311"><text>Was afraid you'd totally rip me off, but it's still quite reasonable. Take the artifacts.</text></string>
+<string id="trade_dialog_petrenko_5321"><text>No problem. Here, take it...</text></string>
+
+<string id="trade_dialog_petrenko_6"><text>Changed my mind, won't take anything for now.</text></string>
+<string id="trade_dialog_petrenko_61"><text>You're asking too much...</text></string>
+
+<string id="trad_dialog_sanya_0"><text>I want to exchange artifacts, show me what you have.</text></string>
+<string id="trad_dialog_sanya_1"><text>Please. Look, choose...</text></string>
+
+<string id="trad_dialog_sakharov_0"><text>Brought some artifacts...</text></string>
+<string id="trad_dialog_sakharov_1"><text>Want to look at what we can offer for your finds? Let's...</text></string>
+<string id="trad_dialog_sakharov_2"><text>Yes, let's have a look...</text></string>
+<string id="trad_dialog_sakharov_3"><text>Good, good...</text></string>
+
+<string id="zub_zapiski_0"><text>You're interested in all kinds of information, as I understand. Should I bring you any rare papers?</text></string>
+<string id="zub_zapiski_1"><text>You think correctly. If you find something interesting - bring it. I'm interested in such things.</text></string>
+<string id="zub_zapiski_2"><text>Got it, I'll bring it if I come across something...</text></string>
+
+<string id="trade_informator_0"><text>I brought you something here... Will you look?</text></string>
+<string id="trade_informator_1"><text>You brought something? Well then, show me.</text></string>
+<string id="trade_informator_2"><text>Look.</text></string>
+<string id="trade_informator_3"><text>So-so, so-so.</text></string>
+
+                                                                  <!-- Skryaga's Barter -->
+
+<string id="trade_dialog_skraga_0"><text>Can you hook me up with some goods?</text></string>
+<string id="trade_dialog_skraga_1"><text>I can trade. Got any artifacts that ain't fucked up? Won't take used ones, just so you know.\nWhat exactly do you need?</text></string>
+<string id="trade_dialog_skraga_2"><text>Ammo, grenades...</text></string>
+<string id="trade_dialog_skraga_3"><text>Good weapons...</text></string>
+<string id="trade_dialog_skraga_4"><text>For health improvement...</text></string>
+<string id="trade_dialog_skraga_5"><text>Repair accessories...</text></string>
+<string id="trade_dialog_skraga_6"><text>Maybe you have .338 Lapua Magnum ammo in stock... or attachments...</text></string>
+<string id="trade_dialog_skraga_21"><text>From ammo for simple artifacts:\n1. 5.56 cartridges for NATO guns\n2. F-1 grenades\n3. Grenades for NATO underbarrel launcher\n4. Drum with 5.56x45 mm cartridges\nFor second level artifacts:\n1. 7.62 NATO cartridges</text></string>
+<string id="trade_dialog_skraga_54"><text>Don't need anything, no artifacts...</text></string>
+<string id="trade_dialog_skraga_22"><text>Give me 5.56 cartridges...</text></string>
+<string id="trade_dialog_skraga_23"><text>Need grenades...</text></string>
+<string id="trade_dialog_skraga_24"><text>I'll take grenades for underbarrel...</text></string>
+<string id="trade_dialog_skraga_25"><text>I'll take the drum...</text></string>
+<string id="trade_dialog_skraga_26"><text>I'll take NATO ones...</text></string>
+<string id="trade_dialog_skraga_222"><text>For one first level artifact I can hook up five packs of simple cartridges. How about it?</text></string>
+<string id="trade_dialog_skraga_221"><text>Give me five simple ones...</text></string>
+<string id="trade_dialog_skraga_232"><text>Three grenades - one simple artifact... You taking it?</text></string>
+<string id="trade_dialog_skraga_231"><text>Need grenades, otherwise I wouldn't even bother.</text></string>
+<string id="trade_dialog_skraga_242"><text>Four shots - first level artifact... You taking it?</text></string>
+<string id="trade_dialog_skraga_241"><text>I'll take them, need them badly...</text></string>
+<string id="trade_dialog_skraga_252"><text>One drum. For one simple artifact... Agreed?</text></string>
+<string id="trade_dialog_skraga_251"><text>Yeah. Let's do it.</text></string>
+<string id="trade_dialog_skraga_262"><text>For one second level artifact I can hook up four packs of simple cartridges. How about it?</text></string>
+<string id="trade_dialog_skraga_261"><text>Yeah, I'll take them.</text></string>
+<string id="trade_dialog_skraga_666"><text>No, maybe next time...</text></string>
+
+<string id="trade_dialog_skraga_31"><text>From weapons I can offer: \n1. HK USP pistol\n2. FN FNX-45 pistol\n3. Springfield 1911 pistol</text></string>
+<string id="trade_dialog_skraga_311"><text>From weapons I can offer: \n1. Benelli M4 Super 90 (M1014) shotgun\n2. HK USP pistol\n3. FN FNX-45 pistol\n4. Springfield 1911 pistol</text></string>
+<string id="trade_dialog_skraga_32"><text>Benelli M4 Super 90 (M1014)? Alright, let me try it.</text></string>
+<string id="trade_dialog_skraga_33"><text>Holy shit, always wanted to hold a USP in my hands!</text></string>
+<string id="trade_dialog_skraga_34"><text>FN FNX-45? Well let's have a look at it.</text></string>
+<string id="trade_dialog_skraga_35"><text>Springfield 1911! That's a world classic, I'll take it!</text></string>
+<string id="trade_dialog_skraga_322"><text>I ask for five second level artifacts or two third level ones. "Dummy" class will also work. If you don't mind, of course.</text></string>
+<string id="trade_dialog_skraga_321"><text>Here, take five second level ones...</text></string>
+<string id="trade_dialog_skraga_3211"><text>Take them, cheapskate, two third level ones...</text></string>
+<string id="trade_dialog_skraga_3212"><text>I hate to part with it, but what can you do. Really caught my eye, this little gun. Here's the artifact.</text></string>
+<string id="trade_dialog_skraga_332"><text>Three second level artifacts - and do whatever you want with it.</text></string>
+<string id="trade_dialog_skraga_331"><text>Here are your artifacts.</text></string>
+<string id="trade_dialog_skraga_342"><text>Give me one third level artifact - and it's yours.</text></string>
+<string id="trade_dialog_skraga_341"><text>Here.</text></string>
+<string id="trade_dialog_skraga_352"><text>Just two second level artifacts - and you can own it.</text></string>
+<string id="trade_dialog_skraga_351"><text>Take the artifacts.</text></string>
+<string id="trade_dialog_skraga_41"><text>For now I can offer:\n1. Medkits for simple artifacts\n2. Antirad for second level artifacts</text></string>
+<string id="trade_dialog_skraga_42"><text>I'll take medkits...</text></string>
+<string id="trade_dialog_skraga_43"><text>Can't survive in the Zone without antirad...</text></string>
+<string id="trade_dialog_skraga_422"><text>For a pair of military medkits - one first level artifact... Agreed?</text></string>
+<string id="trade_dialog_skraga_421"><text>Take it, whatever you do...</text></string>
+<string id="trade_dialog_skraga_432"><text>Five antirad in exchange for a second level artifact... You taking it?</text></string>
+<string id="trade_dialog_skraga_431"><text>I'll take them, I'll take them... If I don't need them myself, I'll trade them...</text></string>
+<string id="trade_dialog_skraga_51"><text>Repair kits for second level artifacts.</text></string>
+<string id="trade_dialog_skraga_52"><text>I'll take the armor ones.</text></string>
+<string id="trade_dialog_skraga_53"><text>Weapon ones are more needed.</text></string>
+<string id="trade_dialog_skraga_522"><text>For four kits one artifact... Agreed?</text></string>
+<string id="trade_dialog_skraga_521"><text>Agreed, whatever you do...</text></string>
+<string id="trade_dialog_skraga_532"><text>Four weapon kits in exchange for a decent artifact... You taking it?</text></string>
+<string id="trade_dialog_skraga_531"><text>Yes, I'll take them. Weapons break down often...</text></string>
+<string id="trade_dialog_skraga_61"><text>For now I can offer:\n1. .338 Lapua Magnum\n2. .338 Lapua Magnum AP\n3. 5.56 silencer\n4. 7.62 NATO silencer</text></string>
+<string id="trade_dialog_skraga_62"><text>I'll take the simple ones...</text></string>
+<string id="trade_dialog_skraga_63"><text>Give me armor-piercing...</text></string>
+<string id="trade_dialog_skraga_64"><text>I'll take a silencer for 5.56x45...</text></string>
+<string id="trade_dialog_skraga_65"><text>I'd take a silencer for 7.62x51 NATO...</text></string>
+<string id="trade_dialog_skraga_622"><text>For 5 packs of simple ones pay with a third level artifact... Agreed?</text></string>
+<string id="trade_dialog_skraga_621"><text>Deal.</text></string>
+<string id="trade_dialog_skraga_632"><text>For 3 packs of armor-piercing I want a third level artifact... Does that work?</text></string>
+<string id="trade_dialog_skraga_631"><text>Yes, I'll take them.</text></string>
+<string id="trade_dialog_skraga_642"><text>Silencer for 5.56x45 - second level artifact. Need it?</text></string>
+<string id="trade_dialog_skraga_641"><text>I'll take it, I'll take it...</text></string>
+<string id="trade_dialog_skraga_652"><text>Silencer for 7.62x51 NATO - second level artifact. Agreed?</text></string>
+<string id="trade_dialog_skraga_651"><text>I'll take it, I guess.</text></string>
+
+                                                                    <!-- Veins' Barter -->
+
+<string id="jila_start_dialog_101"><text>And what's this character doing here without guards? You here to see me or what?</text></string>
+<string id="jila_start_dialog_102"><text>To see you? And who are you?</text></string>
+<string id="jila_start_dialog_103"><text>What the hell! Don't even know me! That's insulting! I feed all the homies here, you could say. They wouldn't last two days without papa Veins. Strange that you haven't heard of me... Or are you some newbie loser, a roadside nobody? What should I call you, clueless one?</text></string>
+<string id="jila_start_dialog_104"><text>I'm Marked One, haven't heard? And you're the cook, I guess?</text></string>
+<string id="jila_start_dialog_105"><text>What the hell cook! I gather grub for the bros. Trade it with visiting stalkers and, sometimes, take it off corpses... Sausage, canned food and other delights of normal food. You get it?</text></string>
+<string id="jila_start_dialog_106"><text>Like a quartermaster, got it. And if there are no "corpses" then what goes into business?</text></string>
+<string id="jila_start_dialog_107"><text>All sorts of stuff... We don't do cannibalism, if that's what you're thinking. Sometimes pork, boar... Can visit Ignat in the Gut from time to time. He's learned to almost completely eliminate that monster stench. In short: your grub - our gear! Bring it on, Marked One...</text></string>
+<string id="jila_start_dialog_108"><text>Let's see.</text></string>
+<string id="jila_start_dialog_201"><text>Aha! You again? And again without guards. What this time?</text></string>
+
+<string id="trade_dialog_jlob_0"><text>Still stocking up on grub? Think I have something for you to trade...</text></string>
+<string id="trade_dialog_jlob_1"><text>Well, show me what you got. Keep in mind, there ain't no freezers here, and everything spoils fast. So if you dragged in rotten crap, you'll be eating it yourself.\nSo what do you want to stock up on?</text></string>
+<string id="trade_dialog_jlob_2"><text>What ammo is there? Or something else?</text></string>
+<string id="trade_dialog_jlob_3"><text>You dealing guns?</text></string>
+<string id="trade_dialog_jlob_4"><text>What do you have for health?</text></string>
+<string id="trade_dialog_jlob_5"><text>Can you hook me up with something for repairs?</text></string>
+<string id="trade_dialog_jlob_6"><text>Heard you got PDAs of all kinds?</text></string>
+<string id="trade_dialog_jlob_21"><text>Not much ammo:\n1. 5.45x39 mm cartridges for Kalash. Five packs of simple ones - for five canned foods\n2. RGD-5 grenades. Two energy drinks - one piece\n3. 9x19 mm cartridges, regular - three cans of energy drink for two packs\n4. F-1 grenade - one canned food and an energy drink with it</text></string>
+<string id="trade_dialog_jlob_54"><text>Don't need anything for now...</text></string>
+<string id="trade_dialog_jlob_22"><text>I'll take cartridges for Kalash.</text></string>
+<string id="trade_dialog_jlob_23"><text>Need grenades.</text></string>
+<string id="trade_dialog_jlob_24"><text>Give me nines.</text></string>
+<string id="trade_dialog_jlob_25"><text>I'll take the F-1.</text></string>
+<string id="trade_dialog_jlob_222"><text>Show me the canned food first...</text></string>
+<string id="trade_dialog_jlob_221"><text>There they are, don't worry...</text></string>
+<string id="trade_dialog_jlob_232"><text>Could really use some energy drink right now, getting sleepy...</text></string>
+<string id="trade_dialog_jlob_231"><text>No problem, here you go. Hand over the grenade...</text></string>
+<string id="trade_dialog_jlob_242"><text>Want to drink, water situation here is totally fucked...</text></string>
+<string id="trade_dialog_jlob_241"><text>Here, wet your throat...</text></string>
+<string id="trade_dialog_jlob_252"><text>No doubt about it. We need snacks and drinks.</text></string>
+<string id="trade_dialog_jlob_251"><text>Should take care of your liver. Here...</text></string>
+<string id="trade_dialog_jlob_666"><text>No, maybe next time...</text></string>
+<string id="trade_dialog_jlob_31"><text>Want a gun? Well choose:\n1. SR-2MP "Veresk" submachine gun for 15 canned foods\n2. "Bizon-2" submachine gun in excellent condition - for 20 army rations\n3. SIG Sauer P250 pistol - just for 10 army rations\n4. Molot OP-SKS carbine for 8 hunting sausages\n5. 9mm silencer for 5 hunting sausages</text></string>
+<string id="trade_dialog_jlob_32"><text>Give me the SR-2MP "Veresk".</text></string>
+<string id="trade_dialog_jlob_33"><text>I'll take the "Bizon".</text></string>
+<string id="trade_dialog_jlob_34"><text>I'll take the SIG Sauer P250.</text></string>
+<string id="trade_dialog_jlob_35"><text>Wrap up the Molot OP-SKS.</text></string>
+<string id="trade_dialog_jlob_36"><text>Give me the silencer.</text></string>
+<string id="trade_dialog_jlob_322"><text>Draw up the canned foods...</text></string>
+<string id="trade_dialog_jlob_321"><text>Don't worry, I won't screw you...</text></string>
+<string id="trade_dialog_jlob_332"><text>Brought rations? Not expired?</text></string>
+<string id="trade_dialog_jlob_331"><text>Even if they're expired, still better than your pig slop. Take it already.</text></string>
+<string id="trade_dialog_jlob_342"><text>Where are the rations? Not opened at least?</text></string>
+<string id="trade_dialog_jlob_341"><text>Here, businessman, you can check...</text></string>
+<string id="trade_dialog_jlob_352"><text>Brought sausage?</text></string>
+<string id="trade_dialog_jlob_351"><text>Here, penny-pincher...</text></string>
+<string id="trade_dialog_jlob_362"><text>Where's the sausage?</text></string>
+<string id="trade_dialog_jlob_361"><text>Take it, dealer</text></string>
+<string id="trade_dialog_jlob_41"><text>Need to fix your health? Here, look:\n1. Medkit for two hunting sausages\n2. Vodka for four canned foods</text></string>
+<string id="trade_dialog_jlob_42"><text>I'll take a medkit...</text></string>
+<string id="trade_dialog_jlob_43"><text>Give me vodka...</text></string>
+<string id="trade_dialog_jlob_422"><text>Hand over the sausage. Not spoiled at least?</text></string>
+<string id="trade_dialog_jlob_421"><text>Yeah seems you can eat it. Smell it yourself...</text></string>
+<string id="trade_dialog_jlob_432"><text>Draw up the canned foods quickly...</text></string>
+<string id="trade_dialog_jlob_431"><text>One, two... here, four cans.</text></string>
+<string id="trade_dialog_jlob_51"><text>Got some repair kits:\n1. For armor - three cans of energy drink\n2. For weapons - army ration for two kits</text></string>
+<string id="trade_dialog_jlob_52"><text>I'll take the armor ones.</text></string>
+<string id="trade_dialog_jlob_53"><text>Weapon ones are more needed.</text></string>
+<string id="trade_dialog_jlob_522"><text>Show me the energy drinks...</text></string>
+<string id="trade_dialog_jlob_521"><text>Take them, here's three cans...</text></string>
+<string id="trade_dialog_jlob_532"><text>Oh, at least some normal grub to chow down!</text></string>
+<string id="trade_dialog_jlob_531"><text>Don't get too excited, rations aren't so easy to get. But today - party time...</text></string>
+<string id="trade_dialog_jlob_61"><text>Heard? Well... Alright, got a little, can trade: ten canned foods or five fresh hunting sausages, for one PDA. Just keep in mind, they don't turn on, maybe just the battery's dead, or maybe they're completely fucked...</text></string>
+<string id="trade_dialog_jlob_62"><text>Alright, let me take it, maybe I'll charge it up.</text></string>
+<string id="trade_dialog_jlob_622"><text>What are you trading for?</text></string>
+<string id="trade_dialog_jlob_621"><text>Take them, here's the canned foods...</text></string>
+<string id="trade_dialog_jlob_641"><text>Hunting ones, as you asked...</text></string>
+<string id="trade_dialog_jlob_64"><text>Don't have that much right now. Maybe I'll come back.</text></string>
+
+                                                                      <!-- Sherstyuk's Barter -->
+
+<string id="trade_dialog_sherstyk_0"><text>Can you hook me up with some equipment?</text></string>
+<string id="trade_dialog_sherstyk_1"><text>Why not?! Bring vodka and you'll have happiness... Depending on the number of bottles.\nWhat exactly do you need?</text></string>
+<string id="trade_dialog_sherstyk_2"><text>Ammo, grenades...</text></string>
+<string id="trade_dialog_sherstyk_3"><text>Can you get an assault rifle or machine gun?</text></string>
+<string id="trade_dialog_sherstyk_4"><text>They say the military has unique medicines or products...</text></string>
+<string id="trade_dialog_sherstyk_5"><text>I heard you guys have good tactical gear...</text></string>
+<string id="trade_dialog_sherstyk_21"><text>Well... can trade for vodka:\n1. 5.45x39 mm cartridges for AK-74\n2. F-1 grenades\n3. RGO Grenades\n4. For PKM machine gun 7.62x54 mm R ammo belts\n5. 7.62x39 mm cartridges for AKM\n6. Drum with 5.45x39 mm cartridges for RPK</text></string>
+<string id="trade_dialog_sherstyk_54"><text>Don't need anything for now...</text></string>
+<string id="trade_dialog_sherstyk_22"><text>I'll take cartridges for AK-74...</text></string>
+<string id="trade_dialog_sherstyk_23"><text>Give me grenades, F-1 really helps against the evil...</text></string>
+<string id="trade_dialog_sherstyk_24"><text>For PKM? I'll take it, I guess...</text></string>
+<string id="trade_dialog_sherstyk_25"><text>RGO? The ones with the contact fuze? How much are you asking?</text></string>
+<string id="trade_dialog_sherstyk_55"><text>I'll take cartridges for AKM...</text></string>
+<string id="trade_dialog_sherstyk_56"><text>I'll take the drum for RPK...</text></string>
+<string id="trade_dialog_sherstyk_222"><text>I can give five packs of simple cartridges for three bottles.</text></string>
+<string id="trade_dialog_sherstyk_221"><text>Five packs, I'll take them.</text></string>
+<string id="trade_dialog_sherstyk_232"><text>Want grenades, you say?</text></string>
+<string id="trade_dialog_sherstyk_231"><text>Need grenades, otherwise I wouldn't even bother.</text></string>
+<string id="trade_dialog_sherstyk_242"><text>One crate of cartridges - six bottles.</text></string>
+<string id="trade_dialog_sherstyk_252"><text>Let me think for a sec...</text></string>
+<string id="trade_dialog_sherstyk_251"><text>For grenades like these, that's a fair price. I'm in.</text></string>
+<string id="trade_dialog_sherstyk_241"><text>Agreed...</text></string>
+<string id="trade_dialog_sherstyk_552"><text>I can give four packs of simple cartridges for four bottles.</text></string>
+<string id="trade_dialog_sherstyk_551"><text>Four packs, I'll take them.</text></string>
+<string id="trade_dialog_sherstyk_562"><text>One drum for two bottles.</text></string>
+<string id="trade_dialog_sherstyk_561"><text>I'll take it.</text></string>
+<string id="trade_dialog_sherstyk_666"><text>No, next time.</text></string>
+<string id="trade_dialog_sherstyk_31"><text>I can get:\n1. Walther P99 pistol\n2. "OTs-33 Pernach" pistol, very reliable machine\n3. RPK-74 - though somewhat heavy, but very convenient and drops evil instantly\n4. Legendary Soviet AKM</text></string>
+<string id="trade_dialog_sherstyk_32"><text>Walther P99? How much you asking?</text></string>
+<string id="trade_dialog_sherstyk_3222"><text>How much for the Pernach?</text></string>
+<string id="trade_dialog_sherstyk_33"><text>For the machine gun, need a lot of vodka?</text></string>
+<string id="trade_dialog_sherstyk_34"><text>For how much will you give the "legend"?</text></string>
+<string id="trade_dialog_sherstyk_322"><text>Just eight bottles. Agreed?</text></string>
+<string id="trade_dialog_sherstyk_3223"><text>Just ten bottles! Agreed?</text></string>
+<string id="trade_dialog_sherstyk_3221"><text>Bring a dozen... no! Fifteen pieces - and you'll have a Walther P99. Agreed?</text></string>
+<string id="trade_dialog_sherstyk_321"><text>Alright, eight, so eight...</text></string>
+<string id="trade_dialog_sherstyk_3225"><text>Agreed, here's ten bottles...</text></string>
+<string id="trade_dialog_sherstyk_3224"><text>Fifteen bottles. How about it?</text></string>
+<string id="trade_dialog_sherstyk_3226"><text>Here they are, all fifteen.</text></string>
+<string id="trade_dialog_sherstyk_332"><text>Machine gun - it's not a small thing, hard to carry out... You'll have to shell out. Twenty bottles, deal?</text></string>
+<string id="trade_dialog_sherstyk_3321"><text>Machine gun - it's not a small thing, hard to carry out... You'll have to shell out. Forty bottles, deal?</text></string>
+<string id="trade_dialog_sherstyk_3311"><text>I got forty bottles. Here!</text></string>
+<string id="trade_dialog_sherstyk_331"><text>Agreed! Let's do it!</text></string>
+<string id="trade_dialog_sherstyk_341"><text>I'll let it go for fifteen bottles of the clear stuff. Deal?</text></string>
+<string id="trade_dialog_sherstyk_342"><text>I'll let it go for twenty bottles of the clear stuff. Deal?</text></string>
+<string id="trade_dialog_sherstyk_3411"><text>Hear them clinking in my backpack, darling? Take them.</text></string>
+
+<string id="trade_dialog_sherstyk_41"><text>Yeah right, those dogs... They don't give us these new things they show at exhibitions. Just our usual, army, medkits and rations.</text></string>
+<string id="trade_dialog_sherstyk_50"><text>Yeah, they threw in a batch for special forces recently. Everyone's praising them. Not cheap mass production, you understand yourself... So it'll cost you twenty-five bottles. Can you handle it? And if you agree to donate what you're wearing to my exchange fund, then we'll bargain for a case.</text></string>
+<string id="trade_dialog_sherstyk_51"><text>Deal. Hope it's worth it. Take them, exactly twenty bottles...</text></string>
+<string id="trade_dialog_sherstyk_52"><text>Wow, you really know how to drive a hard bargain! I'll come back later, maybe.</text></string>
+<string id="trade_dialog_sherstyk_511"><text>Excellent! I guarantee you'll come back later to say "thank you" to Sherstyuk. You know what container I prefer to receive gratitude in? Just kidding.</text></string>
+<string id="trade_dialog_sherstyk_42"><text>How many medkits will you give?</text></string>
+<string id="trade_dialog_sherstyk_43"><text>Wouldn't hurt to have some rations...</text></string>
+<string id="trade_dialog_sherstyk_422"><text>Medkit for a bottle.</text></string>
+<string id="trade_dialog_sherstyk_4221"><text>For two bottles? Well, I'll give a medkit. One.</text></string>
+<string id="trade_dialog_sherstyk_102"><text>Ration for a bottle.</text></string>
+<string id="trade_dialog_sherstyk_1020"><text>Two bottles for a ration.</text></string>
+<string id="trade_dialog_sherstyk_1022"><text>Three bottles for a ration.</text></string>
+<string id="trade_dialog_sherstyk_421"><text>Deal!</text></string>
+<string id="trade_dialog_sherstyk_101"><text>Excellent!</text></string>
+
+                                                                        <!-- Kuznetsov's Barter -->
+
+<string id="trade_dialog_kuznezov_0"><text>I'm about that exchange. I need something...</text></string>
+<string id="trade_dialog_kuznezov_1"><text>Bring vodka, maybe I can help. Depending on the number of bottles.\nWhat exactly do you want?</text></string>
+<string id="trade_dialog_kuznezov_12"><text>Get out of here, Marked One. I heard you were seen when you killed my classmate, Seryoga, in Dark Valley. If I knew for sure it was you - I'd shoot you!</text></string>
+<string id="trade_dialog_kuznezov_13"><text>I'm leaving, I'm leaving.</text></string>
+<string id="trade_dialog_kuznezov_2"><text>Ammo, grenades, maybe good armor...</text></string>
+<string id="trade_dialog_kuznezov_3"><text>Can you get an assault rifle or machine gun?</text></string>
+<string id="trade_dialog_kuznezov_4"><text>They say the military has unique medicines...</text></string>
+<string id="trade_dialog_kuznezov_5"><text>I heard people praise army tactical gear...</text></string>
+<string id="trade_dialog_kuznezov_21"><text>Well... can trade for vodka:\n1. 5.45x39 mm cartridges for AK-74\n2. RGD-5 grenades\n3. RGO Grenades\n4. 7.62x39 mm cartridges</text></string>
+<string id="trade_dialog_kuznezov_51"><text>Ha! Of course! Army means reliable. They just threw in a batch for special forces recently. With such you can carry half the RAV warehouse of our regiment on yourself. Not cheap mass production, you understand yourself... So it'll cost you twenty-five bottles. Can you handle it? And if you agree to donate what you're wearing to my exchange fund, then we'll bargain for a case.</text></string>
+<string id="trade_dialog_kuznezov_52"><text>Ha! Of course! Army means reliable. But right now I can't get you one, very few left in the warehouse, all under report. Maybe they'll throw in more later.</text></string>
+<string id="trade_dialog_kuznezov_511"><text>Deal. Hope it's worth it. Take them, exactly twenty bottles...</text></string>
+<string id="trade_dialog_kuznezov_512"><text>Wow, you really know how to drive a hard bargain! I'll stop by later... probably.</text></string>
+<string id="trade_dialog_kuznezov_5111"><text>Excellent! I guarantee you'll come back later to say "thank you" to Kuznetsov. You know what container I prefer to receive gratitude in? Just kidding.</text></string>
+<string id="trade_dialog_kuznezov_521"><text>Too bad... I'll drop by another time then.</text></string>
+<string id="trade_dialog_kuznezov_54"><text>Don't need anything for now...</text></string>
+<string id="trade_dialog_kuznezov_22"><text>I'll take cartridges for AK-74...</text></string>
+<string id="trade_dialog_kuznezov_23"><text>Give me grenades, they really help against the evil...</text></string>
+<string id="trade_dialog_kuznezov_24"><text>For AKM? For AK-47? I'll take them, I guess...</text></string>
+<string id="trade_dialog_kuznezov_25"><text>RGO? The ones that go off on impact, right? Those are exactly what I need!</text></string>
+<string id="trade_dialog_kuznezov_222"><text>I can give five packs of simple cartridges for four bottles.</text></string>
+<string id="trade_dialog_kuznezov_221"><text>Five packs, I'll take them...</text></string>
+<string id="trade_dialog_kuznezov_232"><text>Two grenades - one vodka. You taking it?</text></string>
+<string id="trade_dialog_kuznezov_231"><text>Need grenades, otherwise I wouldn't even bother.</text></string>
+<string id="trade_dialog_kuznezov_242"><text>Regular cartridges - five bottles for four packs...</text></string>
+<string id="trade_dialog_kuznezov_241"><text>Agreed...</text></string>
+<string id="trade_dialog_kuznezov_252"><text>Everyone needs them, but not everyone's inner cheapskate agrees to sign off on the bill. Let me work it out...</text></string>
+<string id="trade_dialog_kuznezov_251"><text>Yeah, mine's strangling me too, but it's fine — I'll talk it into it somehow.</text></string>
+<string id="trade_dialog_kuznezov_666"><text>Alright, maybe next time...</text></string>
+<string id="trade_dialog_kuznezov_31"><text>There's a possibility to get AKS-74.</text></string>
+<string id="trade_dialog_kuznezov_32"><text>AKS-74? How much you asking?</text></string>
+<string id="trade_dialog_kuznezov_322"><text>Ten bottles will be enough... Agreed?</text></string>
+<string id="trade_dialog_kuznezov_321"><text>Of course! Here they are, the bottles...</text></string>
+<string id="trade_dialog_kuznezov_41"><text>Something like that... Military always take care of health, but for sale I only have simple medkits.</text></string>
+<string id="trade_dialog_kuznezov_42"><text>How much you asking?</text></string>
+<string id="trade_dialog_kuznezov_422"><text>For a pair of regular medkits...</text></string>
+<string id="trade_dialog_kuznezov_421"><text>Deal!</text></string>
+<string id="trade_dialog_kuznezov_667"><text>Decide for yourself...</text></string>
+
+<string id="enc_price"><text>Barter</text></string>
+                                                                     <!-- Sidor -->
+<string id="price_sidor_text"><text>%c[255,160,160,160]Ammo, for 1 first level artifact:\n%c[default] 12x70 buckshot - 5 packs\n 12x76 canister shot - 3 packs\n 12x76 zhekan - 2 packs\n \n%c[255,160,160,160]Weapons:\n%c[default] TOZ-34 "Vertikalka" - 2 first level artifacts or 1 second level\n TOZ-66 - for 2 first level artifacts or 1 second level\n Short shotgun MP-133 - 4 first level artifacts or 2 second level\n \n%c[255,160,160,160]Health improvement:\n%c[default] Medkits - 10 pieces for second level artifact, 5 for first level artifact\n Vodka - 3 bottles for first level artifact\n Antirad - 2 pieces for simple artifact, 5 for better artifact and 15 for third level artifact\n \n%c[255,160,160,160]For repair:\n%c[default] Repair kits for armor or weapons - 5 pieces for second level artifact\n Case for repair kits - for 2 simple artifacts</text></string>
+                                                                     <!-- Cordon -->
+<string id="price_kanistra_esc_text"><text>%c[255,160,160,160]Exchange for 1 canister of choice:%c[default] \n \n  9x18 AP cartridges - 5 packs\n  5.45x39 cartridges - 4 packs\n  7.62x39 cartridges - 2 packs\n  12x70 buckshot cartridges - 5 packs\n  VOG-25 grenades - 3 pieces\n \n  Canned food - 5 pieces\n  Vodka - 4 pieces\n  Medkit - 5 pieces\n  Antirad - 3 pieces</text></string>
+                                                                     <!-- Bar -->
+<string id="price_kanistra_bar_text"><text>%c[255,160,160,160]Exchange for 1 canister of choice:%c[default] \n \n  9x19 AP cartridges - 4 packs\n  5.45x39 cartridges - 5 packs\n  7.62x39 cartridges - 2 packs\n  12x70 buckshot cartridges - 5 packs\n  RGD-5 grenades - 10 pieces\n \n  Canned food - 7 pieces\n  M406 grenades - 3 pieces\n  Army medkits - 3 pieces\n  Antirad - 3 pieces</text></string>
+                                                                     <!-- Sidor for modificates -->
+<string id="price_artm_esc_text"><text>%c[255,160,160,160]Exchange for modificates:%c[default] \n  5.45x39 cartridges - 60 packs\n  5.45x39 AP cartridges - 40 packs\n  7.62x39 cartridges - 30 packs\n  7.62x39 AP cartridges - 20 packs\n  7.62x54R 7N1 cartridges - 35 packs\n  7.62x54R 7N14 cartridges - 25 packs\n  7.62x54 SAP cartridges - 15 packs\n  VOG-25 shots - 30 pieces\n  M406 shots - 30 pieces\n \n%c[255,160,160,160]Exchange for mesomodificates:%c[default] \n  7.62x39 cartridges - 50 packs\n  7.62x39 AP cartridges - 35 packs\n  9x39 SP-6 cartridges - 20 packs\n  7.62x54R 7N1 cartridges - 50 packs\n  7.62x54R 7N14 cartridges - 40 packs\n  7.62x54 SAP cartridges - 30 packs\n  VOG-25 shots - 50 pieces\n \n%c[255,160,160,160]Exchange for hypermodificates:%c[default] \n  7.62x39 cartridges - 70 packs\n  7.62x39 AP cartridges - 50 packs\n  9x39 SP-6 cartridges - 30 packs\n  7.62x54R 7N1 cartridges - 65 packs\n  7.62x54R 7N14 cartridges - 55 packs\n  7.62x54 SAP cartridges - 45 packs\n  VOG-25 shots - 70 pieces\n \n%c[255,160,160,160]Exchange for absolutes:%c[default] \n  9x39 SP-6 cartridges - 40 packs\n  7.62x54R 7N1 cartridges - 80 packs\n  7.62x54R 7N14 cartridges - 70 packs\n  7.62x54 SAP cartridges - 60 packs\n  VOG-25 shots - 100 pieces\n  SKAT-10 body armor</text></string>
+                                                                         <!-- Barkeep -->
+<string id="price_barman_text"><text>%c[255,160,160,160]Ammo and equipment:\n%c[default] 12x70 buckshot - 90 cartridges for medium artifact\n 12x76 canister shot - 60 cartridges for second level artifact\n 12x76 zhekan - 40 cartridges for second level artifact\n .357 Magnum cartridges - 3 packs for simple artifact\n NATO underbarrel launcher shots - 4 pieces for simple artifact\n Silencer for Glock 18C pistol - second level artifact\n \n%c[255,160,160,160]Weapons:\n%c[default] Glock 17 pistol - 3 first level artifacts\n Glock 18C pistol - 1 third level artifact + 1 second level artifact\n BT MP9 submachine gun - 1 third level artifact\n MP-153 shotgun - 4 second level artifacts or 1 third level + 1 first level\n \n%c[255,160,160,160]For health:\n%c[default] Medkits - 4 pieces for simple artifact, 10 - for better artifact\n Vodka - 2 bottles for first level artifact, 7 - for second level artifact\n Antirad - 1 piece for simple artifact, 4 for better artifact, 10 - for third level artifact\n \n%c[255,160,160,160]For repair:\n%c[default] Repair kits for armor or weapons - 3 pieces for second level artifact or 1 for simple artifact\n Case for repair kits - 3 first level artifacts</text></string>
+                                                                          <!-- Petrenko -->
+<string id="price_petrenko_text"><text>%c[255,160,160,160]Ammo and equipment:\n%c[default] 7.62x54 cartridges - 30 pcs. 7N1 or 20 pcs. 7N14, or 10 pcs. 7N26 - for first level artifact\n 7.62x39 cartridges - 120 regular for simple artifact\n 9x39 cartridges - 150 regular, 120 sniper or 90 armor-piercing for second level artifact\n 5.45x39 cartridges - 150 regular for simple artifact\n Grenade launcher shots - 4 VOG-25 for first level artifact\n 5.45, 7.62 silencers for assault rifles or 7.62 for SVD - any for second level artifact\n Collimator sights: "Kobra", "Rakurs", "OKP" - any for 2 second level artifacts\n \n%c[255,160,160,160]Weapons:\n%c[default] "Vityaz-SN" submachine gun - 1 third level artifact\n AK-104 "Tactic" assault rifle - 2 third level artifacts\n VSS "Vintorez" rifle - 1 third level artifact + 1 second level artifact\n AS "Val" assault rifle - 1 third level artifact + 2 second level artifacts\n \n%c[255,160,160,160]Medicine:\n%c[default] Military medkits - 3 pieces for 2 simple artifacts or for 1 second level artifact</text></string>
+                                                                        <!-- Skryaga -->
+<string id="price_scraga_text"><text>%c[255,160,160,160]Ammo:\n%c[default] 5.56x45 cartridges - 150 regular for simple artifact\n F-1 grenades - 3 pieces for simple artifact\n Four grenades for NATO underbarrel launcher, for first level artifact\n 7.62x51 NATO cartridges - 80 regular for second level artifact\n Drum with 5.56x45 mm cartridges (100 pcs) for first level artifact\n \n%c[255,160,160,160]Weapons:\n%c[default] Benelli M4 Super 90 (M1014) shotgun - 5 second level artifacts or 2 third level (may not be in stock)\n HK USP pistol - 3 second level artifacts\n FN FNX-45 pistol - 1 third level artifact\n Springfield 1911 pistol - 2 second level artifacts\n \n%c[255,160,160,160]Medicine:\n%c[default] Military medkits - 2 pieces for first level artifact\n Antirad - 5 pieces for second level artifact\n \n%c[255,160,160,160]For repair:\n%c[default] Repair kits for weapons or armor - 4 pieces for second level artifact\n \n%c[255,160,160,160].338 Lapua Magnum cartridges and attachments:\n%c[default] .338 Lapua Magnum cartridge - 5 packs for 1 third level artifact\n .338 Lapua Magnum AP cartridge - 3 packs for 1 third level artifact\n 5.56 silencer - for second level artifact\n 7.62 NATO silencer - for second level artifact</text></string>
+                                                                            <!-- Ara -->
+<string id="price_ara_text"><text>%c[255,160,160,160]Ammo:\n%c[default] 5.56x45 cartridges - 100 regular for 1 PDA\n M203 underbarrel launcher grenades - 10 pieces for 3 PDAs\n 7.62x51 NATO cartridges - 2 packs armor-piercing for 4 PDAs\n \n%c[255,160,160,160]Rifles and attachments:\n%c[default] M4A1 assault rifle - for 20 PDAs\n G36 assault rifle - 10 PDAs\n SIG SG 552 Commando assault rifle - for 10 PDAs\n AG36 underbarrel grenade launcher (for G36) - for 8 PDAs\n EOTech 553 collimator sight - for 10 PDAs\n 11.43 mm silencer - for 5 PDAs\n \n%c[255,160,160,160]Medicine:\n%c[default] Scientific medkits - one piece for 1 PDA\n Antirad - 3 pieces for 1 PDA\n \n%c[255,160,160,160]Equipment:\n%c[default] Special forces suit with gas mask - for 10 PDAs</text></string>
+                                                                    <!-- Valera Huntsman -->
+<string id="price_red_forest_lesnik_text"><text> Blind dog tails - 1 piece for 20 buckshot cartridges, 2 pieces for a bottle\n Pseudodog tails - 1 piece for 50 buckshot, for 30 canister shot, or 3 bottles\n Boar hooves - 1 for 30 buckshot or 20 canister shot, 2 hooves for 2 vodkas\n Flesh eyes - for 50 canister shot, or 30 bullets, or 3 bottles\n Bloodsucker tentacle - for 100 canister shot or 50 bullets, well or 10 bottles of vodka</text></string>
+                                                                         <!-- Veins -->
+<string id="price_jila_text"><text>%c[255,160,160,160]Ammo:\n%c[default] 5.45x39 cartridges for Kalash - 150 regular for 5 canned foods\n RGD-5 grenades - one for 2 energy drinks\n 9x19 regular cartridges - 80 pieces for 3 cans of energy drink\n F-1 grenades - one for canned food and energy drink\n \n%c[255,160,160,160]Weapons:\n%c[default] SR-2MP "Veresk" submachine gun - for 15 canned foods\n "Bizon-2" submachine gun - 20 army rations\n SIG Sauer P250 pistol - 10 army rations\n Molot OP-SKS carbine - for 8 hunting sausages\n 9mm silencer - 5 hunting sausages\n \n%c[255,160,160,160]For health:\n%c[default] Medkits - one for 2 hunting sausages\n Vodka - bottle for 4 canned foods\n \n%c[255,160,160,160]For repair:\n%c[default] Armor repair kit - 3 cans of energy drink\n Weapon repair kit - pair for army ration\n \n%c[255,160,160,160]PDAs:\n%c[default] For one PDA - 10 canned foods or 5 fresh hunting sausages</text></string>
+                                                                      <!-- Kuznetsov -->
+<string id="price_kuznezov_text"><text>%c[255,160,160,160]Ammo and equipment:\n%c[default] 5.45x39 cartridges - 150 regular for 4 vodkas\n RGD-5 grenades - from 1 bottle for 2 grenades\n RGO Grenades — from 2 bottles each\n 7.62x39 cartridges for AKM - 120 regular for 5 bottles\n \n%c[255,160,160,160]Weapons:\n%c[default] AKS-74 assault rifle - 10 bottles\n \n%c[255,160,160,160]Medicine:\n%c[default] Medkits - for now 2 regular for a bottle, then we'll see</text></string>
+                                                                              <!-- Sherstyuk -->
+<string id="price_sherstuk_text"><text>%c[255,160,160,160]Ammo and equipment:\n%c[default] 5.45x39 cartridges - 150 regular for 3 bottles\n F-1 grenades - for now piece for 1 bottle, then we'll see\n RGO Grenades — from 2 bottles each\n PKM machine gun belt (100 pcs) for 6 bottles\n 7.62x39 cartridges - 120 regular for 4 bottles\n Drum with 5.45x39 mm cartridges (95 pcs) for 2 bottles\n \n%c[255,160,160,160]Weapons:\n%c[default] Walther P99 pistol - from 8 bottles, then we'll see\n RPK-74 machine gun - from 20 bottles\n OTs-33 "Pernach" pistol - from 10 bottles for now\n AKM assault rifle - no less than 15 bottles\n \n%c[255,160,160,160]Army food and medicine:\n%c[default] Army medkits - now one for a bottle, then we'll see\n Ration - for 1 bottle for now</text></string>
+                                                                         <!-- Sultan -->
+<string id="price_sultan_text"><text>%c[255,160,160,160]For 2nd level artifacts:\n%c[default] Barska ELECTRO SIGHT AC10632\n Aimpoint Micro T-1\n%c[255,160,160,160]For modificates:\n%c[default] HK UMP submachine gun .45 caliber\n FN F2000 Tactical (FDE) assault rifle\n RPK-74(P) machine gun\n SVD\n Saiga-12M carbine\n \n%c[255,160,160,160]For mesomodificates:\n%c[default] AK-103 assault rifle\n Remington 870 (FD) shotgun\n SV-98M sniper rifle\n MG36 machine gun\n TDI KRISS Vector submachine gun\n PSO-1 optical sight (4x magnification)\n ELCAN DR optical sight (4x magnification)\n HK Schmidt Bender optical sight\n \n%c[255,160,160,160]For hypermodificates:\n%c[default] SVU-A rifle\n SR-3M "Vikhr" assault rifle\n \n%c[255,160,160,160]For absolutes:\n%c[default] FN SCAR-H rifle\n PKM Tactical machine gun\n AWM-F sniper rifle</text></string>
+                                                                          <!-- Stepanych for cloaks -->
+<string id="price_stepanych_plash_text"><text>%c[255,160,160,160]Cloak tailoring:\n%c[default] Brown cloak - two tanned hides + second level artifact\n Brown cloak with gas mask - two tanned hides + two second level artifacts\n Black cloak - four tanned hides + third level artifact\n Black cloak with gas mask - four tanned hides + third and second level artifacts\n\n%c[255,160,160,160]Cloak repair:\n%c[default] For any cloak - money + bottle of vodka</text></string>
+
+<string id="minigame_lysyi_dialog_0"><text>Let's have some fun, Baldy? What are we betting?</text></string>
+<string id="minigame_lysyi_dialog_11"><text>Ahem... You're too lucky, Marked One. I'm out of artifacts, maybe tomorrow there will be more.</text></string>
+<string id="minigame_lysyi_dialog_12"><text>As usual. My good artifact, against your 30,000 rubles, or a simple artifact against 15,000. What are you playing for?</text></string>
+<string id="minigame_lysyi_dialog_21"><text>Then - see you tomorrow!</text></string>
+<string id="minigame_lysyi_dialog_31"><text>Let's go for a simple artifact. Here's the dough.</text></string>
+<string id="minigame_lysyi_dialog_32"><text>I'll try to win a normal artifact, here's thirty grand.</text></string>
+<string id="minigame_lysyi_dialog_33"><text>I changed my mind, I won't play.</text></string>
+<string id="minigame_lysyi_dialog_41"><text>Yeah, rolling...</text></string>
+<string id="minigame_lysyi_dialog_42"><text>Alright, rolling...</text></string>
+<string id="minigame_lysyi_dialog_51"><text>Well, with God...</text></string>
+<string id="minigame_lysyi_dialog_52"><text>Eh! Here we go...</text></string>
+<string id="minigame_lysyi_dialog_7"><text>No, had enough fun.</text></string>
+<string id="minigame_lysyi_dialog_611"><text>Yeah, you lost, Marked One...\nMaybe we'll play again?</text></string>
+<string id="minigame_lysyi_dialog_612"><text>You're lucky, Marked One, take the artifact and your money...\nMaybe we'll play again?</text></string>
+<string id="minigame_lysyi_dialog_613"><text>Draw! Here's your money, Marked One...\nMaybe we'll play again?</text></string>
+<string id="minigame_lysyi_dialog_621"><text>You lost, Marked One, your money's gone...\nMaybe we'll play again?</text></string>
+<string id="minigame_lysyi_dialog_622"><text>Look at that, you won...\nMaybe we'll play again?</text></string>
+<string id="minigame_lysyi_dialog_623"><text>Draw! Here's your money, Marked One...\nMaybe we'll play again?</text></string>
+
+<string id="minigame_start_dialog_stas_0"><text>Listen, Wolf. How do you guys get vodka?</text></string>
+<string id="minigame_start_dialog_stas_1"><text>Vodka? Different ways, why do you need it?</text></string>
+<string id="minigame_start_dialog_stas_2"><text>Kuznetsov, the one under the bridge, only agrees to deal for vodka. I went to Sidorovich, and he wants artifacts...</text></string>
+<string id="minigame_start_dialog_stas_3"><text>Ha! Sidor is quite the schemer... Try talking to his guard. He has his own vodka supply channel. But he doesn't sell just like that - you see, he's bored, so he suggests throwing dice. If you're lucky, you can win a lot of vodka...</text></string>
+
+<string id="minigame_dialog_stas_0"><text>Stas, bored? Want to play? What are the stakes?</text></string>
+<string id="minigame_dialog_stas_11"><text>No, Marked One, not now. Want to get some sleep.</text></string>
+<string id="minigame_dialog_stas_121"><text>Well, you've left me without pants! Sorry, I don't have any more vodka for today. Come back tomorrow.</text></string>
+<string id="minigame_dialog_stas_122"><text>Let's play. Bet an artifact against my seven half-liters of crystal-clear drink. Well, if you don't have artifacts, then we can play for money, one and a half grand per bottle.</text></string>
+<string id="minigame_dialog_stas_131"><text>Alright, see you tomorrow.</text></string>
+<string id="minigame_dialog_stas_113"><text>I can't right now. Wait a bit, okay? In about fifteen minutes, well, maybe in half an hour, come back...</text></string>
+<string id="minigame_dialog_stas_1111"><text>Uh... Don't get it.</text></string>
+<string id="minigame_dialog_stas_2"><text>Maybe we'll play again?</text></string>
+<string id="minigame_dialog_stas_21"><text>No problem. My stakes are firm. And what from you is on the line: artifact or money?</text></string>
+<string id="minigame_dialog_stas_22"><text>Sorry, friend. You won everything I had. Come back tomorrow, there'll be more.</text></string>
+<string id="minigame_dialog_stas_31"><text>Take the artifact and... Let's start!</text></string>
+<string id="minigame_dialog_stas_32"><text>Here's a grand and five hundred more! Let's go.</text></string>
+<string id="minigame_dialog_stas_33"><text>Hmm... I changed my mind about playing.</text></string>
+<string id="minigame_dialog_stas_41"><text>Well, let's risk it! Rolling...</text></string>
+<string id="minigame_dialog_stas_42"><text>Alright, rolling...</text></string>
+<string id="minigame_dialog_stas_51"><text>Now me! With God...</text></string>
+<string id="minigame_dialog_stas_52"><text>Eh! Here we go...</text></string>
+<string id="minigame_dialog_stas_611"><text>I won! You're screwed.</text></string>
+<string id="minigame_dialog_stas_612"><text>You're lucky, Marked One, take back your artifact and bottles.</text></string>
+<string id="minigame_dialog_stas_613"><text>Draw! Take back your stuff.</text></string>
+<string id="minigame_dialog_stas_621"><text>You lost, Marked One, your money's gone.</text></string>
+<string id="minigame_dialog_stas_622"><text>Look at that, you won.</text></string>
+<string id="minigame_dialog_stas_623"><text>Draw! Returning the money.</text></string>
+<string id="minigame_dialog_stas_7"><text>Alright, had enough fun.</text></string>
+
+<string id="sidor_modart_order_dialog_0"><text>I have an unusual artifact!</text></string>
+<string id="sidor_modart_order_dialog_1"><text>Which one?</text></string>
+<string id="sidor_modart_order_dialog_201"><text>Modificate.</text></string>
+<string id="sidor_modart_order_dialog_202"><text>Mesomodificate.</text></string>
+<string id="sidor_modart_order_dialog_203"><text>Hypermodificate.</text></string>
+<string id="sidor_modart_order_dialog_204"><text>Absolute.</text></string>
+<string id="sidor_modart_order_dialog_299"><text>You know, I just remembered... I need to go.</text></string>
+<string id="sidor_modart_order_dialog_3"><text>Good business. I can offer you for it: 5.45x39 cartridges, 7.62x39 cartridges, 7.62x54R cartridges, VOG-25 shots, M406 shots. What do you choose?</text></string>
+<string id="sidor_modart_order_dialog_301"><text>I need 5.45x39 cartridges.</text></string>
+<string id="sidor_modart_order_dialog_302"><text>I need 5.45x39 AP cartridges.</text></string>
+<string id="sidor_modart_order_dialog_303"><text>I need 7.62x39 cartridges.</text></string>
+<string id="sidor_modart_order_dialog_304"><text>I need 7.62x39 AP cartridges.</text></string>
+<string id="sidor_modart_order_dialog_305"><text>I need 7.62x54R 7N1 cartridges.</text></string>
+<string id="sidor_modart_order_dialog_306"><text>I need 7.62x54R 7N14 cartridges.</text></string>
+<string id="sidor_modart_order_dialog_307"><text>I need 7.62x54R AP cartridges.</text></string>
+<string id="sidor_modart_order_dialog_308"><text>I need VOG-25 shots.</text></string>
+<string id="sidor_modart_order_dialog_309"><text>I need M406 shots.</text></string>
+<string id="sidor_modart_order_dialog_4"><text>Good business. I can offer you for it: 7.62x39 cartridges, 9x39 cartridges, 7.62x54R cartridges, VOG-25 shots. What do you choose?</text></string>
+<string id="sidor_modart_order_dialog_401"><text>I need 7.62x39 cartridges.</text></string>
+<string id="sidor_modart_order_dialog_402"><text>I need 7.62x39 AP cartridges.</text></string>
+<string id="sidor_modart_order_dialog_403"><text>I need 9x39 SP-6 cartridges.</text></string>
+<string id="sidor_modart_order_dialog_404"><text>I need 7.62x54R 7N1 cartridges.</text></string>
+<string id="sidor_modart_order_dialog_405"><text>I need 7.62x54R 7N14 cartridges.</text></string>
+<string id="sidor_modart_order_dialog_406"><text>I need 7.62x54R AP cartridges.</text></string>
+<string id="sidor_modart_order_dialog_407"><text>I need VOG-25 shots.</text></string>
+<string id="sidor_modart_order_dialog_5"><text>Good business. I can offer you for it: 7.62x39 cartridges, 9x39 cartridges, 7.62x54R cartridges, VOG-25 shots. What do you choose?</text></string>
+<string id="sidor_modart_order_dialog_501"><text>I need 7.62x39 cartridges.</text></string>
+<string id="sidor_modart_order_dialog_502"><text>I need 7.62x39 AP cartridges.</text></string>
+<string id="sidor_modart_order_dialog_503"><text>I need 9x39 SP-6 cartridges.</text></string>
+<string id="sidor_modart_order_dialog_504"><text>I need 7.62x54R 7N1 cartridges.</text></string>
+<string id="sidor_modart_order_dialog_505"><text>I need 7.62x54R 7N14 cartridges.</text></string>
+<string id="sidor_modart_order_dialog_506"><text>I need 7.62x54R AP cartridges.</text></string>
+<string id="sidor_modart_order_dialog_507"><text>I need VOG-25 shots.</text></string>
+<string id="sidor_modart_order_dialog_6"><text>Good business. I can offer you for it: 9x39 cartridges, 7.62x54R cartridges, VOG-25 shots, SKAT-10 body armor. What do you choose?</text></string>
+<string id="sidor_modart_order_dialog_601"><text>I need 9x39 SP-6 cartridges.</text></string>
+<string id="sidor_modart_order_dialog_602"><text>I need 7.62x54R 7N1 cartridges.</text></string>
+<string id="sidor_modart_order_dialog_603"><text>I need 7.62x54R 7N14 cartridges.</text></string>
+<string id="sidor_modart_order_dialog_604"><text>I need 7.62x54R AP cartridges.</text></string>
+<string id="sidor_modart_order_dialog_605"><text>I need VOG-25 shots.</text></string>
+<string id="sidor_modart_order_dialog_606"><text>I need SKAT-10 body armor.</text></string>
+<string id="sidor_modart_order_dialog_7"><text>Well, and I need the corresponding artifact, and in excellent condition, if you suddenly forgot. So what will you pay with?</text></string>
+<string id="sidor_modart_order_dialog_8"><text>Oh, don't whine. Here, take it. The fly... did nothing.</text></string>
+<string id="sidor_modart_order_dialog_85"><text>Yeah, wonderful. Order accepted, Marked One. If you have any other needs - come by.</text></string>
+<string id="sidor_modart_order_dialog_86"><text>Yeah, wonderful. Order accepted, Marked One. Your goods will be at the military checkpoint in a day, on the west of Swamps. Everything as before.</text></string>
+<string id="sidor_modart_order_dialog_851"><text>Wait, Sidorovich, I'll come by... But where's my goods?!</text></string>
+<string id="sidor_modart_order_dialog_861"><text>Got it. Then see you later.</text></string>
+<string id="sidor_modart_order_dialog_852"><text>Goods? Ah... you're one of those... ordering for the first time, don't know anything. Your goods are at Swamps. You know the military checkpoint on the west, guarding the scientists? With that tower... That's where your order is. Everything's arranged and agreed with them. Go and pick it up. Just not today. Go tomorrow. Your order will be with them in a day. So get some sleep, eat, charge up... Bought matches?</text></string>
+<string id="sidor_modart_order_dialog_853"><text>Wait with your matches... At Swamps, in a day? Why not pick up here?!</text></string>
+<string id="sidor_modart_order_dialog_854"><text>For what reason! First, I don't keep military property in commercial quantities, just small stuff. Second, I have arrangements with... certain people. I'm basically just a middleman, finding clients for them, and they... also help me with some things. Got it? In short, tomorrow at Swamps you'll get everything from the military.</text></string>
+<string id="sidor_modart_order_dialog_855"><text>Well, that's what... Alright, I understand everything.</text></string>
+<string id="sidor_modart_order_dialog_91"><text>Marked One, if you came to order something, you haven't picked up your previous package! First run to Swamps for what's due, and then - please come for a chat... preferably, not empty-handed.</text></string>
+<string id="sidor_modart_order_dialog_92"><text>Right, what a garden head...</text></string>
+<string id="sidor_modart_order_dialog_99"><text>The choice doesn't impress... Staying with what I have.</text></string>
+
+<string id="art_exchanger_dialog_start_101"><text>Greetings, stalker, trading anything?</text></string>
+<string id="art_exchanger_dialog_start_102"><text>Greetings to you too. Trading?</text></string>
+<string id="art_exchanger_dialog_start_103"><text>Well I'm a trader... Everyone knows me as Sanya Banker, I exchange artifacts. Good ones for simpler ones, regular exchange, so to speak. And what's your name?</text></string>
+<string id="art_exchanger_dialog_start_104"><text>I'm Marked One.</text></string>
+<string id="art_exchanger_dialog_start_105"><text>Well then, Marked One, if you need anything, contact me, I'm here today. For each high category artifact I can offer two artifacts of lower category. Or, if you want, four low category artifacts for one higher category. Fair, I think.</text></string>
+<string id="art_exchanger_dialog_start_106"><text>What does "here today" mean?</text></string>
+<string id="art_exchanger_dialog_start_107"><text>Well, I don't stay in one place, a day or two I trade in Bar, then at the Freedomers' base, then I'll go further into the Zone. Lots of stalkers, lots of artifacts, so I move around... Think in half a year I'll retire, go to the mainland. Buy myself a villa in the Bahamas, bring girls...</text></string>
+<string id="art_exchanger_dialog_start_201"><text>Ah! It's you, Marked One... Got anything?</text></string>
+<string id="art_exchanger_dialog_start_202"><text>Yeah, was passing by, thought I'd say hello...</text></string>
+<string id="art_exchanger_dialog_start_203"><text>Hello then! If you want to trade anything, just say...</text></string>
+
+<string id="kruglov_art_exchange_dlg_0"><text>I'm about artifact exchange. Want to trade quick?</text></string>
+<string id="kruglov_art_exchange_dlg_100"><text>No problem. Looking for something specific or doesn't matter? Reminder: in the first case I give two desired first level artifacts in exchange for a second level artifact, no lower than third given, in excellent condition. In the second case any second level artifact will do, but you'll get a pig in a poke. But three whole ones.</text></string>
+<string id="kruglov_art_exchange_dlg_200"><text>Sorry, Marked One, I'm empty. Had to turn in excess to Sakharov, he has an unplanned experiment coming up. Come back tomorrow.</text></string>
+<string id="kruglov_art_exchange_dlg_111"><text>I need something specific. Will this artifact work?</text></string>
+<string id="kruglov_art_exchange_dlg_112"><text>Any will do for me. Here's the artifact.</text></string>
+<string id="kruglov_art_exchange_dlg_113"><text>Damn! Forgot to bring the exchange fund. I'll come back.</text></string>
+<string id="kruglov_art_exchange_dlg_21"><text>Quite. Let's go in order: which artifact do you want to get first?</text></string>
+<string id="kruglov_art_exchange_dlg_22"><text>So... Here's one, here's the second and... third. Order?</text></string>
+<string id="kruglov_art_exchange_dlg_32"><text>Yeah, thanks. Now let's see what we have here...</text></string>
+<string id="kruglov_art_exchange_dlg_211"><text>"Jellyfish".</text></string>
+<string id="kruglov_art_exchange_dlg_212"><text>"Wrenched".</text></string>
+<string id="kruglov_art_exchange_dlg_213"><text>"Stone Blood".</text></string>
+<string id="kruglov_art_exchange_dlg_214"><text>"Sparkler".</text></string>
+<string id="kruglov_art_exchange_dlg_215"><text>"Droplet".</text></string>
+<string id="kruglov_art_exchange_dlg_216"><text>"Slime".</text></string>
+<string id="kruglov_art_exchange_dlg_217"><text>"Thorn".</text></string>
+<string id="kruglov_art_exchange_dlg_3"><text>Moment... So, this isn't it... Here, please.\nNow the second. What does monsieur desire?</text></string>
+<string id="kruglov_art_exchange_dlg_4"><text>I had such an artifact somewhere. Right, here it is. Take it.</text></string>
+<!-- exo_trade -->
+<string id="barman_exo_dialog_0"><text>I see some stalkers walking around in exoskeletons, how could I get one?</text></string>
+<string id="barman_exo_dialog_1"><text>You need it? It's expensive, breaks down, maintenance isn't cheap. Calm down.</text></string>
+<string id="barman_exo_dialog_2"><text>Well it's not burning, but you understand - have to carry a lot, and with such a mechanism it'll be much more convenient.</text></string>
+<string id="barman_exo_dialog_3"><text>Why are you running around the Zone like a truck... Alright, considering my good attitude towards you, I'll try to ask my suppliers, maybe someone will throw one in. But I warn you right away that it'll cost you a pretty penny, or rather - artifacts.</text></string>
+<string id="barman_exo_dialog_4"><text>And what do you want?</text></string>
+<string id="barman_exo_dialog_5"><text>First I'll negotiate with the supplier, and in about two-three days I'll let you know how it goes. You understand, it's a unique item, doesn't lie around in warehouses. And you prepare capsules meanwhile... Four pieces will be just right, considering delivery troubles. Clear?</text></string>
+<string id="barman_exo_dialog_6"><text>Now that's steep... I'll think more about whether I need it at all.</text></string>
+
+<string id="barman_exo_dialog_done_0"><text>I collected the capsules, you know, the ones for the exoskeleton.</text></string>
+<string id="barman_exo_dialog_done_1"><text>You thought for a long time, I was starting to forget.</text></string>
+<string id="barman_exo_dialog_done_2"><text>Take it. Took a while...</text></string>
+<string id="barman_exo_dialog_done_3"><text>Good job. Here's your exoskeleton. But I warn you, wear it carefully, carefully, no returns.</text></string>
+<string id="barman_exo_dialog_done_4"><text>Heavy, damn thing. But thanks anyway.</text></string>
+
+<string id="freedom_exo_dialog_0"><text>I see some stalkers walking around in exoskeletons, how could I get one?</text></string>
+<string id="freedom_exo_dialog_1"><text>You need it? It's expensive, breaks down, maintenance isn't cheap. Calm down.</text></string>
+<string id="freedom_exo_dialog_2"><text>Well it's not burning, but you understand - have to carry a lot, and with such a mechanism it'll be much more convenient.</text></string>
+<string id="freedom_exo_dialog_3"><text>Why are you running around the Zone like a truck... Alright, considering my good attitude towards you, I'll try to ask my suppliers, maybe someone will throw one in. But I warn you right away that it'll cost you a pretty penny, or rather - artifacts.</text></string>
+<string id="freedom_exo_dialog_4"><text>And what do you want?</text></string>
+<string id="freedom_exo_dialog_5"><text>First I'll negotiate with the supplier, and in about two-three days I'll let you know how it goes. You understand, it's a unique item, doesn't lie around in warehouses. And you prepare capsules meanwhile... Four pieces will be just right, considering delivery troubles. Clear?</text></string>
+<string id="freedom_exo_dialog_6"><text>Now that's steep... I'll think more about whether I need it at all.</text></string>
+
+<string id="freedom_exo_dialog_done_0"><text>I collected the capsules, you know, the ones for the exoskeleton.</text></string>
+<string id="freedom_exo_dialog_done_1"><text>You thought for a long time, I was starting to forget.</text></string>
+<string id="freedom_exo_dialog_done_2"><text>Take it. Took a while...</text></string>
+<string id="freedom_exo_dialog_done_3"><text>Good job. Here's your exoskeleton. But I warn you, wear it carefully, carefully, no returns.</text></string>
+<string id="freedom_exo_dialog_done_4"><text>Heavy, damn thing. But thanks anyway.</text></string>
+
+<string id="dolg_exo_dialog_0"><text>I see some stalkers walking around in exoskeletons, how could I get one?</text></string>
+<string id="dolg_exo_dialog_1"><text>You need it? It's expensive, breaks down, maintenance isn't cheap. Calm down.</text></string>
+<string id="dolg_exo_dialog_2"><text>Well it's not burning, but you understand - have to carry a lot, and with such a mechanism it'll be much more convenient.</text></string>
+<string id="dolg_exo_dialog_3"><text>Why are you running around the Zone like a truck... Alright, considering my good attitude towards you, I'll try to ask my suppliers, maybe someone will throw one in. But I warn you right away that it'll cost you a pretty penny, or rather - artifacts.</text></string>
+<string id="dolg_exo_dialog_4"><text>And what do you want?</text></string>
+<string id="dolg_exo_dialog_5"><text>First I'll negotiate with the supplier, and in about two-three days I'll let you know how it goes. You understand, it's a unique item, doesn't lie around in warehouses. And you prepare capsules meanwhile... Four pieces will be just right, considering delivery troubles. Clear?</text></string>
+<string id="dolg_exo_dialog_6"><text>Now that's steep... I'll think more about whether I need it at all.</text></string>
+
+<string id="dolg_exo_dialog_done_0"><text>I collected the capsules, you know, the ones for the exoskeleton.</text></string>
+<string id="dolg_exo_dialog_done_1"><text>You thought for a long time, I was starting to forget.</text></string>
+<string id="dolg_exo_dialog_done_2"><text>Take it. Took a while...</text></string>
+<string id="dolg_exo_dialog_done_3"><text>Good job. Here's your exoskeleton. But I warn you, wear it carefully, carefully, no returns.</text></string>
+<string id="dolg_exo_dialog_done_4"><text>Heavy, damn thing. But thanks anyway.</text></string>
+
+                                                                     <!-- Ara's Barter -->
+
+<!-- new_ara_trade -->
+<string id="trade_dialog_mercs_ara_0"><text>What can you give me for PDAs?</text></string>
+<string id="trade_dialog_mercs_ara_100"><text>Let's see: assault rifle - have, scope for assault rifle - have, underbarrel launcher - also have. Ammo-shammo, grenades for underbarrel, medicine, armor... Everything's there. Say, what you need?</text></string>
+<string id="trade_dialog_mercs_ara_150"><text>Hmm... Let's see what else there is.</text></string>
+<string id="trade_dialog_mercs_ara_250"><text>Don't need anything for now.</text></string>
+
+<string id="trade_dialog_mercs_ara_211"><text>What kind of assault rifles and gadgets for them? And how many PDAs?</text></string>
+<string id="trade_dialog_mercs_ara_222"><text>Ammo-shammo, grenades for underbarrel? How many and what kind?</text></string>
+<string id="trade_dialog_mercs_ara_233"><text>And what medicine? I'd take something.</text></string>
+<string id="trade_dialog_mercs_ara_244"><text>Got armor? What kind and for how much?</text></string>
+<!-- -->
+<string id="trade_dialog_mercs_ara_311"><text>Take scope, very rare goods. Can give EOTech 553 for ten PDAs. AG36 underbarrel grenade launcher also have for 8 PDAs. .45 caliber silencer in stock - 5 PDAs. Want assault rifle? Two tens of PDAs for legendary "M4A1", and for ten PDAs - new "G36" or "SIG-552"!</text></string>
+<string id="trade_dialog_mercs_ara_410"><text>Alright. I'll take the SIG.</text></string>
+<!-- <string id="trade_dialog_mercs_ara_411"><text>Let's see what kind of Green Dot this is. Here's the PDA.</text></string> -->
+<string id="trade_dialog_mercs_ara_412"><text>I'll take EOTech 553, here's the PDA.</text></string>
+<string id="trade_dialog_mercs_ara_413"><text>M4A1? Alright, let me take it.</text></string>
+<string id="trade_dialog_mercs_ara_414"><text>I'll take the G36. Think it'll come in handy.</text></string>
+<string id="trade_dialog_mercs_ara_415"><text>Here's the PDA for the grenade launcher.</text></string>
+<string id="trade_dialog_mercs_ara_416"><text>I'll take the silencer, here are your PDAs.</text></string>
+<string id="trade_dialog_mercs_ara_417"><text>I'll drop by later. Need to think.</text></string>
+<string id="trade_dialog_mercs_ara_510"><text>Right choice, good machine.</text></string>
+<!-- <string id="trade_dialog_mercs_ara_511"><text>Green Dot one. Oh good thing. Take, will shoot tushkano eye.</text></string> -->
+<string id="trade_dialog_mercs_ara_512"><text>Want EOTech 553? Here take. Completely new. Fly didn't sit.</text></string>
+<string id="trade_dialog_mercs_ara_513"><text>Ah, good machine. Used myself right now.</text></string>
+<string id="trade_dialog_mercs_ara_514"><text>German, accurate. Will shoot squirrel eye.</text></string>
+<string id="trade_dialog_mercs_ara_515"><text>Oy-oy. Tearing from heart...</text></string>
+<string id="trade_dialog_mercs_ara_516"><text>Silencer? Here take.</text></string>
+<!-- -->
+<string id="trade_dialog_mercs_ara_322"><text>Need ammo? One PDA give - get 100 simple ammo for 5.56 assault rifle. Four PDAs bring - get 2 armor-piercing NATO 7.62 by 51 packs... Three PDAs give - take 10 underbarrel grenades.</text></string>
+<string id="trade_dialog_mercs_ara_421"><text>Give me hundred regular cartridges. Here's the PDA.</text></string>
+<string id="trade_dialog_mercs_ara_422"><text>I'll take 7.62. Here's the PDA.</text></string>
+<string id="trade_dialog_mercs_ara_423"><text>Need grenades. I owe 3 PDAs.</text></string>
+<string id="trade_dialog_mercs_ara_424"><text>I'll manage for now...</text></string>
+<string id="trade_dialog_mercs_ara_521"><text>Here you ammo-shammo. All, like I said.</text></string>
+<string id="trade_dialog_mercs_ara_522"><text>Serious ammo, respect, yes! Any punk will be afraid of just the sound of the shot, I tell truth!</text></string>
+<string id="trade_dialog_mercs_ara_523"><text>Think good! Always need like this - think!</text></string>
+<!-- -->
+<string id="trade_dialog_mercs_ara_333"><text>Want be healthy? Give PDA - take scientific medkit. Give other PDA - take three antirad shots.</text></string>
+<string id="trade_dialog_mercs_ara_431"><text>Agreed on medkit. Trading.</text></string>
+<string id="trade_dialog_mercs_ara_432"><text>Antirad? I'll take them. Here's the PDA.</text></string>
+<string id="trade_dialog_mercs_ara_433"><text>I'll manage for now. Mine's enough.</text></string>
+<string id="trade_dialog_mercs_ara_531"><text>Have medkit - you live, no medkit - you no live.</text></string>
+<string id="trade_dialog_mercs_ara_532"><text>Radiation - such infection! Always need pills.</text></string>
+<!-- -->
+<string id="trade_dialog_mercs_ara_344"><text>Need armor? Have armor with gas mask - ten PDAs.</text></string>
+<string id="trade_dialog_mercs_ara_442"><text>With gas mask, yes? I'll take it for collection, I guess.</text></string>
+<string id="trade_dialog_mercs_ara_443"><text>I'll think. Won't take anything for now.</text></string>
+<string id="trade_dialog_mercs_ara_542"><text>Good choice. Glass special - always clean. Wear in health!</text></string>
+<!-- -->
+<string id="ara_exo_dialog_start_0"><text>Listen, Vakhtang... You're supposedly a serious trader, but I don't see any exoskeletons for sale.</text></string>
+<string id="ara_exo_dialog_start_1"><text>Why offend, dear, why no, everything have. Only such thing stalker no pocket will be. Very expensive. Therefore no on display. Why, if no one no buy. Commerce.</text></string>
+<string id="ara_exo_dialog_start_2"><text>Expensive is relative. Maybe we can still agree on price? Especially people say your exoskeletons are the best.</text></string>
+<string id="ara_exo_dialog_start_3"><text>For money and PDAs such goods I no sell. Thing unique, need make order, wait, in short... need think.</text></string>
+<string id="ara_exo_dialog_start_4"><text>And what do you want?</text></string>
+<string id="ara_exo_dialog_start_5"><text>Our chief, was looking one artifact, very rare and very expensive. Why - no know, but need. Called electric beads. Bring such, then for exoskeleton and talk will be.</text></string>
+<string id="ara_exo_dialog_start_61"><text>Well you've really pushed it! Where to find such an artifact?.. I'll think more.</text></string>
+<string id="ara_exo_dialog_start_62"><text>So I have recipe for this Zone wonder, can cook it, prepare the exo.</text></string>
+<string id="ara_exo_dialog_start_71"><text>No artifact - no exo. Will be artifact, then and come.</text></string>
+<string id="ara_exo_dialog_start_72"><text>You look, how fast. Vakhtang always keeps word. Will be, will be you exo. Two-three days come. While back and forth, supply goods, time need. I tell.</text></string>
+
+<string id="ara_exo_dialog_done_0"><text>Found the artifact you wanted for the exoskeleton.</text></string>
+<string id="ara_exo_dialog_done_1"><text>Ah... Long you walked, I already starting forget.</text></string>
+<string id="ara_exo_dialog_done_2"><text>So what about the armor? Deal was: I give artifact, you give exo.</text></string>
+<string id="ara_exo_dialog_done_3"><text>Vakhtang always keeps word. Take exo, completely new, will be handsome.</text></string>

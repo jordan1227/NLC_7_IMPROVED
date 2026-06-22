@@ -81,7 +81,7 @@ ang_speed3  = 2.0
 show_info = false
 
 [string_table]
-language	= rus
+language	= rus, eng
 font_prefix	= ;_cent ;_west
 
 files = ui_st_pda, ui_st_inventory, string_table_tutorial, string_table_general, string_table_includes, stable_dialog_manager, stable_dialog_manager_uni, stable_task_manager, stable_treasure_manager, string_table_level_tips, string_table_items, string_table_ui, string_table_enc_zone, string_table_amk_arts_desc, string_table_outfit, stable_dialogs, stable_dialogs_escape, stable_dialogs_garbage, stable_dialogs_agroprom, stable_dialogs_darkvalley, stable_dialogs_bar, stable_dialogs_military, stable_dialogs_yantar, ui_st_keybinding, ui_st_mm, stable_stories, ui_st_mapdesc, string_table_enc_social, string_table_enc_mutants, string_table_enc_weapons, string_table_enc_equipment, ui_st_other, stable_game_credits, amk_flame_dialogs, sak_strings, stable_dialogs_amk, script_strings
@@ -1003,8 +1003,7 @@ monsters\tushkano\tushkano
 monsters\tushkano\tushkano_strong
 monsters\tushkano\tushkano_dead
 
-monsters\burer\burer 
-monsters\burer\burer_1 
+monsters\burer\burer
 monsters\cat\cat
 monsters\cat\cat_normal
 monsters\cat\cat_strong
@@ -1017,12 +1016,16 @@ monsters\rat\rat_2
 monsters\rat\rat_3 
 monsters\topolinypuh\topolinypuh 
 monsters\topolinypuh\tp_bottom 
-monsters\zombi\zombi_1 
-monsters\zombi\zombi_1_ghost 
-monsters\zombi\zombi_2 
-monsters\zombi\zombi_4 
-monsters\zombi\zombi_trup 
-monsters\zombi\zombi_trup_2 
+monsters\zombi\zombi_1
+monsters\zombi\zombi_2
+monsters\zombi\zombi_3
+monsters\zombi\zombi_4
+monsters\zombi\zombi_5
+monsters\zombi\zombi_6
+monsters\zombi\zombi_7
+monsters\zombi\zombi_1_ghost
+monsters\zombi\zombi_trup
+monsters\zombi\zombi_trup_2
 
 objects\dynamics\balon\balon_01
 objects\dynamics\balon\bidon
@@ -1214,7 +1217,6 @@ inv_grid_height			= 0
 #include "misc\vergas_rykzack.ltx"
 #include "misc\vergas_pda.ltx"
 #include "misc\vergas_decoder.ltx"
-#include "misc\vergas_bag_on_belt.ltx"
 
 [fear_sound_item]:physic_destroyable_object
 $spawn        = "physics\fear_sound_item"
@@ -1251,5 +1253,6 @@ unskippable_time = 3000
 [shader_params_export]
 m_digiclock
 m_actor_watch_params
+m_actor_watch_params_2
 electronics_problems
 m_timearrow2

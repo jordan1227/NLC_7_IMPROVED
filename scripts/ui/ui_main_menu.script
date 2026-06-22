@@ -48,7 +48,7 @@ function main_menu:InitControls()
 	self:Register(self.message_box, "msg_box")	
 
 	local ver = xml:InitStatic("static_version", self)
-	ver:SetText("сярюмнбкемш опюбйх! реуонддепфйх б DISCORD ме асдер!")
+	ver:SetText(_G.main_menu.get_main_menu():GetGSVer())
 	ver = xml:InitStatic("mod_version", self)
 	ver:SetText(translate("st_mode_version"))
 end
@@ -189,12 +189,6 @@ function main_menu:OnKeyboard(dik, keyboard_action)
 				self:close_and_delete_menu()
 			end
 		end
-		
-		if dik == DIK_keys.DIK_S then
-			ui_cheat_main.start_menu(self)
-		end		
-		
-		
 	end
 
 	return true

@@ -141,11 +141,6 @@ end
 function del_matches_flame(id)
 end
 
-function get_nv_on_off(id)
-  local sw=tonumber( nvd_params.get_NVD_powered() )
-  return sw
-end
-
 function set_direction(coor_x,coor_y,coor_z)
   local dir_d = vector()
   dir_d:set(coor_x, coor_y, coor_z)
@@ -245,12 +240,6 @@ function razgruzka_weight_add(add)
   end
 end  
 
-function mem_weight_add(add)
-  if sak_inventory.eatable["podsumok_mem"] then
-     local podsumok_id=sak_inventory.eatable["podsumok_mem"][1]
-     set_inv_weight(podsumok_id, add)
-  end
-end
 local sys_podsumok_weight = system_ini():r_float("podsumok", "inv_weight")
 function podsumok_weight_add(add)
   if sak_inventory.eatable["podsumok"] then
@@ -559,18 +548,6 @@ end
 --3 (8) = belt flag
 --6 (64) = default_to_ruck
 --7 (128) = sprint_allowed
-
-function cant_trade_add(id)
- local value= item_params.item_prop (id, "item_flags")
- value = bit_and(value, 65535 - global_flags.FCanTrade )
- item_params.item_prop(id, "item_flags", value)
-end
-
-function can_trade_add(id)
- local value= item_params.item_prop (id, "item_flags")
- value = bit_or (value, global_flags.FCanTrade )
- item_params.item_prop(id, "item_flags", value)
-end
 
 function params.start_dialog(dlg, hide_indicators)
 --  if ui.start_dialog then

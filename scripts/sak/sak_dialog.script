@@ -308,7 +308,7 @@ function gg_n_bart_have(n)
 	local amount=0
 	for a=1, #table_bart do
 		for i,k in pairs(sak_inventory.rucksack) do
-			if strpos(i, table_bart[a],1,true) and not strpos(i, "_new",1,true) then
+			if strpos(i,table_bart[a],1,true) and not strpos(i,"_new",1,true) then
 				local count = #k
 				amount=amount+count
 			end
@@ -322,7 +322,7 @@ function give_n_bart(n)
 	for a=1, #table_bart do
 		amount=0
 		for i,k in pairs(sak_inventory.rucksack) do
-			if strpos(i, table_bart[a],1,true) and not strpos(i, "_new",1,true) then
+			if strpos(i,table_bart[a],1,true) and not strpos(i,"_new",1,true) then
 				local count = #k
 				for m=1,count do
 					if art_kol>0 then
@@ -345,7 +345,7 @@ function gg_n_cart_have(n)
 	local amount=0
 	for a=1, #table_cart do
 		for i,k in pairs(sak_inventory.rucksack) do
-			if strpos(i, table_cart[a],1,true) and not strpos(i, "_capsule",1,true) then
+			if strpos(i, table_cart[a],1,true) and not strpos(i,"_capsule",1,true) and not strpos(i,"_new",1,true) then
 				local count = #k
 				amount=amount+count
 			end
@@ -359,7 +359,7 @@ function give_n_cart(n)
 	for a=1, #table_cart do
 		amount=0
 		for i,k in pairs(sak_inventory.rucksack) do
-			if strpos(i, table_cart[a],1,true) and not strpos(i, "_capsule",1,true)  then
+			if strpos(i, table_cart[a],1,true) and not strpos(i,"_capsule",1,true) and not strpos(i,"_new",1,true) then
 				local count = #k
 				for m=1,count do
 					if art_kol>0 then
@@ -860,9 +860,11 @@ function give_chargeable_pda(first_speaker, second_speaker)
 end
 function take_charged_pda(first_speaker, second_speaker)
 	local obj = first_speaker:object("device_pda_npc")
-	obj:set_condition(1)
-	first_speaker:transfer_item(obj, second_speaker)
-	sak.relocate_item("in", "device_pda_npc", 1)
+	if obj then
+		vergas_pda.set_pda_cond(obj:id())
+		first_speaker:transfer_item(obj, second_speaker)
+		sak.relocate_item("in", "device_pda_npc", 1)
+	end
 end
 function take_bino(first_speaker, second_speaker)
 	first_speaker:transfer_item(first_speaker:object("wpn_binoc"), second_speaker)
@@ -903,10 +905,10 @@ function clear_ready_time_kulinar_voron_box()
 	clear_ready_time("start_kulinar_voron_time")
 end
 function is_ready_time_to_treasure()
-	return is_ready_time("start_treasure_time",20)
+	return is_ready_time("start_treasure_time",10)
 end
 function not_ready_time_to_treasure()
-	return not_ready_time("start_treasure_time",20)
+	return not_ready_time("start_treasure_time",10)
 end
 function starts_treasure_time()
 	start_time("start_treasure_time")
@@ -1408,11 +1410,11 @@ function time_yan_psy()
 	local rand = (get_value("r_task_reward",1))-1
 	set_value("psy_antenna_good_time", rand)
 	if rand==0 then
-		db.actor:give_talk_message(game.translate_string("t_at_midnight"),"ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
+		return game.translate_string("t_at_midnight")
 	elseif rand==1 then
-		db.actor:give_talk_message(game.translate_string("t_at_one_clock_night"),"ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
+		return game.translate_string("t_at_one_clock_night")
 	else
-		db.actor:give_talk_message(string.format(game.translate_string("t_at_rand_clock_night"), rand),"ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
+		return string.format(game.translate_string("t_at_rand_clock_night"), rand)
 	end
 end
 function del_time_yan_psy()
@@ -1499,7 +1501,7 @@ end
 function time_rad_psy()
     local rand = (get_value("r_task_reward",1))+16
 	set_value("psy_antenna_good_time", rand)
-	db.actor:give_talk_message(string.format(game.translate_string("time_rad_psy"), rand),"ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
+	return string.format(game.translate_string("time_rad_psy"), rand)
 end
 function sakharov_labx6_timer()
 	timers.start_timer("sakharov_labx6_timer",0,1,3,"sak_dialog.sakharov_labx6_timer_end()")
@@ -1845,12 +1847,6 @@ function gg_2_1_art_have()
 end
 function gg_1_3_art_have()
 	return (have_any_x_art("b",true) and gg_3_aart_have())
-end
-function have_cart()
-	for i=1, table.getn(table_cart) do
-		if sak.have_items_count(table_cart[i],1,false,true) then return true end
-	end
-	return false
 end
 function have_any_dart()
 	for i=1, table.getn(table_dart) do
@@ -2313,9 +2309,9 @@ end
 
 function have_val_dram_1()
 	if has_alife_info("val_dram_pda_out_info") then
-		return have_any_dart()~=false or have_cart()~=false or gg_n_bart_have(2)==true
+		return have_any_dart()~=false or gg_n_cart_have(1) or gg_n_bart_have(2)==true
 	else
-		return have_any_dart()~=false or have_cart()~=false or have_bart()~=false
+		return have_any_dart()~=false or gg_n_cart_have(1) or have_bart()~=false
 	end
 end
 function give_val_dram_1(first_speaker, second_speaker)
@@ -2332,7 +2328,7 @@ function give_val_dram_1(first_speaker, second_speaker)
 		end
 	end
 	for i=1, table.getn(table_cart) do
-		if sak.have_items_count(table_cart[i],1,false,true) then
+		if sak.have_items_count(table_cart[i],1,true,true) then
 			sak_inventory.release_actor_items(table_cart[i],1,false,true)
 			if not has_alife_info("val_dram_pda_out_info") then
 				set_value("kocherga_bonus",true)
@@ -2356,7 +2352,7 @@ function give_val_dram_1(first_speaker, second_speaker)
 		end
 		for kk,vv in pairs(sak_inventory.rucksack) do
 			if count == 2 then break end
-			if strpos(kk,table_bart[i],1,true) and not strpos(i,"_new",1,true) then
+			if strpos(kk,table_bart[i],1,true) and not strpos(kk,"_new",1,true) then
 				for ii=1,#vv do
 					local obj = g_sim:object(vv[ii])
 					if obj then
@@ -3554,6 +3550,8 @@ function have_borov_11_doc()
 end
 function borov_kont_docs_flag()
 	set_value("borov_kont_docs",true)
+	db.actor:disable_info_portion("borov_11_saharov_start")
+	disable_article("tex_borov_11_saharov")
 end
 function borov_kill_stalker_precond()
 	return ( has_alife_info("borov_11_done") or has_alife_info("borov_11_failed") ) and has_alife_info("agroprom_military_case_know") and not has_alife_info("kulinar_dead")
@@ -3569,9 +3567,6 @@ function have_habar_in_seif ()
 end
 function add_dolg_gaz_outfit()
 	sak.create_items("dolg_gaz_outfit_m1",1)
-end
-function add_killer_blue_exoskeleton()
-	sak.create_items("killer_blue_exoskeleton",1)
 end
 function add_dolg_black_exoskeleton()
 	sak.create_items("dolg_black_exoskeleton",1)
@@ -3740,36 +3735,34 @@ function give_half_vodka()
 		sak_inventory.release_actor_items("vodka", give)
 	end
 end
-  local dist_vodka_from_mil = 50
+
 function out_vodka_from_mil()
-	for a=100,45000,1 do
-		local obj = g_sim:object(a)
-		if obj then
-			local posobj = obj.position
-			local actorpos = db.actor:position()
-			local npc_name = obj:name()
-			if posobj:distance_to(actorpos) < dist_vodka_from_mil then
-				if (obj.parent_id~=0 and (obj.parent_id==nil or obj.parent_id==BAD_OBJ_ID or g_sim:object(obj.parent_id):section_name()=="inventory_box" or g_sim:object(obj.parent_id):section_name()=="rucksack")) and (strpos(obj:section_name(),"vodka",1,true)) then
-					g_sim:release(obj,true)
-				end
+	local objects = {}
+	for id, obj in alife():objects() do
+		if obj and obj.section_name and obj:section_name() == "vodka" and obj.level_name and obj.level_name == db.actor.level_name then
+			if obj.parent_id~=0 and ( obj.parent_id==nil or obj.parent_id==BAD_OBJ_ID or ( server_obj(obj.parent_id):section_name()=="inventory_box" 
+				or server_obj(obj.parent_id):section_name()=="rucksack" ) and not amk_offline_alife.box_is_protected(server_obj(obj.parent_id)) ) then
+				objects[id] = obj
 			end
 		end
 	end
+	for id, obj in pairs(objects) do
+		g_sim:release(obj,true)
+	end
 end
-  local dist_wpn_from_mil = 50
+
 function out_wpn_from_mil()
-	for a=100,MAX_OBJ_ID do
-		local obj = g_sim:object(a)
-		if obj then
-			local posobj = obj.position
-			local actorpos = db.actor:position()
-			local npc_name = obj:name()
-			if posobj:distance_to(actorpos) < dist_wpn_from_mil then
-				if strpos(obj:section_name(),"wpn_",1,true) and (obj.parent_id~=0 and (obj.parent_id==nil or obj.parent_id==BAD_OBJ_ID or (g_sim:object(obj.parent_id):section_name()=="inventory_box" or g_sim:object(obj.parent_id):section_name()=="rucksack") and g_sim:object(obj.parent_id) and g_sim:object(obj.parent_id):name()~="mil_lager_spec_hran")) then
-					g_sim:release(obj,true)
-				end
+	local objects = {}
+	for id, obj in alife():objects() do
+		if obj and obj.level_name and obj.level_name == db.actor.level_name and obj.section_name and strpos(obj:section_name(),"wpn_") then
+			if obj.parent_id~=0 and ( obj.parent_id==nil or obj.parent_id==BAD_OBJ_ID or ( server_obj(obj.parent_id):section_name()=="inventory_box" 
+				or server_obj(obj.parent_id):section_name()=="rucksack" ) and not amk_offline_alife.box_is_protected(server_obj(obj.parent_id)) ) then
+				objects[id] = obj
 			end
 		end
+	end
+	for id, obj in pairs(objects) do
+		g_sim:release(obj,true)
 	end
 end
 
@@ -3838,7 +3831,7 @@ function text_kuz_vodka()
 		elseif days==4 then text=game.translate_string("text_kuz_vodka_4")
 		elseif days>=5 then text=game.translate_string("text_kuz_vodka_5")
 	end
-	db.actor:give_talk_message("%c[255,216,186,140]"..text,"ui\\ui_iconsTotal",Frect():set(0,0,0,0),"simple_answer_item")
+	return "%c[255,216,186,140]"..text
 end
 function text_sher_vodka()
 	local days = math.ceil(sak.day_money/15)
@@ -3848,7 +3841,7 @@ function text_sher_vodka()
 		elseif days==4 then text=game.translate_string("text_sher_vodka_3")
 		elseif days>=5 then text=game.translate_string("text_sher_vodka_4")
 	end
-	db.actor:give_talk_message("%c[255,216,186,140]"..text,"ui\\ui_iconsTotal",Frect():set(0,0,0,0),"simple_answer_item")
+	return "%c[255,216,186,140]"..text
 end
 function have_rgo_vodka()
 	local day = timers.Get_Game_Days() or 1
@@ -3869,12 +3862,12 @@ end
 function text_rgo_vodka()
 	local day = timers.Get_Game_Days() or 1
 	local text = game.translate_string("text_kuz_vodka_2")
-	if day>30 then 
+	if day>30 and day<61 then
 		text=game.translate_string("text_sher_vodka_2")
 	elseif day>60 then
 		text=game.translate_string("text_sher_vodka_3")
 	end
-	db.actor:give_talk_message("%c[255,216,186,140]"..text,"ui\\ui_iconsTotal",Frect():set(0,0,0,0),"simple_answer_item")
+	return "%c[255,216,186,140]"..text
 end
 function may_month()
 	local days = sak.day_money
@@ -4072,30 +4065,12 @@ function add_50_ammo_556x45_ap()
 	local news_text ="%c[255,1,255,1]"..game.translate_string("general_in_item").."\\n".."%c[default] "..game.translate_string("st_50_ammo_5_56")
 	npc:give_talk_message(news_text, task_texture, task_rect,"iconed_answer_item")
 end
-function add_greens_kolbasa()
-	local count=get_value("greens_kolbasa",0)+1
-	set_value("greens_kolbasa", count)
-	sak.create_items("green_kolbasa",1)
-end
-function add_greens_kolbasa2()
-	local count=get_value("greens_kolbasa",0)+2
-	set_value("greens_kolbasa", count)
-	sak.create_items("green_kolbasa",2)
-end
-function add_greens_kolbasa3()
-	local count=get_value("greens_kolbasa",0)+3
-	set_value("greens_kolbasa", count)
-	sak.create_items("green_kolbasa",3)
-end
-function add_greens_kolbasa4()
-	local count=get_value("greens_kolbasa",0)+4
-	set_value("greens_kolbasa", count)
-	sak.create_items("green_kolbasa",4)
-end
-function add_greens_kolbasa5()
-	local count=get_value("greens_kolbasa",0)+5
-	set_value("greens_kolbasa", count)
-	sak.create_items("green_kolbasa",5)
+function add_greens_kolbasa(num)
+	if num and type(num) == 'number' then
+		local count=get_value("greens_kolbasa",0)+num
+		set_value("greens_kolbasa",count)
+		sak.create_items("green_kolbasa",num)
+	end
 end
 function give_chimera_kogot()
 	sak_inventory.release_actor_items("mutant_chimera_kogot",3)
@@ -4499,6 +4474,9 @@ end
 function voronin_kurjer2_precond_bad()
 	return not voronin_kurjer_precond_bad()
 end
+function barman_exo_access_prec()
+	return voronin_kurjer2_precond() and ( has_alife_info("barman_ecolog_flash_dialog_end") or has_alife_info("barman_exo_good_trade") )
+end
 function quest_manycase_01_mil_kurjer_have()
 	return sak.have_items_count("quest_manycase_01_mil_kurjer",1)~=false
 end
@@ -4535,6 +4513,9 @@ end
 
 local armor_profit_margin = 4
 
+function kruglov_pda_in_process_prec()
+	return ( has_alife_info("volkodav_dt_shema_start") or has_alife_info("volkodav_dt_art_start") )
+end
 function kruglov_thx()
 	return (not has_alife_info("volkodav_umer_dialog")) and (has_alife_info("kruglov_flash_done") or has_alife_info("kruglov_way_2_end"))
 end
@@ -4543,13 +4524,6 @@ function kruglov_not_thx()
 end					  
 function kruglov_start_time()
 	timers.start_timer("kruglov_ros_time",0,23,41,"sak.kruglov_end_time()")
-end
-
-function add_ara_scientific()
-	sak.create_items("merc_scientific_outfit",1)
-end
-function add_ara_exo()
-	sak.create_items("killer_blue_exoskeleton",1)
 end
 
 function release_addons(sobj,wpn,obj)
@@ -4741,7 +4715,7 @@ end
 function text_money_skrjaga_water_dialog()
 	local day_money = math.ceil(sak.day_money/12)
 	local cost1=(10+day_money*5)
-	db.actor:give_talk_message("%c[255,216,186,140] "..string.format(game.translate_string("text_money_skrjaga_water_dialog"), cost1),"ui\\ui_iconsTotal",Frect():set(0,0,0,0),"simple_answer_item")
+	return "%c[255,216,186,140] "..string.format(game.translate_string("text_money_skrjaga_water_dialog"), cost1)
 end
 function skrjaga_water_money_have()
 	local day_money = math.ceil(sak.day_money/12)
@@ -4756,7 +4730,7 @@ end
 function text_money_cook_water_dialog()
 	local day_money = math.ceil(sak.day_money/6)
 	local cost1=(1000+day_money*100)
-	db.actor:give_talk_message("%c[255,216,186,140]"..string.format(game.translate_string("text_money_cook_water_dialog"),cost1),"ui\\ui_iconsTotal",Frect():set(0,0,0,0),"simple_answer_item")
+	return "%c[255,216,186,140]"..string.format(game.translate_string("text_money_cook_water_dialog"),cost1)
 end
 function cook_water_money_have()
 	local day_money = math.ceil(sak.day_money/6)
@@ -4770,7 +4744,7 @@ end
 function text_money_esc_water_dialog()
 	local day_money = math.ceil(sak.day_money/8)
 	local cost1=(600+day_money*100)
-	db.actor:give_talk_message("%c[255,216,186,140]"..string.format(game.translate_string("text_money_esc_water_dialog"),cost1),"ui\\ui_iconsTotal",Frect():set(0,0,0,0),"simple_answer_item")
+	return "%c[255,216,186,140]"..string.format(game.translate_string("text_money_esc_water_dialog"),cost1)
 end
 function esc_water_money_have()
 	local day_money = math.ceil(sak.day_money/8)
@@ -4808,7 +4782,7 @@ end
 function text_money_sidor_capsule_dialog()
 	local day_money = math.ceil(sak.day_money/8)
 	local cost1=(1000+day_money*1000)
-	db.actor:give_talk_message("%c[255,216,186,140]"..string.format(game.translate_string("text_money_sidor_capsule_dialog"),cost1),"ui\\ui_iconsTotal",Frect():set(0,0,0,0),"simple_answer_item")
+	return "%c[255,216,186,140]"..string.format(game.translate_string("text_money_sidor_capsule_dialog"),cost1)
 end
 function sidor_capsule_money_have()
 	local day_money = math.ceil(sak.day_money/8)
@@ -4822,7 +4796,7 @@ end
 function text_money_sidor_flame_load_dialog()
 	local day_money = math.floor(sak.day_money/3)
 	local cost1=(5000+day_money*1000)
-	db.actor:give_talk_message("%c[255,216,186,140]"..string.format(game.translate_string("text_money_sidor_flame_load_dialog"),cost1),"ui\\ui_iconsTotal",Frect():set(0,0,0,0),"simple_answer_item")
+	return "%c[255,216,186,140]"..string.format(game.translate_string("text_money_sidor_flame_load_dialog"),cost1)
 end
 function sidor_flame_load_money_have()
 	local day_money = math.floor(sak.day_money/3)
@@ -4836,7 +4810,7 @@ end
 function text_money_barmen_capsule_dialog()
 	local day_money = math.ceil(math.sqrt(sak.day_money))
 	local cost1=(4000+day_money*800)
-	db.actor:give_talk_message("%c[255,216,186,140]"..string.format(game.translate_string("text_money_barmen_capsule_dialog"),cost1),"ui\\ui_iconsTotal",Frect():set(0,0,0,0),"simple_answer_item")
+	return "%c[255,216,186,140]"..string.format(game.translate_string("text_money_barmen_capsule_dialog"),cost1)
 end
 function barmen_capsule_money_have()
 	local day_money = math.ceil(math.sqrt(sak.day_money))
@@ -4859,7 +4833,7 @@ function text_money_voronin_seif_dialog()
 	local coeff = voronin_seif_money_coeff()
 	local cost1=(3000+day_money*800) * coeff
 	local cost2=(10000+day_money*2000) * coeff
-	db.actor:give_talk_message("%c[255,216,186,140]"..string.format(game.translate_string("text_money_voronin_seif_dialog"),cost1,cost2),"ui\\ui_iconsTotal",Frect():set(0,0,0,0),"simple_answer_item")
+	return "%c[255,216,186,140]"..string.format(game.translate_string("text_money_voronin_seif_dialog"),cost1,cost2)
 end
 function voronin_seif_money_have()
 	local day_money = math.ceil(math.sqrt(sak.day_money))
@@ -4914,7 +4888,7 @@ end
 function text_money_lukash_seif_dialog()
 	local day_money = math.ceil(math.sqrt(sak.day_money))
 	local cost1=(5000+day_money*900)
-	db.actor:give_talk_message("%c[255,216,186,140]"..string.format(game.translate_string("text_money_lukash_seif_dialog"),cost1),"ui\\ui_iconsTotal",Frect():set(0,0,0,0),"simple_answer_item")
+	return "%c[255,216,186,140]"..string.format(game.translate_string("text_money_lukash_seif_dialog"),cost1)
 end
 function lukash_seif_money_have()
 	local day_money = math.ceil(math.sqrt(sak.day_money))
@@ -4931,7 +4905,7 @@ end
 function text_money_stas_seif_dialog()
 	local day_money = math.ceil(math.sqrt(sak.day_money))
 	local cost1=(1900+day_money*700)
-	db.actor:give_talk_message("%c[255,216,186,140]"..string.format(game.translate_string("text_money_stas_seif_dialog"),cost1),"ui\\ui_iconsTotal",Frect():set(0,0,0,0),"simple_answer_item")
+	return "%c[255,216,186,140]"..string.format(game.translate_string("text_money_stas_seif_dialog"),cost1)
 end
 function stas_seif_money_have()
 	local day_money = math.ceil(math.sqrt(sak.day_money))
@@ -4964,13 +4938,13 @@ function text_money_item_dialog()
 	local day_money = math.ceil(math.sqrt(sak.day_money/2))
 	local cost1=(600+day_money*400)
 	local cost2=(400+day_money*300)
-	db.actor:give_talk_message("%c[255,216,186,140]"..string.format(game.translate_string("text_money_item_dialog"),cost1,cost2),"ui\\ui_iconsTotal",Frect():set(0,0,0,0),"simple_answer_item")
+	return "%c[255,216,186,140]"..string.format(game.translate_string("text_money_item_dialog"),cost1,cost2)
 end
 function text_money_esc_akkum_dialog()
 	local day=sak.day_money-5 if day<0 then day=0 end
 	local day_money = math.ceil(day/2)
 	local cost1=(400+day_money*200) if cost1>5000 then cost1=5000 end
-	db.actor:give_talk_message("%c[255,216,186,140]"..string.format(game.translate_string("text_money_esc_akkum_dialog"),cost1),"ui\\ui_iconsTotal",Frect():set(0,0,0,0),"simple_answer_item")
+	return "%c[255,216,186,140]"..string.format(game.translate_string("text_money_esc_akkum_dialog"),cost1)
 end
 function esc_akkum_money_have()
 	local day=sak.day_money-5 if day<0 then day=0 end
@@ -4995,7 +4969,7 @@ function text_money_bar_akkum_dialog()
 	local day=sak.day_money-5 if day<0 then day=0 end
 	local day_money = math.ceil(day/3)
 	local cost1=(800+day_money*300) if cost1>8000 then cost1=8000 end
-	db.actor:give_talk_message("%c[255,216,186,140]"..string.format(game.translate_string("text_money_bar_akkum_dialog"),cost1),"ui\\ui_iconsTotal",Frect():set(0,0,0,0),"simple_answer_item")
+	return "%c[255,216,186,140]"..string.format(game.translate_string("text_money_bar_akkum_dialog"),cost1)
 end
 function bar_akkum_money_have()
 	local day=sak.day_money-5 if day<0 then day=0 end
@@ -5014,7 +4988,7 @@ function text_money_bar_water_dialog()
 	local day=sak.day_money-3 if day<0 then day=0 end
 	local day_money = math.ceil(day/5)
 	local cost1=(600+day_money*100) if cost1>2500 then cost1=2500 end
-	db.actor:give_talk_message("%c[255,216,186,140]"..string.format(game.translate_string("text_money_bar_water_dialog"),cost1),"ui\\ui_iconsTotal",Frect():set(0,0,0,0),"simple_answer_item")
+	return "%c[255,216,186,140]"..string.format(game.translate_string("text_money_bar_water_dialog"),cost1)
 end
 function bar_water_money_have()
 	local day=sak.day_money-3 if day<0 then day=0 end
@@ -5036,7 +5010,7 @@ function text_vorobey_gift()
 	local cost1=(3000+day_money*400)
 	day_money = math.ceil(day/7)
 	local gr=(3+day_money)
-	db.actor:give_talk_message("%c[255,216,186,140]"..string.format(game.translate_string("text_vorobey_gift"),cost1,gr),"ui\\ui_iconsTotal",Frect():set(0,0,0,0),"simple_answer_item")
+	return "%c[255,216,186,140]"..string.format(game.translate_string("text_vorobey_gift"),cost1,gr)
 end
 function add_vorobey1_gift()
 	local day=sak.day_money-30 if day<0 then day=0 end
@@ -5591,8 +5565,7 @@ function stalker_show(tip)
 	local targets=load_npc_targets()
 	for kk,vv in pairs(targets) do
 		if vv.tips==tip then
-			show_search_stalker(vv.id)
-		break
+			return show_search_stalker(vv.id)
 		end
 	end
 end
@@ -5613,9 +5586,9 @@ function show_search_stalker(npc_id)
 	local text_who,text_where
 	text_who,text_where=format_search_text(npc_id)
 	if text_who~=nil and text_who~="" and text_where~=nil and text_where~="" then
-		db.actor:give_talk_message(text_who,"ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
-		db.actor:give_talk_message(text_where,"ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
+		return text_who .. ", " .. text_where
 	end
+	return ""
 end
 function format_search_text(id)
 	local rwd={}
@@ -5665,7 +5638,7 @@ function add_parcel_1_dialog()
 	end
 end
 function parcel_1_show()
-	stalker_show("postman1")
+	return stalker_show("postman1")
 end
 function parcel_1_remove()
 	remove_npc_from_npc_targets("postman1")
@@ -5678,7 +5651,7 @@ function add_parcel_2_dialog()
 	end
 end
 function parcel_2_show()
-	stalker_show("postman2")
+	return stalker_show("postman2")
 end
 function parcel_2_remove()
 	remove_npc_from_npc_targets("postman2")
@@ -5692,7 +5665,7 @@ function add_barmen_scafandr_dialog()
 	end
 end
 function barmen_scafandr_show()
-	stalker_show("drug")
+	return stalker_show("drug")
 end
 function barmen_scafandr_remove()
 	remove_npc_from_npc_targets("drug")
@@ -5702,7 +5675,7 @@ function add_sidor_scafandr_dialog()
 	search_npc("val_bandit_bodyguard","sidor_scafandr_dlg","bratok")
 end
 function sidor_scafandr_show()
-	stalker_show("bratok")
+	return stalker_show("bratok")
 end
 function sidor_scafandr_remove()
 	remove_npc_from_npc_targets("bratok")
@@ -5715,7 +5688,7 @@ function add_botans_report_dialog()
 	end
 end
 function botans_report_show()
-	stalker_show("botans_report_1")
+	return stalker_show("botans_report_1")
 end
 function botans_report_remove()
 	remove_npc_from_npc_targets("botans_report_1")
@@ -5728,7 +5701,7 @@ function add_bar_dolg_debt_dialog()
 	end
 end
 function bar_dolg_debt_show()
-	stalker_show("bar_dolg_debt_1")
+	return stalker_show("bar_dolg_debt_1")
 end
 function bar_dolg_debt_remove()
 	remove_npc_from_npc_targets("bar_dolg_debt_1")
@@ -5741,7 +5714,7 @@ function add_personal_things_1_dialog()
 	end
 end
 function personal_things_1_show()
-	stalker_show("drug_1")
+	return stalker_show("drug_1")
 end
 function personal_things_1_remove()
 	remove_npc_from_npc_targets("drug_1")
@@ -5750,7 +5723,7 @@ function add_personal_things_2_dialog()
 	search_npc("mil_Svoboda_regular","personal_things_third_dialog","drug_2")
 end
 function personal_things_2_show()
-	stalker_show("drug_2")
+	return stalker_show("drug_2")
 end
 function personal_things_2_remove()
 	remove_npc_from_npc_targets("drug_2")
@@ -5759,7 +5732,7 @@ function add_scarman_1_dialog()
 	search_npc("sim_stalker_general","scarman_dialog","tomber")
 end
 function scarman_1_show()
-	stalker_show("tomber")
+	return stalker_show("tomber")
 end
 function scarman_1_remove()
 	remove_npc_from_npc_targets("tomber")
@@ -5768,7 +5741,7 @@ function add_scarman_2_dialog()
 	search_npc("mil_Svoboda_regular","tomber_scarman_dialog","tomber2")
 end
 function scarman_2_show()
-	stalker_show("tomber2")
+	return stalker_show("tomber2")
 end
 function scarman_2_remove()
 	remove_npc_from_npc_targets("tomber2")
@@ -5777,7 +5750,7 @@ function add_dolgman_postmens()
 	search_npc("gar_dolg_blokpost","dolgman_postmens_dialog","postmen")
 end
 function dolgman_postmens_show()
-	stalker_show("postmen")
+	return stalker_show("postmen")
 end
 function dolgman_postmens_remove()
 	remove_npc_from_npc_targets("postmen")
@@ -5790,7 +5763,7 @@ function add_hunters_toz_stalker()
 	end
 end
 function hunters_toz_stalker_show()
-	stalker_show("hunters_toz")
+	return stalker_show("hunters_toz")
 end
 function hunters_toz_stalker_remove()
 	remove_npc_from_npc_targets("hunters_toz")
@@ -6516,7 +6489,7 @@ function dolg_mil_enemy()
 end
 
 function text_talk_dialog(text_talk)
-	db.actor:give_talk_message("%c[255,216,186,140]"..blowout_when.." "..text_talk,"ui\\ui_iconsTotal",Frect():set(0,0,0,0),"simple_answer_item")
+	return "%c[255,216,186,140]"..blowout_when.." "..text_talk
 end
 function give_marsh_tuzla_document()
 	sak_inventory.release_actor_items("marsh_tuzla_document",1)
@@ -7166,16 +7139,19 @@ function select_blowout_dialog(name)
 	return lines[m]
 end
 function sidor_blowout_dialog_end()
+	do_blow_time()
 	local m_end = select_blowout_dialog("sidor_blowout_dialog")
-	text_talk_dialog(m_end)
+	return text_talk_dialog(m_end)
 end
 function docent_blowout_dialog_end()
+	do_blow_time()
 	local m_end = select_blowout_dialog("docent_blowout_dialog")
-	text_talk_dialog(m_end)
+	return text_talk_dialog(m_end)
 end
 function saharov_blowout_dialog_end()
+	do_blow_time()
 	local m_end = select_blowout_dialog("saharov_blowout_dialog")
-	text_talk_dialog(m_end)
+	return text_talk_dialog(m_end)
 end
 
 function give_bun_docs(first_speaker, second_speaker)
@@ -7212,8 +7188,7 @@ function text_code_x10()
 				"86596", "85369", "35692",
 				"39258", "54962", "47852"
 				}
-	db.actor:give_talk_message("%c[255,216,186,140]"..text[n],"ui\\ui_iconsTotal",Frect():set(0,0,0,0),"simple_answer_item")
-	db.actor:give_info_portion("labx10_docent_code"..n.."_info")
+	give_article("labx10_docent_code" .. n .. "_enc")
 	sak.info_code()
 	for id, obj in alife():objects() do
 		if obj and strpos(obj:name(), "labx10_physic_destroyable_object_000",1,true) then
@@ -7224,7 +7199,8 @@ function text_code_x10()
 			pk:set(data)
 		end
 	end
-	remove_value("kol_harddisc")  
+	remove_value("kol_harddisc")
+	return "%c[255,216,186,140]"..text[n]
 end
 function add_memory_module()
 	amk.spawn_item("memory_module",sak.v3f(45.0,-22.48,51.25),3710,12129)
@@ -7412,6 +7388,7 @@ function fill_gungauss_treasure(id)
 		g_sim:create("wpn_gungauss",obj.position, obj.m_level_vertex_id, obj.m_game_vertex_id, obj.id)
 		sak.obj_off_on(obj)
 		db.actor:give_info_portion("klyk_gun_info")
+		level.map_add_object_spot_ser(obj.id, "crlc_big_treasure0", "?")
 	end
 end
 -- мосинка и прицел
@@ -7551,9 +7528,6 @@ end
 function sidor_dsc_timer_stop()
 	timers.stop_timer("sidor_dsc_timer")
 end
-function add_greens_kolbasa10()
-	sak.create_items("green_kolbasa",10)
-end
 function add_sidor_small_gift()
 	sak.create_items("medkit",1)
 	sak.create_items("bandage",4)
@@ -7565,12 +7539,6 @@ function add_sidor_big_gift()
 	sak.create_items("bandage",4)
 	sak.create_items("antirad",2)
 	sak.create_items("ammo_9x18_pmm",5)  
-end
-function give_10green_kolbasa()
-	sak_inventory.release_actor_items("green_kolbasa",10)
-end
-function green_kolbasa_10have()
-	return sak.have_items_count("green_kolbasa",10)
 end
 function add_mutant_opt()
 	sak.create_items("mutant_boar_leg",10)
@@ -7710,7 +7678,7 @@ function fill_tank_inventory_box()
 		g_sim:create("sak_document4",obj.position, obj.m_level_vertex_id, obj.m_game_vertex_id, obj.id)
 		sak.obj_off_on(obj)
 	end
-	level.map_add_object_spot_ser(obj.id, "crlc_big_treasure1", "?")
+	level.map_add_object_spot_ser(obj.id, "crlc_big_treasure0", "?")
 end
 function timer_docent()
 	timers.start_timer("timer_docent",0,12,30,"sak_dialog.timer_docent_end()")
@@ -8338,59 +8306,12 @@ end
 function esc_wolf_cycle_end()
 	return ( has_alife_info("esc_kill_bandits_quest_done") and not has_alife_info("val_raid_start") )
 end
--- price trader
-function info_price_sidor()
-	if not has_alife_info("price_sidor") then
-		db.actor:give_info_portion("price_sidor")
-		db.actor:give_info_portion("price_artm_esc")		
-	end  
-end
-function info_price_barman()
-	if not has_alife_info("price_barman") then
-		db.actor:give_info_portion("price_barman")
-	end  
-end
-function info_price_petrenko()
-	if not has_alife_info("price_petrenko") then
-		db.actor:give_info_portion("price_petrenko")
-	end  
-end
-function info_price_scraga()
-	if not has_alife_info("price_scraga") then
-		db.actor:give_info_portion("price_scraga")
-	end  
-end
-function info_price_sherstuk()
-	if not has_alife_info("price_sherstuk") then
-		db.actor:give_info_portion("price_sherstuk")
-	end  
-end
 function jila_abuse_prec_yes()
 	local abuse = get_value("esc_band_abuse", false)
 	return (abuse == true)
 end
 function jila_abuse_prec_no()
 	return not jila_abuse_prec_yes()
-end
-function info_price_jila()
-	if not has_alife_info("price_jila") then
-		db.actor:give_info_portion("price_jila")
-	end  
-end
-function info_price_kuznezov()
-	if not has_alife_info("price_kuznezov") then
-		db.actor:give_info_portion("price_kuznezov")
-	end  
-end
-function info_price_ara()
-	if not has_alife_info("price_ara") then
-		db.actor:give_info_portion("price_ara")
-	end  
-end
-function info_price_red_forest_lesnik()
-	if not has_alife_info("price_red_forest_lesnik") then
-		db.actor:give_info_portion("price_red_forest_lesnik")
-	end  
 end
 
 function add_doc_start()
@@ -8659,11 +8580,13 @@ end
 function priz_oreh_treasure(id)
 	local obj = g_sim:object(id)
 	if obj then
-		for i=1,5 do
-			g_sim:create("medkit_scientic", obj.position, obj.m_level_vertex_id, obj.m_game_vertex_id, obj.id)
-		    g_sim:create("antirad", obj.position, obj.m_level_vertex_id, obj.m_game_vertex_id, obj.id)
-			if isEven(i) then
-				g_sim:create("ammo_5.56x45_mg", obj.position, obj.m_level_vertex_id, obj.m_game_vertex_id, obj.id)
+		if has_alife_info("actor_has_fraer") then
+			for i=1,5 do
+				g_sim:create("medkit_scientic", obj.position, obj.m_level_vertex_id, obj.m_game_vertex_id, obj.id)
+				g_sim:create("antirad", obj.position, obj.m_level_vertex_id, obj.m_game_vertex_id, obj.id)
+				if isEven(i) then
+					g_sim:create("ammo_5.56x45_mg", obj.position, obj.m_level_vertex_id, obj.m_game_vertex_id, obj.id)
+				end
 			end
 		end
 		g_sim:create("wpn_g36c", obj.position, obj.m_level_vertex_id, obj.m_game_vertex_id, obj.id)
@@ -8976,8 +8899,12 @@ function pahom_det_charge_pay_prec(check_flag,release_flag)
 	elseif release_flag and type(release_flag) == "boolean" then
 		sak_inventory.release_actor_items(m_tbl[r],1)
 	else
-		db.actor:give_talk_message(translate(g_inv_name(m_tbl[r])),"ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
+		return translate(g_inv_name(m_tbl[r]))
 	end
+end
+
+function pahom_det_charge_pay_info()
+	return pahom_det_charge_pay_prec()
 end
 
 function pahom_has_det_art_cond(release_flag)

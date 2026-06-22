@@ -1,0 +1,353 @@
+<string id="bandit_000"><text>Entry: \nSome weird crap is goin' on with my body—paws are achin' and my back leg's fallin' off. Maybe I gotta bail... </text></string>
+
+<string id="bandit_001"><text>Entry: \nMy debt to the common fund: 15000 dough \nOwed to me: \nMongol - 1500 (lost at blackjack on Saturday) \nMikha - 6 grand for the jacket \nBeaver - 4000 (loaned it) \nTotal 11500 \nNeed to find 4500 </text></string>
+
+<string id="bandit_002"><text>Entry: \nPass to Zhila: \nStalker-trash ransacked the stash on Garbage. Hunchback says it's Bes's crew. Swears on his mother—he'll get the canned goods back.</text></string>
+
+<string id="bandit_003"><text>Entry: \nExit from the Zone: \nCordon. Southern checkpoint. Ensign Predybaylo lets you through. To the left by the wire near the fallen tree. Every night from Wednesday to Thursday. From midnight to 3 AM. \nPrice of the matter - 25000 RU.</text></string>
+
+<string id="bandit_004"><text>Entry: \n"Carousel": \nEasy to spot. First off, it hums. Second, there's a distinct whirlwind at about 3-4 meters up. If there's leaves and grass spinnin' around—it's a Carousel, no doubt about it.</text></string>
+
+<string id="bandit_005"><text>Entry: \nDon't send via Network (personal and ears-only): Politely invite Swamp Doctor to Borov. Urgent. If he won't come, bring him in by his white arms. Don't hit him and don't be rude.</text></string>
+
+<string id="bandit_006"><text>Outgoing: \nYo, the cops are lookin' for ya here.</text></string>
+<string id="bandit_006_1"><text>Incoming: \nFor what?</text></string>
+<string id="bandit_006_2"><text>Outgoing: \nHow should I know? You'd know better—for what.</text></string>
+<string id="bandit_006_3"><text>Incoming: \nBullshit.</text></string>
+<string id="bandit_006_4"><text>Outgoing: \nI'm dead serious, man! You stepped on their toes. They're workin' sharp. And disguisin' themselves as our guys.</text></string>
+<string id="bandit_006_5"><text>Incoming: \nAnd why're you in the loop?</text></string>
+<string id="bandit_006_6"><text>Outgoing: \nPersonal participation. They came to me. I'm like—hey bros, but they go straight for the mug without a word: where is he, they say?</text></string>
+<string id="bandit_006_7"><text>Incoming: \nAnd what'd you say?</text></string>
+<string id="bandit_006_8"><text>Outgoing: \nThey weren't waitin' for no answer. Just started cleanin' my clock again.</text></string>
+<string id="bandit_006_9"><text>Incoming: \nSold me out, you bastard?</text></string>
+<string id="bandit_006_10"><text>Outgoing: \nI didn't sell ya out, but you really owe Gray now for my shiners. Gray don't like when his people get roughed up. And you owe me, too—I don't like when my mug gets ruined either.</text></string>
+<string id="bandit_006_11"><text>Incoming: \nAnd why'd you think they're cops?</text></string>
+<string id="bandit_006_12"><text>Outgoing: \nThey ain't the brotherhood for sure, hundred percent pigs—talk like cops. And they told me to tell ya that you're a dead man walkin'.</text></string>
+<string id="bandit_006_13"><text>Incoming: \nFine, we'll settle up. Tell Gray I'll hand him two suckers, they're comin' back from a raid soon, should have good loot. Sorry, bro, shit happens.</text></string>
+<string id="bandit_006_14"><text>Outgoing: \nYeah?! Happens? The swamp medic told me to stay down like a corpse for a week, or I might not get up at all, stay paralyzed!</text></string>
+<string id="bandit_006_15"><text>Incoming: \nAlright, quit whinin'! You came to the Zone, not to girls for wine.</text></string>
+<string id="bandit_006_16"><text>Outgoing: \nYou're a rat. You really owe me now, got it?!</text></string>
+
+<string id="bandit_007"><text>Outgoing: \nGeneral, yer man with the papers is gonna be waited on at Cordon tomorrow and killed. Koshkin ratted him out, he's gettin' a cut from this.</text></string>
+<string id="bandit_007_1"><text>Incoming: \nWho are you? Identify yourself.</text></string>
+<string id="bandit_007_2"><text>Outgoing: \nIf ya ain't stingy, put a Fireball in the stash on Wild Territory. yer colonel knows where it is. Well-wisher.</text></string>
+<string id="bandit_007_3"><text>Incoming: \nWhat's your name?</text></string>
+<string id="bandit_007_4"><text>Outgoing: \nA well, so to speak, wisher... Don't forget about the Fireball.</text></string>
+
+<string id="bandit_008"><text>Outgoing: \nHey, you there?</text></string>
+<string id="bandit_008_1"><text>Incoming: \nYeah...</text></string>
+<string id="bandit_008_2"><text>Outgoing: \nHow long I gotta keep knockin'? You think if you lay low, your debt's gonna be cleared? One day left, then the interest starts tickin'.</text></string>
+<string id="bandit_008_3"><text>Incoming: \nI remember. And I wasn't hidin', just didn't have no signal—went far out, brought somethin' back.</text></string>
+<string id="bandit_008_4"><text>Outgoing: \nSo what're we waitin' for? Haul it all here, what—I gotta remind you?</text></string>
+<string id="bandit_008_5"><text>Incoming: \nI'll bring it... tomorrow by evenin'. I don't have it all yet.</text></string>
+<string id="bandit_008_6"><text>Outgoing: \nYou gettin' cocky or what? Bring it now, get it? Don't mess with my head! Bottom line! No interest for you—just start diggin' your grave now if we don't get EVERYTHING today. You hear me?</text></string>
+<string id="bandit_008_7"><text>Outgoing: \nHey? Why the silence?</text></string>
+<string id="bandit_008_8"><text>Outgoing: \nYou half-baked son of a bitch, don't go singin' me songs about bad signal. I know you're somewhere close...</text></string>
+<string id="bandit_008_9"><text>Incoming: \nMy PDA's just actin' up... I remember. You'll have it all... tomorrow mornin'.</text></string>
+<string id="bandit_008_10"><text>Outgoing: \nAlright, sucker, you're wearin' me out... You tryin' to bolt while feedin' me bullshit? We're gonna find ya now and tie those tired legs of yours into a bow 'round your neck. Just you wait a bit...</text></string>
+
+<string id="bandit_009"><text>Incoming: \nHey, how ya holdin' up? Ya recovered yet?</text></string>
+<string id="bandit_009_1"><text>Outgoing: \nHard to say... Whatcha need anyway?</text></string>
+<string id="bandit_009_2"><text>Incoming: \nGot a job for ya.</text></string>
+<string id="bandit_009_3"><text>Outgoing: \nAlright, spill it.</text></string>
+<string id="bandit_009_4"><text>Incoming: \nI'm the one talkin', you're the one spillin'. Listen close and remember it first time, or it'll be like that last mess...</text></string>
+<string id="bandit_009_5"><text>Outgoing: \nLook, don't start preachin' at me, especially this early. Get to the point.</text></string>
+<string id="bandit_009_6"><text>Incoming: \nBottom line. I heard artifact prices are tankin'. Gotta catch the moment. A couple of stalkers are due back at Cordon from a raid in a few days, carryin' loot, obviously...</text></string>
+<string id="bandit_009_7"><text>Incoming: \nYour job ain't to guzzle vodka, but to wait and take everythin' they got. Don't kill 'em, they'll bring us more stuff later.</text></string>
+<string id="bandit_009_8"><text>Outgoing: \nWe'll get it done, same as always. Why we even discussin' it?</text></string>
+<string id="bandit_009_9"><text>Incoming: \nAnd what's "same as always"? Like every other time? Just don't screw me over this once... You'll take it all for yourself, leave me the scraps, and then ask for interest?</text></string>
+<string id="bandit_009_10"><text>Outgoing: \nStop talkin' trash, you're talkin' to a pro! When did I ever screw ya?</text></string>
+<string id="bandit_009_11"><text>Incoming: \nSee that you don't play me this time.</text></string>
+<string id="bandit_009_12"><text>Outgoing: \nDon't push me. Everythin' will be tip-top. Send your guy here to keep watch if ya want. I'll be quiet as a mouse and wait.</text></string>
+<string id="bandit_009_13"><text>Incoming: \nYeah, yeah. We'll see.</text></string>
+
+<string id="bandit_010"><text>Outgoing: \nHey there, Kaban.</text></string>
+<string id="bandit_010_1"><text>Incoming: \nWe already said our hellos, whatcha want? Make it quick.</text></string>
+<string id="bandit_010_2"><text>Outgoing: \nDon't go throwin' your weight around, alright? I'm here on business. And not just on my own, for your information.</text></string>
+<string id="bandit_010_3"><text>Incoming: \nCut the cheap talk. Speak plain.</text></string>
+<string id="bandit_010_4"><text>Outgoing: \nDoes the name "Borov" mean anythin' to ya?</text></string>
+<string id="bandit_010_5"><text>Incoming: \nYeah...</text></string>
+<string id="bandit_010_6"><text>Outgoing: \nWell there ya go. Someone screwed over his guys on Wild Territory recently. I got a feelin' you oughtta know somethin'...</text></string>
+<string id="bandit_010_7"><text>Incoming: \nDon't push it. Get to the point...</text></string>
+<string id="bandit_010_8"><text>Outgoing: \nPoint is this: I was there, but just on lookout, not in the thick of it. Our guys hooked up with the mercs for a joint job. We were supposed to split the dough—who gets what wasn't for us to decide, we just had to wait for the nerds with the cargo.</text></string>
+<string id="bandit_010_9"><text>Incoming: \nSweet story. Then what?</text></string>
+<string id="bandit_010_10"><text>Outgoing: \nSo, someone set us up, and I'm startin' to think who... Everyone got iced, I'm the only one left, and the four-eyes bolted. Borov is pissed. They're breathin' down my neck now. I'm keepin' quiet for now, but if they squeeze me, I'm sellin' you out, got it? Well, whatcha got to say to that?</text></string>
+<string id="bandit_010_11"><text>Incoming: \nDon't try to pressure me. I ain't even involved, so I heard a few things, so what? And who told ya you were set up? You just got played by the mercs themselves... Talk about findin' partners, you idiots.</text></string>
+<string id="bandit_010_12"><text>Outgoing: \nAnd who specifically stiffed us, and what am I supposed to do with this pile of crap now? I said I'm pointin' the finger at you... or we can make a deal. Well?</text></string>
+<string id="bandit_010_13"><text>Incoming: \nOh, look at you playin' tough... all that smoke and mirrors, you shoulda just said you were tryin' to bluff me... Bottom line, come to our spot by evenin', you know the one. We'll discuss it there.</text></string>
+<string id="bandit_010_14"><text>Outgoing: \nI won't be alone and I'm packin' heat, keep that in mind, I ain't some sucker...</text></string>
+<string id="bandit_010_15"><text>Incoming: \nYeah, whatever. I won't be alone either. Come to the sit-down, we'll shoot the breeze.</text></string>
+
+<string id="bandit_011"><text>Outgoing: \nHey... Yo! What was yer name again? When's the dough gonna be here?</text></string>
+<string id="bandit_011_1"><text>Incoming: \nYou talkin' to me? I don't know nothin' about no dough...</text></string>
+<string id="bandit_011_2"><text>Outgoing: \nWhat, you gettin' aggressive with me? You were given a deadline...</text></string>
+<string id="bandit_011_3"><text>Incoming: \nA deadline? Careful you don't croak before that deadline's up... You know Poker? Go talk to him.</text></string>
+<string id="bandit_011_4"><text>Outgoing: \nWhat do I care about Poker? Where is he? He's a nobody—piece of crap. And Gray's gonna be real offended if ya start throwin' crap at him.</text></string>
+<string id="bandit_011_5"><text>Incoming: \nDon't strain yourselves, boys. Poker's gonna be back in business soon and he'll set things straight. If ya don't believe me, ask Borov, he knows me too.</text></string>
+<string id="bandit_011_6"><text>Outgoing: \nYou bastard, why didn't ya say right away that you got protection?</text></string>
+<string id="bandit_011_7"><text>Incoming: \nWhat, I gotta explain myself to every bastard I meet?</text></string>
+<string id="bandit_011_8"><text>Outgoing: \nFine, we'll meet again... And you're gonna pay for that "bastard" comment.</text></string>
+
+<string id="bandit_012"><text>Outgoing: \nSo, what's the word on our business?</text></string>
+<string id="bandit_012_1"><text>Incoming: \nDone exactly as planned. Looks like they took the bait.</text></string>
+<string id="bandit_012_2"><text>Outgoing: \nYou didn't go blabbin' too much, did ya?</text></string>
+<string id="bandit_012_3"><text>Incoming: \nYou think I'm some rookie? :) They only found out what they wanted to hear themselves :)</text></string>
+<string id="bandit_012_4"><text>Outgoing: \nAnd you're sure they're goin' there?</text></string>
+<string id="bandit_012_5"><text>Incoming: \nThey'll go... Greed's what kills the suckers. Half a day to pack, no more than a day's travel, and then it'll all be over quick. So, we wait a couple days and move out. I reckon everything will be ready by then.</text></string>
+<string id="bandit_012_6"><text>Outgoing: \nEverything ready or everyone ready?</text></string>
+<string id="bandit_012_7"><text>Incoming: \nBoth :). See how sweet it's turnin' out, and you were all shaky.</text></string>
+<string id="bandit_012_8"><text>Outgoing: \nI'm still havin' my doubts. They agreed way too fast... Hope they didn't catch on to what's really happenin'.</text></string>
+<string id="bandit_012_9"><text>Incoming: \nThey agreed 'cause they were mentally ready to hear such a beautiful fairy tale. They worked themselves up and got fired up, I just had to nod along. Don't be a pussy, everything's gonna be fine, they won't have time to realize a thing. I'll whistle when it's time.</text></string>
+<string id="bandit_012_10"><text>Outgoing: \nGotcha. Waitin'.</text></string>
+
+<string id="bandit_013"><text>Incoming: \nBroski, how ya doin' over there, ain't lost yer minds yet?</text></string>
+<string id="bandit_013_1"><text>Outgoing: \nOver what?</text></string>
+<string id="bandit_013_2"><text>Incoming: \nWord is there's some anomaly by you guys. Every second guy's head is snappin'. Don't get how ya even sit there, honestly...</text></string>
+<string id="bandit_013_3"><text>Outgoing: \nLies.</text></string>
+<string id="bandit_013_4"><text>Incoming: \nAnd that's it? C'mon, tell me somethin', it's interestin'. Boring as hell here, man, we're already bettin' on how long ya'll last.</text></string>
+<string id="bandit_013_5"><text>Outgoing: \nScrew you! There ain't no anomaly.</text></string>
+<string id="bandit_013_6"><text>Incoming: \nNah for real, tell me what's up if it ain't an anomaly? You don't seem like a crackpot yet, at least.</text></string>
+<string id="bandit_013_7"><text>Outgoing: \nDon't listen to 'em! It's all empty talk. Sanya Snitch just found some rock. Well, he sat with it, locked himself away from us, rubbin' it in the corner like some broad... so he went a bit loopy. But he was already obsessed before that :)) Then he lost that stone and finally went off the deep end. That's it.</text></string>
+<string id="bandit_013_8"><text>Incoming: \nThat's all? Lame... I was lookin' for a story, and you give me "nothin' to see"... Disappointing.</text></string>
+<string id="bandit_013_9"><text>Outgoing: \nWell, strictly between us, yer pal, Mishanya, found that stone. Or maybe not that one, but one just like it. Anyway, he's gettin' weird—staring off into the distance, sayin' they're waitin' for him... Bottom line, it's already started.</text></string>
+<string id="bandit_013_10"><text>Incoming: \nYou leave Mishanya alone!</text></string>
+<string id="bandit_013_11"><text>Outgoing: \nWhat'd I do? He's the one talkin' trash: sayin' we're all scum, and he's a "human." Says someone's waitin' for him. Got some kinda "mission"... No kiddin', I ain't lyin'. Ask Deadman, he heard it too. Gap-tooth already busted his lip for that kind of talk, but he won't pipe down.</text></string>
+<string id="bandit_013_12"><text>Incoming: \nThat's bad... What kinda stone? You seen it?</text></string>
+<string id="bandit_013_13"><text>Outgoing: \nNobody's seen it. I think it don't exist and he never had it. It's just the vodka. The DTs.</text></string>
+<string id="bandit_013_14"><text>Incoming: \nFine. I'll talk to Mishanya myself, ask 'im 'bout the stone.</text></string>
+<string id="bandit_013_15"><text>Outgoing: \nYeah, you do that... then tell me what's what, 'cause you're the one always askin' the questions.</text></string>
+
+<string id="bandit_014"><text>Outgoing: \nHey there, Lanky.</text></string>
+<string id="bandit_014_1"><text>Incoming: \nWho's this?</text></string>
+<string id="bandit_014_2"><text>Outgoing: \nIt's me... remember Samara.</text></string>
+<string id="bandit_014_3"><text>Incoming: \nOh... why all the secrecy?</text></string>
+<string id="bandit_014_4"><text>Outgoing: \nBottom line. Here's the deal: I caught some stalker today, and he had this weird thing on 'im, like a cobble or an artifact. This stalker was walkin' like a zombified—zero resistance, like a kitten. Started whinin' right away: says he'll give everythin', rat out everyone, whatever ya want, just give back the shard, that's what he called the rock. Droolin' like some retard. So I realized what was up and gave 'im such a list of orders for that cobble that I'll be swimmin' in dough soon. He already handed over two Wrencheds and ran off to get a Stone Flower, it's in a stash of his somewhere. Get over here quick, I can't carry it all alone.</text></string>
+<string id="bandit_014_5"><text>Incoming: \nWell... Big deal, ya let a whiner go... He might not even come back to ya.</text></string>
+<string id="bandit_014_6"><text>Outgoing: \nNah, ya don't get it. This whiner is like "hooked" on this rock, ya feel me? He's ready for anythin' now just to get it. We can milk 'im with this rock as much as we want... And I'm keepin' it quiet so ya don't go blabbin', I'm only tellin' you. And another thing: the rock is definitely unusual. I held it for a bit, and I feel like it's givin' me strength. I can already feel like I can do whatever I want. And it tells me that too...</text></string>
+<string id="bandit_014_7"><text>Incoming: \nWhat? Who's tellin' ya?</text></string>
+<string id="bandit_014_8"><text>Outgoing: \nWell, the rock is. It's like it speaks to me... It's luck that I took it. Crap like this don't just lay around on the road.</text></string>
+<string id="bandit_014_9"><text>Incoming: \nMaybe yer losin' yer marbles a bit? Why didn't it give that stalker any strength then?</text></string>
+<string id="bandit_014_10"><text>Outgoing: \nHa! Listenin' to too many stalker stories? I said "like it is." But for real, I'm havin' such a rush! I can... I can do anythin' now! Blow over here. I'm at the old spot.</text></string>
+<string id="bandit_014_11"><text>Incoming: \nFine, I'll come, ya can show me what kind of rock it is.</text></string>
+<string id="bandit_014_12"><text>Outgoing: \nNo!.. Well... maybe some other time. First we make our profit here, and then I'm goin' to the center...</text></string>
+<string id="bandit_014_13"><text>Incoming: \nWhere, where, the center? yer out of yer mind. Who's waitin' for ya there?</text></string>
+<string id="bandit_014_14"><text>Outgoing: \nYeah, they're waitin' for me... I'll explain later, I haven't quite figured it out myself yet.</text></string>
+<string id="bandit_014_15"><text>Incoming: \nFine, I'm comin' over, we'll shoot the breeze.</text></string>
+
+<string id="bandit_015"><text>Incoming: \nSo why the silence? How long we gonna play the quiet game?</text></string>
+<string id="bandit_015_1"><text>Outgoing: \nWhat's there to say... Nothin' yet.</text></string>
+<string id="bandit_015_2"><text>Incoming: \nAnd how much longer do I gotta wait?</text></string>
+<string id="bandit_015_3"><text>Outgoing: \nAny day now. I already spotted a place, just can't get to it yet. And I gotta stock up on pills, 'cause the counter is clickin' real hard over there.</text></string>
+<string id="bandit_015_4"><text>Incoming: \nFine... I'll wait a bit more. But if this "any day now" turns into "next month," then we're gonna have a different talk. I ain't waitin' forever.</text></string>
+<string id="bandit_015_5"><text>Outgoing: \nI got it, we already discussed everythin'... It'll happen for sure. Cross my heart.</text></string>
+<string id="bandit_015_6"><text>Incoming: \nYeah, yeah... Watch yer back.</text></string>
+
+<string id="bandit_016"><text>Outgoing: \nListen, homie, drop the corner and beat it while yer skin's still intact. Whatcha think, we're just gonna walk away? Hell no, bro, ya think we tracked ya all the way from Yantar for nuthin'? Just drop the container and keep on walkin'...</text></string>
+<string id="bandit_016_1"><text>Incoming: \nListen here, ghoul, I know for a fact I iced one of yer guys, and that's enough to keep me smilin'. As for the container, I'm riggin' it to blow. Come and get it!</text></string>
+<string id="bandit_016_2"><text>Outgoing: \nLook at this chatterbox. Don't go tryin' to be a hero... It ain't worth gettin' aggressive with us. We're askin' nicely for now. We're gonna get it anyway... what, cat got yer tongue? Fine, ya asked for it...</text></string>
+
+<string id="bandit_017"><text>Outgoing: \nYo! Who the hell do ya think ya are? Ya see a rookie in the Zone and think ya gotta scam the sucker? I can come pay ya a visit, don't think yer gonna sit safe in that bunker, I'll tear the soul outta ya, ya bald-faced mug!</text></string>
+<string id="bandit_017_1"><text>Incoming: \nWatch yerself, pal, what're ya even on about! And don't overstep—I ain't some green punk.</text></string>
+
+<string id="bandit_018"><text>Entry: Important! (Part 1) \nGreetings! \nTo the Free Wanderers with wishes of luck and health—from the Thieves of the Kiev prison. Wanderers! We want to bring clarity with this message. Specifically—there's a certain Sasha Mukha in the Zone, hidin' behind Our Holy Name of a Thief! So, we're tellin' everyone straight, he's a nobody and his name means nuthin'. And since this lowlife touched the Honor of a Thief, his name can only be—scoundrel! Every decent Wanderer should act accordingly. His lackeys shouldn't go unpunished either.</text></string> 
+<string id="bandit_018_1"><text>Entry: Important 2! (Part 2) \nYou should also know that in the winter of '12, there was a big Thieves' Summit in Moscow regarding this Mukha, where the final rulin' was made: Mukha is an impostor. Therefore, when meetin' this Mukha, every respected person must deal with him according to the decision made.</text></string>
+
+<string id="bandit_019"><text>Entry: Memorandum \nGentlemen Thieves and Free Wanderers! \nWith respect to you, Thieves Andrey Chicha, Semyon Freedom, Avas Black, Tolya Silver, and Sasha Kiyan.</text></string>
+<string id="bandit_019_1"><text>Wanderers! Not everyone grasped the essence of the last message! It's time to restore order in our house, where many sicknesses have appeared. Lawlessness and brute force are thrivin' in the Zone! Many bosses, havin' made it comfortable for themselves, are just passengers in life, livin' off the brotherhood, not seein' the common man! The youth don't understand what's happenin', they don't know the traditions. But that's where our strength lies!</text></string>
+<string id="bandit_019_2"><text>It's time to stop the lawlessness and anarchy in the Zone. Not everything in life is measured by dough or a fist. We need to understand each other, excludin' the pigs. We must learn to live well.</text></string>
+
+<string id="bandit_020"><text>Incoming: \nMoose, ya seen the Thieves' letters?</text></string>
+<string id="bandit_020_1"><text>Outgoing: \nYeah, I did. Chirka was yellin' that the Thieves from the mainland sent us a message, sayin' we gotta share and other crap they were pushin'.</text></string>
+<string id="bandit_020_2"><text>Incoming: \nWhat's yer word?</text></string>
+<string id="bandit_020_3"><text>Outgoing: \nAs soon as we started makin' a name for ourselves, they show up with their "codes," tellin' us to cough up, callin' us peons, actin' like they've explained the real score to us. As if! This ain't like playin' tough behind a prison wall where they fire a shot in the bushes once a year and act like they're walkin' with death and know the price. Here, every big-eared sucker has a gun, and catchin' a bullet is as easy as sneezin'. The boys are already on edge as it is, and now we gotta pay the Thieves from our last scrap of loot...</text></string>
+<string id="bandit_020_4"><text>Incoming: \nSo yer refusin'?</text></string>
+<string id="bandit_020_5"><text>Outgoing: \nRefusin'. We got our own rules here. This is a Free Zone.</text></string>
+
+<string id="bandit_021"><text>Entry: Tall Tale (part 1) \nMe and the boys were huntin' a boar. I'll tell ya, ya won't believe it. Grikha Gray tells us: "Boys! I'm cravin' some pork, 'cause eatin' this canned crap is like swallowin' it whole without openin' the tin, there's zero point to it." Vovan tells 'im: "Hey, Grikha, ya won't kick the bucket after gorgin' on this boar meat? Or even better—ya'll end up on all fours huffin' and puffin'. Screw them boars." But Grikha laid it out so solid, so we headed out on the hunt—me, Kolyan with a busted shiner, and Grikha with his peashooter. It was a real piece of work, that gun, I says: "Grikha, did they ice Grandpa Lenin with this mortar? It's a real cannon, especially that copper wire wrapped so pretty-like so the barrel don't slide off the wood?"</text></string>
+<string id="bandit_021_1"><text>Entry: Tall Tale (part 2) \nGrikha fires back that with this contraption he could nail a tushkano in the eye all the way from here while it's hoppin' around Limansk, but bullets are scarce and gotta be saved for the swine. So we're hikin' along, then Grikha shouts at us, like, quiet, somethin's rustlin' in the gully, I swear on my life there's a boar messin' around there. You guys, he says, make a real ruckus, and when the boar charges at ya, you go—pop—and scatter in different directions, and I'll drop 'im right here. Me and Kolyan were stunned, just sourin' there, but whatever, we crawled into the bushes. Kolyan's crackin' branches, I'm makin' a noise effect too, bottom line, we hear: someone's stompin' towards us, squealin', and the ground's literally shakin'. Well, we're bookin' it back to Grikha real lively-like.</text></string>
+<string id="bandit_021_2"><text>Entry: Tall Tale (part 3) \nWe run up to 'im and scatter—whoosh! Pure top-tier maneuver. And Grikha yells: "Hold up, boys, let's go another round, my bullet is a dud and won't fire." Me and Kolyan: "Oh, hell!" And we take off from a low start straight for the base... Grikha's screamin', the boar's thrashin' in the bushes, and we're haulin' ass, I even lost a boot. And then—KAAA-BOOM!!! And leaves start fallin' from the trees like rain. That was Grikha's peashooter findin' its voice. Anyway, the boar bolted, so did we, and Grikha went a bit deaf. So we never did eat that shish kebab...</text></string>
+
+<string id="bandit_022"><text>Entry: Letter (part 1) \nHey there, Tolyan! Everythin' is sweet with me, stompin' the Zone just like you. Only our zones are different. :)) One bro here knows his way around tech, said when I scratch out a few lines about life, he'll help send this letter, 'cause I only use this thing as a flashlight. But it writes too, can ya imagine... Cool, right? Right now I've joined up with a crew, but at first I was on my own. Only ya wouldn't last long here alone—no grub, no dough, no clothes, and ya take a dump lookin' over yer shoulder so nothin' bites yer bits off. Well, now everythin's on track, plenty of grub, we're livin' large, the whole gang at the base. Can't be nappin' here either, but ya can move up if yer head's screwin' on right.</text></string> 
+<string id="bandit_022_1"><text>Entry: Letter (part 2) \nI'll scrape together some dough, buy myself a brand new Cayenne, and still have some left over to celebrate :). So, Tolyan, once ya get out, scratch a few lines, if I'm home by then—I'll meet ya. Well, take it easy... write back. \nChika Bubbles.</text></string>
+
+<string id="bandit_023"><text>Outgoing: \nBros, help me out...</text></string>
+<string id="bandit_023_1"><text>Incoming: \nWhat, caught a bullet?</text></string>
+<string id="bandit_023_2"><text>Outgoing: \nI caught a "Black Mark"! Any "mutant-hamster" can drop me in one go now.</text></string>
+<string id="bandit_023_3"><text>Incoming: \nGo shoot the breeze with the folks at the Bar. There's some crafty people there, maybe they'll tip ya off on somethin' useful.</text></string>
+<string id="bandit_023_4"><text>Outgoing: \nWhat bar... the Duty guys spotted me when I was tossin' a stalker's pockets on the way out of the Valley. They'll drop me at the checkpoint in a heartbeat.</text></string>
+<string id="bandit_023_5"><text>Incoming: \nWell, just lay low somewhere. Yer not the first to catch a "mark." They say it clears up on the third day. Main thing is don't sleep.</text></string>
+<string id="bandit_023_6"><text>Outgoing: \nOh! I just crawled into some shitty little cellar. I'll try to hang out here in the crap. Three days, ya say?</text></string>
+
+<string id="bandit_024"><text>Outgoing: \nBros, give me some advice. \nAfter the last raid in Dark Valley, radiation started buildin' up. Booze and anti-rads only help for like 20 minutes. Is there some way to get rid of this curse? Or is my detector glitchin'?</text></string>
+<string id="bandit_024_1"><text>Incoming: \nYer probably luggin' artifacts in yer backpack, ain't ya? And they can be real hot sometimes, I'm tellin' ya. Put 'em in containers! That's exactly what they're made for.</text></string>
+<string id="bandit_024_2"><text>Outgoing: \nThanks, bro, ya saved me. I was already gettin' ready to kick the bucket. Definitely the arts. And I kept throwin' those stalker boxes away thinkin', why carry extra weight.</text></string>
+<string id="bandit_024_3"><text>Incoming: \nYer thanks don't jingle in a glass...</text></string>
+<string id="bandit_024_4"><text>Outgoing: \nYa offend me! When we meet, I'll set the table. We'll jingle together.</text></string>
+
+<string id="bandit_025"><text>Outgoing: \nAnyone tried waitin' out a blowout in the Sanatorium? I get the feelin' there ain't no safe spots there.</text></string>
+<string id="bandit_025_1"><text>Incoming: \nThat's where yer wrong, kiddo. Look harder.</text></string>
+<string id="bandit_025_2"><text>Outgoing: \nCan ya stop showin' off and just tell me where, or is that too hard?</text></string>
+<string id="bandit_025_3"><text>Incoming: \nAnd is it too hard to cough up a tiny little artifact as a present?</text></string>
+
+<string id="bandit_026"><text>Entry: \nAin't no point chargin' at the military head-on. Ya can totally bypass 'em. There's a way through the tunnel under the tracks for real. Do it like this: \nApproach the entrance and wait for the closest "Electra" to fire. Ya can tell by the sparks. Move to the edge of the anomaly, about a meter away, and wait for it to vanish. Once it's gone—haul ass to its spot and wait for the next one. Keep doin' that till ya reach the pipe in the tunnel. Ya can take a breather on the pipe and look around—the "Electras" won't reach ya there. Then head for the exit the same way.</text></string>
+
+<string id="bandit_027"><text>Outgoing: \nYeah, I clocked where it's at, and even figured there's a Bungee leadin' there, but I couldn't find exactly where it is.</text></string>
+<string id="bandit_027_1"><text>Incoming: \nDon't sweat it too much. Ya can get there even without a Bungee. Just gotta trudge through the swamp for a long-ass time.</text></string>
+
+<string id="bandit_028"><text>Outgoing: \nPromokashka, get yer ass over here and help. Or my roof's gonna blow off for good...</text></string>
+<string id="bandit_028_1"><text>Incoming: \nWhat happened? And where are ya?</text></string>
+<string id="bandit_028_2"><text>Outgoing: \nI'm sendin' the coordinates. Here's the deal: I got lucky as hell! Found a stalker stash in a small woods on Garbage. It's got ammo cans full of NATO rounds. More'n three thousand, I'd say. Plus a tube for a flamethrower. And all kinds of grub. Basically, I was happy as a kid.</text></string>
+<string id="bandit_028_3"><text>Incoming: \nSo haul it all back to base.</text></string>
+<string id="bandit_028_4"><text>Outgoing: \nExactly! I can't carry it all! So I'm just circlin' the stash. Dogs are howlin' on one side, zombies are mutterin' from the thicket, and the owners of the stash might be on their way already... Bottom line, get movin'—I want ya here in two hours.</text></string>
+<string id="bandit_028_5"><text>Incoming: \nGot it. I'll be there even sooner.</text></string>
+
+<string id="bandit_029"><text>Incoming: \nFolks, does the "Black Mark" have any useful traits at all?</text></string>
+<string id="bandit_029_1"><text>Outgoing: \nYeah, it does. It don't go away...</text></string>
+
+<string id="bandit_030"><text>Incoming: \nDirty bastards! Filthy, shameful animals!</text></string>
+<string id="bandit_030_1"><text>Outgoing: \nWhatcha shoutin' about, broski?</text></string>
+<string id="bandit_030_2"><text>Incoming: \nThey've started stealin' from their own! And not only that, they're leavin' notes: "Found a Moonlight in the stash, sorry brother, I'm keepin' it for myself." So now I'm goin' to find this "brother."</text></string>
+<string id="bandit_030_3"><text>Outgoing: \nLawlessness... The codes are becomin' less and less like the codes should be...</text></string>
+<string id="bandit_030_4"><text>Incoming: \nI find this piece of shit, I'll pull his eye out through his ass. And make it blink on command.</text></string>
+
+<string id="bandit_031"><text>Letter: \nGreetings to my pals from Dark Valley! Recently, right after we fought off the Duty guys, soldiers in "Beryl" suits started crawlin' through the gates to cause some violence. That's when I really felt the quality of a "boiled" rifle. Just the other day we spent hours fightin' our way into the complex on Agroprom. I was usin' an Abakan there and had "sighted it in" till I was sick of it. And what happened? After swappin' the Abakan for a "boiled-Kalash," I got the feelin' that the rifle aims itself and spends exactly three bullets per target. Like, one mag—ten enemies. Accurate as a pharmacy scale. So, I HIGHLY recommend it. They say ya gotta boil it in fresh Fruit Punch for exactly twenty-four hours. And then let it dry for another two days.</text></string>
+
+<string id="bandit_032"><text>Outgoing: \nThe funeral is definitely gonna be in the church. But most likely, it'll be mine...</text></string>
+
+<string id="bandit_033"><text>Outgoing: \nAnyone fought them burers in the Sanatorium? How do ya lay 'em out?</text></string>
+<string id="bandit_033_1"><text>Incoming: \nPoint-blank, man, point-blank. Or ya can shiv the bastard from behind with a thrustin' blow.</text></string>
+<string id="bandit_033_2"><text>Outgoing: \nHm... I tried chasin' a flesh with a knife once, couldn't even kill it, had to shoot it instead. Goin' at a burer... I'm a bit chicken, honestly.</text></string>
+<string id="bandit_033_3"><text>Incoming: \nAbout the burers. A Saiga shreds 'em real nice, like the one Mole lugs around on Agroprom. One buckshot blast to the mug, and that's it. I was wipin' out those pests in the Sanatorium with a scoped Abakan. Spent 3 mags, pepperin' its back and head from the second floor (it kept runnin' back and forth below).</text></string>
+<string id="bandit_033_4"><text>Outgoing: \nHoly crap! Are ya a broad or what? "Wipin' out", "spent"...</text></string>
+<string id="bandit_033_5"><text>Incoming: \nWell, if yer too "chicken" to go after a burer, check yer pants: maybe yer my girlfriend?</text></string>
+
+<string id="bandit_034"><text>Outgoing: \nQuestion about boilin' in a Fruit Punch. How's it done? Somethin' ain't boilin'...</text></string>
+<string id="bandit_034_1"><text>Incoming: \nTry boilin' in different Fruit Punches. A fresh one won't work. Needs to be a mature one. And visible, obviously.</text></string>
+<string id="bandit_034_2"><text>Incoming: \nRegardin' the boilin' in a Fruit Punch. Do it in the Agroprom underground where our boys hang out. That Fruit Punch is 100-percent the right one.</text></string>
+
+<string id="bandit_035"><text>Incoming: \nPseudo-dogs wiped out almost the whole patrol on Agroprom. Only one soldier left, and backup ain't showin'. Is that normal? I mean, are they comin'?</text></string>
+<string id="bandit_035_1"><text>Outgoing: \nQuit rustlin', they'll show up. Why're you so worked up anyway?</text></string>
+<string id="bandit_035_2"><text>Incoming: \n'Cause I'm that soldier. Private Khryashchenko.</text></string>
+
+<string id="bandit_036"><text>Outgoing: \nHey there, Mityai!</text></string>
+<string id="bandit_036_1"><text>Incoming: \nSame to ya! Where've ya been haulin'?</text></string>
+<string id="bandit_036_2"><text>Outgoing: \nPushed yer stash. Zhila was the buyer, I threw in a brew for 'im. You'll find the dough in our usual spot.</text></string>
+<string id="bandit_036_3"><text>Incoming: \nPerfect timin', bro!</text></string>
+<string id="bandit_036_4"><text>Outgoing: \nWhat's up?</text></string>
+<string id="bandit_036_5"><text>Incoming: \nI decided to go rogue. Borov's the big boss, sure, but workin' for 'im is no life. Remember Rasp, the guy who used to be a grinder? He's holdin' down the factory to the north now. Hint: he's supposedly under Borov, but he's callin' his own shots. Catch my drift? Find me there, we'll scam the suckers together.</text></string>
+<string id="bandit_036_6"><text>Outgoing: \nGotcha! Once ya settle in, send a word—I'll swing by.</text></string>
+
+<string id="bandit_037"><text>Outgoing: \nKolyan, hey!</text></string>
+<string id="bandit_037_1"><text>Incoming: \nVityok, that you?! Hey, Fatty! Finally decided to join us in the Zone? How'd ya even manage to get ready?! Where are ya?</text></string>
+<string id="bandit_037_2"><text>Outgoing: \nFatty yerself! Yer skin and bones! I just listened to too many of yer tales 'bout artifacts and dough! So I showed up in this Zone of yers. Crawled under the wire near the army post at night, and into the hollow! Just like ya said, basically... And there's a village here, the one where Sidorovich sits... He's a dung beetle, by the way!</text></string>
+<string id="bandit_037_3"><text>Incoming: \nFor r?¹$$* al, P???##?! So $u (( ¹;?:@in?</text></string>
+<string id="bandit_037_4"><text>Outgoing: \nWhat?! What kind of gibberish are ya sendin' me?!</text></string>
+<string id="bandit_037_5"><text>Incoming: \nGibberish?! Ah! That's interference! Signal acts up here sometimes—it's the Zone! I'm sayin', it's definitely you—Fatty! So yer on Cordon? In the Rookie Village? Just stay put there! Don't go anywhere till I show up! And don't even think 'bout yappin' 'bout bein' a big shot—they'll tear ya to shreds!</text></string>
+<string id="bandit_037_6"><text>Outgoing: \nGot it! By the way, what kind of dogs are these runnin' around in packs?! While I was haulin' ass from the soldiers to this village, I practically plowed through a whole pack! And they start barkin'! And start circlin' around like idiots! I'm standin' right there, and they're dashin' around like they're blind!</text></string>
+<string id="bandit_037_7"><text>Incoming: \nYou lucky bastard!.. They didn't bite?! Man, yer a lucky charm! They actually are blind—can't see a damn thing! But they can smell—better than police bloodhounds! You got lucky, Fatty! Like, crazy lucky—happens once in a thousand times that blindies don't sniff out a human at point-blank! Guess the Zone's welcomin' ya...</text></string>
+<string id="bandit_037_8"><text>Outgoing: \nYeah! Even the local boss, what's his name?.. Ah, Wolf! He also says I'm a lucky one, it seems!</text></string>
+<string id="bandit_037_9"><text>Incoming: \nWell, lucky or not, you sit tight and don't try to be a hero! And listen to Wolf—he's a seasoned stalker, seen a lot!</text></string>
+<string id="bandit_037_10"><text>Outgoing: \nI ain't tryin' to be a hero... But these mutts are askin' for it! They're burstin' right into the village! I've been blastin' away at 'em... Kolyan, I can't figure it out! I hit one from ten meters with a double-barrel! And she don't give a damn!</text></string>
+<string id="bandit_037_11"><text>Incoming: \nA white one? Was that mutt... like white and gray?</text></string>
+<string id="bandit_037_12"><text>Outgoing: \nYeah! How'd ya know?! I didn't kill the bitch! And at the end it was a total fail—I let my peashooter slip right outta my hands! My head started buzzin', I was seein' double!.. Basically, I don't even know how I dropped the gun... If some pal hadn't blown her head off, that beast would've chewed me up! I'm lyin' in a cellar for now, treatin' a bitten leg.</text></string>
+<string id="bandit_037_13"><text>Incoming: \nI see. Bottom line, ya got lucky twice to stay alive! Those white dogs don't show up on Cordon often... They're tough! And they got psi-power! That mush in yer head, the storm in yer eyes, and stuff fallin' outta yer hands, that's exactly it! That psi-power! Deeper in the Zone, they ain't rare.</text></string>
+<string id="bandit_037_14"><text>Outgoing: \nNo way! So what do I do?</text></string>
+<string id="bandit_037_15"><text>Incoming: \nIf ya spot those dogs, white or red—doesn't matter!—better hunker down and wait it out! Or better yet, quietly screw off from there! Just without the noise—their hearin' is insane! But if there's nowhere to go or they spotted ya, better climb higher: on some rock, or a roof, or a ladder. Got it? Won't save ya from the psi-power, but ya'll protect yerself from the teeth and get time to shoot the bastards!</text></string>
+<string id="bandit_037_16"><text>Outgoing: \nGot it. Thanks, pal!</text></string>
+<string id="bandit_037_17"><text>Incoming: \nDon't mention it... And one more thing, ya gotta shoot 'em in the head or the... ass, basically! And the ass is actually more reliable! You got a shotgun, right? And hittin' an eye or an ear with that—well, ya know... You might not even pierce the head with buckshot, especially if it ain't point-blank... But if ya shred her rear, around the tailbone—that's it, the beast is done! Guess their spinal cord is close there, so it paralyzes 'em instantly... And the organs fail, I reckon...</text></string>
+<string id="bandit_037_18"><text>Outgoing: \nUnderstood! Man, yer critters here are somethin' else!.. Anyway, the local Doctor told me I gotta stay down for another week—so c'mon, get over here!</text></string>
+<string id="bandit_037_19"><text>Incoming: \nAlready on it! I'm here on Garbage, a couple clicks away. Trudgin' yer way, wait for me... Fatty!</text></string>
+
+<string id="bandit_038"><text>Outgoing: \nFolks! What the hell! Yesterday I stepped into some "Jelly", ya know, an invisible "Fruit Punch"! Just normal grass all 'round, I tossed a bolt—it hissed a bit and that was it!</text></string>
+<string id="bandit_038_1"><text>Incoming: \nSo what's yer beef?</text></string>
+<string id="bandit_038_2"><text>Outgoing: \nYa can't see the damn thing at all! Nuthin'! Wiped out my Freedomer suit completely! Barely had time to bandage up, thought I was a goner—burned! Basically, bros, there's a new pile of crap on our heads!</text></string>
+<string id="bandit_038_3"><text>Incoming: \n"New", my ass. If ya see Syak from the loners—don't ice 'im, ask 'im instead—he'll explain the score on that jelly.</text></string>
+<string id="bandit_038_4"><text>Outgoing: \nSyak? What is he, a shaman?</text></string>
+<string id="bandit_038_5"><text>Incoming: \nYeah. A wizard... A kind one.</text></string>
+<string id="bandit_038_6"><text>Outgoing: \nThink yer funny? Man, I'll make 'im pay for those jellies and my trashed gear...</text></string>
+<string id="bandit_038_7"><text>Incoming: \nYeah, yeah. Get in line.</text></string>
+
+<string id="bandit_039"><text>Outgoing: \nSqueezed some sucker the other day... looked like an O.G., but his loot was pathetic. But we managed to squeeze a lead outta 'im. Just see that ya don't go whistlin' to nobody.</text></string>
+<string id="bandit_039_1"><text>Incoming: \nWhatcha take me for? Some blabbermouth?</text></string>
+<string id="bandit_039_2"><text>Outgoing: \nForget it. \nHe was yappin' 'bout Red Forest—says it ain't Red 'cause of the rads or stuff burnin' down, but 'cause there was a mine there—they used to wash for gold back in Soviet times. Even drew us a map.</text></string>
+<string id="bandit_039_3"><text>Incoming: \nOughtta check it out, 'cause if he's for real and told the truth—who needs artifacts then.</text></string>
+<string id="bandit_039_4"><text>Outgoing: \nBullseye! Right on the money.</text></string>
+
+<string id="bandit_040"><text>Entry: \nLyusyena (Lyuska) \nSwitchboard D-3 extension 2-38. From 9:00 to 18:00. Ask for (IMPORTANT!): Lyudmila Grigoryevna</text></string>
+
+<string id="bandit_041"><text>Incoming: \nPorcupine, ya got a greeting from Black.</text></string>
+<string id="bandit_041_1"><text>Outgoing: \nAnd why's that such a joy?</text></string>
+<string id="bandit_041_2"><text>Incoming: \nThe client's ripe, says start loadin' the oranges.</text></string>
+<string id="bandit_041_3"><text>Outgoing: \nWhoops. And when?</text></string>
+<string id="bandit_041_4"><text>Incoming: \nYa got a month.</text></string>
+<string id="bandit_041_5"><text>Outgoing: \nThat ain't even funny. We won't make it!</text></string>
+<string id="bandit_041_6"><text>Incoming: \nI don't care 'bout yer problems. Ya know "what" and ya know "when". Period. So quit the whinin' and snivellin', and get to work.</text></string>
+<string id="bandit_041_7"><text>Outgoing: \nOh look at you, the big scary Gray Wolf! Don't go teachin' me how to live, life'll teach me enough. Everythin' will be ready... in a couple months. Out.</text></string>
+
+<string id="bandit_042"><text>Incoming: \nGot a question, whoever's been to Wild Territory tell me, are there many beasts there?</text></string>
+<string id="bandit_042_1"><text>Outgoing: \nEnough so ya won't suffer for long.</text></string>
+<string id="bandit_042_2"><text>Incoming: \nWise guy...</text></string>
+
+<string id="bandit_043"><text>Outgoing: \nYou're a total moron! What made ya think a wooden crate's gonna SHATTER just from a bullet? Bullets just punch through wood and that's it!</text></string>
+<string id="bandit_043_1"><text>Incoming: \nExactly. Only realized that after burnin' through 3 mags.</text></string>
+
+<string id="bandit_044"><text>Outgoing: \nBros, help me out, Bashka stepped into some Witches Jelly, his kicks are trashed, skin's peelin' off in shreds, he's screamin' so loud that chimeras are droppin' dead in mid-air... If ya don't whisper a way to help 'im, I'm gonna personally pop 'im so he don't suffer no more.</text></string>
+<string id="bandit_044_1"><text>Incoming: \nI heard Pakhom over on the Swamp was brewin' some crafty ointment, he put some nerd back on his feet in no time with it, but I don't remember the recipe exactly, think he mixed honey with somethin', either oak bark or dog crap...</text></string>
+<string id="bandit_044_2"><text>Outgoing: \nListen, wise guy, once I get outta here, I'm gonna mix YOU with dog crap... What the hell kinda honey, I ain't on no damn bee farm, and there ain't no bees in the Darkscape, I can only make Bashka some crutches outta oak... or a cross for his grave.</text></string>
+<string id="bandit_044_3"><text>Incoming: \nWell if yer in the Darkscape, head over to the hunters, if they don't shoot ya on sight, they'll definitely help. Just make sure ya talk to Ignat, 'cause there's another pal livin' there, the sausage boss, he ain't fond of our kind, might turn ya into mincemeat by mistake, and you and Bashka wouldn't make for good grub anyway... ha-ha.</text></string>
+
+<string id="bandit_045"><text>Incoming: \nBroski, holy crap, ya still kickin'? Yer slower than a turtle, I shoulda sent ya for an electro-chimera kidney instead. If ya found the vodka—get yer ass to base, the boys' pipes are parched.</text></string>
+<string id="bandit_045_1"><text>Outgoing: \nThe waiter gave me a sweet amount of vodka, it'll be a liter per head, but I'm... I think I'm lost, for real, my battery died, can't see a damn thing. I don't get where I'm supposed to go.</text></string>
+<string id="bandit_045_2"><text>Incoming: \nCheck yer surroundin's... Well, whatcha see, basically?</text></string>
+<string id="bandit_045_3"><text>Outgoing: \nThere's a pond of some sort, a boat, a Carousel nearby...</text></string>
+<string id="bandit_045_4"><text>Incoming: \nYeah, and some swans and a seesaw... hell, broski, did ya head to Gorky Park for the vodka or what?</text></string>
+
+<string id="bandit_046"><text>Outgoing: \nWhen ya gonna give back the guitar, ya bastard, ya took it for one night and a week's passed. Or ya gonna keep lyin' 'bout steppin' into a "Bungee" and time travelin'? I ain't no judge, I don't believe in fairy tales, but if ya don't return the instrument, I'll book ya a one-way trip through time, "all-inclusive," includin' the funeral service...</text></string>
+<string id="bandit_046_1"><text>Incoming: \nDon't get worked up, brother, I swear on my life, it wasn't for me. Rasp threw a birthday bash, the boys were boozin' all night, singin' so loud that the chimeras were dancin' around the choppers. In the mornin' I headed straight for ya to return the guitar, rushed so hard I didn't even have a hangover drink. Just got out the gates, and this nasty midget shows up, I thought he was Robinson at first, he had a hat exactly like his, before it got blown off by a Duty burst... along with his head, rest his soul.</text></string>
+<string id="bandit_046_2"><text>Outgoing: \nDon't tell me 'bout Robinson, I know 'bout him, he was an artist from God, even the State Bank accepted his bills... talk 'bout the instrument.</text></string>
+<string id="bandit_046_3"><text>Incoming: \nWell, once that thing started growlin', my brain woke up a bit, I jumped onto the BRU unit, right to the top, and it's hot with rads there like a police station, thought I'd kick the bucket, lucky I had some... "medicine" with me. But I had to drop my gear, otherwise I'd have snapped my neck on the way down, even left the Mamas Beads behind...</text></string>
+<string id="bandit_046_4"><text>Outgoing: \nYer such a sucker, for real, ya got mugged by a burer? Bottom line, I want my stuff by evenin', and bring the "Beads" as interest... heh.</text></string>
+<string id="bandit_046_5"><text>Incoming: \nMan, yer a real stingy pal, chargin' yer own interest. That ain't followin' the code.</text></string>
+<string id="bandit_046_6"><text>Outgoing: \nSwing by tonight, we'll talk 'bout the code, the commandments, and yer time machine.</text></string>
+
+<string id="bandit_047"><text>Outgoing: \nYo, is Rusty with ya? He ain't answerin' my pings.</text></string>
+<string id="bandit_047_1"><text>Incoming: \nHis battery died and he's too stingy to pay for a charge, so he hauled ass to the pig farm to get some ammo.</text></string>
+<string id="bandit_047_2"><text>Outgoing: \nWhat a nutjob, don't he know the trader there pushes total garbage to suckers? He could get some decent ones from Zhila for a tin of food.</text></string>
+<string id="bandit_047_3"><text>Incoming: \nHe knows, but it turns out ya can turn that garbage into bullets deadlier than armor-piercin' ones.</text></string>
+<string id="bandit_047_4"><text>Outgoing: \nYeah right, yer pullin' my leg.</text></string>
+<string id="bandit_047_5"><text>Incoming: \nI didn't believe it either till I peeped his PDA. There's fresh info from Cook, exactly 'bout that stuff.</text></string>
+<string id="bandit_047_6"><text>Outgoing: \nStill sounds like garbage!</text></string>
+<string id="bandit_047_7"><text>Incoming: \nYa know Rusty—he's the biggest tightwad ever. He'd choke over a radioactive loaf of bread, and he'd choke YOU over a real one. Well, that miser gave his "Dandelion" to Cook yesterday. Guess why?</text></string>
+<string id="bandit_047_8"><text>Outgoing: \nBro, spill it, I need ammo bad. I spotted some vodka in the armory, I'll bring ya a couple crates for the recipe.</text></string>
+<string id="bandit_047_9"><text>Incoming: \nDeal... Basically, ya gotta put those trashy bullets into an "Electra" and wait about 10-15 hours, dependin' on the weather. That garbage turns into such a charge that ya can drop a boar with one bullet.</text></string>
+<string id="bandit_047_10"><text>Outgoing: \nNo kiddin'. Sounds like our Artyomka is mixin' it up with the big brains for real if they're leakin' info like that to 'im.</text></string>
+
+<string id="bandit_048"><text>Outgoing: \nBoss, I'm sick of sittin' in this wagon for real. What's the word on my shift? I'm freezin' to death and dyin' for some grub, my gut is playin' a funeral march louder than a piano.</text></string>
+<string id="bandit_048_1"><text>Incoming: \nStay put, Rusty already left... What about our "wild geese", they flown away yet?</text></string>
+<string id="bandit_048_2"><text>Outgoing: \nWhatcha talkin' 'bout, boss? Ya mixin' booze with dope again? Next thing ya'll ask 'bout chickens. There ain't nuthin' here but these crazy tushkanos and zombies in flip-flops. Just me and my binoculars. Geese... damn, that's a good one.</text></string>
+<string id="bandit_048_3"><text>Incoming: \nSorry, Pashtet, I forgot ya only got a third-grade education from a prison school. What about Wolfhound's guys, they movin' yet?</text></string>
+<string id="bandit_048_4"><text>Outgoing: \nOh, those ones... they're still there, the devils. Made a bit of a ruckus this mornin', playin' tag with a chimera. The guy who was "it" settled down not far from me; I reckon he'll start stinkin' by mornin'.</text></string>
+<string id="bandit_048_5"><text>Incoming: \nDon't get too excited, observer, or I might keep Rusty back a bit. Any outsiders visit Wolfhound?</text></string>
+<string id="bandit_048_6"><text>Outgoing: \nOne guy. Spotted 'im on the way in. Handed the guard some metal scraps and went straight to the boss. Couldn't hear the talk, but that hiker hauled ass back the way he came real quick.</text></string>
+<string id="bandit_048_7"><text>Incoming: \nWho was it?</text></string>
+<string id="bandit_048_8"><text>Outgoing: \nBoss, I didn't ask for his papers, and he forgot to introduce himself, was in a hurry I guess. You said yerslelf—stay out of sight... Looked like a stalker, but real twitchy, pullin' the bolt at every sound like a guard on a watchtower. And a face like that devil... what was it... Kamikaze, yeah!</text></string>
+<string id="bandit_048_9"><text>Incoming: \nQuasimodo, ya idiot. Anyway, stay quiet, and don't forget to leave the binoculars for Rusty. Arrivederci.</text></string>
+
+<string id="bandit_049"><text>Outgoing: \nLyonchik, hey Lyonchik, is that you, you little pig, hoppin' over the wire with my crate? I get that ya don't wanna share the vodka with Kuzya, but get yur own crate, or I'll organize a different kind of crate for ya, made of the same wood. One you can sleep in... forever.</text></string>
+<string id="bandit_049_1"><text>Incoming: \nWatch yur mouth, what am I, an Olympic jumper to be hoppin' over barbed wire? With my weight, just climbin' stairs is a heroic feat. You better grill Tolyan 'bout that, he set up a stash on the other side, hides his tails in there, with horns and hooves to boot.</text></string>
+<string id="bandit_049_2"><text>Outgoing: \nDamn, who's runnin' 'round the Zone with horns, actual devils or what?</text></string>
+<string id="bandit_049_3"><text>Incoming: \nMore like a she-devil, and not in the Zone but back home—it's his missus. Word is she's gone real soft in the head waitin' for 'im, so he's probably growin' those horns all on his own. Heh.</text></string>
+<string id="bandit_049_4"><text>Outgoing: \nLMAO... That's a good one! I can just see that fine lad dancin' a war hopak with those horns on Independence Day.</text></string>
+
+<string id="bandit_050"><text>Outgoing: \nListen, squinty, here's the score. The Boss sent me and Repchik to the Swamps, to that... Forgotten Settlement, damn it. So me and my pal are trudgin' through the Swamps. We look—whoops, a stiff layin' on a rock. A real dried-up mummy. Clear as day—a bloodsucker drained the sucker! So we looted 'im, obviously. His piece turned out to be junk, but the loot, a backpack full of tins, and a belt with a battery and artifacts. Proper gear!</text></string>
+<string id="bandit_050_1"><text>Incoming: \nYeah, ya got lucky there. Arts, ya say? What kind?</text></string>
+<string id="bandit_050_2"><text>Outgoing: \nHold yur horses on the arts, listen to this. We grab the loot and haul it ourselves. Repchik's a big ox, threw the sack of tins on his shoulder. And he strapped that belt on himself so his hands would be free. We're limpin' along. Then we see it—a boar standin' right at the exit! Where'd that monster come from? While Repchik was reachin' for his gun, this mammoth hit 'im with his tusks so hard, like a Kamaz truck hittin' ya with its bumper. My pal flew about five meters through the air and slammed into the thicket. Even though he weighs a ton himself plus all that loot!</text></string>
+<string id="bandit_050_3"><text>Incoming: \nOh man... then what?</text></string>
+<string id="bandit_050_4"><text>Outgoing: \nI grabbed my gun too. Managed to drop the bastard with my TOZ. Then I went to the bushes where Repchik's legs were stickin' out. Thinkin' to myself, shame 'bout my pal, but I gotta collect the common loot at least. The Boss would rip my head off for it. I get closer, and Repchik's sittin' there, shakin' his head! He's alive, can ya believe it! I ask 'im, "Bro, ya okay?" And he just grunts like a hog and rolls his eyes! So I gave 'im a little slap on the snout, ya know, like first aid to wake 'im up. But it felt like my hand just grazed 'im. I tried again. And my hand felt like it was goin' into dough, barely even reachin' his face.</text></string>
+<string id="bandit_050_5"><text>Incoming: \nWhat are ya blabbin' about? What dough? Don't dodge the topic. Talk 'bout the arts. What's up with the loot?</text></string>
+<string id="bandit_050_6"><text>Outgoing: \nDon't ya get it?! Ya ever tried puttin' magnets together as a kid? One way they stick. The other way they push away. I'm thinkin', what the hell? I look, and Repchik's belt is switched on. What a loser! The arts are burnin' out on 'im! We'll get peanuts for 'em later. And there were three of 'em. Anyway, I switched the belt off. Then I gave my pal a real "wake-up" punch to the mug—CRACK! That's when Repchik clocked me right back between the eyes and starts screamin' that I'm the one startin' trouble!</text></string>
+<string id="bandit_050_7"><text>Incoming: \nHeh, that's Repa for ya, he's a bruiser. So, how're ya feelin' after that? And... where are ya?</text></string>
+<string id="bandit_050_8"><text>Outgoing: \nI says to 'im—what's yur problem, ya bastard? I was just bringin' ya back to yur senses after that boar gored ya. And this sucker tries to tell me he didn't get gored, just "nudged" a bit.</text></string>
+<string id="bandit_050_9"><text>Incoming: \nHe's such a tank, he probably could've gored the boar back :) </text></string>
+<string id="bandit_050_10"><text>Outgoing: \nHe says if he'd been gored, his ribs and guts would've come out his backside! And I'm yellin'—but ya flew five meters like Batman! Basically, we argued the whole way back. Later at the hideout, the Boss explained it. That belt Repchik had... it created some kinda "shield." That's what saved 'im, for real.</text></string>
+<string id="bandit_050_11"><text>Incoming: \nWait, what? Ya already handed the arts and the loot to the Boss? What a loser! Imagine if ya kept those arts for yurself? Ya wouldn't even have to worry 'bout takin' a brass knuckle to the face! Man, if I had gear like that back when I was a kid! I'd have ruled the whole neighborhood! And it'd come in handy here, too.</text></string>

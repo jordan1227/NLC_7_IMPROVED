@@ -96,6 +96,7 @@ reinforced_npcs = {
 	["val_bandit_krisyk2"] = true, -- Крысюк (Бар)
 	["art_exchanger"] = true, -- Саня Меняла
 	["sim_bandit_master_kocherga_sak"] = true, -- Кочерга ДТ
+	["esc_fanat"] = true, -- Фанат
 }
 
 local particles={}

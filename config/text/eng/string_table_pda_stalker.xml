@@ -1,0 +1,608 @@
+<string id="stalker_000"><text>Log: \nThey say there's an entrance to an underground passage in the valley that leads straight to the sarcophagus... Maybe worth checking out.</text></string>
+
+<string id="stalker_001"><text>Log: \nImportant: \nPick up a package from Seriy and pass it on to his brother.\nAt the Bar, by midnight, goes by Rutik. Ask Barkeep.</text></string>
+
+<string id="stalker_002"><text>Log: \nPass Kuznetsov greetings from Predybaylo. \nWord for word: told me to bow with respect. \nHe'll let you through free of charge.</text></string>
+
+<string id="stalker_003"><text>Log: \nOnce the network is up, pass it along to everyone: \nEmission after 3 AM. \nIntel from Freedom members at the Barrier.</text></string>
+
+<string id="stalker_004"><text>Log: \nRecipe from the Swamp Doctor: \nApply a "Jellyfish" (all properties zeroed out) to the soles of your feet overnight. Clears up fungus.</text></string>
+
+<string id="stalker_005"><text>Log: \nDo not sell: \n"Titanium Kolobok" — that one's for Sultan.</text></string>
+
+<string id="stalker_006"><text>Incoming: \nLyokha! The Guide is seriously something else! Get this — he wiped out a whole pack of dogs past the bridge! By himself!!! O_o</text></string>
+<string id="stalker_006_1"><text>Outgoing: \nNah, they're exaggerating! There were three of them — the Guide and two other stalkers. Still cool though. I think that one guy was there too, you know, the decked-out one... What's his name... You know who I mean.</text></string>
+<string id="stalker_006_2"><text>Incoming: \nNope.</text></string>
+<string id="stalker_006_3"><text>Outgoing: \nHe came through our village not long ago with a Vintorez, said hi by the campfire, then took off real fast....</text></string>
+<string id="stalker_006_4"><text>Incoming: \nAnd what's a Vintorez?</text></string>
+<string id="stalker_006_5"><text>Outgoing: \nMan, you're such a greenhorn! It's a sniper rifle, an awesome one. Costs a ton, honestly, but I'm gonna save up and get one. Hey, why don't you move to our village? What are you doing sitting out there on the farm?</text></string>
+<string id="stalker_006_6"><text>Incoming: \nNah, you've got military patrols around there. They don't come near here.</text></string>
+<string id="stalker_006_7"><text>Outgoing: \nWho cares about the military? Sidorovich runs things here — everything's fine.</text></string>
+<string id="stalker_006_8"><text>Incoming: \nNo, I'm good where I am.</text></string>
+<string id="stalker_006_9"><text>Outgoing: \nSuit yourself.</text></string>
+
+<string id="stalker_007"><text>Outgoing: \nKolyan, do you know anyone in Freedom?</text></string>
+<string id="stalker_007_1"><text>Incoming: \nI do, but keep it between us. What do you need?</text></string>
+<string id="stalker_007_2"><text>Outgoing: \nNeed to get in touch with Screw. Looking for small screwdrivers — Phillips and Torx. Really small, like watchmaker's ones.</text></string>
+<string id="stalker_007_3"><text>Incoming: \nDo you really have to go all the way to the Warehouses for them? Nobody closer has any?</text></string>
+<string id="stalker_007_4"><text>Outgoing: \nSeems not, I've asked around — already driven everyone crazy with these screwdrivers. And why go there in person? Stalkers make that run one way or another. Just send them along with whoever's heading that way.</text></string>
+<string id="stalker_007_5"><text>Incoming: \nYou know how much they'll charge you for that? Anyway, if you really need it — I'll tell my guy, he'll message you and say it's from me.</text></string>
+<string id="stalker_007_6"><text>Outgoing: \nGreat, thanks!</text></string>
+
+<string id="stalker_008"><text>Incoming: \nVityek, we're in deep trouble, help us out! Borov's men have us surrounded in the Valley, near the factory. We won't fight back — too many of them, we'll surrender. Please find two "Little Stars" and bring them here. Tomorrow morning, be near the bulldozer by the little swamp. Hand the artifacts to their courier, and I'll square up with you later.</text></string>
+<string id="stalker_008_1"><text>Outgoing: \nNo need to go looking. Khimik has two "Little Stars". I'll borrow them from him. But keep in mind — it goes on your tab.</text></string>
+<string id="stalker_008_2"><text>Incoming: \nFine by me. Just keep it quiet, don't tell our guys. We've dug something up here, and we don't need the noise. ;)</text></string>
+<string id="stalker_008_3"><text>Outgoing: \nNo idea what's going on, but I smell profit. :) Consider it done. Just don't do anything stupid out there — don't provoke them, or they'll shoot you on the spot. And then two "Little Stars" go to waste for nothing. :))</text></string>
+<string id="stalker_008_4"><text>Incoming: \nThanks. That's it, don't message me again.</text></string>
+
+<string id="stalker_009"><text>Incoming: \nSanyok, hey! Heard the news? Turns out Sakharov is growing watermelons on the bunker grounds!</text></string>
+<string id="stalker_009_1"><text>Outgoing: \nWhat kind of nonsense is that? He's not growing any watermelons — I was just there yesterday.</text></string>
+<string id="stalker_009_2"><text>Incoming: \nDid you go around the back of the bunker? Didn't think so. He's got a melon patch back there. Write to him, work something out, buy yourself a watermelon — because getting anything tasty from outside the perimeter is next to impossible.</text></string>
+<string id="stalker_009_3"><text>Outgoing: \nI'm not so sure... I can't message him, but if I end up there any time soon — I'll check. But where did you even get the idea that he has a melon patch? Oh... wait, I get it, is this some kind of joke?</text></string>
+<string id="stalker_009_4"><text>Incoming: \nNot a joke. Someone told me today, and they heard it from some Marked One apparently.</text></string>
+<string id="stalker_009_5"><text>Outgoing: \nAnd you're going to listen to him... Word is, he's not all there upstairs. But fine, I'll find out.</text></string>
+
+<string id="stalker_010"><text>Incoming: \nHey, Valyukha... Weren't you collecting something for Sidorovich?</text></string>
+<string id="stalker_010_1"><text>Outgoing: \nHey. Yeah, I was. Why? Are you heading there? Maybe you could drop it off? I really can't get away right now...</text></string>
+<string id="stalker_010_2"><text>Incoming: \nNo need to rush anymore. Word is he died last night.</text></string>
+<string id="stalker_010_3"><text>Outgoing: \nWho?! Sidorovich?! Get out of here! No way... What did he die of?</text></string>
+<string id="stalker_010_4"><text>Incoming: \nNo idea. I just got a message from a Cordon guy: "Sidorovich died last night, funeral — Monday at 10 AM in the Cordon."</text></string>
+<string id="stalker_010_5"><text>Outgoing: \nWell, damn... So what now? Who do we bring loot to?</text></string>
+<string id="stalker_010_6"><text>Incoming: \nNo idea, but someone will fill the spot eventually. Nature abhors a vacuum... and so on.</text></string>
+<string id="stalker_010_7"><text>Outgoing: \nYou're pulling my leg!.. I asked around. Look at this: \nTo all! I am alive and well, and had no intention of dying. The joker has been identified and punished. Sidorovich \nHa! See that?</text></string>
+<string id="stalker_010_8"><text>Incoming: \nWow... Bastards, have they no shame...</text></string>
+
+<string id="stalker_011"><text>Outgoing: \nSidorovich!?</text></string>
+<string id="stalker_011_1"><text>Incoming: \nYeah?</text></string>
+<string id="stalker_011_2"><text>Outgoing: \nWhen's your next mail run outside?</text></string>
+<string id="stalker_011_3"><text>Incoming: \nDay after tomorrow. Then the 27th.</text></string>
+<string id="stalker_011_4"><text>Outgoing: \nHow much?</text></string>
+<string id="stalker_011_5"><text>Incoming: \nIs it a letter? Or a package?</text></string>
+<string id="stalker_011_6"><text>Outgoing: \nNo, a letter. Back home.</text></string>
+<string id="stalker_011_7"><text>Incoming: \nUsual rate. Bring it over — we'll work something out. If it's for the 27th, it'll be cheaper.</text></string>
+<string id="stalker_011_8"><text>Outgoing: \nIf I hand it to Seriy at the Garbage today — he should come to you — will it go out the day after tomorrow?</text></string>
+<string id="stalker_011_9"><text>Incoming: \nWhat am I, FedEx? How should I know... I'll do my best. Don't seal the letter, put the money inside. Keep in mind, I read all letters and, if necessary, cross out anything that doesn't need to go through. And don't stuff anything extra in the envelope besides the money. Only the letter makes it past the perimeter — everything else stays with me.</text></string>
+<string id="stalker_011_10"><text>Outgoing: \nYeah, I know, I've sent one before.</text></string>
+<string id="stalker_011_11"><text>Incoming: \nAlright then, bring it today and I'll do my best to get it out tomorrow morning.</text></string>
+<string id="stalker_011_12"><text>Outgoing \nThanks!</text></string>
+
+<string id="stalker_012"><text>Incoming: \nLyokha! We're heading to Agroprom tomorrow. The army boys have flare gun rockets — need to grab about ten... no, better make it twenty.</text></string>
+<string id="stalker_012_1"><text>Outgoing: \nSure, I'll get right on that. What do you need rockets for?</text></string>
+<string id="stalker_012_2"><text>Incoming: \nDuty threw us a little job. Voronin's birthday is coming up. So they want us to bring some in. For a fireworks show. I said yes. Coming with me? Pay is good.</text></string>
+<string id="stalker_012_3"><text>Outgoing: \nSure, they pay well — and the military shoots well too... And not flare guns into the sky, mind you, but heavy caliber from their APCs. The whole thing stinks to me... You clearly just want to use this as an excuse to stock up — they don't need us and our flare guns any more than last year's snow...</text></string>
+<string id="stalker_012_4"><text>Incoming: \nWe're not going there to steal! I've been in touch with a guy there — he'll trade anything you want for vodka, even a Topol.</text></string>
+<string id="stalker_012_5"><text>Outgoing: \nNo, I'm not going. And I'm telling you not to either. They'll shoot you — and on top of that, they'll take the vodka.</text></string>
+<string id="stalker_012_6"><text>Incoming: \nWhat a coward you are! Why did you even come to the Zone? Should've just stayed home...</text></string>
+<string id="stalker_012_7"><text>Outgoing: \nNone of your business. And don't come to me with this kind of nonsense again.</text></string>
+
+<string id="stalker_013"><text>Incoming: \nMityay, I hear you write poetry? Hey.</text></string>
+<string id="stalker_013_1"><text>Outgoing: \nEvery now and then... Hey.</text></string>
+<string id="stalker_013_2"><text>Incoming: \nI need something about the Zone, but for a girl, you know?</text></string>
+<string id="stalker_013_3"><text>Outgoing: \nWhat's there to figure out? And where did you find yourself a girl? Maybe let me in on that too... Alright, here it is, short version: "The Zone, it's terrifying, death around every corner, but I love you and think only of you, even in my darkest hour." Will that do?</text></string>
+<string id="stalker_013_4"><text>Incoming: \nYeah, something like that. How'd you come up with it so fast?</text></string>
+<string id="stalker_013_5"><text>Outgoing: \nI literally just wrote something like that not long ago. Here, take a look — fresh off the press: \nWe lit a fire by the village at night, \nThe resin on the logs like a tear, \nI strummed a song by firelight \nAbout your smile and eyes so dear. \nYou are so far away right now, \nCheckpoints stand between us two, \nThe road to you is long somehow, \nAs long as I've got bolts, I'll get through. \nThat's just a piece of it. Will it work?</text></string>
+<string id="stalker_013_6"><text>Incoming: \nYeah, exactly what I needed! Can I get the whole poem?</text></string>
+<string id="stalker_013_7"><text>Outgoing: \nFour thousand or a "Flash".</text></string>
+<string id="stalker_013_8"><text>Incoming: \nThat's highway robbery!</text></string>
+<string id="stalker_013_9"><text>Outgoing: \nThen come up with your own!</text></string>
+<string id="stalker_013_10"><text>Incoming \nAlright, fine, I'll think about it. I'll knock on your door again.</text></string>
+
+<string id="stalker_014"><text>Incoming: \nSakharov is a rat!!!</text></string>
+<string id="stalker_014_1"><text>Outgoing: \nHey. What's gotten into you? What did he do?</text></string>
+<string id="stalker_014_2"><text>Incoming: \nHad a deal with the professor — he was going to give me a good job. I show up, and there's already some Duty member sitting there. Sakharov goes, sorry, pal, you're too late, already sorted. And they're both grinning. The Duty guy especially — smug mug on him!</text></string>
+<string id="stalker_014_3"><text>Outgoing: \nWell, what did you expect? Plain and simple: first one in gets the job. Sakharov has a soft spot for Duty members.</text></string>
+<string id="stalker_014_4"><text>Incoming: \nThat's not how you do business. We had an agreement!</text></string>
+<string id="stalker_014_5"><text>Outgoing: \nAh, let it go. Come with me to the Garbage the day after tomorrow — Bes needs something: he's putting together a big group.</text></string>
+<string id="stalker_014_6"><text>Incoming: \nGoing to take out bandits or something? Is Bes actually there? I thought I heard he'd left...</text></string>
+<string id="stalker_014_7"><text>Outgoing: \nNah, probably not bandits — it's quiet there right now. But something's up... Does it matter whether it's Bes or not? We're sitting here broke. At least there's work, and people to shoot the breeze with.</text></string>
+<string id="stalker_014_8"><text>Incoming: \nAll you ever want to do is shoot the breeze... Fine, let's go. First thing in the morning?</text></string>
+<string id="stalker_014_9"><text>Outgoing: \nYeah. Are you at the Bar right now? I'll find you there tomorrow at eight. We'll hit the Garbage right around noon.</text></string>
+<string id="stalker_014_10"><text>Incoming: \nDeal, I'll be waiting.</text></string>
+
+<string id="stalker_015"><text>Incoming: \nHey! We need supplies. What's the situation like right now?</text></string>
+<string id="stalker_015_1"><text>Outgoing: \nAnd same to you! Situation — not great. What exactly do you need?</text></string>
+<string id="stalker_015_2"><text>Incoming: \nSomething non-perishable. Canned stew, mostly. Dry rations. Spirits.</text></string>
+<string id="stalker_015_3"><text>Outgoing: \nHeading somewhere far?</text></string>
+<string id="stalker_015_4"><text>Incoming: \nOh, three or four days or so. Five of us. Plus seven more at the site. Need supplies for them too.</text></string>
+<string id="stalker_015_5"><text>Outgoing: \nNah, I'm nearly empty right now. Sidor's got a resupply coming tomorrow. Tonight, actually.</text></string>
+<string id="stalker_015_6"><text>Incoming: \nThat's a long hike to get to him on foot.</text></string>
+<string id="stalker_015_7"><text>Outgoing: \nThen don't go. Ask for delivery.</text></string>
+<string id="stalker_015_8"><text>Incoming: \nToo pricey. And no guarantee the delivery makes it through. Heard the dogs are breeding again over at the Garbage?</text></string>
+<string id="stalker_015_9"><text>Outgoing: \nKolyan, I can't help you no matter what. So — go to Sidor. Or you could try Bootlegger. :)</text></string>
+<string id="stalker_015_10"><text>Incoming: \nHaha, very funny.</text></string>
+<string id="stalker_015_11"><text>Outgoing \n:)) So — Sidor. No question.</text></string>
+<string id="stalker_015_12"><text>Incoming \nThanks, real comforting.</text></string>
+
+<string id="stalker_016"><text>Outgoing: \nIgoryosha, help me out!</text></string>
+<string id="stalker_016_1"><text>Incoming: \nWhat is it now?</text></string>
+<string id="stalker_016_2"><text>Outgoing: \nI need to go to ground urgently. Disappear for a couple of weeks.</text></string>
+<string id="stalker_016_3"><text>Incoming: \nWell... what do you need me for?</text></string>
+<string id="stalker_016_4"><text>Outgoing: \nLook, someone might come to you or one of your guys asking about me. They know I used to run loot with you. Tell them I headed toward Agroprom... Say I definitely went that way... Or better yet, throw in something like — some guy from Agroprom mentioned the dogs got to me, something along those lines...</text></string>
+<string id="stalker_016_5"><text>Incoming: \nKnock on wood! Is it really that bad?</text></string>
+<string id="stalker_016_6"><text>Outgoing: \nIt's bad. :( And tell your guys too — make sure they all say the same thing. Went to Agroprom and hasn't come back yet.</text></string>
+<string id="stalker_016_7"><text>Incoming: \nConsider it done. Where can I find you if something comes up?</text></string>
+<string id="stalker_016_8"><text>Outgoing: \nSorry, can't say just yet. I'll find you myself. Once things settle down...</text></string>
+<string id="stalker_016_9"><text>Incoming: \nUnderstood... Take care.</text></string>
+<string id="stalker_016_10"><text>Outgoing: \nIf everything works out, I'll make it up to you. I won't forget.</text></string>
+<string id="stalker_016_11"><text>Incoming: \nDon't worry about it. We'll square up later.</text></string>
+
+<string id="stalker_017"><text>Incoming: \nSo what did you dig up?</text></string>
+<string id="stalker_017_1"><text>Outgoing: \nWhere?</text></string>
+<string id="stalker_017_2"><text>Incoming: \nWhere, where... in the middle of nowhere. That underground lab you were talking about, remember?</text></string>
+<string id="stalker_017_3"><text>Outgoing: \nAre you stupid? I was just passing along what people were saying. We weren't even planning to go... You try getting in there. And if you do get in, you won't get back out...</text></string>
+<string id="stalker_017_4"><text>Incoming: \nThen what was the point of bringing it up? I heard some hotshot went down there. They say he hauled out so much stuff he could buy out the whole Zone.</text></string>
+<string id="stalker_017_5"><text>Outgoing: \nHa! Keep listening to that... Someone's just talking himself up. What a joke... The way I heard it, nobody can even find the entrance, and you're telling me someone "hauled stuff out..." Just talk.</text></string>
+<string id="stalker_017_6"><text>Incoming: \nAnd how do you know nobody can find the entrance? Someone must have been looking... and probably not just to look — they wanted to go down there.</text></string>
+<string id="stalker_017_7"><text>Outgoing: \nWell then, go ahead and look, and go down there yourself if you're so brave.</text></string>
+<string id="stalker_017_8"><text>Incoming: \nAlright, alright... But still — if you hear anything, you'll let me know?</text></string>
+<string id="stalker_017_9"><text>Outgoing: \nOf course!</text></string>
+
+<string id="stalker_018"><text>Incoming: \nHey.</text></string>
+<string id="stalker_018_1"><text>Outgoing: \nYeah...</text></string>
+<string id="stalker_018_2"><text>Incoming: \nHeard about Kartavy? What do you make of it?</text></string>
+<string id="stalker_018_3"><text>Outgoing: \nWhat is there to say — he lost it... Walked straight into an anomaly himself.</text></string>
+<string id="stalker_018_4"><text>Incoming: \nYou think it was himself?</text></string>
+<string id="stalker_018_5"><text>Outgoing: \nAbsolutely. The guys were right there, watched him pacing around. Thought he was trying to find a way around it, but it was the opposite — he was lining himself up to make sure. Then he ran and jumped straight in.</text></string>
+<string id="stalker_018_6"><text>Incoming: \nDamn... He just snapped?</text></string>
+<string id="stalker_018_7"><text>Outgoing: \nHe was already gone before that. Screaming at night, and during the day going on and on about some piece of the Monolith. Became a total wreck...</text></string>
+<string id="stalker_018_8"><text>Incoming: \nDo you remember, about a month ago, there was another guy going on about some Monolith fragments too?</text></string>
+<string id="stalker_018_9"><text>Outgoing: \nBobos or whatever his name was, Gundos?</text></string>
+<string id="stalker_018_10"><text>Incoming: \nYeah, him. So I saw him recently — didn't even recognize him. Same thing basically — screaming at night, raving about the Monolith during the day. And then they found him hanged a few days ago. Someone said he'd made enemies and the gopniks strung him up. But I think it was himself. He'd been like a ghost lately — who could he have pissed off that badly... He cracked too. There's something to all this...</text></string>
+<string id="stalker_018_11"><text>Outgoing: \nCoincidence, probably.</text></string>
+<string id="stalker_018_12"><text>Incoming: \nSo what is this piece of the Monolith anyway? Some kind of artifact?</text></string>
+<string id="stalker_018_13"><text>Outgoing: \nOh, come on... I don't know and I don't want to know. I've got enough trouble with Jellyfish as it is.</text></string>
+<string id="stalker_018_14"><text>Incoming: \nBut still?</text></string>
+<string id="stalker_018_15"><text>Outgoing: \nIt's just nonsense. Why would you listen to every lunatic out there?</text></string>
+<string id="stalker_018_16"><text>Incoming: \nWell, there must be something to it... Forget it. I'll look into it myself and let you know.</text></string>
+<string id="stalker_018_17"><text>Outgoing \nTo hell with it! Don't you dare! I don't even want to know — I sleep better that way.</text></string>
+
+<string id="stalker_019"><text>Outgoing: \nWhen will you have the money? I'm waiting.</text></string>
+<string id="stalker_019_1"><text>Incoming: \nHey! We agreed — the thirtieth!</text></string>
+<string id="stalker_019_2"><text>Outgoing: \nI need it now.</text></string>
+<string id="stalker_019_3"><text>Incoming: \nWhere am I supposed to get it now? I don't have a job until the day after tomorrow.</text></string>
+<string id="stalker_019_4"><text>Outgoing: \nFigure it out, but I need the money by the day after tomorrow. I bailed you out, didn't I? Now it's your turn to bail me out.</text></string>
+<string id="stalker_019_5"><text>Incoming: \nI don't have it right now! And there's nothing to sell, you know that!</text></string>
+<string id="stalker_019_6"><text>Outgoing: \nYou have a rifle, don't you? Go see Sidor — he put out a job, wants someone taken care of, pays well.</text></string>
+<string id="stalker_019_7"><text>Incoming: \nNo, I'm not a hired gun. I'm not doing that. Why don't you go yourself?</text></string>
+<string id="stalker_019_8"><text>Outgoing: \nI'm busy with something else right now! I've got to hand over a pile of cash to the crew the day after tomorrow. I'm heading out on a job too, I'll be back tomorrow morning. I'll have part of the money, and I need your share on top of that. I don't care, you understand? Find it wherever you can, otherwise I'm handing your debt over to the crew.</text></string>
+<string id="stalker_019_9"><text>Incoming: \nHave you completely lost your mind?</text></string>
+<string id="stalker_019_10"><text>Outgoing: \nThat's all. Consider yourself warned.</text></string>
+
+<string id="stalker_020"><text>Incoming: \nAre you at Agro? What the hell is going on at Agroprom?!</text></string>
+<string id="stalker_020_1"><text>Outgoing: \nLots of things going on over there. Which one in particular? :)</text></string>
+<string id="stalker_020_2"><text>Incoming: \nThis: the military reinforced the checkpoint on the route from the Garbage. Round-the-clock watch, day and night. And nobody I ask knows anything about it. Do you know anything? Maybe someone on your end has heard something?</text></string>
+<string id="stalker_020_3"><text>Outgoing: \nDoesn't seem like it. Can you negotiate with them? No way?</text></string>
+<string id="stalker_020_4"><text>Incoming: \nThey won't even let you near — almost shot me, fired warning shots over my head.</text></string>
+<string id="stalker_020_5"><text>Outgoing: \nWell... I just asked Sidor — he's playing dumb. Says he'll look into it. Something's definitely off. Maybe they're running an operation? Try again tomorrow — they probably won't hold the reinforcement for long. Guaranteed it's a one-time thing.</text></string>
+<string id="stalker_020_6"><text>Incoming: \nWhat do you mean, tomorrow?! Sanya Stepnoy fell into some pit over there, broke his leg, can't get out. He'll bleed out! Ask Sidor to at least let me through alone!</text></string>
+<string id="stalker_020_7"><text>Outgoing: \nSidor says — not before the day after tomorrow. Turns out the army brass has been poking around there for two days already, you follow? Don't even try — they've got elite special forces guarding it.</text></string>
+<string id="stalker_020_8"><text>Incoming: \nBastards. Sanya is going to die, looks like. What a stupid way for things to go...</text></string>
+<string id="stalker_020_9"><text>Outgoing: \nWhat can I do? That's the Zone, pal...</text></string>
+
+<string id="stalker_021"><text>Incoming: \nHey. Have you been to the swamp in the Valley lately?</text></string>
+<string id="stalker_021_1"><text>Outgoing: \nWell... what do you want?</text></string>
+<string id="stalker_021_2"><text>Incoming: \nIn the Dark Valley, all the grass around the swamps turned yellow overnight. In the morning we headed out to the swamps for artifacts, made it to the bridge, then turned back. We don't know if it's safe to go there. Everything around is green, but near the swamps — yellow. Unnatural. Like someone painted it.</text></string>
+<string id="stalker_021_3"><text>Outgoing: \nAre there any Flesh wandering around there?</text></string>
+<string id="stalker_021_4"><text>Incoming: \nNothing. Like everything just died out. That's the scary part. But a whole crop of artifacts showed up there overnight. There are even capsules just lying around, can you believe it?</text></string>
+<string id="stalker_021_5"><text>Outgoing: \nWrite to Semyonov. He knows about this kind of thing.</text></string>
+<string id="stalker_021_6"><text>Incoming: \nAlready wrote to him. He's not answering. And here we are — want to go, scared to go, and common sense says don't.</text></string>
+<string id="stalker_021_7"><text>Outgoing: \nTo hell with it, don't go. You only live once, as they say.</text></string>
+<string id="stalker_021_8"><text>Incoming: \nYeah. Still hurts though...</text></string>
+
+<string id="stalker_022"><text>Incoming: \nSo what's going on, where are you? Haven't forgotten about our talk?</text></string>
+<string id="stalker_022_1"><text>Outgoing: \nWhich one? Remind me. I was a bit out of it yesterday, might've forgotten...</text></string>
+<string id="stalker_022_2"><text>Incoming: \nDid you get drunk yesterday? We were supposed to go on a run. That's no way to do things.</text></string>
+<string id="stalker_022_3"><text>Outgoing: \nYeah, a little. I remember the run, just remind me where and why...</text></string>
+<string id="stalker_022_4"><text>Incoming: \nGet lost! I'm not going anywhere with you — you've probably already started nursing your hangover, and I'm supposed to drag you along? No thanks. I marched out to the farm like an idiot, thought you'd already be there... You left me hanging.</text></string>
+<string id="stalker_022_5"><text>Outgoing: \nWhy are you so sore about it? Look, I'll make it up to you — I've got some ammo in a stash... Don't worry. I really can't go today anymore. We'll link up another time.</text></string>
+<string id="stalker_022_6"><text>Incoming: \nForget it, you're all talk. Talking's the only thing you're good at...</text></string>
+
+<string id="stalker_023"><text>Outgoing: \nHeard a chopper went down?</text></string>
+<string id="stalker_023_1"><text>Incoming: \nHeard it, so what?</text></string>
+<string id="stalker_023_2"><text>Outgoing: \nThey say it was hauling supplies for the army. Provisions, all kinds of stuff. We should stock up for free. What do you say?</text></string>
+<string id="stalker_023_3"><text>Incoming: \nHow do you know it was supplies, and for the army?</text></string>
+<string id="stalker_023_4"><text>Outgoing: \nVovan brought back a whole crate of canned stew, could barely carry it. Going around all proud of himself now. The chopper's got military guards on it. The crate just got thrown far from the crash, and he grabbed it.</text></string>
+<string id="stalker_023_5"><text>Incoming: \nMaybe it wasn't from the chopper — maybe it was just sitting there...</text></string>
+<string id="stalker_023_6"><text>Outgoing: \nSure... what just sits around in the Zone? Definitely from the chopper. And if there's one crate, there's more.</text></string>
+<string id="stalker_023_7"><text>Incoming: \nLike the military are just going to let you walk up. They're really looking forward to seeing you.</text></string>
+<string id="stalker_023_8"><text>Outgoing: \nWe work something out, make a trade. Worth a shot... Maybe there's still some unclaimed stuff lying around somewhere.</text></string>
+<string id="stalker_023_9"><text>Incoming: \nNo, I'm not going. Try explaining to them we're there on legitimate business... They'll shoot us for looting...</text></string>
+<string id="stalker_023_10"><text>Outgoing: \nSuit yourself. Don't come asking later.</text></string>
+
+<string id="stalker_024"><text>Outgoing: \nHey, buddy. I'm in trouble. :(</text></string>
+<string id="stalker_024_1"><text>Incoming: \nWhat is it now?</text></string>
+<string id="stalker_024_2"><text>Outgoing: \nI went to that place, had a look. But can't get to it alone, and there are Snorks crawling all over. Barely fought my way out. One of them bit me. :(</text></string>
+<string id="stalker_024_3"><text>Incoming: \nJust disinfect the bite with iodine or antiseptic and wrap it up.</text></string>
+<string id="stalker_024_4"><text>Outgoing: \nThat's what I did. I'm just worried something might happen. I won't turn into a Snork, will I?</text></string>
+<string id="stalker_024_5"><text>Incoming: \nYou probably just snagged yourself on a branch from the shock when you saw the Snork. :) All that stuff — vampires, werewolves and the rest — it's just stories. What, do you think you're going to grow a trunk now? A dog bit me once and I didn't turn into a dog. Forget about it! You're alive, that's what matters. Get yourself patched up, then we'll go together.</text></string>
+<string id="stalker_024_6"><text>Outgoing: \nA dog is one thing, a Snork is another. They say their saliva is venomous. I won't grow a trunk, sure, but what if I start degenerating and end up like them...</text></string>
+<string id="stalker_024_7"><text>Incoming: \nStop whining!</text></string>
+<string id="stalker_024_8"><text>Outgoing: \nWell, Maloy told me how a Bloodsucker got him once. He says now his blood doesn't clot properly. Gets worse every day. He's already scared to cut sausage — what if he nicks himself and can't stop the bleeding.</text></string>
+<string id="stalker_024_9"><text>Incoming: \nMaloy made that Bloodsucker story up himself. If one had actually "got him," the dogs would've finished what was left of Maloy long ago. He's always been a liar and a coward, and always will be.</text></string>
+<string id="stalker_024_10"><text>Outgoing: \nEasy for you to say — you haven't been bitten by a Snork...</text></string>
+<string id="stalker_024_11"><text>Incoming: \nTell the guys that if you start growling, they should shoot you before you bite anyone else. :)</text></string>
+<string id="stalker_024_12"><text>Outgoing: \nAll you can do is joke. And my whole arm has swollen up. :(</text></string>
+<string id="stalker_024_13"><text>Incoming: \nGood grief! Enough! I'm switching off — I'm sick of your whining.</text></string>
+
+<string id="stalker_025"><text>Incoming: \nHow are things over there? What are you up to?</text></string>
+<string id="stalker_025_1"><text>Outgoing: \nNothing. Sitting around, waiting.</text></string>
+<string id="stalker_025_2"><text>Incoming: \nWaiting for what? For the weather to clear up?</text></string>
+<string id="stalker_025_3"><text>Outgoing: \nNo... waiting for some truck.</text></string>
+<string id="stalker_025_4"><text>Incoming: \nWhat?!</text></string>
+<string id="stalker_025_5"><text>Outgoing: \nWell, we worked something out with the eggheads. They threw us a job: according to their calculations, some truck is supposed to pass through here. We need to spot it, photograph everything. For the trouble they gave us seven days' worth of food. How they figured all that out, I have no idea — they just said if the truck doesn't show up this week, then there's no point waiting any longer.</text></string>
+<string id="stalker_025_6"><text>Incoming: \nAre you out of your minds?! They're obviously trying to catch the "truck of death"!</text></string>
+<string id="stalker_025_7"><text>Outgoing: \nWhat do we care... It's a freebie. Our job is to wait and take pictures — it's not like we're going to go chasing corpses... And there's even payment on top of that if it works out. Think about it — nothing to do except sit in one spot for a week and that's it. And we don't even have to go looking for food.</text></string>
+<string id="stalker_025_8"><text>Incoming: \nAnd what are you going to photograph — the dust from the wheels?</text></string>
+<string id="stalker_025_9"><text>Outgoing: \nNo... the road dead-ends into a pile of rubble up ahead. It'll either crash, or stop, or turn around. If it shows up at all. It's fine... We can't eat through all this food anyway, we're not doing anything and we're not even drinking vodka, so there'll be plenty left over even if we don't get any shots. And if we do get shots, they'll pay us on top. Either way, we come out ahead.</text></string>
+<string id="stalker_025_10"><text>Incoming: \nAnd how do they know a truck will come through there?</text></string>
+<string id="stalker_025_11"><text>Outgoing: \nAsk them yourself. Maybe because they've spotted these trucks everywhere else but not here yet? I don't know — that's what eggheads are for, to figure things out.</text></string>
+<string id="stalker_025_12"><text>Incoming: \nI wouldn't have agreed to it... have you heard what people say about those trucks?</text></string>
+<string id="stalker_025_13"><text>Outgoing: \nYou didn't want to go to the Valley either, always shaking in your boots — "it's dangerous here, it's dangerous there"... that's exactly why you're always broke. Smart people find easy work and don't go trembling like you do...</text></string>
+<string id="stalker_025_14"><text>Incoming: \nI'm not trembling. But I still wouldn't wait around for any truck.</text></string>
+<string id="stalker_025_15"><text>Outgoing: \nRelax — all those stories about them are just tall tales... Alright, I'll fill you in later.</text></string>
+<string id="stalker_025_16"><text>Incoming: \nSure.</text></string>
+
+<string id="stalker_026"><text>Incoming: \nHey, buddy. I'm in a bad way. :(</text></string>
+<string id="stalker_026_1"><text>Outgoing: \nSame as before — bad. :( Waiting on some doctor. The guys passed word that he'll come.</text></string>
+<string id="stalker_026_2"><text>Incoming: \nA real doctor?</text></string>
+<string id="stalker_026_3"><text>Outgoing: \nHow should I know. I'm not exactly in a position to be picky right now.</text></string>
+<string id="stalker_026_4"><text>Incoming: \nRight... At least is the place you're holed up reliable?</text></string>
+<string id="stalker_026_5"><text>Outgoing: \nIt's alright. The guys left some food and water, I'll last a couple of days... probably... at least there's signal here. They said they'd come back by.</text></string>
+<string id="stalker_026_6"><text>Incoming: \nWhy didn't they just carry you out right away?</text></string>
+<string id="stalker_026_7"><text>Outgoing: \nThey didn't dare... Say they're afraid I'll fall apart if they move me... heh.</text></string>
+<string id="stalker_026_8"><text>Incoming: \nStill cracking jokes? Good man... Hang in there.</text></string>
+<string id="stalker_026_9"><text>Outgoing: \nWhat else can I do... Truth be told, I've been thinking back over my life...</text></string>
+<string id="stalker_026_10"><text>Incoming: \nYeah?</text></string>
+<string id="stalker_026_11"><text>Outgoing: \nIt's all been pretty bad... and there's no fixing any of it, damn it all... :(</text></string>
+<string id="stalker_026_12"><text>Incoming: \nHey, cut that out! Everything's going to be fine — the doctor will come and we'll get you out.</text></string>
+<string id="stalker_026_13"><text>Outgoing: \nCome on, who are you trying to fool... Listen, you... write to you know who, you know where...</text></string>
+<string id="stalker_026_14"><text>Incoming: \nEnough of that! Just hang on! At least for these couple of days, I'm asking you... He'll definitely come. I'll find him myself and drag him to you by the collar!</text></string>
+<string id="stalker_026_15"><text>Outgoing: \nI'll try...</text></string>
+
+<string id="stalker_027"><text>Incoming: \nHey :)</text></string>
+<string id="stalker_027_1"><text>Outgoing: \nWho's this? What do you want?</text></string>
+<string id="stalker_027_2"><text>Incoming: \nIt's Kolyan. You remember Agrik?</text></string>
+<string id="stalker_027_3"><text>Outgoing: \nOh! Hey, pal, sorry, didn't recognize you. You had a different handle before, I think... Thanks again for the meds, you really came through.</text></string>
+<string id="stalker_027_4"><text>Incoming: \nDon't mention it. :) Hey, do you know Lyokha Kot?</text></string>
+<string id="stalker_027_5"><text>Outgoing: \nUmm... the one who was bragging that he took down a Boar with a bayonet knife on a dare? Sat around the campfire with him a couple of times — why?</text></string>
+<string id="stalker_027_6"><text>Incoming: \nYeah, him. I'm looking for him. If you see him, pass it on — Kolyan Denezhka dropped his PDA against the wall when he was drunk, got a new one, and well... he's rebuilding his contacts. Tell him not to message me for now if he's looking for me... And my handle is definitely different now, decided to change it with the new PDA. Got tired of the old one...</text></string>
+<string id="stalker_027_7"><text>Outgoing: \nI'll pass it on. So... how are you holding up?</text></string>
+<string id="stalker_027_8"><text>Incoming: \nCan't get through to him. Thanks, take care.</text></string>
+
+<string id="stalker_028"><text>Incoming: \nSo have you decided? Are you coming with us or what?</text></string>
+<string id="stalker_028_1"><text>Outgoing: \nHow far is the hike exactly? And what's the situation like out there in general?</text></string>
+<string id="stalker_028_2"><text>Incoming: \nWell, who's going to give you a straight answer on that, friend? It'll be whatever it turns out to be. But like Mokryak said: a week of hell and you'll be rolling in it. So — are you in?</text></string>
+<string id="stalker_028_3"><text>Outgoing: \nIf everyone else is going, then so am I, obviously! When do we move out?</text></string>
+<string id="stalker_028_4"><text>Incoming: \nTomorrow we stock up. You do the same — nobody's going to carry your sausage and ammo for you. And be there sharp the day after tomorrow, don't be late!</text></string>
+<string id="stalker_028_5"><text>Outgoing: \nI'll be there.</text></string>
+
+<string id="stalker_029"><text>Outgoing: \nTyulen, honest to God, you're a fool. What have you done?</text></string>
+<string id="stalker_029_1"><text>Incoming: \nWhat are you on about?</text></string>
+<string id="stalker_029_2"><text>Outgoing: \nYesterday you were singing away by the campfire about how the Forgotten Village has so much loot you couldn't haul it out with a dump truck! Do you have any idea how many people are going to rush out there now? It's probably a madhouse already. Even the dogs and the Cats are bolting out of there with their eyes popping out of their heads — never seen so many stalkers in one place! What were you thinking, blabbing like that?.. There won't be anything left to find there now but trampled grass!</text></string>
+<string id="stalker_029_3"><text>Incoming: \nWatch what you say to me...</text></string>
+<string id="stalker_029_4"><text>Outgoing: \nThe point is, Tyulen, that's not how things are done. What's ours is ours — you don't go shooting your mouth off about it...</text></string>
+<string id="stalker_029_5"><text>Incoming: \nYou're going to tell me what to do? Do I owe you something? About yesterday... were you cutting a path with me through the Forgotten Village? Or maybe you were watching my back while I was finding the way?</text></string>
+<string id="stalker_029_6"><text>Outgoing: \nDid you ever share anything with me? Good people vouched for you and asked me to keep an eye on you, so I did. Now I can see exactly who — or rather what — you are...</text></string>
+<string id="stalker_029_7"><text>Incoming: \nFine... then I don't know you either anymore.</text></string>
+
+<string id="stalker_030"><text>Incoming: \nDo you know where I can get my suit repaired?</text></string>
+<string id="stalker_030_1"><text>Outgoing: \nWhat do you mean where? Head to the Bar — didn't you know?</text></string>
+<string id="stalker_030_2"><text>Incoming: \nI know. Only that's out of the question. Those red-and-blacks have declared me persona non grata there. Got a message from a Duty member today. They figured it out...</text></string>
+<string id="stalker_030_3"><text>Outgoing: \nWell, damn... What happened? How did it come to that?</text></string>
+<string id="stalker_030_4"><text>Incoming: \nI stumbled into an anomaly, barely dragged myself out. Suit was completely wrecked, nothing left but rags, I was half out of my mind — fell down right next to it and heard the bushes rustling, so I let both barrels loose into them.</text></string>
+<string id="stalker_030_5"><text>Outgoing: \nDead?</text></string>
+<string id="stalker_030_6"><text>Incoming: \nI don't know. They hit the ground straight away and lobbed a couple of grenades. The moment I realized I'd shot at Duty members I was already on all fours, and that's how I took off. The anomaly saved me — threw the shrapnel upward — and I just kept crawling on all fours all the way to the Garbage. Now I'm lying here, messed up. Turns out I broke my left arm, can you believe it.</text></string>
+<string id="stalker_030_7"><text>Outgoing: \nOh, damn... Alright, hold on, let me just...</text></string>
+<string id="stalker_030_8"><text>Outgoing: \nOkay, here's the deal. I talked to a guy. Goes by Prokhor. He said one of them took a round through the arm — Lepyokha Sery. But he says he saw him — nothing serious hit him... He's on his feet and walking patrol already, just around the base for now. They're reasonable guys overall — I told them what happened, we talked it through. Bottom line — once you're back on your feet a bit, come on over. I've got three liters, and you'll owe each of them one artifact each — two total, so get them ready. They're not asking for more than that.</text></string>
+<string id="stalker_030_9"><text>Incoming: \nPal, thank you! I owe you, honest to God!</text></string>
+<string id="stalker_030_10"><text>Outgoing: \nAh, don't worry about it — we'll square up. :))</text></string>
+
+<string id="stalker_031"><text>Outgoing: \nYou know what I saw yesterday? Some new anomaly. White sparks flying up and down. I threw a pebble into it, and it just hung there for a couple of minutes, then started spinning, and whoosh! — gone.</text></string>
+<string id="stalker_031_1"><text>Incoming: \nOne of these days a pebble's going to come flying back and crack you on the head, and that'll be the end of your experiments. Go to the scientists, ask them to take you on as a lab assistant — you can push science forward and be a blessing to humanity. :))</text></string>
+<string id="stalker_031_2"><text>Outgoing: \nWash their test tubes? No thanks, I'll manage on my own — besides, I need to look out for myself first. I'm just curious — it's such a strange thing, appearing out of nowhere with no explanation. Remember when I tried to photograph that emission?</text></string>
+<string id="stalker_031_3"><text>Incoming: \nOh... when you set your point-and-shoot on a timer, right? Yeah, I remember. Though you said the camera was toast after that.</text></string>
+<string id="stalker_031_4"><text>Outgoing: \nThat's what I thought — left it in a stash, but then I started going through my stuff, picked it up and switched it on...</text></string>
+<string id="stalker_031_5"><text>Incoming: \nAnd?</text></string>
+<string id="stalker_031_6"><text>Outgoing: \nThe first frames are pure black, then overexposed — just solid white blur, but the last two... there's a face.</text></string>
+<string id="stalker_031_7"><text>Incoming: \nWhose?</text></string>
+<string id="stalker_031_8"><text>Outgoing: \nLooks like a woman's. Hard to tell — I had the camera aimed at the sky, so it's not clear. Anyway, when we meet up I'll show you.</text></string>
+
+<string id="stalker_032"><text>Log: \nWhat in the hell did I come here for? A ro-o-omantic, for crying out loud... Even back at the station, some shady type ripped me off, promising to get me through "no problem"... and he did. No problem, sure. Ha — takes a fool to make the world go round! And the hunger is something awful. There is ab-so-lute-ly nothing here. This Cordon we're stuck on, dazed by everything going on around us, is mind-numbing. At least the one in charge here — goes by Wolf — keeps some semblance of order. All sorts turn up. Yesterday some weasel was going through the bags, trying to steal something — the guys caught him and shot him behind the fence. No room for humanism here, that's for sure... And I'm scared. Very scared.</text></string>
+<string id="stalker_032_1"><text>Log: \nI watched some poor kid get his leg crushed in an anomaly — idiot went diving for an artifact without thinking... The way he screamed, God it was awful. What were we supposed to do with him? We managed to pull him back, dragged him out, bandaged him up — I gave a couple of my own bandages — but what then? We tied a tourniquet above the knee and carried him inside. Went around avoiding each other's eyes after that. The poor wretch screamed for two days! Who's going to look after him now when we're sitting here like idiots ourselves. What the hell made me come here... Why? Go ahead and try to grab those artifacts when you have no idea what they'll do to you — irradiate you to death, or turn your mind inside out...</text></string>
+<string id="stalker_032_2"><text>Log: \nAnd the mutants? Nothing touches these filthy things! The other day three of us couldn't put down a single dog. And what kind of dog is it, really — it's something else entirely. They say it's blind, but it moves like a rocket, rotten all over, hideous. The smell is unbearable. Though I'm no better — nowhere to wash up around here. To hell with all of it! I need to get home...</text></string>
+
+<string id="stalker_033"><text>Log: \nFunny... It feels like chasing the tail of a moving train... hell, I don't even know what to compare it to! ...Couple of months ago I stopped by a real estate agency, and they say prices are going up — ha! Scraped together every last ruble I'd earned and saved, showed up feeling like a big shot, and it turned out I could only afford a one-room Khrushchevka on the outskirts... Tanya, I suppose, doesn't much care where I've gone off to "earn money" this time. Up north? A shift job? Might as well be outer space. As long as I bring back cash — that's all that matters.</text></string>
+<string id="stalker_033_1"><text>Log: \nBought her a car recently — now she walks from the store to the car, and from the car to the apartment with her nose in the air, not even looking at the neighbors... funny. What do I know — maybe she's already seeing that mechanic at the auto shop. Not like I ever went there... And my Lyubashka will probably get married without ever getting an apartment. I just can't seem to get her a wedding gift in time. :) That's IT! I can't take it anymore. I'm exhausted. And Tanya is cheating — no question. Though you can understand it, but then again on the other hand...</text></string>
+<string id="stalker_033_2"><text>Log: \nFunny — the story about catching a chill after the emergency shift satisfied her. She wrinkled her nose and asked whether I was planning to go to a hospital. Sure I am. Specialists in radiation sickness are just crawling out of the walls around here. Oh, what a life! All my hopes are on the artifacts... And I'll knock Tanya's teeth out, the tramp! If I find out she's with that mechanic, I'll beat her! But that's a lie. I'm lying to myself. Truth is I couldn't care less who she's with or how. I must be sick after all. Those three minutes under the emission won't pass without consequences — everyone told me so. These nightmares...</text></string>
+<string id="stalker_033_3"><text>Log: \nProbably my subconscious trying to shake me up. And honestly — I've started coming to the Zone like it's a regular job. Got used to it, treat it like routine. Mutants, anomalies — none of it bothers me anymore. The only thing that matters is the loot and the cash for the loot! And yet somewhere deep down there's a certainty burning that this isn't what really matters. I used to be scared of the Zone something fierce, and now I can't do without it. It doesn't feel like adrenaline addiction — it's something else entirely...</text></string>
+<string id="stalker_033_4"><text>Log: \nAnd these nightmares — they're something else! Can't sleep without vodka anymore. Such a whirl of chaos in my head at night, it's enough to make you cry. The guys threw a boot at me once because I was screaming like a stuck pig. Nobody has it easy out here, sure, but apparently I was really going at it, they said...</text></string>
+
+<string id="stalker_034"><text>Log: \nWhere does all this come from? Is it just me having these dreams or everyone? Everything feels just as real in the dream as it does when I'm awake. Except I do terrible things in them. Recently I dreamed that I was looking for Ivan Sky on the Cordon for some reason, and he was asking me to bring him something. I had no intention of bringing anyone anything — instead I tossed a grenade into the campfire while the guys were sitting around it. I remember Ivan's glassy, dead herring eyes, I remember going through his corpse, slipping in the blood next to the fire... Madness? Madness! What is this garbage...</text></string>
+<string id="stalker_034_1"><text>Log: \n...Stopped by the Cordon. Everything's the same there. Ivan was getting ready to head to the Swamps, asked me to come along... I stalled for a long time, then told him about my nightmare. He got very uneasy for some reason and started rushing off somewhere right away... I got the feeling that it didn't really matter where he was going, as long as it was away from me.</text></string>
+<string id="stalker_034_2"><text>Log: \n...Vodka's garbage. You drink and don't get drunk... Yesterday there was a message on the local net about the death of some former Clear Sky member. Managed to track down people who were there — they're talking about a grenade in a campfire. Three dead, two wounded. A chill came over me all of a sudden...</text></string>
+<string id="stalker_034_3"><text>Log: \n...Couldn't fight it off and fell asleep. In the dream I was wandering through some underground passages, killing people in leather jackets and track pants — all dressed the same, all with the same face, strongly reminding me of someone. I clearly remember taking a bullet through the head. Compared to the body — it doesn't really hurt, just a dull impact, and that's it... for some reason the dream always starts with a burned-out campfire or some kind of fuse...</text></string>
+<string id="stalker_034_4"><text>Log: \nDamn these dreams! I'm starting to wonder if I'm slowly losing my mind... It all feels so real... and somehow tied to reality. And which is more real, I can no longer tell... I'm definitely losing my mind. I can't take it anymore. Killed twenty people in military uniforms in some three-story building. A loudspeaker blaring... you can hear a helicopter circling somewhere... And I'm slowly sinking, sinking, sinking... straight down into an underground passage. And I see a semi-transparent figure... And blood everywhere. Everything soaked in blood...</text></string>
+<string id="stalker_034_5"><text>Log: \nI've been lying here for the fourth day now (or fifth, I don't remember anymore), no strength to get up. I think this is it, the end...</text></string>
+
+<string id="stalker_035"><text>Log: \nWe're sitting in an old but still mostly intact cellar, hiding from the emission. God, the smell! We stink worse than bums... These suits don't let your body breathe at all, and on top of that we're always soaking wet from fear. Hygiene is completely out of the question here. Old mattresses thrown right onto the rotted floorboards are crawling with insects. Woodlice and centipedes don't even bother me anymore, but the lice... Come on, let the emission end already, come on!</text></string>
+<string id="stalker_035_1"><text>Log: \n...Lay half the day in some putrid puddle hiding from a patrol. A military group was clearing the area for the scientists. Didn't manage to slip away in time. Even my breathing was cautious — I was half-frozen to death. Drank the last half-bottle like water. Shivering.</text></string>
+<string id="stalker_035_2"><text>Log: \n...Found an artifact near an anomaly. A pale yellow clump of something with red drops on it. It was floating about ten centimeters off the ground, bobbing and spinning. I poked it with a stick — the artifact jumped like a balloon and started rolling and drifting toward the anomaly. Grabbed it with my hand like an idiot, and it hit me like an electric shock or a sack of bricks. Came to with blood on my face and blood running from my nose, but thank God the artifact hadn't gone anywhere — it was still bouncing around nearby. Rolled it with a stick into a plastic bag that had bread in it.</text></string>
+<string id="stalker_035_3"><text>Log: \n...Damn, they won't let up... On my way back, dreaming of haggling with a fence, some grim type stepped out from behind a collapsed shed with a hunting rifle and demanded I hand over the loot. In conditions like these the veneer of civilization wears off a person very quickly — I'd already had the pleasure of learning that — so I'd had the sawn-off at the ready long before I reached the village. Apparently this one didn't even have time to understand what was happening. Or couldn't bring himself to pull the trigger? That's also something you have to learn...</text></string>
+<string id="stalker_035_4"><text>Log: \n...The type's friends cornered me in a ravine. They're not actually that dangerous, honestly — but the local wildlife is something else... And it looks like they've already caught my scent. Need to get out of here before it's too late...</text></string>
+
+<string id="stalker_036"><text>Outgoing: \nWant to hear something funny?</text></string>
+<string id="stalker_036_1"><text>Incoming: \nWhat? Go on...</text></string>
+<string id="stalker_036_2"><text>Outgoing: \nOver on the Cordon, Sidorovich ordered a "Stone Blood" from some fresh-faced rookie. The kid asks him: "Wait, can a rock even bleed?"...</text></string>
+<string id="stalker_036_3"><text>Incoming: \nWhere's the funny part?</text></string>
+<string id="stalker_036_4"><text>Outgoing: \nHold on... Sidrych goes: "This is the Zone, son. Anything is possible here." And this blockhead walked past the road and started blasting away at rocks with everything he had, trying to draw blood. :)) Burned through a ton of ammo, never did get any blood out of a rock. Lucky a military patrol spotted him in time and he bolted off somewhere toward the ATP.</text></string>
+<string id="stalker_036_5"><text>Incoming: \n:) What a character... Some people are just born idiots...</text></string>
+
+<string id="stalker_037"><text>Incoming: \nHey, are you busy?</text></string>
+<string id="stalker_037_1"><text>Outgoing: \nNo, sitting by a little fire right now, managed to get some tea. Oh, it's good — haven't had any in ages. All vodka, vodka, getting sick of it already. :) What did you need?</text></string>
+<string id="stalker_037_2"><text>Incoming: \nI'm not even sure how to put this... How are you holding up after the last emission?</text></string>
+<string id="stalker_037_3"><text>Outgoing: \nSeems alright... what about you? Did you catch something?</text></string>
+<string id="stalker_037_4"><text>Incoming: \nSeems like no, but I'm spooked all the time. Something's off. Nightmares, my head running through all kinds of stuff. Here's one example: our generator at the base died. By the time anyone sorted it out, evening had hit. But the light bulbs are still glowing! Didn't notice during the day, but once it got dark — there you go — glowing. The shadows from these bulbs are kind of blue and they seem to be moving on their own, I'm telling you! I'm standing there looking at my own shadow and it's waving at me... I'm even scared to go take a leak alone now, I keep hanging around the guys the whole time and they're giving me looks... What the hell is going on?</text></string>
+<string id="stalker_037_5"><text>Outgoing: \nNo anti-rads, I take it? Just treating everything with vodka? Well, that's what happens when you keep treating...</text></string>
+<string id="stalker_037_6"><text>Incoming: \nWhat do you mean?</text></string>
+<string id="stalker_037_7"><text>Outgoing: \nI mean drink less! Switch to tea, like we did here. That's your whole problem right there.</text></string>
+<string id="stalker_037_8"><text>Incoming: \nThe DTs, you think? Oh man! And here I thought... Got myself scared for nothing. Well, thanks — that puts my mind at ease...</text></string>
+
+<string id="stalker_038"><text>Incoming: \nThe other day in the Gut I stumbled across a downed military stalker patrol group. Someone had already picked through them good before I got there, and the dogs had already had their fill. Then something possessed me to climb down into a little ravine nearby. Found a massive iron case down there, plastered all over with seals. Couldn't crack it open on the spot. So get this — I lugged it all the way to my stash on the Cordon. Cursed the whole way there: the damn thing must weigh 25 kilos! Now I'm sitting here thinking: what for? What am I supposed to do with this case?</text></string>
+<string id="stalker_038_1"><text>Outgoing: \nGive it to Sidorovich.</text></string>
+<string id="stalker_038_2"><text>Incoming: \nHow did I not figure that out myself! He pays really well for odds and ends like that. Thanks, Captain Obvious! :)</text></string>
+
+<string id="stalker_039"><text>Incoming: \nHow much longer do we have to sit around waiting for you? We'll leave without you.</text></string>
+<string id="stalker_039_1"><text>Outgoing: \nDamned if I know. Might not be worth waiting. Kuznetsov hasn't been at his post under the bridge for three days! And his replacement got killed. So the legit way across the embankment is off the table! Won two rounds against Stas and cleaned out his whole vodka stash (was going to swap it for ammo from Kuznetsov). Looks like I'll have to drink it instead.</text></string>
+<string id="stalker_039_2"><text>Incoming: \nWell then, don't let a drop go to waste! Take care.</text></string>
+<string id="stalker_039_3"><text>Outgoing: \nGood luck to you. Either way I've got next to no ammo. What kind of run can you do with a loadout like that. Another time.</text></string>
+
+<string id="stalker_040"><text>Outgoing: \nOn the subject of artifact cooking. Some of them flash when they pop out, some don't. Pick them up and try again. Usually on the second or third pass after placing the second ingredient (per the recipe) — for SF that's a bandage — the anomaly gives a long accepting flash and pulls in the rest of the ingredients on its own.</text></string>
+<string id="stalker_040_1"><text>Incoming: \nSF? \nFlash?</text></string>
+<string id="stalker_040_2"><text>Outgoing: \nSF — Stone Flower. \nFlash (Ukrainian slang) — means to flicker or sparkle (referring to light). (Google comes through again)</text></string>
+<string id="stalker_040_3"><text>Incoming: \nAh, got it. And how do you pick the right anomaly? They say you can't cook in just any one.</text></string>
+<string id="stalker_040_4"><text>Outgoing: \nWhen picking an anomaly (any type) for cooking, make sure: \n1. The ingredients don't scatter; \n2. You can easily pick up the result — meaning if you're cooking in a "Whirligig", stand a little lower, or the cooked artifact might fly off into the stratosphere.</text></string>
+
+<string id="stalker_041"><text>Outgoing: \nI just cannot get past the northern checkpoint! The moment I try, they're already right there. I have to turn tail every time.</text></string>
+<string id="stalker_041_1"><text>Incoming: \nWho's "they"? Bandit thugs — looters?</text></string>
+<string id="stalker_041_2"><text>Outgoing: \nIf only! At least you can negotiate with those. Tushkanos...</text></string>
+<string id="stalker_041_3"><text>Incoming: \nTushkanos? Come on, man... Have you tried shooting them?</text></string>
+<string id="stalker_041_4"><text>Outgoing: \nTried that. They're just too damn hard to kill, and I'm still green — can't hit anything.</text></string>
+<string id="stalker_041_5"><text>Incoming: \nAlright, listen here, "greenie" — they've got a nest there. That's what they're protecting. So grit your teeth and run like hell until you're past the nest. The Tushkanos will back off on their own. Sure, they'll bite you on the backside a couple of times. But that's nothing. You can show off the scars to the girls later — something to brag about.</text></string>
+<string id="stalker_041_6"><text>Outgoing: \nThanks for the tip, old man. Going to try your recommendation right now.</text></string>
+<string id="stalker_041_7"><text>Incoming: \nGo for it. And once you're through — drop me a line. There's already bets riding on you out here...</text></string>
+
+<string id="stalker_042"><text>Log: \nHeard plenty of times that you can booby-trap a stash, but what's the right way to do it? Just put grenades in it? Because those are exactly what got stolen from me... \nMaybe I had no business coming to the Zone... This isn't for me...</text></string>
+
+<string id="stalker_043"><text>Outgoing: \nWhat the hell? Lyoha Tambovski is wandering around Agro. I come out to the Garbage — and who do you think it is? Lyoha Tambovski, but a different mug and different gear. More Zone tricks?</text></string>
+<string id="stalker_043_1"><text>Incoming: \nNope. Just two Lyokhas. Both from Tambov.</text></string>
+
+<string id="stalker_044"><text>Outgoing: \nAra, listen — with great hardship I get forty bottle. From Bar I carry 20, another 20 Stas he guard at Sidor. I come Cordon — no Sidor... business trip. One sleep — no Sidor. Two sleep — no Sidor. Three sleep — again no! On fourth morning he come back, tourist! Here you go, take loot, give vodka! Run to embankment — Kovalchuk... One sleep — Kovalchuk, two sleep — Kovalchuk. On third — hurray! Kuzya return. Here, Kuzya, take your vodka, give AK-47. Vakh, good! Only five day total I sleep.</text></string>
+
+<string id="stalker_045"><text>Outgoing: \nI've got a stalemate situation on my hands... Grabbed a load of vodka from Stas — and headed to Kuznetsov to trade. But he's not there. Some young guy standing in his place instead. Went and slept for three days. Same one again. Slept another three days — same Kovalchuk... What am I supposed to do? Who do I offload the vodka to?</text></string>
+<string id="stalker_045_1"><text>Incoming: \nWhile you've been sleeping, that's when Kuzya's been on duty.</text></string>
+
+<string id="stalker_046"><text>Log: \nSidorovich left. For two days. Forced to drag Prapor's crate around with me everywhere. Heavy as sin, the damn thing! Rations are running low. Bought out everything the stalkers in the village were willing to part with. Had to make a run to the Garbage and strong-arm the bandit thugs for some. Still not enough. And someone cleaned out the stash on the roof. Left only matches and a couple of girlie magazines. Meanwhile everyone else is sitting around the campfire with vodka. They all complain: "Feeling kind of down, let's have a drink." Could've offered me some, at least... Two days gone — still no Sidor. And will he even come back?</text></string>
+
+<string id="stalker_047"><text>Letter: Part 1 \nWith greetings and wishes for long years and nothing but good fortune — your friend for life! I already wrote to you before about how my stash on the Garbage got "warmed up" and someone made off with a pile of good stuff, including an AK cooked in a Fruit Punch, a stalker jacket upgraded by Docent, a "Spring", a Saiga, and various vodkas, medkits, and sausages. I asked the old hands — is it worth getting upset about and launching an inquiry? The "Good Samaritans" hinted — yes, it is. \nSo I decided to start the investigation at the Hangar on the Garbage. I go around greeting my colleagues, making small talk, while keeping an eye out — who's got what piece in their hands.</text></string>
+<string id="stalker_047_1"><text>Letter: Part 2 \nAnd I come across a certain Barabashka. The mug, to put it plainly... Not that I'm Stirlitz myself, but this one either had French ancestors or just bears the mark of genetic degradation all on his own. And what's telling — he's swinging a Saiga around with a very casual air. But what really put me on edge was when he offered to sell me a jacket, exactly like mine. Sure, maybe it's just the same model — but they're not exactly lying around on every corner...</text></string>
+<string id="stalker_047_2"><text>Letter: Part 3 \nWell then, alrighty, I think to myself. Let me have a poke around the nearby stashes. Naturally, in the very first one I find (three cheers!!!) my cooked rifle and the rest of my rightful property, including the "Spring". And a tripwire. Naturally, a message comes in about getting my face rearranged. Signed by Monsieur Barabashka. Which is precisely what was needed. Incidentally, along with the threats came a helpful suggestion that it would be better not to run into the stash's owner anymore. Oh sure, RIGHT! As they say in the cartoons: "You're just the one I needed! You, my good sir, have seen fit to eat MY carrot..."</text></string>
+<string id="stalker_047_3"><text>Letter: Part 4 \nI picked up my little Kalash (already repaired and loaded, thank you very much, Barabashka!) and headed off to the showdown with the "degenerate". And there he is already waiting for me, giving a little salute from his (my) Saiga right at my head. Didn't kill me — just winged me a bit. His mistake. I squeezed off a short burst — and no more Barabashka. Everyone around was satisfied, nobody cried over him — he started it, not me. That's how I restored justice with my own two hands...</text></string>
+
+<string id="stalker_048"><text>Outgoing: \nCan anyone tell me how the scientists at Yantar behave when it comes to theft? Thinking of making a stash right inside the bunker. Hoping science hasn't gotten that desperate in the Zone.</text></string>
+<string id="stalker_048_1"><text>Incoming: \nSeems like they don't steal. I personally kept weapons, armor and other junk there. All fine.</text></string>
+<string id="stalker_048_2"><text>Incoming: \nDuty members steal and re-hide stuff somewhere nearby — like children. Like mean children — the bastards booby-trap it! So then you find it but can't just take it. :( The scientists there are alright though, they don't even suspect anyone's stashing things with them. Unless it's vodka, mind you.</text></string>
+
+<string id="stalker_049"><text>Outgoing: \nDo I really have to go back through the same tunnel with the Electros? But how?</text></string>
+<string id="stalker_049_1"><text>Incoming: \nListen here, son. Get out a bolt and wait for the last Electro in front of you to go dark. Run forward and stop just before the active Electro, leaving enough space for the next one to appear. Watch for when the Electro behind the active one goes dark. The moment it does, throw the bolt at the active Electro to discharge it, then bolt through. Same thing with the second set of Electros — and you're at Sidor's.</text></string>
+<string id="stalker_049_2"><text>Outgoing: \nWell, I'll be damned... No way I'm getting through that.</text></string>
+<string id="stalker_049_3"><text>Incoming: \nScared? And not even embarrassed to broadcast it...</text></string>
+<string id="stalker_049_4"><text>Outgoing: \nYep, I want to live, not embarrassed to say it, and don't plan on starting to be.</text></string>
+<string id="stalker_049_5"><text>Incoming: \nWell then, off you go... Humiliate yourself for some canned stew...</text></string>
+<string id="stalker_049_6"><text>Outgoing: \nOff I go then. And not for canned stew... For sausage...</text></string>
+
+<string id="stalker_050"><text>Outgoing: \nArkasha, have you ever tried a flamethrower? Is it worth renting one?</text></string>
+<string id="stalker_050_1"><text>Incoming: \nNever tried a flamethrower — too heavy, and in my stalker suit every gram counts.</text></string>
+<string id="stalker_050_2"><text>Outgoing: \nGot it. So there's no point in me bothering with one either.</text></string>
+
+<string id="stalker_051"><text>Incoming: \nPakhom, you so... son of a dog! I hauled him a jar of "Fruit Punch", dumped it on the counter, and he just grunted and won't even talk to me.</text></string>
+<string id="stalker_051_1"><text>Outgoing: \nPakhom doesn't like repeating himself. And he doesn't like it when people don't listen properly. He said A COUPLE OF JARS, and you brought one.</text></string>
+<string id="stalker_051_2"><text>Incoming: \nI thought it was just a figure of speech... Pakhom is a man of principle, I'll give him that!</text></string>
+
+<string id="stalker_052"><text>Log: \nOn repairs: \nDon't forget to remove everything that isn't factory — ammo, scopes, etc. — they'll give it back loaded, but any attachments you forget will go to charity. And good luck trying to prove otherwise afterward — you'll wear yourself out and get nowhere.</text></string>
+
+<string id="stalker_053"><text>Log: \nAt the Swamps, at the old Clear Sky base, the trader who collects "Fruit Punch" — Pakhom, I think — has started buying animal limbs for very good money. Need to quietly pass this on to my guys.</text></string>
+
+<string id="stalker_054"><text>Log: \nSpent a long time dealing with the army boys myself: pay up, hand over vodka, and if you try to sneak through they'll shoot you on the spot. So now I do it like this: I grab one of the crates at the dairy farm and drag it up to the wire (where the open container sits between the tunnel and the bridge). Getting in — two jumps over the wire, free of charge. Getting back — costs food: the invisible "Witch's Jelly" burns for far too long and far too unpleasantly.</text></string>
+
+<string id="stalker_055"><text>Outgoing: \nWhere can I get more underbarrel grenades — I'm barely finding any. Also, is it worth picking up Sultan's shortened Dragunov? Good piece of kit? Anyone used one?</text></string>
+<string id="stalker_055_1"><text>Incoming: \nFor which underbarrel launcher? If it's ours, do some work for Voronin — he'll sort you out. If it's a NATO one, you can trade a modificate to Sidor for some.</text></string>
+
+<string id="stalker_056"><text>Outgoing: \nThe Duty guys at Yantar are something else! I'm clearing my head by the campfire near the bunker, and then an Electrochimera comes straight at the gate! I didn't even have time to get scared — they tore it apart with a couple of bursts just like that.</text></string>
+<string id="stalker_056_1"><text>Incoming: \nThat's them alright! If they'd just stop going through other people's stashes — they'd be worth their weight in gold!</text></string>
+
+<string id="stalker_057"><text>Outgoing: \nWell, lucky us! Second day in the Zone and we've already got a recipe for cooking a "Goldfish"! Tier three! We'll cook it, hand it to Sidor, and we can get out of here!</text></string>
+<string id="stalker_057_1"><text>Incoming: \nAnd where did you dig that up?</text></string>
+<string id="stalker_057_2"><text>Outgoing: \nWent behind the sheds to take a leak and picked up a scrap of paper on the way. Sitting here turning it over in my hands. Paper's gone soggy but you can still make it out.</text></string>
+<string id="stalker_057_3"><text>Incoming: \nWell? Don't keep me in suspense.</text></string>
+<string id="stalker_057_4"><text>Outgoing: \nNeeds a pseudodog tail, some Stone Blood and some "gr"..</text></string>
+<string id="stalker_057_5"><text>Incoming: \nMaybe "grams"?</text></string>
+<string id="stalker_057_6"><text>Outgoing: \nMaybe. There's also the word "flash"... hmm. Looks like this: you throw the tail into a Fruit Punch and pour in however many grams of Stone Blood until there's a flash — it should spark, I think... and you cook it for ten minutes. Only it's not clear what the Fruit Punch is supposed to be made of. Seems like there are pigs around here... They've mutated, sure, but maybe it'll do — as long as it doesn't blow up.</text></string>
+<string id="stalker_057_7"><text>Incoming: \nAlright, I've got a tail — cut it off a dead dog. Smells a bit, but it's mostly intact. I've got a pot too, I'll find something to make Fruit Punch from. The only thing I don't get is what this Stone Blood is...</text></string>
+<string id="stalker_057_8"><text>Outgoing: \nI can't figure that out either. Better ask around the veterans.</text></string>
+<string id="stalker_057_9"><text>Incoming: \nWe can. Just be careful! Don't let them figure out we've got a recipe.</text></string>
+
+<string id="stalker_058"><text>Log: \nI divide Snorks into two types... roughly, for my own purposes — regular and Yantar. Yantar, because that's where I first ran into ones like that. They look different — different coloring, different look somehow... and they're vicious as hell. But dumb — both kinds. Though sometimes something comes over them. When they come in a group, they can actually use tactics — one straight at you, one from the side, just keep turning to keep up.</text></string>
+
+<string id="stalker_059"><text>Log: \nCaught an interesting moment today. Walking to Yantar loaded up, decided to slip quietly past the lowlifes at the unfinished building. Already near the mercs' trailer when the bastards spotted me. Traded shots with them — dropped two, wounded one. Then an emission, damn it all! I ducked into the trailer, thinking the wounded one was done for. Waited it out — went to finish collecting the haul, and the lowlife is alive! Felt sorry for him — just a kid. While I was pulling a medkit out of my backpack, he — bam! — gone, that lowlife. Vanished into thin air.</text></string>
+
+<string id="stalker_060"><text>Incoming: \nI would've splattered that guard's brains all over Sidorovich's bunker after the first time he tried that, and my hand wouldn't have trembled one bit.</text></string>
+<string id="stalker_060_1"><text>Outgoing: \nAnd how many brains have you splattered so far? With your steady hand.</text></string>
+
+<string id="stalker_061"><text>Log: \nTried to cook a "Porcupine" from an "Urchin" — got the recipe — been dancing around several Burners, nothing works, it just sits in the Burner and hisses. Maybe there are other conditions? Read a prayer, bang a drum... to whoever gave me the recipe...</text></string>
+
+<string id="stalker_062"><text>Incoming: \nHey guys, people... Can anyone tell me where the kill spot is on the Boars in the Dark Valley? The damn things won't go down — I'm aiming strictly for the eyes and barely doing anything... 300 rounds for two Boars. It's not like I'm going to be throwing grenades at them...</text></string>
+<string id="stalker_062_1"><text>Outgoing: \nWell, if it were easy, nobody would be paying you good money to do it.</text></string>
+<string id="stalker_062_2"><text>Incoming: \nFair point. But still — how?</text></string>
+<string id="stalker_062_3"><text>Outgoing: \nThat's a special breed, near the swamps — armored. There's just one family of them, the rest are normal — buckshot takes them down easy. You can tell them apart by their color — the ones you can't penetrate are lighter. You can just leave them alone over one eye, if you want.</text></string>
+
+<string id="stalker_063"><text>Outgoing: \nAnyone know where to get a chimera kidney?</text></string>
+<string id="stalker_063_1"><text>Incoming: \nOoh, he needs a kidney... In the Dark Valley, on the hill, there's about six Chimeras running around. Go ask them.</text></string>
+
+<string id="stalker_064"><text>Outgoing: \nBy the way, how do you take down an Electrochimera?</text></string>
+<string id="stalker_064_1"><text>Incoming: \nGet some distance and shoot, or use grenades. Either you drop the Chimera, or you get away fast enough.</text></string>
+<string id="stalker_064_2"><text>Incoming: \nI took down my first Chimera like this: near the helicopter — you know the spot — there's a brick wall running along the building with a ledge next to it. I climbed up and shot from there, the Chimera couldn't get out of the tunnel, a UAZ was blocking the way.</text></string>
+<string id="stalker_064_3"><text>Outgoing: \nI reckon the Chimera didn't die from your bullets — it died of heartbreak that it never got to know you better. :)</text></string>
+
+<string id="stalker_065"><text>Log: \nA neutral at the farm is selling ammo cheap... took the risk, bought some... seems to fire, seems to kill... but there's still a nagging feeling something's off.</text></string>
+
+<string id="stalker_066"><text>Log: \nAt the abandoned car lot I was in shock — after shooting at some Tushkanos, I hit a "Bungee". Stalkers shouting: "Get over here!" And I'm standing there gulping medkits, trying to figure out where to run so I don't die... What a rush!</text></string>
+
+<string id="stalker_067"><text>Log: \nFor what it's worth, my shotgun only flew out of my hands once — a Boar knocked it loose in the Swamps — I grabbed it and still won the fight. But then neither Vergas nor I could repair it ourselves with repair kits. Only the four-eyes agreed to do it for next to nothing — I was actually surprised, thought he'd turn me down too...</text></string>
+
+<string id="stalker_068"><text>Log: \nCherkasy. Rechnoy Proyezd 2, building 1, apt. 29. Galya (Oksana's friend)</text></string>
+
+<string id="stalker_069"><text>Outgoing: \nWhat's the door code to get into the lab?</text></string>
+<string id="stalker_069_1"><text>Incoming: \nHave you tried just opening the door? If I recall, there was no code there. Or knock — maybe someone will answer.</text></string>
+
+<string id="stalker_070"><text>Incoming: \nGot offered either an AK-103 or an AK-101. What would you recommend?</text></string>
+<string id="stalker_070_1"><text>Outgoing: \nHard to say... depends what you're going for. The 101 has better accuracy and reliability. But the real question is the round. The 101 takes 5.56 — pretty rare around here, sometimes you have to haul all the way to the Warehouses for it. Now the 103 takes 7.62 — that's where the real stopping power is. And the ammo is everywhere, which is exactly why I picked it up back in the day.</text></string>
+<string id="stalker_070_2"><text>Incoming: \nGot it, something to think about...</text></string>
+
+<string id="stalker_071"><text>Log: \n"Whirligig." There's a whistle to it, mesmerizing — like the wind before an emission. And above the spot it's almost like a swarm of midges. Don't stand around gawking — pull yourself together and get away from it fast before it sucks you in.</text></string>
+
+<string id="stalker_072"><text>Log: \n"Vortex." Sounds like a Whirligig, but dust and leaves spiral around it along the ground. And the air movement is more noticeable. The main thing is not to mix them up — if there's no "midge swarm" above the hum, that's a Vortex, not a Whirligig. To check, I throw a pinch of struck matches — something heavier is risky — might come back at you.</text></string>
+
+<string id="stalker_073"><text>Log: \n"Springboard." Rumbles like a distant train. And ripples spread out from the spot, like a stone dropped in water. Once it gets you there's no breaking free — same nasty business as "Witch's Jelly," meaning invisible "Fruit Punch" — slows you down and tears you apart from inside. I call it "Dead Stop" in my head. Best not to get close.</text></string>
+
+<string id="stalker_074"><text>Log: \n"Witch's Jelly," or invisible "Fruit Punch." Nasty stuff. Step in it and it'll eat right through your suit, and then you start bleeding. Pure chemistry — that's the only word for it. One good thing: if you move carefully and don't rush, you can hear it clearly (bubbles like that soup in the commercial). And if you throw something at the spot, a stain spreads out — what Sakharov calls a "toxic-chemical" color.</text></string>
+
+<string id="stalker_075"><text>Outgoing: \nBad rumors spreading through the Zone. The mutants are changing. Survivors say the creatures have started taking down stalkers from a distance. Chimeras howl, and when they do the stalker freezes up like Sidorovich spotting an artifact — can't run, can't jump. And then the two-headed thing leaps and tears him apart.</text></string>
+<string id="stalker_075_1"><text>Incoming: \nTall tales...</text></string>
+<string id="stalker_075_2"><text>Incoming: \nI wouldn't be so sure... Heard it from reliable people: a Bloodsucker — get this — doesn't even seem to be reaching the poor stalker, and yet the bastard is draining his blood! Not with those hellish tentacles of his either — it's like he's got an invisible knife in his claw! And it cuts, cuts away slowly, the scumbag, bleeding him out! Stalkers come out of encounters with one looking like mummies wrapped in bandages! One guy said: from now on he's not leaving the Bar without a bag full of medkits and bandages. That's how it is.</text></string>
+
+<string id="stalker_076"><text>Outgoing: \nWolf, we picked up a couple of your ragamuffins at the Garbage near the little swamp — sitting under a tree huddled up against each other. And notably, between the two of them all they had was one artifact belt with no pouches.</text></string>
+<string id="stalker_076_1"><text>Incoming: \nDefinitely mine?</text></string>
+<string id="stalker_076_2"><text>Outgoing: \nAt first we thought they were fags, were going to leave them for the Zombies to sort out — but then they started howling like Tushkanos in the cold... Anyway, they say they were on a job for you, when Borov's lot grabbed them and roughed them up for good measure. All they left them was their flashlights — and one each under the eye.</text></string>
+<string id="stalker_076_3"><text>Incoming: \nIf they came from the Valley through the Gut — definitely mine.</text></string>
+<string id="stalker_076_4"><text>Outgoing: \nYours, yours. We'll walk them to the camp, after that you're on your own — we can't afford to waste time on them, we've got our own plans.</text></string>
+<string id="stalker_076_5"><text>Incoming: \nThanks, guys. I'll send Petruha with the lads to pick up the poor wretches.</text></string>
+<string id="stalker_076_6"><text>Outgoing: \nThanks doesn't pour into a glass or hang on your belt.</text></string>
+<string id="stalker_076_7"><text>Incoming: \nMessage received. I'm at base — come by after the run, we'll share whatever the Zone provides.</text></string>
+
+<string id="stalker_077"><text>Outgoing: \nLiving the high life, pal, if you're tossing artifact cases around. I picked up your contraption at the Garbage.</text></string>
+<string id="stalker_077_1"><text>Incoming: \nHow is it mine?</text></string>
+<string id="stalker_077_2"><text>Outgoing: \nYour initials are on the lid — you scratched them in front of me when we were sitting at the campfire. Don't you care? It's practically new. Scrape the dried Zombie brains off it and you could sell it to Sidor — he won't give much, but enough to drink your sorrows away.</text></string>
+<string id="stalker_077_3"><text>Incoming: \nThrow it out! I nearly kicked the bucket because of that case.</text></string>
+<string id="stalker_077_4"><text>Outgoing: \nI love a good story. Come on, spill it.</text></string>
+<string id="stalker_077_5"><text>Incoming: \nWhat's there to tell... Last week I found two capsules at Yantar — while I was packing them into the case, Snorks came up on me. I dropped it and climbed up a pipe. Burned through five magazines before they backed off.</text></string>
+<string id="stalker_077_6"><text>Outgoing: \nAnd then? Don't keep me hanging!</text></string>
+<string id="stalker_077_7"><text>Incoming: \nStop rushing me! I grabbed the case and headed to the bunker with the nerds for the night. Woke up — head's spinning, feeling sick. Then I see bullet holes in the case — turns out while I was dealing with those things I'd put holes in more than just them. Long story short, I caught one hell of a radiation dose. And on top of that they kicked me out of the bunker — can't show my face there now...</text></string>
+<string id="stalker_077_8"><text>Outgoing: \nTough break... You should've taken it to Lisaped — sure, he's a bit fried from electricity, but the kid's sharp and knows his weapons. They say he never even held a gun before, but after he came to following a fall from a utility pole, those gunsmithing skills just came to him on their own. He'd have sealed up the case for you, cheap too.</text></string>
+<string id="stalker_077_9"><text>Incoming: \nSure, I'll just go to Lisaped! Filka Lapot told me how before his last run he asked Lisaped to replace the terminals on his artifact belt pouches. Next day Filka heads to the Sanatorium with that belt, and there are dogs circling around. Filka had a "Bubble" on him — the kind that keeps dogs away — so he tossed it into a pouch and sparked it.</text></string>
+<string id="stalker_077_10"><text>Outgoing: \nWell? Did it work?</text></string>
+<string id="stalker_077_11"><text>Incoming: \nHow do I put this — I don't know what Lisaped did with those terminals, but instead of the "Bubble," Filka activated his right testicle, so the dogs scattered from his screaming, not from any artifact. He doesn't wear the belt anymore. But ever since, the moment he sees a dog he hits the deck, grabs his crotch and starts begging for medkits.</text></string>
+
+<string id="stalker_078"><text>Outgoing: \nSaw Mole with a flashlight I've never seen the likes of in the Zone — wonder where he dug up a floodlight like that. Must eat through batteries the way "Black Mark" eats through your health.</text></string>
+<string id="stalker_078_1"><text>Incoming: \nMole is an old digger — they say he was searching for Ivan the Terrible's library through the Kremlin's underground passages in Moscow.</text></string>
+<string id="stalker_078_2"><text>Outgoing: \nAnd? Did he find it?</text></string>
+<string id="stalker_078_3"><text>Incoming: \nSeems like he found something — he got into some kind of scuffle underground, either with rivals, or with the feds, or with the locals down there — they don't like having their peace disturbed. Anyway, he had to make himself scarce for a long time. Now he's crawling around under the Zone — put a team together, they're looking for something too.</text></string>
+<string id="stalker_078_4"><text>Outgoing: \nAnd he brought that floodlight with him?</text></string>
+<string id="stalker_078_5"><text>Incoming: \nPetrenko hooked him up with the flashlight. That schemer could bring you an atomic submarine or Angelina Jolie — as long as you've got the cash.</text></string>
+<string id="stalker_078_6"><text>Outgoing: \nWell, good to know — I'll keep that in mind. And when did you last see Mole?</text></string>
+<string id="stalker_078_7"><text>Incoming: \nA while back, but I've heard from people that after a run-in with the army boys in the Agroprom tunnel he's been licking his wounds. Word is he's planning to head to the Thicket, into the caves. Can't sit still.</text></string>
+<string id="stalker_078_8"><text>Outgoing: \nWhat a life — some can't find happiness above ground, others find it below... Alright, old timer, until next time. And tell Sidor: I'll cook a couple more Jellyfish and swing by the village — have some bits and pieces ready for me.</text></string>
+<string id="stalker_078_9"><text>Incoming: \nRighty-o!</text></string>
+
+<string id="stalker_079"><text>Outgoing: \nHey, Vergas, what gives? After your repair job my PDA isn't working at all. Something's off: won't show the time, recipes are gone, messages only send every other time. You looking to get an earful, old man?</text></string>
+<string id="stalker_079_1"><text>Incoming: \nWhy are you barking, son? I'm no programmer, after all. My job is small — charge a battery, wipe the little screen clean of your fingerprints, clean the buttons of canned stew — fixing software problems is a job for a proper person. So, no offense, and, as Sidor's guard likes to say: "To spare you any disappointment, would it be possible to receive payment?"</text></string>
+<string id="stalker_079_2"><text>Outgoing: \nYou're a real piece of work, old man. Alright, I'll bring it by if you tell me who this person is. Probably some egghead. That means I'd have to trek all the way to the Swamps or even Yantar. Docent's place is off the table for me — the Duty guys don't exactly spare bullets when they see me, never mind that they're on the taxpayer's dime.</text></string>
+<string id="stalker_079_3"><text>Incoming: \nWhat's his name, you ask? Blasted memory, it's right on the tip of my tongue but won't come to me... something Musketeer-ish... Aramis, Porthos... ah — Athos. Definitely Athos. He even had one of those fashionable wide-brimmed hats, until he traded it to Robinson for some hair product. Now there's a real programmer, not like me.</text></string>
+<string id="stalker_079_4"><text>Outgoing: \nAre you out of your mind, you senile old galosh? You think I'm an idiot? That lunatic ended up in the Zone when the fence at the mental ward caved in.</text></string>
+<string id="stalker_079_5"><text>Incoming: \nBarking again, son! Your mother will scold you!</text></string>
+<string id="stalker_079_6"><text>Outgoing: \nSorry. I've been on edge since the emission. But the moment that guy powders his nose he starts going on about some vision he had, telling him to go to the Foggy Thicket and extract a philosopher's stone from a "Symbiont" artifact — you know, to turn tin cans into gold. An undertreated alchemist, for crying out loud.</text></string>
+<string id="stalker_079_7"><text>Incoming: \nThat's about right. He organized a whole cult out there. These acolytes wander around the Zone after him, and he's like their high priest. Every night he gathers his flock by the campfire and launches into sermons. And the rabble sit there mouths hanging open, slobbering... hanging on every word.</text></string>
+<string id="stalker_079_8"><text>Outgoing: \nAnd? Any success?</text></string>
+<string id="stalker_079_9"><text>Incoming: \nNot a chance in hell! The things they tried with that "Symbiont" — dunked it in a swamp on Midsummer's night, hammered in bolts pulled off a corpse — only thing they didn't try was smearing it with dung, and all for nothing...</text></string>
+<string id="stalker_079_10"><text>Outgoing: \nAnd where are they doing all this shamanism?</text></string>
+<string id="stalker_079_11"><text>Incoming: \nThey'd have kept dancing in circles till the Greek calends if Father Diodor hadn't broken up that little crowd. He tied their ringleader to the wall in the swamp chapel and drove the demons out of him... along with whatever was left of his mind...</text></string>
+<string id="stalker_079_12"><text>Outgoing: \nI get the feeling there's nobody left to fix my PDA. I'll have to look for a new one.</text></string>
+<string id="stalker_079_13"><text>Incoming: \nWell, my friend, next time you're passing by — drop in. I'll lubricate your device with a bit of vodka. Might help...</text></string>
+
+<string id="stalker_080"><text>Outgoing: \nGuys, turns out they had good reason to throw Sultan out of the Bar!</text></string>
+<string id="stalker_080_1"><text>Incoming: \nHow so?</text></string>
+<string id="stalker_080_2"><text>Outgoing: \nYou've got to watch yourself with that one. I got suckered in — ordered a mini-Dragunov. Spent three days begging Tooth for the recipe, another day cooking the modificate. Burned through half my ammo getting to the stash where the sniper rifle was. And what did I get?.. A peashooter, that's what I'll tell you. Good for scaring rats and nothing else.</text></string>
+<string id="stalker_080_3"><text>Incoming: \nSeriously? It's that bad? Or is someone just a lousy shot?</text></string>
+<string id="stalker_080_4"><text>Outgoing: \nNext time I'm near the Bar I'm rearranging Sultan's face! No, guys — SVD is the only way. That Dragunov can rot in the stash at the Garbage...</text></string>
+<string id="stalker_080_5"><text>Incoming: \nNow, about that stash — let's hear more. We'll give that sniper rifle a fair assessment, heh heh...</text></string>
+
+<string id="stalker_081"><text>Outgoing: \nDon't buy artifact modification recipes from Tooth. All garbage.</text></string>
+<string id="stalker_081_1"><text>Incoming: \nWatch what you're saying!</text></string>
+<string id="stalker_081_2"><text>Outgoing: \nLook: I cooked everything by the recipe, only instead of a Jellyfish I used a Gravi, instead of a Snork leg I threw in a Boar hoof, and I cooked it in a Vortex instead of a Whirligig. Got complete garbage — even Sidor wouldn't buy it!</text></string>
+<string id="stalker_081_3"><text>Incoming: \nAnd when you go up against a Bloodsucker, put on underwear instead of armor, grab a stick instead of a rifle, hold a bolt instead of a knife. And instead of running, walk right up to it puckered for a kiss...</text></string>
+
+<string id="stalker_082"><text>Outgoing: \nHey, what are the army boys looking for at Agroprom again?</text></string>
+<string id="stalker_082_1"><text>Incoming: \nNo idea myself. A few days ago I was watching one of them through binoculars, heard him talking to someone over the radio.</text></string>
+<string id="stalker_082_2"><text>Outgoing: \nProbably someone on the run again.</text></string>
+<string id="stalker_082_3"><text>Incoming: \nDoubtful. This soldier had some kind of device with him. Like a scanner. Who knows what they've cooked up this time.</text></string>
+<string id="stalker_082_4"><text>Outgoing: \nWas he looking for artifacts? Or probing anomalous fields?</text></string>
+<string id="stalker_082_5"><text>Incoming: \nI heard they found a spatial anomaly there — still don't know where it throws you to. Or maybe it's throwing things at them from somewhere.</text></string>
+<string id="stalker_082_6"><text>Outgoing: \nThat's where all the wildlife in that area is coming from. They're pouring out of that anomaly.</text></string>
+
+<string id="stalker_083"><text>Log: \nWhere do these brainless Flesh come from! I spent half a day chasing one green beast all over the Swamps just to get its hide — burned through a ton of ammo! And then the damn thing ran straight into a Whirligig. I swear it did it on purpose so it wouldn't have to give me the hide! Rotten thing.</text></string>
+<string id="stalker_083_1"><text>Log: \n...Tracked down another green Flesh. Decided to shoot out a limb right away so it couldn't run so fast. It still bounds along on three legs, you can't catch the thing! But it tired out quick. Just when I thought I had it, the beast runs straight into a Bloodsucker. One hit — it's done. I barely got away while it was busy feeding. Again without a hide.</text></string>
+<string id="stalker_083_2"><text>Log: \n...Stopped in at the Gut to see the hunters. Asked if you could make a lure that attracts Flesh. Preferably green ones. They looked at me like I was stupid. Suggested I try whistling through two fingers. Comedians.</text></string>
+<string id="stalker_083_3"><text>Log: \n...Can Flesh conspire together? Tracked down another green one. Started the chase, but the cunning beast bolted straight into a Boar herd. While I was fighting them off, hunters showed up at the noise. They dropped the Boars and the Flesh both. Took everything for themselves. Freeloaders. Maybe I should try hunting Pseudodogs instead?</text></string>
+
+<string id="stalker_084"><text>Outgoing: \nI'm at the Army Warehouses. Just watched a Chimera maul a stalker. Near the farmstead by the Freedom base. Dragged the body into a house. The stalker had a great suit on, backpack packed solid too. Who's coming with me to kill the beast? We split all the loot equally.</text></string>
+<string id="stalker_084_1"><text>Incoming: \nDid the Chimera drag off that stalker's gun too? Or did you already help yourself?</text></string>
+<string id="stalker_084_2"><text>Outgoing: \nThe Vintorez? It's lying right next to the house. I'm watching through binoculars — not too keen on walking up alone.</text></string>
+<string id="stalker_084_3"><text>Incoming: \nAlright, wait a bit — I'm nearby, I'll swing over to you. Only the Vintorez is mine, yeah?</text></string>
+<string id="stalker_084_4"><text>Outgoing: \nThat thing's no use to me anyway — it's a jam-happy peashooter. Let's get the job done first, then we'll talk.</text></string>
+
+<string id="stalker_085"><text>Incoming: \nHey.</text></string>
+<string id="stalker_085_1"><text>Outgoing: \nHey yourself.</text></string>
+<string id="stalker_085_2"><text>Incoming: \nYou at the Bar right now?</text></string>
+<string id="stalker_085_3"><text>Outgoing: \nYeah — get some repairs done, rest up for a couple of days.</text></string>
+<string id="stalker_085_4"><text>Incoming: \nWhat's going on over there? Did someone mutate, or did some beast break through the checkpoints and wipe out a bunch of people?</text></string>
+<string id="stalker_085_5"><text>Outgoing: \nWhat? Oh... that... Let me fill you in on the beast-mutant situation. You know Fedka Piston?</text></string>
+<string id="stalker_085_6"><text>Incoming: \nHalf the Zone knows him. You sit down with the guys by the fire, slice up a sausage stick, crack open a bottle to treat the psychic damage... and then this one shows up. Ambles over. Takes off his worn-out boots, hangs his century-old socks on them, and sticks his feet practically into the fire. Airing them out, supposedly. Then he starts up: "They palmed off lousy boots on me again..." Drives me crazy. Buy new boots instead of second-hand junk and stop whining. And the smell above all else — Flesh start sneezing from a kilometer away, forget about any appetite. So he's... forgive me, Lord.</text></string>
+<string id="stalker_085_7"><text>Outgoing: \nI wouldn't say that. Just listen. Fedya decided to head to Yantar. Sakharov threw him a little job — needed five pairs of boots from Snorks for some experiments. So Fedya shot them, pulled the footwear off — and it's not ordinary footwear, as you know. Then our Fedya thinks: why pay even for second-hand boots when there are free ones right here? And in excellent condition. So he picked out a pair in his size, gave them a good clean. For disinfection he soaked them for a couple of hours in a diluted Fruit Punch solution. Then shows them to Sakharov — says, professor, would it be alright if I wore this footwear? Well, Sakharov says it's probably safe. But if he sends him a health report twice a day, he'll also earn ten medical-grade medkits on top of that. And that science needs clinical enthusiasts of exactly this kind.</text></string>
+<string id="stalker_085_8"><text>Incoming: \nAnd?</text></string>
+<string id="stalker_085_9"><text>Outgoing: \nSo he shows up at the Bar in his new kicks. Said he could run for ages without getting tired, jump over fences, and heights didn't bother him anymore — something about the way the boots spring. He walked around the Bar in them for two days, practically didn't take them off. On the third day we're sitting by the fire in the workshop, Fedya starts up again about the boots, and then suddenly he lets out a scream... then leaps from the spot all the way up to the ceiling, then along the walls. Holy mother. And he's screaming — help, ouch ouch... We piled on him somehow, pinned him down, asked what was wrong. Then we look — blood seeping out from under the boots. Tried to take them off — they won't come off. Lucky Fedya passed out. Cut them with a knife — and the boots had sort of put roots into his feet. Horrifying. Somehow we pulled all of it out of his legs. Blood everywhere. Good thing the Swamp Doctor had stopped by the Bar to stock up. He smeared some ointment on it, told him to lie still for three days and get out of the Zone if Fedya wanted to live. That's the whole story.</text></string>
+<string id="stalker_085_10"><text>Incoming: \nWow. Incredible. You know more about this than I do... Hey, I wear a Flesh cloak. What if the same thing happens to me? And by the way — why's his handle Piston?</text></string>
+<string id="stalker_085_11"><text>Outgoing: \nDon't worry about the cloak — there's nowhere left to grow into there, heh heh... They're cured properly by specialists anyway, and Flesh is still a pig, not a former human. As for the handle — he was going on about his boots one too many times, so someone slipped a firecracker or something into them. Everyone found it very funny, except Fedya. Nobody heard a word about boots from him for a week after that.</text></string>
+<string id="stalker_085_12"><text>Incoming: \nHeh. Alright, swing by our little farmstead at the Warehouses tomorrow morning. Got something to discuss, and I don't feel like going it alone.</text></string>
+<string id="stalker_085_13"><text>Outgoing: \nOk. See you then.</text></string>
+
+<string id="stalker_086"><text>Incoming: \n'Sup, broski! Come on, spill the latest. Ain't heard hide nor hair of ya.</text></string>
+<string id="stalker_086_1"><text>Outgoing: \nHey. I got a real sweet deal linin' up. But I ain't tellin' ya shit about it. And let's keep it that way, no hard feelings or any of that bullshit.</text></string>
+<string id="stalker_086_2"><text>Incoming: \nI don't get it, why the hell not?!</text></string>
+<string id="stalker_086_3"><text>Outgoing: \nI don't need any extra ears, wanna keep this on the down-low.</text></string>
+<string id="stalker_086_4"><text>Incoming: \nRight... Now that ain't playin' by the rules! Who lost the cloak for Boryan? Huh?! And who had to give up theirs to cover your ass? Now I'm walkin' around in this trashy jacket like some street punk...</text></string>
+<string id="stalker_086_5"><text>Outgoing: \nDon't start. I'll pay it all back if this works out. Remember how the boss kept dreamin' of a broad, sayin' why ain't there a single female in the whole Zone? Ha-ha, figure that, yeah?</text></string>
+<string id="stalker_086_6"><text>Incoming: \nI don't get it, he needs a broad dragged to him or somethin'? And what kind of deal is this and how's it connected to broads?</text></string>
+<string id="stalker_086_7"><text>Outgoing: \nHe didn't ask to bring nobody, but I already know I'll get respect, honor, and then some. What he needs her for over there, I don't know and don't wanna know. Old pervert... I'm just in it for the cut.</text></string>
+<string id="stalker_086_8"><text>Incoming: \nSo what's the deal? Stop blowin' smoke up my ass!</text></string>
+<string id="stalker_086_9"><text>Outgoing: \nLong story short. I'm headin' from the Garbage to the Cordon. That run turned out real productive - found two sick artifacts and somebody's stash with grub. Ha! The loser hid it under a bus right in the middle of the road, you could see it from a mile away. Might as well have tossed the backpack right on the pavement. Anyway, that ain't what I'm talkin' about. Approaching the gates to the Cordon, I spotted a stalker messin' around with a PDA. Wasn't lookin' around at all, so I took the chance... Overdid it a bit though, splashed blood all over his suit. And I sure could use it right about now.</text></string>
+<string id="stalker_086_10"><text>Incoming: \nSoooo, now this is gettin' interestin'. What stalker?</text></string>
+<string id="stalker_086_11"><text>Outgoing: \nHow the hell should I know? I made too much noise back there and had to make a run for the Cordon. Grabbed the backpack with the PDA and hauled ass. Once I reached the Cordon, decided to dig through it, nobody was around. Climbed the tower near the APC and started clickin' through the damn thing. No stash coordinates, but there was a message history with some Oksana. Well... I'm thinkin', probably found a way to chat with their broads from the mainland. But turns out this stalker was supposed to be her guide here, to the Zone, figure that! And this loser ran straight into me. Got pretty damn lucky. So I'm thinkin', gotta take the chance. Last message said she'll be at the edge of the Swamps in a couple days. What she lost here - I couldn't figure out. PDA just had info on where she'll be. By the way! She promised to dish out some serious cash - double the profit. So that's the deal. Can you imagine what I could score if I bring this lady to Papa Borov? Right. So what? Did I satisfy your curiosity?!</text></string>
+<string id="stalker_086_12"><text>Incoming: \nWhoa. So you decided to play guide and drag her to the Valley? I ain't followin' your train of thought. Spit it out already, you're killin' me!</text></string>
+<string id="stalker_086_13"><text>Outgoing: \nYeah!!! Even a retard would've figured it out by now. The things you do for cash... So yeah, gonna find some decent gear and head out to the Swamps tomorrow mornin'. And then we'll see how the cards fall. Hope I ain't jinxin' it.</text></string>
+<string id="stalker_086_14"><text>Incoming: \nGo on, get it. Just don't shit yourself out there. And yeah! Don't forget my cut, I wouldn't just want my cloak back. Catch my drift?</text></string>
+<string id="stalker_086_15"><text>Outgoing: \nThat's it, I'm done. Ain't wastin' no more time on ya. We'll chat some other time. I'm bailin'.</text></string>
+
+<string id="stalker_087"><text>Incoming: \nShurik, help me out!</text></string>
+<string id="stalker_087_1"><text>Outgoing: \nWhat happened? "Caught a bullet," heh-heh-heh.</text></string>
+<string id="stalker_087_2"><text>Incoming: \nWorse. Caught a "Black Mark"...</text></string>
+<string id="stalker_087_3"><text>Outgoing: \nI told you - no need to check corpses, you half-baked looter.</text></string>
+<string id="stalker_087_4"><text>Incoming: \nYou'd be better off helping a friend. I feel sick enough without you, and I could've gotten a lecture from Lyokha.</text></string>
+<string id="stalker_087_5"><text>Outgoing: \nAlright. There's one way, but it's a matter of conscience.</text></string>
+<string id="stalker_087_6"><text>Incoming: \nI don't give a damn, write it fast!</text></string>
+<string id="stalker_087_7"><text>Outgoing: \nI heard the BM can be given to a person who wants to take it for themselves.</text></string>
+<string id="stalker_087_8"><text>Incoming: \nAnd who would take such luck?</text></string>
+<string id="stalker_087_9"><text>Outgoing: \nWell, that I don't know. Though, when I was at the Garbage, in the hangar - taking some energy drinks from Cook - I heard some guy gave a greenhorn the mark there, and he took it for 20 grand.</text></string>
+<string id="stalker_087_10"><text>Incoming: \nHoly shit! Bucks! 20 grand! Where would I get that kind of money? Spot me at least 5 thousand, huh?</text></string>
+<string id="stalker_087_11"><text>Outgoing: \nNah. Our rubles, of course, electronic ones.</text></string>
+<string id="stalker_087_12"><text>Incoming: \nThat's a different story. I'm right at Agroprom, I'll go hand it over. It's just too hard to live with it. Where are you heading?</text></string>
+<string id="stalker_087_13"><text>Outgoing: \nThinking of heading to the Warehouses, should I wait for you at the Bar?</text></string>
+<string id="stalker_087_14"><text>Incoming: \nDon't wait. Who knows how it will all turn out. You might end up waiting for me forever.</text></string>

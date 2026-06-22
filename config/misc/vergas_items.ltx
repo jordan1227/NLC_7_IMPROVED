@@ -251,25 +251,6 @@ eat_portions_num = 1
 
 animation_slot  = 4
 
-[podsumok_feik]:podsumok
-script_binding      = bind_physic_object.init
-inv_weight 	= 0
-inv_grid_width		= 0
-inv_grid_height		= 0
-inv_grid_x					= 27
-inv_grid_y					= 24
-
-watcher_act.bad_item = true
-
-[podsumok_mem]:podsumok_feik
-
-[myaso_mem]:podsumok_feik
-[amk_metka_feik]:podsumok_feik
-inv_grid_width		= 1
-inv_grid_height		= 1
-inv_grid_x					= 26
-inv_grid_y					= 26
-
 
 [dimedrol]:identity_immunities
 GroupControlSection	= spawn_group
@@ -308,47 +289,6 @@ animation_slot	= 4
 
 hud = wpn_vodka_hud
 
-
-[bag_on_belt]:identity_immunities
-GroupControlSection = spawn_group
-discovery_dependency =
-$spawn    		= "food and drugs\antirad"
-$prefetch   	= 32
-class		 	= II_ANTIR
-cform           = skeleton
-visual          = new_item\item_rykzack.ogf
-radius			= 1
-quest_item			= true
-description  	= bag_on_belt_descr
-inv_name   		= bag_on_belt
-inv_name_short  = bag_on_belt
-inv_weight   	= 0.2
-inv_grid_width		= 0;1
-inv_grid_height		= 0;1
-inv_grid_x		= 38
-inv_grid_y		= 13	
-cost    = 0
-belt = 0
-
-snd_scroll				= razgruzka\bag_scroll
-snd_deselect 			= razgruzka\podsumok_deselect
-snd_load 				= razgruzka\medkit_load
-snd_reload 	 			= razgruzka\medkit_reload
-
-; eatable item
-eat_health = 0
-eat_satiety = 0
-eat_power = 0
-eat_radiation = 0
-eat_alcohol = 0
-wounds_heal_perc = 0
-eat_portions_num = 1
-
-; food item
-animation_slot  = 4
-
-;hud item
-hud = wpn_vodka_hud
 
 [krujka_1]:identity_immunities
 GroupControlSection		= spawn_group

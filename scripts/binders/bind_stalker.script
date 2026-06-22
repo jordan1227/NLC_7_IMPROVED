@@ -35,7 +35,8 @@ local debug_only_cmd = {
 	"cam_inert_sprint",
 	"save",
 	"g_camera_collision_cop_mode",
-	"g_loadstring"
+	"g_loadstring",
+	"g_game_difficulty"
 }
 
 local default_off = {
@@ -76,9 +77,7 @@ spec_item = {
 	["razgruzka"]=true,
 	["razgruzka_new"]=true,
 	["podsumok"]=true,
-	["podsumok_mem"]=true,
 	["shadow_inventory"]=true,
-	["shadow_inventory2"]=true,
 	["af_dummy_black_tip"]=true,
 	["flask_army_on_belt"]=true,
 	--["arc_art_box_1basic"]=true,
@@ -168,7 +167,6 @@ function bind_stalker.handle_taked()
 	if cnt == 0 then return end
 	bind_stalker.taked_items = {}
 	-- wprintf("[~T/~B]. #DBG: handle_taked processing~C0D %d~C07 items ", cnt)
-	--local pmem = db.actor:object("podsumok_mem")
 	misc.debug_remove = true
 	for i, id in ipairs(src) do
 		local obj = client_obj(id) -- объект должен существовать !
@@ -215,8 +213,6 @@ function bind_stalker.handle_dropped(obj)
 		schedule.add("ruck_near_lc","sak.ruck_near_lc("..obj:id()..")",100)
 	end
 	if not vergas_lib.flag_inventory then return end
-	if nil == db.actor:object("podsumok_mem") then return end
-
 
 	local id = obj:id()
     -- надо упредить обратное подбирание предмета через отложенное событие
@@ -273,23 +269,16 @@ function actor_binder:net_spawn(data)
 		end
 	end
 
-	cmd("r2_ssa_lod_a", "16")
-	cmd("r2_ssa_lod_b", "32")
 	-- cmd("r_sunshafts_intensity", "0.27")
 	-- cmd("keypress_on_start", "off")
 	cmd("g_first_person_death", "off")
 	-- cmd("g_3d_scopes", "off")
-	cmd("r2_disable_hom", "off")
-
-	cmd("r_SunShafts_Radius 2.0")
-	cmd("r_SunShafts_Blend 0.01")
 
 	cmd("g_cop_death_anim 0") --Отключаем Death Anims, с ними куча багов.
 	if get_console():get_integer("r3_dynamic_wet_surfaces_sm_res") < 1024 then
 		cmd("r3_dynamic_wet_surfaces_sm_res 1024") --Чтобы полос на стенах не было во время дождя.
 	end
 	cmd("r2_exp_donttest_shad off") --Это экономит фпс.
-	cmd("r_terrain_parallax_enable off") --не все текстуры земли у нас адаптированы под параллакс
 	cmd("g_camera_collision_cop_mode off") -- Это вызывает ненужные уроны от коллизии
 
 	if const.underground(level.name()) then --SSS18
@@ -297,41 +286,6 @@ function actor_binder:net_spawn(data)
 	else
 		cmd("ssfx_is_underground 0")
 	end
-
-	-- Настройки для нового движка
-	if get_value("ogsr_gr_settings") ~= 2 then
-		set_value("ogsr_gr_settings", 2)
-		cmd("r2_sun_lumscale 1.5") --Фикс темноты
-		-- cmd("r2_sun_lumscale_amb 1.")
-		cmd("r2_sun_lumscale_hemi 1.5") --Фикс темноты
-		cmd("r2_ls_bloom_threshold 0.00001") --откат со сжима
-		cmd("r2_ls_bloom_kernel_scale 0.8") --Откат со сжима, но чуть прибавлено по сравнению с ЗП
---Откат тонмапа со сжима
-		cmd("r2_tonemap on")
-		cmd("r2_tonemap_adaptation 1.")
-		cmd("r2_tonemap_amount 0.7")
-		cmd("r2_tonemap_lowlum 0.0001")
-		cmd("r2_tonemap_middlegray 1.")
---
-		cmd("ssfx_wetsurfaces_1 1.700000, 1.400000, 0.700000, 2.000000")
-		cmd("ssfx_wetsurfaces_2 1.200000, 1.500000, 0.200000, 0.700000")
-		cmd("ssfx_gloss_method 1") --Только так и иначе никак!
-		cmd("ssfx_gloss_minmax 0.600000, 0.800000, 0.15") --так выглядит лучше чем с максимумом 0.9 по крайней мере на вагонах + для худа глосс чуть прибавлен
-		cmd("ssfx_lightsetup_1 0.95, 0.5, 1.0, 1.0") --Вот это для максимального блеска
-		cmd("ssfx_florafixes_1 0.0, 0.1, 0.2, 0.3")
-		cmd("ssfx_florafixes_2 4.0, 1.0, 0.0, 0.0") --Так солнце на листьях выглядит максимально сочно. Больше - уже слишком.
---Это наиболее близко к тому чтоб получить картинку как до добавления шейдеров Color Grading
-		cmd("ssfx_exposure 1")
-		cmd("ssfx_gamma 1")
-		cmd("ssfx_saturation 1.3")
-		cmd("ssfx_color_grading 0.500000, 0.500000, 0.515000")
-		cmd("ssfx_wind_bugged_trees_enable 0") --Фикс багованых елочек и камышей, на них отключаем влияние ветра
---Эффекты шлема по дефолту вкл.
-		cmd("r2_visor_refl on")
-		-- cmd("r2_mask on")
---
-	end
-
 	--
 	self:fix_ui_inventory_info()
 	cmd("unbind", "quick_save")
@@ -431,7 +385,6 @@ function actor_binder:late_init()
 	log_init_stage()
 	amk.on_game_load(obj)
 	sak.add_tail()
-	allcore_hide.onLoad()
 	self.am:call("on_late_init_all")
 	level.enable_input()
 end
@@ -634,25 +587,6 @@ function actor_binder:before_hit_callback(hit_data)
 	end
 end
 
-local flag_sms = true
-local function eat_item_in_slot(n)
-	if is_busy_actor_restrictions() then return end
-	local obj = db.actor:item_in_slot(n)
-	if obj and obj:is_eatable_item() then
-		for _, sect in ipairs(sak_dialog.table_food) do
-			if vergas_masks.allcore_mask_is_on() and sect == obj:section() then
-				if not flag_sms then return end
-				flag_sms = nil
-				dsh.timeout(10 * 1000, function() flag_sms = true end)
-				sak.send_tip(game.translate_string("st_eat_in_mask_msg"), game.translate_string("st_mda"), 1, 10, "g_g", "sak", "red")
-				vergas_lib.s_play([[device\antirad_no]],1)
-				return
-			end
-		end
-		db.actor:eat(obj)
-	end
-end
-
 local function check_pda_conditions()
 	local pda = db.actor:object("device_pda")
 	if not pda then return 'nil', nil, nil, nil, nil end
@@ -735,7 +669,7 @@ local key_actions = {
 	},
 	[key_bindings.kNEW_QUICKSAVE] = {
 		func = function()
-			if is_busy_actor_restrictions() then return end
+			-- if is_busy_actor_restrictions() then return end
 			dsh.make_quicksave()
 		end
 	},
@@ -784,19 +718,9 @@ local key_actions = {
 			end
 		end
 	},
-	[key_bindings.kOPN_NZ] = {
-		func = function()
-			if is_busy_actor_restrictions() then return end
-			if used_items.can_use_gadget() and self_weapon_hide == false and not db.actor:is_talking() and not get_actor_obj():IsDetectorActive() then
-				-- used_items.used_bag_on_belt(false,true)
-				razgruzka.open_inventory()
-				inv_buttons_use.open_inventory(7)
-			end
-		end
-	},
 	[key_bindings.kNAME_SAVE] = {
 		func = function()
-			if is_busy_actor_restrictions() then return end
+			-- if is_busy_actor_restrictions() then return end
 			if not ogse_campfire.check_near_en_flame() then return end
 			local levname = translate(level.name())
 			local days = timers.Get_Game_Days()
@@ -809,26 +733,6 @@ local key_actions = {
 	[key_bindings.kNEW_QUICKLOAD] = {
 		func = function()
 			cmd("load_last_save")
-		end
-	},
-	[key_bindings.kQUICK_SLOT_1] = {
-		func = function()
-			eat_item_in_slot(13)
-		end
-	},
-	[key_bindings.kQUICK_SLOT_2] = {
-		func = function()
-			eat_item_in_slot(14)
-		end
-	},
-	[key_bindings.kQUICK_SLOT_3] = {
-		func = function()
-			eat_item_in_slot(15)
-		end
-	},
-	[key_bindings.kQUICK_SLOT_4] = {
-		func = function()
-			eat_item_in_slot(16)
 		end
 	},
 	[key_bindings.kWPN_4] = {
@@ -891,7 +795,7 @@ function actor_binder:on_key(key, bind)
 	end
 	--
 	local tbl = key_actions[bind]
-	if tbl and not (level.main_input_receiver() or device():is_paused()) then tbl.func() end
+	if tbl and not (level.main_input_receiver() or device():is_paused() or db.actor:ph_capture()) then tbl.func() end
 	self.am:call("on_key", key, bind)
 end
 
@@ -1376,7 +1280,6 @@ function actor_binder:on_saw_object(obj)
 end
 
 function actor_binder:on_use_object(obj)
-	allcore_hide.onItemUse(obj)
 	vergas_lib.used_item(obj)
 	amk_mod.used_item(obj)
 end

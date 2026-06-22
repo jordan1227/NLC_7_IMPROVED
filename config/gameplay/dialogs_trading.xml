@@ -1890,7 +1890,8 @@
 		<precondition>sak_dialog.sak_check_money_s6</precondition>
 			<text>dolgovazyi_repair_4111</text>
 			<action>sak_dialog.sak_repair_armor_s6</action>
-			<next>5</next>
+			<next>51</next>
+			<next>52</next>
 		</phrase>
 		<phrase id="4112">
 			<text>dolgovazyi_repair_4112</text>
@@ -1912,14 +1913,21 @@
 		<precondition>sak_dialog.uniform_check_money("mask")</precondition>
 			<text>dolgovazyi_repair_421</text>
 			<action>sak_dialog.uniform_repair_start("mask", r_dolgovjaz)</action>
-			<next>5</next>
+			<next>51</next>
+			<next>52</next>
 		</phrase>
 		<phrase id="422">
 			<text>dolgovazyi_repair_422</text>
 			<action>dialogs.break_dialog</action>
 		</phrase>
-		<phrase id="5">
-			<text>dolgovazyi_repair_5</text>
+		<phrase id="51">
+		<dont_has_info>deactivate_radar_fall</dont_has_info>
+			<text>dolgovazyi_repair_51</text>
+			<next>6</next>
+		</phrase>
+		<phrase id="52">
+		<has_info>deactivate_radar_fall</has_info>
+			<text>dolgovazyi_repair_52</text>
 			<next>6</next>
 		</phrase>
 		<phrase id="6">
@@ -2009,7 +2017,8 @@
 			</phrase>
 			<phrase id="1">
 				<text>trade_dialog_sidor_1</text>
-				<action>sak_dialog.info_price_sidor</action>	<!-- Информация в ПДА -->		                
+				<action>_G.give_article("price_sidor")</action>
+				<action>_G.give_article("price_artm_esc")</action>
 				<next>2</next>
 				<next>3</next>
 				<next>4</next>
@@ -2341,7 +2350,7 @@
 			</phrase>
 			<phrase id="1">
 				<text>trade_dialog_barman_1</text>
-				<action>sak_dialog.info_price_barman</action>
+				<action>_G.give_article("price_barman")</action>
 				<next>2</next>
 				<next>3</next>
 				<next>4</next>
@@ -2706,7 +2715,7 @@
 			</phrase>
 			<phrase id="1">
 				<text>trade_dialog_petrenko_1</text>
-				<action>sak_dialog.info_price_petrenko</action>
+				<action>_G.give_article("price_petrenko")</action>
 				<next>2</next>
 				<next>3</next>
 				<next>4</next>
@@ -2829,6 +2838,8 @@
 				<text>trade_dialog_petrenko_525</text>
 				<next>5351</next>
 				<next>5352</next>
+				<next>5353</next>
+				<next>5354</next>
 			</phrase>
 			<phrase id="231">
 				<text>trade_dialog_petrenko_231</text>
@@ -2916,15 +2927,32 @@
 				<next>61</next>
 			</phrase>
 			<phrase id="5351">
-			<dont_has_info>petrenko_sil_buy</dont_has_info>
+			<dont_has_info>petrenko_groza_sil_buy</dont_has_info>
+			<dont_has_info>petrenko_groza_gl_buy</dont_has_info>
 				<text>trade_dialog_petrenko_5351</text>
-				<next>5361</next>
+				<next>5362</next>
+				<next>5363</next>
 				<next>61</next>
 			</phrase>
 			<phrase id="5352">
-			<has_info>petrenko_sil_buy</has_info>
+			<has_info>petrenko_groza_sil_buy</has_info>
+			<dont_has_info>petrenko_groza_gl_buy</dont_has_info>
 				<text>trade_dialog_petrenko_5352</text>
 				<next>5362</next>
+				<next>61</next>
+			</phrase>
+			<phrase id="5353">
+			<has_info>petrenko_groza_gl_buy</has_info>
+			<dont_has_info>petrenko_groza_sil_buy</dont_has_info>
+				<text>trade_dialog_petrenko_5353</text>
+				<next>5363</next>
+				<next>61</next>
+			</phrase>
+			<phrase id="5354">
+			<has_info>petrenko_groza_sil_buy</has_info>
+			<has_info>petrenko_groza_gl_buy</has_info>
+				<text>trade_dialog_petrenko_5354</text>
+				<next>5364</next>
 			</phrase>
 			<phrase id="2311">
 			<precondition>sak_dialog.cond_items_have("a",1,0.90)</precondition>
@@ -3056,16 +3084,22 @@
 				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
 				<action>sak.create_items("wpn_addon_sil_762_ar",1)</action>
 			</phrase>
-			<phrase id="5361">
-			<precondition>sak_dialog.cond_items_have("c",1,0.90)</precondition>
-				<text>trade_dialog_petrenko_5361</text>
-				<action>sak_dialog.cond_items_have("c",1,0.90,true)</action>
-				<!-- <action>sak.create_items("wpn_addon_sil_vsk",1)</action> Manool: теперь тут вместо глушителя ПГ к Грозе -->
-				<action>sak.create_items("wpn_addon_grenade_launcher_groza",1)</action>
-				<give_info>petrenko_sil_buy</give_info>
-			</phrase>
 			<phrase id="5362">
+			<precondition>sak_dialog.cond_items_have("c",1,0.90)</precondition>
 				<text>trade_dialog_petrenko_5362</text>
+				<action>sak_dialog.cond_items_have("c",1,0.90,true)</action>
+				<action>sak.create_items("wpn_addon_grenade_launcher_groza",1)</action>
+				<give_info>petrenko_groza_gl_buy</give_info>
+			</phrase>
+			<phrase id="5363">
+			<precondition>sak_dialog.cond_items_have("b",1,0.90)</precondition>
+				<text>trade_dialog_petrenko_5363</text>
+				<action>sak_dialog.cond_items_have("b",1,0.90,true)</action>
+				<action>sak.create_items("wpn_addon_sil_groza",1)</action>
+				<give_info>petrenko_groza_sil_buy</give_info>
+			</phrase>
+			<phrase id="5364">
+				<text>trade_dialog_petrenko_5364</text>
 				<action>dialogs.break_dialog</action>
 			</phrase>
 			<phrase id="6">
@@ -3087,7 +3121,7 @@
 			</phrase>
 			<phrase id="1">
 				<text>trade_dialog_skraga_1</text>
-				<action>sak_dialog.info_price_scraga</action>
+				<action>_G.give_article("price_scraga")</action>
 				<next>2</next>
 				<next>3</next>
 				<next>4</next>
@@ -3470,7 +3504,7 @@
 			</phrase>
 			<phrase id="1">
 				<text>trade_dialog_sherstyk_1</text>
-				<action>sak_dialog.info_price_sherstuk</action>
+				<action>_G.give_article("price_sherstuk")</action>
 				<next>2</next>
 				<next>3</next>
 				<next>4</next>
@@ -3535,7 +3569,6 @@
 			</phrase>
 			<phrase id="232">
 				<text>trade_dialog_sherstyk_232</text>
-				<action>sak_dialog.text_sher_vodka</action>
 				<next>231</next>
 				<next>666</next>
 			</phrase>
@@ -3572,7 +3605,6 @@
 			</phrase>
 			<phrase id="252">
 				<text>trade_dialog_sherstyk_252</text>
-				<action>sak_dialog.text_rgo_vodka</action>
 				<next>251</next>
 				<next>666</next>
 			</phrase>
@@ -3850,7 +3882,7 @@
 			</phrase>
 			<phrase id="1">
 				<text>trade_dialog_jlob_1</text>
-				<action>sak_dialog.info_price_jila</action>
+				<action>_G.give_article("price_jila")</action>
 				<next>2</next>
 				<next>3</next>
 				<next>4</next>
@@ -4176,7 +4208,7 @@
 			<phrase id="11">
 				<dont_has_info>kuzn_no_trade</dont_has_info>
 				<text>trade_dialog_kuznezov_1</text>
-				<action>sak_dialog.info_price_kuznezov</action>				
+				<action>_G.give_article("price_kuznezov")</action>
 				<next>2</next>
 				<next>3</next>
 				<next>4</next>
@@ -4292,7 +4324,6 @@
 			</phrase>
 			<phrase id="252">
 				<text>trade_dialog_kuznezov_252</text>
-				<action>sak_dialog.text_rgo_vodka</action>
 				<next>251</next>
 				<next>666</next>
 			</phrase>
@@ -4333,7 +4364,6 @@
 			</phrase>
 			<phrase id="422">
 				<text>trade_dialog_kuznezov_422</text>
-				<action>sak_dialog.text_kuz_vodka</action>
 				<next>421</next>
 				<next>666</next>
 			</phrase>
@@ -4381,7 +4411,6 @@
 	<phrase_list>
 		<phrase id="0">
 			<text>sidor_modart_order_dialog_0</text>
-			<give_info>price_artm_esc</give_info>		<!-- Информация в ПДА -->
 			<next>1</next>
 			<next>91</next>
 		</phrase>
@@ -4896,7 +4925,7 @@
 			</phrase>
 			<phrase id="100">
 				<text>trade_dialog_mercs_ara_100</text>
-				<action>sak_dialog.info_price_ara</action>	<!-- Информация в ПДА -->
+				<action>_G.give_article("price_ara")</action>
 				<next>211</next>
 				<next>222</next>
 				<next>233</next>
@@ -5210,7 +5239,7 @@
 		</phrase>
 		<phrase id="3">
 			<text>ara_exo_dialog_done_3</text>
-			<action>sak_dialog.add_killer_blue_exoskeleton</action>
+			<action>sak.create_items("killer_blue_exoskeleton",1)</action>
 			<give_info>ara_exo_new_done</give_info>
 		</phrase>		
 	</phrase_list>

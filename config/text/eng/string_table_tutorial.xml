@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+<string id="overload"><text>Overload</text></string>
+<string id="overload_tutorial"><text>A human is not a truck and cannot carry a ton on their back. The more they carry, the greater the fatigue and the faster they lose strength. Eventually, if there are too many items, it will be difficult to even move.</text></string>
+
+<string id="radiation"><text>Radiation</text></string>
+<string id="radiation_tutorial"><text>If you stay in an area with a high radiation background or carry a radioactive artifact with you, signs of radiation exposure appear. As a result, your health begins to decrease. To remove the effects of radiation exposure, you need to use anti-rad medication or vodka.</text></string>
+
+<string id="tutorial"><text>Tutorial</text></string>
+
+<string id="weakness"><text>Fatigue</text></string>
+<string id="weakness_tutorial"><text>If you carry many heavy items, fatigue gradually begins to build up. When fatigue becomes severe, it will be impossible to run or even walk for some time. Strength can be partially restored by resting briefly while standing still. Only sleep will fully restore strength.</text></string>
+
+<string id="wound"><text>Open Wounds</text></string>
+<string id="wound_tutorial"><text>When the body is hit (by bullets, animal claws, and so on), bleeding begins. Bleeding is a constant loss of health. The more severe the bleeding (green icon — light bleeding, red — heavy bleeding), the more health is lost per unit of time. Only minor bleeding stops on its own; most bleeding can be stopped using bandages.</text></string>
+
+</string_table>

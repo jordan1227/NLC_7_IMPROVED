@@ -355,10 +355,6 @@ end
 
 local dump_ext = false
 
-function switch_output(target)
- dump_ext = target
-end               
-
 function xprintf(fmt, ...)
  if dump_ext then
    local s = sprintf(fmt.."\n", ...)  

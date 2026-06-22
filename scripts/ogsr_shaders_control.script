@@ -75,28 +75,104 @@ function scope_control(scope_name, scope_status)
 	shader_set_custom_param("mark_color", mark_color.x, mark_color.y, mark_color.z)
 end
 
-local first_update
+-- Manool: разделитель числа на составляющие цифры математическими функциями.
+-- total - нужное количество чисел, чтобы заполнить пустые позиции массива нулями
+local function splitValue(value, total)
+    local result = {}
+	for i = total, 1, -1 do
+		result[i] = 0
+		if value > 0 then
+			result[i] = math.fmod(value, 10)
+			value = math.floor(value / 10)
+		end
+	end
+    return result
+end
+
+local function check_rad_device()
+	if not get_value("pda_upgr_rad") then return end
+	local slots = {8, 13, 14, 15, 16}
+	for i = 1, #slots do
+		if razgruzka.active_detectors[slots[i]] then return true end
+	end
+end
+
+local max_watch_modes = 3
+local first_update, watch_mode
 local function watch_update()
-	local h, m = level.get_time_hours(), level.get_time_minutes()
-	local h1, h2, m1, m2 = math.floor(h / 10), h % 10, math.floor(m / 10), m % 10
-	shader_set_custom_param("m_digiclock", h1 * 0.1, h2 * 0.1, m1 * 0.1, m2 * 0.1)
-
-	-- x = sleepiness, y = bleed, z = psy_health, w = hunger
-	local slp = sleep_manager.get_sleepiness(108) / 250
-	local bld = db.actor:get_bleeding() -- / 5
-	if bld > 0 and bld < 0.11 then bld = 0.11 end
-	shader_set_custom_param("m_actor_watch_params", slp, bld, db.actor.psy_health, db.actor.satiety)
-
+	ogse_signals.get_mgr():reschedule(200) -- надо ли?
 	if not first_update then
 		-- Помехи выключаем пока, не нужно оно
 		-- shader_set_custom_param("electronics_problems", 0, 0, 0, 0)
 		-- Компас тоже пока не трогаем
 		shader_set_custom_param("m_timearrow2", 0, 0, 1, 0)
 		first_update = true
+
+		watch_mode = get_value("watch_mode", 0)
+	end
+
+	local dw = 0
+	if watch_mode == 0 then
+		local h, m = level.get_time_hours(), level.get_time_minutes()
+		local h1, h2, m1, m2 = math.floor(h / 10), h % 10, math.floor(m / 10), m % 10
+		shader_set_custom_param("m_digiclock", h1 * 0.1, h2 * 0.1, m1 * 0.1, m2 * 0.1)
+	elseif watch_mode == 1 then
+		local h, m = level.get_time_days(), vergas_lib.return_time(2)
+		local h1, h2, m1, m2 = math.floor(h / 10), h % 10, math.floor(m / 10), m % 10
+		shader_set_custom_param("m_digiclock", h1 * 0.1, h2 * 0.1, m1 * 0.1, m2 * 0.1)
+	elseif watch_mode == 2 then
+		local dw_s, dw_i = vergas_watch.set_day_week_textures()
+		dw = dw_i - 1
+	elseif watch_mode == 3 then
+		local nt = splitValue(math.clamp(db.actor.radiation * 1000, 0, 999), 3)
+		if not check_rad_device() then nt = {0, 0, 0} end
+		shader_set_custom_param("m_digiclock", nt[1] * 0.1, nt[2] * 0.1, nt[3] * 0.1, 0)
+	end
+	shader_set_custom_param("m_actor_watch_params_2", watch_mode, dw, 0, 0)
+
+	-- x = sleepiness, y = bleed, z = psy_health, w = hunger
+	local slp = sleep_manager.get_sleepiness(108) / 250
+	local bld = db.actor:get_bleeding() -- / 5
+	if bld > 0 and bld < 0.11 then bld = 0.11 end
+	shader_set_custom_param("m_actor_watch_params", slp, bld, db.actor.psy_health, db.actor.satiety)
+end
+
+local function switch_watch_mode(vol)
+	if not allcore_hide.watch_is_active then return end 
+	local nwm = watch_mode
+	if vol > 0 then
+		nwm = nwm + 1
+	else
+		nwm = nwm - 1
+	end
+	watch_mode = math.clamp(nwm, 0, max_watch_modes)
+	set_value("watch_mode", watch_mode)
+	misc.easy_sound("device\\pda\\dairy_click")
+end
+
+-- Для настройки
+local function on_key(key, bind)
+	local res
+	if key == DIK_keys.DIK_O then
+		local v = shader_get_custom_param_vector("s3ds_param_1")
+		v.x = v.x + 0.1
+		res = v.x
+		shader_set_custom_param_vector("s3ds_param_1", v)
+	end
+	if key == DIK_keys.DIK_I then
+		local v = shader_get_custom_param_vector("s3ds_param_1")
+		v.x = v.x - 0.1
+		res = v.x
+		shader_set_custom_param_vector("s3ds_param_1", v)
+	end
+	if res then
+		log2("3d_reticle_size = %s", res)
 	end
 end
 
 function attach(sm)
 	sm:subscribe({signal = "on_update", fun = watch_update})
 	sm:subscribe({signal = "on_update", fun = on_dots_update})
+	sm:subscribe({signal = "on_wheel_rotation", fun = switch_watch_mode})
+	-- sm:subscribe({signal = "on_key", fun = on_key})
 end

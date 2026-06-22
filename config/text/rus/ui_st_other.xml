@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="windows-1251" ?>
 <string_table>
-<string id="st_mode_version"><text>NLC Improved [ОБТ] 22.01.2026</text></string>
+<string id="st_mode_version"><text>NLC Improved [pre-release] 21.06.2026</text></string>
 <string id="id_mp_money"><text>Деньги</text></string>
 <string id="open_shield"><text>Откинуть крышку</text></string>
 <string id="close_shield"><text>Закрыть крышку</text></string>
@@ -151,6 +151,7 @@
 <string id="st_move_to_slot_16"><text>переместить в быстрый слот 4</text></string>
 <string id="st_attach_addon_to_wpn_in_slot_1"><text>прикрепить %s к %s в первом слоте</text></string>
 <string id="st_attach_addon_to_wpn_in_slot_2"><text>прикрепить %s к %s во втором слоте</text></string>
+<string id="st_attach_addon_to_wpn_in_slot_4"><text>прикрепить %s к %s в четвёртом слоте</text></string>
 <string id="kb_hide_hud"><text>Скрыть HUD</text></string>
 <string id="kb_show_hud"><text>Показать HUD</text></string>
 <string id="inventory_item_use_or_drag"><text>Поднять предмет ($$ACTION_USE$$) \n Перетащить предмет (SHIFT+$$ACTION_USE$$)</text></string>
@@ -158,7 +159,7 @@
 <string id="st_press_any_key"><text>Нажмите любую клавишу для перехода к игре</text></string>
 <string id="ui_st_money_descr"><text>РУБ</text></string>
 <string id="discord_status_mm"><text>В главном меню</text></string>
-<string id="backup_autosave"><text>День %s %s. Переход %s - %s.sav</text></string>
+<string id="backup_autosave"><text>День %s %s-%s. %s - %s.sav</text></string>
 <string id="sleep_autosave"><text>Сон. День %s %s.%s</text></string>
 <string id="use_seif_time_left"><text>Время до окончания пользования сейфами</text></string>
 <string id="repair_time_left"><text>Время до завершения ремонта</text></string>

@@ -199,11 +199,14 @@
 
 <string id="trade_dialog_petrenko_531"><text>Такой прицел обойдётся тебе в два арта второго уровня. Что скажешь?</text></string>
 <string id="trade_dialog_petrenko_532"><text>Хоть сейчас обменяю на арт второго уровня.</text></string>
-<string id="trade_dialog_petrenko_5351"><text>Необычное? Ну, есть подстволыный гранатомёт к "Грозе". Последний остался. Их и было-то несколько штук всего. Такое оружие мало у кого есть, чисто для спецов. Интересует? За артефакт третьего уровня отдам.</text></string>
-<string id="trade_dialog_petrenko_5352"><text>Хм... сейчас, пожалуй, что и нет. Хотя привозят иногда довольно редкие экземпляры. Ты забегай почаще, дорогу знаешь.</text></string>
+<string id="trade_dialog_petrenko_5351"><text>Необычное? Ну, есть подствольный гранатомёт и глушитель к "Грозе". Последние остались. Их и было-то несколько штук всего. Такое оружие мало у кого есть, чисто для спецов. Интересует? За артефакт третьего уровня отдам подствольник, а за глушитель хватит одного второуровневого.</text></string>
+<string id="trade_dialog_petrenko_5352"><text>Необычное? Ну, есть подствольный гранатомёт к "Грозе". Последний остался. Их и было-то несколько штук всего. Такое оружие мало у кого есть, чисто для спецов. Интересует? За артефакт третьего уровня отдам.</text></string>
+<string id="trade_dialog_petrenko_5353"><text>Необычное? Ну, есть глушитель к "Грозе". Последний остался. Их и было-то несколько штук всего. Такое оружие мало у кого есть, чисто для спецов. Интересует? За артефакт третьего уровня отдам.</text></string>
+<string id="trade_dialog_petrenko_5354"><text>Хм... сейчас, пожалуй, что и нет. Хотя привозят иногда довольно редкие экземпляры. Ты забегай почаще, дорогу знаешь.</text></string>
 
-<string id="trade_dialog_petrenko_5361"><text>А что, я возьму, пожалуй. Вот арт.</text></string>
-<string id="trade_dialog_petrenko_5362"><text>Ладно, тогда увидимся.</text></string>
+<string id="trade_dialog_petrenko_5362"><text>А что, я возьму, пожалуй, гранатомёт. Вот арт.</text></string>
+<string id="trade_dialog_petrenko_5363"><text>У меня уши не казённые. С глушителем оно всяко сподручнее. Держи арт.</text></string>
+<string id="trade_dialog_petrenko_5364"><text>Ладно, тогда увидимся.</text></string>
 
 <string id="trade_dialog_petrenko_5311"><text>Боялся, что совсем заломишь цену, а так вполне ещё по-божески. Принимай арты.</text></string>
 <string id="trade_dialog_petrenko_5321"><text>Не вопрос. Вот, держи...</text></string>
@@ -389,10 +392,10 @@
 <string id="trade_dialog_sherstyk_56"><text>Барабан к РПК возьму...</text></string>
 <string id="trade_dialog_sherstyk_222"><text>Могу дать пять пачек простых патронов за три бутылки.</text></string>
 <string id="trade_dialog_sherstyk_221"><text>Пять пачек, возьму.</text></string>
-<string id="trade_dialog_sherstyk_232"><text>Гранаток, говоришь, хочешь?</text></string>
+<string id="trade_dialog_sherstyk_232"><text>Гранаток, говоришь, хочешь? $$LUASTRING_sak_dialog.text_sher_vodka$$</text></string>
 <string id="trade_dialog_sherstyk_231"><text>Гранаты нужны, а то бы и не обращался.</text></string>
 <string id="trade_dialog_sherstyk_242"><text>Один короб патронов - шесть бутылок.</text></string>
-<string id="trade_dialog_sherstyk_252"><text>Сейчас прикину... </text></string>
+<string id="trade_dialog_sherstyk_252"><text>Сейчас прикину... $$LUASTRING_sak_dialog.text_rgo_vodka$$</text></string>
 <string id="trade_dialog_sherstyk_251"><text>За такие гранаты не жалко. Согласный я.</text></string>
 <string id="trade_dialog_sherstyk_241"><text>Согласен...</text></string>
 <string id="trade_dialog_sherstyk_552"><text>Могу дать четыре пачки простых патронов за четыре бутылки.</text></string>
@@ -400,7 +403,7 @@
 <string id="trade_dialog_sherstyk_562"><text>Один барабан за две бутылки.</text></string>
 <string id="trade_dialog_sherstyk_561"><text>Беру.</text></string>
 <string id="trade_dialog_sherstyk_666"><text>Нет, в другой раз.</text></string>
-<string id="trade_dialog_sherstyk_31"><text>Могу достать:\n1. Пистолет Walther P99\n2. Пистолет "ОЦ-33 «Пернач»", очень надёжная машинка\n3. РПК-74 - хоть и несколько тяжеловат, но очень удобен и валит нечисть враз\n4. Легендарный советский АКМ</text></string>
+<string id="trade_dialog_sherstyk_31"><text>Могу достать:\n1. Пистолет Walther P99\n2. Пистолет "ОЦ-33 «Пернач»", очень надёжная машинка\n3. РПК-74Н - хоть и несколько тяжеловат, но очень удобен и валит нечисть враз\n4. Легендарный советский АКМН</text></string>
 <string id="trade_dialog_sherstyk_32"><text>Walther P99? Сколько просишь?</text></string>
 <string id="trade_dialog_sherstyk_3222"><text>Пернач почём?</text></string>
 <string id="trade_dialog_sherstyk_33"><text>За пулемёт водки много нужно?</text></string>
@@ -463,7 +466,7 @@
 <string id="trade_dialog_kuznezov_231"><text>Гранаты нужны, а то бы и не обращался.</text></string>
 <string id="trade_dialog_kuznezov_242"><text>Обычные патроны - пять бутылок за четыре пачки...</text></string>
 <string id="trade_dialog_kuznezov_241"><text>Согласен...</text></string>
-<string id="trade_dialog_kuznezov_252"><text>Они всем нужны, да не всем жаба баланс подписывать соглашается. Дай-ка прикинуть... </text></string>
+<string id="trade_dialog_kuznezov_252"><text>Они всем нужны, да не всем жаба баланс подписывать соглашается. Дай-ка прикинуть... $$LUASTRING_sak_dialog.text_rgo_vodka$$</text></string>
 <string id="trade_dialog_kuznezov_251"><text>Да уж, моя тоже душит, но ничего, как-нибудь договорюсь с ней.</text></string>
 <string id="trade_dialog_kuznezov_666"><text>Ладно, может быть, в другой раз...</text></string>
 <string id="trade_dialog_kuznezov_31"><text>Есть возможность получить АКС-74.</text></string>
@@ -472,7 +475,7 @@
 <string id="trade_dialog_kuznezov_321"><text>Конечно! Вот они, пузырики...</text></string>
 <string id="trade_dialog_kuznezov_41"><text>Примерно так... Военные всегда здоровье берегут, но на продажу аптечки у меня только простые.</text></string>
 <string id="trade_dialog_kuznezov_42"><text>А сколько просишь?</text></string>
-<string id="trade_dialog_kuznezov_422"><text>За пару обычных аптечек...</text></string>
+<string id="trade_dialog_kuznezov_422"><text>За пару обычных аптечек... $$LUASTRING_sak_dialog.text_kuz_vodka$$</text></string>
 <string id="trade_dialog_kuznezov_421"><text>Договорились!</text></string>
 <string id="trade_dialog_kuznezov_667"><text>Смотри сам...</text></string>
 
@@ -500,9 +503,9 @@
                                                                       <!-- Кузнецов -->
 <string id="price_kuznezov_text"><text>%c[255,160,160,160]Боеприпасы и снаряжение:\n%c[default]• Патроны 5,45х39 - 150 обычных за 4 водки\n• Гранаты РГД-5 - от 1 бутылки за 2 гранаты\n• Гранаты РГО - от 2 пузырей за штуку\n• Патроны 7,62х39 к АКМ - 120 штук обычных за 5 бутылок\n \n%c[255,160,160,160]Оружие:\n%c[default]• Автомат АКС-74 - 10 пузырей\n \n%c[255,160,160,160]Медицина:\n%c[default]• Аптечки - пока 2 обычных за пузырь, а там видно будет</text></string>
                                                                               <!-- Шерстюк -->
-<string id="price_sherstuk_text"><text>%c[255,160,160,160]Боеприпасы и снаряжение:\n%c[default]• Патроны 5,45х39 - 150 обычных за 3 бутылки\n• Гранаты Ф-1 - пока штуку за 1 пузырь, а там видно будет\n• Гранаты РГО - от 2 бутылок за штуку\n• Пулемётная лента к ПКМ (100 шт) за 6 бутылок\n• Патроны 7,62х39 - 120 обычных за 4 бутылки\n• Барабан с патронами 5,45x39 мм (95 шт) за 2 бутылки\n \n%c[255,160,160,160]Оружие:\n%c[default]• Пистолет Walther P99 - от 8 пузырей, а там посмотрим\n• Пулемёт РПК-74 - от 20 пузырей\n• Пистолет ОЦ-33 «Пернач» - от 10 пузырей пока что\n• Автомат АКМ - не меньше 15 пузырей\n \n%c[255,160,160,160]Армейская еда и медицина:\n%c[default]• Армейские аптечки - сейчас одна за пузырь, а дальше посмотрим\n• Сухпаёк - за 1 бутылку пока</text></string>
+<string id="price_sherstuk_text"><text>%c[255,160,160,160]Боеприпасы и снаряжение:\n%c[default]• Патроны 5,45х39 - 150 обычных за 3 бутылки\n• Гранаты Ф-1 - пока штуку за 1 пузырь, а там видно будет\n• Гранаты РГО - от 2 бутылок за штуку\n• Пулемётная лента к ПКМ (100 шт) за 6 бутылок\n• Патроны 7,62х39 - 120 обычных за 4 бутылки\n• Барабан с патронами 5,45x39 мм (95 шт) за 2 бутылки\n \n%c[255,160,160,160]Оружие:\n%c[default]• Пистолет Walther P99 - от 8 пузырей, а там посмотрим\n• Пулемёт РПК-74Н - от 20 пузырей\n• Пистолет ОЦ-33 «Пернач» - от 10 пузырей пока что\n• Автомат АКМН - не меньше 15 пузырей\n \n%c[255,160,160,160]Армейская еда и медицина:\n%c[default]• Армейские аптечки - сейчас одна за пузырь, а дальше посмотрим\n• Сухпаёк - за 1 бутылку пока</text></string>
                                                                          <!-- Султан -->
-<string id="price_sultan_text"><text>%c[255,160,160,160]За артефакты 2-го уровня:\n%c[default]• Barska ELECTRO SIGHT AC10632\n• Aimpoint Micro T-1\n \n%c[255,160,160,160]За модификаты:\n%c[default]• Пистолет-пулемёт HK UMP под 45 калибр\n• Автомат FN F2000 Tactical (FDE)\n• Пулемёт РПК-74(П)\n• СВД\n• Карабин Сайга-12М\n \n%c[255,160,160,160]За мезомодификаты:\n%c[default]• Автомат АК-103\n• Ружьё Remington 870 (FD)\n• Снайперская винтовка СВ-98М\n• Пулемёт MG36\n• Пистолет-пулемёт TDI KRISS Vector\n• Оптический прицел ПСО-1 (4 крат)\n• Оптический прицел ELCAN DR (4 крат)\n• Оптический прицел HK Schmidt Bender\n \n%c[255,160,160,160]За гипермодификаты:\n%c[default]• Винтовка СВУ-А\n• Автомат СР-3М «Вихрь»\n \n%c[255,160,160,160]За абсолюты:\n%c[default]• Винтовка FN SCAR-H\n• Пулемёт ПКМ Тактический\n• Снайперская винтовка AWM-F</text></string>
+<string id="price_sultan_text"><text>%c[255,160,160,160]За артефакты 2-го уровня:\n%c[default]• Barska ELECTRO SIGHT AC10632\n• Aimpoint Micro T-1\n \n%c[255,160,160,160]За модификаты:\n%c[default]• Пистолет-пулемёт HK UMP под 45 калибр\n• Автомат FN F2000 Tactical (FDE)\n• Пулемёт РПК\n• СВД\n• Карабин Сайга-12М\n \n%c[255,160,160,160]За мезомодификаты:\n%c[default]• Автомат АК-103\n• Ружьё Remington 870 (FD)\n• Снайперская винтовка СВ-98М\n• Пулемёт MG36\n• Пистолет-пулемёт TDI KRISS Vector\n• Оптический прицел ПСО-1 (4 крат)\n• Оптический прицел ELCAN DR (4 крат)\n• Оптический прицел HK Schmidt Bender\n \n%c[255,160,160,160]За гипермодификаты:\n%c[default]• Винтовка СВУ-А\n• Автомат СР-3М «Вихрь»\n \n%c[255,160,160,160]За абсолюты:\n%c[default]• Винтовка FN SCAR-H\n• Пулемёт ПКМ Тактический\n• Снайперская винтовка AWM-F</text></string>
                                                                           <!-- Степаныч за плащи -->
 <string id="price_stepanych_plash_text"><text>%c[255,160,160,160]Пошив плащей:\n%c[default]• Коричневый плащ - две выделанные шкуры + артефакт второго уровня\n• Коричневый плащ с противогазом - две выделанные шкуры + два артефакта второго уровня\n• Чёрный плащ - четыре выделанных шкуры + артефакт третьего уровня\n• Чёрный плащ с противогазом - четыре выделанных шкуры + артефакт третьего и второго уровней\n\n%c[255,160,160,160]Ремонт плащей:\n%c[default]• За любой плащ - деньги + бутылка водки</text></string>
 

@@ -2081,7 +2081,7 @@
 			<next>213</next>
 		</phrase>
 		<phrase id="2122"> <!-- с Волкодавом говорили и он жив-здоров -->
-		<has_info>volkodav_dt_gg_know</has_info>
+		<precondition>sak_dialog.kruglov_pda_in_process_prec</precondition>
 		<dont_has_info>volkodav_umer</dont_has_info>
 		<dont_has_info>volkodav_dt_shema_have</dont_has_info>
 		<dont_has_info>volkodav_dt_art_have</dont_has_info>
@@ -2940,7 +2940,7 @@
 		<phrase id="134">
 			<text>volkodav_art_shema_have_dialog_134</text>
 			<action>sak.create_items("kruglov_pda",1)</action>
-			<action>sak_dialog.add_ara_scientific</action>
+			<action>sak.create_items("merc_scientific_outfit",1)</action>
 			<give_info>volkodav_dt_art_done</give_info>
 			<next>135</next>
 		</phrase>
@@ -3559,96 +3559,115 @@
 	</phrase_list>
 </dialog>
 	
-<dialog id="borov_11_saharov">
-	<precondition>dialogs.is_not_wounded</precondition>
+<dialog id="sakharov_val_container_dlg">
 	<has_info>borov_11_saharov_start</has_info>
-	<dont_has_info>borov_11_saharov_done</dont_has_info>
-	<dont_has_info>borov_11_saharov_no</dont_has_info>
+	<dont_has_info>sakharov_val_container_done_info</dont_has_info>
+	<dont_has_info>sakharov_val_container_re_info</dont_has_info>
 	<phrase_list>
 		<phrase id="0">
-			<text>borov_11_saharov_0</text>
+			<text>sakharov_val_container_dlg_0</text>
 			<next>1</next>
 		</phrase>
 		<phrase id="1">
-			<text>borov_11_saharov_1</text>
+			<text>sakharov_val_container_dlg_1</text>
 			<next>2</next>
 		</phrase>
 		<phrase id="2">
-			<text>borov_11_saharov_2</text>
+			<text>sakharov_val_container_dlg_2</text>
 			<next>3</next>
 		</phrase>
 		<phrase id="3">
-			<text>borov_11_saharov_3</text>
-			<next>4</next>
+			<text>sakharov_val_container_dlg_3</text>
 			<next>41</next>
 			<next>42</next>
-		</phrase>
-		<phrase id="4">
-		<precondition>sak_dialog.have_borov_11</precondition>
-		<precondition>sak_dialog.have_borov_11_doc</precondition>
-			<text>borov_11_saharov_4</text>
-			<action>sak_dialog.give_borov_11</action>
-			<give_info>kontainer_saharov_done</give_info>
-			<next>5</next>
+			<next>43</next>
 		</phrase>
 		<phrase id="41">
+		<precondition>sak_dialog.have_borov_11</precondition>
 		<precondition>sak_dialog.have_borov_11_doc</precondition>
-			<text>borov_11_saharov_41</text>
-			<action>sak_dialog.give_borov_docs</action>
+			<text>sakharov_val_container_dlg_41</text>
+			<action>sak_dialog.give_borov_11</action>
+			<give_info>kontainer_saharov_done</give_info>
 			<next>51</next>
 		</phrase>
-		<phrase id="5">
-			<text>borov_11_saharov_5</text>
-			<give_info>borov_11_saharov_done</give_info>
+		<phrase id="42">
+		<precondition>sak_dialog.have_borov_11_doc</precondition>
+			<text>sakharov_val_container_dlg_42</text>
+			<action>sak_dialog.give_borov_docs</action>
+			<next>52</next>
+		</phrase>
+		<phrase id="43">
+			<text>sakharov_val_container_dlg_43</text>
+			<give_info>sakharov_val_container_re_info</give_info>
+			<next>53</next>
+		</phrase>
+		<phrase id="51">
+			<text>sakharov_val_container_dlg_51</text>
+			<give_info>sakharov_val_container_done_info</give_info>
 			<give_info>info_amk_recipt_souls_cristal</give_info>
 			<action>sak.info_amk_received</action>
 			<action>sak.create_items("detector_elite",1)</action>
 			<action>mike.not_bad_job</action>
 		</phrase>
-		<phrase id="51">
-			<text>borov_11_saharov_51</text>
-			<give_info>borov_11_saharov_done</give_info>
+		<phrase id="52">
+			<text>sakharov_val_container_dlg_52</text>
+			<give_info>sakharov_val_container_done_info</give_info>
 			<action>sak.create_items("detector_elite",1)</action>
 			<action>sak.create_items("medkit_scientic",3)</action>
 			<action>sak.create_items("antirad",5)</action>
 		</phrase>
-		<phrase id="42">
-			<text>borov_11_saharov_42</text>
-			<give_info>borov_11_saharov_no</give_info>
-			<next>52</next>
-		</phrase>
-		<phrase id="52">
-			<text>borov_11_saharov_52</text>
+		<phrase id="53">
+			<text>sakharov_val_container_dlg_53</text>
 		</phrase>
 	</phrase_list>
 </dialog>
 	
-<dialog id="borov_11_saharov_no">
-	<precondition>sak_dialog.have_borov_11</precondition>
-	<precondition>sak_dialog.have_borov_11_doc</precondition>
-	<dont_has_info>borov_11_saharov_done</dont_has_info>
-	<has_info>borov_11_saharov_no</has_info>
-	<dont_has_info>borov_11_done</dont_has_info>
+<dialog id="sakharov_val_container_re_dlg">
+	<dont_has_info>sakharov_val_container_done_info</dont_has_info>
+	<has_info>sakharov_val_container_re_info</has_info>
 	<phrase_list>
 		<phrase id="0">
-			<text>borov_11_saharov_no_0</text>
+			<text>sakharov_val_container_re_dlg_0</text>
 			<next>1</next>
 		</phrase>
 		<phrase id="1">
-			<text>borov_11_saharov_no_1</text>
-			<next>2</next>
+			<text>sakharov_val_container_re_dlg_1</text>
+			<next>21</next>
+			<next>22</next>
+			<next>23</next>
 		</phrase>
-		<phrase id="2">
-			<text>borov_11_saharov_no_2</text>
+		<phrase id="21">
+		<precondition>sak_dialog.have_borov_11</precondition>
+		<precondition>sak_dialog.have_borov_11_doc</precondition>
+			<text>sakharov_val_container_dlg_41</text> <!-- отсюда и ниже - не ошибка -->
 			<action>sak_dialog.give_borov_11</action>
-			<next>3</next>
+			<give_info>kontainer_saharov_done</give_info>
+			<next>31</next>
 		</phrase>
-		<phrase id="3">
-			<text>borov_11_saharov_no_3</text>
+		<phrase id="22">
+		<precondition>sak_dialog.have_borov_11_doc</precondition>
+			<text>sakharov_val_container_dlg_42</text>
+			<action>sak_dialog.give_borov_docs</action>
+			<next>32</next>
+		</phrase>
+		<phrase id="23">
+			<text>sakharov_val_container_re_dlg_23</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
+		<phrase id="31">
+			<text>sakharov_val_container_dlg_51</text>
+			<give_info>sakharov_val_container_done_info</give_info>
 			<give_info>info_amk_recipt_souls_cristal</give_info>
 			<action>sak.info_amk_received</action>
 			<action>sak.create_items("detector_elite",1)</action>
-			<give_info>borov_11_saharov_done</give_info>
+			<action>mike.not_bad_job</action>
+		</phrase>
+		<phrase id="32">
+			<text>sakharov_val_container_dlg_52</text>
+			<give_info>sakharov_val_container_done_info</give_info>
+			<action>sak.create_items("detector_elite",1)</action>
+			<action>sak.create_items("medkit_scientic",3)</action>
+			<action>sak.create_items("antirad",5)</action>
 		</phrase>
 	</phrase_list>
 </dialog>
@@ -4126,9 +4145,9 @@
 			<next>45</next>
 		</phrase>
 		<phrase id="43">
-		<precondition>sak_dialog.have_cart</precondition>
+		<precondition>sak_dialog.gg_n_cart_have(1)</precondition>
 			<text>docent_upgrade_belt_43</text>
-			<action>sak_dialog.transfer_any_x_art("c")</action>
+			<action>sak_dialog.give_n_cart(1)</action>
 			<action>sak_inventory.release_actor_items("belt_4_art",1)</action>
 			<next>53</next>
 		</phrase>
@@ -5188,10 +5207,10 @@
 			<next>322</next>		
 		</phrase>
 		<phrase id="41">
-			<precondition>sak_dialog.have_cart</precondition>		
+			<precondition>sak_dialog.gg_n_cart_have(1)</precondition>
 			<text>bar_docent_pda_broken_repair_41</text>
 			<action>sak_dialog.give_device_pda_npc_gg</action>
-			<action>sak_dialog.transfer_any_x_art("c")</action>			
+			<action>sak_dialog.give_n_cart(1)</action>
 			<next>51</next>
 		</phrase>
 		<phrase id="42">
@@ -5774,7 +5793,6 @@
 		<phrase id="3">
 			<text>petrenko_postmens_dialog_3</text>
 			<give_info>petrenko_postmens_start</give_info>
-			<action>sak_dialog.dolgman_postmens_show</action>
 			<next>4</next>
 		</phrase>
 		<phrase id="4">
@@ -5878,7 +5896,7 @@
 		</phrase>
 		<phrase id="109">
 			<text>bar_stalker_disel_109</text>
-			<give_info>price_kanistra_bar</give_info>  <!-- делаем запись в ПДА -->
+			<action>_G.give_article("price_kanistra_bar")</action>
 		</phrase>
 		<phrase id="401">
 			<text>bar_stalker_disel_401</text>
@@ -6012,7 +6030,6 @@
 		<phrase id="42411">
 		<dont_has_info>bar_no_charge</dont_has_info>
 			<text>bar_stalker_disel_42411</text>
-			<action>sak_dialog.text_money_bar_akkum_dialog</action>
 			<next>42421</next>
 			<next>42422</next>
 		</phrase>
@@ -6053,7 +6070,6 @@
 		</phrase>
 		<phrase id="435">
 			<text>bar_stalker_disel_435</text>
-			<action>sak_dialog.text_money_bar_water_dialog</action>
 			<next>4451</next>
 			<next>4452</next>
 		</phrase>
@@ -6219,7 +6235,6 @@
 		<phrase id="1">
 		<dont_has_info>barman_capsule_not_ready</dont_has_info>
 			<text>barman_capsule_have_dialog_1</text>
-			<action>sak_dialog.text_money_barmen_capsule_dialog</action>
 			<next>21</next>
 			<next>22</next>
 			<next>23</next>
@@ -6841,8 +6856,6 @@
 		<phrase id="1">
 			<text>docent_blowout_dialog_1</text>
 			<give_info>blowout_dialog</give_info>
-			<action>sak_dialog.do_blow_time</action>
-			<action>sak_dialog.docent_blowout_dialog_end</action>
 		</phrase>
 	</phrase_list>
 </dialog>
@@ -6864,33 +6877,23 @@
 		<dont_has_info>bar_deactivate_radar_done</dont_has_info>		
 			<text>sidor_blowout_dialog_11</text>
 			<give_info>blowout_dialog</give_info>
-			<action>sak_dialog.do_blow_time</action>
-			<action>sak_dialog.sidor_blowout_dialog_end</action>
 		</phrase>
 		<phrase id="12">
 			<text>sidor_blowout_dialog_12</text>
 			<give_info>blowout_dialog</give_info>
-			<action>sak_dialog.do_blow_time</action>
-			<action>sak_dialog.sidor_blowout_dialog_end</action>
 		</phrase>
 		<phrase id="13">
 			<text>sidor_blowout_dialog_13</text>
 			<give_info>blowout_dialog</give_info>
-			<action>sak_dialog.do_blow_time</action>
-			<action>sak_dialog.sidor_blowout_dialog_end</action>
 		</phrase>
 		<phrase id="14">
 			<text>sidor_blowout_dialog_14</text>
 			<give_info>blowout_dialog</give_info>
-			<action>sak_dialog.do_blow_time</action>
-			<action>sak_dialog.sidor_blowout_dialog_end</action>
 		</phrase>
 		<phrase id="15">
 		<dont_has_info>bar_deactivate_radar_done</dont_has_info>		
 			<text>sidor_blowout_dialog_15</text>
 			<give_info>blowout_dialog</give_info>
-			<action>sak_dialog.do_blow_time</action>
-			<action>sak_dialog.sidor_blowout_dialog_end</action>
 		</phrase>
 	</phrase_list>
 </dialog>
@@ -6907,8 +6910,6 @@
 		<phrase id="1">
 			<text>saharov_blowout_dialog_1</text>
 			<give_info>blowout_dialog</give_info>
-			<action>sak_dialog.do_blow_time</action>
-			<action>sak_dialog.saharov_blowout_dialog_end</action>
 		</phrase>
 	</phrase_list>
 </dialog>
@@ -6977,7 +6978,7 @@
 		<phrase id="105">
 			<text>sultan_start_dialog_105</text>
 			<give_info>sultan_new_gg</give_info>
-			<give_info>price_sultan</give_info>
+			<action>_G.give_article("price_sultan")</action>
 			<next>202</next>
 			<next>106</next>
 		</phrase>
@@ -10413,7 +10414,6 @@
 		<phrase id="11">
 		<precondition>sak_dialog.is_ready_time_rad_psy</precondition>
 			<text>rad_izm_done_11</text>
-			<action>sak_dialog.time_rad_psy</action>
 			<next>2</next>
 		</phrase>
 		<phrase id="12">
@@ -10642,7 +10642,6 @@
 		</phrase>
 		<phrase id="52">
 			<text>lisyi_bar_hunter_toz_dialog_52</text>
-			<action>sak_dialog.hunters_toz_stalker_show</action>
 		</phrase>	
 	</phrase_list>
 </dialog>
@@ -11234,32 +11233,83 @@
 		<phrase id="703">
 			<text>bar_dolg_ivancov_start_703</text>
 			<next>7041</next>
-			<next>7042</next>			
+			<next>7042</next>
+			<next>7043</next>
 		</phrase>
 		<phrase id="7041">
-		<dont_has_info>voronin_prot_out_info</dont_has_info>		
+		<dont_has_info>voronin_prot_out_info</dont_has_info>
+		<dont_has_info>ivancov_gg_news_start</dont_has_info>
 			<text>bar_dolg_ivancov_start_7041</text>
 			<next>7051</next>
+		</phrase>
+		<phrase id="7042">
+		<has_info>voronin_prot_out_info</has_info>		
+			<text>bar_dolg_ivancov_start_7042</text>
+			<next>7052</next>
+		</phrase>
+		<phrase id="7043">
+		<dont_has_info>voronin_prot_out_info</dont_has_info>
+		<has_info>ivancov_gg_news_start</has_info>
+			<text>bar_dolg_ivancov_start_7042</text> <!-- не ошибка -->
+			<next>7053</next>
 		</phrase>
 		<phrase id="7051">
 			<text>bar_dolg_ivancov_start_7051</text>
 			<next>7061</next>
 		</phrase>
+		<phrase id="7052">
+			<text>bar_dolg_ivancov_start_7052</text>
+			<next>7062</next>
+		</phrase>
+		<phrase id="7053">
+			<text>bar_dolg_ivancov_start_7052</text> <!-- не ошибка -->
+			<next>7063</next>
+		</phrase>
 		<phrase id="7061">
 			<text>bar_dolg_ivancov_start_7061</text>
 			<next>7071</next>
+		</phrase>
+		<phrase id="7062">
+			<text>bar_dolg_ivancov_start_7062</text>
+			<next>7072</next>
+		</phrase>
+		<phrase id="7063">
+			<text>bar_dolg_ivancov_start_7063</text>
+			<next>7073</next>
 		</phrase>
 		<phrase id="7071">
 			<text>bar_dolg_ivancov_start_7071</text>
 			<next>7081</next>
 		</phrase>
+		<phrase id="7072">
+			<text>bar_dolg_ivancov_start_7072</text>
+			<next>7082</next>
+		</phrase>
+		<phrase id="7073">
+			<text>bar_dolg_ivancov_start_7073</text>
+			<give_info>bar_dolg_ivancov_radar_gg</give_info>
+			<next>7083</next>
+		</phrase>
 		<phrase id="7081">
 			<text>bar_dolg_ivancov_start_7081</text>
 			<next>7091</next>
 		</phrase>
+		<phrase id="7082">
+			<text>bar_dolg_ivancov_start_7082</text>
+			<next>7092</next>
+		</phrase>
+		<phrase id="7083">
+			<text>bar_dolg_ivancov_start_7083</text>
+			<action>dialogs.break_dialog</action>
+		</phrase>
 		<phrase id="7091">
 			<text>bar_dolg_ivancov_start_7091</text>
 			<next>7010</next>
+		</phrase>
+		<phrase id="7092">
+			<text>bar_dolg_ivancov_start_7092</text>
+			<give_info>bar_dolg_ivancov_radar_gg</give_info>
+			<give_info>voronin_last_seif</give_info>
 		</phrase>
 		<phrase id="7010">
 			<text>bar_dolg_ivancov_start_7010</text>
@@ -11280,38 +11330,9 @@
 			<give_info>bar_dolg_ivancov_radar_gg</give_info> <!-- поршень закрытия 700 диалога -->
 			<give_info>voronin_last_seif</give_info>
 		</phrase>
-<!-- new -->
-		<phrase id="7042">
-		<has_info>voronin_prot_out_info</has_info>		
-			<text>bar_dolg_ivancov_start_7042</text>
-			<next>7052</next>
-		</phrase>
-		<phrase id="7052">
-			<text>bar_dolg_ivancov_start_7052</text>
-			<next>7062</next>
-		</phrase>
-		<phrase id="7062">
-			<text>bar_dolg_ivancov_start_7062</text>
-			<next>7072</next>
-		</phrase>
-		<phrase id="7072">
-			<text>bar_dolg_ivancov_start_7072</text>
-			<next>7082</next>
-		</phrase>
-		<phrase id="7082">
-			<text>bar_dolg_ivancov_start_7082</text>
-			<next>7092</next>
-		</phrase>
-		<phrase id="7092">
-			<text>bar_dolg_ivancov_start_7092</text>
-			<give_info>bar_dolg_ivancov_radar_gg</give_info> <!-- поршень закрытия 700 диалога -->
-			<give_info>voronin_last_seif</give_info>
-		</phrase>
-<!-- -->
 		<phrase id="801">
 			<text>bar_dolg_ivancov_start_801</text>
 		</phrase>
-<!-- -->
 		<phrase id="901">
 			<text>bar_dolg_ivancov_start_901</text>
 		</phrase>		
@@ -12515,7 +12536,6 @@
 <dialog id="voronin_seif_dialog_2">
 	<has_info>news_bar_seif</has_info>
 	<dont_has_info>open_bar_seif</dont_has_info>
-	<dont_has_info>voronin_post_radar_info</dont_has_info>
 	<dont_has_info>voronin_prot_out_info</dont_has_info>	<!-- ЗАКРЫЛИ ДИАЛОГ ПРО ВОРОВСТВО  -->
 	<phrase_list>
 		<phrase id="0">
@@ -12569,7 +12589,6 @@
 		<dont_has_info>voronin_prot_out_info</dont_has_info>
 		<precondition>sak_dialog.treasure_time_over("t_voronin",3)</precondition>
 			<text>voronin_seif_dialog_2_1</text>
-			<action>sak_dialog.text_money_voronin_seif_dialog</action>
 			<next>2</next>
 			<next>3</next>
 			<next>9</next>
@@ -12620,7 +12639,8 @@
 </dialog>
  
 <dialog id="ivancov_seif_dialog_1">
-	<has_info>bar_voronin_dead</has_info>
+	<has_info>bar_dolg_ivancov_radar_gg</has_info>
+	<has_info>ivancov_gg_news_start</has_info>
 	<dont_has_info>news_bar_seif</dont_has_info>
 	<phrase_list>
 		<phrase id="0">
@@ -12657,11 +12677,42 @@
 
 <dialog id="ivancov_seif_dialog_2">
 	<has_info>news_bar_seif</has_info>
-	<has_info>bar_voronin_dead</has_info>
+	<has_info>bar_dolg_ivancov_radar_gg</has_info>
+	<has_info>ivancov_gg_news_start</has_info>
 	<dont_has_info>open_bar_seif</dont_has_info>
 	<phrase_list>
 		<phrase id="0">
 			<text>voronin_seif_dialog_2_0</text>
+			<next>101</next>
+			<next>102</next>
+		</phrase>
+		<phrase id="101">
+		<dont_has_info>voronin_dolg_have</dont_has_info>
+			<text></text>
+			<next>103</next>
+		</phrase>
+		<phrase id="102">
+		<has_info>voronin_dolg_have</has_info>
+			<text></text>
+			<next>106</next>
+		</phrase>
+		<phrase id="106">
+			<text></text>
+			<next>104</next>
+		</phrase>
+		<phrase id="104">
+			<text>voronin_seif_dialog_2_104</text>
+			<next>105</next>
+			<next>5</next>
+		</phrase>
+		<phrase id="105">
+		<precondition>sak_dialog.voronin_dolg_money_have</precondition>
+			<text>voronin_seif_dialog_2_105</text>
+			<action>sak_dialog.give_voronin_dolg</action>
+			<next>6</next>
+		</phrase>
+		<phrase id="103">
+			<text></text>
 			<next>1</next>
 			<next>11</next>
 		</phrase>
@@ -12680,19 +12731,35 @@
 			<text>voronin_seif_dialog_2_1</text>
 			<next>2</next>
 			<next>3</next>
+			<next>9</next>
 			<next>5</next>
 		</phrase>
 		<phrase id="2">
-		<precondition>sak_dialog.actor_3000_have</precondition>
+		<precondition>sak_dialog.voronin_seif_money_have</precondition>
 			<text>voronin_seif_dialog_2_2</text>
-			<action>sak_dialog.give_3000_money</action>
+			<action>sak_dialog.give_voronin_seif_money</action>
 			<next>6</next>
 		</phrase>
 		<phrase id="3">
-		<precondition>sak_dialog.actor_15000_have</precondition>
+		<precondition>sak_dialog.voronin_seif2_money_have</precondition>
 			<text>voronin_seif_dialog_2_21</text>
-			<action>sak_dialog.give_15000_money</action>
+			<action>sak_dialog.give_voronin_seif2_money</action>
 			<action>sak_dialog.start_time("t_voronin")</action>
+			<next>6</next>
+		</phrase>
+		<phrase id="9">
+		<precondition>sak_dialog.voronin_seif_money_not_have</precondition>
+			<text>voronin_seif_dialog_2_9</text>
+			<next>7</next>
+		</phrase>
+		<phrase id="7">
+			<text>voronin_seif_dialog_2_7</text>
+			<next>8</next>
+			<next>5</next>
+		</phrase>
+		<phrase id="8">
+			<text>voronin_seif_dialog_2_8</text>
+			<action>sak_dialog.voronin_seif_money_dolg</action>
 			<next>6</next>
 		</phrase>
 		<phrase id="5">
@@ -14469,7 +14536,7 @@
 </dialog>
 <!-- exo_dialog -->
 <dialog id="barman_exo_dialog">
-	<has_info>barman_exo_good_trade</has_info>
+	<precondition>sak_dialog.barman_exo_access_prec</precondition>
 	<dont_has_info>barman_exo_new</dont_has_info>
 	<phrase_list>
 		<phrase id="0">

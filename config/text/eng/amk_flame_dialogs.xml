@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+<string id="mil_screw_flamethrower_0"><text>Got this busted flamethrower here. What d'ya say? Think it can be brought back to life?</text></string>
+<string id="mil_screw_flamethrower_1"><text>Oh! Well I'll be damned, that's my handiwork! Though I ain't made these in ages. Let's take a look at what we got here. I see the hose is busted... Whoa! This is broken too... What the hell?! Did you drag this thing across the entire Zone? Bottom line, Marked One, there's a shitload of work here. And work is a thankless thing. So you're gonna have to pay up! Plus parts, naturally. Let's make a little list of what's needed for the repair. So. I got some stuff, I'll ask around with the guys for some other bits. Yeah, you're gonna have to run around for parts...</text></string>
+<string id="mil_screw_flamethrower_21"><text>Ah, to hell with this piece of junk! More trouble than it's worth. You want it?</text></string>
+<string id="mil_screw_flamethrower_22"><text>I'm used to it. Tell me what you need.</text></string>
+<string id="mil_screw_flamethrower_31"><text>I'll take it, good for spare parts. Here's a little gift from me, wasn't for nothing you hauled this beast around!</text></string>
+<string id="mil_screw_flamethrower_32"><text>So... well, here's the rough list:\n
+First off, need an artifact, called "Fireball". There's so many holes to weld here - can't re-weld 'em all! With a regular soldering iron - that's work till winter! But with this artifact I'll weld everything up quick, got a good method...\n
+Second, tubes. The ones on it now are meant for watering cucumbers, not for carrying flammable mixture! So get me some proper tube. I'd recommend visiting Sidorovich - young punks are always hauling all kinds of junk from the Garbage to him, maybe he's got something. Say hi to him for me. Maybe for old times' sake he'll find something for me.\n
+Third, pressure gauge - that's a pressure sensor, for those who don't get it. This one's completely fucked. I'd suggest looking around Agroprom. There used to be a research institute there, maybe something similar is still lying around somewhere.\n
+Fourth, burner. Can't do without it. Who chewed up this one is a mystery... like they shoved it into a burer's teeth! You can ask around our guys for a burner. But hell if anyone's gonna give it up! It's great for smoking sausage. Heh-heh. Well, unless you quietly search around the barracks. Though there's a more reliable option. Drop by the Barkeep - now he's our treasure trove of all kinds of crap. Ask him for one, I'll make it work, everything will be fine. Just don't say who it's for, or he might tip off "Duty" that I'm tinkering here - they'll come running with a raid! We don't need that, do we?\n
+And the most important thing in any mechanism - lubrication. That is, alcohol. To polish the parts and lacquer myself on the inside. You get it? Find me some vodka, eh? Sober, I don't really feel like crafting all this. There's a lot of work here, so let's say about five bottles... no, seven... Wait, make it ten. You never know - might not be enough for the parts.\n
+That's it. Go collect it. You're a stalker, bro! I believe in you. Preferably, you should start your search with the vodka, of course...</text></string>
+<string id="mil_screw_flamethrower_4"><text>Wow. That's quite the shopping list! Alright. I hope it's worth it.</text></string>
+<string id="mil_screw_flamethrower_5"><text>Yeah, it's worth it. And it'll cost you just one little artifact. A good one. Third level. And that's only 'cause we're tight!</text></string>
+<string id="mil_screw_flamethrower_6"><text>You didn't mention anything about artifacts!</text></string>
+<string id="mil_screw_flamethrower_7"><text>Well now I am. For the kind of thing I'm gonna build, I could've asked for more! But I'm generous. And besides. Think about it yourself. Who else besides me is gonna assemble this crap, eh? So come on, don't be stingy.</text></string>
+<string id="mil_screw_flamethrower_8"><text>Damn you... Just make sure you don't drink yourself to death before I get back!</text></string>
+
+<string id="escape_trader_flamethrower_dialog_0"><text>Screw sent me to you, know the guy?</text></string>
+<string id="escape_trader_flamethrower_dialog_1"><text>Screw... Yeah, I know that stalker. If I'm not mistaken, he's a big fan of hitting the bottle. Always buying vodka from me. But his hands grow from the right place. He'll fix our TV here, or dosimeters... Why are you asking about him?</text></string>
+<string id="escape_trader_flamethrower_dialog_2"><text>Sending you greetings from him, I'm saying. Said you might have something I could get my hands on. Listen, Sidorovich, I need metal tubes. Small ones, about this size. It's not really for me, but for Screw... Got anything similar?</text></string>
+<string id="escape_trader_flamethrower_dialog_3"><text>What?! Where would I get those? Do they have some kind of value? Don't have anything even close! If it doesn't cost me money, I don't need that crap!</text></string>
+<string id="escape_trader_flamethrower_dialog_4"><text>Alright. Got it. So how much is this gonna cost me?</text></string>
+<string id="escape_trader_flamethrower_dialog_5"><text>You completely deaf from radiation, Marked One? I'm telling you - don't have anything like that! There is, of course, one option... you made me happy hearing that Screw's alive. So I'll give you free advice - go visit Lyoha Tambovski. He's our guy with brains, always tinkering with something, I think he'll find you something. He's supposedly wandering around the Garbage now, looking for stuff for his projects, got a message from him a couple hours ago...</text></string>
+<string id="escape_trader_flamethrower_dialog_6"><text>Thanks. For once, you did something for free... Yeah... old cheapskate...</text></string>
+<string id="escape_trader_flamethrower_dialog_7"><text>What are you mumbling there, Marked One?</text></string>
+<string id="escape_trader_flamethrower_dialog_8"><text>THANK YOU, I'm saying. Stay healthy, Sidorovich.</text></string>
+<string id="escape_trader_flamethrower_dialog_9"><text>What health is there... Need anything else from me?</text></string>
+
+<string id="gar_flamethrower_dialog_101"><text>Hey there, bro! You don't look so good... How's your health?</text></string>
+<string id="gar_flamethrower_dialog_102"><text>Not great, still alive though. Listen, Sidor says you're handy with everything. Can you help me find some metal tubes? About this size...</text></string>
+<string id="gar_flamethrower_dialog_103"><text>Tubes, tubes... Hmm. Tons of junk here, in these glowing piles. I needed some like that myself, caught a bunch of radiation while I was searching. Good thing I won some vodka from Stas - got myself patched up. If you really need 'em, I'll sell 'em almost for nothing. I've got my eye on collecting some more stuff from these piles, but I don't have good protection. But I do have an artifact to remove radiation, except the battery for the belt is dead. Get me a couple batteries, at least half-charged each - and the tubes are yours. Deal?</text></string>
+<string id="gar_flamethrower_dialog_1041"><text>Don't have a pair on me. Can you wait?</text></string>
+<string id="gar_flamethrower_dialog_1042"><text>Yeah, radiation's nothing to mess with, I know that myself. Here, take these.</text></string>
+<string id="gar_flamethrower_dialog_1052"><text>Perfect! Here's the tubes, almost not radioactive. Use 'em well.</text></string>
+<string id="gar_flamethrower_dialog_1051"><text>Of course... I'll be here for a couple more days. Or you can search yourself, maybe you'll get lucky...</text></string>
+<string id="gar_flamethrower_dialog_201"><text>Hey there, scavenger. Still interested in junk?</text></string>
+<string id="gar_flamethrower_dialog_2021"><text>Nah, don't need anything right now.</text></string>
+<string id="gar_flamethrower_dialog_2031"><text>Come by if you need something. Or just to chat.</text></string>
+<string id="gar_flamethrower_dialog_2022"><text>Got batteries, trading for tubes...</text></string>
+<string id="gar_flamethrower_dialog_2032"><text>Ah! No problem. Take these, just don't stick 'em in your pants - they're a bit radioactive...</text></string>
+<string id="gar_flamethrower_dialog_301"><text>Good to see you!</text></string>
+
+<string id="barmen_flamethrower_dialog_0"><text>You wouldn't happen to have a flamethrower lying around, for old time's sake?</text></string>
+<string id="barmen_flamethrower_dialog_1"><text>A flamethrower?.. Hmm. Interesting request. I'm embarrassed to ask - what the hell do you need it for? Roasting boars?</text></string>
+<string id="barmen_flamethrower_dialog_2"><text>Yeah, I've got a real craving for some smoked sausage!</text></string>
+<string id="barmen_flamethrower_dialog_3"><text>Yeah right?.. Well, let's suppose, let's suppose. Alright, I've got something, seems to work fine. I'll give it to you for a simple artifact.</text></string>
+<string id="barmen_flamethrower_dialog_41"><text>Alright. Don't mind giving it up. Here's the artifact.</text></string>
+<string id="barmen_flamethrower_dialog_42"><text>An artifact for such junk? That's pretty steep...</text></string>
+<string id="barmen_flamethrower_dialog_51"><text>Yeah, I heard you've got artifacts coming out of your ears... If you want anything else, you know, hair dye or nail files for polishing your nails - don't be shy, come on over.\nHere's your flamethrower, smoke whatever you want...</text></string>
+
+<string id="flamethrower_repair_start_0"><text>I've gathered everything for repairing the flamethrower.</text></string>
+<string id="flamethrower_repair_start_1"><text>Everything?! I didn't even expect that somehow... Well, let me take a look. The vodka's decent, not rotgut?</text></string>
+<string id="flamethrower_repair_start_2"><text>Here, take the "Sphere" and the parts first. The vodka... just don't go too heavy on it, you'll have time to drink later. Come on, get to work! I'm waiting for the flamethrower, and my gratitude is waiting for you.</text></string>
+<string id="flamethrower_repair_start_3"><text>Relax! I already said I'd do it. Give me a day - everything will be ready.</text></string>
+<string id="flamethrower_repair_start_4"><text>Deal. I'll be waiting.</text></string>
+
+<string id="flamethrower_repair_done_0"><text>How's my flamethrower coming along?</text></string>
+<string id="flamethrower_repair_done_10"><text>Oh hey, Mar-r-rked... One! What do you... w-w-want?.. Do you r-r-really think that it's already... p-p-possible to be f-f-finished?! Hic...</text></string>
+<string id="flamethrower_repair_done_11"><text>If you drank less - you'd have finished long ago! Alright, screw it... Keep working, I'll come back later.</text></string>
+<string id="flamethrower_repair_done_20"><text>Oh! And here comes the happy flamethrower owner. Look what a beauty turned out!</text></string>
+<string id="flamethrower_repair_done_21"><text>No way! Thought I'd never see decent work from you. Looks pretty good. Here, thanks.</text></string>
+<string id="flamethrower_repair_done_22"><text>Hey, wait! You're pretty quick... We agreed on two artifacts for the job.</text></string>
+<string id="flamethrower_repair_done_23"><text>What-what?! Did you drink your brain away completely? We talked about one!</text></string>
+<string id="flamethrower_repair_done_24"><text>Shhh... Don't get heated. Yeah, well I forgot, it happens. One artifact, yeah, one of the good ones. Like a "Soul".</text></string>
+<string id="flamethrower_repair_done_251"><text>I'll think about it some more. Whether I need all this.</text></string>
+<string id="flamethrower_repair_done_252"><text>That's more like it. Here's your payment. And he says two.</text></string>
+<string id="flamethrower_repair_done_26"><text>Yeah! Much obliged. Here's your flamethrower. Now you can light things up. Ha-ha. Alright, good luck.</text></string>
+<string id="flamethrower_repair_done_27"><text>But it's empty! How am I supposed to "light things up"?!</text></string>
+<string id="flamethrower_repair_done_28"><text>What did you expect? Do they fill up your gas tank for free when you buy a car at a dealership? No? Come on, charging such a device is easy as pie. Just swap out the canister with the incendiary mixture and that's it. You can get those from me, practically at cost. Just bring the components for "cooking": gasoline and colloidal gas. For the work itself I only ask for a first-level artifact. Or I can get everything myself, but then it'll cost you pretty decent money.</text></string>
+<string id="flamethrower_repair_done_29"><text>I have an idea where to get gasoline, but what about the gas?</text></string>
+<string id="flamethrower_repair_done_30"><text>The eggheads, the scientists that is, dragged a hell of a lot of canisters with this gas into the Zone. Apparently they need it for experiments. There are many places where you can find them. At Agroprom, for example. There are also rumors that some underground labs are full of them.</text></string>
+<string id="flamethrower_repair_done_31"><text>Got it. Thanks again. Now you can go get drunk.</text></string>
+
+<string id="shurup_flame_reload_dialog_0"><text>I need a canister with incendiary mixture. Can you whip one up with your signature recipe?</text></string>
+<string id="shurup_flame_reload_dialog_11"><text>Sure, why not? But I have rules: I give you one from my stock right away, and prepare a mixture from the components you brought for the future. It's a long process, so next time come back for this stuff no earlier than a day later. Is that clear?</text></string>
+<string id="shurup_flame_reload_dialog_21"><text>Don't you want to clarify the components and payment first?</text></string>
+<string id="shurup_flame_reload_dialog_31"><text>Ah, right! So, I need a gas canister and a cylinder with colloidal gas. Look for them wherever you want. For payment I take a first-level artifact, and it better not be worn out. If you're too lazy to haul heavy stuff here, I can find everything needed myself, but then I'll need a second-level artifact in good condition from you. If the terms suit you, we can shake on it right now.</text></string>
+<string id="shurup_flame_reload_dialog_121"><text>I told you, Marked One - come back for refills in a day, not earlier. So why'd you show up then?</text></string>
+<string id="shurup_flame_reload_dialog_122"><text>I already stated my terms. Did you bring a gas canister and cylinder with you? Didn't forget about a simple artifact? Or do you want me to get everything needed myself? Then prepare a better artifact.</text></string>
+<string id="shurup_flame_reload_dialog_131"><text>Right! Slipped my mind, sorry.</text></string>
+<string id="shurup_flame_reload_dialog_41"><text>Take the gas and gasoline, got tired of hauling it to you guys. And this is a simple artifact for the work. Everything good?</text></string>
+<string id="shurup_flame_reload_dialog_42"><text>I don't have time to run around the Zone looking for what I need. Here's a second-level artifact and the components are on you.</text></string>
+<string id="shurup_flame_reload_dialog_43"><text>Nah, I probably can't handle it right now. Maybe later.</text></string>
+<string id="shurup_flame_reload_dialog_5"><text>Excellent!</text></string>
+<string id="flame_reload_receipt_0"><text>I'd like to talk to you about the mixture for charging the flamethrower.</text></string>
+<string id="flame_reload_receipt_1"><text>What? Flame... What? My head's not working after yesterday... Pour me one, eh? Maybe then I'll think straight...</text></string>
+<string id="flame_reload_receipt_21"><text>I see you can't approach you without a bottle. Here you go.</text></string>
+<string id="flame_reload_receipt_22"><text>I don't have anything. I'll come back another time.</text></string>
+<string id="flame_reload_receipt_3"><text>Now that's more like it. You were asking something, but all I had was ringing in my ears... What do you need?</text></string>
+<string id="flame_reload_receipt_4"><text>Well, someone wants to learn your method of preparing incendiary mixture. It's special, your own invention, as I understand. Share it. You won't regret it.</text></string>
+<string id="flame_reload_receipt_5"><text>Eh, I don't mind. I would've just told you, but... See, here's the thing: I need cylinders with colloidal gas. There was a small warehouse in one lab, but stalkers are like children - they dragged everything away. And do they need it? They dragged it off and dumped it everywhere. And now I need it. Three cylinders! Desperately! You must've come across some, right? Right? Bring them, eh? And the same number of little canisters with fuel wouldn't hurt either. So what? Shall we shake on it? You don't even have to bring it all at once. As you find it...</text></string>
+<string id="flame_reload_receipt_6"><text>Hmm, three cylinders with gas and canisters with fuel each. Alright. Maybe.</text></string>
+
+<string id="flame_reload_receipt_have_0"><text>Remember, you promised to share the recipe for making incendiary mixture?</text></string>
+<string id="flame_reload_receipt_have_1"><text>Yeah I remember, what are you pestering me for? And I also remember that someone wanted to bring gas canisters and fuel. So where is it?</text></string>
+<string id="flame_reload_receipt_have_21"><text>I keep my promises. Here's all the gas and fuel. So?</text></string>
+<string id="flame_reload_receipt_have_24"><text>Here's the gas. Is it enough?</text></string>
+<string id="flame_reload_receipt_have_23"><text>Brought the fuel. Is it sufficient?</text></string>
+<string id="flame_reload_receipt_have_22"><text>Can't find it! Maybe we can figure something else out?</text></string>
+<string id="flame_reload_receipt_have_31"><text>Well! Yeah, they're not empty? No? Everything seems to be in order. \nSo here's the deal. Will you write it down or just memorize it? Actually no, I'd better write it down myself, otherwise you'll come bothering me again: saying you didn't remember or didn't understand correctly... Hold on... Hmm, the pen's not writing... \nNeed to lubricate it or something... Heh... Just kidding, it writes fine.\nHere, take it. There's no special secret, but you need some equipment. Well, I wrote it down. Once you gather everything - you'll be able to refill it yourself.</text></string>
+<string id="flame_reload_receipt_have_41"><text>Well I'm not doing it myself. Fine. Maybe we'll figure out your scribbles.</text></string>
+<string id="flame_reload_receipt_have_32"><text>I can't... I can't either! So what? Fine. Some guy here promised to bring me some. Just need to pay... Can you spare a thousand rubles? Well, do you have the cash? Then we'll talk.</text></string>
+<string id="flame_reload_receipt_have_421"><text>Yes, I have the cash. Here.</text></string>
+<string id="flame_reload_receipt_have_422"><text>I will, wait, I'll go get it.</text></string>
+<string id="flame_reload_receipt_have_52"><text>Well! Yeah, it's not counterfeit? No? Everything seems to be in order. \nSo here's the deal. Will you write it down or just memorize it? Actually no, I'd better write it down myself, otherwise you'll come bothering me again: saying you didn't remember or didn't understand correctly... Hold on... Hmm, the pen's not writing... \nNeed to lubricate it or something... Heh... Just kidding, it writes fine. \nHere, take it. There's no special secret, but you need some equipment. Well, I wrote it down. Once you gather everything - you'll be able to refill it yourself.</text></string>
+<string id="flame_reload_receipt_have_34"><text>Did you bring the gas? We agreed on five canisters, didn't we?</text></string>
+<string id="flame_reload_receipt_have_44"><text>Are you joking? You said a couple would be enough?</text></string>
+<string id="flame_reload_receipt_have_541"><text>Don't take me for a fool. I said three! When there are three canisters, then we'll talk.</text></string>
+<string id="flame_reload_receipt_have_542"><text>Yeah, right... Fine, what you brought is enough for me, but where are the promised fuel cans?</text></string>
+<string id="flame_reload_receipt_have_543"><text>Really? I've already forgotten. Fine. What you already brought is enough.\nSo here's the deal, will you write it down or just memorize it? Actually no, I'd better write it down myself, otherwise you'll come bothering me again: saying you didn't remember or didn't understand correctly... Hold on... Hmm, the pen's not writing...\nNeed to lubricate it or something... Heh... Just kidding, it writes fine.\nHere, take it. There's no special secret, but you need some equipment. Well, I wrote it down. Once you gather everything - you'll be able to refill it yourself.</text></string>
+<string id="flame_reload_receipt_have_33"><text>Well then. Something's not full? How much did I ask for? Slipped my mind.</text></string>
+<string id="flame_reload_receipt_have_43"><text>A couple of fuel cans. Exactly.</text></string>
+<string id="flame_reload_receipt_have_531"><text>Yeah, sure! You lie, lie, but don't overdo it. I needed three. And you're trying to get off easy. Bring more, then we'll talk.</text></string>
+<string id="flame_reload_receipt_have_532"><text>Exactly a couple? Fine, what you brought is enough for me, but where are the promised gas canisters?</text></string>
+<string id="flame_reload_receipt_have_533"><text>Really? I've already forgotten. Fine. What you already brought is enough.\nSo here's the deal, will you write it down or just memorize it? Actually no, I'd better write it down myself, otherwise you'll come bothering me again: saying you didn't remember or didn't understand correctly... Hold on... Hmm, the pen's not writing...\nNeed to lubricate it or something... Heh... Just kidding, it writes fine.\nHere, take it. There's no special secret, but you need some equipment. Well, I wrote it down. Once you gather everything - you'll be able to refill it yourself.</text></string>
+
+<string id="tex_mil_screw_flamethrower"><text>I need to find several items from the list that Screw gave me: \n \n
+1. "Fireball" artifact.\n
+2. A pipe. Sidorovich might have one.\n
+3. A manometer. Look for it at the "Agroprom" Research Institute. Can ask Wool.\n
+4. A burner. Ask the Barman.\n
+5. Ten bottles of vodka for this drunkard. \n \n
+Oh, it's going to be a tough day. And he's asking for a third-level artifact for the work too.
+</text></string>
+
+<string id="trubka_descr"><text>A steel pipe of short length. Slightly bent, but looks strong and reliable. One can only hope it will work for the flamethrower.</text></string>
+<string id="gorelka_descr"><text>A medium-sized burner. Rumor has it that "Practical" sausage, when smoked on such a burner, acquires an exquisite taste. Theoretically, it should also work for igniting the combustible mixture in a flamethrower.</text></string>
+<string id="manometr_descr"><text>A pressure gauge from some Soviet-era distillation apparatus. Made with care, except the glass is a bit dirty. There's a good chance it will work reliably on a flamethrower too.</text></string>
+<string id="flamethrower_bad_descr"><text>The condition is deplorable, but probably the flamethrower can still be repaired. Now I just need to find a craftsman who would take on such a non-trivial task.</text></string>
+
+<string id="item_flamethrower_bad_name"><text>Broken flamethrower</text></string>
+<string id="manometr"><text>Manometer</text></string>
+<string id="trubka"><text>Pipe</text></string>
+<string id="gorelka"><text>Burner</text></string>
+
+</string_table>

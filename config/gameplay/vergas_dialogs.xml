@@ -62,50 +62,15 @@
 			<precondition>vergas_krujka.krujka_yes_5</precondition>
 			<text>dialog_krujka_V_100</text>
 			<next>108</next>
-			<next>109</next>
-		</phrase>
-		<phrase id="101">
-			<precondition>vergas_krujka.krujka_yes_6</precondition>
-			<text>dialog_krujka_V_101</text>
-			<next>108</next>
-			<next>109</next>
-		</phrase>
-		<phrase id="102">
-			<precondition>vergas_krujka.krujka_yes_1</precondition>
-			<text>dialog_krujka_V_102</text>
-			<next>108</next>
-			<next>109</next>
-		</phrase>
-		<phrase id="103">
-			<precondition>vergas_krujka.krujka_yes_2</precondition>
-			<text>dialog_krujka_V_103</text>
-			<next>108</next>
-			<next>109</next>
-		</phrase>
-		<phrase id="104">
-			<precondition>vergas_krujka.krujka_yes_3</precondition>
-			<text>dialog_krujka_V_104</text>
-			<next>108</next>
-			<next>109</next>
-		</phrase>
-		<phrase id="105">
-			<precondition>vergas_krujka.krujka_yes_4</precondition>
-			<text>dialog_krujka_V_105</text>
-			<next>108</next>
-			<next>109</next>
-		</phrase>
-		<phrase id="108">
-			<text>dialog_krujka_GG_108</text>
-			<action>vergas_krujka.item_from_vergas</action>
-			<next>150</next>
-		</phrase>
-		<phrase id="109">
-			<text>dialog_krujka_GG_109</text>
-			<action>dialogs.break_dialog</action>
 		</phrase>
 		<phrase id="120">
 			<precondition>vergas_krujka.krujka_no_5 </precondition>
 			<text>dialog_krujka_V_3</text>
+			<next>108</next>
+		</phrase>
+		<phrase id="101">
+			<precondition>vergas_krujka.krujka_yes_6</precondition>
+			<text>dialog_krujka_V_101</text>
 			<next>108</next>
 		</phrase>
 		<phrase id="121">
@@ -113,9 +78,19 @@
 			<text>dialog_krujka_V_4</text>
 			<next>108</next>
 		</phrase>
+		<phrase id="102">
+			<precondition>vergas_krujka.krujka_yes_1</precondition>
+			<text>dialog_krujka_V_102</text>
+			<next>108</next>
+		</phrase>
 		<phrase id="122">
 			<precondition>vergas_krujka.krujka_no_1 </precondition>		
 			<text>dialog_krujka_V_5</text>
+			<next>108</next>
+		</phrase>
+		<phrase id="103">
+			<precondition>vergas_krujka.krujka_yes_2</precondition>
+			<text>dialog_krujka_V_103</text>
 			<next>108</next>
 		</phrase>
 		<phrase id="123">
@@ -123,15 +98,31 @@
 			<text>dialog_krujka_V_6</text>
 			<next>108</next>
 		</phrase>
+		<phrase id="104">
+			<precondition>vergas_krujka.krujka_yes_3</precondition>
+			<text>dialog_krujka_V_104</text>
+			<next>108</next>
+		</phrase>
 		<phrase id="124">
 			<precondition>vergas_krujka.krujka_no_3 </precondition>		
 			<text>dialog_krujka_V_7</text>
+			<next>108</next>
+		</phrase>
+		<phrase id="105">
+			<precondition>vergas_krujka.krujka_yes_4</precondition>
+			<text>dialog_krujka_V_105</text>
 			<next>108</next>
 		</phrase>
 		<phrase id="125">
 			<precondition>vergas_krujka.krujka_no_4 </precondition>	
 			<text>dialog_krujka_V_8</text>
 			<next>108</next>
+		</phrase>
+		
+		<phrase id="108">
+			<text>dialog_krujka_GG_108</text>
+			<action>vergas_krujka.item_from_vergas</action>
+			<next>150</next>
 		</phrase>
 
 		<phrase id="150">
@@ -146,10 +137,8 @@
 			<next>206</next>
 			<next>207</next>
 			<next>208</next>
-			
 			<next>210</next>
 			<next>211</next>
-
 			<next>213</next>
 			<next>214</next>
 			<next>215</next>
@@ -159,7 +148,6 @@
 			<next>219</next>
 			<next>220</next>
 			<next>221</next>
-			
 			<next>223</next>
 			<next>224</next>
 			<next>225</next>
@@ -216,7 +204,6 @@
 			<next>308</next>
 			<next>400</next>
 		</phrase>
-
 		<phrase id="210">
 			<precondition>vergas_krujka.gg_exchange_10</precondition>
 			<text>dialog_krujka_GG_210</text>
@@ -231,8 +218,6 @@
 			<next>311</next>
 			<next>400</next>
 		</phrase>
-
-
 		<phrase id="213">
 			<precondition>vergas_krujka.gg_exchange_13</precondition>
 			<text>dialog_krujka_GG_213</text>
@@ -296,7 +281,6 @@
 			<next>321</next>
 			<next>400</next>
 		</phrase>
-
 		<phrase id="223">
 			<precondition>vergas_krujka.gg_exchange_23</precondition>
 			<text>dialog_krujka_GG_223</text>
@@ -331,10 +315,8 @@
 			<next>206</next>
 			<next>207</next>
 			<next>208</next>
-			
 			<next>210</next>
 			<next>211</next>
-			
 			<next>213</next>
 			<next>214</next>
 			<next>215</next>
@@ -344,7 +326,6 @@
 			<next>219</next>
 			<next>220</next>
 			<next>221</next>
-			
 			<next>223</next>
 			<next>224</next>
 			<next>225</next>
@@ -361,10 +342,8 @@
 			<next>206</next>
 			<next>207</next>
 			<next>208</next>
-			
 			<next>210</next>
 			<next>211</next>
-
 			<next>213</next>
 			<next>214</next>
 			<next>215</next>
@@ -374,7 +353,6 @@
 			<next>219</next>
 			<next>220</next>
 			<next>221</next>
-			
 			<next>223</next>
 			<next>224</next>
 			<next>225</next>
@@ -391,10 +369,8 @@
 			<next>206</next>
 			<next>207</next>
 			<next>208</next>
-			
 			<next>210</next>
 			<next>211</next>
-
 			<next>213</next>
 			<next>214</next>
 			<next>215</next>
@@ -404,7 +380,6 @@
 			<next>219</next>
 			<next>220</next>
 			<next>221</next>
-			
 			<next>223</next>
 			<next>224</next>
 			<next>225</next>
@@ -421,10 +396,8 @@
 			<next>206</next>
 			<next>207</next>
 			<next>208</next>
-			
 			<next>210</next>
 			<next>211</next>
-
 			<next>213</next>
 			<next>214</next>
 			<next>215</next>
@@ -434,7 +407,6 @@
 			<next>219</next>
 			<next>220</next>
 			<next>221</next>
-			
 			<next>223</next>
 			<next>224</next>
 			<next>225</next>
@@ -451,10 +423,8 @@
 			<next>206</next>
 			<next>207</next>
 			<next>208</next>
-			
 			<next>210</next>
 			<next>211</next>
-
 			<next>213</next>
 			<next>214</next>
 			<next>215</next>
@@ -464,7 +434,6 @@
 			<next>219</next>
 			<next>220</next>
 			<next>221</next>
-			
 			<next>223</next>
 			<next>224</next>
 			<next>225</next>
@@ -481,10 +450,8 @@
 			<next>206</next>
 			<next>207</next>
 			<next>208</next>
-			
 			<next>210</next>
 			<next>211</next>
-
 			<next>213</next>
 			<next>214</next>
 			<next>215</next>
@@ -494,7 +461,6 @@
 			<next>219</next>
 			<next>220</next>
 			<next>221</next>
-			
 			<next>223</next>
 			<next>224</next>
 			<next>225</next>
@@ -512,10 +478,8 @@
 			<next>206</next>
 			<next>207</next>
 			<next>208</next>
-			
 			<next>210</next>
 			<next>211</next>
-
 			<next>213</next>
 			<next>214</next>
 			<next>215</next>
@@ -525,7 +489,6 @@
 			<next>219</next>
 			<next>220</next>
 			<next>221</next>
-			
 			<next>223</next>
 			<next>224</next>
 			<next>225</next>
@@ -542,10 +505,8 @@
 			<next>206</next>
 			<next>207</next>
 			<next>208</next>
-			
 			<next>210</next>
 			<next>211</next>
-
 			<next>213</next>
 			<next>214</next>
 			<next>215</next>
@@ -555,7 +516,6 @@
 			<next>219</next>
 			<next>220</next>
 			<next>221</next>
-			
 			<next>223</next>
 			<next>224</next>
 			<next>225</next>
@@ -573,10 +533,8 @@
 			<next>206</next>
 			<next>207</next>
 			<next>208</next>
-			
 			<next>210</next>
 			<next>211</next>
-
 			<next>213</next>
 			<next>214</next>
 			<next>215</next>
@@ -586,7 +544,6 @@
 			<next>219</next>
 			<next>220</next>
 			<next>221</next>
-			
 			<next>223</next>
 			<next>224</next>
 			<next>225</next>
@@ -603,10 +560,8 @@
 			<next>206</next>
 			<next>207</next>
 			<next>208</next>
-			
 			<next>210</next>
 			<next>211</next>
-
 			<next>213</next>
 			<next>214</next>
 			<next>215</next>
@@ -616,7 +571,6 @@
 			<next>219</next>
 			<next>220</next>
 			<next>221</next>
-			
 			<next>223</next>
 			<next>224</next>
 			<next>225</next>
@@ -633,10 +587,8 @@
 			<next>206</next>
 			<next>207</next>
 			<next>208</next>
-			
 			<next>210</next>
 			<next>211</next>
-
 			<next>213</next>
 			<next>214</next>
 			<next>215</next>
@@ -646,7 +598,6 @@
 			<next>219</next>
 			<next>220</next>
 			<next>221</next>
-			
 			<next>223</next>
 			<next>224</next>
 			<next>225</next>
@@ -663,10 +614,8 @@
 			<next>206</next>
 			<next>207</next>
 			<next>208</next>
-			
 			<next>210</next>
 			<next>211</next>
-
 			<next>213</next>
 			<next>214</next>
 			<next>215</next>
@@ -676,7 +625,6 @@
 			<next>219</next>
 			<next>220</next>
 			<next>221</next>
-			
 			<next>223</next>
 			<next>224</next>
 			<next>225</next>
@@ -693,10 +641,8 @@
 			<next>206</next>
 			<next>207</next>
 			<next>208</next>
-			
 			<next>210</next>
 			<next>211</next>
-
 			<next>213</next>
 			<next>214</next>
 			<next>215</next>
@@ -706,7 +652,6 @@
 			<next>219</next>
 			<next>220</next>
 			<next>221</next>
-			
 			<next>223</next>
 			<next>224</next>
 			<next>225</next>
@@ -723,10 +668,8 @@
 			<next>206</next>
 			<next>207</next>
 			<next>208</next>
-			
 			<next>210</next>
 			<next>211</next>
-
 			<next>213</next>
 			<next>214</next>
 			<next>215</next>
@@ -736,7 +679,6 @@
 			<next>219</next>
 			<next>220</next>
 			<next>221</next>
-			
 			<next>223</next>
 			<next>224</next>
 			<next>225</next>
@@ -753,10 +695,8 @@
 			<next>206</next>
 			<next>207</next>
 			<next>208</next>
-			
 			<next>210</next>
 			<next>211</next>
-			
 			<next>213</next>
 			<next>214</next>
 			<next>215</next>
@@ -766,7 +706,6 @@
 			<next>219</next>
 			<next>220</next>
 			<next>221</next>
-			
 			<next>223</next>
 			<next>224</next>
 			<next>225</next>
@@ -783,10 +722,8 @@
 			<next>206</next>
 			<next>207</next>
 			<next>208</next>
-			
 			<next>210</next>
 			<next>211</next>
-
 			<next>213</next>
 			<next>214</next>
 			<next>215</next>
@@ -796,7 +733,6 @@
 			<next>219</next>
 			<next>220</next>
 			<next>221</next>
-			
 			<next>223</next>
 			<next>224</next>
 			<next>225</next>
@@ -813,10 +749,8 @@
 			<next>206</next>
 			<next>207</next>
 			<next>208</next>
-			
 			<next>210</next>
 			<next>211</next>
-			
 			<next>213</next>
 			<next>214</next>
 			<next>215</next>
@@ -826,7 +760,6 @@
 			<next>219</next>
 			<next>220</next>
 			<next>221</next>
-			
 			<next>223</next>
 			<next>224</next>
 			<next>225</next>
@@ -844,10 +777,8 @@
 			<next>206</next>
 			<next>207</next>
 			<next>208</next>
-			
 			<next>210</next>
 			<next>211</next>
-			
 			<next>213</next>
 			<next>214</next>
 			<next>215</next>
@@ -857,7 +788,6 @@
 			<next>219</next>
 			<next>220</next>
 			<next>221</next>
-			
 			<next>223</next>
 			<next>224</next>
 			<next>225</next>
@@ -874,10 +804,8 @@
 			<next>206</next>
 			<next>207</next>
 			<next>208</next>
-			
 			<next>210</next>
 			<next>211</next>
-			
 			<next>213</next>
 			<next>214</next>
 			<next>215</next>
@@ -887,7 +815,6 @@
 			<next>219</next>
 			<next>220</next>
 			<next>221</next>
-			
 			<next>223</next>
 			<next>224</next>
 			<next>225</next>
@@ -904,10 +831,8 @@
 			<next>206</next>
 			<next>207</next>
 			<next>208</next>
-			
 			<next>210</next>
 			<next>211</next>
-			
 			<next>213</next>
 			<next>214</next>
 			<next>215</next>
@@ -917,7 +842,6 @@
 			<next>219</next>
 			<next>220</next>
 			<next>221</next>
-			
 			<next>223</next>
 			<next>224</next>
 			<next>225</next>

@@ -246,8 +246,7 @@ end
 function keep_always_hidden(obj)
 	local section = obj:section()
 	local flag = false
-	if section=="razgruzka" or section=="razgruzka_new" or section=="podsumok" or section== "bag_on_belt"
-		or section=="detector_simple_fake" or section=="fake_compass" then
+	if section=="razgruzka" or section=="razgruzka_new" or section=="podsumok" or section=="detector_simple_fake" or section=="fake_compass" then
 		flag = true
 	end
 	return flag

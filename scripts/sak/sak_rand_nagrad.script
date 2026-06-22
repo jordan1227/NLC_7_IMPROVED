@@ -222,7 +222,7 @@ function add_nagrad_kanistra_esc2()			-- награждение за канистру на Кордоне
 	db.actor:disable_info_portion("esc_no_charge")
 end
 function timer_kanistra_esc_end()
-	sak.send_tip("Сталкеры, у нас на Кордоне закончился бензин. Если есть желание заработать, несите канистры, поменяем на патроны, медикаменты, еду, Водку...","Новости Кордона",11,20,"g_g","sak","green")
+	sak.send_tip(game.translate_string("timer_kanistra_esc_end"),game.translate_string("esc_news"),11,20,"g_g","sak","green")
 	db.actor:disable_info_portion("kanistra_esc_not_over")	-- выключаем инфопоршень, теперь канистры можно менять.
 end
 
@@ -242,6 +242,6 @@ function add_nagrad_kanistra_bar2()			-- награждение за канистру в Баре
 	db.actor:disable_info_portion("bar_no_charge")
 end
 function timer_kanistra_bar_end()
-	sak.send_tip("Сталкеры, у нас в Баре закончился бензин. Если есть желание заработать, несите канистры, поменяем на патроны, медикаменты, еду...","Новости Бара",11,20,"g_g","sak","green")
+	sak.send_tip(game.translate_string("timer_kanistra_bar_end"),game.translate_string("bar_news"),11,20,"g_g","sak","green")
 	db.actor:disable_info_portion("kanistra_bar_not_over")	-- выключаем инфопоршень, теперь канистры можно менять.
 end

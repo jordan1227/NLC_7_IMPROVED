@@ -476,7 +476,6 @@
 		<phrase id="11">
 		<precondition>sak_dialog.is_ready_time_yan_psy</precondition>
 			<text>sakharov_brainlab_safe_time_11</text>
-			<action>sak_dialog.time_yan_psy</action>
 			<next>21</next>
 		</phrase>
 		<phrase id="12">
@@ -534,7 +533,6 @@
 		</phrase>
 		<phrase id="3">
 			<text>sakharov_brainlab_safe_time_re_3</text>
-			<action>sak_dialog.time_yan_psy</action>
 			<give_info>brainlab_safe_time_re_info</give_info>
 			<next>4</next>
 		</phrase>

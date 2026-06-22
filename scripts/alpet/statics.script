@@ -38,11 +38,6 @@ function resize_rect (rect, width, height)
    rect:write ( 12, left + height - 1 )     
 end
 
-
-
-function test_bgs()
-end
-
 function move_bgs(left, top)
  --
  local bg = get_main_window():GetStatic("minimap:background")

@@ -296,6 +296,7 @@
 </dialog>
 	
 <dialog id="mil_freedom_commander_zil_mmz">
+	<has_info>mil_fblockpost_quest_reward</has_info>
 	<dont_has_info>mil_freedom_commander_zil_mmz</dont_has_info>
 	<dont_has_info>mil_freedom_commander_zil_mmz_no</dont_has_info>	
 		<phrase_list>
@@ -1524,7 +1525,6 @@
 		<phrase id="105">
 			<text>mil_mercs_ara_dialog_start_105</text>
 			<give_info>mil_mercs_ara_new_gg</give_info>
-			<give_info>price_ara</give_info>
 			<next>106</next>
 		</phrase>
 		<phrase id="106">
@@ -4048,7 +4048,6 @@
 		</phrase>
 		<phrase id="32">
 			<text>flame_reload_receipt_have_32</text>
-			<give_info>flame_reload_receipt_many</give_info>
 			<next>421</next>
 			<next>422</next>
 		</phrase>
@@ -4574,7 +4573,6 @@
 		<phrase id="11">
 		<has_info>deactivate_radar_fall</has_info>
 			<text>mil_skrjaga_water_dialog_11</text>
-			<action>sak_dialog.text_money_skrjaga_water_dialog</action>
 			<next>21</next>
 			<next>22</next>
 		</phrase>

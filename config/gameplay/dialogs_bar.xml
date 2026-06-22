@@ -3004,7 +3004,6 @@
 		</phrase>
 		<phrase id="51">
 			<text>bar_drunk_dolg_quest_start_51</text>
-			<action>sak_dialog.bar_dolg_debt_show</action>
 			<give_info>bar_bar_drunk_dolg_quest_start</give_info>
 			<give_info>info_brom1</give_info>
 			<next>61</next>

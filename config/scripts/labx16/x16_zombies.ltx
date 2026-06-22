@@ -1,0 +1,11 @@
+[logic]
+active = mob_fake_death
+
+[mob_fake_death] 
+on_actor_dist_le_nvis = 5 | mob_home
+
+[mob_home]
+path_home = x16_zombies_enter_home
+home_min_radius = 10
+home_max_radius =  15
+on_actor_dist_ge_nvis = 15 | mob_fake_death

@@ -172,7 +172,7 @@ anm_idle                						   = ak74_idle
 anm_idle_moving_slow         					   = ak74_walk_slow
 anm_idle_moving         						   = ak74_walk
 anm_shots               						   = ak74_shoot, shoot
-anm_shots_when_aim              				   = ak74_aim_shoot, shoot
+anm_shoot_aim              				   = ak74_aim_shoot, shoot
 anm_reload	        							   = ak74_reload, reload
 anm_reload_empty	        					   = ak74_reload_empty, reload_empty
 anm_reload_jammed								   = ak74_revival, revival
@@ -188,7 +188,7 @@ anm_idle_w_gl                					   = ak74_idle_w_gl
 anm_idle_moving_slow_w_gl         				   = ak74_walk_slow_w_gl
 anm_idle_moving_w_gl         					   = ak74_walk_w_gl
 anm_shots_w_gl               					   = ak74_shoot_w_gl, shoot
-anm_shots_w_gl_when_aim              			   = ak74_aim_shoot_w_gl, shoot
+anm_shoot_aim_w_gl              			   = ak74_aim_shoot_w_gl, shoot
 anm_reload_w_gl	        						   = ak74_reload_w_gl, reload
 anm_reload_empty_w_gl	        				   = ak74_reload_empty_w_gl, reload_empty
 anm_reload_jammed_w_gl						       = ak74_revival_w_gl, revival
@@ -212,7 +212,8 @@ anm_hide_g              						   = ak74_hide_g, idle_gl
 anm_idle_g              						   = ak74_idle_g, idle_gl	
 anm_reload_g            						   = ak74_reload_g, reload_gl
 anm_idle_g_aim          						   = ak74_idle_aim_g, idle_gl	
-anm_shots_g             						   = ak74_shoot_g, shoot_gl
+anm_shoot_g             						   = ak74_shoot_g, shoot_gl
+anm_shoot_aim_g             						   = ak74_shoot_g, shoot_gl
 anm_idle_sprint_g       						   = ak74_sprint_w_gl, idle_gl	
 anm_idle_moving_g       						   = ak74_walk_g, idle_gl
 anm_idle_moving_slow_g   						   = ak74_walk_slow_g, idle_gl
@@ -385,9 +386,8 @@ visual										 	   = dynamics\weapons\wpn_ak74\wpn_ak74_1p78.ogf
 scope_x                                      	   = 70
 scope_y                                      	   = -9
 
-
-max_radius                                         = 200
-min_radius                                         = 5
+3d_reticle_size = 6.4
+3dss_gen_zoom_enable = true
 
 scope_respawn = wpn_ak74m
 scope_name = wpn_addon_1p78
@@ -395,8 +395,13 @@ scope_name = wpn_addon_1p78
 [wpn_ak74_1p78_hud]:wpn_ak74_hud
 item_visual                						   = dynamics\weapons\wpn_ak74\wpn_ak74_1p78_hud.ogf
 
-anm_shots_when_aim 								   = ak74_aim_shoot_scope, shoot
-anm_shots_w_gl_when_aim 						   = ak74_aim_shoot_scope_w_gl, shoot
+aim_hud_offset_pos = -0.0625,-0.000499989,-0.0469999
+aim_hud_offset_rot = 0,0,0
+aim_hud_offset_pos_16x9 = -0.0625,-0.000499989,-0.0469999
+aim_hud_offset_rot_16x9 = 0,0,0
+
+anm_shoot_aim 								   = ak74_aim_shoot_scope, shoot
+anm_shoot_aim_w_gl 						   = ak74_aim_shoot_scope_w_gl, shoot
 
 [wpn_ak74m_pso]:wpn_ak74m
 $spawn             							 	   = "weapons\wpn_ak74_pso"
@@ -404,9 +409,8 @@ hud											 	   = wpn_ak74_pso_hud
 scope_x                                      	   = 53
 scope_y                                      	   = -6
 
-
-max_radius                                         = 200
-min_radius                                         = 5
+3d_reticle_size = 6.4
+3dss_gen_zoom_enable = true
 
 scope_respawn = wpn_ak74m
 scope_name = wpn_addon_1pso
@@ -414,8 +418,13 @@ scope_name = wpn_addon_1pso
 [wpn_ak74_pso_hud]:wpn_ak74_hud
 item_visual                						   = dynamics\weapons\wpn_ak74\wpn_ak74_hud.ogf
 
-anm_shots_when_aim 								   = ak74_aim_shoot_scope, shoot
-anm_shots_w_gl_when_aim 						   = ak74_aim_shoot_scope_w_gl, shoot
+aim_hud_offset_pos = -0.048,0.0165,-0.0439999
+aim_hud_offset_rot = 0,0,0
+aim_hud_offset_pos_16x9 = -0.048,0.0165,-0.0439999
+aim_hud_offset_rot_16x9 = 0,0,0
+
+anm_shoot_aim 								   = ak74_aim_shoot_scope, shoot
+anm_shoot_aim_w_gl 						   = ak74_aim_shoot_scope_w_gl, shoot
 
 
 ;ƒÛ·Î¸ ¿ —-74Õ

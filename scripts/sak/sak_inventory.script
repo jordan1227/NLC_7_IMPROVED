@@ -43,8 +43,6 @@ function inventory_control()
 		if not ignore then
 			insert_to_table(all_items, vItemSection, vItemID)
 		end
-		
-		sak.cant_trade(vItem,vItemSection,vItemID,flag)
 	end
 
 	--[[
@@ -120,7 +118,6 @@ function sak_inventory.update_accum_leds()
 
 	active_led_tex = tr
 
-	local tlist = texture_find (path) 
 	tr = path..tr
 
 	local wnd = level.get_inventory_wnd()
@@ -314,7 +311,10 @@ function on_cl_spawned(list) -- глобальный колбек на появление объектов в онлайн
 					arc_containers.on_drop_container(id) -- отрегистрация
 				end
 			end
-			--
+			-- Sn: пусть тут будет обработка inv_name для ПДА
+			if obj:section() == 'device_pda_npc' then
+				vergas_pda.set_pda_cond(obj:id())
+			end
 
 			if p and p:id() == 0 then
 				actor_items = actor_items + 1

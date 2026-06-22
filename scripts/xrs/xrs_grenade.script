@@ -427,8 +427,7 @@ function action_fire_in_the_hole:execute()
 		
 			local en_inj,fr_inj = false,false
 			local r = self.a.grenades[get_grenade(self.a.grenade):section()].radius
-			for a=1,MAX_OBJ_ID do
-				local obj = client_obj(a)
+			level.iterate_level_objects(function(obj)
 				if obj and obj.clsid and obj:alive() then
 					local od=self.a.target_point:distance_to(obj:position())
 					if od<r then
@@ -438,15 +437,15 @@ function action_fire_in_the_hole:execute()
 							else
 								if od<r/2 then 
 									fr_inj=true 
-									break
+									return true
 								end
 							end
-						elseif IsMonster(alife():object(a)) then
+						elseif IsMonster(obj) then
 							en_inj=true
 						end
 					end
 				end
-			end
+			end)
 			
 			if fr_inj or not en_inj then
 				self.a.grenade = nil	

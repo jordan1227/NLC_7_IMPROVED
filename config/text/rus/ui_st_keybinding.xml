@@ -72,10 +72,6 @@
 <string id="kb_alt_zoom"><text>Альт. прицел</text></string>
 <string id="kb_setka_on"><text>Переключение подсветки/марки прицела</text></string>
 <string id="speech_menu_group"><text>Снаряжение</text></string>
-<string id="kb_quick_slot_1"><text>Быстрый слот 1</text></string>
-<string id="kb_quick_slot_2"><text>Быстрый слот 2</text></string>
-<string id="kb_quick_slot_3"><text>Быстрый слот 3</text></string>
-<string id="kb_quick_slot_4"><text>Быстрый слот 4</text></string>
 <string id="speech_menu_personal"><text>Голосовые сообщения (2)</text></string>
 <string id="kb_cam_1"><text>Вид от первого лица</text></string>
 <string id="kb_cam_2"><text>Вид от третьего лица</text></string>

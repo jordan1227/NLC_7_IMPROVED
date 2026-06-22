@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+<string id="cant_walk"><text>I can't go on... Need to rest.</text></string>
+<string id="cant_walk_weight"><text>Can't take another step! Too heavy...</text></string>
+<string id="dar_poltergeist_hold_the_door"><text>Something is holding the door shut</text></string>
+<string id="Global Map"><text>Global Map</text></string>
+<string id="gun_jammed"><text>Weapon jammed. Reload required.</text></string>
+<string id="collect_water"><text>Collect water</text></string>
+<string id="disabled"><text>disabled</text></string>
+<string id="default"><text>default</text></string>
+<string id="hdao"><text>HDAO</text></string>
+<string id="hbao"><text>HBAO</text></string>
+<string id="qt_off"><text>off</text></string>
+<string id="qt_low"><text>low (recommended)</text></string>
+<string id="qt_high"><text>high</text></string>
+<string id="inventory_box_use"><text>Search container</text></string>
+<string id="Local Map"><text>Local Map</text></string>
+<string id="st_game_saved"><text>Game saved</text></string>
+<string id="tip_car_locked"><text>Locked</text></string>
+<string id="tip_car_use"><text>Open</text></string>
+<string id="tip_door_close"><text>Close</text></string>
+<string id="tip_door_coded"><text>Coded door</text></string>
+<string id="tip_door_decode"><text>Decode door</text></string>
+<string id="tip_door_decoding"><text>Decoding in progress</text></string>
+<string id="tip_door_locked"><text>Locked</text></string>
+<string id="tip_door_open"><text>Open</text></string>
+<string id="tip_gate_close"><text>Close gate</text></string>
+<string id="tip_gate_locked"><text>Gate locked</text></string>
+<string id="tip_gate_open"><text>Open gate</text></string>
+<string id="on_pribor"><text>Turn on</text></string>
+<string id="off_pribor"><text>Turn off</text></string>
+<string id="open"><text>Open</text></string>
+<string id="take_card"><text>Take data card</text></string>
+<string id="tip_monolith"><text>Make a wish</text></string>
+<string id="tip_aver_monolith"><text>%c[green]Touch</text></string>
+<string id="st_demo_play"><text>AMK MOD 1.4.1</text></string>
+<string id="pda_cond_1"><text>Operational</text></string>
+<string id="pda_cond_2"><text>Discharged</text></string>
+<string id="pda_cond_3"><text>Damaged</text></string>
+</string_table>

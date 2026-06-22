@@ -1,0 +1,8 @@
+<w>
+    <file name="ui\ui_radial">
+
+	    <texture id="ui_radial_back" x="4" y="4" width="206" height="206" />
+	    <texture id="ui_radial_front" x="214" y="4" width="206" height="206" />
+
+	</file>
+</w>

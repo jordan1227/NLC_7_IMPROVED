@@ -6432,7 +6432,8 @@
 <!-- shustriy_find_item and artmod_13 -->
 <dialog id="shustriy_find_item_start">
 	<precondition>sak_dialog.is_bar</precondition>
-	<has_info>price_ara</has_info>
+	<has_info>mil_mercs_ara_new_gg</has_info>
+	<dont_has_info>volkodav_killed_by_actor</dont_has_info>
 	<dont_has_info>esc_shustryi_outfit_fail</dont_has_info>
 	<dont_has_info>shustriy_find_item_1_start</dont_has_info>
 	<dont_has_info>shustriy_find_item_1_not</dont_has_info>

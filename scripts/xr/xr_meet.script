@@ -155,19 +155,12 @@ function Cmeet_manager:__init(npc, storage)
 	self.startdialog = nil
 end
 time_dilog=true
-local snap_bolt=true
 function Cmeet_manager:update()
     init_xvars()
     local kill_dialog=nil
     local search_dialog=nil
 
 	if time_dilog then
-		if db.actor:active_slot()~=5 and snap_bolt then
-		texman.swap_bolt()
-		snap_bolt=false
-		elseif db.actor:active_slot()==5 then
-		snap_bolt=true
-		end
 		local targets = get_value("kill_targets", {})
 		for k,v in pairs(targets) do
 			if v.id==self.npc:id() then

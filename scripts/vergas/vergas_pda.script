@@ -446,30 +446,32 @@ function get_pda_cdata(obj_id)
 end
 
 function set_pda_cond(obj_id, info_str)
-	local serial = obj_id and info_str and SplitStr(info_str, "|")[4]
-	local cond, stat = 1
+	local serial = (obj_id and info_str and SplitStr(info_str, "|")[4]) or (obj_id and get_pda_cdata(obj_id) and SplitStr(get_pda_cdata(obj_id), "|")[4])
+	local def_str, stat = "pda_cond_", "1"
 	if serial then
 		stat = string.sub(serial, 13, 13)
 	else
-		cond = 0.1
+		stat = "3"
 	end
-	if stat == "2" then
-		cond = 0.97
-	elseif stat == "3" then
-		cond = 0.1
-	end
-	if cond == 1 then return end
-	local sobj = server_obj(obj_id)
-	local iitem = sobj and sobj:get_inventory_item()
-	if iitem then
-		iitem.item_condition = cond
-	end
+
+	local str_final = translate("device_pda1") .. " " .. translate(def_str .. stat)
 	local obj = level.object_by_id(obj_id)
+	local iitem = nil
+	
 	if obj then
-		-- Manool: в клиентском экземпл€ре тоже нужно обновить,
-		-- иначе, изменени€ примутс€ только при сейвлоаде
-		-- из-за одновременной перезаписи нетпакета
-		obj:set_condition(cond)
+		iitem = obj and obj:get_inventory_item()
+		if iitem then
+			iitem.inv_name = str_final
+			-- log2("client inv_name for [%s] is now [%s]",obj:name(),iitem.inv_name)
+		end
+	end
+	
+	local sobj = server_obj(obj_id)
+	iitem = sobj and sobj:get_inventory_item()
+
+	if iitem then
+		iitem.inv_name = str_final
+		-- log2("server inv_name for [%s] is now [%s]",sobj:name(),iitem.inv_name)
 	end
 end
 
@@ -775,9 +777,8 @@ function charge_pda(pda_id)
 	elseif status == "2" then
 		info[4] = string.sub(info[4],1,12).."1"
 		data.custom_data = info[1].."|"..info[2].."|"..info[3].."|"..info[4].."|"..info[5].."|"..info[6].."|"..info[7]
-        wprintf("[~T].~C0F #CODE_OPT:~C07 compare it~C0E \n\t%s~C0F \n\t%s~C07", data.custom_data, table.concat(info, '|'))    
 		pk:set(data)
-		set_pda_cond(pda_id, cust)
+		set_pda_cond(pda_id, data.custom_data)
 		good = true
 	elseif status == "1" then	
 		good = true

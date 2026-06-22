@@ -370,7 +370,8 @@ function se_smart_terrain:smart_terrain_accepts_obj(obj, obj_agreement)
 	then
 		local community, is_stalker = self:get_obj_community(obj)
 		local smart_level_group = self:get_level_name()
-		local npc_level_group = alife():level_name(game_graph():vertex(obj.m_game_vertex_id):level_id())
+		-- local npc_level_group = alife():level_name(game_graph():vertex(obj.m_game_vertex_id):level_id())
+		local npc_level_group = obj.level_name
 		if level_groups[smart_level_group]~=level_groups[npc_level_group] then
 			return false
 		end
@@ -810,7 +811,8 @@ end
 
 -- возвращает название уровня, на котором находится smart terrain
 function se_smart_terrain:get_level_name()
-	return alife():level_name(game_graph():vertex(self.m_game_vertex_id):level_id())
+	return self.level_name
+	-- return alife():level_name(game_graph():vertex(self.m_game_vertex_id):level_id())
 end
 
 -- регистрация объекта в симуляторе.

@@ -1,0 +1,21 @@
+<!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;	 ,,,,,      ,,,,,,,    ,,,,,,_  ,,,,,,,,  ,,,,,,   
+;       MMMMM1     M0MMMM&    MMMMM@'  MMMMMM0"  MMMM0!   
+;       4MMMM#      ^MMMMMr   MMMMMf    #MMMM&    B0'     
+;      &]MMMMMc      #MMMM# ] MMMMMf    #MMMM&   j#       
+;      M 0MMMM&       MMMMML# MMMMMf    #MMMM&  pM&       
+;     pY 4MMMMM     ] #MMMMM# MMMMMf    #MMMM& pMMMt      
+;     M   MMMMMc    ]& MMMMMf MMMMMf    #MMMM&]MMMM0      
+;    ]#   0MMMM&    ]M #MMMM  MMMMMf    #MMMM& MMMMM&     
+;    QfjMMMMMMMM    ]M  MMMf  MMMMMf    #MMMM& 4MMMMM     
+;   _M    "MMMMMf   ]M  BMM   MMMMMf    #MMMM&  MMMMM&    
+;  _Q#     MMMMM&   jMg  M8  _MMMMMf    BMMMM&  jMMMMM,   
+; 4MMMM   #MMMMMM# 0MMM& B  ]MMMMMMM&  0MMMMMM&]MMMMMMMt  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+-->
+
+
+<string id="amk_metka"><text>GPS beacon</text></string>
+<string id="amk_metka_s"><text>GPS beacon</text></string>
+<string id="enc_amk_metka"><text>GPS beacon. It appeared not so long ago, but quickly gained insane popularity thanks to its versatility and reasonable price. Initially, an experimental prototype was brought into Duty territory to demonstrate it and to conclude a deal for the supply of large batches of these beacons. However, the “accidental” loss of the test version on the eve of the meeting between representatives of both sides caused a deep rift in relations with the supplier. The long-standing and mutually beneficial relationship between Voronin and Sakharov came in handy here, and with the help of a local trader the prototype beacon ended up in the hands of scientists at the field laboratory in Yantar. There it was modernized and subsequently put into mass production to meet the needs of all who require it. The original version was not preserved due to the direct modernization of the prototype. The modernized version differs positively in that it allows a digital signature to be set on the beacon (Cyrillic, unfortunately, is not supported) and synchronized with the owner’s PDA. Based on research into psi-impact protection systems, scientists have achieved a result where the beacon produces no interference, and its detection by an outsider is practically impossible. Taking into account the fact that the GPS beacon is produced by the Sakharov laboratory’s own facilities, the scientist’s prices are also more reasonable than those of resellers.</text></string>

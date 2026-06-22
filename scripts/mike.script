@@ -51,9 +51,7 @@ end
 
 function talk_about_set()
 	local i=get_value("set")
-	db.actor:give_talk_message(name_arts[i][1],"ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
-	db.actor:give_talk_message(name_arts[i][2],"ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
-	db.actor:give_talk_message(name_arts[i][3],"ui\\ui_iconsTotal",Frect():set(0,0,0,0), "simple_answer_item")
+	return string.format("%s, %s, %s", name_arts[i][1], name_arts[i][2], name_arts[i][3])
 end
 
 function timer_sanek()
@@ -78,14 +76,6 @@ end
 
 function timer_scarman_end()
 	db.actor:give_info_portion("timer_scarman_end")
-end
-
-function gg_3_dart_have()
-	return sak_dialog.gg_n_dart_have(3)
-end
-
-function give_3_dart()
-	sak_dialog.give_n_dart(3)
 end
 
 function take_art1()
@@ -354,21 +344,22 @@ function bum_teleport()
 	end
 end
 
-local mem=false
+local mem = false
 function gg_last_memory()
 	-- последние воспоминания при пропадании в рестриктор
-	if mem==false then
+	if mem == false then
 		local count=get_value("rem_count",0)
-		if count<=9 then
+		if count <= 9 then
 			sak.send_tip(game.translate_string("gg_last_memory"),game.translate_string("st_memory_h"),1,20,"g_g","rememb","yellow")
-			local character=math.floor((get_value("r_task_reward", 1)+get_value("x18_iq_check",1))/2)
+			local char_tbl = {"vrach_","botan_","oper_","bandit_","spec_","hunter_","igrok_"}
+			local character = char_tbl[math.floor(((get_value("r_task_reward",1))+(get_value("x18_iq_check",1)))/2)]
 			repeat
-			local info="rem_"..tostring(character).."_"..tostring(count)
-			db.actor:give_info_portion(info)
-			count = count+1
-			until count==10
+			local article = "remember_" .. character .. tostring(count)
+			give_article(article)
+			count = count + 1
+			until count == 10
 		end
-		mem=true
+		mem = true
 		set_value("rem_count",10)
 	end
 end
@@ -962,14 +953,6 @@ function timer_assistant_end()
 	db.actor:give_info_portion("assistant_timer_end")
 end
 
-function timer_docent_borov()
-	timers.start_timer("timer_docent_borov",0,3,10,"mike.timer_docent_borov_end()")
-end
-
-function timer_docent_borov_end()
-	db.actor:give_info_portion("docent_borov_end")
-end
-
 function give_dsc_gigant(first_speaker, second_speaker)   
 	local obj = misc.spawn_to ("mutant_psevdogigant_hand", db.actor)
 	if obj then
@@ -1420,20 +1403,8 @@ function add_strelok_spots_info()
 		db.actor:give_info_portion("strelok_spots_info")
 	end
 end
---переходы
-function add_spots_esc_gar()
-	db.actor:give_info_portion("info_way300a")
-    local obj1 = g_sim:story_object(story_ids.exit_esc_to_garbage_01)
-	local obj2 = g_sim:story_object(story_ids.exit_to_escape_01)
-    if obj1 then
-		level.map_add_object_spot_ser(obj1.id, "level_changer_self", "to_garbage")
-	end
-    if obj2 then
-		level.map_add_object_spot_ser(obj2.id, "level_changer_self", "to_escape")
-	end
-	sak.info_received()
-end
 
+--переходы
 function add_spot_dsc_esc()
 	local obj = server_obj("dsc_level_changer")
     if obj then
@@ -1530,15 +1501,6 @@ function add_spots_hospital()
 	sak.info_received()
 end
 
--- function add_spots_av_pes()
-	-- db.actor:give_info_portion("info_way138a")
-    -- local obj1 = g_sim:story_object(story_ids.aver_level_changer_to_av_peshera)
-    -- if obj1 then
-		-- level.map_add_object_spot_ser(obj1.id, "level_changer_self", "to_av_peshera")
-	-- end
-	-- sak.info_received()
--- end
-
 function add_spots_dv_k()
     local obj1 = g_sim:story_object(story_ids.exit_to_escape)
     if obj1 then
@@ -1546,21 +1508,6 @@ function add_spots_dv_k()
 	end
 	sak.info_received()	
 end
-
--- function add_spots_x18()
-    -- local obj1 = g_sim:story_object(story_ids.exit_to_labx18_01)
-    -- if obj1 then
-		-- level.map_add_object_spot_ser(obj1.id, "level_changer_self", "to_x18")
-	-- end
-	-- sak.info_received()	
--- end
-
--- function add_spots_x18()
-	-- local obj1 = g_sim:object( "exit_to_labx18_01" )
-	-- if obj1 then
-		-- level.map_add_object_spot_ser( obj1.id, "level_changer_self", "to_x18" )
-	-- end
--- end
 
 function add_spots_bar_mil()
     db.actor:give_info_portion("info_way113a")
@@ -1574,13 +1521,7 @@ function add_spots_bar_mil()
 		level.map_add_object_spot_ser(obj2.id, "level_changer_self", "to_bar")
 	end	
 end
-function add_spots_x12()
-    local obj1 = server_obj("rad_codedoor_key_x7")
-    if obj1 then
-	  level.map_add_object_spot_ser(obj1.id, "level_changer_self", "to_x12")
-	end
-	sak.info_received()	
-end
+
 function add_spots_ros_yan()
     db.actor:give_info_portion("info_way305a")
     local obj1 = g_sim:story_object(story_ids.exit_to_yantar_01)
@@ -1592,18 +1533,6 @@ function add_spots_ros_yan()
 		level.map_add_object_spot_ser(obj2.id, "level_changer_self", "to_rostok")
 	end	
 end
---  lim_zub_tunnel_dialog
--- function lim_exit_to_mil()
-    -- misc.spawn_by_name("lim_exit_to_mil_156")	
--- end
--- function add_spots_lim_mil()
-    -- db.actor:give_info_portion("info_way156a")
-	-- local obj1 = g_sim:story_object(story_ids.lim_exit_to_mil_156)
-    -- if obj1 then
-		-- level.map_add_object_spot_ser(obj1.id, "level_changer_self", "to_military")
-	-- end
-	-- sak.info_received()	
--- end
 
 --new_petruha_artmod_121
 function zapiska_petruha_have()

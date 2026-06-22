@@ -1,14 +1,14 @@
 --Меню настроек геймплея. Используется скриптом ui_mm_opt_main.script
 
 local options = {
-	{"cap_difficulty", "InitStatic", {"list_difficulty", "InitComboBox"}, "", ""},
+	-- {"cap_difficulty", "InitStatic", {"list_difficulty", "InitComboBox"}, "", ""},
 	{"cap_font_scale_y", "InitStatic", {"track_font_scale_y", "InitTrackBar"}, "", ""},
 	{"cap_font_scale_x", "InitStatic", {"track_font_scale_x", "InitTrackBar"}, "", ""},
 	{"check_autopause", "InitCheck", false, "", ""},
 	{"check_3d_pda", "InitCheck", false, "", ""},
 	{"check_3d_scopes", "InitCheck", false, "", ""},
 	{"check_tips", "InitCheck", false, "", ""},
-	{"check_crosshair", "InitCheck", false, "", ""},
+	{"check_crosshair", "InitCheck", false, "ui_mm_crosshair", "ui_mm_crosshair_desc"},
 	{"check_dyn_crosshair", "InitCheck", false, "", ""},
 	{"check_dist", "InitCheck", false, "", ""},
 	{"check_ambient", "InitCheck", false, "", ""},

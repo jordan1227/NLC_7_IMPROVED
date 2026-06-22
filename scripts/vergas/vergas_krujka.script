@@ -26,6 +26,7 @@ function init_module()
 		if lua_random(1, 100) > 30 then
 			init_krujka_vergas()
 			set_value("k_spawned", true)
+			dsh.get_next_random("vergas_prizes_2_rnd", 1, 100)
 		end
 	end
 	if get_value("k_spawned") == true and not has_alife_info("vergas_krujka_done") then
@@ -36,7 +37,8 @@ function init_module()
 		for id=1,BAD_OBJ_ID,1 do
 			local obj = g_sim:object(id)
 			if obj then
-				local o_lvl = g_sim:level_name(game_graph():vertex(obj.m_game_vertex_id):level_id())
+				-- local o_lvl = g_sim:level_name(game_graph():vertex(obj.m_game_vertex_id):level_id())
+				local o_lvl = obj.level_name
 				local sec = obj:section_name()
 				if lvl == o_lvl and strpos(sec,"krujka_",1,true) then
 					local par = obj.parent_id
@@ -621,7 +623,7 @@ function vergas_prizes_2()    			--замена одного приза на другой
 	end
 	
 	if tbl_item[4] == "0" then
-		if lua_random() > 0.3 then
+		if dsh.get_next_random("vergas_prizes_2_rnd", 1, 100) > 30 then
 			tbl_item[4], tbl_item[5] = vergas_prizes_2_1(tbl_item) 
 		end
 	end
@@ -650,11 +652,11 @@ function vergas_prizes_2()    			--замена одного приза на другой
 	
 	if string.sub(tbl_item[2],1,3) == "wpn" and tbl_item[2] ~=  "wpn_binoc" then
 		--это ствол. Подсовываю нужные патроны
-		if lua_random() >0.4 then
+		if dsh.get_next_random("vergas_prizes_2_rnd", 1, 100) > 40 then
 			local tbl_ammo = vergas_lib.ammo_for_slot(tbl_item[2])
 			if sec_prize ~= tbl_ammo[1] then
 				tbl_item[4] = tbl_ammo[1]
-				tbl_item[5] = lua_random(1,complexity)
+				tbl_item[5] = dsh.get_next_random("vergas_prizes_2_rnd", 1, complexity)
 			end
 		end
 	end	
@@ -676,7 +678,7 @@ function vergas_prizes_2_1(tbl_custom)		--Выбор приза для замены
 						}
 			
 	--давать другие ствол, броник или скобяной товар
-	if lua_random() > 0.5 and tbl_custom[2] == "0" then
+	if dsh.get_next_random("vergas_prizes_2_rnd", 1, 100) > 50 and tbl_custom[2] == "0" then
 		local tbl_wpn = {}	
 		if complexity == 2 then
 			tbl_wpn = {"wpn_walther","wpn_pb","wpn_ak74u","wpn_mp5"}
@@ -713,7 +715,7 @@ function vergas_prizes_2_1(tbl_custom)		--Выбор приза для замены
 				table.insert(tbl_prizes,tbl_wpn[i])
 			end
 		end
-		return tbl_prizes[lua_random(1,#tbl_prizes)], "1"
+		return tbl_prizes[dsh.get_next_random("vergas_prizes_2_rnd", 1, #tbl_prizes)], "1"
 	end
 	
 	--а теперь всякие штучки-дрючки	
@@ -744,12 +746,12 @@ function vergas_prizes_2_1(tbl_custom)		--Выбор приза для замены
 	if #tbl_prizes == 1 then
 		n_prize = tbl_prizes[1] 	--это штучка
 	elseif #tbl_prizes > 1 then
-		n_prize = tbl_prizes[lua_random(1,#tbl_prizes)] 	--это штучка
+		n_prize = tbl_prizes[dsh.get_next_random("vergas_prizes_2_rnd", 1, #tbl_prizes)] 	--это штучка
 	elseif #tbl_prizes == 0 then
 		return 0,0
 	end
 	
-	return n_prize,lua_random(1,complexity)
+	return n_prize, dsh.get_next_random("vergas_prizes_2_rnd", 1, complexity)
 				
 end
 
@@ -1148,7 +1150,7 @@ function exchange_yes()
 	local exchange = false
 	if #tbl_prize_no < 39 and not exchange_flag then
 		local custom = get_tbl_custom()
-		local prob = custom[6] or 0
+		local prob = tonumber(custom[6]) or 0
 		if prob + (back_complexity() * 5) > 75 then
 			exchange = true
 		end

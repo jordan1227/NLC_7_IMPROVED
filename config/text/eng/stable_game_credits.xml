@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+<string id="st_title"><text>NLC-7 "I Am the Marked One" is a modification for the game "S.T.A.L.K.E.R. – Shadow of Chernobyl" by GSC</text></string>
+<string id="st_author"><text>Author and lead developer of the entire NLC 6–7 project</text></string>
+<string id="st_sak"><text>Alexander Sokov (Syak)</text></string>
+<string id="st_project_lead"><text>The following people worked on the project for a long time and with great dedication:</text></string>
+<string id="st_alpet_vergas"><text>Alexander Petrov (alpet)\n\nSergey Bondarev (Vergas)</text></string>
+<string id="st_other"><text>Also:</text></string>
+<string id="st_other_names_1"><text>Alkseur\nDance_of_Shadow\nDimOriN\nivar\nKolmogor\nKostya_V\nMulleR\nRock`n_Roll\nSerafim-12</text></string>
+<string id="st_other_names_2"><text>SOB\nSpartakAMK\nWawka\nWhisper\nzayaz\nгриг\nИМХО9000\nМонгол\nPSEUDO-S.T.A.L.K.E.R.</text></string>
+<string id="st_another"><text>The following people took part directly in the work, development, refinement, initial testing, and also provided ideas, advice, suggestions, and inspiration to the author:</text></string>
+<string id="st_another_names_1"><text>a185\nakaund\nBlack Hawk\nblooderden\nbrusnik\nDamage\nGrayCat\nGrisli\nHemyl\nkha0s\nKhorn</text></string>
+<string id="st_another_names_2"><text>Kot Markiz\nKotobegemott\nMari\nMAV\nMisch_toptun\nn6260\nNelson\nphancop\nPulse\nRUS_D\nScarface</text></string>
+<string id="st_another_names_3"><text>serega-22\nShepard\nStep\nTAYLI\nVIRrusR\nwaylander\nZVER\nДар\nРуся\nСедой</text></string>
+<string id="st_testers"><text>As well as numerous testers of the first wave of closed beta testing:</text></string>
+<string id="st_testers_name_1"><text>79515456427\nAlcvanar\nAlexBess\nAndrey\nArsen\nAsproRoker\nastralpiligrim\nBeadDed\nBOL4OK\nBordax\nCD\ncop_lex\nDarwin\nDen_Avatar\nDron099\nds5018\nender</text></string>
+<string id="st_testers_name_2"><text>Faustgad\nFrags\nginciunas\ngleb27\nHolod\nHuNter_32R\nIllusioner\nJacob\nJIleToH\nkamatozZ\nki1243ka\nkilolife\nKpecm\nkrasherwares\nKripT\nKroh\nlagotsi</text></string>
+<string id="st_testers_name_3"><text>MAB\nmacroforator\nMade-in-USSR\nmain_battery\nMaslina_Shtick\nmaxander60\nmiranon\nMohock\nMozart\nNapoleon1\nnikmar42\nNoreiN\noperator\npauk\nperekat\nPetrenka\npsionik1113</text></string>
+<string id="st_testers_name_4"><text>-R-V-S-\nReign_of_Monolith\nrenii\nrocknrollsoldier\nrothmans777\nRussula\nRygiy\nSan_Sania\nScarface\nseryi-34\nShnaps\nSleepless\nSOLYAR1S\nSparrow\nSSSR\nSuhar</text></string>
+<string id="st_testers_name_5"><text>Tuxuu\nUgrum-75\nvinaigrette\nvovan123\nvut112\nvvdok\nwellew\nWlad777\nXIII\nzu1\nАтмосферный\nжестик\nКарлан\nКошевой\nМаньяк\nЧистякоff\nШВАК</text></string>
+<string id="st_other_gamers"><text>And other testers and players.</text></string>
+<string id="st_anater_one"><text>The following person introduced their own ideas, fixes, and additions\nwithout coordination with the author:</text></string>
+<string id="st_anater_one_name"><text>mikelik</text></string>
+<string id="st_end_1"><text>Special thanks go to the former GSC company and the former AMK team.</text></string>
+<string id="st_end_2"><text>Also:\n\n\nAI-Pack by xStream\nSkyGRAPHICS-MOD v2.0 RC4.1 by Sky4CE\nPhotozone by Argus\nPhotoliveliness by Argus and Domestos\nStories Revival Mod v.0.6 by Red75\nStalker’s Sound Remake v.4.0 by MulleR and Монгол\nArtifact containers by the ARC team\nBreakable light bulbs by macron1\nMined stashes by frag\nWeather mod for AMK by NightVz\nAmbient from AAO 1.8\nArsenal Mod by Dester</text></string>
+<string id="st_end_3"><text>The NLC 3.9.1 build was prepared for you by: Sn1ck, waylander, Oruzheynik</text></string>
+<string id="st_improved_end_1"><text>\n The following people worked on NLC Improved:\n\nManool — port to OGSR, engine, configs, scripts\nSn1ck — engine, configs, scripts, quests\nVoskresensky — work on locations\nVeNoMMaNs — work on locations\nwaylander — configs, icons, weather refinement\n\n\n Special thanks to:\n\nOGSR Engine developers: xrSimpodin, dsh2dsh, joye-ramone, and others\nImproved Weapon Pack developers: ROOZBAN, _V_O_IN_, Valerok, Misery, OldSerpskiStalker, Vyacheslav Mainov\nCGIM 2 developer: Zhora Cementov\nWorks by authors used: dsh, alpet, naxac, PavelBlend, moof1x, KD, Sleep\nAssets from mods used: OGSR GA, DSH mod, Anomaly</text></string>
+<string id="st_improved_end_2"><text>Active participants of the first NLC Improved tests:\n\n4etkiu\nChapa\nEnclavezzz\nmaximusantares\nmemeconductor\nNeon\npaxaneva999№79\npxint.\nRahh\nRaremetaller\nSleep\nTost\nValdmarTonnes\nДимедрол\nИлья\nСергей\nХромыйДiд</text></string>
+<string id="st_end_4"><text>We apologize\nif someone was unintentionally forgotten.</text></string>
+</string_table>

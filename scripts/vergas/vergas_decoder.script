@@ -4,9 +4,19 @@ Vergas
 © NLC 6.0
 ]]--
 
-function main()
-	super_dlg = vergas_decoder.cheat()
-	level.start_stop_menu(super_dlg,true) end
+local function code_creation()
+	local tbl_code = {} 
+	local str = "0123456789"
+	local i
+
+	for i=1,4 do
+		local c = lua_random(1,string.len(str))
+		table.insert(tbl_code,string.sub (str, c , c))
+		str = string.sub (str, 1 , c-1)..string.sub (str, c+1 , s)
+	end
+	
+	return tbl_code
+end
 
 class "cheat"(CUIScriptWnd)
 
@@ -61,10 +71,9 @@ function cheat:InitControls()
 	self:Register(xml:Init3tButton("btn_up", self),"btn_up")			--  нопка стрелка вверх
 	self:Register(xml:Init3tButton("btn_down", self),"btn_down")		--  нопка стрелка вниз
 	self:Register(xml:Init3tButton("btn_vkl", self),"btn_vkl")			--  нопка включить/выключить
-	door_code = vergas_decoder_use.code_creation()
+	door_code = code_creation()
 	self:show_wnd_black_screen()
 	self:show_wnd_steklo()
-	--flag_alarm = vergas_decoder_use.get_flag_alarm()
 	line_n = 1
 	attempts = 0
 	self:init_enter_code()
@@ -558,7 +567,6 @@ function cheat:set_flag_alarm()
 	self:show_wnd_t(2)
 	vergas_lib.s_play(vergas_lib.set_pr_from_config_str("list_sounds_decoder","snd_decoder_alarm"),1)
 	flag_alarm = true
-	vergas_decoder_use.set_flag_alarm(true) 
 end
 
 function cheat:init_enter_code()

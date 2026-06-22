@@ -116,12 +116,6 @@ function rummaged:InitControls()
 		self:Register(xml:Init3tButton("btn_pod", self),"btn_pod")				-- Кнопка подсумка 
 		self:AddCallback("btn_pod", ui_events.BUTTON_CLICKED, self.btn_pod, self)
 	end
-	
-	if db.actor:object("bag_on_belt") and ruck then
-		xml:InitStatic("background_sum", self)
-		self:Register(xml:Init3tButton("btn_sum", self),"btn_sum")				-- Кнопка рюкзака (мелочевка)
-		self:AddCallback("btn_sum", ui_events.BUTTON_CLICKED, self.btn_sum, self)
-	end	
 
 	if inv_buttons_use.search_flask_army_in_inventory() then
 		xml:InitStatic("background_fl", self)
@@ -133,6 +127,10 @@ function rummaged:InitControls()
 		xml:InitStatic("background_ruk", self)
 		self:Register(xml:Init3tButton("btn_ruk", self),"btn_ruk")				-- Кнопка рюкзака (весь)
 		self:AddCallback("btn_ruk", ui_events.BUTTON_CLICKED, self.btn_ruk, self)
+		
+		xml:InitStatic("background_sum", self)
+		self:Register(xml:Init3tButton("btn_sum", self),"btn_sum")				-- Кнопка рюкзака (мелочевка)
+		self:AddCallback("btn_sum", ui_events.BUTTON_CLICKED, self.btn_sum, self)
 	end
 
 	if db.actor:object("sleeping_bag") then
@@ -187,7 +185,6 @@ function rummaged:btn_quit(mode)
 	--mode = 5 подсумок
 	--mode = 6 разгрузка
 	--mode = 11 новая разгрузка
-	--mode = 8 сумка (быстрая)
 	--mode = 9 чехол для фляжки
 	--mode = 10 чехол для вляжки (быстрый)
 	vergas_lib.flag_inventory=false
@@ -205,7 +202,7 @@ function rummaged:btn_quit(mode)
 	if mode == 0 then
 		--закрываю снаряжение
 		inv_buttons_use.imitation_closing_inventory(mode)
-		vergas_lib.s_play(vergas_lib.set_pr_from_config_str("bag_on_belt","snd_deselect"),1)
+		vergas_lib.s_play("razgruzka\\podsumok_deselect",1)
 		used_items.set_use_gadget(true) -- разрешить использование снова
 	elseif mode == 4 then
 		--полное открытие рюкзака (долго ковыряется)
@@ -220,13 +217,6 @@ function rummaged:btn_quit(mode)
 	elseif mode == 9 then
 		--фляжка
 		used_items.used_flask_army(true)
---	elseif mode == 8 then
---		--сумка(быстрая)
---		inv_buttons_use.imitation_closing_inventory(mode)
---		schedule.add("show_bag_on_belt", "used_items.used_bag_on_belt(false,false)", 300)
---	elseif mode == 7 then
---		--сумка
---		used_items.used_bag_on_belt(true,false)
 	elseif mode == 11 then
 		-- новая разгрузка
 		used_items.used_podsumok_razgruzka("razgruzka_new")

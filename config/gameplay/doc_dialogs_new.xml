@@ -499,8 +499,7 @@
 			<next>12</next>		
 		</phrase>
 		<phrase id="12">
-			<text>barmen_outfit_start_12</text>
-			<action>sak_dialog.parcel_1_show</action>		<!--окончательно вешаем диалог на 1 нпс-->		
+			<text>barmen_outfit_start_12</text> <!--окончательно вешаем диалог на 1 нпс-->
 			<give_info>info_barmen_outfit_start</give_info>		
 			<next>13</next>
 		</phrase>	
@@ -615,8 +614,7 @@
 			<next>109</next>
 		</phrase>
 		<phrase id="109">
-			<text>barmen_outfit_1_dlg_109</text>
-			<action>sak_dialog.parcel_2_show</action> <!--вешаем диалог на 2 сталкера-->
+			<text>barmen_outfit_1_dlg_109</text> <!--вешаем диалог на 2 сталкера-->
 			<give_info>info_barmen_parcel_1_start</give_info>
 			<next>110</next>
 		</phrase>
@@ -2673,8 +2671,7 @@
 			<next>51</next>
 		</phrase>
 		<phrase id="51">
-			<text>sidor_scafandr_start_51</text>
-			<action>sak_dialog.sidor_scafandr_show</action> <!--вешаем диалог на бандита-->			
+			<text>sidor_scafandr_start_51</text> <!--вешаем диалог на бандита-->			
 			<give_info>info_sidor_scafandr_start</give_info>						
 		</phrase>
 		<phrase id="42">
@@ -3744,21 +3741,21 @@
 			<precondition>sak_dialog.have_2_antirad</precondition>		
 			<text>ignat_sharpen_knife_have_dialog_21</text>
 			<action>sak_dialog.give_2antirad</action>			
-			<action>sak_inventory.release_actor_items("wpn_knife_m1",1)</action>
+			<action>oxyr.check_knife_to_repair(2,true)</action>
 			<next>30</next>
 		</phrase>
 		<phrase id="22">
 			<precondition>sak_dialog.medkit_army_have</precondition>		
 			<text>ignat_sharpen_knife_have_dialog_22</text>
 			<action>sak_dialog.give_medkit_army</action>			
-			<action>sak_inventory.release_actor_items("wpn_knife_m1",1)</action>		
+			<action>oxyr.check_knife_to_repair(2,true)</action>		
 			<next>30</next>
 		</phrase>
 		<phrase id="23">
 			<precondition>sak_dialog.medkit_scientic_have</precondition>		
 			<text>ignat_sharpen_knife_have_dialog_23</text>
 			<action>sak_dialog.give_medkit_scientic</action>			
-			<action>sak_inventory.release_actor_items("wpn_knife_m1",1)</action>		
+			<action>oxyr.check_knife_to_repair(2,true)</action>		
 			<next>30</next>
 		</phrase>		
 		<phrase id="30">
@@ -4193,8 +4190,7 @@
 			<next>5</next>			
 		</phrase>
 		<phrase id="5">
-			<text>baza_provodnik_scafandr_done_5</text>
-			<action>sak_dialog.barmen_scafandr_show</action>	<!-- вешаем диалог на сталкера на ЗХ -->			
+			<text>baza_provodnik_scafandr_done_5</text> <!-- вешаем диалог на сталкера на ЗХ -->			
 			<give_info>barmen_scafandr_sv_dlg_done</give_info>			
 		</phrase>		
 	</phrase_list>
@@ -8407,7 +8403,9 @@
 
 <dialog id="shurup_mtv_upgrade_dlg">
 	<precondition>sak_dialog.have_razgruzka</precondition>
+	<has_info>shurup_upgrade_kit_start_info</has_info>
 	<has_info>shurup_upgrade_kit_done_info</has_info>
+	<dont_has_info>voron_upgrade_kit_refuse</dont_has_info>
 	<dont_has_info>shurup_mtv_upgrade_done_info</dont_has_info>
 	<phrase_list>
 		<phrase id="0">

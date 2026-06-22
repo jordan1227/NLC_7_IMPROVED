@@ -991,11 +991,7 @@ function actor_make_good_psy()
 return has_alife_info("labx8_pribor3_on") and has_alife_info("labx8_pribor4_on")
 end
 function actor_has_matches()
-	if bag_on_belt_use.verification_matches() then
-		return true
-	else
-		return db.actor:object("matches")~=nil
-	end
+	return db.actor:object("matches")~=nil
 end
 function mar_zone_streck_off()
 	local obj

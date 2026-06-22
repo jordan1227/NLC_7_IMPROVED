@@ -34,7 +34,7 @@ f_mode						= 2
 
 launch_speed				= 0
 
-grenade_class				= ammo_vog-25, ammo_vog-25p
+grenade_class				= ammo_vog-25
 
 hand_dependence				= 1
 single_handed				= 0
@@ -129,7 +129,8 @@ light_time 					= 0.2
 
 ph_mass						= 5
 
-silencer_status				= 0
+silencer_status				= 2
+gl_sil_incompatibility = true
 
 grenade_launcher_name                              = wpn_addon_grenade_launcher_groza
 grenade_launcher_status                            = 2
@@ -145,9 +146,9 @@ scope_mode 					= 3
 zoom_enabled				= true
 scope_zoom_factor			= 90
 
-silencer_name				= wpn_addon_silencer
-silencer_x					= 188
-silencer_y					= 18
+silencer_name				= wpn_addon_sil_groza
+silencer_x                  = 162
+silencer_y                  = 17
 silencer_smoke_particles 	= weapons\generic_shoot_00
 
 silencer_light_color		= 0.6,0.5,0.3
@@ -170,7 +171,7 @@ snd_sprint_idle								   	   = weapons\sprint_assault
 
 
 snd_shoot					= weapons\groza\groza_muzzle_mono
-snd_silncer_shot			= weapons\groza\groza_muzzle_mono
+snd_silncer_shot			= weapons\groza\groza_shot_sil
 snd_shoot_grenade			= weapons\gp25_shoot_mono
 
 [wpn_groza_hud]:hud_base
@@ -230,10 +231,11 @@ anm_reload_empty_w_gl                              = groza_reload_empty_w_gl, re
 anm_reload_g                                       = groza_gl_reload, gl_reload
 anm_reload_w_gl                                    = groza_reload_w_gl, reload
 anm_shots                                          = groza_shoot, shoot
-anm_shots_when_aim              				   = groza_shoot_aim, shoot
-anm_shots_g                                        = groza_gl_shoot, gl_shoot
+anm_shoot_aim              				   = groza_shoot_aim, shoot
+anm_shoot_g                                        = groza_gl_shoot, gl_shoot
+anm_shoot_aim_g                                        = groza_gl_shoot, gl_shoot
 anm_shots_w_gl                                     = groza_w_gl_shoot, shoot
-anm_shots_w_gl_when_aim							   = groza_w_gl_shoot_aim, shoot
+anm_shoot_aim_w_gl							   = groza_w_gl_shoot_aim, shoot
 anm_show                                           = groza_draw
 anm_show_g                                         = groza_gl_draw, gl_idle
 anm_show_w_gl                                      = groza_draw_w_gl
@@ -413,8 +415,8 @@ scope_name = specter
 
 [wpn_groza_nimble_specter_hud]:wpn_groza_nimble_hud
 item_visual                				  		   = dynamics\weapons\wpn_groza\wpn_groza_nimble_specter_hud.ogf
-anm_shots_when_aim 						  		   = groza_shoot_scope, shoot
-anm_shots_w_gl_when_aim 				  		   = groza_shoot_scope_w_gl, shoot
+anm_shoot_aim 						  		   = groza_shoot_scope, shoot
+anm_shoot_aim_w_gl 				  		   = groza_shoot_scope_w_gl, shoot
 
 aim_hud_offset_pos = -0.0698,0.0097,-0.1115
 aim_hud_offset_rot = 0.0035,-0.0045,0

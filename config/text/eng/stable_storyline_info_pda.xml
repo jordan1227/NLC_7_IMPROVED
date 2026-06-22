@@ -1,0 +1,84 @@
+
+                                                                   <!--Êîðäîí-->
+
+<string id="tutorial_x18_botan_book"><text>Scientist’s Journal from X-18</text></string>
+
+<string id="Dead novice's flash"><text>Note from a Dead Novice</text></string>
+
+<string id="doctor_meet"><text>Guide’s PDA</text></string>
+
+<string id="doctor_meet_text"><text>Alright, I’ll meet Ghost’s man. I’ll be waiting for him at Strelok’s stash. If he’s one of ours, he knows where to find me. Doctor.</text></string>
+
+<string id="tutorial_moving_anomaly_text"><text>There’s some really strange anomaly here. It’s moving. I’ll try to calculate its trajectory and movement cycle and slip through, because the soldiers under the bridge don’t get any vodka or money from me.</text></string>
+
+<string id="help_fox_name"><text>Help Fox</text></string>
+<string id="tex_help_fox"><text>Trader: “Fox has returned from a raid and is asking for help. He might know something about Strelok.”</text></string>
+
+<!-- Agroprom -->
+
+<string id="agr_nii_security_plan"><text>The map marks patrol routes, guard posts, and watchtowers. The headquarters is located on the third floor of the institute, where the documents are stored. During the day the entire area is fully patrolled. At night there are fewer patrols. After eleven in the evening there is a guard shift change, and at that time there’s almost no one in the main building. If you want to sneak into the base, you won’t get through the main gate.</text></string>
+
+<string id="agr_nii_security_plan_name"><text>Security Layout Map of the Agroprom Research Institute</text></string>
+
+<string id="st_operation_agroprom"><text>Information from Agroprom</text></string>
+
+<!-- X-18 -->
+
+<string id="dar_document1"><text>Beginning of the Experiment</text></string>
+
+<string id="dar_document2"><text>Second Stage of the Experiment</text></string>
+
+<string id="dar_document3"><text>Security Report</text></string>
+
+<string id="dar_document4"><text>Attack on Personnel</text></string>
+
+<string id="dar_document5"><text>Completion of the Experiment</text></string>
+
+<string id="documents_1"><text>A week ago a decision was made to increase the radiation intensity on the test subjects. No changes were observed during the first few days. After several days, strange metamorphoses began: reduced hair growth and heightened aggression. Several test subjects were literally trampled to death by their own kind.</text></string>
+
+<string id="documents_2"><text>The condition of the test subjects has stabilized. Hair coverage is now about 10% of the original. Claws and teeth have grown noticeably. Activity bursts appear mostly random and are not directed at members of their own group. Senior laboratory assistant Burnov A. N. suggested that this may indicate an increase in intelligence. It was decided to test a new psi-radiation modulation on the subjects.</text></string>
+
+<string id="documents_3"><text>Head of Security: “Yesterday, guard Glebov G. R., as a joke, threw a piece of meat to the test subjects. They tore it apart and devoured it in a matter of seconds. After that, several individuals attempted to break out of their cages. Because of this, the lab assistants were unable to take the scheduled samples. Despite Glebov G. R.’s reckless behavior, I propose equipping service personnel with pneumatic weapons for self-defense in emergency situations.”</text></string>
+
+<string id="documents_4"><text>Head of Security: “Yesterday the experiment nearly spiraled out of control. About two dozen test subjects escaped and smashed two laboratory rooms to splinters. Fortunately, the research staff managed to barricade themselves upstairs. We were ordered to clear the main laboratory. As a result, three guards suffered bite wounds. I hope they’ll be fine. I wish they’d hurry up and finish these experiments.”</text></string>
+
+<string id="documents_5"><text>Yesterday, a new psi-radiation modulation was tested on the subjects. It gave the impression that their brains were simply scorched. I can hardly imagine how this radiation might affect a human. We have tested all types of radiation. The results match data from other laboratories. The experiment can be considered complete. I believe that within a week we’ll be ready to conduct experiments on larger creatures.</text></string>
+
+<string id="LabX18 first key"><text>Level 2 Access Code</text></string>
+
+<string id="LabX18 second key"><text>Level 1 Access Code</text></string>
+
+<string id="LabX18_information"><text>Information from X-18</text></string>
+
+<string id="pass_to_1st_door"><text>Excellent, colleague. I am glad that you have obtained Level 2 access. At last, you will learn what our laboratory is working on. Your access code is 1243. Head of Laboratory X-18, Kalugin Pyotr Ilyich.</text></string>
+
+<string id="pass_to_2nd_door"><text>Colleague, I remind you that starting tomorrow you are assigned to maintain the tanks in the central laboratory. They must be checked every two hours. Report everything to me personally. The code to the central laboratory is 9524. Head of Laboratory X-18, Kalugin Pyotr Ilyich.</text></string>
+
+<!-- Yantar -->
+
+<string id="storyline_vasilyev_info"><text>...these are the coordinates of the entrance to Laboratory X-16. The entrance is located in the basement of the central building, whose purpose is unknown. Presumably it provides technical support for underground emitters. Analysis of documentation from N*** reveals the purpose of this project — a large-scale psychotronic development for mass influence on...\n\n...we have all the necessary documents, we know how to disable the emitter. Ghost and I continue descending into the laboratory. Zombies are swarming toward the light...\n\n...everything has gone to hell. Ghost is completely out of his mind, rambling nonsense. Looks like he was hit by the radiation. I dropped everything and fled through the tunnels...\n\n...I’m in the Swamps, where is the bunker? Damn it, damn it, damn it!!! I can’t tell where I am! Sakharov is a coward, he’s not responding! What’s happening?! Zombies everywhere, I’m running out of ammo...</text></string>
+
+<string id="yan_vasilyev_pda"><text>Vasilyev’s PDA</text></string>
+
+					<!-- Èíôà î òîíåëÿõ. Â ÏÄÀ. Â ðàçäåëå íàéäåííîé èíôîðìàöèè -->
+										
+<string id="tunnel_text"><text>Docent mentioned that Tooth bought documents about the flooded tunnels from him. I should head to Limansk, visit Tooth, and find out what was in those papers.</text></string>
+
+<string id="tunnel_dummy_zub_text"><text>Tooth is asking for one Dummy in exchange for the door code to the flooded tunnel, and two Dummies for information on where the pumps can be powered up (bargaining is possible). As for where the pumps are actually switched on — that’s supposed to be a separate discussion later. And it looks like artifacts alone won’t be enough to settle this.</text></string>
+
+<string id="tunnel_code_zub_text"><text>Tooth gave me the code to the door in X-12 leading to the flooded tunnel: 922758.</text></string>
+
+<string id="tunnel_zyb_skidka_text"><text>I haggled with Tooth. We came to an agreement: at my discretion, instead of two Dummies for information on where to supply power to the pumps, he’ll also accept a scanner component (model No. ……). I should look for it among the nerds in the Swamps.</text></string>
+
+<string id="tunnel_pitanie_text"><text>According to Tooth, power to the pumps can be supplied from the laboratory beneath the Dark Valley, X-10.</text></string>
+
+<string id="tunnel_mercs_text"><text>In exchange for information on where the pumps are activated, Tooth wants me to find out about some kind of tools or equipment that can be used to tune Monolith weapons. To do that, I’ll have to meet one of the mercenary leaders at the Army Warehouses. Hopefully, they won’t stitch me up on the spot.</text></string>
+
+<string id="tunnel_instrument_text"><text>Appetite comes with eating — and Tooth is no exception. Now he insists that I provide proof that this mysterious instrument actually exists. In other words, I have to bring it to him and show it in person. I don’t have much of a choice, even though this whole plan reeks of an elaborate suicide attempt. Well then, all that’s left is to wait for a call from the mercenaries and head to Radar. But first, I should probably go say goodbye to Doctor. There’s a good chance we won’t see each other again.</text></string>
+
+<string id="tunnel_zub_pump_text"><text>That’s it. Now I know where to start pumping the water out — in the Tesla bunker. After that, I can head straight for the tunnels in X-12.</text></string>
+
+<string id="stepanych_plash"><text>Stepanych’s Cloaks</text></string>
+								
+
+

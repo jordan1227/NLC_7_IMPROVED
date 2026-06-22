@@ -1360,6 +1360,7 @@ function get_object_levelname(obj)
 			m_game_vertex = obj.m_game_vertex_id
 		end
 		if (m_game_vertex and game_graph():valid_vertex_id(m_game_vertex)) then
+			--[=[
 			local lvert = game_graph():vertex(m_game_vertex)
 			if (lvert~=nil and lvert.level_id) then
 				local lid = lvert:level_id()
@@ -1367,6 +1368,8 @@ function get_object_levelname(obj)
 					mlevel = alife():level_name(lid)
 				end
 			end
+			--]=]
+			mlevel = obj.level_name
 			if mlevel==nil then mlevel = "nil" end
 		end
 	end
@@ -2339,23 +2342,6 @@ function on_offline_corpse_found(who, object)
 			if (s_from and s_corpse and s_corpse~="" and s_from~="") then
 				do_news(s_corpse, s_from, lua_random(timer_corpse, timer_corpse *5), 15, "default")
 			end
-		end
-	end
-end
-
-function on_offline_trade(npc, item)
-	if (npc and item and lua_random() < 0.25) then
-		local m_from = get_npc_name(npc)
-		local m_str = news_data.trade_templates[lua_random(table.getn(news_data.trade_templates))]
-		local m_level = get_point_description(get_object_levelname(npc), get_object_position(npc))
-		if (m_level=="") then return end		
-		local m_title = get_object_name(item)
-		local t = {["level"] = m_level, ["item"] = m_title}
-		for key0, value in pairs(t) do
-			m_str = string.gsub(m_str, "%$"..key0, value)
-		end
-		if (m_str~="") then
-			do_news(m_str, m_from, lua_random(timer_general, timer_general*10), 15, "default", npc.id, 1)
 		end
 	end
 end

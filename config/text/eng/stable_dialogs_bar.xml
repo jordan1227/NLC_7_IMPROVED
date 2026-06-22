@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+<!-- ПДА Круглова Бармену -->
+<string id="barman_kruglov_flash_0"><text>I'm here on business...</text></string>
+<string id="barman_kruglov_flash_1"><text>Well, lay it out, what do you have there.</text></string>
+<string id="barman_kruglov_flash_2"><text>Listen, Barkeep, I got my hands on a nerd's PDA with information, seems like something important. Only it won't turn on, probably needs charging.</text></string>
+<string id="barman_kruglov_flash_3"><text>So, did you check that nerd's PDA?</text></string>
+<string id="barman_kruglov_flash_4"><text>Uh... slipped my mind. I'll come back later.</text></string>
+<string id="barman_kruglov_flash_21"><text>Important? How do you know if it won't turn on?</text></string>
+<string id="barman_kruglov_flash_22"><text>Well... Uh... one scientist said so when he was begging me to get it. Long story, basically. But I thought: what if... I mean, what if there's something useful for everyone there? That nerd said they were studying the possibility of creating protection from psi-radiation or something like that. We could copy everything there, and then I'll take the PDA back to its owner.</text></string>
+<string id="barman_kruglov_flash_23"><text>You're not telling me something, Marked One. Or decided to play for two teams at once, huh? Alright, give me the PDA here, let Docent take a look. Come back in an hour. And mind you, if it turns out you just wanted to palm off a regular PDA on me, consider that you gave it away for free.</text></string>
+<string id="barman_kruglov_flash_24"><text>Who do you take me for? Anyway, I'll drop by later...</text></string>
+<string id="barman_kruglov_flash_31"><text>Not yet. I told you: come by in an hour.</text></string>
+<string id="barman_kruglov_flash_32"><text>Well, yes, we checked it. Only one unpleasant thing happened. I didn't delve too deep into it, but according to Docent, there was some tricky protection there. Apparently, some code had to be entered regularly, otherwise all the info gets wiped, and the handheld itself gets locked for good.</text></string>
+<string id="barman_kruglov_flash_33"><text>Just don't tell me that...</text></string>
+<string id="barman_kruglov_flash_34"><text>That's exactly what I want to say. But hold your horses, listen first! Docent did manage to download part of the information and there really was a lot of curious stuff there. But the PDA died and can't be restored, sorry about that.</text></string>
+<string id="barman_kruglov_flash_35"><text>Sorry? You've got to be fuck...</text></string>
+<string id="barman_kruglov_flash_36"><text>Easy, Marked One, easy! Yes, it turned out ugly, no argument there. That's why I'm ready to offer you good compensation. Let me think...</text></string>
+<string id="barman_kruglov_flash_361"><text>What, already counting how much profit you'll make from reselling this information? And what am I supposed to do now? Start a war with the mercs hoping they have other PDAs left?! Hmm...</text></string>
+<string id="barman_kruglov_flash_362"><text>What, already counting how much profit you'll make from reselling this information? And what am I supposed to do now? Wait! What did Kruglov say about Wolfhound's PDA? Hm...</text></string>
+<string id="barman_kruglov_flash_363"><text>What, already counting how much profit you'll make from reselling this information? And what am I supposed to do now? Can't bring a broken one...</text></string>
+<string id="barman_kruglov_flash_364"><text>What, already counting how much profit you'll make from reselling this information? Businessman, damn your division...</text></string>
+<string id="barman_kruglov_flash_37"><text>What are you muttering under your breath there? Anyway, don't worry, I won't leave you empty-handed either. First, a sniper rifle - a real SVD, not some homemade crap. You won't find one like this in the Zone easily, had to get it through my channels. For VIP clients and such. Second, optics for it. And not some civilian junk, but a military PSO-1. More than generous, don't you think?</text></string>
+<string id="barman_kruglov_flash_38"><text>Yeah, such generosity that I might as well quit everything and retire right now. If only I knew where...</text></string>
+<string id="barman_kruglov_flash_39"><text>Did you expect a bag of money and a couple of suitcases with artifacts right away? As far as I'm concerned, it's quite a decent reward. Plus my good attitude towards you. Think about it.</text></string>
+<string id="barman_kruglov_flash_40"><text>What's there to think about... Give me your gun. At least I'll feel like a VIP.</text></string>
+<string id="barman_kruglov_flash_41"><text>That's more like it. Take it.</text></string>
+
+<string id="barman_casset_dialog_0"><text>Rumor has it you regularly get videocassettes delivered with new program episodes... Like the one playing on your TV right now... Well, you know.</text></string>
+<string id="barman_casset_dialog_11"><text>Interested? Who would have thought! You certainly don't look like a hermit monk, but I'll be honest - you surprised me.</text></string>
+<string id="barman_casset_dialog_12"><text>We've already talked about this. Having memory problems again? Then let me remind you: for a second-level artifact in good condition, I'll share some novelty from my collection.</text></string>
+<string id="barman_casset_dialog_2"><text>It's for a friend... I mean, he's not even my friend really, just asked me to get it... Anyway! Do you have anything fresh for sale or not?</text></string>
+<string id="barman_casset_dialog_131"><text>I have such an artifact. Here, will this do?</text></string>
+<string id="barman_casset_dialog_132"><text>Maybe a discount for old friendship? No? Alright, I'll be back when I find a suitable artifact.</text></string>
+<string id="barman_casset_dialog_3"><text>I do, of course. Only not for sale, but for trade. I think a second-level artifact in good condition would be just right for such a deal.</text></string>
+<string id="barman_casset_dialog_4"><text>Yes, quite. Here's the cassette. There's a rather curious selection recorded here. Some might say it's an acquired taste, but for those who have broad views on "this" matter - it's perfect.</text></string>
+<string id="barman_casset_dialog_5"><text>I don't give a damn. I'm not going to watch it.</text></string>
+<!-- старт микстурного квеста у Круглова -->
+<string id="kruglov_drugs_dialog_0"><text>I'll sit down and rest here with you for a bit, won't bother you?</text></string>
+<string id="kruglov_drugs_dialog_1"><text>Sit down, of course, we're not doing anything anyway, just shooting the breeze.</text></string>
+<string id="kruglov_drugs_dialog_2"><text>How do you like the Zone in general? Don't regret ending up here?</text></string>
+<string id="kruglov_drugs_dialog_3"><text>Are you kidding? The Zone is a wonderful gift to humanity. Of course, you can't live here, radiation, anomalies, mutants - there are plenty of dangers. But what enormous scientific potential! It's almost a natural experiment, simply a reserve for scientists. It's hard to imagine what will happen to science after comprehensive study of the Zone. Besides purely academic knowledge, humanity can make a powerful technological breakthrough! Biotechnology, curing incurable diseases, solving environmental and food problems, fundamentally new energy sources... and who knows what else. As pompous as it may sound, I'm proud that I have the honor to be here, at the cutting edge of progress!</text></string>
+<string id="kruglov_drugs_dialog_4"><text>Oh, wow...</text></string>
+<string id="kruglov_drugs_dialog_5"><text>You stalkers can't even imagine the whole picture. And you don't want to. For you, immediate gain is always more important than any possible achievements in the future. Uh, sorry, I'm getting carried away.</text></string>
+<string id="kruglov_drugs_dialog_6"><text>It's alright, I'm not offended. And you're right, why lie. The future concerns me much less at this moment than the past.</text></string>
+<string id="kruglov_drugs_dialog_7"><text>What do you mean?</text></string>
+<string id="kruglov_drugs_dialog_8"><text>Oh right, I didn't tell you. I have memory problems. I remember myself from the moment I woke up in a village, at the Cordon. Separate fragments occasionally surface in my head, but they're too vague and disconnected...</text></string>
+<string id="kruglov_drugs_dialog_9"><text>So that's it! And what are you thinking of doing now?</text></string>
+<string id="kruglov_drugs_dialog_10"><text>What's there to think about? I'm trying to remember myself or find those who knew me before. I can't just stay and live in the Zone - surely I have a home somewhere, maybe even loved ones waiting for me. Besides, I have a couple of leads that might help in the search.</text></string>
+<string id="kruglov_drugs_dialog_11"><text>Haven't you thought about seeing doctors on the mainland? I'm not a specialist, but I know that memory problems can be caused by the most mundane reasons: from TBI and internal pathologies, like diabetes, to various mental disorders. Most of them respond to both medication treatment and...</text></string>
+<string id="kruglov_drugs_dialog_12"><text>Stop! Let's do without those fancy words of yours. I can always leave the Zone. But first, while there's hope to remember something here, I'll try to work the leads I have. And second, if nothing works out, I can't leave empty-handed. Need to live somewhere, need to eat, and I'm afraid to even imagine how much doctors will charge.</text></string>
+<string id="kruglov_drugs_dialog_13"><text>That's true. Being sick these days is an expensive pleasure. I remember once my wife sent me to the pharmacy, they prescribed her some mixture to drink for...</text></string>
+<string id="kruglov_drugs_dialog_14"><text>Wait, wait! About the mixture. I haven't pestered you yet. Basically, someone told me where to find one medicine to fix memory. But here's the problem: it's imported, supposedly Chinese, and the instructions are scribbled by hand in their language. I already went to Sakharov and asked Docent at the Bar to help - no use. Can you suggest anything?</text></string>
+<string id="kruglov_drugs_dialog_15"><text>Well, Marked One, consider yourself very lucky! You see, I lived in China for 3 years, studied at the graduate school of a university there. I won't say I mastered the language perfectly, and something might have been forgotten over time, but I think I can read your instructions. Give them here.</text></string>
+<string id="kruglov_drugs_dialog_151"><text>Now that's really lucky. I happen to have them with me. Here you go.</text></string>
+<string id="kruglov_drugs_dialog_152"><text>Yeah, lucky indeed. Only I don't have the instructions with me, stashed them for now so I wouldn't lose them accidentally. You just... wait a bit, I'll bring them soon.</text></string>
+<string id="kruglov_drugs_dialog_16"><text>Let's see... Uh-huh, this is clear. But here something's illegible. Hmm. In short, it says here that the drug is experimental, not enough tests have been conducted yet, so use at your own risk and only with written consent from the patient. Then there are some contraindications and possible side effects, I don't understand everything here... So, use with special caution during pregnancy, heh, that's definitely not about you...</text></string>
+<string id="kruglov_drugs_dialog_17"><text>Well? I don't really complain about my health in general, so you can skip that. The main thing for me is not to overdose, and that there's an effect.</text></string>
+<string id="kruglov_drugs_dialog_18"><text>Aha, here. Method of application. One vial once a day for ten days, necessarily on an empty stomach. Under doctor's supervision. It also says here that if by the fifth day of intake the patient starts experiencing symptoms like dizziness, severe shortness of breath, drowsiness, something else here... can't understand. Basically, you need to immediately stop taking it and follow the recommendations from some "manufacturer's brochure"... Something like that. Where's the brochure?</text></string>
+<string id="kruglov_drugs_dialog_19"><text>Doesn't seem like there was anything else. Alright, it's clear overall. It all sounds not very encouraging, but I think it's worth the risk. Thanks, science! I owe you one, see you.</text></string>
+
+<string id="kruglov_drugs_dialog_2_0"><text>Hi, Kruglov! I'm here with the instructions. Need a translation.</text></string>
+<string id="kruglov_drugs_dialog_2_1"><text>Huh? Instructions? Translation? Oh, I remember. Well, give it here, I'll take a look.</text></string>
+<string id="kruglov_drugs_dialog_2_2"><text>Here you go.</text></string>
+
+<string id="barman_musik_dialog_0"><text>Change the music! It's gotten old.</text></string>
+<string id="barman_musik_dialog_1"><text>Fork over a couple hundred, then I'll change it.</text></string>
+<string id="barman_musik_dialog_2"><text>Take it... one hundred, two hundred.</text></string>
+<string id="barman_musik_dialog_10"><text>Not giving you any. You'd charge for entry next, businessman, damn you...</text></string>
+<string id="barman_musik_dialog_3"><text>What did you think... Nothing comes free...\nWhat do you want to listen to?</text></string>
+<string id="barman_musik_dialog_4"><text>Put on some retro...</text></string>
+<string id="barman_musik_dialog_5"><text>I'd like to hear something nostalgic...</text></string>
+<string id="barman_musik_dialog_6"><text>Got any rock and roll?</text></string>
+<string id="barman_musik_dialog_7"><text>Something more modern...</text></string>
+<string id="barman_musik_dialog_41"><text>I respect retro too...</text></string>
+<string id="barman_musik_dialog_51"><text>Alright, you'll get your nostalgia...</text></string>
+<string id="barman_musik_dialog_61"><text>In Greece, they have everything...</text></string>
+<string id="barman_musik_dialog_71"><text>Alright, I'll put it on now...</text></string>
+<string id="barman_musik_dialog_8"><text>Actually, let this one stay...</text></string>
+
+<string id="garik_start_dialog_0"><text>Hello, what are we guarding?</text></string>
+<string id="garik_start_dialog_1"><text>And who might you be? Don't think we've met before.</text></string>
+<string id="garik_start_dialog_2"><text>They call me Marked One.</text></string>
+<string id="garik_start_dialog_3"><text>I'm Garik. I keep order in this dive. And I protect the peace of serious people, so that all sorts of drunks don't distract them from work. There, in the back room, an armor repairman works, they call him Lanky. And another one... Docent. He handles the technical stuff.</text></string>
+<string id="garik_start_dialog_4"><text>Can I go see them?</text></string>
+<string id="garik_start_dialog_5"><text>I won't let you through just like that.</text></string>
+<string id="garik_start_dialog_6"><text>I get that. How much?</text></string>
+<string id="garik_start_dialog_7"><text>My brother and I are going on a deep raid for artifacts soon. Tired of looking at these mugs already. We're gathering equipment, supplies, medicine.\nBasically, you give me antirad, maybe a medkit... military or scientific, and you can walk around freely.\nDeal?</text></string>
+<string id="garik_start_dialog_8"><text>Look, your respected people will be out of work with such a fee... for access to their bodies.</text></string>
+<string id="garik_start_dialog_9"><text>Don't worry about them. They have plenty to do.</text></string>
+<string id="garik_start_dialog_10"><text>When I have spare medicine, I'll drop by.</text></string>
+
+<string id="garik_need_room_dialog_0"><text>I need to see the repairman.</text></string>
+<string id="garik_need_room_dialog_100"><text>Remember the fee? Hand over the medicine.</text></string>
+<string id="garik_need_room_dialog_101"><text>I have antirad, I don't use them anyway, prefer vodka.</text></string>
+<string id="garik_need_room_dialog_102"><text>I have a medkit, military one.</text></string>
+<string id="garik_need_room_dialog_103"><text>Will you take a scientific medkit?</text></string>
+<string id="garik_need_room_dialog_104"><text>I'll drop by next time.</text></string>
+<string id="garik_need_room_dialog_200"><text>Picking up armor from repair? Lanky told me... go ahead.</text></string>
+<string id="garik_need_room_dialog_201"><text>So it's ready... Thanks.</text></string>
+<string id="garik_need_room_dialog_300"><text>Lanky didn't say anything. So hand over the medicine.</text></string>
+<string id="garik_need_room_dialog_400"><text>You've gotten tough, Marked One... Orders are to let you through.</text></string>
+<string id="garik_need_room_dialog_401"><text>Really? Well, I'm off then.</text></string>
+<string id="garik_need_room_dialog_500"><text>Go ahead!</text></string>
+
+<string id="bar_drunk_dolg_start_101"><text>Hic... ah, what a load of crap. Drunk again. They're gonna kick me out of Duty, you understand, if I screw up this assignment too. And I'm not in any state right now to... you know.</text></string>
+<string id="bar_drunk_dolg_start_102"><text>I understand, happens.</text></string>
+<string id="bar_drunk_dolg_start_103"><text>What can you understand... Let's have a little one... To our acquaintance!</text></string>
+<string id="bar_drunk_dolg_start_1041"><text>I've got a special bottle, let's have just a bit.</text></string>
+<string id="bar_drunk_dolg_start_1042"><text>I don't drink... almost. Only on holidays. So basically - no.</text></string>
+<string id="bar_drunk_dolg_start_1051"><text>My kind of man! You, uh, come by... We'll talk about life.</text></string>
+<string id="bar_drunk_dolg_start_1052"><text>No respect? Well, fine. Otherwise we'd, uh... talk about life.</text></string>
+<string id="bar_drunk_dolg_start_151"><text>You again? What did you want? The dear one's all gone... boring.</text></string>
+<string id="bar_drunk_dolg_start_1511"><text>I'm in a bind myself.</text></string>
+<string id="bar_drunk_dolg_start_1512"><text>So maybe a little one? Today's Tinsmith Day, I think...</text></string>
+<string id="bar_drunk_dolg_start_152"><text>That's a reason! What's your name again? Forgot, sorry...</text></string>
+<string id="bar_drunk_dolg_start_153"><text>They call me Marked One. Let's drink.</text></string>
+<string id="bar_drunk_dolg_start_154"><text>Oof... Name's Brome. There's such an element, chemical... exists.</text></string>
+<string id="bar_drunk_dolg_start_155"><text>Nice to meet you. Did you want to tell me something or what?</text></string>
+<string id="bar_drunk_dolg_start_156"><text>I did... Need to, uh... gather my thoughts.</text></string>
+<string id="bar_drunk_dolg_start_201"><text>Ah! Hey there, bro. Oh, life... Listen, you, uh, at least have a drink with me...</text></string>
+<string id="bar_drunk_dolg_start_301"><text>Ah... you... well, what's up?</text></string>
+<string id="bar_drunk_dolg_start_401"><text>Hic ...helped, yeah. Well, let's drink to Duty, I guess? Aaand... Oh!</text></string>
+
+<string id="bar_drunk_dolg_patrul_start_101"><text>Oh! What are you snooping around for? Who are you?</text></string>
+<string id="bar_drunk_dolg_patrul_start_102"><text>Marked One. Don't recognize me?</text></string>
+<string id="bar_drunk_dolg_patrul_start_103"><text>There's lots of you marked ones. Can't remember everyone. Name's Brome. There's such an element, chemical. Otherwise jokers keep bringing up army jelly...\nAlright, don't you see - I'm on duty, garrison patrol type thing. They could throw me in the brig.\nSo if you don't have business, march over to the bar, knock back a shot of tea for me...</text></string>
+<string id="bar_drunk_dolg_patrul_start_201"><text>You again? Just can't leave a man alone... We'll talk in the bar.</text></string>
+<string id="bar_drunk_dolg_patrul_start_202"><text>Well, as you say.</text></string>
+
+<string id="drunk_dolg_start_dialog_101"><text>Ah, it's you. Hey there, buddy. Things didn't work out somehow...</text></string>
+<string id="drunk_dolg_start_dialog_102"><text>What didn't work out?</text></string>
+<string id="drunk_dolg_start_dialog_103"><text>Well... I left Duty. Got tired of it! This isn't right for them, that's not proper. They made it into barracks. But I have a soul. It demands. And they...</text></string>
+<string id="drunk_dolg_start_dialog_104"><text>I see. And what now? What are your plans?</text></string>
+<string id="drunk_dolg_start_dialog_105"><text>We'll see... There's a couple of people I can do business with. And without any drills and marching in formation. We'll see...</text></string>
+<string id="drunk_dolg_start_dialog_201"><text>Hello from old boots. How are you? Everything alright? Well, good...</text></string>
+
+<string id="bar_drunk_dolg_quest_start_0"><text>So what did you want? Or did you forget already?</text></string>
+<string id="bar_drunk_dolg_quest_start_1"><text>Yeah, I have... A sec... ret! You smell?</text></string>
+<string id="bar_drunk_dolg_quest_start_2"><text>I smell... You stink. Did you wash this year?</text></string>
+<string id="bar_drunk_dolg_quest_start_31"><text>Uh... what? You listen to me! I'm telling you straight! And... what did I want? Ah!\nOne du... de owes me money. A pile. My legs... something's wrong with them. And my eye hurts. Well... You understand? Well?</text></string>
+<string id="bar_drunk_dolg_quest_start_41"><text>No. What do you want?</text></string>
+<string id="bar_drunk_dolg_quest_start_51"><text>Well you, uh, tell him, like, Brome, his buddy... I'm, like, dying, like. Just don't say where... Like, let him pay back what he owes. Understand? Grab him by the gills, shake him and... And then I'll tell you a great recipe... Cross my heart! Well...</text></string>
+<string id="bar_drunk_dolg_quest_start_61"><text>We'll see. If I get the chance - I'll tell him.</text></string>
+<string id="bar_drunk_dolg_quest_start_32"><text>Uh... what? You listen to me! I'm telling you straight! And... what did I want? Ah!\nYou want to know awe... awfu... damn it... Wait... A recipe, how to brew an arti - yeah! Want it?</text></string>
+<string id="bar_drunk_dolg_quest_start_42"><text>Depends which one and for what...</text></string>
+<string id="bar_drunk_dolg_quest_start_52"><text>Awesome! I'm telling you like my own! Seen "Tears..."? Yeah... And I can... Or rather knew. Well... Anyway. There's this recipe. And I'll tell you. You just bring me some vodka, eh? Well, about ten bottles... Eh? I want to go on a raid, and there might be radiation, or maybe some other nasty stuff. Gonna treat the guys. So what? Deal?</text></string>
+<string id="bar_drunk_dolg_quest_start_62"><text>Alright. When I have vodka, I'll drop by.</text></string>
+<string id="bar_drunk_dolg_quest_start_33"><text>Uh... what? You listen to me! I'm telling you straight! And... what did I want? Ah!\nYou see how it is... Yeah. Can't do it. Yeah. Without this poison! How many times I told myself - that's it! Not another drop, and again. Wasted. Help me, friend! I'll describe such a sweet deal to you - dear mama!</text></string>
+<string id="bar_drunk_dolg_quest_start_43"><text>Didn't understand anything. What do you want from me?</text></string>
+<string id="bar_drunk_dolg_quest_start_53"><text>Well, there's this doctor, they call him Boryan, lives in the Swamps. Real soulful guy. He knows a lot. Maybe he'll tell me how to deal with the green serpent. He brews all sorts of herbs there. I'd look for him myself, but I can't, my legs won't work and I'm all twitchy without a warm-up, and if I do warm up - that's it, I'm done. I can't go out into the Zone alone, and nobody will take me as a partner. And I understand myself - what kind of partner am I, I'll only get others killed... So what? If you see the doctor - will you ask him for me? And I'll give you a very useful recipe - how to brew a "Steel Kolobok", I know, they told me...</text></string>
+<string id="bar_drunk_dolg_quest_start_63"><text>I'll try to find you a magic potion.</text></string>
+
+<string id="bar_dolg_debt_dialog_101"><text>What do you want? Why are you drilling me with your eyes? Like what you see? You better go, or I'll take sin on my soul - punch you right between...</text></string>
+<string id="bar_dolg_debt_dialog_102"><text>Cool down, sicko. Like I need you... I'm from Brome, know that Duty guy?</text></string>
+<string id="bar_dolg_debt_dialog_103"><text>Well... Used to run with him, until he completely drank himself silly. He's got a good nose for dangerous spots. That's probably why he's still alive. One thing ruins him - can't resist the white stuff. Either removing radiation, or pouring protection from controllers... Well, God be his judge. Why are you suddenly asking about Brome?</text></string>
+<string id="bar_dolg_debt_dialog_104"><text>He's, how to put it... Basically, he says you owe him money. Asked me to shake you down for the debt. Though he was drunk, Brome was, so there's no trust in his words, honestly.</text></string>
+<string id="bar_dolg_debt_dialog_105"><text>I... what? I owe him?! Completely drank his brains away, fucking drunk! He owes me, not the other way around! In the last raid we lost all the loot because of him. Not that it was rich, but still - a capsule. He, this alconaut, dropped the backpack with the container when we had to fight off pseudodogs. We ran circles like "Papa Carlos"... You probably know yourself how it is with those dogs. Well, and then we couldn't find where Brome dropped the backpack. We searched and searched, all for nothing.</text></string>
+<string id="bar_dolg_debt_dialog_106"><text>Where exactly? Maybe I could search too? I'll give you half of what I get for the capsule honestly, if I find it, of course...</text></string>
+<string id="bar_dolg_debt_dialog_107"><text>I don't need anything. You, if luck smiles on you, better help that thirsty-suffering one. It happened in the Gut, near the district committee estate. Bad place - pseudodogs, hungry ones, tons of tushkanos. Look around there somewhere.</text></string>
+<string id="bar_dolg_debt_dialog_108"><text>I hang around those parts often, I'll look when I get the chance. See you.</text></string>
+
+<string id="bar_drunk_dolg_quest_done_0"><text>Where is it? Do you even remember what we agreed on?</text></string>
+<string id="bar_drunk_dolg_quest_done_1"><text>Of course... I remember... but, vaguely.</text></string>
+<string id="bar_drunk_dolg_quest_done_21"><text>I talked to your debtor. He says - it's still a big question who owes what to whom. He told me how you two were messing around in the Gut, fighting off pseudodogs, and how you lost the backpack with the container that had the found capsule in it. But he turned out to be a good guy, no complaints about you. And I, by the way, found that backpack with the container.</text></string>
+<string id="bar_drunk_dolg_quest_done_31"><text>True buddy, yeah... so he's not mad? And that you found our loot - well you're... great, respect and all that! Listen, maybe you could pour a couple drops?</text></string>
+<string id="bar_drunk_dolg_quest_done_41"><text>You'll manage without. You, if I remember, promised something for the return of your hard-earned money. Even though everything turned out differently in the end, but... Here's the capsule and container from the backpack. Tell me about your recipe.</text></string>
+<string id="bar_drunk_dolg_quest_done_51"><text>Keep the container, I'll give the capsule to Barkeep right away anyway - let him open it. And the recipe is very useful and necessary, no kidding. Write this down, how to brew the modificate "Grandma's Beads". I know, they told me...</text></string>
+<string id="bar_drunk_dolg_quest_done_61"><text>Got it written down. Now we're even. You should quit drinking so much, Brome. See you.</text></string>
+<string id="bar_drunk_dolg_quest_done_22"><text>I brought you vodka. Ten bottles, all fair and square.</text></string>
+<string id="bar_drunk_dolg_quest_done_32"><text>Well... You! Savior! Holy man! I, uh... I don't remember the recipe itself, I had it written down. And I hid the note in a stash. Well... The paper was in a bag, with it, the dear one. So we drank it, and the bag stayed there. I just don't remember exactly where. Either at the Village, when we were waiting in ambush. Or in the Gut, when... Well, I've been there.</text></string>
+<string id="bar_drunk_dolg_quest_done_42"><text>Just my luck, got involved with a drunk... Take the vodka, have a swig, maybe you'll remember where specifically?</text></string>
+<string id="bar_drunk_dolg_quest_done_52"><text>Don't get all worked up, benefactor, well, forgot a little - happens...\nAt the forgotten Village - I remember, we drank in the little shop, there's one there, it stinks from the swamp nearby - terrible!\nWell, and if in the Gut, there's an old bus there, by the little bridge over the marsh. Well, under the bus, iron box, maybe I shoved it there...\nBelieve me, I'm not lying...</text></string>
+<string id="bar_drunk_dolg_quest_done_62"><text>Well, we'll see. If I don't find it... I'll be back.</text></string>
+<string id="bar_drunk_dolg_quest_done_23"><text>Still suffering, sick one, or feeling better already?</text></string>
+<string id="bar_drunk_dolg_quest_done_33"><text>What better, everything's disgusting, even bad thoughts creep into my head - why do I live, what for.</text></string>
+<string id="bar_drunk_dolg_quest_done_43"><text>You've really gone soft... I was at Boryan's, he gave you various herbs, how to take them - it's written there, so get treated. He said in about ten days it should let up, and if not, then you'll find him yourself, he's in the Swamps, lives at the northern farmstead. Here's your medicine. Haven't forgotten about the recipe?</text></string>
+<string id="bar_drunk_dolg_quest_done_53"><text>You, Marked One, are a real man. Let's drink to this... Oh, what am I... Recipe?! Ah... yes... about "Steel Kolobok", write it down, since I promised.</text></string>
+<string id="bar_drunk_dolg_quest_done_63"><text>You should at least wash yourself. See you.</text></string>
+<string id="bar_drunk_dolg_quest_done_24"><text>You need to drink less. It'll clear up.</text></string>
+<string id="bar_drunk_dolg_quest_done_34"><text>Maybe you're right, but the question is... debatable. You're without memory, and nothing, alive and kicking.</text></string>
+<string id="bar_drunk_dolg_quest_done_44"><text>That's true...</text></string>
+
+<string id="bar_bar_hunter_quest_finish_0"><text>Found it, here's your gun.</text></string>
+<string id="bar_bar_hunter_quest_finish_11"><text>What? You found the gun? Wow! Brother, little brother, dear brother... I just have no words. Thank you. THANK YOU, damn it! Oh, you helped, you really helped!!! Sorry, I'm completely out of money, spent it all... But I have this one recipe, cherished! Never told anyone, but you... Haven't heard how to get "Electra's Tears"? Huh? Aha! Let me upload the info to your PDA, hope it'll be useful. And I won't forget, damn me, how you helped me. Hope I can help you the same way you helped me, with time. Thanks.\nAh! I also promised to tell you about the stash... A stalker said he hid loot in the Gut, there's tons of monsters there - few dare to go... There's a small bridge there, under it, in a little tunnel, he kept his loot for a rainy day. You'll see. Believe...</text></string>
+<string id="bar_bar_hunter_quest_finish_12"><text>What? You found the gun? Wow! Brother, little brother, dear brother... I just have no words. Thank you. THANK YOU, damn it! Oh, you helped, you really helped!!! Sorry, I'm completely out of money, spent it all... But I have this one recipe, cherished! Never told anyone, but you... "Steel Kolobok"! I know how to get it... Let me upload the info to your PDA, hope it'll be useful. And I won't forget, damn me, how you helped me. Hope I can help you the same way you helped me, with time. Thanks.\nAh! I also promised to tell you about the stash... Some guy told me, about this very matter, that he hid loot in the Swamps, there's tons of monsters there - few dare to go... Said that at the motor depot by the wall, behind the trash container he tucked away a box. I haven't been there myself, but...</text></string>
+<string id="bar_bar_hunter_quest_finish_13"><text>What? You found the gun? Wow! Brother, little brother, dear brother... I just have no words. Thank you. THANK YOU, damn it! Oh, you helped, you really helped!!! Sorry, I'm completely out of money, spent it all... But I have this one recipe, cherished! Never told anyone, but you... Heard of "Mama's Beads"? Well, I know how to turn that into "Grandma's Beads"! Aha! Let me upload the info to your PDA, hope it'll be useful. And I won't forget, damn me, how you helped me. Hope I can help you the same way you helped me, with time. Thanks.\nAh! I also promised to tell you about the stash... A friend of mine said he hid loot in the Red Forest, like there's tons of monsters there - few dare to go... I didn't ask for directions - didn't care, but he said there's an old mine there, with like a toilet in it... Somewhere there. I don't know whether to believe it or not, but to you - everything straight up...</text></string>
+<string id="bar_bar_hunter_quest_start_0"><text>What's in it for me?</text></string>
+<string id="bar_bar_hunter_quest_start_1"><text>I'll give you everything, buddy, just help me get the gun back, I'm asking you as a human being. There's no life for me without it.</text></string>
+<string id="bar_bar_hunter_quest_start_11"><text>More specifically? I understand you lost everything?</text></string>
+<string id="bar_bar_hunter_quest_start_111"><text>Maybe not everything! I know about one special place, a stalker shared it when he was dying. Get the gun - I'll tell you everything straight up! Believe me, bro... I'm not a bullshitter! Help me out, or this, fucking, well you know, Baldy doesn't want to see me anymore...</text></string>
+<string id="bar_bar_hunter_quest_start_1111"><text>It's in your own interest.</text></string>
+<string id="bar_bar_hunter_quest_start_12"><text>No. I have more important things to do right now.</text></string>
+<string id="bar_bar_hunter_quest_start_121"><text>Your choice, but I hope you'll change your mind.</text></string>
+<string id="bar_bar_hunter_quest_start_1212"><text>We'll see.</text></string>
+
+<string id="bar_bar_hunter_start_11"><text>What are you looking at, brother... Think I'm drunk?\nWell yes, I had a drink! I have the right! My soul is scratching like cats... Understand?\nYou don't understand anything...\nI lost the family gun to that card sharp. Thought I'd win some arties for gear, but look how it turned out! And how it was going! Got "Moonlight", "Night Star"... And then... Damn!\nBro, maybe you could talk to that bloodsucker, eh? I need to get my gun back. It's a family heirloom, passed from father to son. And here you go - lost it. I'm practically attached to it, bonded, and now this mess.</text></string>
+<string id="bar_bar_hunter_start_21"><text>Hi. Any news? Found it?</text></string>
+<string id="bar_bar_hunter_start_31"><text>Thank you brother. I won't forget how you helped me.</text></string>
+
+<string id="bar_bar_hunter_dark_start_101"><text>Hi, bro. How's life? Everything alright? Well, mine's getting better too.</text></string>
+<string id="bar_bar_hunter_dark_start_102"><text>Left the bar? And what now?</text></string>
+<string id="bar_bar_hunter_dark_start_103"><text>Well... We'll see. I've got a good gun. Beasts are running around, some people pay good money for their guts. Life's possible!</text></string>
+<string id="bar_bar_hunter_dark_start_201"><text>Hello, friend Marked One. How are you? Good? Well, excellent.</text></string>
+
+<string id="bar_bar_osvedomitel_start_101"><text>Hello, stalker. Don't think we've met? I'm Tooth, and you?</text></string>
+<string id="bar_bar_osvedomitel_start_102"><text>Marked One. Having a drink? Or what?</text></string>
+<string id="bar_bar_osvedomitel_start_103"><text>Not quite. Haven't heard of me? I trade information in the Zone. Sell important intel, buy blueprints, documents and other useful information exclusives.</text></string>
+<string id="bar_bar_osvedomitel_start_201"><text>What brings you to me, stalker?</text></string>
+<string id="bar_bar_osvedomitel_start_301"><text>Ah, Marked One! Any news on our business in the Gut?</text></string>
+<string id="bar_bar_osvedomitel_start_401"><text>Hello, Marked One. Want to buy information? Or maybe sell?</text></string>
+
+<string id="zub_lim_start_dlg_101"><text>Marked One? I heard you went off to Radar and disappeared for good. Didn't expect to see you again!</text></string>
+<string id="zub_lim_start_dlg_102"><text>Yeah, you wish... And what are you doing here all of a sudden?</text></string>
+<string id="zub_lim_start_dlg_103"><text>Most stalkers headed north, so I wanted to be closer to the epicenter of events too. And it's become unsafe in the Bar now. The Duty guys scattered, only a couple dozen people left from the whole faction.</text></string>
+<string id="zub_lim_start_dlg_104"><text>I see. So you've moved here permanently?</text></string>
+<string id="zub_lim_start_dlg_105"><text>For now, yes, we'll see later. So if you have any business in my line of work, now you know where to find me.</text></string>
+<string id="zub_lim_start_dlg_201"><text>Hi, Marked One. What brings you to me this time?</text></string>
+
+<string id="zub_recipes_pre_dialog_0"><text>I want to buy recipes from you.</text></string>
+<string id="zub_recipes_pre_dialog_101"><text>Commendable desire, but not possible right now. I'm converting all my paper files to digital, and it's such a mess right now that even the devil would break his leg. And I don't sell recipes to just anyone. I'll definitely ask for a small favor first. But like I said, all that later.</text></string>
+<string id="zub_recipes_pre_dialog_102"><text>I don't sell them to just anyone anyway, but for you, Marked One, I'll make an exception in exchange for one favor. If we agree, you'll get access to my entire collection of first and second level artifact recipes. We'll discuss prices separately later.</text></string>
+<string id="zub_recipes_pre_dialog_201"><text>Well, you tell me... Keeping up with progress, huh? Well, I'll come by another time.</text></string>
+<string id="zub_recipes_pre_dialog_202"><text>And what kind of favor? I have a rough idea what you do besides your main "profession", so just in case I'll warn you in advance: I don't do wet work.</text></string>
+<string id="zub_recipes_pre_dialog_3"><text>I've heard about your principles, but I need something of a completely different nature.\nIn a few days, a very important cargo will arrive in the Zone for... respected people. I need to carefully transport it through Duty territory. As you understand, I have some greased palms in that structure, but the situation is such that for a number of reasons I wouldn't want to use regular channels. So I'm looking for a new intermediary, exclusively for a one-time delivery. Good pay, confidentiality and all that.</text></string>
+<string id="zub_recipes_pre_dialog_4"><text>And what? Want me to go sign up with Duty real quick or something?</text></string>
+<string id="zub_recipes_pre_dialog_5"><text>Don't talk nonsense. I want you to establish contact with a potential intermediary, I have one guy in mind. And convince him to work for me. Anticipating the question of why I can't do this myself - I need complete anonymity. So that if something happens, I can't be tied to this... operation.</text></string>
+<string id="zub_recipes_pre_dialog_6"><text>I don't get something. You want to pass messages through me, like through a courier?</text></string>
+<string id="zub_recipes_pre_dialog_7"><text>No, of course not. That would only attract unnecessary attention. Your job is to establish contact and get agreement for a one-time... side job, let's call it that. And from him I'll need a PDA connection code, so I can send him messages from an untraceable handheld.</text></string>
+<string id="zub_recipes_pre_dialog_81"><text>Now I understand. Alright. Let's say I agree to talk to this Duty member. And who is this lucky guy?</text></string>
+<string id="zub_recipes_pre_dialog_82"><text>Tooth, since you haven't named any names, I suggest we stop and forget about this conversation. I don't want to get involved in some shady spy games.</text></string>
+<string id="zub_recipes_pre_dialog_91"><text>Wait! So you know him?</text></string>
+<string id="zub_recipes_pre_dialog_92"><text>As you wish. That means you're out of luck with the recipes.</text></string>
+<string id="zub_recipes_pre_dialog_10"><text>Know who?!</text></string>
+<string id="zub_recipes_pre_dialog_11"><text>Lucky, who else. That's his nickname.</text></string>
+<string id="zub_recipes_pre_dialog_121"><text>Oh... I just expressed myself that way. But actually yes, I know him. What a coincidence!</text></string>
+<string id="zub_recipes_pre_dialog_122"><text>Oh... I just expressed myself that way. No, I don't know him.</text></string>
+<string id="zub_recipes_pre_dialog_131"><text>Even better! Then get to work. How best to approach this character - decide for yourself, but I advise not to go straight at him. Chat first, find common topics, buy him drinks. Play it by ear, in short. There's time, but don't drag it out too much.</text></string>
+<string id="zub_recipes_pre_dialog_132"><text>Then remember this. He usually stands guard in the hangar, the one closest to the southern checkpoint. Often hangs out here in the mornings with his colleagues. How you'll act - decide for yourself, but I advise not to go straight at him. Chat first, find common topics, buy him drinks. Play it by ear, in short. There's time, but don't drag it out too much.</text></string>
+<string id="zub_recipes_pre_dialog_14"><text>I got it all. See you, conspirator.</text></string>
+
+<string id="zub_recipes_pre_done_dialog_0"><text>Tooth, everything's cool. I made a deal with Luck...</text></string>
+<string id="zub_recipes_pre_done_dialog_1"><text>Keep it down! Why are you yelling across the whole bar? Well, what's up?</text></string>
+<string id="zub_recipes_pre_done_dialog_2"><text>Like I said, everything's good. He agrees. Can't stand his leadership, so he's ready to commit a medium-severity job violation without any qualms. For good compensation, of course. Here's his PDA connection code, copy it down.</text></string>
+<string id="zub_recipes_pre_done_dialog_3"><text>So I wasn't wrong, calculated this rogue correctly. Well done, Marked One, excellent work. Here's a small bonus from me.</text></string>
+<string id="zub_recipes_pre_done_dialog_4"><text>Thanks, of course, but what about the recipes?</text></string>
+<string id="zub_recipes_pre_done_dialog_5"><text>Everything as agreed. Any first or second level artifact recipe from my collection. I accept two artifacts of second and third level respectively as payment. In excellent condition, mandatory. That's it, no haggling.</text></string>
+<string id="zub_recipes_pre_done_dialog_6"><text>How much? Two second level artifacts for a first level recipe, and for a second level recipe - two third level? Are you completely f... out of your mind?!</text></string>
+<string id="zub_recipes_pre_done_dialog_7"><text>Some offered more, but I'm not ready to do business with everyone, as I said. However, I'm not forcing you. Don't want it - don't buy it.</text></string>
+
+<string id="zub_investigation"><text>Tooth's Troubles</text></string>
+<string id="zub_investigation_start_dlg_0"><text>Haven't seen that Duty guy, Lucky, in a while. Remember him? He used to stand guard in the hangar every day, I constantly saw him there, and now he's disappeared, like he never existed. And he stopped appearing in the Bar. Any idea where he went?</text></string>
+<string id="zub_investigation_start_dlg_1"><text>I have no idea who you're talking about, Marked One.</text></string>
+<string id="zub_investigation_start_dlg_2"><text>But how? You yourself...</text></string>
+<string id="zub_investigation_start_dlg_3"><text>I'll repeat once more: I don't know any Lucky. And tell Voronin to stop sending his snoops to me. I'm not involved in the disappearance of his subordinates. That's it, move along. A client should be coming to see me now.</text></string>
+<string id="zub_investigation_start_dlg_4"><text>What? What's Voronin got to do with this? Nobody sent me, but judging by how you flipped out, maybe I should address my question to the general?</text></string>
+<string id="zub_investigation_start_dlg_5"><text>Wait... So you're definitely not from him? Some guy came here, also asking questions. But I figured him out quickly. Duty investigators are worthless.</text></string>
+<string id="zub_investigation_start_dlg_6"><text>I just wanted to ask, no hidden agenda. So something did happen to Lucky... something bad? And they're pressuring you because of it?</text></string>
+<string id="zub_investigation_start_dlg_7"><text>This all looks like a setup. Someone's started a game against me. And if it wasn't you who blabbed to the wrong people about our "negotiations" with the missing guy, then it seems I have a serious opponent working against me.</text></string>
+<string id="zub_investigation_start_dlg_8"><text>Like I'd blab about such a... delicate matter, yeah right. Maybe Voronin himself sniffed something out? Or suspects you. His man disappeared after all, so he's worried.</text></string>
+<string id="zub_investigation_start_dlg_9"><text>You know yourself how everything was arranged. He couldn't have sniffed anything out. Someone leaked our little secret to him. Or at least hinted about involvement. The general even bothered to assign a spy to me. Hangs around here all day, pretending to be drunk...</text></string>
+<string id="zub_investigation_start_dlg_10"><text>Listen, Tooth, aren't you being paranoid? This is the Bar, every second person here is a drunk. Maybe it's just a coincidence? Duty's looking for their guy, so they're questioning everyone who might know something.</text></string>
+<string id="zub_investigation_start_dlg_11"><text>I'm telling you: there's some bullshit buried here, I can feel it. You know, if our schemes come to light and Duty leadership finds out everything, you'll get caught in the crossfire too. So I suggest you play Pinkerton for a bit. Try to find out what really happened to this Lucky. Ideally - find him... or his remains. Then we'll think about how to make sure it doesn't all come back to us.\nAnd to motivate you even more, if this ends successfully, I promise to share any third level artifact recipe I know and provide access to buying recipes in this category in the future. What do you say to that offer?</text></string>
+<string id="zub_investigation_start_dlg_121"><text>When will I learn to stop getting involved in shady business?! Nothing but trouble afterwards... Alright, I'll try to find something out. Any ideas where I should start?</text></string>
+<string id="zub_investigation_start_dlg_122"><text>I'll say your imagination's running wild. And even if it's all true, since you organized this scheme, now get yourself out of it. I'm just a side player in this business - I only talked to the missing guy on your behalf and that's it. I'll manage to clear myself somehow.</text></string>
+<string id="zub_investigation_start_dlg_131"><text>Talk to the local drunks and regulars here. Surely someone saw or heard something. They're unlikely to open up to Duty bloodhounds. It's different with a fellow stalker.\nThat's it, now go. We've probably already attracted too much attention. Good luck!</text></string>
+<string id="zub_investigation_start_dlg_132"><text>Predictable. You figured out they can't really pin anything on you. Fine, forget you, I'll manage myself.</text></string>
+<string id="tex_zub_investigation_article"><text>Tooth believes someone wants to frame him before Duty leadership, pinning the blame for the disappearance of a faction fighter nicknamed Lucky on him. If I manage to clarify the fate of the missing man or find him, I can choose any third level artifact recipe as a reward, and also get the opportunity to buy recipes in this category from Tooth.</text></string>
+
+<string id="zub_investigation_done_dlg_0"><text>How are you doing here? Still shaking that Duty will grab you by the gills? You can relax.</text></string>
+<string id="zub_investigation_done_dlg_1"><text>Did you learn something specific or just dropped by to crack jokes?</text></string>
+<string id="zub_investigation_done_dlg_2"><text>Can't get more specific than this. I found Lucky. Or rather, his body. He died nearby, in the backyard of this territory, behind Sultan's "office". Found several witnesses, thanks to whom I managed to reconstruct his movements on the day of disappearance. As for the cause of death, you could say it was an accident - torn apart by pseudodogs that somehow got into the backyard. There are, of course, some gaps in this whole story, but for some reason I think Duty won't dig any deeper.</text></string>
+<string id="zub_investigation_done_dlg_3"><text>So everything worked out in the best possible way for us. I mean, the guy died, sorry for him and all that, but... And there are witnesses too, which is also good. Now I can talk directly with Voronin to finally settle our misunderstanding. Whoever arranged this provocation against me, they miscalculated.</text></string>
+<string id="zub_investigation_done_dlg_4"><text>You're at it again? Stubbornly refusing to admit that nobody was trying to screw you over, and everything that happened is just an unfortunate coincidence. Ah, why am I even bothering!</text></string>
+<string id="zub_investigation_done_dlg_5"><text>Just so you know, Marked One, in my business you always need to look around and assume the worst. There are plenty of people wandering the Zone who dream of not just screwing me over in small ways, but putting a bullet in my head in the most literal sense. So I'm always on guard.\nBe that as it may, you helped me avoid major trouble. I keep my promise: now you can buy third level artifact recipes from me. The first one's free. Come by.</text></string>
+<string id="zub_investigation_done_dlg_6"><text>I will, don't doubt it.</text></string>
+
+<string id="barman_investigation_dlg_0"><text>Can you tell me, a Duty guy used to come here often, a certain Lucky, where can I find him?</text></string>
+<string id="barman_investigation_dlg_1"><text>How should I know? He hasn't shown up here for a week or so. Why do you need him, by the way?</text></string>
+<string id="barman_investigation_dlg_2"><text>Need him. Have business with him.</text></string>
+<string id="barman_investigation_dlg_3"><text>You're not the only one, apparently. People already came to me, also asking questions about this guy. But to me, he's just one of many visitors. I don't know anything about him or where to look for him. Go see Voronin or his deputies, he's their man after all.</text></string>
+<string id="barman_investigation_dlg_4"><text>Uh... yes, thanks for the advice.</text></string>
+
+<string id="garik_investigation_dlg_0"><text>Garik, I'm looking for someone. He's here constantly, name's Lucky.</text></string>
+<string id="garik_investigation_dlg_1"><text>Lucky... The Duty guy? Haven't seen him for quite a while. Probably went on a raid. Or he's drinking with his buddies in the barracks.</text></string>
+<string id="garik_investigation_dlg_2"><text>His own people are looking for him too, apparently. Don't remember when you last saw him?</text></string>
+<string id="garik_investigation_dlg_3"><text>Think it was last week... Or not?! Don't remember exactly. The local entertainment isn't too rich in events. Every day's the same. Here you can barely remember what happened yesterday, let alone a week ago. Unless they start a drunken brawl. Sorry, but I can't help you.</text></string>
+<string id="garik_investigation_dlg_4"><text>Seems you're not very observant for a guard. Alright, forget it.</text></string>
+
+<string id="zub_recipes_dialog_0"><text>Let me take a look at your recipe collection.</text></string>
+<string id="zub_recipes_dialog_101"><text>No problem. What level artifact recipes are you interested in?</text></string>
+<string id="zub_recipes_dialog_1011"><text>First.</text></string>
+<string id="zub_recipes_dialog_1012"><text>Second.</text></string>
+<string id="zub_recipes_dialog_1013"><text>Third.</text></string>
+<string id="zub_recipes_dialog_102"><text>And what exactly do you want to learn to brew?</text></string>
+<string id="zub_recipes_dialog_103"><text>Sorry, I'm not ready to sell you recipes of this level yet. We'll discuss this later.</text></string>
+<string id="zub_recipes_dialog_104"><text>This category is closed to you. Can you guess why?</text></string>
+<string id="zub_recipes_dialog_11"><text>Jellyfish.</text></string>
+<string id="zub_recipes_dialog_12"><text>Wrenched.</text></string>
+<string id="zub_recipes_dialog_13"><text>Stone Blood.</text></string>
+<string id="zub_recipes_dialog_14"><text>Sparkler.</text></string>
+<string id="zub_recipes_dialog_15"><text>Droplets.</text></string>
+<string id="zub_recipes_dialog_16"><text>Slime.</text></string>
+<string id="zub_recipes_dialog_17"><text>Thorn.</text></string>
+<string id="zub_recipes_dialog_21"><text>Stone Flower.</text></string>
+<string id="zub_recipes_dialog_22"><text>Gravi.</text></string>
+<string id="zub_recipes_dialog_23"><text>Meat Chunk.</text></string>
+<string id="zub_recipes_dialog_24"><text>Flash.</text></string>
+<string id="zub_recipes_dialog_25"><text>Fireball.</text></string>
+<string id="zub_recipes_dialog_26"><text>Slug.</text></string>
+<string id="zub_recipes_dialog_27"><text>Crystal Thorn.</text></string>
+<string id="zub_recipes_dialog_31"><text>Night Star.</text></string>
+<string id="zub_recipes_dialog_32"><text>Goldfish.</text></string>
+<string id="zub_recipes_dialog_33"><text>Soul.</text></string>
+<string id="zub_recipes_dialog_34"><text>Moonlight.</text></string>
+<string id="zub_recipes_dialog_35"><text>Crystal.</text></string>
+<string id="zub_recipes_dialog_36"><text>Mica.</text></string>
+<string id="zub_recipes_dialog_37"><text>Urchin.</text></string>
+<string id="zub_recipes_dialog_4"><text>Here's everything I can offer for this artifact:</text></string>
+<string id="zub_recipes_dialog_112"><text>Since there's nothing else, I'll take this recipe.</text></string>
+<string id="zub_recipes_dialog_113"><text>Nah, this isn't what I need. Let's look at something else.</text></string>
+<string id="zub_recipes_dialog_114"><text>That'll be two fresh second-level artifacts. Got them?</text></string>
+<string id="zub_recipes_dialog_116"><text>Highway robbery, but what can I do... Take them.</text></string>
+<string id="zub_recipes_dialog_117"><text>Sweet! Uploading the recipe to your PDA...</text></string>
+<string id="zub_recipes_dialog_212"><text>I'll take the first one.</text></string>
+<string id="zub_recipes_dialog_213"><text>The second one works for me.</text></string>
+<string id="zub_recipes_dialog_2121"><text>This will cost you two pristine third-level artifacts. Just reminding you.</text></string>
+<string id="zub_recipes_dialog_3121"><text>Two third-level artifacts and two second-level ones in excellent condition for this recipe. Can you manage?</text></string>
+<string id="zub_recipes_dialog_3122"><text>I owe you one. You'll get this recipe for free. Sure about your choice?</text></string>
+<string id="zub_recipes_dialog_5"><text>I probably can't afford that price right now. Another time.</text></string>
+<string id="zub_recipes_dialog_6"><text>I just remembered something important, let's get back to this conversation later.</text></string>
+<string id="zub_recipes_dialog_7"><text>Yes, I'm sure.</text></string>
+
+<string id="zub_dummy_sparkler_receipt_dlg_0"><text>Tooth, I urgently, desperately need to know how to obtain a rare artifact - it's called "Snow".</text></string>
+<string id="zub_dummy_sparkler_receipt_dlg_1"><text>Rare? Rarest of the rare! I don't recall hearing about anyone finding it in the Zone. As far as I know, you can only synthesize it by transforming another artifact. Lucky for you, I know how it's done. The price - a modificate. For old friendship's sake, I'll even accept one that's not fresh. I'm not bargaining. Won't budge a millimeter.</text></string>
+<string id="zub_dummy_sparkler_receipt_dlg_21"><text>I was internally prepared for something like this. Ah well, you only live once! No point being stingy with... every modificate.</text></string>
+<string id="zub_dummy_sparkler_receipt_dlg_22"><text>Oh, f... That's steep even for you. I'm not ready for such expenses right now.</text></string>
+<string id="zub_dummy_sparkler_receipt_dlg_3"><text>I'm somewhat surprised your inner tightwad approved such expenses. As for the recipe, I recently managed to copy one curious piece of paper. Here it is in electronic form, you can take a look...</text></string>
+<string id="zub_dummy_sparkler_receipt_dlg_4"><text>Yeah, wait, let me download it. You know, I think if I come to you next time asking for a "Jellyfish" recipe, you'll demand I bring you the Monolith...</text></string>
+
+<string id="bagram_start_dialog_51"><text>Leave me alone, man...</text></string>
+<string id="bagram_start_dialog_52"><text>As you wish.</text></string>
+<string id="bagram_start_dialog_101"><text>You too, huh? *hic!*</text></string>
+<string id="bagram_start_dialog_102"><text>Me too what? Are you alright?</text></string>
+<string id="bagram_start_dialog_103"><text>Get lost... Or no, wait. Let's have a drink. My treat.</text></string>
+<string id="bagram_start_dialog_1041"><text>Then pour it.</text></string>
+<string id="bagram_start_dialog_1042"><text>I think you've had enough.</text></string>
+<string id="bagram_start_dialog_105"><text>Well, cheers! Don't mind that I'm drunk... My soul's on fire. I've seen things nobody here has ever witnessed...</text></string>
+<string id="bagram_start_dialog_106"><text>What have you seen? Wave your hands less - you spilled more than you drank.</text></string>
+<string id="bagram_start_dialog_107"><text>Wait... hold on, I'll pour more, stories don't go down dry.\nSo there... Me and a friend were at Yantar once, on that territory... you've probably heard... factory or plant, hell knows what it used to be. We went in, everything seemed quiet. Started pushing deeper, then it started. Zombies crawled out of every crack like cockroaches. There were dozens of them. What am I saying, dozens - hundreds! I'm not lying, cross my heart. We barely managed to run into some hangar, otherwise they would've surrounded us in a moment.</text></string>
+<string id="bagram_start_dialog_108"><text>Wait, I don't get it. How did you not notice and hear a whole horde of zombies around? They walk back and forth, mumble all sorts of nonsense, rattle their gear...</text></string>
+<string id="bagram_start_dialog_109"><text>Listen, smartass... Don't interrupt me!\nSo, where was I? Ah, yes! Hundreds of zombies rushing at us. We keep them from the entrance, shooting, shooting, and they keep coming and coming. Tough bastards. They fall, get up, fall again... Our rifles were already red-hot, ammo running low, and the crowd has no end. I yell to Seryoga: take down the front rows, throw a grenade and try to jump through the window before they block us completely.</text></string>
+<string id="bagram_start_dialog_110"><text>By the way, I want to clarify something. When did this happen? Because until recently, there was some kind of radiation hitting your brain at Yantar, right around the factory complex. Couldn't last long there, even with good protection.</text></string>
+<string id="bagram_start_dialog_111"><text>Stop fucking interrupting! You don't believe me either? You think I'm standing here lying? And you see this gray hair?!</text></string>
+<string id="bagram_start_dialog_112"><text>Alright, alright. I'm quiet, continue.</text></string>
+<string id="bagram_start_dialog_113"><text>Made me lose my train of thought... Ah, right!\nWe emptied the rest of our mags, threw grenades and rushed to the window. And what do you think? Right under the window, on that side, an "Electra" had formed, no way to get out. Even though just a minute ago, when I looked around, it wasn't there. Well, that's it, I think - we're done! Then Seryoga says: let's run through the "Electra", it turns off sometimes. How, I say, does it turn off? And he says: I noticed it seems to fade periodically, just for a couple seconds, but we can make it...</text></string>
+<string id="bagram_start_dialog_114"><text>Uhh... Sorry to interrupt, but I have a question. How did your friend manage to catch the pattern of the "Electra's" behavior if all you were doing was running and shooting?</text></string>
+<string id="bagram_start_dialog_115"><text>How? I don't know. He was observant. Probably noticed while reloading. Why are you nitpicking every little thing?\nAnyway... We waited a few seconds. Seryoga gives me the signal - go! I bolted and made it through. I hear the "Electra" discharge behind me, missing. I yelled to my buddy that I'm okay, that it's his turn now. No response. I yell louder, and again. No answer. Just some vague commotion and one voice monotonously repeating: kiiill! I crawled as close to the window as I could and saw something... This picture now haunts me every night in my dreams. No, I can't...\nBasically, I ran out of there, not caring where. By some intuition managed to find the way back. Came to near the scientists' bunker. They ask me, where did such a gray-haired guy come from? I first downed half a bottle in one gulp to stop shaking, then told everything as it was.\nFinished the story and say: give me backup, maybe Seryoga is still alive or managed to hide. And they tell me: too late to send backup - there's radiation there now. What fucking radiation? There wasn't any. Turns out, we accidentally slipped through during a low radiation intensity interval. Happens rarely, one nerd tells me, you were lucky. That's when I completely broke down and sat where I stood. When I imagined that five more minutes and I would've become just like those...</text></string>
+<string id="bagram_start_dialog_116"><text>I don't even know what to say. Strange story. You're lucky to be alive after such a mess.</text></string>
+<string id="bagram_start_dialog_117"><text>What kind of Lucky am I?! There was this guy serving in Duty, they actually called him Lucky. And you know why? He was doing a territory patrol once and managed to find a very rare artifact right on the road. Something from those... "ruby" ones, I think.</text></string>
+<string id="bagram_start_dialog_118"><text>Oh, speaking of this Lucky! Here's the thing... I'm looking for him. He... owes me money. And he's in no hurry to pay back, judging by the fact that I can't catch him here. And nobody's seen him on patrol for a while apparently. You hang out at the Bar constantly, probably know many locals. Don't happen to know where my debtor might be hanging around?</text></string>
+<string id="bagram_start_dialog_119"><text>How would I know? Saw him here last time a week ago, I think... Or was it the week before? Anyway, he was drinking one evening at that table over there, the next one, alone. Then some guy approached him. They quickly downed a shot each and left together. Lucky hasn't shown up here since.</text></string>
+<string id="bagram_start_dialog_120"><text>So, what kind of guy came to him? Do you know him?</text></string>
+<string id="bagram_start_dialog_121"><text>I figure Lucky owes you quite a bit of money. Otherwise why are you suddenly so worked up? Here's the deal: you get me some ammo, and I'll tell you everything about that guy. I'm tired of treating myself with vodka all day long, want to go on a raid. But I'm empty after that story, and drank away my whole stash. So, here's what I need: ammo for the Groza, armor-piercing, with "AP" index, about 300 rounds, at least ten VOGs, and... let's say five scientific medkits. Should be enough for starters.</text></string>
+<string id="bagram_start_dialog_122"><text>Holy shit, that's quite a request... I'll think about it.</text></string>
+<string id="bagram_start_dialog_201"><text>Hey there, pal. Got the gear for me or not? Getting restless sitting here...</text></string>
+<string id="bagram_start_dialog_2021"><text>I brought everything you asked for. Tell me about the guy Lucky left with, and you'll get your ammo.</text></string>
+<string id="bagram_start_dialog_2022"><text>I'm not your "order desk", don't rush me. I'll bring it when I can. If I can.</text></string>
+<string id="bagram_start_dialog_203"><text>Well, there's not much to tell really. It was that weapon technician, name's Yurka. But everyone here calls him Lisaped. I remember they were arguing about something animatedly when they left. Seemed to me they couldn't agree on a price. But who was buying what - I have no idea.</text></string>
+<string id="bagram_start_dialog_204"><text>That doesn't give me much, but at least it's some kind of lead. Take your stuff.</text></string>
+<string id="bagram_start_dialog_205"><text>Great! I'll finish this bottle and hit the sack, get some sleep. And tomorrow first thing in the morning - off on a raid.</text></string>
+<string id="bagram_start_dialog_301"><text>What brings you this time? I'm not pouring for free anymore, don't even hope.</text></string>
+<string id="bagram_start_dialog_302"><text>Wasn't planning on it.</text></string>
+<string id="tex_bagram_investigation_article"><text>Looks like I found the first real witness - stalker Bagram. Need to help him prepare for his upcoming raid. If he gets 300 armor-piercing 9x39mm rounds, 10 VOGs and 5 scientific medkits, he'll be ready to tell who Lucky left the Bar with on the day he was last seen.</text></string>
+
+<string id="lisaped_investigation_start_dlg_0"><text>Yurko, tell me something: do you know a Duty member nicknamed Lucky?</text></string>
+<string id="lisaped_investigation_start_dlg_1"><text>What's your interest?</text></string>
+<string id="lisaped_investigation_start_dlg_2"><text>Well, it's... I'm looking for him, he owes me money. I was told you were seen with him at the Bar not long ago, and after that he stopped showing up there.</text></string>
+<string id="lisaped_investigation_start_dlg_3"><text>So he owes you too, then? What a bastard! I knew I shouldn't have gotten involved with him. He seemed shady to me right away...</text></string>
+<string id="lisaped_investigation_start_dlg_4"><text>What, did he screw you over? Want to tell me about it? Maybe together we can figure out how to squeeze what's owed from him. If only we could find him.</text></string>
+<string id="lisaped_investigation_start_dlg_5"><text>Well... to be honest, he doesn't owe me that much. Lucky contracted to supply me with weapon repair kits at a "tasty" price. I don't know where he was planning to get them from, maybe from his own people. We agreed on a trial batch - 10 pieces. I gave him a deposit, we agreed on a meeting, and then he just didn't show up. And that's it, not a word since then. Only one acquaintance mentioned he saw some guy near that place from a distance, shortly before the appointed time. That's the story... And I already managed to hint to my old supplier that I wouldn't be buying from him anymore. Now he'll probably jack up the price one and a half times compared to before...</text></string>
+<string id="lisaped_investigation_start_dlg_6"><text>Yeah, tough luck. Where were you supposed to meet? And who's this acquaintance?</text></string>
+<string id="lisaped_investigation_start_dlg_7"><text>Think you can pick up the trail? Listen, Marked One, this whole story is really stressing me out, you understand. A stern Duty sergeant already came to me, also making inquiries. I carefully changed the subject, but I don't want to quarrel with them. I operate on their territory after all. So I could point you to the place, but only if you promise not to share this information with anyone. That's one. And two - as confirmation of this promise and as a sign of gratitude for my trust in you, I'd ask you to get what the no-show Lucky promised me.</text></string>
+<string id="lisaped_investigation_start_dlg_8"><text>Uhh... what? Oh, I get it! You want me to sort of buy out his debt? Well, so be it. I'll bring you ten weapon repair kits as soon as possible. And uh... you should speak more plainly.</text></string>
+<string id="tex_lisaped_investigation_article"><text>Talked to the second witness - Yurka Lisaped. Got the impression he knows more than he's saying, but he's willing to share information if I agree to buy out Lucky's debt to him - 10 weapon repair kits.</text></string>
+
+<string id="lisaped_investigation_done_dlg_0"><text>How's business? No downtime? I'm bringing you those repair kits.</text></string>
+<string id="lisaped_investigation_done_dlg_1"><text>You're right on time, Marked One. My supplies are almost exhausted, and I still can't agree on an acceptable price with my old supplier.</text></string>
+<string id="lisaped_investigation_done_dlg_2"><text>A stitch in time saves nine, as they say. Take them. Now tell me: where was the meeting with Lucky scheduled and who saw him?</text></string>
+<string id="lisaped_investigation_done_dlg_3"><text>Correction: I didn't say my acquaintance saw Lucky specifically. First, it was dark, second, it was drizzling, third, that guy was standing quite far away with his back turned. All he could make out was that he was wearing a Duty suit. Considering the meeting place was scheduled at the gates, a bit away from Duty's northern checkpoint, it could've been one of the guards who stepped away to relieve himself. As for the acquaintance, it's Sultan. You know him? He also works with weapons, trades rare guns. We sometimes cross paths to chat about common topics.</text></string>
+<string id="lisaped_investigation_done_dlg_4"><text>So I'll have to pay Sultan a visit. I'm sure that character won't even answer "what time is it" for free. Oh, these searches are going to ruin me...</text></string>
+
+<string id="sultan_investigation_start_dlg_0"><text>Got a question for you, somewhat unusual. Yurka Lisaped signaled that you might know something about a missing Duty member. His nickname's Lucky.</text></string>
+<string id="sultan_investigation_start_dlg_1"><text>Yurets fed you some nonsense. Was he tipsy or what? I don't know any Lucky.</text></string>
+<string id="sultan_investigation_start_dlg_2"><text>Alright, let's approach this differently. A week or maybe even two ago, late in the evening, you saw someone here at the gates, a person in a Duty suit. It was raining that day. Try to remember...</text></string>
+<string id="sultan_investigation_start_dlg_3"><text>Well... Maybe I did see someone. What's it to you?</text></string>
+<string id="sultan_investigation_start_dlg_4"><text>I'm looking for him. And Lisaped is looking too, by the way. He screwed us both over...</text></string>
+<string id="sultan_investigation_start_dlg_5"><text>Screwed you over, you say? Well, well... There was someone at the gates, yes, but as you already know, I didn't get a good look at him. I have nothing more to add.</text></string>
+<string id="sultan_investigation_start_dlg_6"><text>Wait... Didn't you see anyone else there that day? Or nearby? Or maybe you noticed something else, unusual, strange?</text></string>
+<string id="sultan_investigation_start_dlg_7"><text>Hard to say... Not really. Although... When I was getting ready to bed down for the night, I heard through the rain noise, like someone was dragging something heavy past the garage. That characteristic sound. Looking out on the street, I didn't see anything. And in the morning there were no traces. Though, could've been my imagination. Especially since further into this yard, there's no way through anyway. There's a tricky anomaly there. Throws whoever gets caught in it back onto the road, over the fence. Unless, of course, you know one trick.</text></string>
+<string id="sultan_investigation_start_dlg_8"><text>What trick?</text></string>
+<string id="sultan_investigation_start_dlg_9"><text>If you hang a special artifact on your belt, the anomaly will let you through. I happen to have a spare one. I use it sometimes for my needs. I can let it go. Transfer 30 thousand to my PDA - and it's yours.</text></string>
+<string id="sultan_investigation_start_dlg_10"><text>I hope you're not planning to slip me some fake crap? That's serious money, need to balance the books.</text></string>
+<string id="tex_sultan_investigation_article"><text>The improvised investigation led me to Sultan. For 30 thousand he agrees to sell an artifact that can help overcome teleport anomalies to get deep into the utility yard, where it might be possible to pick up the trail again.</text></string>
+
+<string id="sultan_investigation_done_dlg_0"><text>I've thought about your offer regarding the "special" artifact. I agree.</text></string>
+<string id="sultan_investigation_done_dlg_1"><text>I understood right away that you're serious about finding your... swindler. Waiting for the transfer.</text></string>
+<string id="sultan_investigation_done_dlg_2"><text>Thirty thousand sent. Got it?</text></string>
+<string id="sultan_investigation_done_dlg_3"><text>Yep, all good. Your artifact. Don't mind that it's heavily used. Should still last a long time for passing through the anomaly.</text></string>
+<string id="sultan_investigation_done_dlg_4"><text>It better be.</text></string>
+
+<string id="bar_bar_visitors_3_start_101"><text>Well, what do you want?</text></string>
+<string id="bar_bar_visitors_3_start_102"><text>What's new?</text></string>
+<string id="bar_bar_visitors_3_start_103"><text>They say bloodsuckers have bred so much in the Wild Territory - you can't get through. Everyone knows that when they drink blood, they become stronger and meaner. And just the other day a Duty squad vanished there, probably ran into those bloodsuckers. Now people avoid those parts like the plague...</text></string>
+<string id="bar_bar_visitors_3_start_104"><text>I'll keep that in mind, thanks.</text></string>
+<string id="bar_bar_visitors_3_start_105"><text>If only our protectors would conduct a major raid there already...</text></string>
+<string id="bar_bar_visitors_3_start_201"><text>How are things?</text></string>
+
+<string id="bar_bar_visitors_4_start_101"><text>Yes?</text></string>
+<string id="bar_bar_visitors_4_start_102"><text>Got anything interesting to tell?</text></string>
+<string id="bar_bar_visitors_4_start_103"><text>Know about the scientists' camp at Yantar? They were dropped there by helicopter, and they regularly deliver provisions by air too, so science has set up nicely there. You can talk to them, they eagerly buy artifacts, and might even throw you some work occasionally.</text></string>
+<string id="bar_bar_visitors_4_start_104"><text>Thanks for the information.</text></string>
+<string id="bar_bar_visitors_4_start_105"><text>You could've bought me a shot.</text></string>
+<string id="bar_bar_visitors_4_start_201"><text>Ah... it's you.</text></string>
+
+<string id="bar_bar_visitors_5_start_101"><text>You need me? Want something?</text></string>
+<string id="bar_bar_visitors_5_start_102"><text>Just... to hear what people are talking about?</text></string>
+<string id="bar_bar_visitors_5_start_103"><text>About different things. Yesterday there was a guy here, talking about some faction. Legends about them circulated all over the Zone at one time... People said both good and bad things about them, but few knew the truth. Seems they wanted to deal with the Zone, tried to get to the bottom of its origins. For that, almost all other factions hunted them, but nobody knew where their main base was. Anyway, at one point they found some very important information, and part of the faction rushed to the center of the Zone. Half fell on the approaches, but the rest managed to reach their goal. What happened to them after, nobody knows. They vanished, it seems. The remaining ones who didn't participate in that raid just scattered wherever. That's the story.</text></string>
+<string id="bar_bar_visitors_5_start_104"><text>And what was that faction called?</text></string>
+<string id="bar_bar_visitors_5_start_105"><text>Hell if I know. Something about the sky.</text></string>
+<string id="bar_bar_visitors_5_start_201"><text>Oh! Hello again!</text></string>
+<string id="bar_bar_visitors_5_start_202"><text>Got anything else interesting to tell?</text></string>
+<string id="bar_bar_visitors_5_start_203"><text>Know about the radiation in the north? Nobody can break through the "Brain Scorcher". There were several witnesses here recently who saw some stalker at Radar cross the invisible boundary and suddenly fall, and after a few minutes he got up with difficulty and walked deeper toward the antennas without looking back...</text></string>
+<string id="bar_bar_visitors_5_start_204"><text>That's some weird stuff.</text></string>
+<string id="bar_bar_visitors_5_start_205"><text>Yeah... gives me the creeps.</text></string>
+<string id="bar_bar_visitors_5_start_301"><text>I see you're frequenting the Bar...</text></string>
+
+<string id="bar_bar_visitors_6_start_101"><text>Looking for someone to drink with?</text></string>
+<string id="bar_bar_visitors_6_start_102"><text>No, I'm more interested in news...</text></string>
+<string id="bar_bar_visitors_6_start_103"><text>Heard about the zombified? From time to time, stalkers who disappeared long ago come out to the camps. Terrible sight, I tell you. Once one of them dragged himself to a Duty outpost, a bunch of people gathered to gawk then. They even recognized him, he used to drink at the Bar often. But there... scary, red eyes, all covered in bruises, can't say anything, just moans and walks in circles. Duty took him in, but he died after a couple of days. Something happens to people in the Zone. But what?</text></string>
+<string id="bar_bar_visitors_6_start_104"><text>I'd like to know</text></string>
+<string id="bar_bar_visitors_6_start_105"><text>Sometimes it's better not to know about some things...</text></string>
+<string id="bar_bar_visitors_6_start_201"><text>Hello, curious one!</text></string>
+
+<string id="bar_bar_visitors_7_start_101"><text>What do you want?</text></string>
+<string id="bar_bar_visitors_7_start_102"><text>What's the news?</text></string>
+<string id="bar_bar_visitors_7_start_103"><text>Empty zombie husks wander around the dried lake at Yantar. If they see someone, they start shambling after them in a crowd. That's when you need to leg it, because even though they're dumb, there's a lot of them there...</text></string>
+<string id="bar_bar_visitors_7_start_104"><text>Yeah, you need to be doubly careful in those places.</text></string>
+<string id="bar_bar_visitors_7_start_105"><text>Yeah, or just don't go there at all.</text></string>
+<string id="bar_bar_visitors_7_start_201"><text>Huh?</text></string>
+
+<string id="bar_bar_visitors_8_start_101"><text>Well, hello, stalker.</text></string>
+<string id="bar_bar_visitors_8_start_102"><text>Hello, what's the word?</text></string>
+<string id="bar_bar_visitors_8_start_103"><text>They say that somewhere in the center of the Zone there's a "Klondike of artifacts"... and supposedly whoever manages to find it will become fabulously rich. But here's what I think: surely all these rumors are spread by traders. Makes sense - they think about their profit, because rare artifacts appear closer to the center anyway. So they're trying to encourage stalkers to quickly find a safe path north. Or that tale about the "Wish Granter"... supposedly there's something there, either alien or from some other dimension altogether... I even heard a legend about a stalker who allegedly reached it. It's all nonsense, of course.</text></string>
+<string id="bar_bar_visitors_8_start_104"><text>Yeah, hard to believe in such things.</text></string>
+<string id="bar_bar_visitors_8_start_105"><text>Yet there are fools who do...</text></string>
+<string id="bar_bar_visitors_8_start_201"><text>Yes?</text></string>
+
+<string id="bar_bar_visitors_9_start_101"><text>Hi.</text></string>
+<string id="bar_bar_visitors_9_start_102"><text>What are people gossiping about?</text></string>
+<string id="bar_bar_visitors_9_start_103"><text>Well, somehow the conversation turned to those psycho Monolith guys. They worship their Monolith, though they've never seen it and in general... nobody can know for sure if it exists. Someone was talking about a giant invisible crystal that fell from the sky. Or I also heard a version that the Monolith is an absolutely alien living organism from another dimension... Ha-ha. I think it's much simpler. Somewhere up north, one of the secret laboratories exploded. One guy even claimed he used to work there. They conducted some psychotron experiments... psychotropic... basically, they worked on some brain-breaking stuff. Probably after the explosion some equipment survived and continues to work, that's why everyone in that area goes nuts. Some start dreaming about Monoliths and such, while others just moo and drool... That's how it is.</text></string>
+<string id="bar_bar_visitors_9_start_104"><text>Hmm, interesting theory.</text></string>
+<string id="bar_bar_visitors_9_start_105"><text>You bet!</text></string>
+<string id="bar_bar_visitors_9_start_201"><text>Looking for something?</text></string>
+
+<string id="bar_bar_visitors_10_start_101"><text>What's up, guy, bored?</text></string>
+<string id="bar_bar_visitors_10_start_102"><text>Not really... I'm planning to go north, looking for someone who could tell me what awaits me there.</text></string>
+<string id="bar_bar_visitors_10_start_103"><text>North? Not far from here at all, on the road to the "Brain Scorcher", a faction calling itself "Freedom" has settled at an old military base. Shady bunch, if you ask me. Pure anarchy. What they live for, what they want - hard to understand, but they haven't been caught in mayhem either. They're sluggishly feuding with Duty. I can give you good advice - don't get involved with them, only complete nutcases join that faction.</text></string>
+<string id="bar_bar_visitors_10_start_104"><text>Thanks for the advice.</text></string>
+<string id="bar_bar_visitors_10_start_105"><text>"Thanks" doesn't gurgle. Just kidding, relax.</text></string>
+<string id="bar_bar_visitors_10_start_201"><text>Got any proposals?</text></string>
+
+<string id="bar_bar_visitors_13_start_101"><text>What do you want, stalker?</text></string>
+<string id="bar_bar_visitors_13_start_102"><text>I'm planning to move north soon, can you tell me what I should be most wary of there?</text></string>
+<string id="bar_bar_visitors_13_start_103"><text>Lots of things... Mercs, for example. Those jackals will agree to any atrocity as long as they get paid. They say somewhere in the Zone they have a fully equipped base, but nobody knows exactly where. One guy was saying they've settled in Limansk. Stalkers rarely go there, so maybe it's true.</text></string>
+<string id="bar_bar_visitors_13_start_104"><text>Looks like I'll need to keep my ears open in this Limansk.</text></string>
+<string id="bar_bar_visitors_13_start_105"><text>You should never relax in the Zone anyway.</text></string>
+<string id="bar_bar_visitors_13_start_201"><text>We've met before, I think? What did you want?</text></string>
+<!-- Baldy -->
+<string id="lisiy_bar_start_11"><text>Hi, stalker. Dropped by to rest and relax or looking for someone?</text></string>
+<string id="lisiy_bar_start_21"><text>Hi, Marked One. What brings you here? Changed your mind about playing?</text></string>
+<string id="lisiy_bar_start_12"><text>I know this "rest", nothing but vodka probably... So yeah, more like looking.</text></string>
+<string id="lisiy_bar_start_13"><text>Well, don't say that, don't say that. There are options. And for serious conversations - you should go to Barkeep or approach that guy by the counter, they call him Tooth.</text></string>
+<string id="lisiy_bar_start_14"><text>I see. And what "options"?</text></string>
+<string id="lisiy_bar_start_15"><text>Let's get acquainted first, shall we. What should I call you, pal?</text></string>
+<string id="lisiy_bar_start_16"><text>Marked One. And your name?</text></string>
+<string id="lisiy_bar_start_17"><text>Look at the top of my head, heh... Baldy - that's what they call me here. And regarding rest... Maybe we'll throw some dice? I've accumulated some artifacts, and you can't get a good price for them here. How about this: I bet artifacts, and you bet money. Deal?</text></string>
+
+<string id="bar_dolg_base_guard_rules_0"><text>Barkeep told me that your command has some kind of assignment for me.</text></string>
+<string id="bar_dolg_base_guard_rules_1"><text>Yes, he informed us about you, but before we let you through, I must familiarize you with our rules. So listen, our rules are simple. First rule - shooting on our territory is forbidden. After two violations, our patrol opens fire on you. Even if you make a run for it, you won't appear on our territory again, the guards will take care of you. Behave calmly and you won't have problems.</text></string>
+<string id="bar_dolg_base_guard_rules_2"><text>Got it. Is that all?</text></string>
+<string id="bar_dolg_base_guard_rules_3"><text>Yes, that's enough. You may pass.</text></string>
+
+<string id="bar_dolg_base_guard_start_11"><text>Stop! Entry to the bunker is only for faction members or with a special pass.</text></string>
+<string id="bar_dolg_base_guard_start_21"><text>What are you standing around for? Come on, pass through.</text></string>
+
+<string id="bar_dolg_base_guard_talk_0"><text>Why don't you let outsiders in?</text></string>
+<string id="bar_dolg_base_guard_talk_1"><text>Where did you crawl out from, so naive? We're at war here, understand? With the Freedom bandits. Regular skirmishes with their fighters in the Wild Territory.</text></string>
+<string id="bar_dolg_base_guard_talk_2"><text>War with the Freedom faction? Why?</text></string>
+<string id="bar_dolg_base_guard_talk_3"><text>Because the Freedom bandits have no place in the Zone, they must be destroyed. If you're interested, ask Barkeep, he'll explain everything, I'm too busy for this.</text></string>
+
+<string id="bar_dolg_guard_bunker_start_101"><text>Stop! Entry to the bunker is only for faction members or with a special pass. If you don't have one, then turn around, man.</text></string>
+<string id="bar_dolg_guard_bunker_start_201"><text>What are you standing there for? Pass through quickly.</text></string>
+
+<string id="mil_kurjer_voronin_0"><text>Good health to you, comrade general! I was told you're looking for a volunteer to perform some task at the Army Warehouses.</text></string>
+<string id="mil_kurjer_voronin_1"><text>Marked One! You're exactly who I need... I want to ask you to do something for me personally, understand? Recently one person went to the Warehouses... from our people. So, you seem to be a smart and quick guy, as they've told me here. Need to quietly find out who he went to and most importantly - with what. You see, there's a situation: I have a suspicion that I want to clarify without attracting unnecessary attention. That's why I need a reliable person from outside, you get it?</text></string>
+<string id="mil_kurjer_voronin_2"><text>Not really yet... What and from whom should I find out there? Ask every Tom, Dick and Harry?</text></string>
+<string id="mil_kurjer_voronin_3"><text>No, no... You shouldn't flap your tongue too much. You need to carefully, as if casually, find out information about that courier. Find the Freedom base, you'll figure out on the spot how to behave to earn the aborigines' trust. Try to visit one Freedom drunkard - they call him Cook. By the way, they keep him there as a cook. Everyone drinks there, so take plenty of vodka with you. Now for the main thing: I'm interested in whether a little man with a special briefcase came to them. Well, like a case, white one...\nSo, are you in?</text></string>
+<string id="mil_kurjer_voronin_41"><text>Alright, I generally agree, especially since it's on my way anyway. But what if I can't find out anything?</text></string>
+<string id="mil_kurjer_voronin_42"><text>No, I'm not ready for such feats yet.</text></string>
+
+<string id="mil_kurjer_voronin_511"><text>If it doesn't work out, it doesn't work out. But do try, because I can't give such a task to my own people yet. \nAnd one more thing. A certain Major Cherepanov with his guys disobeyed my order and went on an unauthorized raid on Freedom territory. If you meet his group at the Warehouses - don't provide them any assistance, and better yet - don't talk to them at all. That's all, go.</text></string>
+<string id="mil_kurjer_voronin_512"><text>If it doesn't work out, it doesn't work out. But do try, because I can't give such a task to my own people yet.</text></string>
+
+<string id="mil_kurjer_voronin_52"><text>Your choice. And this conversation never happened - don't think of blabbing to anyone.</text></string>
+<string id="tex_mil_kurjer_voronin"><text>General Voronin asked me to find out about the fate of a courier at the Army Warehouses. He advised to approach Cook and take plenty of vodka with me</text></string>
+
+<string id="bar_dolg_leader_find_0"><text>I saw your message on the network, about looking for a quick stalker... here I am. Still relevant?</text></string>
+<string id="bar_dolg_leader_find_11"><text>Quick indeed. You were the first to respond. Anyway, listen. Just recently there was a commotion in the Dark Valley involving the military... by the way, do you happen to know what happened there? No? Alright, not important. According to operational information, the local thugs had a split and part of the psychos left the gang of the well-known authority, Borov. As it turned out, they didn't leave empty-handed, but took the "accounting" and other important papers of their former patron.</text></string>
+<string id="bar_dolg_leader_find_12"><text>You're not that quick, there were faster guys. That's it, train's gone.</text></string>
+<string id="bar_dolg_leader_find_21"><text>So what? Let them tear each other apart, simple stalkers will at least breathe freely while they're settling scores among themselves.</text></string>
+<string id="bar_dolg_leader_find_22"><text>Oh, I see...</text></string>
+<string id="bar_dolg_leader_find_3"><text>That's all true, of course, but we also have our own interest in those stolen papers. I would send fighters for them, but a military operation has been declared in that area and we were... strongly asked to stay away from the Dark Valley for now. On the other hand, for you, a loner, it won't be difficult to sneak past army patrols, if there are any still there. With the criminals, as I know, you've already built bridges of friendship. And even if you've quarreled, you're an experienced guy, you won't get lost. In short, you've probably already guessed what I want from you, right?</text></string>
+<string id="bar_dolg_leader_find_4"><text>General, don't count on my insight - say it straight.</text></string>
+<string id="bar_dolg_leader_find_5"><text>I... umm... we, that is Duty, need to get these documents at all costs. When the military raid began, there was commotion, some bandits tried to flee. Of course, they took the papers with them, but the thug who had them caught a bullet and dropped the briefcase. According to my informant, this happened somewhere in the building of an old, abandoned factory with a boiler room. Approximately on the second floor. The factory itself is right near the bridge over the swampy stream, if you don't know. That's where the "splitters" were quartered.\nThat's the briefing. Will you try to find this case for m... for us? Just watch out, surely other quick stalkers will show up soon and I'll give them the same task. I don't advise delaying if you don't want to be outrun. Don't worry about the reward, Duty values those who help it.</text></string>
+<string id="bar_dolg_leader_find_61"><text>Interesting story. Alright, I'll try.</text></string>
+<string id="bar_dolg_leader_find_62"><text>No, I'm not ready for a race against time right now...</text></string>
+<string id="bar_dolg_leader_find_72"><text>As you wish, we'll offer it to another, more needy stalker...</text></string>
+
+<string id="bar_dolg_leader_find_case_completed_0"><text>I visited the Dark Valley. Is this the briefcase you wanted to get so badly?</text></string>
+<string id="bar_dolg_leader_find_case_completed_1"><text>It is, exactly it! Thank you so much! Mmm... How to thank such a distinguished person? I think the best reward is recognition of your merits by all of us! Just kidding, relax. Here, take some ammo, I think it won't be superfluous... </text></string>
+<string id="bar_dolg_leader_find_case_completed_2"><text>It won't be... yeah.</text></string>
+
+<string id="bar_dolg_leader_start_101"><text>A rookie? Don't think I've seen you before. Though by your appearance you should be an experienced stalker... Where did you get worked over like that? Alright, I understand - sticking my nose where it doesn't belong. Here on business? Or just looking around?</text></string>
+<string id="bar_dolg_leader_start_102"><text>I'm not really a rookie. Just don't remember what and how. So you don't know me? Haven't heard about Strelok? By the way, I'm Marked One.</text></string>
+<string id="bar_dolg_leader_start_103"><text>Marked One. Good, then we're acquainted. My name is Voronin. I command the most cohesive and disciplined faction in this anomaly. "Duty" - that's what unites us, what gives us strength in our constant struggle against the hostile manifestations of the Zone.</text></string>
+<string id="bar_dolg_leader_start_104"><text>Well, I've already heard about you. General, right?</text></string>
+<string id="bar_dolg_leader_start_105"><text>Let's say - acting commander. And ranks are given based on deeds and skills. Within Duty there's a strict hierarchy, can't be any other way. That's why - yes, general. By the way, Duty always needs recruits, especially glad to have experienced stalkers...\nLook around here, talk to the fighters. If you decide to join - come see me.</text></string>
+<string id="bar_dolg_leader_start_106"><text>I'm more used to being on my own.</text></string>
+<string id="bar_dolg_leader_start_107"><text>Well, your choice. If you want to just help without joining the ranks, so to speak, then drop by. We sometimes cooperate with regular stalkers and no one has complained about the payment yet.</text></string>
+<string id="bar_dolg_leader_start_201"><text>What brings you to me, brother?</text></string>
+<string id="bar_dolg_leader_start_301"><text>Ah, it's you... Any news?</text></string>
+<string id="bar_dolg_leader_start_401"><text>Hello, Marked One. What brings you here?</text></string>
+<string id="bar_dolg_leader_start_501"><text>Well, what did you drag yourself here for?</text></string>
+
+<string id="barman_last_seif_dialog_0"><text>Can I leave my loot with you for safekeeping now?</text></string>
+<string id="barman_last_seif_dialog_1"><text>With me? Who fed you that nonsense?</text></string>
+<string id="barman_last_seif_dialog_2"><text>The main Duty guy told me that you can store loot at the bar. And he doesn't take it anymore, says there's no people to guard it...</text></string>
+<string id="barman_last_seif_dialog_3"><text>Well, at the bar, not with me. Like I'd have nothing better to do than store your stinking tails. Go see the nerds. Seems they agree to watch stuff for a short time.</text></string>
+<string id="barman_last_seif_dialog_4"><text>Well, the bar - that's you. So I thought...</text></string>
+<string id="barman_last_seif_dialog_5"><text>Think more often, maybe something smart will come up. Just kidding, don't grind your teeth. Ask Docent. You're always running some kind of business with him. He won't refuse.</text></string>
+<string id="barman_last_seif_dialog_6"><text>Actually, that's true. I'll drop by his place.</text></string>
+
+<string id="docent_seif_dialog_1_0"><text>Can you watch my loot?</text></string>
+<string id="docent_seif_dialog_1_1"><text>Yeah, sure, fewer people now. Everyone rushed off for the long artifacts... It's gotten boring in this viper's nest. And there's almost no one to exchange a beautiful word with...</text></string>
+<string id="docent_seif_dialog_1_2"><text>Well, well, here we go again. So, you'll watch it?</text></string>
+<string id="docent_seif_dialog_1_3"><text>Aha! You just help out a bit. Well, you understand...</text></string>
+<string id="docent_seif_dialog_1_4"><text>Yeah, where would we be without that... What kind of help?</text></string>
+<string id="docent_seif_dialog_1_5"><text>Should be abundantly clear... You're not here for the first day, right? Artifacts, can't do without them. A simple artifact... Any one. A couple days of access. Watching - a week. After that - we'll see, you should understand...</text></string>
+<string id="docent_seif_dialog_1_6"><text>I get it, I'm gone for a week - the loot floats away...</text></string>
+
+<string id="docent_seif_dialog_2_0"><text>Want to leave some loot. What do I owe?</text></string>
+<string id="docent_seif_dialog_2_1"><text>Please, good sir, grease the hinges of reliable storage with a good arty...</text></string>
+<string id="docent_seif_dialog_2_11"><text>Not yet, you can store your treasures... Should I open it?</text></string>
+<string id="docent_seif_dialog_2_4"><text>Open it, open it. And don't stare...</text></string>
+<string id="docent_seif_dialog_2_6"><text>Alright. All-powerful sir, access to the body, ugh, to the safe, is open...</text></string>
+<string id="docent_seif_dialog_2_2"><text>What's gotten into you people here... Here, take it, grease away...</text></string>
+<string id="docent_seif_dialog_2_5"><text>Uhh... I changed my mind. I'll manage without it.</text></string>
+
+<string id="bar_dolg_petrenko_start_101"><text>Hmm... Good day. What wind brings you here? Don't think I've seen you before. I'm Colonel Petrenko, General Voronin's deputy for logistics and some other delicate matters. And you, who are you? What's your name?</text></string>
+<string id="bar_dolg_petrenko_start_102"><text>I'm Marked One. Trying to make my way north, looking for Strelok, Ghost, or those who might know about them.</text></string>
+<string id="bar_dolg_petrenko_start_103"><text>I've heard about Strelok and Ghost. Though it's been a while. More than half a year ago, and in the Zone, if someone's unknown for more than a month, they're most likely dead.\nSo - Marked One. Well then.\nI deal with free stalkers. Sometimes it's even useful - to entrust certain matters to those not directly connected with Duty.\nSo if you want to get something useful for your search, come see me.</text></string>
+<string id="bar_dolg_petrenko_start_104"><text>I might just do that.</text></string>
+<string id="bar_dolg_petrenko_start_201"><text>Hello, hello. How are you? Got strength? How's the search?</text></string>
+<string id="bar_dolg_petrenko_start_301"><text>Greetings, Marked One! Will you help turn one little deal?</text></string>
+<string id="bar_dolg_petrenko_start_401"><text>Ah, Marked One, is that you? What about our business, were you at Yantar?</text></string>
+<string id="bar_dolg_petrenko_start_501"><text>Glad to see you, Marked One. Still looking for Strelok? Or what?</text></string>
+<!-- Petrenko at Yantar -->
+<string id="yan_dolg_petrenko_start_101"><text>Ah, Marked One! Also have business with Sakharov or just dropped by the eggheads to restock supplies?</text></string>
+<string id="yan_dolg_petrenko_start_201"><text>Hi! You here on business? I'm a bit busy here...</text></string>
+<string id="yan_dolg_petrenko_start_102"><text>Uhh... Yeah, just helping science bit by bit. On mutually beneficial terms.</text></string>
+<string id="yan_dolg_petrenko_start_103"><text>Good cause. Alright. Something important? I don't have time. And note: for all exchange and trade matters, find me at the Duty base.</text></string>
+<!-- -->
+<string id="bar_dolg_zastava_101"><text>What do you want? Make it quick, I'm on duty, as you can see.</text></string>
+<string id="bar_dolg_zastava_201"><text>Ah! It's you... Why are you still here and not rushing like everyone else for the "long" artifacts?</text></string>
+<string id="bar_dolg_zastava_2011"><text>Profit doesn't interest me, I have my own path... What about you?</text></string>
+<string id="bar_dolg_zastava_2012"><text>I talked it over with the guys and decided: someone has to protect this place! When these treasure hunters get their asses kicked and crawl back, then we'll see who's right. Our task is to protect the world from the Zone! Well, if not the world, then at least this piece of it...</text></string>
+<string id="bar_dolg_zastava_2021"><text>What's happening anyway? Can't make heads or tails of it...</text></string>
+<string id="bar_dolg_zastava_2022"><text>Haven't you heard? Everyone's gone crazy! Looks like the "Brain Scorcher" broke down, or maybe someone managed to find and pull the right switch! It's not working anymore, in short. So everyone without an inner core rushed there - to the center... To Pripyat, to the station itself. And I talked it over with the guys and decided: someone has to protect this place! When these treasure hunters get their asses kicked and crawl back, then we'll see who's right. Our task is to protect the world from the Zone! Well, if not the world, then at least this piece of it...</text></string>
+<string id="bar_dolg_zastava_301"><text>Oh, hi, old man! Glad the mutants haven't eaten you yet.</text></string>
+
+<string id="bar_dolg_zastava_about_zastava_0"><text>There was some kind of slaughter in front of the outpost, what happened?</text></string>
+<string id="bar_dolg_zastava_about_zastava_1"><text>Those are remains from the last "wave" of mutants that came before the emission. Three-four days of calm, then another wave. If it weren't for us, there'd be no Bar or Duty left, we're the last barrier against the crazed packs of mutants. Many of ours fell here.</text></string>
+
+<string id="bar_dolg_zastava_talk_0"><text>I'd like to know something.</text></string>
+<string id="bar_dolg_zastava_talk_1"><text>What exactly?</text></string>
+<string id="bar_dolg_zastava_talk_2"><text>I'm here for the first time, can you tell me a bit about this place?</text></string>
+<string id="bar_dolg_zastava_talk_3"><text>Before the accident in '86 this was an industrial zone. Now, as you can see, only ruins remain. On the territory there's the "100 Roentgen" bar, it's to the left from the entrance to the inner courtyard, further you'll find the descent to the basement. Stalkers from all over the Zone gather there, and the local trader moonlights as a bartender, maintains the premises, so to speak. If you want to trade, chat, or find work - head there. Also on the territory you'll find a couple of technicians for gear repairs and a couple of traders. You can get water and charge batteries. The Duty faction base is also located here, you've heard about us already, I bet? This whole area is under Duty's protection, so behave yourself and don't grab for your gun unnecessarily.</text></string>
+<string id="bar_dolg_zastava_talk_4"><text>Thanks for the information.</text></string>
+<!-- new_story -->
+<string id="tex_drunk_dolg_story"><text>Brome asks to find his shotgun "Benelli M4 Super 90 (M1014)", lost in the village at the Army Warehouses</text></string>
+<string id="bar_bar_drunk_dolg_story_0"><text>Why so sad, stalker?</text></string>
+<string id="bar_bar_drunk_dolg_story_1"><text>I lost a friend, you understand, a close friend, Sanya! Eh... Basically, we once decided to go on a trip with my buddies, Sanyok and Romka. We ran out of money, so we took a job from Barkeep to bring bloodsucker tentacles, the scientists needed them for something. We were heading to the village at the Army Warehouses, the abandoned one that stands west of the road, you've been there probably? I had a Benelli M4 Super 90 shotgun, Sanyok had an AK-74, and Romka always walks around with his personalized Abakan. We're standing on a hill, facing the village, backs to the road. It's radioactive there, by the way - real bad, so you shouldn't linger long. So we're standing, and there's such silence... oppressive... like someone's squeezing your ears. Darkness all around, night time, and there's more bloodsuckers at night, Barkeep told us that. The houses look so sinister, as if some horror is hiding in them. Not just a hostile creature, but as if the houses themselves and the ground are evil. We loaded our weapons, attached flashlights and moved forward single file. Quietly, so as not to reveal ourselves prematurely.</text></string>
+<string id="bar_bar_drunk_dolg_story_2"><text>Well?</text></string>
+<string id="bar_bar_drunk_dolg_story_3"><text>We're walking, and then Sashka manages to step on a bone! That crunch is still in my ears. As if it wasn't a rat's skull, but a sheep's leg breaking! We're standing like statues, imagine, Minin and Pozharsky with flashlights on their foreheads, and ballerina-Sashka in a swan pose. I wanted to both laugh and cry then. I see a bloodsucker's paw reaching for Sanyok, but no, my tongue is stuck, mind is empty, feels like a "Burner" went through my soul. Sanyok seemed to realize something and turned to look what's behind him, and the bloodsucker... the bloodsucker... black like that... disgusting, latched right onto his face, with its mouth! I puked canned food then. Good thing Romka's not such a sissy, immediately put a burst into that monster's head... We ran out of there - athletes would be jealous. I came to near the Bar, Romka was carrying me in his arms. I'll be grateful to him forever. But poor Sanyok! Come on, brother, pour, let's drink to him...</text></string>
+<string id="bar_bar_drunk_dolg_story_4"><text>Well, cheers.</text></string>
+<string id="bar_bar_drunk_dolg_story_5"><text>Eh... feels so nasty in my soul. Maybe one more?</text></string>
+<string id="bar_bar_drunk_dolg_story_6"><text>Sure, why not.</text></string>
+<string id="bar_bar_drunk_dolg_story_7"><text>And a third, for even count.</text></string>
+<string id="bar_bar_drunk_dolg_story_8"><text>Put out your glass.</text></string>
+<string id="bar_bar_drunk_dolg_story_9"><text>What I'm getting at... If you're at the warehouses, maybe check there, on the way to the village, maybe my Benelli is still lying somewhere? Or maybe I lost it on the way to the Bar. I wasn't myself, don't remember. I'll pay you honestly, I have a good artifact.</text></string>
+<string id="bar_bar_drunk_dolg_story_10"><text>If I'm in those parts, I'll look when I have a chance.</text></string>
+<string id="bar_bar_drunk_dolg_story_11"><text>So a bloodsucker can get me like your buddy? Nah.</text></string>
+<string id="bar_bar_drunk_dolg_story_12"><text>Don't doubt it, the artifact is really good, you'll be satisfied.</text></string>
+<string id="bar_bar_drunk_dolg_story_13"><text>Don't have any with me, next time.</text></string>
+
+<string id="bar_bar_drunk_dolg_story_done_0"><text>I found your shotgun, Brome.</text></string>
+<string id="bar_bar_drunk_dolg_story_done_1"><text>What? Ah, the Benelli! You're the man, Marked One!</text></string>
+<string id="bar_bar_drunk_dolg_story_done_2"><text>I wouldn't celebrate too much if I were you. I don't know if you managed to mess it up to such a sorry state yourself or if it got damaged from falling, then lying who knows how long in the mud under rain and wind... Without a major overhaul I wouldn't risk walking around the Zone with such a weapon. Anyway, I did my part. Take the gun.</text></string>
+<string id="bar_bar_drunk_dolg_story_done_3"><text>Yeah... and what am I supposed to do with this scrap metal now?! Alright, any way you slice it, a deal's a deal. Take the artifact, as promised.</text></string>
+<string id="bar_bar_drunk_dolg_story_done_4"><text>I thought you'd balk... Nice to deal with decent people.</text></string>
+
+<string id="bar_bar_barmen_stories_0"><text>Hi, can we chat a bit?</text></string>
+<string id="bar_bar_barmen_stories_1"><text>Well... I'm not much of a storyteller, but what interests you?</text></string>
+<string id="bar_bar_barmen_stories_2"><text>Where does all the weapons in the Zone come from? Everyone here has two or three guns, not counting pistols and grenades. And you need ammo too, and all sorts of other crap.</text></string>
+<string id="bar_bar_barmen_stories_22"><text>Well, it's not for nothing that almost everyone here runs around with Kalashnikovs, there were weapons here even before the Zone appeared. And when the Zone appeared and everyone was kicked out, several abandoned weapons depots remained as a gift for the first stalkers. Well - that same weaponry is still enough. It doesn't go anywhere, heard of such a law of nature? Nothing disappears anywhere. Some stalker gets caught by an emission, another picks up his toys... Maybe brings them to me, sells them, and I'll give them to some rookie, repair if needed.</text></string>
+<string id="bar_bar_barmen_stories_23"><text>Yes, indeed, it's all simple.</text></string>
+<string id="bar_bar_barmen_stories_24"><text>That's the circulation of weapons in the Zone.</text></string>
+<string id="bar_bar_barmen_stories_25"><text>Well, let's say standard military weapons are clear, but you have plenty of other weapons. You can even buy an FN-2000? Where's that from?</text></string>
+<string id="bar_bar_barmen_stories_26"><text>Well... Sometimes stalkers bring them with themselves, before getting into the Zone and becoming stalkers. They also say a couple of foreign special forces visited us. The military carries some guns. And you can see yourself, there's much less of such weapons, and it's more expensive.</text></string>
+<string id="bar_bar_barmen_stories_27"><text>Everything's clear then. Still somehow doesn't add up, you have some completely new guns there.</text></string>
+<string id="bar_bar_barmen_stories_28"><text>A good trader always has his secrets, and connections with the outside world. In general, if necessary, you can get anything, for big money, naturally.</text></string>
+<string id="bar_bar_barmen_stories_29"><text>So I can come to you?</text></string>
+<string id="bar_bar_barmen_stories_291"><text>You don't have that kind of money. Sorry, I need to work, talked too much with you. Buying anything?</text></string>
+<string id="bar_bar_barmen_stories_3"><text>Sometimes I go crazy from this Zone. Have you noticed this in other stalkers?</text></string>
+<string id="bar_bar_barmen_stories_33"><text>It happens, of course, the Zone breaks stalkers, but such don't last long, they're done for in the Zone, so they're rarely seen here. Though there are exceptions.</text></string>
+<string id="bar_bar_barmen_stories_34"><text>I see, need to get a grip.</text></string>
+<string id="bar_bar_barmen_stories_35"><text>Well, you're not a pushover, if anything, treat yourself with vodka - and you're good.</text></string>
+<string id="bar_bar_barmen_stories_36"><text>What kind of exceptions?</text></string>
+<string id="bar_bar_barmen_stories_37"><text>There was a guy here once, one of the first stalkers. They called him Beldyuga. So, his roof was definitely blown, either the Zone tuned him up, or he came to the Zone like that already... He was lucky though, despite being a loner, who'd walk the Zone paired with a psycho... He was always alive and always with artifacts. Sometimes the Zone would rough him up good, a mangled arm there... But always alive, and wounds healed like on a pseudodog.</text></string>
+<string id="bar_bar_barmen_stories_38"><text>I see, and where is he now?</text></string>
+<string id="bar_bar_barmen_stories_39"><text>He died stupidly. He liked to make all sorts of modifications for weapons, but in his own way. Sometimes attached artifacts to the bolt on a Kalash, sometimes a bunch of pistols... Hell knows how that crap helped him. Of course, others couldn't understand such nonsense. They say he once managed to tie an RPG to a rifle with rope, well somewhere in the Zone a group of stalkers met him, made fun of him... He up and fired his "underbarrel" point-blank at their feet. Seems everyone died, though that's what they say... Maybe some beast just ate him.</text></string>
+<string id="bar_bar_barmen_stories_391"><text>I see...</text></string>
+<string id="bar_bar_barmen_stories_4"><text>How did you end up here yourself?</text></string>
+<string id="bar_bar_barmen_stories_44"><text>That's none of your business. Want to know anything else?</text></string>
+
+<string id="bar_bar_barman_esc_reward_case_0"><text>I have a package for you here.</text></string>
+<string id="bar_bar_barman_esc_reward_case_1"><text>What package? From whom?</text></string>
+<string id="bar_bar_barman_esc_reward_case_2"><text>Sidorovich sent a case from the military checkpoint, said you could decipher those papers inside.</text></string>
+<string id="bar_bar_barman_esc_reward_case_3"><text>Let's see, so... this is useless to us, this is outdated... so, there's information about a road... apparently, the military found out about a path that goes from the Dark Valley to the Foggy Thicket. Will they really risk trying to go through there? Just feel sorry for the boys, they'll lose soldiers for nothing! Experienced stalkers don't even risk going into the Foggy Thicket, and here! Though... they say Borov's people used that path. Well anyway, look - this is the path they found out about. Be careful there, just in case...</text></string>
+<string id="bar_bar_barman_esc_reward_case_4"><text>Alright, I'll keep that in mind.</text></string>
+
+<string id="bar_drunk_dolg_black_tip_0"><text>I have a problem. Was told to come to you.</text></string>
+<string id="bar_drunk_dolg_black_tip_1"><text>Why are you all black or something? Ah... So you caught it... Well alright, let's have a drink.</text></string>
+<string id="bar_drunk_dolg_black_tip_2"><text>You mean the "Black Mark"? Is it that noticeable on me? Know anything about it?</text></string>
+<string id="bar_drunk_dolg_black_tip_3"><text>You should pour for the conversation... My throat's gone dry.</text></string>
+<string id="bar_drunk_dolg_black_tip_41"><text>No problem. Just let's not go overboard.</text></string>
+<string id="bar_drunk_dolg_black_tip_42"><text>Nothing to pour. Maybe another time.</text></string>
+<string id="bar_drunk_dolg_black_tip_5"><text>You're insulting me! I just need to wet my throat... Alright listen here.\nThis mark... It's alive. Like all living things, it needs to feed on something. And you know what it eats? The life force of its victim. It's like in vampire movies. Seen the one about Dracula? Only here instead of blood... Hey, are you listening or what? Drop some more!</text></string>
+<string id="bar_drunk_dolg_black_tip_61"><text>Well, let me pour. Just don't pass out.</text></string>
+<string id="bar_drunk_dolg_black_tip_62"><text>I get it with you. Anyway, I'm leaving.</text></string>
+<string id="bar_drunk_dolg_black_tip_71"><text>How can you turn off the fire that burns inside?! So what was I? Ah, yes! About the mark.\nI'm telling you, it drinks your life force and gets poisoned by it, because it's not of this world. It's alien to our world and the "food" here doesn't suit it, but it doesn't know how to feed any other way. Like any parasite, being no smarter than my ex-mother-in-law, once it latches onto a victim, this creature can't let go anymore. I had a buddy, he endured for several days and the mark died on its own. The main thing is not to let it stop getting poisoned once it's latched onto you, otherwise it'll fully recover. Don't throw it on the ground, don't hide it in stashes, don't stuff it in a container, understand? Let it choke on your life. And another thing. Don't hang around places where there are lots of people. This infection senses there's an abundance of food around, even if such food is poison for it. Then the "Black Mark" sort of goes into hibernation, apparently to pretend to be something harmless to other potential victims. It continues to draw strength from the carrier, though less, but in this mode it can last much longer. That's how it is...</text></string>
+</string_table>

@@ -78,20 +78,15 @@ important_items = {
   belt_4_art=true,
   belt_5_art=true,
   belt_6_art=true,
---[fake_rucksack]=true,
-  podsumok=true,         
-  podsumok_feik=true,
-  podsumok_mem=true,
+  podsumok=true,
   flask_army_on_belt=true,
   razgruzka=true,
   razgruzka_new=true,
   shadow_inventory=true,
-  shadow_inventory2=true,
   rykzack=true,
   timer=true,
   af_dummy_black_tip=true,
   watch=true,
-  bag_on_belt=true,
   memory_module=true,
   self_made_decoder=true,
   quest_tools=true,
@@ -220,7 +215,7 @@ function collect_items(inv_holder, bypass) -- извлечение объектов холдера в спис
   for i = 0, inv_holder:object_count() - 1 do
      local obj = inv_holder:object(i)
      local sect = obj:section()
-     if not strpos(sect, "bolt") and not strpos(sect, "myaso_mem") and bypass(obj) then
+     if not strpos(sect, "bolt") and bypass(obj) then
         --wprintf(" collect_items, accepted~C0A %-35s~C0B =~C0F %s~C07", obj:name(), DumpVar(check_obj(obj)))
         local id = obj:id()              
         result:add(sect, id, amount_in_batch(id), obj)
@@ -1019,10 +1014,6 @@ function shadow_inventory:restore_content()
     -- content:dump("~C0E shadow_inventory:restore_content dump result: ~C07")     
     --wprintf("[~T/~B].~CB0 #DBG: shadow_inventory:restore_content end, container weight = %.3f Kg~C07", self.storage:weight())
     -- TODO: debug code
-    local mind = self.holder:object("myaso_mem")
-    if mind then
-       misc.release_obj(mind) -- мозги ГГ не нужны, они есть у игрока
-    end
     
     self.last_hide = -1    
     moving_items = {}

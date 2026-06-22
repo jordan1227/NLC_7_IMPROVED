@@ -2189,7 +2189,6 @@
 			<next>3021</next>
 		</phrase>
 		<phrase id="3021">
-			<dont_has_info>price_red_forest_lesnik</dont_has_info>	<!-- new -->	
 			<text>red_forest_lesnik_start_dialog_3021</text>
 			<next>303</next>
 		</phrase>
@@ -2214,7 +2213,7 @@
 		</phrase>
 		<phrase id="1">
 			<text>red_forest_lesnik_trade_dialog_1</text>
-			<action>sak_dialog.info_price_red_forest_lesnik</action>
+			<action>_G.give_article("price_red_forest_lesnik")</action>
 			<next>21</next>
 			<next>22</next>
 			<next>23</next>
@@ -5410,7 +5409,6 @@
 		</phrase>
 		<phrase id="5">
 			<text>personal_things_skryaga_5</text>
-			<action>sak_dialog.personal_things_1_show</action>
 			<next>6</next>
 		</phrase>
 		<phrase id="6">
@@ -5554,7 +5552,6 @@
 		<phrase id="107">
 			<text>personal_things_second_dialog_107</text>
 			<give_info>personal_things_second</give_info>
-			<action>sak_dialog.personal_things_2_show</action>
 			<next>108</next>
 		</phrase>
 		<phrase id="108">
@@ -5754,7 +5751,6 @@
 		</phrase>
 		<phrase id="71">
 			<text>botans_report_osvedomitel_dialog_71</text>
-			<action>sak_dialog.botans_report_show</action>
 			<give_info>botans_report_osvedomitel_dialog_start</give_info>
 			<next>81</next>
 		</phrase>
@@ -7131,7 +7127,6 @@
 		</phrase>
 		<phrase id="3">
 			<text>red_forest_lesnik_scarman_dialog_3</text>
-			<action>sak_dialog.scarman_1_show</action>
 			<give_info>red_forest_lesnik_scarman_info</give_info>
 			<next>4</next>
 		</phrase>
@@ -7830,7 +7825,7 @@
 		</phrase>
 		<phrase id="7">
 			<text>dar_greens_kolbasa_7</text>
-			<action>sak_dialog.add_greens_kolbasa</action> 
+			<action>sak_dialog.add_greens_kolbasa(1)</action> 
 		</phrase>
 		<phrase id="2">
 			<text>dar_greens_kolbasa_2</text>
@@ -7838,55 +7833,55 @@
 		</phrase>
 		<phrase id="31">
 			<text>dar_greens_kolbasa_31</text>
-			<action>sak_dialog.add_greens_kolbasa</action> 
+			<action>sak_dialog.add_greens_kolbasa(1)</action> 
 		</phrase>
 		<phrase id="32">
 			<text>dar_greens_kolbasa_32</text>
-			<action>sak_dialog.add_greens_kolbasa</action> 
+			<action>sak_dialog.add_greens_kolbasa(1)</action> 
 		</phrase>
 		<phrase id="33">
 			<text>dar_greens_kolbasa_33</text>
-			<action>sak_dialog.add_greens_kolbasa2</action> 
+			<action>sak_dialog.add_greens_kolbasa(2)</action> 
 		</phrase>
 		<phrase id="331">
 			<text>dar_greens_kolbasa_331</text>
-			<action>sak_dialog.add_greens_kolbasa</action> 
+			<action>sak_dialog.add_greens_kolbasa(1)</action> 
 		</phrase>		   
 		<phrase id="34">
 			<text>dar_greens_kolbasa_34</text>
-			<action>sak_dialog.add_greens_kolbasa3</action> 
+			<action>sak_dialog.add_greens_kolbasa(3)</action> 
 		</phrase>
 		<phrase id="35">
 			<text>dar_greens_kolbasa_35</text>
-			<action>sak_dialog.add_greens_kolbasa5</action> 
+			<action>sak_dialog.add_greens_kolbasa(5)</action> 
 		</phrase>
 		<phrase id="36">
 			<text>dar_greens_kolbasa_36</text>
-			<action>sak_dialog.add_greens_kolbasa5</action> 
+			<action>sak_dialog.add_greens_kolbasa(5)</action> 
 		</phrase>
 		<phrase id="37">
 			<text>dar_greens_kolbasa_37</text>
-			<action>sak_dialog.add_greens_kolbasa5</action> 
+			<action>sak_dialog.add_greens_kolbasa(5)</action> 
 		</phrase>
 		<phrase id="38">
 			<text>dar_greens_kolbasa_38</text>
-			<action>sak_dialog.add_greens_kolbasa5</action> 
+			<action>sak_dialog.add_greens_kolbasa(5)</action> 
 		</phrase>
 		<phrase id="39">
 			<text>dar_greens_kolbasa_39</text>
-			<action>sak_dialog.add_greens_kolbasa3</action> 
+			<action>sak_dialog.add_greens_kolbasa(3)</action> 
 		</phrase>
 		<phrase id="391">
 			<text>dar_greens_kolbasa_391</text>
-			<action>sak_dialog.add_greens_kolbasa5</action> 
+			<action>sak_dialog.add_greens_kolbasa(5)</action> 
 		</phrase>
 		<phrase id="392">
 			<text>dar_greens_kolbasa_392</text>
-			<action>sak_dialog.add_greens_kolbasa3</action> 
+			<action>sak_dialog.add_greens_kolbasa(3)</action> 
 		</phrase>
 		<phrase id="393">
 			<text>dar_greens_kolbasa_393</text>
-			<action>sak_dialog.add_greens_kolbasa3</action> 
+			<action>sak_dialog.add_greens_kolbasa(3)</action> 
 		</phrase>
 		<phrase id="3">
 			<text>dar_greens_kolbasa_3</text>
@@ -9129,7 +9124,6 @@
 		</phrase>
 		<phrase id="1">
 			<text>vorobey_energetik_end_dialog_1</text>
-			<action>sak_dialog.text_vorobey_gift</action>
 			<next>21</next>
 			<next>22</next>
 			<next>23</next>
@@ -9359,7 +9353,6 @@
 		</phrase>
 		<phrase id="3">
 			<text>meelofon_room_done_dialog_3</text>
-			<action>doc.add_meelofon_code</action>			
 		</phrase>
 		<phrase id="34">
 			<text>meelofon_room_done_dialog_34</text>
@@ -16154,7 +16147,6 @@
 		</phrase>
 		<phrase id="1">
 			<text>pahom_detector_charge_dlg_1</text>
-			<action>sak_dialog.pahom_det_charge_pay_prec</action>
 			<next>21</next>
 			<next>22</next>
 		</phrase>

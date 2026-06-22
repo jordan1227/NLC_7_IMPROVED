@@ -1,0 +1,129 @@
+<string id="unknown_monster"><text>Mutant unknown to science</text></string>
+
+<string id="fracture_weak"><text>Fracture</text></string>
+<string id="fracture_normal"><text>Experienced Fracture</text></string>
+<string id="fracture_strong"><text>Vicious Fracture</text></string>
+
+<string id="crow"><text>Crow</text></string>
+
+<string id="rat_weak"><text>Rat</text></string>
+<string id="rat_mad_wery_strong"><text>Mad Rat</text></string>
+
+<string id="tushkano_normal"><text>Tushkano</text></string>
+<string id="tushkano_strong"><text>Experienced Tushkano</text></string>
+<string id="electro_tushkano_normal"><text>Electro Tushkano</text></string>
+
+<string id="dog_weak"><text>Blind Dog</text></string>
+<string id="dog_normal"><text>Rat-crusher Dog</text></string>
+<string id="dog_strong"><text>Albino Dog</text></string>
+<!--<string id="dog_sak"><text>Wild Dog</text></string>-->
+
+<string id="boar_weak"><text>Young Boar</text></string>
+<string id="boar_normal"><text>Adult Boar</text></string>
+<string id="boar_strong"><text>Experienced Boar</text></string>
+
+<string id="pseudodog_weak"><text>Pseudodog</text></string>
+<string id="pseudodog_normal"><text>Experienced Pseudodog</text></string>
+<string id="pseudodog_strong"><text>Grey Pseudodog</text></string>
+<!--<string id="psy_dog"><text>Psionic Pseudodog</text></string>-->
+<string id="psy_dog_radar"><text>Psi-dog</text></string>
+
+<string id="cat_weak"><text>Young Cat</text></string>
+<string id="cat_normal"><text>Cat</text></string>
+<string id="cat_strong"><text>Bayun Cat</text></string>
+
+<string id="flesh_weak"><text>Steppe Flesh</text></string>
+<string id="flesh_normal"><text>Forest Flesh</text></string>
+<string id="flesh_strong"><text>Marsh Flesh</text></string>
+
+<string id="zombie_weak"><text>Starving Zombie</text></string>
+<string id="zombie_normal"><text>Enraged Zombie</text></string>
+<string id="zombie_scientist"><text>Zombie Scientist</text></string>
+<string id="zombie_blow"><text>Exploding Zombie</text></string>
+
+<string id="snork_weak"><text>Snork</text></string>
+<string id="snork_normal"><text>Scavenger Snork</text></string>
+<string id="snork_strong"><text>Cannibal Snork</text></string>
+
+<string id="burer_weak"><text>Young Burer</text></string>
+<string id="burer_normal"><text>Burer</text></string>
+<string id="burer_strong"><text>Old Burer</text></string>
+<string id="burer_hos"><text>Old Vicious Burer</text></string>
+
+<string id="chimera_weak"><text>Young Chimera</text></string>
+<string id="chimera_normal"><text>Adult Chimera</text></string>
+<string id="chimera_strong"><text>Experienced Chimera</text></string>
+<string id="electro_chimera"><text>Electro-chimera</text></string>
+
+<string id="controller_weak"><text>Controller</text></string>
+
+<string id="bloodsucker_weak"><text>Bloodsucker</text></string>
+<string id="bloodsucker_normal"><text>Marsh Bloodsucker</text></string>
+<string id="bloodsucker_strong"><text>Black Bloodsucker</text></string>
+
+<string id="m_poltergeist_normal_tele"><text>Poltergeist</text></string>
+<string id="m_poltergeist_normal_flame"><text>Pyrogeist</text></string>
+<!-- <string id="m_poltergeist_strong_flame"><text>Vicious Pyrogeist</text></string> -->
+<!-- <string id="m_poltergeist_dark_flame"><text>Dark Pyrogeist</text></string> -->
+
+<string id="gigant_normal"><text>Pseudogiant</text></string>
+<string id="gigant_strong"><text>Experienced Pseudogiant</text></string>
+
+
+
+<string id="unknown_stalker"><text>Creature unknown to science</text></string>
+
+<string id="zombied_novice"><text>Zombied, Novice</text></string>
+<string id="zombied_experienced"><text>Zombied, Experienced</text></string>
+<string id="zombied_veteran"><text>Zombied, Veteran</text></string>
+<string id="zombied_master"><text>Zombied, Master</text></string>
+
+<string id="stalker_novice"><text>Stalker, Novice</text></string>
+<string id="stalker_experienced"><text>Stalker, Experienced</text></string>
+<string id="stalker_veteran"><text>Stalker, Veteran</text></string>
+<string id="stalker_master"><text>Stalker, Master</text></string>
+
+<string id="stranger_novice"><text>Loner, Novice</text></string>
+<string id="stranger_experienced"><text>Loner, Experienced</text></string>
+<string id="stranger_veteran"><text>Loner, Veteran</text></string>
+<string id="stranger_master"><text>Loner, Master</text></string>
+
+<string id="green_novice"><text>Hunter, Novice</text></string>
+<string id="green_experienced"><text>Hunter, Experienced</text></string>
+<string id="green_veteran"><text>Hunter, Veteran</text></string>
+<string id="green_master"><text>Hunter, Master</text></string>
+
+<string id="dolg_novice"><text>Duty, Novice</text></string>
+<string id="dolg_experienced"><text>Duty, Experienced</text></string>
+<string id="dolg_veteran"><text>Duty, Veteran</text></string>
+<string id="dolg_master"><text>Duty, Master</text></string>
+
+<string id="ecolog_novice"><text>Ecologist, Novice</text></string>
+<string id="ecolog_experienced"><text>Ecologist, Experienced</text></string>
+<string id="ecolog_veteran"><text>Ecologist, Veteran</text></string>
+<string id="ecolog_master"><text>Ecologist, Master</text></string>
+
+<string id="freedom_novice"><text>Freedom, Novice</text></string>
+<string id="freedom_experienced"><text>Freedom, Experienced</text></string>
+<string id="freedom_veteran"><text>Freedom, Veteran</text></string>
+<string id="freedom_master"><text>Freedom, Master</text></string>
+
+<string id="killer_novice"><text>Mercenary, Novice</text></string>
+<string id="killer_experienced"><text>Mercenary, Experienced</text></string>
+<string id="killer_veteran"><text>Mercenary, Veteran</text></string>
+<string id="killer_master"><text>Mercenary, Master</text></string>
+
+<string id="bandit_novice"><text>Bandit, Novice</text></string>
+<string id="bandit_experienced"><text>Bandit, Experienced</text></string>
+<string id="bandit_veteran"><text>Bandit, Veteran</text></string>
+<string id="bandit_master"><text>Bandit, Master</text></string>
+
+<string id="military_novice"><text>Military, Private</text></string>
+<string id="military_experienced"><text>Military, Sergeant</text></string>
+<string id="military_veteran"><text>Military, Lieutenant</text></string>
+<string id="military_master"><text>Military, Captain</text></string>
+
+<string id="monolith_novice"><text>Monolith, Novice</text></string>
+<string id="monolith_experienced"><text>Monolith, Experienced</text></string>
+<string id="monolith_veteran"><text>Monolith, Veteran</text></string>
+<string id="monolith_master"><text>Monolith, Master</text></string>

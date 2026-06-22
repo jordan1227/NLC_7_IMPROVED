@@ -514,8 +514,9 @@ function CUIDescriptionWnd:ShowEatableParams()
 			val = get_float(self.section, t.prop, 0)
 		end
 
-		if val == 0 and t.prop == "eat_satiety" and allcore_hide.food_data[self.section] then
-			val = allcore_hide.food_data[self.section][1]
+		local sat = get_float(self.section, "eat_satiety", 0)
+		if val == 0 and t.prop == "eat_satiety" and sat then
+			val = sat
 		end
 		if t.prop == "mr_time" then
 			if val >= 1 then 
@@ -783,7 +784,7 @@ function CUIDescriptionWnd:ShowAfParams()
 			elseif t.prop == "radiation_restore_speed" then
 				txt = txt .. (val > 0 and "%c[red]+" or "%c[green]")
 			elseif handle_satiety then
-				txt = txt .. "%c[red]"
+				txt = txt .. (val < 0 and "%c[red]" or "%c[green]+")
 			else
 				txt = txt .. (val > 0 and "%c[green]+" or "%c[red]")
 			end

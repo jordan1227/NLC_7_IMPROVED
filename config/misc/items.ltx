@@ -68,7 +68,6 @@ inv_name					= Bread
 inv_name_short				= Bread
 inv_weight					= 0.125	;0.2
 
-slot = 13,14,15,16
 inv_grid_width		= 1
 inv_grid_height		= 1
 inv_grid_x			= 6
@@ -86,7 +85,7 @@ angle_offset			 = 1.570790,1.570790,3.92699
 
 
 eat_health = 0.0
-eat_satiety = 0
+eat_satiety = 0.3
 eat_power = 0
 eat_radiation = 0
 wounds_heal_perc = 0
@@ -99,6 +98,7 @@ animation_slot		= 4
 
 hud = bread_use
 inv_show_condition      = true
+allcore_hide.is_food = true
 
 [kolbasa]:identity_immunities
 GroupControlSection	= spawn_group
@@ -114,7 +114,6 @@ inv_name					= Kolbasa
 inv_name_short				= Kolbasa
 inv_weight					= 0.25
 
-slot = 13,14,15,16
 inv_grid_width		= 1
 inv_grid_height		= 1
 inv_grid_x					= 6
@@ -133,7 +132,7 @@ angle_offset			 = 1.570790,1.570790,3.92699
 
 
 eat_health = 0.0
-eat_satiety = 0
+eat_satiety = 0.4
 eat_power = 0
 eat_radiation = 0
 wounds_heal_perc = 0
@@ -146,6 +145,7 @@ animation_slot		= 4
 
 hud = kolbasa_use
 inv_show_condition      = true
+allcore_hide.is_food = true
 
 [green_kolbasa]:kolbasa
 visual	= new_item\item_kolbasa_hunt.ogf
@@ -157,8 +157,8 @@ inv_weight			= 0.15
 inv_grid_x			= 6
 inv_grid_y			= 2
 cost				= 100
-eat_health 			= 0.0
-eat_satiety 		= 0
+eat_health 			= 0
+eat_satiety 		= 0.6
 
 hud = kolbasa_green_use
 
@@ -177,12 +177,13 @@ cost				= 1000
 slot =
 eat_health 			= 0
 eat_portions_num 	= 3
-eat_satiety 		= 0
+eat_satiety 		= 1
 ; hud = wpn_vodka_hud
 hud_fov = 0.85
 hud = mre_use
 
 eat_portions_influence = true
+allcore_hide.is_food = true
 
 [kolbasa_a]:identity_immunities
 GroupControlSection		= spawn_group
@@ -224,7 +225,6 @@ inv_name					= Conserva
 inv_name_short				= Conserva
 inv_weight					= 0.6
 
-slot = 13,14,15,16
 inv_grid_width		= 1
 inv_grid_height		= 1
 inv_grid_x                               = 19
@@ -234,7 +234,7 @@ cost						= 500
 
 
 eat_health = 0
-eat_satiety = 0
+eat_satiety = 0.75
 eat_power = 0
 eat_radiation = 0
 wounds_heal_perc = 0
@@ -257,6 +257,7 @@ bone_name				= bip01_r_hand
 position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
 inv_show_condition      = true
+allcore_hide.is_food = true
 
 [conserva_tm]:conserva
 inv_name					= Conserva_tm
@@ -267,6 +268,7 @@ inv_grid_width     = 1
 inv_grid_height    = 1
 inv_grid_x         = 40
 inv_grid_y         = 4
+eat_satiety = 0.5
 
 [vodka_a]:identity_immunities
 GroupControlSection		= spawn_group
@@ -345,6 +347,7 @@ hud = vodka_use
 
 break_particles		= explosions\explosion_bottle
 break_sound			= material\bottle\collide\bottle_break_1
+allcore_hide.is_food = true
 
 
 [guitar_a]:identity_immunities
@@ -582,6 +585,7 @@ attach_position_offset	= 0.087266, -0.078540, 0.052360
 attach_bone_name		= bip01_r_hand
 auto_attach				= false
 hud = energy_drink_use
+allcore_hide.is_food = true
 
 [energy_drink_new]:energy_drink
 post_eff				= 7
@@ -657,6 +661,7 @@ wounds_heal_perc = 0
 eat_portions_num = 3
 
 hud 			 = drug_psy_blockade_use
+allcore_hide.is_food = true
 
 [binocular_a]:identity_immunities
 GroupControlSection		= spawn_group
@@ -822,7 +827,7 @@ r_pnv_mode = 2               ;Режим работы пнв 0-выкл, 1-вкл пнв, 2-вкл тепловиз
 r_pnv_noise = 0.05           ;Шум
 r_pnv_num_tubes = 4.         ;Режим виньетки 1-круг по центру, 2-2 круга по центру со смещением, 3 - пусто, 4-3 круга по центру со смещением
 r_pnv_position = 100.        ;Координаты по вертикали
-r_pnv_radius = 0.5           ;Радиус виньетки
+r_pnv_radius = 0.6           ;Радиус виньетки
 r_pnv_scanlines = 0.05       ;Горизонтальные полосы
 r_pnv_scintillation = 1 ;0.998  ;Интенсивность крупных точек шума
 r_pnv_size_vignet = 0.1      ;Вроде как сатурация виньетки
@@ -832,24 +837,6 @@ heat_fade_distance = 13, 20, 0, 0
 heat_vision_blurring = 1, 1, 1.1, 1.1
 heat_vision_steps = -0.5, 0, 0, 1
 
-; зеленый плохого качества
-[bad_nvd]:device_night_vision
-pnv_color                                = 0.66, 1, 0.45
-r_pnv_mode                               = 0
-r_pnv_gain_current                       = 1
-r_pnv_noise                              = 0.3
-r_pnv_scanlines                          = 4
-r_pnv_num_tubes                          = 2; 1
-
-; синий с помехами
-[good_nvd]:device_night_vision
-pnv_color                                = 0.28, 0.28, 0.6
-r_pnv_mode                               = 0
-r_pnv_gain_current                       = 1.1
-r_pnv_noise                              = 0.2
-r_pnv_scanlines                          = 1.4
-r_pnv_num_tubes                          = 2
-
 ; белый с помехами
 [elite_nvd]:device_night_vision
 pnv_color                                = 0.96, 0.96, 0.96
@@ -857,8 +844,17 @@ r_pnv_mode                               = 0
 r_pnv_gain_current                       = 1.2
 r_pnv_noise                              = 0.01
 r_pnv_scanlines                          = 0.8
-r_pnv_num_tubes                          = 4
 r_pnv_size_vignet                        = 0
+
+; зеленый плохого качества
+[bad_nvd]:elite_nvd
+pnv_color                                = 0.66, 1, 0.45
+r_pnv_gain_current                       = 1
+
+; синий с помехами
+[good_nvd]:elite_nvd
+pnv_color                                = 0.28, 0.28, 0.6
+r_pnv_gain_current                       = 1.1
 
 [detector_simple]:identity_immunities
 GroupControlSection		= spawn_group
@@ -2140,6 +2136,7 @@ inv_grid_height			= 1
 inv_grid_x				= 7
 inv_grid_y				= 5
 cost					= 500
+slot 					= 13,14,15,16
 ; eat_health = 0
 ; eat_satiety = 0
 ; eat_power = 0
@@ -2277,7 +2274,6 @@ inv_grid_height  = 0
 quest_item   = true
 
 ph_heavy = true
-[shadow_inventory2]:shadow_inventory
 
 [inventory_box]:identity_immunities
 GroupControlSection	= spawn_group

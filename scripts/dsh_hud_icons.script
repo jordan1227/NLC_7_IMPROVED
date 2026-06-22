@@ -115,7 +115,7 @@ end
 local flashing = {}
 
 function hide_icon( n )
-  setup_game_icon( n, 0, 0, 0 )
+  setup_game_icon( n, 0, 0, 0, 0 )
   if flashing[ n ] then
     flashing[ n ]:stop()
     flashing[ n ] = nil
@@ -123,11 +123,13 @@ function hide_icon( n )
 end
 
 
-function set_icon_color( n, value )
+function set_icon_color( n, value, rad_value )
+  if not rad_value then rad_value = value end
+  rad_value = 0 -- Manool: пока отключено
   if value < 0 then value = 0 end
   local idx   = math.floor( value * 10 ) + 1
   local color = colors[ n ][ idx ]
-  setup_game_icon( n, GetARGB( unpack( color ) ), 0, 0 )
+  setup_game_icon( n, GetARGB( unpack( color ) ), 0, 0, rad_value )
   if idx == 1 then
     if not flashing[ n ] then
       local flash = true
@@ -135,11 +137,11 @@ function set_icon_color( n, value )
         refresh_freq,
         function()
           if flash then
-            setup_game_icon( n, GetARGB( unpack( color ) ), 0, 0 )
+            setup_game_icon( n, GetARGB( unpack( color ) ), 0, 0, rad_value )
             flash = false
           else
             setup_game_icon(
-              n, GetARGB( 51, color[ 2 ], color[ 3 ], color[ 4 ] ), 0, 0
+              n, GetARGB( 51, color[ 2 ], color[ 3 ], color[ 4 ] ), 0, 0, rad_value
             )
             flash = true
           end
@@ -184,14 +186,15 @@ function update_icons()
   end
 
   if db.actor:get_bleeding() > 0.05 then
-    set_icon_color( icons.wound, 1 - ( db.actor:get_bleeding() / 5 ) )
+    local cval = db.actor:get_bleeding() / 5
+    set_icon_color( icons.wound, 1 - cval, math.clamp( cval, 0, 1 ) )
   else
     hide_icon( icons.wound )
   end
 
   local rad = db.actor.radiation
   if rad > 0.02 then
-    set_icon_color( icons.radiation, 1 - rad )
+    set_icon_color( icons.radiation, 1 - rad, rad )
   else
     hide_icon( icons.radiation )
   end

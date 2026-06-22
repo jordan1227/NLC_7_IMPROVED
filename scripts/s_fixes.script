@@ -12,9 +12,7 @@ end
 
 function run_fixes(clear)  
 	local fixes_pack = {
-		"s_fixes.mil_no_weapon_zone_rel",
-		"s_fixes.del_bar_lamp",
-		"s_fixes.del_bar_sakbuzz"
+
 	}
 	
 	local fixes_pack_all = {
@@ -57,9 +55,6 @@ end
 
 function new_game_spawn()
 	log2("~~[%s.new_game_spawn]: done!", script_name())
-
-	-- Manool: для IWP
-	cmd("hud_fov", "0.7")
 
 	red_forest_eco_restr()
 	red_forest_kill_restr()
@@ -251,50 +246,4 @@ end
 
 function garb_lv_rad()
 	amk_anoms.spawn_anomaly("zone_radioactive_weak",{x=-293.7174,y=12.4659,z=-214.4214},260,254,{shtype=0,radius=5.0,center={0,0.5,0}},"static")
-end
-
-function mil_no_weapon_zone_rel()
-	local o = server_obj("mil_no_weapon_zone")
-	if o then
-		misc.release_obj(o.id)
-	end
-end
-
--- Ненужные объекты с арены, которой нет. В основном лампы.
--- Sn: прибрал в .спавне, удалить с НИ
-function del_bar_lamp()
-	for _, name in ipairs({
-		"bar_inventory_box_2",
-		"bar_lights_white_glass_0014",
-		"bar_lights_white_glass_0020",
-		"bar_lights_white_glass_0021",
-		"bar_lights_white_glass_0026",
-		"light_big_glass_0000",
-		"light_big_glass_0001",
-		"light_big_glass_0002",
-		"light_big_glass_0003",
-		"light_big_glass_0004",
-		"light_big_glass_0005",
-		"light_big_glass_0006",
-		"light_big_glass_0007"
-	}) do
-		misc.release_by_name(name)
-	end
-	log2("[%s.del_bar_lamp]: Done!", script_name())
-end
-
--- Manool: удалить с НИ
-function del_bar_sakbuzz()
-	local t = {}
-	for id, sobj in alife():objects() do
-		-- Manool: не знаю как ещё определить, что это именно те Кисели. Но больше стат. Киселей там нет
-		if sobj.level_name == "l05_bar" and sobj:section_name() == "amk_zone_sakbuzz_strong" and string.find(sobj.custom_data or "", "static") then
-			t[id] = sobj
-		end
-	end
-	for id, sobj in pairs(t) do
-		log2("[%s.del_bar_sakbuzz]: [%s] removed!", script_name(), sobj:name())
-		anomaly_detector.remove_restriction(nil, id, true)
-		anomaly_detector.remove_restriction(nil, id)
-	end
 end

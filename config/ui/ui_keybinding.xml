@@ -60,10 +60,6 @@
 		<command id="kb_team_menu"					exe="use_info"/>
 		<command id="kb_chat_team"					exe="pda_clock"/>
 		<command id="kb_watch"						exe="watch"/>
-		<command id="kb_quick_slot_1"				exe="quick_slot_1"/>
-		<command id="kb_quick_slot_2"				exe="quick_slot_2"/>
-		<command id="kb_quick_slot_3"				exe="quick_slot_3"/>
-		<command id="kb_quick_slot_4"				exe="quick_slot_4"/>
 
 	</group>
 	<group name="kb_grp_common">

@@ -1,0 +1,120 @@
+<string id="ecolog_000"><text>Log: \nZorichev went missing near the factory on Wednesday. Anyone with info regarding this incident, report to Savchenko.</text></string>
+
+<string id="ecolog_001"><text>Log: \nProspective stability windows for tomorrow: \n6:00 - 10:00 \n14:00 - 16:00 \n20:00 - 21:00 \nTake measurements at points 3 and 6.</text></string>
+
+<string id="ecolog_002"><text>Log: \nRumors among stalkers say there are categories of artifacts that, when activated on the belt, cause mutated organisms to panic. Unable to verify the rumor (they want dough). Find out:  \n1. which artifacts \n2. their quantity (combination?) \nmust obtain samples</text></string>
+
+<string id="ecolog_003"><text>Log: \nThe new fluctuation registrar is total crap! Won't calibrate at all. Take it to Vergas? Maybe he can handle it.</text></string>
+
+<string id="ecolog_004"><text>Log: \nIf you mix pure alcohol with distilled water in a 1:1 ratio, and then add literally a drop of tarragon... Ambrosia! The interns treated me.</text></string>
+
+<string id="ecolog_005"><text>Log: \nChange the suit's valve box. Clearly leaking on the inhale. The valves didn't even last a week.</text></string>
+
+<string id="ecolog_006"><text>Outgoing: \nAlexey Nikolaevich, all three snorks croaked some time after the beta generation device was switched on. Radiation parameters: intensity - 30, reflection coefficient - 0.012. Unfortunately, their death wasn't detected in time, so the remains, after being under radiation for a long period, took on a form not conducive to further research of the corpse as such.</text></string>
+<string id="ecolog_006_1"><text>Incoming: \nUnderstood. But I don't think that's the main point. What else happened?</text></string>
+<string id="ecolog_006_2"><text>Outgoing: \nDue to careless handling of the remains, Kolotaev suffered acute intoxication, leading to general damage of his body's skin integument. I request permission for the final removal of Kolotaev from the working group.</text></string>
+<string id="ecolog_006_3"><text>Incoming: \nViktor Andreevich, even as a student you were famous for your ability to hide your mistakes behind the protocolism of phrases. Do you think I don't understand why you're writing in allegories on a closed channel? Do you hope your tricks will work on me too? So, where was Zelensky when you and Kolotaev, having turned on the beta-device, went off to drink?</text></string>
+<string id="ecolog_006_4"><text>Outgoing: \nWhy "to drink" right away? It's actually hurtful to hear. We were working...</text></string>
+<string id="ecolog_006_5"><text>Incoming: \nThey were working... And where were the other lab assistants? The fact that none of you detected the death of the test subjects indicates that you treated the work half-assed. And why "wasn't it possible to detect" the death of the subjects "in time"? I know why!</text></string>
+<string id="ecolog_006_6"><text>Outgoing: \nWell, why then?</text></string>
+<string id="ecolog_006_7"><text>Incoming: \nSimply because you, instead of setting the intensity to 30, set it to 60 with your drunken eyes. And went off to drink! Or to have a hair of the dog! I just don't know exactly when your snorks croaked.</text></string>
+<string id="ecolog_006_8"><text>Outgoing: \nAlexey Nikolaevich, it wasn't like that at all...</text></string>
+<string id="ecolog_006_9"><text>Incoming: \nYou're lying, and very boldly at that! The intensity cannot be 30 while the RC is 0.012, you were taught this in your third year! Such an RC only happens with intensity from 58 to 63, it's easily calculated in the head! \nIs Kolotaev a corpse too? Do I understand "final removal from the group" correctly? Leave everything as is until my return, do not perform any work, and compile a full and HONEST Report. When I get back, someone is going to be removed! Finally!</text></string>
+
+<string id="ecolog_007"><text>Incoming: \nMikhail Vasilyevich, I want to inform you that starting tomorrow you are on duty. The shift is 24/7, once a week, starting at 20:00.</text></string>
+<string id="ecolog_007_1"><text>Outgoing: \nWait, what for? I was told we wouldn't be involved in this. I've already prepared to start the experiments... who am I going to leave them with?</text></string>
+<string id="ecolog_007_2"><text>Incoming: \nI know your experiments, they can wait... Don't worry, you'll only be helping at the simplest post. Our security is short on people.</text></string>
+<string id="ecolog_007_3"><text>Outgoing: \nThen write to the right people, let them send a whole platoon. This is ridiculous, I'll be chilling on the territory, twiddling my thumbs for a whole day, and then you'll be the one asking where the results are!</text></string>
+<string id="ecolog_007_4"><text>Incoming: \nEnough arguing! I understand everything and I'll give you an extra day to finish the experiment. That's all! \nBy the way, get some sleep before then. Get your weapon and gear from me.</text></string>
+
+<string id="ecolog_008"><text>Outgoing: \nHey there! You ordering the equipment tomorrow?</text></string>
+<string id="ecolog_008_1"><text>Incoming: \nYeah. That was the plan. Though our requests aren't ready yet. Need to justify it properly — they're pretty stingy back on the mainland...</text></string>
+<string id="ecolog_008_2"><text>Outgoing: \nAdd two suits to the list. Only the decent ones, that "orange peel" isn't gonna fly on the Radar.</text></string>
+<string id="ecolog_008_3"><text>Incoming: \nWhat peel?</text></string>
+<string id="ecolog_008_4"><text>Outgoing: \nThe orange SSP. Don't be dense.</text></string>
+<string id="ecolog_008_5"><text>Incoming: \nWhy don't you write your own request?</text></string>
+<string id="ecolog_008_6"><text>Outgoing: \nWhat do you mean "own"? Who signs your request? Sakharov. Same for us. So what's the difference?</text></string>
+<string id="ecolog_008_7"><text>Incoming: \nBut it uses up our funds!</text></string>
+<string id="ecolog_008_8"><text>Outgoing: \nFor some reason you guys decided that if a group is sent to the Radar, their equipment should be supplied differently. Who are we supposed to sign with here? The local zombified? The pseudodogs?</text></string>
+<string id="ecolog_008_9"><text>Incoming: \nFine, drop it. Why are you guys so edgy? One talk with you and I'm jumpy all day. Make a list, send it to me, I'll give it to Sakharov for signature.</text></string>
+<string id="ecolog_008_10"><text>Outgoing: \nWhy don't you come down here for at least a week? We'll see how your nerves hold up. You just sit there in the bunker, sipping tea...</text></string>
+<string id="ecolog_008_11"><text>Incoming: \nHere we go... Alright, enough. Send the list.</text></string>
+
+<string id="ecolog_009"><text>Outgoing: \nAlexander Leonidovich, what the hell is going on over there?</text></string>
+<string id="ecolog_009_1"><text>Incoming: \nWha?</text></string>
+<string id="ecolog_009_2"><text>Outgoing: \n"Wha?" Did you send your postgrads to the object? What kind of stunt did they pull there? I've already been briefed...</text></string>
+<string id="ecolog_009_3"><text>Incoming: \nThose aren't ours. All mine are staying put, waiting for the go-ahead. You said yourself the survey would be comprehensive...</text></string>
+<string id="ecolog_009_4"><text>Outgoing: \nDid I really tell you that? Fine, I'll be there in person soon and explain everything to you then...</text></string>
+<string id="ecolog_009_5"><text>Incoming: \nFor God's sake... First one thing, then another. Fed up with this already.</text></string>
+
+<string id="ecolog_010"><text>Incoming: \nHi. \nIt's me, Viktor. \nI know you can receive my messages. Respond.</text></string>
+<string id="ecolog_010_1"><text>Outgoing: \nAre you writing for yourself or "on behalf of"?</text></string>
+<string id="ecolog_010_2"><text>Incoming: \nWell, good man... I won't hide it, I was asked. You aren't making contact with anyone anymore. But I wanted to talk to you myself, too.</text></string>
+<string id="ecolog_010_3"><text>Outgoing: \nAbout what? Does it still bother you? You said it was all total nonsense...</text></string>
+<string id="ecolog_010_4"><text>Incoming: \nWell, I didn't put it exactly like that. It's just... well, admit it, your "superman theory" is a bit far-fetched. Your self-improvement. And for some reason, only yours...</text></string>
+<string id="ecolog_010_5"><text>Outgoing: \nHave you never had the feeling that you were destined for something? That your fate is to accomplish something incredible?</text></string>
+<string id="ecolog_010_6"><text>Incoming: \nOf course, I've had feelings of importance, significance, responsibility... But not super-uniqueness.</text></string>
+<string id="ecolog_010_7"><text>Outgoing: \nWe are all unique, in truth.</text></string>
+<string id="ecolog_010_8"><text>Incoming: \nBut some are more unique than others, right? You, for example... :))</text></string>
+<string id="ecolog_010_9"><text>Outgoing: \nPerhaps. It's natural selection. It must start with one individual who might look ordinary at first. But the genetic code is already in him, and it will lead him to the next step of evolution, if a leap is triggered somehow using a catalyst, to help him along.</text></string>
+<string id="ecolog_010_10"><text>Incoming: \nListen, I actually want to help you. Snap out of these thoughts. You haven't been yourself since you found that artifact. Why did you take it? Stole the keys, cracked the safe, didn't tell a soul... It should've stayed under lock and key, and you should've been doing something more worthwhile than petty theft.</text></string>
+<string id="ecolog_010_11"><text>Outgoing: \nNo. You don't understand... When evolution gives something, it sets conditions... and it might ask you to do something that contradicts your being and the "common sense" of the crowd. It might seem strange to those around you... Some might even start calling you crazy... You probably already think I am. But none of that matters, only survival and improvement matter, and further improvement for the sake of survival now and in the future...</text></string>
+<string id="ecolog_010_12"><text>Incoming: \nAlright, you probably misunderstood us. We really all want to help you. Where are you? Tell us, and we'll come.</text></string>
+<string id="ecolog_010_13"><text>Outgoing: \nNo! You won't find me, I'm leaving. And you won't take this away from me!</text></string>
+<string id="ecolog_010_14"><text>Incoming: \n"Your precious"? :)))</text></string>
+<string id="ecolog_010_15"><text>Outgoing: \nDon't laugh! You really don't understand anything... None of you.</text></string>
+<string id="ecolog_010_16"><text>Incoming: \nI thought things were much better than this. :( Don't disappear, I'm begging you. Stay in touch.</text></string>
+<string id="ecolog_010_17"><text>Outgoing: \nThat's it. Don't contact me again.</text></string>
+
+<string id="ecolog_011"><text>Outgoing: \n...My dear fellow, it's impossible to work like this! There is absolutely no data, we're like blind kittens, poking around knowing nothing!</text></string>
+<string id="ecolog_011_1"><text>Incoming: \nIvan Sergeyevich, we're losing our damn minds out here already!</text></string>
+<string id="ecolog_011_2"><text>Outgoing: \nI beg your pardon, what are you doing? Am I truly speaking with my postgraduate student and not some drunken stalker, perhaps? Colleague! I hope you are simply exhausted and haven't been overindulging. You must rest, I strongly advise it. But the measurements are absolutely necessary, you must understand that.</text></string>
+<string id="ecolog_011_3"><text>Incoming: \nIvan Sergeyevich, you must take pleasure in being ironic with a postgrad, I'm no Doctor of Sciences... what do we know. It's not the university department here, you know; the adrenaline clears the head quite well. Why don't you come join us, eh?! We've been sitting here for days on end, dirty as pigs, pushing science forward, lugging sensors on our backs, staring at anomalies...</text></string>
+<string id="ecolog_011_4"><text>Outgoing: \nI must ask you to lower your tone!.. Fine, I'm sending a replacement shift. You definitely need a rest.</text></string>
+
+<string id="ecolog_012"><text>Incoming: \nColleague, you surely looked at the latest results. What are the conclusions?</text></string>
+<string id="ecolog_012_1"><text>Outgoing: \nAmbiguous, colleague, ambiguous. The variability of development forms, this preposterous resistance to external influences... even the very reasons for their emergence cause one to spend more than one sleepless night, wouldn't you agree?</text></string>
+<string id="ecolog_012_2"><text>Incoming: \nThat's true. I remember, during the first analysis of the characteristics, I couldn't come to my senses for a long time... Pandora's Box!</text></string>
+<string id="ecolog_012_3"><text>Outgoing: \nTo think, some people actually hook these formations onto themselves and wear them. The mere thought of what this could lead to is horrifying, yet they act like small children...</text></string>
+<string id="ecolog_012_4"><text>Incoming: \nAgreed. On the other hand, as cynical as it may sound, those very people hooking all these new formations onto themselves provide us with extremely interesting results regarding their effects on the human body. Volunteers for science.</text></string>
+<string id="ecolog_012_5"><text>Outgoing: \nThey call these formations "artifacts." By the way, their behavior itself is also an extremely curious phenomenon. Sinyavsky Anton Sergeyevich, a sociopsychologist, practically lived in the field bunkers back in the day; he's perhaps the only one who has sufficiently observed the people themselves. He's putting out some extremely interesting hypotheses now!</text></string>
+<string id="ecolog_012_6"><text>Incoming: \nCurious...</text></string>
+<string id="ecolog_012_7"><text>Outgoing: \nHis latest analysis "On Mental States..." resonates with your note on somatic synapse changes. Everything and everyone is subject to mutation.</text></string>
+<string id="ecolog_012_8"><text>Incoming: \nWhat do you expect... Even materials are undergoing changes; brick, for example, exhibits the density properties of wood, yet visible characteristics remain the same. The weight is the same, but it floats! And here we have living tissue... God knows what!</text></string>
+<string id="ecolog_012_9"><text>Outgoing: \nYes... Well, it was a pleasure talking. Duty calls.</text></string>
+
+<string id="ecolog_013"><text>Outgoing: \nIs it just restless curiosity, or do you have some other goal?</text></string>
+<string id="ecolog_013_1"><text>Incoming: \nWe weren't finished... You started talking about "chrono..." something or other. Remember? Specifically — where?</text></string>
+<string id="ecolog_013_2"><text>Outgoing: \nWell, if you insist, though I doubt it will interest you. You should know, my dear fellow, that the entire Zone is essentially one continuous anomaly. Not only are the flora and fauna presented here in quite a bizarre fashion, but you and I also willy-nilly fall under the influence of these completely unstudied fields and radiations.</text></string>
+<string id="ecolog_013_3"><text>Incoming: \nCut the idle talk. Even a freshman understands that. I'm talking about something else: Pripyat city.</text></string> 
+<string id="ecolog_013_4"><text>Outgoing: \nAh, a beautiful city, I must tell you. I was there once. It still retains a certain charm even now...</text></string> 
+<string id="ecolog_013_5"><text>Incoming: \nWe've received reports that many stalkers have seen a lot of unusual things there. Specifically: they saw traffic on the city streets. Ordinary civilian cars and buses. They noticed movements of people in regular clothes. Have you heard anything like that?</text></string>
+<string id="ecolog_013_6"><text>Outgoing: \nOh! If you sit with those brothers by a campfire in the evening and put out a flask of alcohol, you'll hear much more than that...</text></string>
+<string id="ecolog_013_7"><text>Incoming: \nBut it's noteworthy that those who observed this all claim the same thing: the buildings, streets, and squares looked completely new at those moments. I believe these phenomena are a kind of visualization of chrono-clusters, "time pockets," so to speak. And therefore, my good man, should you happen to be in those parts, be so kind as to tell me about any such cases, alright?</text></string>
+<string id="ecolog_013_8"><text>Outgoing: \nYou do love your flowery language... Fine, I'll let you know if I find anything out, though getting there is, to put it mildly, a bit difficult... :))</text></string>
+<string id="ecolog_013_9"><text>Incoming: \nI am aware of that. And that makes it even more strange and incomprehensible... If, of course, one can believe all these "eyewitnesses."</text></string>
+
+<string id="ecolog_014"><text>Incoming: \nWatch your mouth, comrade. Save the "thou-ing" for your wife, if you've got what it takes.</text></string>
+<string id="ecolog_014_1"><text>Outgoing: \nI beg your pardon, where was I being informal? A poor grasp of Russian word forms is hardly a virtue.</text></string>
+<string id="ecolog_014_2"><text>Incoming: \nSpare me your unscrupulous casuistry. Tell me instead, why do the measurements again only roughly correspond to the points indicated in the assignment?</text></string>
+<string id="ecolog_014_3"><text>Outgoing: \nSimply put, the field team is basicly terrified of crawling into that hellhole. Do you even have any idea where you're forcing them to set the scanners?</text></string>
+<string id="ecolog_014_4"><text>Incoming: \n I have a full idea. Any stalker rookie could get through there. But your people are afraid of getting their asses singed a little. If you can't make them do it, go yourself. Stop eating the state's bread for nothing!</text></string>
+<string id="ecolog_014_5"><text>Outgoing: \nIt's impassable! We've tried more than once.</text></string>
+<string id="ecolog_014_6"><text>Incoming: \nTo the field, my young friend, to the field. And I want the results of the precise measurements on my desk by Monday!</text></string>
+
+<string id="ecolog_015"><text>Outgoing: \nTwo to "Omega"! Two to "Omega"!</text></string>
+<string id="ecolog_015_1"><text>Incoming: \nColleague, there is no need to shout like that. We hear you loud and clear, go ahead.</text></string>
+<string id="ecolog_015_2"><text>Outgoing: \nHow can I not shout... Put you guys here, and I'd like to see how you'd sing. What's the status on the last batch of gluon-phase storage units? We've only got a couple left. Sent the request a week ago, we're already swamped here big time!</text></string>
+<string id="ecolog_015_3"><text>Incoming: \nAbout the request... here, you see, it's like this... they say your storage units got eaten...</text></string>
+<string id="ecolog_015_4"><text>Outgoing: \nWhat?! Are you guys buzzed over there first thing in the morning? What kind of stupid joke is that?</text></string>
+<string id="ecolog_015_5"><text>Incoming: \nI'd watch it if I were you!.. And it's no joke. Instead of the Swamps, they dropped the container at Agroprom from a chopper... couple of days... ergeyevich promised to send a caravan of locals... arrived at the spot, and there was nothing left of the container but scraps. And the equipment, accordingly... we're waiting for more.</text></string>
+<string id="ecolog_015_6"><text>Incoming: \nGoddammit... Jokes aside, if we don't get at least ten units in the next couple of days, we might as well shut down the research program. For lack of researchers.</text></string>
+<string id="ecolog_015_7"><text>Outgoing: \n... </text></string>
+<string id="ecolog_015_8"><text>Incoming: \nDo you copy? Over!</text></string>
+<string id="ecolog_015_9"><text>Outgoing: \n ...st... convey... this... fresh thought... Goodb...</text></string>
+<string id="ecolog_015_10"><text>Incoming: \n Copy, copy! Dammit, it's lagging again.</text></string>
+
+<string id="ecolog_016"><text>Outgoing: \nWhat's up with the weather on Yantar today, huh? Not quite rain, not quite snow. Some kind of meteorological crap. Been sitting in the bus for three hours. Even the mutants have tucked themselves away: can't hear any snorks or zombies. Do you think it'll clear up soon?</text></string>
+<string id="ecolog_016_1"><text>Incoming: \nClear up? Well, we got a message that it's gonna get even shittier by evening.</text></string>
+<string id="ecolog_016_2"><text>Outgoing: \nYou mean there's gonna be a blowout?</text></string>
+<string id="ecolog_016_3"><text>Incoming: \nThat's the one. So you'd better find a better shelter than a bus.</text></string>

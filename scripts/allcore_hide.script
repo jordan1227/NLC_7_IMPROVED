@@ -1,93 +1,4 @@
-local stay_while_use = 1
-local medkit_hide_wpn = 1
 local eat_in_mask = 1
-local flag_allow_anim
-local flag_anim_playing = false
-
--- Manool: всё переделано для работы анимаций
--- Коротко по работе: если по каким-то причинам нельзя проиграть анимацию,
--- активируется стандартное использование. Есть совместимость с медленнным лечением из vergas_medical_elastic.script
--- На время проигрывания анимации выключена обработка всех клавих, кроме клавиш движения во избежании багов.
-
-food_data = {
-	["bread"] = {0.3,1},
-	["kolbasa"] = {0.4,1},
-	["green_kolbasa"] = {0.6,1},
-	["conserva"] = {0.75,1},
-	["conserva_tm"] = {0.5,1},
-	["suhpay"] = {1.0,3},
-	["energy_drink"] = {0.0,1},
-	["mixture"] = {0.0,1},
-	["sleeping_pill"] = {0.0,3}
-}
-
-local medical_data = {
-	["medkit"] = 4000,
-	["medkit_army"] =  3000,
-	["medkit_scientic"] =  2500,
-	["bandage"] =  4000,
-	["energy_drink"] =  1500,
-	["energy_drink_new"] =  1500, 
-	["antirad"] =  1000
-}
-
-function HideWpn()
-	bind_stalker.hide_weapon()
-	if stay_while_use > 0 then
-		level.disable_input()
-	end
-end
-
-function RestoreWpn()
-	bind_stalker.restore_weapon()
-	if stay_while_use > 0 then
-		level.enable_input()
-	end
-end
-
-function onLoad()
-	--защита от дурачка
-	if stay_while_use < 0 then stay_while_use = 0 end
-	if stay_while_use > 1 then stay_while_use = 1 end
-	if medkit_hide_wpn < 0 then medkit_hide_wpn = 0 end
-	if medkit_hide_wpn > 1 then medkit_hide_wpn = 1 end
-	if eat_in_mask < 0 then eat_in_mask = 0 end
-	if eat_in_mask > 1 then eat_in_mask = 1 end	
-	wprintf("#ACLOG#WPNHIDE: [allcore_hide.onLoad(): vars, stay_while_use = %d, medkit_hide_wpn = %d, eat_in_mask = %d]", stay_while_use, medkit_hide_wpn, eat_in_mask)
-end
-
-function check_eat_in_mask(section)
-	return eat_in_mask > 0 and food_data[section] and vergas_masks.allcore_mask_is_on()
-end
-
-function onItemUse(obj)
-	local section = obj:section()
-	if check_eat_in_mask(section) or get_actor_obj():IsDetectorActive() then
-		local eat = obj:get_eatable_item() 
-		if eat then
-			eat.eat_portions_num = eat.eat_portions_num + 1
-			if medical_data[section] then
-				if eat.eat_portions_num > 1 then
-					eat.eat_portions_num = 1
-				end
-			else
-				if eat.eat_portions_num > food_data[section][2] then
-					eat.eat_portions_num = food_data[section][2]
-				end
-			end
-		end
-		if check_eat_in_mask(section) then
-			sak.send_tip(translate("eat_in_mask"), translate("st_mda"), 1, 10, "g_g", "sak", "red")
-		else
-			sak.send_tip(game.translate_string("use_antirad_1"), game.translate_string("thinking_out_loud"), 1, 10, "g_g", "sak", "red")
-		end
-		vergas_lib.s_play([[device\antirad_no]],1)
-		return
-	end
-	if not flag_allow_anim then 
-		apply_item(section, obj:id())
-	end
-end
 
 function UseEnegry()
 	if eat_in_mask > 0 then
@@ -143,7 +54,6 @@ function apply_item_prop( sect, id )
 		end
 	end
 	apply_item( sect, id )
-	flag_anim_playing = false
 end
 
 function apply_item( sect, id )
@@ -163,19 +73,7 @@ function apply_item( sect, id )
 		end
 		return
 	end
-	if food_data[sect] then
-		params.satiety_add(food_data[sect][1])
-	end
-
-	if medkit_hide_wpn>0 then
-		if medical_data[sect] then 
-			if razgruzka.inventory_opened() ~= true and not flag_allow_anim then 
-				HideWpn() 
-				schedule.add("acore_med", "allcore_hide.RestoreWpn()", medical_data[sect]) 
-			end 
-		end
-	end
-	vergas_medical_elastic.use_item(sect, id, flag_allow_anim)
+	vergas_medical_elastic.use_item(sect, id, true)
 end
 
 local snd_in_use = false
@@ -270,38 +168,41 @@ local function play_item_use(item, item_id)
 	end)
 end
 
-function allow_animation(sect)
-
-	if db.actor:has_info("ui_talk") then return end -- Нужно для того что бы диалог не обрывался если мы решили выпить\перекусить с собеседником
-
-	if check_eat_in_mask(sect) then return end -- В маске стандартное использование!
-	
-	if get_actor_obj():IsDetectorActive() then return end
-
-	local hud = get_string(sect, "hud")
-	
-	if hud == "no_hud" then return end
-	-- local active_item = db.actor:active_item()
-	return ANIMS_ENABLED and get_string(hud, "sound_1") and game.hud_motion_allowed() and not level.only_movekeys_allowed()
-		-- and ( not active_item or active_item:get_hud_item_state() == 0 )
-		-- and not db.actor.inventory:is_active_slot_blocked()
-end
-
 local function on_actor_before_use( obj, sobj )
-	if flag_anim_playing then
+
+	if db.actor:is_talking() then return end -- Юзанье в диалоге, никаких эффектов и анимаций
+
+    local sect, id = obj:section(), obj:id()
+	local hud = get_string(sect, "hud")
+
+	if hud == "no_hud" or not hud then return end -- Анимации выключены
+	if not get_string(hud, "sound_1") then return end -- Не указан звук
+
+	-- Юзанье с маской
+	if eat_in_mask > 0 and vergas_masks.allcore_mask_is_on() and get_bool(sect, "allcore_hide.is_food", false) then
+		sak.send_tip(translate("eat_in_mask"), translate("st_mda"), 1, 10, "g_g", "sak", "red")
+		obj:disable_use()
 		return
 	end
-    local sect, id = obj:section(), obj:id()
-	flag_allow_anim = false
-    if allow_animation(sect) then
-		flag_allow_anim = true
-		flag_anim_playing = true
-		obj:zero_effects()
-		animation_on()
-		dsh.timeout(200, function() -- Manool: здесь нужна задержка, иначе - движковый вылет
-			play_item_use(sect, id)
-		end)
-    end
+	
+	-- Юзанье с детектором
+	if get_actor_obj():IsDetectorActive() then
+		sak.send_tip(game.translate_string("use_antirad_1"), game.translate_string("thinking_out_loud"), 1, 10, "g_g", "sak", "red")
+		obj:disable_use()
+		return
+	end
+
+	-- В данный момент анимации недоступны
+	if level.only_movekeys_allowed() or not game.hud_motion_allowed() then
+		obj:disable_use()
+		return
+	end
+
+	animation_on()
+	obj:zero_effects()
+	dsh.timeout(200, function() -- Manool: здесь нужна задержка, иначе - движковый вылет
+		play_item_use(sect, id)
+	end)
 end
 
 function animation_off()
@@ -314,6 +215,7 @@ function animation_on()
 	level.set_actor_allow_ladder(false)
 end
 
+watch_is_active = nil
 local function show_watch(key, bind)
 	if bind ~= key_bindings.kWATCH then return end
 
@@ -322,9 +224,11 @@ local function show_watch(key, bind)
 		or level.main_input_receiver()
 		or level.only_movekeys_allowed()
 		or not game.hud_motion_allowed()
+		or db.actor:ph_capture()
 	then return end
 
 	animation_on()
+	watch_is_active = true
 	local prev_active_slot = db.actor:active_slot()
 	db.actor:activate_slot(255)
 
@@ -343,6 +247,7 @@ local function show_watch(key, bind)
 				dsh.timeout(anm_watch_time, function()
 					db.actor:activate_slot(prev_active_slot)
 					animation_off()
+					watch_is_active = nil
 				end)
 			end)
 		end)

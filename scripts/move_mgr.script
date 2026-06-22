@@ -34,6 +34,10 @@ local extrapolate_hack_type = {
 --  [ "dsc_green_dom_patrol_1_walk" ] = patrol.custom,
 }
 
+-- https://github.com/dsh2dsh/op2ogse/commit/629b8a712be277aed58a56c7042bca8eba9fcec5
+function attach( sm )
+  sm:subscribe({ signal = "on_first_update", fun = this.invalidate_pp_accessibility })
+end
 
 function printf()
 end

@@ -126,6 +126,7 @@ function on_pnv(snd)
 	if not eff then return end
 	flag = true
 	cmd("r_pnv_mode 1")
+	level.set_min_lumscale_amb(0.02)
 	if snd then
 		snd_on:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
 	end
@@ -134,6 +135,7 @@ end
 function off_pnv(snd)
 	flag = false
 	cmd("r_pnv_mode 0")
+	level.set_min_lumscale_amb(0.001)
 	if snd then
 		snd_off:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
 	end

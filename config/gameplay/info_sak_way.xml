@@ -31,26 +31,6 @@
 <info_portion id="strelok_spots_info"><article>strelok_spots</article></info_portion>
 <!-- добавлено для для safe zone в тайнике Стрелка -->
 <info_portion id="actor_in_safe_zone_agro"></info_portion>
-<!-- meelofon_code_pda -->
-<info_portion id="meelofon_code1_info"><article>meelofon_code1</article></info_portion>
-<info_portion id="meelofon_code2_info"><article>meelofon_code2</article></info_portion>
-<info_portion id="meelofon_code3_info"><article>meelofon_code3</article></info_portion>
-<info_portion id="meelofon_code4_info"><article>meelofon_code4</article></info_portion>
-<info_portion id="meelofon_code5_info"><article>meelofon_code5</article></info_portion>
-<info_portion id="meelofon_code6_info"><article>meelofon_code6</article></info_portion>
-<info_portion id="meelofon_code7_info"><article>meelofon_code7</article></info_portion>
-<info_portion id="meelofon_code8_info"><article>meelofon_code8</article></info_portion>
-<info_portion id="meelofon_code9_info"><article>meelofon_code9</article></info_portion>
-<!-- labx10_skelet_pda -->
-<info_portion id="labx10_skelet1_info"><article>labx10_skelet1</article></info_portion>
-<info_portion id="labx10_skelet2_info"><article>labx10_skelet2</article></info_portion>
-<info_portion id="labx10_skelet3_info"><article>labx10_skelet3</article></info_portion>
-<info_portion id="labx10_skelet4_info"><article>labx10_skelet4</article></info_portion>
-<info_portion id="labx10_skelet5_info"><article>labx10_skelet5</article></info_portion>
-<info_portion id="labx10_skelet6_info"><article>labx10_skelet6</article></info_portion>
-<info_portion id="labx10_skelet7_info"><article>labx10_skelet7</article></info_portion>
-<info_portion id="labx10_skelet8_info"><article>labx10_skelet8</article></info_portion>
-<info_portion id="labx10_skelet9_info"><article>labx10_skelet9</article></info_portion>
 <!-- igor.doc - waylander добавлено для для 2.5.1 и 3.0 -->
 <info_portion id="info_stepanych_mosin_start"><article>tex_stepanych_mosin</article></info_portion>
 <info_portion id="info_stepanych_mosin_done"><article_disable>tex_stepanych_mosin</article_disable></info_portion>
@@ -284,17 +264,9 @@
 <!-- mike Добавлено для 7.52 -->
 <info_portion id="tesla_gift_info"></info_portion>
 <info_portion id="deadcity_gift_info"></info_portion>
-<info_portion id="deadcity_supply_info"></info_portion>
 <info_portion id="rad_ivar_drug_gift"></info_portion>
 <!-- mike Добавлено для 7.51 -->
-<info_portion id="borov_PDA_info"></info_portion>
-<info_portion id="vasiliev_PDA_info"></info_portion>
-<info_portion id="docent_borov_PDA_info"></info_portion>
-<info_portion id="docent_borov_end"></info_portion>
 <info_portion id="val_gate_info"></info_portion>
-<info_portion id="marsh_1_data_info"></info_portion>
-<info_portion id="marsh_2_data_info"></info_portion>
-<info_portion id="marsh_3_data_info"></info_portion>
 <info_portion id="marsh_pribor_done"></info_portion>
 <info_portion id="marsh_pribor_aver_start"></info_portion>
 <info_portion id="marsh_pribor_aver_done"></info_portion>
@@ -407,102 +379,7 @@
 <info_portion id="rem_close"></info_portion>
 <info_portion id="rem_open"></info_portion>
 <info_portion id="actor_enemy_for_bandit"></info_portion>
-<info_portion id="rem_1_0"><article>remember_vrach_0</article></info_portion>
-<info_portion id="rem_2_0"><article>remember_botan_0</article></info_portion>
-<info_portion id="rem_3_0"><article>remember_oper_0</article></info_portion>
-<info_portion id="rem_4_0"><article>remember_bandit_0</article></info_portion>
-<info_portion id="rem_5_0"><article>remember_spec_0</article></info_portion>
-<info_portion id="rem_6_0"><article>remember_hunter_0</article></info_portion>
-<info_portion id="rem_7_0"><article>remember_igrok_0</article></info_portion>
-<info_portion id="rem_1_1"><article>remember_vrach_1</article></info_portion>
-<info_portion id="rem_2_1"><article>remember_botan_1</article></info_portion>
-<info_portion id="rem_3_1"><article>remember_oper_1</article></info_portion>
-<info_portion id="rem_4_1"><article>remember_bandit_1</article></info_portion>
-<info_portion id="rem_5_1"><article>remember_spec_1</article></info_portion>
-<info_portion id="rem_6_1"><article>remember_hunter_1</article></info_portion>
-<info_portion id="rem_7_1"><article>remember_igrok_1</article></info_portion>
-<info_portion id="rem_1_2"><article>remember_vrach_2</article></info_portion>
-<info_portion id="rem_2_2"><article>remember_botan_2</article></info_portion>
-<info_portion id="rem_3_2"><article>remember_oper_2</article></info_portion>
-<info_portion id="rem_4_2"><article>remember_bandit_2</article></info_portion>
-<info_portion id="rem_5_2"><article>remember_spec_2</article></info_portion>
-<info_portion id="rem_6_2"><article>remember_hunter_2</article></info_portion>
-<info_portion id="rem_7_2"><article>remember_igrok_2</article></info_portion>
-<info_portion id="rem_1_3"><article>remember_vrach_3</article></info_portion>
-<info_portion id="rem_2_3"><article>remember_botan_3</article></info_portion>
-<info_portion id="rem_3_3"><article>remember_oper_3</article></info_portion>
-<info_portion id="rem_4_3"><article>remember_bandit_3</article></info_portion>
-<info_portion id="rem_5_3"><article>remember_spec_3</article></info_portion>
-<info_portion id="rem_6_3"><article>remember_hunter_3</article></info_portion>
-<info_portion id="rem_7_3"><article>remember_igrok_3</article></info_portion>
-<info_portion id="rem_1_4"><article>remember_vrach_4</article></info_portion>
-<info_portion id="rem_2_4"><article>remember_botan_4</article></info_portion>
-<info_portion id="rem_3_4"><article>remember_oper_4</article></info_portion>
-<info_portion id="rem_4_4"><article>remember_bandit_4</article></info_portion>
-<info_portion id="rem_5_4"><article>remember_spec_4</article></info_portion>
-<info_portion id="rem_6_4"><article>remember_hunter_4</article></info_portion>
-<info_portion id="rem_7_4"><article>remember_igrok_4</article></info_portion>
-<info_portion id="rem_1_5"><article>remember_vrach_5</article></info_portion>
-<info_portion id="rem_2_5"><article>remember_botan_5</article></info_portion>
-<info_portion id="rem_3_5"><article>remember_oper_5</article></info_portion>
-<info_portion id="rem_4_5"><article>remember_bandit_5</article></info_portion>
-<info_portion id="rem_5_5"><article>remember_spec_5</article></info_portion>
-<info_portion id="rem_6_5"><article>remember_hunter_5</article></info_portion>
-<info_portion id="rem_7_5"><article>remember_igrok_5</article></info_portion>
-<info_portion id="rem_1_6"><article>remember_vrach_6</article></info_portion>
-<info_portion id="rem_2_6"><article>remember_botan_6</article></info_portion>
-<info_portion id="rem_3_6"><article>remember_oper_6</article></info_portion>
-<info_portion id="rem_4_6"><article>remember_bandit_6</article></info_portion>
-<info_portion id="rem_5_6"><article>remember_spec_6</article></info_portion>
-<info_portion id="rem_6_6"><article>remember_hunter_6</article></info_portion>
-<info_portion id="rem_7_6"><article>remember_igrok_6</article></info_portion>
-<info_portion id="rem_1_7"><article>remember_vrach_7</article></info_portion>
-<info_portion id="rem_2_7"><article>remember_botan_7</article></info_portion>
-<info_portion id="rem_3_7"><article>remember_oper_7</article></info_portion>
-<info_portion id="rem_4_7"><article>remember_bandit_7</article></info_portion>
-<info_portion id="rem_5_7"><article>remember_spec_7</article></info_portion>
-<info_portion id="rem_6_7"><article>remember_hunter_7</article></info_portion>
-<info_portion id="rem_7_7"><article>remember_igrok_7</article></info_portion>
-<info_portion id="rem_1_8"><article>remember_vrach_8</article></info_portion>
-<info_portion id="rem_2_8"><article>remember_botan_8</article></info_portion>
-<info_portion id="rem_3_8"><article>remember_oper_8</article></info_portion>
-<info_portion id="rem_4_8"><article>remember_bandit_8</article></info_portion>
-<info_portion id="rem_5_8"><article>remember_spec_8</article></info_portion>
-<info_portion id="rem_6_8"><article>remember_hunter_8</article></info_portion>
-<info_portion id="rem_7_8"><article>remember_igrok_8</article></info_portion>
-<info_portion id="rem_1_9"><article>remember_vrach_9</article></info_portion>
-<info_portion id="rem_2_9"><article>remember_botan_9</article></info_portion>
-<info_portion id="rem_3_9"><article>remember_oper_9</article></info_portion>
-<info_portion id="rem_4_9"><article>remember_bandit_9</article></info_portion>
-<info_portion id="rem_5_9"><article>remember_spec_9</article></info_portion>
-<info_portion id="rem_6_9"><article>remember_hunter_9</article></info_portion>
-<info_portion id="rem_7_9"><article>remember_igrok_9</article></info_portion>
-<info_portion id="rem_1_10"><article>remember_vrach_9</article></info_portion>
-<info_portion id="rem_2_10"><article>remember_botan_9</article></info_portion>
-<info_portion id="rem_3_10"><article>remember_oper_9</article></info_portion>
-<info_portion id="rem_4_10"><article>remember_bandit_9</article></info_portion>
-<info_portion id="rem_5_10"><article>remember_spec_9</article></info_portion>
-<info_portion id="rem_6_10"><article>remember_hunter_9</article></info_portion>
-<info_portion id="rem_7_10"><article>remember_igrok_9</article></info_portion>
-<info_portion id="labx10_docs11_info"><article>labx10_docs11_enc</article></info_portion>
-<info_portion id="labx10_docs12_info"><article>labx10_docs12_enc</article></info_portion>
-<info_portion id="labx10_docs13_info"><article>labx10_docs13_enc</article></info_portion>
-<info_portion id="labx10_docs14_info"><article>labx10_docs14_enc</article></info_portion>
-<info_portion id="labx10_docs15_info"><article>labx10_docs15_enc</article></info_portion>
-<info_portion id="labx10_docs16_info"><article>labx10_docs16_enc</article></info_portion>
-<info_portion id="labx10_docs17_info"><article>labx10_docs17_enc</article></info_portion>
-<info_portion id="labx10_docs18_info"><article>labx10_docs18_enc</article></info_portion>
-<info_portion id="labx10_docs19_info"><article>labx10_docs19_enc</article></info_portion>
-<!-- labx10_docent_code_info -->
-<info_portion id="labx10_docent_code1_info"><article>labx10_docent_code1_enc</article></info_portion>
-<info_portion id="labx10_docent_code2_info"><article>labx10_docent_code2_enc</article></info_portion>
-<info_portion id="labx10_docent_code3_info"><article>labx10_docent_code3_enc</article></info_portion>
-<info_portion id="labx10_docent_code4_info"><article>labx10_docent_code4_enc</article></info_portion>
-<info_portion id="labx10_docent_code5_info"><article>labx10_docent_code5_enc</article></info_portion>
-<info_portion id="labx10_docent_code6_info"><article>labx10_docent_code6_enc</article></info_portion>
-<info_portion id="labx10_docent_code7_info"><article>labx10_docent_code7_enc</article></info_portion>
-<info_portion id="labx10_docent_code8_info"><article>labx10_docent_code8_enc</article></info_portion>
-<info_portion id="labx10_docent_code9_info"><article>labx10_docent_code9_enc</article></info_portion>
+
 <info_portion id="pasmurno_info"><disable>groza_info</disable><disable>clear_info</disable><disable>rain_info</disable><disable>vybros_info</disable></info_portion>
 <info_portion id="groza_info"><disable>pasmurno_info</disable><disable>clear_info</disable><disable>rain_info</disable><disable>vybros_info</disable></info_portion>
 <info_portion id="clear_info"><disable>groza_info</disable><disable>pasmurno_info</disable><disable>rain_info</disable><disable>vybros_info</disable></info_portion>
@@ -528,45 +405,9 @@
 <info_portion id="generators_code_door5_info"><article>labx6_exit_code5</article></info_portion>
 <info_portion id="bun_opendoor0"></info_portion>
 <info_portion id="bun_opendoor1"></info_portion>
-<info_portion id="bun_opendoor2"></info_portion>
 <info_portion id="bun_opendoor3"></info_portion>
-<info_portion id="bun_opendoor4"></info_portion>
 <info_portion id="bun_opendoor5"></info_portion>
-<info_portion id="bun_codelock0_info1"></info_portion>
-<info_portion id="bun_codelock0_info2"></info_portion>
-<info_portion id="bun_codelock0_info3"></info_portion>
-<info_portion id="bun_codelock0_info4"></info_portion>
-<info_portion id="bun_codelock0_info5"></info_portion>
-<info_portion id="bun_codelock1_info1"></info_portion>
-<info_portion id="bun_codelock1_info2"></info_portion>
-<info_portion id="bun_codelock1_info3"></info_portion>
-<info_portion id="bun_codelock1_info4"></info_portion>
-<info_portion id="bun_codelock1_info5"></info_portion>
-<info_portion id="bun_codelock2_info1"></info_portion>
-<info_portion id="bun_codelock2_info2"></info_portion>
-<info_portion id="bun_codelock2_info3"></info_portion>
-<info_portion id="bun_codelock2_info4"></info_portion>
-<info_portion id="bun_codelock2_info5"></info_portion>
-<info_portion id="bun_codelock3_info1"></info_portion>
-<info_portion id="bun_codelock3_info2"></info_portion>
-<info_portion id="bun_codelock3_info3"></info_portion>
-<info_portion id="bun_codelock3_info4"></info_portion>
-<info_portion id="bun_codelock3_info5"></info_portion>
-<info_portion id="bun_codelock4_info1"></info_portion>
-<info_portion id="bun_codelock4_info2"></info_portion>
-<info_portion id="bun_codelock4_info3"></info_portion>
-<info_portion id="bun_codelock4_info4"></info_portion>
-<info_portion id="bun_codelock4_info5"></info_portion>
-<info_portion id="bun_codelock5_info1"></info_portion>
-<info_portion id="bun_codelock5_info2"></info_portion>
-<info_portion id="bun_codelock5_info3"></info_portion>
-<info_portion id="bun_codelock5_info4"></info_portion>
-<info_portion id="bun_codelock5_info5"></info_portion>
-<info_portion id="rad_codelock2_info1"></info_portion>
-<info_portion id="rad_codelock2_info2"></info_portion>
-<info_portion id="rad_codelock2_info3"></info_portion>
-<info_portion id="rad_codelock2_info4"></info_portion>
-<info_portion id="rad_codelock2_info5"></info_portion>
+
 <info_portion id="mil_freedom_cook_wakeup"></info_portion>
 
 <info_portion id="zub_flash_marsh_glavn_info"></info_portion>
@@ -576,7 +417,6 @@
 <info_portion id="marsh_gigant_dead"></info_portion>
 <info_portion id="sidor_radar_info"></info_portion>
 <info_portion id="sakharov_radar_info"></info_portion>
-<info_portion id="voronin_post_radar_info"></info_portion>
 <info_portion id="voronin_last_seif"></info_portion>
 <info_portion id="barman_last_seif"></info_portion>
 <info_portion id="docent_last_seif"></info_portion>
@@ -861,7 +701,6 @@
 <info_portion id="kordon_oksana_known_vlad"></info_portion>
 <info_portion id="kordon_oksana_molchun_go"></info_portion>
 <info_portion id="hos_junkman_new_strelok"></info_portion>
-<info_portion id="info_outfit_tourist_prize"></info_portion>
 <info_portion id="hos_junkman_umer"></info_portion>
 <info_portion id="ivancov_val_business_done"></info_portion>
 <info_portion id="kordon_oksana_dead_vlad"></info_portion>
@@ -900,7 +739,6 @@
 <info_portion id="hellcar_help_oreh_no"></info_portion>
 <info_portion id="flame_reload_receipt_start"></info_portion>
 <info_portion id="flame_reload_receipt_have"></info_portion>
-<info_portion id="flame_reload_receipt_many"></info_portion>
 <info_portion id="lim_energetik_1_dialog_end"></info_portion>
 <info_portion id="lim_energetik_2_dialog_end"></info_portion>
 <info_portion id="lim_podval_info"></info_portion>
@@ -968,16 +806,7 @@
 <info_portion id="x18_iq_check_info9"></info_portion>
 <info_portion id="x18_conrol_room_unlock"><action>doc.code_x18_conrol_room</action></info_portion>
 <info_portion id="x18_conrol_room_unlock_in"></info_portion>
-<!-- labx18_code_pda -->
-<info_portion id="x18_conrol_room1_info"><article>x18_conrol_room1</article></info_portion>
-<info_portion id="x18_conrol_room2_info"><article>x18_conrol_room2</article></info_portion>
-<info_portion id="x18_conrol_room3_info"><article>x18_conrol_room3</article></info_portion>
-<info_portion id="x18_conrol_room4_info"><article>x18_conrol_room4</article></info_portion>
-<info_portion id="x18_conrol_room5_info"><article>x18_conrol_room5</article></info_portion>
-<info_portion id="x18_conrol_room6_info"><article>x18_conrol_room6</article></info_portion>
-<info_portion id="x18_conrol_room7_info"><article>x18_conrol_room7</article></info_portion>
-<info_portion id="x18_conrol_room8_info"><article>x18_conrol_room8</article></info_portion>
-<info_portion id="x18_conrol_room9_info"><article>x18_conrol_room9</article></info_portion>
+
 <info_portion id="mil_kurjer_dead"></info_portion>
 <info_portion id="prapor_dead"></info_portion>
 <info_portion id="pri_mon_leader_dead"></info_portion>
@@ -1978,7 +1807,6 @@
 <info_portion id="sidor_in"><disable>sidor_out</disable></info_portion>
 <info_portion id="transfer_amkart_need"></info_portion>
 <info_portion id="transfer_amkart_not_first_time"></info_portion>
-<info_portion id="info_artmod_ameba_slug_gravi_zone"></info_portion>
 <info_portion id="art_exchanger_met"></info_portion>
 <info_portion id="art_exchanger_out"></info_portion>
 <info_portion id="art_exch_glassbeads_start_info"></info_portion>
@@ -1996,15 +1824,10 @@
 <info_portion id="draw"><disable>gg_winner</disable><disable>gg_luser</disable></info_portion>
 <info_portion id="gar_dm_bandits_wait"></info_portion>
 <info_portion id="ecolog_crush_professor_gg_know"></info_portion>
-<info_portion id="bun_codelock2_info"><article>tex_bun_codelock2_info</article></info_portion>
 <info_portion id="bar_codelock1_info"><article>tex_bar_codelock1_info</article></info_portion>
 <info_portion id="bar_codelock1_unlock"><disable>bar_codelock1_lock</disable></info_portion>
 <info_portion id="bar_codelock1_lock"><disable>bar_codelock1_unlock</disable></info_portion>
 <info_portion id="bar_door1_closed"></info_portion>
-<info_portion id="bun_codelock1_open"></info_portion>
-<info_portion id="bun_codelock2_open"></info_portion>
-<info_portion id="bun_codelock3_open"></info_portion>
-<info_portion id="bun_codelock4_open"></info_portion>
 <info_portion id="garmonika_done_self"></info_portion>
 <info_portion id="garmonika_done_self2"></info_portion>
 <info_portion id="info_letter_for_borov"><article>tex_info_letter_for_borov</article></info_portion>
@@ -2256,27 +2079,14 @@
 <info_portion id="new_teleport_anomalies"></info_portion>
 <info_portion id="new_teleport_anomalies_done"></info_portion>
 <info_portion id="esc_dram_pass_on"></info_portion>
-<info_portion id="esc_dram_pass_off"></info_portion>
 <info_portion id="esc_dram_pass_fire"></info_portion>
 <info_portion id="actor_zoneguard_info"></info_portion>
 <info_portion id="gar_dm_novice_rescued"></info_portion>
 <info_portion id="gar_dm_novice_not_vykup"></info_portion>
 <info_portion id="gar_dm_novice_gave_vykup"></info_portion>
 <info_portion id="gar_dm_novice_gave_help"></info_portion>
-<info_portion id="price_sidor"><article>price_sidor</article></info_portion>
-<info_portion id="price_kanistra_esc"><article>price_kanistra_esc</article></info_portion>
-<info_portion id="price_kanistra_bar"><article>price_kanistra_bar</article></info_portion>
-<info_portion id="price_artm_esc"><article>price_artm_esc</article></info_portion>
-<info_portion id="price_barman"><article>price_barman</article></info_portion>
-<info_portion id="price_petrenko"><article>price_petrenko</article></info_portion>
-<info_portion id="price_scraga"><article>price_scraga</article></info_portion>
-<info_portion id="price_ara"><article>price_ara</article></info_portion>
-<info_portion id="price_red_forest_lesnik"><article>price_red_forest_lesnik</article></info_portion>
-<info_portion id="price_jila"><article>price_jila</article></info_portion>
-<info_portion id="price_kuznezov"><article>price_kuznezov</article></info_portion>
-<info_portion id="price_sherstuk"><article>price_sherstuk</article></info_portion>
-<info_portion id="price_sultan"><article>price_sultan</article></info_portion>
-<info_portion id="petrenko_sil_buy"></info_portion>
+<info_portion id="petrenko_groza_sil_buy"></info_portion>
+<info_portion id="petrenko_groza_gl_buy"></info_portion>
 <info_portion id="bar_retro"><disable>bar_modern</disable><disable>bar_rockn</disable><disable>bar_rock</disable></info_portion>
 <info_portion id="bar_rock"><disable>bar_retro</disable><disable>bar_modern</disable><disable>bar_rockn</disable></info_portion>
 <info_portion id="bar_rockn"><disable>bar_retro</disable><disable>bar_modern</disable><disable>bar_rock</disable></info_portion>
@@ -2499,6 +2309,7 @@
 <info_portion id="agr_find_rygyi_3have"></info_portion>
 <info_portion id="agr_find_rygyi_done"><article_disable>tex_rygyi_help</article_disable></info_portion>
 <info_portion id="bandit_krisyk_umer"></info_portion>
+<info_portion id="krisyk_killed_by_actor"><action>sak.check_krisyk_pda</action></info_portion>
 <info_portion id="bandit_krisyk_not_enemy"></info_portion>
 <info_portion id="bandit_krisyk_enemy"><disable>bandit_krisyk_not_enemy</disable></info_portion>
 <info_portion id="agroprom_vodka_start"><article>tex_agroprom_prikaz</article></info_portion>
@@ -2664,8 +2475,8 @@
 <info_portion id="borov_11_start"><article>borov_kontainer_article</article></info_portion>
 <info_portion id="borov_11_saharov_start"><article>tex_borov_11_saharov</article></info_portion>
 <info_portion id="borov_11_start_no"><article_disable>borov_kontainer_article</article_disable></info_portion>
-<info_portion id="borov_11_saharov_done"><disable>borov_11_saharov_no</disable><article_disable>borov_kontainer_article</article_disable><article_disable>tex_borov_11_saharov</article_disable></info_portion>
-<info_portion id="borov_11_saharov_no"></info_portion>
+<info_portion id="sakharov_val_container_re_info"></info_portion>
+<info_portion id="sakharov_val_container_done_info"><disable>sakharov_val_container_re_info</disable><article_disable>borov_kontainer_article</article_disable><article_disable>tex_borov_11_saharov</article_disable></info_portion>
 <info_portion id="borov_food_max_info"></info_portion>
 <info_portion id="borov_help_entres_no"></info_portion>
 <info_portion id="borov_help_entres_yes"></info_portion>
@@ -2748,708 +2559,6 @@
 <info_portion id="info_artmod_dummy_spring_galant"><article>enc_artmod_dummy_spring_galant</article></info_portion>
 <info_portion id="info_artmod_blood_ice"><article>enc_artmod_blood_ice</article></info_portion>
 
-<info_portion id="info_fakeartmod1">
-	<article>enc_fakeartmod1</article>
-</info_portion>
-	
-<info_portion id="info_fakeartmod2">
-	<article>enc_fakeartmod2</article>
-</info_portion>
-
-<info_portion id="info_fakeartmod3">
-	<article>enc_fakeartmod3</article>
-</info_portion>
-
-<info_portion id="info_fakeartmod4">
-	<article>enc_fakeartmod4</article>
-</info_portion>
-
-<info_portion id="info_fakeartmod5">
-	<article>enc_fakeartmod5</article>
-</info_portion>
-
-<info_portion id="info_fakeartmod_m">
-	<article>enc_fakeartmod_m</article>
-</info_portion>
-
-<info_portion id="info_fakeartmod_mm">
-	<article>enc_fakeartmod_mm</article>
-</info_portion>
-
-<info_portion id="info_fakeartmod_gm">
-	<article>enc_fakeartmod_gm</article>
-</info_portion>
-
-<info_portion id="info_fakeartmod_a">
-	<article>enc_fakeartmod_a</article>
-</info_portion>
-
 <info_portion id="arts_notebook_read"></info_portion>
-
-<info_portion id="all_article_disable">
-<article_disable>art_belt</article_disable>
-<article_disable>zone_pda</article_disable>
-<article_disable>enc_lost_lebedev_pda</article_disable>
-
-<article_disable>price_artm_esc</article_disable>
-<article_disable>price_kanistra_bar</article_disable>
-<article_disable>price_kanistra_esc</article_disable>
-<article_disable>price_sultan</article_disable>
-<article_disable>price_sidor</article_disable>
-<article_disable>price_barman</article_disable>
-<article_disable>price_petrenko</article_disable>
-<article_disable>price_scraga</article_disable>
-<article_disable>price_sak</article_disable>
-<article_disable>price_red_forest_lesnik</article_disable>
-<article_disable>price_jila</article_disable>
-<article_disable>price_kuznezov</article_disable>
-<article_disable>price_sherstuk</article_disable>
-
-<article_disable>x18_order_code</article_disable>
-<article_disable>zone_theory</article_disable>
-<article_disable>zone_mask_theory</article_disable>
-<article_disable>marsh_tuzla_document</article_disable>
-<article_disable>zone_teleport_theory</article_disable>
-<article_disable>merc_monolit_weapon</article_disable>
-<article_disable>botans_report_info_tex</article_disable>
-<article_disable>yan_vasilyev_info</article_disable>
-<article_disable>scarman_rem</article_disable>
-<article_disable>many_in_zone</article_disable>
-<article_disable>info_amk_recipt_tears_electra</article_disable>
-<article_disable>tex_yan_semenov_resiept</article_disable>
-<article_disable>tex_bar_korovan_0</article_disable>
-
-<article_disable>borov_harmonica_article</article_disable>
-<article_disable>tex_agr_klyk_0</article_disable>
-<article_disable>tex_gar_flame_0</article_disable>
-<article_disable>tex_gar_dm_bandits_0</article_disable>
-<article_disable>tex_agr_find_rygyi</article_disable>
-
-<article_disable>tex_bandit_krisyk</article_disable>
-<article_disable>tex_yan_scientist_teleport_01</article_disable>
-<article_disable>tex_yan_scientist_teleport_02</article_disable>
-<article_disable>tex_yan_scientist_teleport_03</article_disable>
-<article_disable>tex_mil_trader_teleport_07</article_disable>
-<article_disable>tex_mil_max_teleport_08</article_disable>
-<article_disable>tex_fanat_teleport_04</article_disable>
-
-<article_disable>tex_escape_lager_volk_document</article_disable>
-<article_disable>tex_mil_volk_resiver</article_disable>
-<article_disable>tex_sidor_conserv</article_disable>
-<article_disable>tex_sidor_kishka</article_disable>
-<article_disable>tex_esc_tolik_five_teily</article_disable>
-<article_disable>tex_esc_petruha_toz</article_disable>
-<article_disable>tex_esc_shustryi_medusa</article_disable>
-<article_disable>tex_esc_bridge_vodka</article_disable>
-<article_disable>tex_esc_fox_medkit</article_disable>
-<article_disable>tex_gar_dram_novice_mp5_m1</article_disable>
-<article_disable>tex_gar_dram_novice_burer_hand</article_disable>
-<article_disable>neumeha_outfit_article</article_disable>
-<article_disable>tex_gar_dolg_flesh_eye</article_disable>
-<article_disable>tex_gar_dolg_krovosos_jaw</article_disable>
-<article_disable>tex_gar_dolg_psevdodog_tail</article_disable>
-<article_disable>tex_bar_dolg_base_guard_art</article_disable>
-<article_disable>tex_agr_krot_PDA</article_disable>
-<article_disable>tex_mil_Svoboda_trader_outfit</article_disable>
-<article_disable>tex_mil_Svoboda_trader_ammo</article_disable>
-
-<article_disable>tex_ratcatcher_order</article_disable>
-<article_disable>tex_val_escort_PDA</article_disable>
-<article_disable>tex_bar_dolg_petrenko_gaussgan</article_disable>
-<article_disable>tex_bar_dolg_petrenko_electra_flash</article_disable>
-<article_disable>tex_bar_dolg_petrenko_exo</article_disable>
-
-<article_disable>tex_yan_kruglov_decoder</article_disable>
-<article_disable>tex_yan_kruglov_art</article_disable>
-<article_disable>tex_yan_kruglov_green_art</article_disable>
-<article_disable>tex_yan_scientist_books</article_disable>
-<article_disable>kicenko_playboy_article</article_disable>
-<article_disable>sakharov_rf_way_article</article_disable>
-<article_disable>tex_yan_scientist_find_case</article_disable>
-<article_disable>tex_bar_dolg_leader_find_case</article_disable>
-<article_disable>tex_mil_lukash_find_dinamit</article_disable>
-<article_disable>tex_esc_reward_case</article_disable>
-
-<article_disable>amk_recipt_steel_kolobok</article_disable>
-<article_disable>enc_amk_recipt_steel_kolobok</article_disable>
-<article_disable>amk_recipt_titan_kolobok</article_disable>
-<article_disable>enc_amk_recipt_titan_kolobok</article_disable>
-<article_disable>amk_recipt_almaz_kolobok</article_disable>
-<article_disable>enc_amk_recipt_almaz_kolobok</article_disable>
-<article_disable>amk_recipt_controller_skalp</article_disable>
-<article_disable>enc_amk_recipt_controller_skalp</article_disable>
-<article_disable>amk_recipt_souls</article_disable>
-<article_disable>enc_amk_recipt_souls_drops</article_disable>
-<article_disable>enc_amk_recipt_souls_fire</article_disable>
-<article_disable>enc_amk_recipt_souls_cristal</article_disable>
-<article_disable>enc_amk_recipt_souls_bengal</article_disable>
-<article_disable>amk_recipt_tears_electra</article_disable>
-<article_disable>enc_amk_recipt_tears_electra</article_disable>
-<article_disable>amk_recipt_tears_fire</article_disable>
-<article_disable>enc_amk_recipt_tears_fire</article_disable>
-<article_disable>amk_recipt_tears_chimaera</article_disable>
-<article_disable>enc_amk_recipt_tears_chimaera</article_disable>
-<article_disable>amk_recipt_tears_gigant</article_disable>
-<article_disable>enc_amk_recipt_tears_gigant</article_disable>
-<article_disable>amk_recipt_grandmother_glassbeards</article_disable>
-<article_disable>enc_amk_recipt_grandmother_glassbeards</article_disable>
-<article_disable>amk_recipt_pra_grandmother_glassbeards</article_disable>
-<article_disable>enc_amk_recipt_pra_grandmother_glassbeards</article_disable>
-<article_disable>amk_recipt_burer_grandmother_glassbeards</article_disable>
-<article_disable>enc_amk_recipt_burer_grandmother_glassbeards</article_disable>
-<article_disable>amk_recipt_burer_pra_grandmother_glassbeards</article_disable>
-<article_disable>enc_amk_recipt_burer_pra_grandmother_glassbeards</article_disable>
-<article_disable>amk_recipt_dikoobraz</article_disable>
-<article_disable>enc_amk_recipt_dikoobraz</article_disable>
-<article_disable>amk_recipt_electra_dikoobraz</article_disable>
-<article_disable>enc_amk_recipt_electra_dikoobraz</article_disable>
-<article_disable>amk_recipt_sopl_dikoobraz</article_disable>
-<article_disable>enc_amk_recipt_sopl_dikoobraz</article_disable>
-<article_disable>amk_recipt_stone_dikoobraz_1</article_disable>
-<article_disable>amk_recipt_stone_dikoobraz_2</article_disable>
-<article_disable>enc_amk_recipt_stone_dikoobraz</article_disable>
-<article_disable>amk_recipt_giant_small_brother</article_disable>
-<article_disable>enc_amk_recipt_giant_small_brother</article_disable>
-<article_disable>amk_recipt_shkura</article_disable>
-<article_disable>enc_amk_recipt_shkura</article_disable>
-<article_disable>amk_recipt_cheshya</article_disable>
-<article_disable>enc_amk_recipt_cheshya</article_disable>
-<article_disable>amk_recipt_pancir</article_disable>
-<article_disable>enc_amk_recipt_pancir</article_disable>
-<article_disable>amk_recipt_simbion</article_disable>
-<article_disable>enc_amk_recipt_simbion</article_disable>
-<article_disable>amk_recipt_dummy</article_disable>
-<article_disable>enc_amk_recipt_dummy_puding</article_disable>
-<article_disable>amk_recipt_dummy_fire</article_disable>
-<article_disable>enc_amk_recipt_dummy_fire</article_disable>
-<article_disable>amk_recipt_dummy_bright</article_disable>
-<article_disable>enc_amk_recipt_dummy_bright</article_disable>
-<article_disable>amk_recipt_dummy_moon</article_disable>
-<article_disable>enc_amk_recipt_dummy_moon</article_disable>
-<article_disable>amk_recipt_fake</article_disable>
-
-<article_disable>tutorial_flamethrower</article_disable>
-
-<article_disable>zone_zone-story_story-2006</article_disable>
-<article_disable>zone_zone-story_story-2008</article_disable>
-<article_disable>zone_zone-story_story-2010</article_disable>
-<article_disable>zone_zone-story_story-raid</article_disable>
-<article_disable>zone_anomalies_bald</article_disable>
-<article_disable>zone_anomalies_gravi</article_disable>
-<article_disable>zone_anomalies_meat</article_disable>
-<article_disable>zone_anomalies_zharka</article_disable>
-<article_disable>zone_anomalies_electra</article_disable>
-<article_disable>zone_anomalies_fuzz</article_disable>
-<article_disable>zone_anomalies_radioactive</article_disable>
-<article_disable>zone_anomalies_ameba</article_disable>
-<article_disable>zone_locations_escape</article_disable>
-<article_disable>zone_locations_garbage</article_disable>
-<article_disable>zone_locations_agroprom</article_disable>
-<article_disable>zone_locations_darkdolina</article_disable>
-<article_disable>zone_locations_bar</article_disable>
-<article_disable>zone_locations_rostok</article_disable>
-<article_disable>zone_locations_yantar</article_disable>
-<article_disable>zone_locations_military-loc</article_disable>
-<article_disable>zone_locations_radar</article_disable>
-<article_disable>zone_locations_pripiat</article_disable>
-<article_disable>zone_locations_stancia</article_disable>
-<article_disable>mutant_crow_general</article_disable>
-<article_disable>mutant_flesh_general</article_disable>
-<article_disable>mutant_cat_general</article_disable>
-<article_disable>mutant_burer_general</article_disable>
-<article_disable>mutant_zombie_general</article_disable>
-<article_disable>mutant_zombieg_general</article_disable>
-<article_disable>mutant_chimera_general</article_disable>
-<article_disable>mutant_blind_general</article_disable>
-<article_disable>mutant_tushkano</article_disable>
-<article_disable>mutant_boar_general</article_disable>
-<article_disable>mutant_pseudodog_general</article_disable>
-<article_disable>mutant_bloodsucker_general</article_disable>
-<article_disable>mutant_pseudogiant_general</article_disable>
-<article_disable>mutant_poltergeist_general</article_disable>
-<article_disable>mutant_snork_general</article_disable>
-<article_disable>social_military_army</article_disable>
-<article_disable>social_military_milstalkers</article_disable>
-<article_disable>social_scientists_mobile-labs</article_disable>
-<article_disable>social_stalker-clans_duty</article_disable>
-<article_disable>social_stalker-clans_freedom</article_disable>
-<article_disable>social_stalker-clans_monolith</article_disable>
-<article_disable>social_stalker-clans_zomstalkers</article_disable>
-<article_disable>social_stalker-clans_bandits</article_disable>
-<article_disable>social_stalker-clans_killers</article_disable>
-<article_disable>social_stalker-clans_loners</article_disable>
-<article_disable>tutorial_overload</article_disable>
-<article_disable>tutorial_radiation</article_disable>
-<article_disable>tutorial_weakness</article_disable>
-<article_disable>tutorial_wound</article_disable>
-<article_disable>zone_zone-story_story-2006</article_disable>
-<article_disable>zone_zone-story_story-2008</article_disable>
-<article_disable>zone_zone-story_story-2010</article_disable>
-<article_disable>zone_zone-story_story-raid</article_disable>
-<article_disable>zone_anomalies_bald</article_disable>
-<article_disable>zone_anomalies_gravi</article_disable>
-<article_disable>zone_anomalies_meat</article_disable>
-<article_disable>zone_anomalies_zharka</article_disable>
-<article_disable>zone_anomalies_electra</article_disable>
-<article_disable>zone_anomalies_fuzz</article_disable>
-<article_disable>zone_anomalies_radioactive</article_disable>
-<article_disable>zone_anomalies_ameba</article_disable>
-<article_disable>zone_anomalies_greedy</article_disable>
-<article_disable>zone_anomalies_psi_field</article_disable>
-<article_disable>zone_locations_escape</article_disable>
-<article_disable>zone_locations_garbage</article_disable>
-<article_disable>zone_locations_agroprom</article_disable>
-<article_disable>zone_locations_darkdolina</article_disable>
-<article_disable>zone_locations_bar</article_disable>
-<article_disable>zone_locations_rostok</article_disable>
-<article_disable>zone_locations_yantar</article_disable>
-<article_disable>zone_locations_military-loc</article_disable>
-<article_disable>zone_locations_radar</article_disable>
-<article_disable>zone_locations_pripiat</article_disable>
-<article_disable>zone_locations_stancia</article_disable>
-<article_disable>mutant_crow_general</article_disable>
-<article_disable>mutant_flesh_general</article_disable>
-<article_disable>mutant_blind_general</article_disable>
-<article_disable>mutant_cat_general</article_disable>
-<article_disable>mutant_tushkano</article_disable>
-<article_disable>mutant_boar_general</article_disable>
-<article_disable>mutant_pseudodog_general</article_disable>
-<article_disable>mutant_bloodsucker_general</article_disable>
-<article_disable>mutant_fracture_general</article_disable>
-<article_disable>mutant_chimera_general</article_disable>
-<article_disable>mutant_burer_general</article_disable>
-<article_disable>mutant_zombie_general</article_disable>
-<article_disable>mutant_zombieg_general</article_disable>
-<article_disable>mutant_pseudogiant_general</article_disable>
-<article_disable>mutant_poltergeist_general</article_disable>
-<article_disable>mutant_controller_general</article_disable>
-<article_disable>mutant_snork_general</article_disable>
-<article_disable>social_military_army</article_disable>
-<article_disable>social_military_milstalkers</article_disable>
-<article_disable>social_scientists_mobile-labs</article_disable>
-<article_disable>social_stalker-clans_duty</article_disable>
-<article_disable>social_stalker-clans_freedom</article_disable>
-<article_disable>social_stalker-clans_monolith</article_disable>
-<article_disable>social_stalker-clans_zomstalkers</article_disable>
-<article_disable>social_stalker-clans_bandits</article_disable>
-<article_disable>social_stalker-clans_killers</article_disable>
-<article_disable>social_stalker-clans_loners</article_disable>
-<article_disable>zone_anomalies_meat</article_disable>
-<article_disable>about_enciclopedia</article_disable>
-<article_disable>sl_beginning</article_disable>
-<article_disable>esc_flash_task_descr</article_disable>
-<article_disable>sl_first_opinions</article_disable>
-
-<article_disable>esc_fox_help</article_disable>
-<article_disable>sl_usefull_info</article_disable>
-<article_disable>storyline_seryi_info</article_disable>
-<article_disable>esc_volk_dynamite</article_disable>
-<article_disable>defend_novice</article_disable>
-<article_disable>kill_factory_bandits</article_disable>
-
-<article_disable>tutorial_moving_anomaly</article_disable>
-<article_disable>esc_provodnik_pda</article_disable>
-
-<article_disable>sl_first_deep_raid</article_disable>
-<article_disable>agr_military_case</article_disable>
-<article_disable>journal_after_agroprom_documents</article_disable>
-<article_disable>agr_journal_krot</article_disable>
-<article_disable>agr_journal_cache</article_disable>
-
-<article_disable>agr_nii_security_plan</article_disable>
-<article_disable>agr_nii_fab_mil_task</article_disable>
-
-<article_disable>dar_password_info1</article_disable>
-<article_disable>dar_password_info11</article_disable>
-<article_disable>dar_password_info2</article_disable>
-<article_disable>dar_password_info22</article_disable>
-<article_disable>sl_x18_dream</article_disable>
-<article_disable>dar_document2</article_disable>
-<article_disable>dar_document3</article_disable>
-<article_disable>dar_document4</article_disable>
-<article_disable>dar_document5</article_disable> 
-
-<article_disable>journal_before_darklab_documents</article_disable>
-<article_disable>journal_bar_darklab_documents</article_disable>
-<article_disable>journal_bar_x16_documents</article_disable>
-<article_disable>descr_bar_radar_deactivate</article_disable>
-<article_disable>journal_before_radar_task</article_disable>
-
-<article_disable>journal_before_vasilyev_pda</article_disable>
-<article_disable>yan_vasilyev_info</article_disable>
-
-<article_disable>journal_after_kill_brain</article_disable>
-
-<article_disable>mil_flash_ugrumy</article_disable>
-<article_disable>mil_flash_bandit</article_disable>
-<article_disable>mil_flash_max</article_disable>
-<article_disable>mil_courier_doc</article_disable>
-
-<article_disable>rad_code_door_info</article_disable>
-<article_disable>rad_sleep_info</article_disable>
-<article_disable>bun_code</article_disable>
-
-
-<article_disable>pri_decoder_docs_conclusion_art</article_disable>
-
-<article_disable>zones_mystery</article_disable>
-<article_disable>sl_monolith_off</article_disable>
-
-<article_disable>art_collection_info1</article_disable>
-<article_disable>art_collection_info2</article_disable>
-<article_disable>art_collection_info3</article_disable>
-<article_disable>art_collection_info4</article_disable>
-<article_disable>art_collection_info5</article_disable>
-<article_disable>art_collection_info6</article_disable>
-<article_disable>art_collection_info7</article_disable>
-<article_disable>art_collection_info8</article_disable>
-<article_disable>art_collection_info9</article_disable>
-<article_disable>art_collection_info10</article_disable>
-<article_disable>art_collection_info11</article_disable>
-<article_disable>art_collection_info12</article_disable>
-<article_disable>art_collection_info13</article_disable>
-<article_disable>art_collection_info14</article_disable>
-<article_disable>art_collection_info15</article_disable>
-<article_disable>art_collection_info16</article_disable>
-<article_disable>art_collection_info17</article_disable>
-<article_disable>art_collection_info18</article_disable>
-<article_disable>art_collection_info19</article_disable>
-<article_disable>art_collection_info20</article_disable>
-
-<article_disable>resiept_activ_anom_info</article_disable>
-<article_disable>enc_marsh_zapiska_1</article_disable>
-<article_disable>enc_marsh_zapiska_2</article_disable>
-<article_disable>enc_marsh_zapiska_3</article_disable>
-<article_disable>enc_marsh_zapiska_4</article_disable>
-<article_disable>enc_marsh_zapiska_5</article_disable>
-<article_disable>enc_marsh_zapiska_6</article_disable>
-<article_disable>enc_marsh_zapiska_7</article_disable>
-<article_disable>esc_upir_bio</article_disable>
-<article_disable>cherep_bio</article_disable>
-<article_disable>master_bio</article_disable>
-<article_disable>ivanzov_bio</article_disable>
-<article_disable>dolgovazyi_bio</article_disable>
-<article_disable>docent_bio</article_disable>
-<article_disable>osvedomitel_bio</article_disable>
-<article_disable>bes_bio</article_disable>
-<article_disable>krot_bio</article_disable>
-<article_disable>koval_bio</article_disable>
-<article_disable>esc_vorobey_bio</article_disable>
-<article_disable>esc_fanat_bio</article_disable>
-<article_disable>esc_neumeha_bio</article_disable>
-<article_disable>esc_fox_bio</article_disable>
-<article_disable>esc_soldier_commander_bio</article_disable>
-<article_disable>esc_wolf_bio</article_disable>
-<article_disable>esc_stas_bio</article_disable>
-<article_disable>escape_trader_bio</article_disable>
-<article_disable>esc_tolik_bio</article_disable>
-<article_disable>esc_shustryi_bio</article_disable>
-<article_disable>esc_petruha_bio</article_disable>
-<article_disable>enc_artmod_battery_jump</article_disable>
-<article_disable>tex_minigame_bandit</article_disable>
-<article_disable>tex_bun_codelock2_info</article_disable>
-<article_disable>tex_bar_codelock1_info</article_disable>
-<article_disable>tex_info_letter_for_borov</article_disable>
-<article_disable>tex_docent_garmonika_done</article_disable>
-<article_disable>tex_x18_codelock3_info</article_disable>
-<article_disable>tex_pseudo_ghost</article_disable>
-
-<article_disable>garmonika_letter1</article_disable>
-<article_disable>garmonika_letter2</article_disable>
-<article_disable>garmonika_letter3</article_disable>
-<article_disable>garmonika_letter4</article_disable>
-<article_disable>garmonika_letter5</article_disable>
-<article_disable>garmonika_letter6</article_disable>
-<article_disable>garmonika_letter7</article_disable>
-<article_disable>garmonika_letter8</article_disable>
-<article_disable>garmonika_letter9</article_disable>
-<article_disable>garmonika_letter10</article_disable>
-<article_disable>first_remember</article_disable>
-<article_disable>first_remember_art1</article_disable>
-<article_disable>first_remember_art2</article_disable>
-<article_disable>first_remember_art3</article_disable>
-<article_disable>kontroler_diary_1_doc_1</article_disable>
-<article_disable>kontroler_diary_1_doc_2</article_disable>
-<article_disable>kontroler_diary_2_doc_1</article_disable>
-<article_disable>kontroler_diary_2_doc_2</article_disable>
-<article_disable>kontroler_diary_2_doc_3</article_disable>
-<article_disable>kontroler_diary_2_doc_4</article_disable>
-<article_disable>kontroler_diary_3_doc_1</article_disable>
-<article_disable>kontroler_diary_3_doc_2</article_disable>
-<article_disable>kontroler_diary_3_doc_3</article_disable>
-<article_disable>kontroler_diary_3_doc_4</article_disable>
-<article_disable>kontroler_diary_4_doc_1</article_disable>
-<article_disable>kontroler_diary_5_doc_1</article_disable>
-<article_disable>kontroler_diary_5_doc_2</article_disable>
-<article_disable>kontroler_diary_6_doc_1</article_disable>
-<article_disable>kontroler_diary_7_doc_1</article_disable>
-<article_disable>kontroler_diary_7_doc_2</article_disable>
-<article_disable>kontroler_diary_8_doc_1</article_disable>
-<article_disable>kontroler_diary_9_doc_1</article_disable>
-<article_disable>kontroler_diary_10_doc_1</article_disable>
-<article_disable>kontroler_diary_11_doc_1</article_disable>
-<article_disable>kontroler_diary_11_doc_2</article_disable>
-<article_disable>kontroler_diary_12_doc_1</article_disable>
-<article_disable>kontroler_diary_12_doc_2</article_disable>
-<article_disable>kontroler_diary_13_doc_1</article_disable>
-<article_disable>kontroler_diary_14_doc_1</article_disable>
-<article_disable>kontroler_diary_14_doc_2</article_disable>
-<article_disable>kontroler_diary_15_doc_1</article_disable>
-<article_disable>kontroler_diary_15_doc_2</article_disable>
-<article_disable>kontroler_diary_15_doc_3</article_disable>
-<article_disable>kontroler_diary_16_doc_1</article_disable>
-<article_disable>kontroler_diary_16_doc_2</article_disable>
-<article_disable>kontroler_diary_16_doc_3</article_disable>
-<article_disable>kontroler_diary_16_doc_4</article_disable>
-<article_disable>kontroler_diary_17_doc_1</article_disable>
-<article_disable>kontroler_diary_17_doc_2</article_disable>
-<article_disable>kontroler_diary_17_doc_3</article_disable>
-<article_disable>enc_info_red_battery</article_disable>
-<article_disable>enc_info_red_spring</article_disable>
-<article_disable>enc_info_red_pellicle</article_disable>
-<article_disable>enc_info_green_vyvert</article_disable>
-<article_disable>enc_info_green_medusa</article_disable>
-<article_disable>enc_info_green_blood</article_disable>
-<article_disable>enc_info_dummy_dummy_new</article_disable>
-<article_disable>enc_info_medus_new</article_disable>
-<article_disable>ways_info_way100a</article_disable>
-<article_disable>ways_info_way100a</article_disable>
-<article_disable>ways_info_way101a</article_disable>
-<article_disable>ways_info_way101a</article_disable>
-<article_disable>ways_info_way102a</article_disable>
-<article_disable>ways_info_way102a</article_disable>
-<article_disable>ways_info_way104a</article_disable>
-<article_disable>ways_info_way104a</article_disable>
-<article_disable>ways_info_way105a</article_disable>
-<article_disable>ways_info_way105a</article_disable>
-<article_disable>ways_info_way106a</article_disable>
-<article_disable>ways_info_way106a</article_disable>
-<article_disable>ways_info_way107a</article_disable>
-<article_disable>ways_info_way107a</article_disable>
-<article_disable>ways_info_way108a</article_disable>
-<article_disable>ways_info_way108a</article_disable>
-<article_disable>ways_info_way109a</article_disable>
-<article_disable>ways_info_way109a</article_disable>
-<article_disable>ways_info_way110a</article_disable>
-<article_disable>ways_info_way110a</article_disable>
-<article_disable>ways_info_way111a</article_disable>
-<article_disable>ways_info_way111a</article_disable>
-<article_disable>ways_info_way112a</article_disable>
-<article_disable>ways_info_way112a</article_disable>
-<article_disable>ways_info_way113a</article_disable>
-<article_disable>ways_info_way113a</article_disable>
-<article_disable>ways_info_way114a</article_disable>
-<article_disable>ways_info_way114a</article_disable>
-<article_disable>ways_info_way116a</article_disable>
-<article_disable>ways_info_way116a</article_disable>
-<article_disable>ways_info_way118a</article_disable>
-<article_disable>ways_info_way118a</article_disable>
-<article_disable>ways_info_way130a</article_disable>
-<article_disable>ways_info_way130a</article_disable>
-<article_disable>ways_info_way135a</article_disable>
-<article_disable>ways_info_way135a</article_disable>
-<article_disable>ways_info_way138a</article_disable>
-<article_disable>ways_info_way138a</article_disable>
-<article_disable>ways_info_way154a</article_disable>
-<article_disable>ways_info_way154a</article_disable>
-<article_disable>ways_info_way155a</article_disable>
-<article_disable>ways_info_way155a</article_disable>
-<article_disable>ways_info_way156a</article_disable>
-<article_disable>ways_info_way156a</article_disable>
-<article_disable>ways_info_way158a</article_disable>
-<article_disable>ways_info_way158a</article_disable>
-<article_disable>ways_info_way158a</article_disable>
-<article_disable>ways_info_way158a</article_disable>
-<article_disable>ways_info_way162a</article_disable>
-<article_disable>ways_info_way162a</article_disable>
-<article_disable>ways_info_way163a</article_disable>
-<article_disable>ways_info_way163a</article_disable>
-<article_disable>ways_info_way164a</article_disable>
-<article_disable>ways_info_way164a</article_disable>
-<article_disable>ways_info_way165a</article_disable>
-<article_disable>ways_info_way165a</article_disable>
-<article_disable>ways_info_way166a</article_disable>
-<article_disable>ways_info_way166a</article_disable>
-<article_disable>ways_info_way178a</article_disable>
-<article_disable>ways_info_way178a</article_disable>
-<article_disable>ways_info_way183a</article_disable>
-<article_disable>ways_info_way183a</article_disable>
-<article_disable>ways_info_way184a</article_disable>
-<article_disable>ways_info_way184a</article_disable>
-<article_disable>ways_info_way186a</article_disable>
-<article_disable>ways_info_way186a</article_disable>
-<article_disable>ways_info_way187a</article_disable>
-
-<article_disable>tex_agr_find_rygyi</article_disable>
-
-<article_disable>tex_sidor_conserv</article_disable>
-<article_disable>tex_sidor_kishka</article_disable>
-<article_disable>tex_esc_tolik_five_teily</article_disable>
-<article_disable>tex_escape_lager_volk_document</article_disable>
-<article_disable>enc_artmod_glassbeads_ice</article_disable>
-<article_disable>enc_artmod_rusty_sea-urchin_ice</article_disable>
-<article_disable>enc_artmod_ameba_slug_ice</article_disable>
-<article_disable>enc_artmod_baloon_sakbuzz</article_disable>
-<article_disable>enc_artmod_sul_new_ice</article_disable>
-<article_disable>tex_esc_petruha_toz</article_disable>
-<article_disable>tex_esc_shustryi_medusa</article_disable>
-<article_disable>tex_esc_bridge_vodka</article_disable>
-<article_disable>tex_esc_fox_medkit</article_disable>
-<article_disable>tex_gar_dram_novice_mp5_m1</article_disable>
-<article_disable>tex_gar_dram_novice_burer_hand</article_disable>
-
-<article_disable>tex_gar_dolg_flesh_eye</article_disable>
-<article_disable>tex_gar_dolg_krovosos_jaw</article_disable>
-<article_disable>tex_gar_dolg_psevdodog_tail</article_disable>
-<article_disable>tex_bar_dolg_base_guard_art</article_disable>
-<article_disable>tex_agr_krot_PDA</article_disable>
-<article_disable>tex_mil_Svoboda_trader_outfit</article_disable>
-<article_disable>tex_mil_Svoboda_trader_ammo</article_disable>
-<article_disable>tex_val_pula_ammo</article_disable>
-<article_disable>luber_medicine_article</article_disable>
-<article_disable>tex_ratcatcher_order</article_disable>
-<article_disable>tex_val_escort_PDA</article_disable>
-<article_disable>tex_bar_dolg_petrenko_gaussgan</article_disable>
-<article_disable>tex_bar_dolg_petrenko_electra_flash</article_disable>
-<article_disable>tex_bar_dolg_petrenko_exo</article_disable>
-
-<article_disable>tex_yan_kruglov_decoder</article_disable>
-<article_disable>tex_yan_kruglov_art</article_disable>
-<article_disable>tex_yan_kruglov_green_art</article_disable>
-<article_disable>tex_yan_scientist_books</article_disable>
-<article_disable>tex_yan_scientist_find_case</article_disable>
-<article_disable>tex_bar_dolg_leader_find_case</article_disable>
-<article_disable>tex_mil_lukash_find_dinamit</article_disable>
-<article_disable>tex_yan_scientist_teleport_01</article_disable>
-<article_disable>tex_yan_scientist_teleport_02</article_disable>
-<article_disable>tex_yan_scientist_teleport_03</article_disable>
-
-<article_disable>tex_mil_trader_teleport_07</article_disable>
-<article_disable>tex_mil_max_teleport_08</article_disable>
-<article_disable>tex_mil_volk_resiver</article_disable>
-
-<article_disable>tex_yan_semenov_resiept</article_disable>
-<article_disable>tex_gar_dm_bandits_0</article_disable>
-<article_disable>tex_gar_dm_bandits_1</article_disable>
-<article_disable>tex_gar_dm_bandits_2</article_disable>
-<article_disable>tex_gar_dm_bandits_3</article_disable>
-<article_disable>tex_bar_korovan_0</article_disable>
-<article_disable>tex_bar_korovan_1</article_disable>
-<article_disable>tex_bar_korovan_2</article_disable>
-<article_disable>tex_bar_korovan_3</article_disable>
-<article_disable>tex_bar_korovan_4</article_disable>
-<article_disable>borov_kontainer_article</article_disable>
-<article_disable>tex_borov_11_saharov</article_disable>
-
-<article_disable>tex_agr_klyk_0</article_disable>
-<article_disable>tex_agr_klyk_1</article_disable>
-<article_disable>tex_agr_klyk_2</article_disable>
-<article_disable>tex_gar_flame_0</article_disable>
-<article_disable>tex_leshyi_umer</article_disable>
-<article_disable>tex_gar_flame_1</article_disable>
-<article_disable>tex_gar_stalker_info</article_disable>
-<article_disable>tex_gar_flame_2</article_disable>
-<article_disable>enc_artmod_mincer_meat_mosquito_bald</article_disable>
-<article_disable>enc_artmod_electra_sparkler_mosquito_bald</article_disable>
-<article_disable>enc_artmod_ameba_slug_mosquito_bald</article_disable>
-<article_disable>enc_artmod_cristall_mosquito_bald</article_disable>
-<article_disable>enc_artmod_rusty_sea-urchin_mosquito_bald</article_disable>
-<article_disable>enc_artmod_dummy_dummy_mosquito_bald</article_disable>
-<article_disable>enc_artmod_gravi_gravi_zone</article_disable>
-<article_disable>enc_artmod_ameba_slime_gravi_zone</article_disable>
-<article_disable>enc_artmod_rusty_kristall_gravi_zone</article_disable>
-<article_disable>enc_artmod_electra_flash_gravi_zone</article_disable>
-<article_disable>enc_artmod_night_star_gravi_zone</article_disable>
-<article_disable>enc_artmod_soul_gravi_zone</article_disable>
-<article_disable>enc_artmod_dummy_pellicle_gravi_zone</article_disable>
-<article_disable>enc_artmod_cristall_flower_mincer</article_disable>
-<article_disable>enc_artmod_drops_mincer</article_disable>
-<article_disable>enc_artmod_rusty_kristall_mincer</article_disable>
-<article_disable>enc_artmod_electra_moonlight_mincer</article_disable>
-<article_disable>enc_artmod_ameba_slug_mincer</article_disable>
-<article_disable>enc_artmod_dummy_glassbeads_mincer</article_disable>
-<article_disable>enc_artmod_rusty_kristall_buzz</article_disable>
-<article_disable>enc_artmod_rusty_thorn_buzz</article_disable>
-<article_disable>artmod_fireball_buzz</article_disable>
-<article_disable>enc_artmod_fireball_buzz</article_disable>
-<article_disable>enc_artmod_cristall_buzz</article_disable>
-<article_disable>enc_artmod_gold_fish_buzz</article_disable>
-<article_disable>enc_artmod_fuzz_kolobok_buzz</article_disable>
-<article_disable>enc_artmod_electra_flash_zharka</article_disable>
-<article_disable>enc_artmod_ameba_slime_zharka</article_disable>
-<article_disable>enc_artmod_gravi_zharka</article_disable>
-<article_disable>enc_artmod_night_star_zharka</article_disable>
-<article_disable>enc_artmod_electra_moonlight_zharka</article_disable>
-<article_disable>enc_artmod_dummy_battery_zharka</article_disable>
-<article_disable>enc_artmod_fireball_galant</article_disable>
-<article_disable>enc_artmod_cristall_flower_galant</article_disable>
-<article_disable>enc_artmod_ameba_mica_galant</article_disable>
-<article_disable>enc_artmod_electra_moonlight_galant</article_disable>
-<article_disable>enc_artmod_gold_fish_galant</article_disable>
-<article_disable>enc_artmod_medusa_galant</article_disable>
-<article_disable>enc_info_artmod_vyvert_buzz</article_disable>
-<article_disable>enc_artmod_dummy_spring_galant</article_disable>
-<article_disable>enc_artmod_blood_ice</article_disable>
-
-<article_disable>stalker_story_1</article_disable>
-<article_disable>stalker_story_1</article_disable>
-<article_disable>stalker_story_1</article_disable>
-<article_disable>stalker_story_1</article_disable>
-<article_disable>stalker_story_1</article_disable>
-<article_disable>stalker_story_1</article_disable>
-<article_disable>stalker_story_1</article_disable>
-<article_disable>stalker_story_1</article_disable>
-<article_disable>stalker_story_1</article_disable>
-<article_disable>stalker_story_1</article_disable>
-<article_disable>stalker_story_1</article_disable>
-<article_disable>stalker_story_1</article_disable>
-<article_disable>stalker_story_2</article_disable>
-<article_disable>stalker_story_3</article_disable>
-<article_disable>stalker_story_4</article_disable>
-<article_disable>stalker_story_5</article_disable>
-<article_disable>stalker_story_6</article_disable>
-<article_disable>stalker_story_7</article_disable>
-<article_disable>stalker_story_8</article_disable>
-<article_disable>stalker_story_9</article_disable>
-<article_disable>stalker_story_10</article_disable>
-<article_disable>stalker_story_11</article_disable>
-<article_disable>stalker_story_12</article_disable>
-<article_disable>stalker_story_13</article_disable>
-<article_disable>stalker_story_14</article_disable>
-<article_disable>stalker_story_15</article_disable>
-<article_disable>stalker_story_16</article_disable>
-<article_disable>stalker_story_17</article_disable>
-<article_disable>stalker_story_18</article_disable>
-<article_disable>stalker_story_19</article_disable>
-<article_disable>stalker_story_20</article_disable>
-
-<article_disable>agr_task_case</article_disable>
-<article_disable>storyline_seriy_flash_info</article_disable>
-<article_disable>article_agr_krot_sos</article_disable>
-<article_disable>article_agr_krot_sos1</article_disable>
-
-<article_disable>val_prisoner_help_art</article_disable>
-<article_disable>val_captive_help_art</article_disable>
-<article_disable>bar_darklab_documents_art</article_disable>
-<article_disable>bar_darklab_documents2_art</article_disable>
-<article_disable>dar_codedoor_1_art</article_disable>
-<article_disable>dar_codedoor_2_art</article_disable>
-
-<article_disable>storyline_gunslinger</article_disable>
-<article_disable>esc_doctor_meet</article_disable>
-<article_disable>esc_flash_task_descr</article_disable>
-
-<article_disable>meet_seryi_start</article_disable>
-<article_disable>graveyard_raid</article_disable>
-<article_disable>help_for_hellcar</article_disable>
-
-<article_disable>descr_yan_kill_brain</article_disable>
-<article_disable>descr_yan_kill_brain_2</article_disable>
-<article_disable>descr_yan_find_scientist_semenov</article_disable>
-
-<article_disable>descr_yan_find_lab</article_disable>
-<article_disable>descr_yan_find_ghost_task</article_disable>
-<article_disable>descr_yan_provodnik_task</article_disable>
-</info_portion>
 
 </game_information_portions>

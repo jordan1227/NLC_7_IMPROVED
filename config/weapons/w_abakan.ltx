@@ -31,7 +31,7 @@ fire_modes							= 1, 2, -1
 f_mode								= 2
 			
 ammo_class							= ammo_5.45x39_fmj,ammo_5.45x39_ap,ammo_5.45x39_merc
-grenade_class						= ammo_vog-25, ammo_vog-25p
+grenade_class						= ammo_vog-25
 launch_speed						= 50
 			
 hand_dependence						= 1
@@ -180,7 +180,7 @@ anm_idle_moving         						   = abakan_moving
 anm_idle_moving_slow    						   = abakan_moving_slow
 anm_idle_moving_crouch							   = abakan_crouch
 anm_idle_aim_moving             				   = abakan_moving_aim
-anm_shots_when_aim              				   = abakan_shoot_aim, shoot
+anm_shoot_aim              				   = abakan_shoot_aim, shoot
 anm_shots               						   = abakan_shoot, shoot
 anm_firemode                    				   = abakan_firemode
 anm_firemode_w_gl                    			   = abakan_firemode_w_gl
@@ -203,7 +203,7 @@ anm_hide_w_gl           						   = abakan_holster_w_gl
 anm_show_w_gl           						   = abakan_draw_w_gl
 anm_idle_w_gl           						   = abakan_idle_w_gl
 anm_shots_w_gl          						   = abakan_w_gl_shoot, shoot
-anm_shots_w_gl_when_aim							   = abakan_w_gl_shoot_aim, shoot
+anm_shoot_aim_w_gl							   = abakan_w_gl_shoot_aim, shoot
 anm_reload_w_gl         						   = abakan_reload_w_gl, reload
 anm_reload_empty_w_gl         					   = abakan_reload_empty_w_gl, reload_empty
 anm_reload_jammed_w_gl							   = abakan_misfire_w_gl, misfire
@@ -218,7 +218,8 @@ anm_hide_g              						   = abakan_holster_g, idle_g
 anm_idle_g              						   = abakan_idle_g, idle_g		
 anm_reload_g            						   = abakan_reload_g, reload_g
 anm_idle_g_aim          						   = abakan_idle_aim_g, idle_g			
-anm_shots_g             						   = abakan_shoot_g, idle_g		
+anm_shoot_g             						   = abakan_shoot_g, idle_g		
+anm_shoot_aim_g             						   = abakan_shoot_g, idle_g		
 anm_idle_moving_g       						   = abakan_moving_g, idle_g
 anm_idle_moving_slow_g   						   = abakan_moving_slow_g, idle_g
 anm_idle_moving_crouch_g						   = abakan_crouch_g, idle_g	
@@ -375,8 +376,8 @@ scope_respawn = wpn_abakan
 [wpn_abakan_1p78_hud]:wpn_abakan_hud
 item_visual                						   = dynamics\weapons\wpn_abakan\wpn_abakan_1p78_hud.ogf
 
-anm_shots_when_aim 								   = abakan_shoot_scope, shoot
-anm_shots_w_gl_when_aim 						   = abakan_shoot_scope_w_gl, shoot
+anm_shoot_aim 								   = abakan_shoot_scope, shoot
+anm_shoot_aim_w_gl 						   = abakan_shoot_scope_w_gl, shoot
 
 aim_hud_offset_pos = -0.067,-0.002,-0.0880001
 aim_hud_offset_rot = 0.0025,-0.0025,0
@@ -402,8 +403,8 @@ scope_respawn = wpn_abakan
 [wpn_abakan_pso_hud]:wpn_abakan_hud
 item_visual                						   = dynamics\weapons\wpn_abakan\wpn_abakan_hud.ogf
 
-anm_shots_when_aim 								   = abakan_shoot_scope, shoot
-anm_shots_w_gl_when_aim 						   = abakan_shoot_scope_w_gl, shoot
+anm_shoot_aim 								   = abakan_shoot_scope, shoot
+anm_shoot_aim_w_gl 						   = abakan_shoot_scope_w_gl, shoot
 
 aim_hud_offset_pos = -0.0545,0.008,-0.0635
 aim_hud_offset_rot = 0.0025,-0.005,0.0075

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="windows-1251" ?> 
+<string_table>
+<!-- Монгол -->
+<string id="val_bandit_dialog_0"><text>What, you feelin' like crap?</text></string>
+<string id="val_bandit_dialog_1"><text>Help me out, man! I swear on my life, you won't regret it!</text></string>
+<string id="val_bandit_dialog_2"><text>Lookin' at you makes me sick! If you kick the bucket, it's good riddance!</text></string>
+<string id="val_bandit_dialog_3"><text>Keep your promises to yourself. Here, take the medkit!</text></string>
+<string id="val_bandit_dialog_5"><text>I owe you big time! I'll tell the broskis you ain't no bullshitter! You'll get respect from the boss and from the rest of the deck too. Our Borov, he lives by the code...</text></string>
+<string id="val_bandit_dialog_6"><text>Borov? He's exactly who I need, got something to talk about with him.</text></string>
+<string id="val_bandit_dialog_7"><text>You... hey, what's your name again? Don't rush it, I'll give a shout kada it's okay. The big-shot don't like havin' his brain scrambled for nothin'... Mongol's my name, if you need sumthin'.</text></string>
+<string id="val_bandit_dialog_8"><text>They call me the Marked One. Well, get going, I'll be waiting.</text></string>
+<!-- Пуля -->
+<string id="val_escort_nap1_dialog_101"><text>Thanks, brother! You helped save my partner! Here, take this, it's from the heart. And write down this recipe; it'll come in handy.</text></string>
+<string id="val_escort_nap1_dialog_102"><text>How did this happen? Why did the bandits capture your friend?</text></string>
+<string id="val_escort_nap1_dialog_103"><text>Damn it... we have some miserable leaders! They send you out without asking anyone... Ivantsov, we have one like that, decided to show some initiative. We caught a bandit at Agroprom. Seemed like he was an assistant to Borov, the boss around here. Well, Ivantsov sent a group to verify the information we got from that guy, Kocherga. But... I don't know the details of what and how. The thugs just snatched the whole group right at the entrance to the Valley. I was at Agroprom on another matter at the time. As soon as I heard our guys were missing, I came straight here...</text></string>
+<string id="val_escort_nap1_dialog_104"><text>I see. So you're saying Borov runs things here?</text></string>
+<string id="val_escort_nap1_dialog_105"><text>Yes, him. We just can't seem to get it together to clean out his viper's nest. The creatures have dug themselves in deep. Ivantsov keeps promising to send a reinforced group. There are a lot of them, these lowlives. I think we need to get the regular stalkers to rise up for this. They suffer the most from this scum. I heard those idiots got a real beating over at the Garbage?</text></string>
+<string id="val_escort_nap1_dialog_1061"><text>Yeah, there was some shooting there, I think, but I didn't look into it.</text></string>
+<string id="val_escort_nap1_dialog_1062"><text>That was Bes and his crew. Well, and I participated too. We gave it to them as hard as it gets at the vehicle graveyard.</text></string>
+<string id="val_escort_nap1_dialog_1063"><text>Well... there was some shooting there, yeah. It seems Bes died then, or maybe I'm confused and it happened later... I have some memory problems; don't look at me like I'm crazy.</text></string>
+<string id="val_escort_nap1_dialog_1071"><text>I'm telling you for sure, someone shredded those thugs! I'm going there now to talk to the guys at our outpost. Prapor is a solid man. Maybe we'll figure something out...</text></string>
+<string id="val_escort_nap1_dialog_1072"><text>Really? So you know Bes? I've received some information here. Well, you heard that brat screaming yourself.\n*Cough*\nI don't know... I feel like you can be relied upon.\nAnyway, look—that thug said that not far from here, in the ravine behind the gas station, some dogs tore apart a pack horse that fell behind a weapons caravan. Supposedly, it had a couple of crates of ammunition on it. Those weaklings won't go there themselves—they're too scared. And Bes has been saying for a long time that if he had more ammo, he'd organize his men and they'd clear this place out...</text></string>
+<string id="val_escort_nap1_dialog_1073"><text>Really? That's a shame about the guy. He was a tough nut. Well, take care. And thanks again.</text></string>
+<string id="val_escort_nap1_dialog_108"><text>So, what exactly are you proposing?</text></string>
+<string id="val_escort_nap1_dialog_109"><text>If you have the time, head down to that ravine and check it out. If there really are any cartridges there, take them to Bes. He's a tough man; I'm sure he'll find a way to put them to their intended use.</text></string>
+<string id="val_escort_nap1_dialog_110"><text>Alright, I'll take a look if I get the chance.</text></string>
+<string id="val_escort_nap1_dialog_201"><text>Damn, friend... my old friend, what do I do now? Thanks, brother. At least you tried to help. I'm a man of my word, regardless.</text></string>
+<string id="val_escort_nap1_dialog_202"><text>Forgive me! My hand slipped, I couldn't take the bandit out in time. How did this happen? Why did they take your friend in the first place?</text></string>
+<string id="val_escort_nap1_dialog_203"><text>Dammit... we have some pathetic commanders! They send people out without consulting anyone... Ivantsov, one of our leaders, decided to show some initiative. We captured a bandit at Agroprom—supposedly an associate of Borov, the boss here. Ivantsov sent a team to check the intel we got from that Kocherga guy. But... I don't know the specifics. The thugs snatched the whole team right at the entrance to the Valley. I was at Agroprom on other business. As soon as I heard our guys were gone, I rushed here...</text></string>
+<string id="val_escort_nap1_dialog_204"><text>I see. So Borov is the one running the show here?</text></string>
+<string id="val_escort_nap1_dialog_205"><text>Yes, him. Sorry... I can't talk right now... Go your own way, stalker.</text></string>
+<string id="val_escort_nap1_dialog_206"><text>I understand. Sorry again.</text></string>
+<string id="val_escort_nap1_dialog_301"><text>Why are you lingering here? You'll get shot by accident. You should join us! Duty always needs good fighters with clean hands and cool heads.</text></string>
+<string id="val_escort_nap1_dialog_302"><text>I'm doing alright on my own for now.</text></string>
+<string id="val_escort_nap1_dialog_303"><text>Suit yourself. If you change your mind, let me know. I'll give my guys a heads-up about you.</text></string>
+<string id="val_escort_nap1_dialog_401"><text>You refused to help when I asked. Get out of here, we have nothing to talk about.</text></string>
+<string id="val_escort_nap1_dialog_402"><text>If we have nothing to talk about, then so be it.</text></string>
+<!-- Лохматый -->
+<string id="val_prisoner_hello_101"><text>Hey, friend! I'm a Duty scout. Help me get out of here, or at least let our guys know that I've been taken prisoner by bandits!</text></string>
+<string id="val_prisoner_hello_1021"><text>Alright, I'll try to think of something.</text></string>
+<string id="val_prisoner_hello_1022"><text>Sorry, I can't help you with anything.</text></string>
+<string id="val_prisoner_hello_201"><text>Hello, stalker! Did you manage to contact anyone from Duty? Maybe you have some ideas on how to get me out?</text></string>
+<string id="val_prisoner_hello_2011"><text>I've notified your people, just wait. I think they should be letting you go soon.</text></string>
+<string id="val_prisoner_hello_2012"><text>Haven't had the time yet, wait.</text></string>
+<string id="val_prisoner_hello_301"><text>What was that shooting upstairs? Maybe you could let me out while they're in a panic? You need to press that button on the wall to unlock the door.</text></string>
+<string id="val_prisoner_hello_3011"><text>Borov suffered a severe overdose of lead, so it's high time for you to clear out.</text></string>
+<string id="val_prisoner_hello_3012"><text>I don't think that's a good idea. The building is full of bandits.</text></string>
+<string id="val_prisoner_hello_401"><text>Thanks for the help, buddy! I'll make it out quietly from here on my own. We'll meet up later at our checkpoint at the Garbage; I'll reward you then.</text></string>
+<string id="val_prisoner_hello_402"><text>Well, suit yourself.</text></string>
+
+<string id="val_dolg_prisoner_thanks_0"><text>Oh, hello! I'm glad they got you out of Borov's dungeons.</text></string>
+<string id="val_dolg_prisoner_thanks_1"><text>You're not as glad as I am! A huge thank you to you, friend! I found a simple little artifact on my way out of the Valley; please accept it from the bottom of my heart.</text></string>
+<string id="val_dolg_prisoner_thanks_2"><text>Much appreciated. Well, take care!</text></string>
+<!-- Влад -->
+<string id="val_sos_dialog_101"><text>Friend, give me a medkit!</text></string>
+<string id="val_sos_dialog_1021"><text>Here you go.</text></string>
+<string id="val_sos_dialog_1022"><text>Sorry, I don't have a medkit.</text></string>
+<string id="val_sos_dialog_201"><text>Thanks, friend! You saved me, I'm speechless. If we stay alive and meet again, I'll try to pay my debt. How should I address you?</text></string>
+<string id="val_sos_dialog_202"><text>I'm tired of explaining it to everyone. I am the Marked One.</text></string>
+<string id="val_sos_dialog_203"><text>It's good that there are people like you, Marked One. My name is Vlad. Please excuse the fact that I can't thank you with something right away; I'm generally still a rookie in the Zone. I'm looking for a certain miraculous artifact; I need it very badly.</text></string>
+<string id="val_sos_dialog_204"><text>Miraculous? Hmph... I don't really believe in miracles.</text></string>
+<string id="val_sos_dialog_205"><text>I don't have any other choice... It's the last hope for helping my daughter get well! Besides, look here, one of the Duty members at the checkpoint shared a recipe with me. Have you heard of the "Slimy Porcupine"?</text></string>
+<string id="val_sos_dialog_206"><text>No. Sounds like a peculiar beast...</text></string>
+<string id="val_sos_dialog_207"><text>Oh no, it's a modified artifact! Let me copy down how to get it for you. It got its name because the whole thing oozes some kind of smelly gunk, so abundantly that you'd better not wear it on your belt or else you'll never be able to wash your pants! At least, that's how the Duty soldier explained it to me.\nThis Porcupine stops bleeding, provides extra energy, and protects against electric shock! And you say there are no miracles... It's just a shame that in my case, even this isn't enough.</text></string>
+<string id="val_sos_dialog_301"><text>Forgive me, Marked One, I must go.</text></string>
+
+<string id="vlad_about_oksana_dialog_0"><text>Listen, Vlad, is Oksana your wife by any chance?</text></string>
+<string id="vlad_about_oksana_dialog_1"><text>Oksana? Yes... but how do you know?</text></string>
+<string id="vlad_about_oksana_dialog_21"><text>I met her at the Swamps and helped her reach the Cordon. She's looking for you...</text></string>
+<string id="vlad_about_oksana_dialog_22"><text>I met her at the Swamps. She's looking for you.</text></string>
+<string id="vlad_about_oksana_dialog_23"><text>I saw her briefly at the Swamps. Only... I heard that she died. I'm sorry.</text></string>
+<string id="vlad_about_oksana_dialog_31"><text>To the Cordon? Right, I... please excuse me, I'm heading there now.</text></string>
+<string id="vlad_about_oksana_dialog_32"><text>At the Swamps? Right, I... please excuse me, I'm heading there now.</text></string>
+<string id="vlad_about_oksana_dialog_33"><text>Dead? I don't believe it! I would have felt it! And what about Masha? At the Swamps? Where exactly, do you know? I... I'm heading there.</text></string>
+<string id="vlad_about_oksana_dialog_4"><text>Alright, get going, get going.</text></string>
+</string_table>

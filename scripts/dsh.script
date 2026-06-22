@@ -27,7 +27,7 @@ function create_candle( pos, lvid, gvid, vis )
 		ASSERT( pk and pk:isOk(), "can't read netpacket of %s", sobj:name() )
 		local data = pk:get()
 		data.visual_name = vis
-		data.custom_data = "[logic]\nactive = ph_idle@idle\n[ph_idle@idle]\ntips = candle\non_use = {=actor_has_matches()} %=sak.candle_on()% ph_idle@idle2, ph_idle@idle3 %=sak.info_no_matches()\n[ph_idle@idle2]\non_timer = 7000|ph_idle@idle\n[ph_idle@idle3]\non_timer = 10000|ph_idle@idle\n[collide]\nignore_static\n"
+		data.custom_data = "[logic]\nactive = ph_idle@idle\n[ph_idle@idle]\ntips = candle\non_use = {=actor_has_matches()} ph_idle@idle2, ph_idle@idle3 %=sak.info_no_matches()\n[ph_idle@idle2]\non_timer = 7000|ph_idle@idle\n[ph_idle@idle3]\non_timer = 10000|ph_idle@idle\n[collide]\nignore_static\n"
 		data.physic_type = 3
 		data.mass        = 10
 		data.fixed_bones = "link"
@@ -119,11 +119,11 @@ end
 
 local max_symbols = 60
 function safe_file_name( fname ) --Вырезаем неподдерживаемые FS символы и пробелы по краям.
-  fname = fname:clear():gsub( '[%(%)]*', "" ):trim()
-  if fname:len() > max_symbols then
-    fname = fname:sub( 1, ( max_symbols - 2 ) ) .. "..."
-  end
-  return fname
+	fname = fname:clear():gsub( '[%(%)]*', "" ):trim()
+	if fname:len() > max_symbols then
+		fname = fname:sub( 1, ( max_symbols - 2 ) ) .. "....sav"
+	end
+	return fname
 end
 
 
@@ -194,6 +194,7 @@ function backup_autosave( prev_lname )
     game.translate_string( "backup_autosave" ),
     timers.Get_Game_Days(),
     level.get_time_hours(),
+	level.get_time_minutes(),
     game.translate_string( prev_lname ),
     game.translate_string( level.name() )
   )

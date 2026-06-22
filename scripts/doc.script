@@ -578,12 +578,6 @@ function add_af_glass_new()
 		pk:set(data)
 	end
 end
--- text_code_meelofon_pda
-function code_meelofon_pda()
-	local n = get_value("x18_iq_check",1)
-	db.actor:give_info_portion("meelofon_code"..n.."_info")
-	sak.info_code()
-end 
 function add_meelofon_code()
 	local rnd = get_value("x18_iq_check",1)
 	local code = {
@@ -597,11 +591,9 @@ function add_meelofon_code()
 				{ "75963", "65213" },
 				{ "78524", "16379" }
 				}
-	db.actor:give_talk_message(
-		string.format(game.translate_string("add_meelofon_code"),code[rnd][1],code[rnd][2]),
-	"ui\\ui_iconsTotal", Frect():set( 0, 0, 0, 0), "simple_answer_item")
-	db.actor:give_info_portion( "meelofon_code" .. rnd .. "_info" )
+	give_article("meelofon_code" .. rnd)
 	sak.info_code()
+	return string.format(game.translate_string("add_meelofon_code"),code[rnd][1],code[rnd][2])
 end							
 -- saharov_controler
 function yan_controller_spawn()
@@ -609,7 +601,12 @@ function yan_controller_spawn()
     if obj1 then	
 		level.map_add_object_spot_ser(obj1.id, "crlc_big", "marsh_controller_spawn")
 	end
-	misc.release_by_name("esc_tutorial_mincer_yan_00") -- убираем аномалию в проходе
+	local sobj = server_obj("esc_tutorial_mincer_yan_00") -- убираем аномалию в проходе
+	if sobj then
+		local id = sobj.id
+		anomaly_detector.remove_restriction(nil, id, true)
+		anomaly_detector.remove_restriction(nil, id)
+	end
 end
 function remove_yan_controller_spot(actor, obj, p)
 	local spot_name = p[ 1 ]
@@ -624,7 +621,7 @@ end
 -- пункт управления в х18 (дверь с загадками)
 function code_x18_conrol_room()
 	local n = get_value("x18_iq_check",1)
-	db.actor:give_info_portion("x18_conrol_room"..n.."_info")
+	give_article("x18_conrol_room" .. n)
 	sak.info_code()
 end
 -- убираем бандосов из игры чтобы не шлялись по Кордону
@@ -772,26 +769,6 @@ function timer_blockpost_case_end()
 		sak.send_tip(game.translate_string("timer_blockpost_case_end"),game.translate_string("sidor_sms_h"),11,20,"g_g","sak", "red")
 		db.actor:give_info_portion("info_blockpost_case_end")
 	end
-end
---
-function text_meelofon_code()
-	local rnd = get_value("x18_iq_check",1)
-	local code = {
-				{ "59685", "85621" },
-				{ "86954", "75698" },
-				{ "12389", "85412" },
-				{ "53631", "23895" },
-				{ "78569", "45612" },
-				{ "87524", "36521" },
-				{ "42367", "89512" },
-				{ "75963", "65213" },
-				{ "78524", "16379" }
-				}
-	db.actor:give_talk_message(
-		string.format(game.translate_string("add_meelofon_code"),code[rnd][1],code[rnd][2])
-	"ui\\ui_iconsTotal", Frect():set( 0, 0, 0, 0), "simple_answer_item")
-	db.actor:give_info_portion( "meelofon_code" .. rnd .. "_info" )
-	sak.info_code()
 end
 
 function add_arts_notebook()

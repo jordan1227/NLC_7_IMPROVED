@@ -319,14 +319,6 @@ function update_avail_items(open_inv)
    else
       inv:set_leave("mtv", nil)    
    end
-  
-   if open_inv then
-      -- local items = bag_on_belt_use.load_bag_content()         
-      -- inv:set_leave("er_bag", nlc_container.collect_items_map(items, true)) -- исключать отображение в инвентаре 
-   else
-      inv:set_leave("er_bag", nil)  -- содержимое сумки пр€четс€ в рюкзак    
-   end
-   
 end
 
 function is_same(a, b)

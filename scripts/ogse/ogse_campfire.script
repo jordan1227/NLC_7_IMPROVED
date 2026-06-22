@@ -9,8 +9,6 @@ local zone_flame_tbl = {
 	["Esc_zone_flame_small_0002"] = true, -- Кордон, костёр под мостом
 	["esc_zone_flame_small_0004"] = true, -- Кордон, костёр в ДН
 	["esc_zone_flame_small_0005"] = true, -- Кордон, костёр на БП
-	["zone_bar_flame_off_0000"]   = true, -- Бар, костёр в Ангаре№1 (временно, до НИ)
-	["zone_bar_flame_off_0001"]   = true, -- Бар, костёр в Ангаре№2 (временно, до НИ)
 }
 
 function attach(sm)
@@ -29,7 +27,7 @@ end
 function bind_light(obj)
 	if obj:clsid() == clsid.projector then
 		bind_physic_object.init(obj)
-	elseif strpos(obj:name(),"^lights_hanging_lamp") or strpos(obj:name(),"^lights_camp_fire") or strpos(obj:name(),"^lights_bar_flame_off") then -- ^lights_bar_flame_off убрать с НИ
+	elseif strpos(obj:name(),"^lights_hanging_lamp") or strpos(obj:name(),"^lights_camp_fire") then
 		obj:bind_object(campfire_binder(obj))
 	end
 end
@@ -74,7 +72,8 @@ end
 
 function get_nearest_active_campfire(pos, radius)
 	local kamp = get_nearest_campfire(pos, radius)
-	if kamp and (kamp.has_users or kamp.is_eternal_fire or (kamp.ignite_time or 0) > 1) then
+	-- if kamp and (kamp.can_save or kamp.is_eternal_fire or (kamp.ignite_time or 0) > 1) then
+	if kamp and kamp.can_save then
 		return kamp
 	end
 end
@@ -169,6 +168,7 @@ states = {
 			else return states.turn_off end
 		end,
 		action = function(self)
+			self.can_save = nil
 			switch_flame_near_light(self.object, false)
 			if self.particle then self.particle:stop() end
 			switch_light(self.object, false)
@@ -182,6 +182,7 @@ states = {
 			else return states.down end
 		end,
 		action = function(self)
+			self.can_save = true
 			switch_flame_near_light(self.object, true)
 			-- switch_light(self.object, false)
 			-- Manool: нам нужна лампочка
@@ -198,6 +199,7 @@ states = {
 			else return states.down end
 		end,
 		action = function(self)
+			self.can_save = true
 			switch_flame_near_light(self.object, true)
 			switch_light(self.object, false)
 			local s_part = (self.is_candle and "explosions\\gas_light") or "dyn_kfire\\dyingfire"
@@ -214,6 +216,7 @@ states = {
 			else return states.flame_off end
 		end,
 		action = function(self)
+			self.can_save = true
 			switch_flame_near_light(self.object, false)
 			switch_light(self.object, true)
 			if not self.particle then
@@ -277,6 +280,12 @@ end
 
 function campfire_binder:check_actor()
 	if self.is_eternal_fire then return true end
+
+	if self.has_users then
+		self.ignite_time = total_ignite_time
+		return true
+	end
+
 	if self.check_is_in_hide == nil then
 		self.check_is_in_hide = is_obj_in_hide(self.object)
 	end
@@ -305,7 +314,7 @@ function campfire_binder:update(delta)
 		self.time = time
 	elseif self.scan_time < time or self.update_now then
 		self.update_now = nil
-		local new_state = self.state.next(self.has_users or self:check_actor(), time, self.time)
+		local new_state = self.state.next(self:check_actor(), time, self.time)
 		ASSERT(new_state ~= nil, "new_state ~= nil")
 		if new_state ~= self.state then
 			new_state.action(self)
@@ -342,7 +351,6 @@ end
 
 eternal_fires = {
 	["mar_koster_31"] = true, -- Камин Демьяна
-	-- ["esc_koster_07"] = true, -- Домик Лиса
 	["gar_koster_05"] = true, -- Ангар на Свалке
 }
 

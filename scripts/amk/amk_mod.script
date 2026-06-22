@@ -365,7 +365,6 @@ function restore_sun()
 	idMapNow = g_sim:level_id()
 	sMapNow = (idMapNow and g_sim:level_name(idMapNow)) or ""
 	db.idMapSav = get_value("map_sav", 0)
-	db.sMapSav = (db.idMapSav ~= 0 and g_sim:level_name(db.idMapSav)) or ""
 	db.idMapNow,db.sMapNow = idMapNow,sMapNow
 	set_value("map_sav", idMapNow)
 	set_value("level_on_save", lname)
@@ -782,7 +781,7 @@ function af_start_transform_timer(af, pos, delay_d, delay_h, delay_m)
 	t.section=af
 	t.pos={}
 	t.pos.x=pos.x
-	t.pos.y=(pos.y+1)
+	t.pos.y=pos.y
 	t.pos.z=pos.z
 	t.gv=gv
 	t.lv=lv
@@ -803,7 +802,7 @@ function af_transform_end(params_string)
     
 	local name = amk.get_inv_name(sect)
 	local from_sect=game.translate_string(name)
-	local obj=amk.spawn_item(prms.section,vector():set(prms.pos.x,prms.pos.y+2.5,prms.pos.z),prms.gv,prms.lv)
+	local obj=amk.spawn_item(prms.section,vector():set(prms.pos.x,prms.pos.y+1,prms.pos.z),prms.gv,prms.lv)
 	local se_obj = alife():object(obj.id)
 	se_obj:used_ai_locations(false)
 	local s
@@ -922,7 +921,6 @@ end
 function Run_Blowout_pp()
 	local bl_sl = sleep_manager.sleep_blowout
 	if bl_sl~=false then
-		db.blowout_active=true
 		set_value("blowout",1)
 		level.block_change_level(true)
 		_G.flag_can_save = false
@@ -1039,7 +1037,6 @@ function Blowout_pp(num)
 		elseif lname=="l11_pripyat" then
 			sak.spawn_teleports(sak.v3f(29.7,1.8,355.8),139177,2260,5,30,"amk_zone_teleport_prip_labirint",40)
 		end
-		db.blowout_active=false
 		timers.start_timer("allow_weather_change",0,0,30,"amk_mod.allow_weather_change()")
 		db.actor:give_info_portion("groza_info")
 		xr_statistic.add_pts(

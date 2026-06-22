@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+#include "text\eng\string_table_amk_arts_desc.xml"
+<string id="af_dummy_black_tip"><text>"Black Mark"</text></string>
+<string id="af-ameba-mica"><text>"Mica"</text></string> 
+<string id="af-ameba-slime"><text>"Slime"</text></string> 
+<string id="af-ameba-slug"><text>"Slug"</text></string> 
+<string id="af-blood"><text>"Stone Blood"</text></string> 
+<string id="af-cristall"><text>"Crystal"</text></string> 
+<string id="af-cristal-flower"><text>"Stone Flower"</text></string> 
+<string id="af-drops"><text>"Droplet"</text></string> 
+<string id="af-dummy-battery"><text>"Battery"</text></string> 
+<string id="af-dummy-dummy"><text>"Dummy"</text></string> 
+<string id="af-dummy-glassbeads"><text>"Mama's beads"</text></string> 
+<string id="af-dummy-pellicle"><text>"Pellicle"</text></string> 
+<string id="af-dummy-spring"><text>"Spring"</text></string> 
+<string id="af-electra-flash"><text>"Flash"</text></string> 
+<string id="af-electra-moonlight"><text>"Moonlight"</text></string>
+<string id="af-electra-sparkler"><text>"Sparkler"</text></string> 
+<string id="af-fireball"><text>"Fireball"</text></string> 
+<string id="af-fuzz-kolobok"><text>"Kolobok"</text></string> 
+<string id="af-gold-fish"><text>"Goldfish"</text></string> 
+<string id="af-gravi"><text>"Gravi"</text></string> 
+<string id="af-medusa"><text>"Jellyfish"</text></string> 
+<string id="af-mincer-meat"><text>"Meat Chunk"</text></string> 
+<string id="af-night-star"><text>"Night Star"</text></string> 
+<string id="af-rusty-kristall"><text>"Crystal Thorn"</text></string> 
+<string id="af-rusty-sea-urchin"><text>"Urchin"</text></string> 
+<string id="af-rusty-thorn"><text>"Thorn"</text></string> 
+<string id="af-soul"><text>"Soul"</text></string> 
+<string id="af-sul-new"><text>"Wrenched"</text></string>
+<string id="af_electra_blue"><text>"Moonlight's Gleam"</text></string>
+<string id="af-vyvert"><text>"Wrenched"</text></string> 
+<string id="Agroprom"><text>Agroprom Research Institute</text></string> 
+<string id="Ameba"><text>"Fruit Punch"</text></string> 
+<string id="af-night_star_new"><text>"Dandelion"</text></string>
+<string id="af_dummy_fire"><text>"Bubble"</text></string>
+<string id="Anomalies"><text>Anomalies</text></string> 
+<string id="Bald"><text>"Springboard"</text></string> 
+<string id="Bar"><text>Bar</text></string> 
+<string id="Darkdolina"><text>Dark Valley</text></string> 
+<string id="Electra"><text>"Electra"</text></string> 
+<string id="greedy"><text>"Greedy"</text></string> 
+<string id="psi_field"><text>"Matrix"</text></string> 
+<string id="af-baloon"><text>"Balloon"</text></string>
+
+<string id="enc_zone_anomalies_greedy"><text>Unfortunately, regarding the definitions of this anomaly, known in stalker slang as "Greedy," scientists limit themselves only to vague hypotheses. The most popular of these states that it is a rift into some other dimension, and material objects from our universe undergo annihilation and conversion into nutritional energy. However, since the rift is truly small (in a metaphysical sense), it is impossible to pull a whole stalker through this "eye of a needle." Yet the suction force is quite high, so it feels as if something is holding him. Discarded objects can cause a certain collapse of this rift, which looks like the "saturation" of this anomaly's animal component.</text></string>
+
+<string id="enc_zone_anomalies_psi_field"><text>A formation of a nature that is not fully understood. When a stalker enters the field of effect of this anomaly, a total change of the brain's psychophysical matrix occurs. Only basic motor and physiological functions are preserved; essentially, a person turns into a so-called "zombie." This type of brain damage cannot be treated.</text></string>
+
+<string id="af_dummy_black_tip_desc"><text>A mythical artifact. Some say that a stalker who finds it cannot get rid of it and is doomed to die. Others claim that a way still exists.</text></string>
+
+<string id="enc_zone_anomalies_ameba"><text>A formation of a nature not fully understood. Upon contact with the body, it inflicts injuries similar to the effects of strong acid. It forms three types of artifacts: "Slime," "Slug," and "Mica."</text></string>
+
+<string id="enc_zone_anomalies_bald"><text>One of the first recorded anomalies. It inflicts strike damage with a variable gravitational field. The result of an encounter with a "Springboard" can vary—from minor bruises and contusions to instant death. During the daytime, it is easily detected by distortions in the air above the anomaly and swirling leaves. It is fixed by any type of detector, as well as by throwing various objects into it. It forms three types of artifacts: "Jellyfish," "Stone Flower," and "Night Star."</text></string>
+
+<string id="enc_zone_anomalies_electra"><text>An anomalous formation about 3 meters in diameter that accumulates static electricity. When disturbed, the anomaly explodes with a dozen mini-lightnings, discharging for 2-3 seconds; the electric shock for any living creature is almost always fatal. A characteristic feature of "Electra" is the bluish mist visible over it during the day. It is detected by any type of detector or by throwing metal objects. It forms three types of artifacts: "Sparkler," "Flash," and "Moonlight."</text></string>
+
+<string id="enc_zone_anomalies_fuzz"><text>Anomally mutated vegetation. Upon the rapid approach of a living creature, it releases a cloud of particles that, in case of contact with exposed or poorly protected skin, seriously injure the latter. It does not react to slowly moving objects. It forms three types of artifacts (possibly these are seeds): "Thorn," "Crystal Thorn," and "Urchin."</text></string>
+
+<string id="enc_zone_anomalies_gravi"><text>An anomaly of a presumably gravitational nature. At the moment of activation, it sucks in everything within a radius of 5-6 meters with terrible force. If you fall into the center of a "Vortex," there is practically no chance of survival: the body of both animal and human will be compressed into a tight lump and then torn apart at the moment of the so-called discharge. It can be detected by the characteristic movement of the air and leaves being pulled toward the center. It forms three types of artifacts: "Wrenched," "Gravi," and "Goldfish."</text></string>
+
+<string id="enc_zone_anomalies_lift"><text>A gravitational anomaly harmless to health, allowing one to forget about the laws of gravity for a while. Within a local volume several meters in diameter, Earth's gravity is significantly reduced. It forms the "Pellicle" artifact.</text></string>
+
+<string id="enc_zone_anomalies_meat"><text>The name is due to the effect of lifting any living creature into the air followed by spinning it up to enormous speeds. The nature of the "Whirligig" has not yet been fully researched. It is detected by a light dust vortex at a distance of 3-4 meters from the ground. It is very important not to miss the moment the pull into the anomalous vortex begins and not to enter the zone of maximum effect in the center—only then is there a chance to escape with minimal injuries. It forms three types of artifacts: "Stone Blood," "Meat Chunk," and "Soul."</text></string>
+
+<string id="enc_zone_anomalies_radioactive"><text>A zone of increased level—more than 50 µR/h—of radiation. Prolonged stays in such places must be avoided.</text></string>
+
+<string id="enc_zone_anomalies_time"><text>An anomaly that can rightfully be called a small miracle: within a volume several meters in diameter, the flow of time slows down many times over. It apparently has no negative impact on health, but it is not easy to get out of it. Interestingly, in the center of the "Time Machine," the "Mama's beads" artifact is usually found; upon its removal, the anomaly ceases to exist.</text></string>
+
+<string id="enc_zone_anomalies_zharka"><text>In an inactive state, it looks like a barely visible cloud of hot air; however, when any object or living creature enters its range of effect, it forms a cone-shaped pillar of fire with a temperature of about 1500K. It forms three types of artifacts: "Droplet," "Fireball," and "Crystal."</text></string>
+
+<string id="af_compass"><text>"Compass"</text></string>
+<string id="af_compass_desc"><text>A rare artifact. The origin of its name is unclear, as the artifact has shown no properties of pointing in any specific direction. Perhaps its appearance (it features several chaotically rotating formations resembling needles) is reminiscent of a marine compass. Activation of the "Compass" via electrical discharge stimulates the wearer's muscle energy. However, due to high calorie consumption, increased nutrition is required.</text></string>
+
+<string id="af_compass_dyn5d_desc"><text>A rare artifact. The origin of its name is unclear, as the artifact has shown no properties of pointing in any specific direction. Perhaps its appearance (it features several chaotically rotating formations resembling needles) is reminiscent of a marine compass. Activation of the "Compass" via electrical discharge stimulates the wearer's muscle energy. A distinctive feature of this particular specimen from its "brethren" is that its effect on the human body does not lead to increased calorie consumption.</text></string>
+
+<string id="af_compass_dyn6d_desc"><text>A degenerate "Compass" artifact. Its properties have been lost.</text></string>
+
+<string id="af_electra_moonlight_new"><text>"Pseudo-light"</text></string>
+
+<string id="af_electra_moonlight_new_desc"><text>An artifact that outwardly resembles "Moonlight." That is how it got its name. Where and how it appears has still not been reliably established. It is of no particular use in a stalker's daily life. Better to sell it.</text></string>
+
+<string id="af_electra_flash_new"><text>"Gleam"</text></string>
+
+<string id="af_electra_flash_new_desc"><text>Stalkers often confuse it with the "Flash" artifact due to its strong physical resemblance. Unfortunately, in terms of anomalous properties, it doesn't even come close to the aforementioned artifact. It is only good for selling.</text></string>
+
+<string id="af-dummy-dummy-new"><text>"Storage Battery"</text></string>
+
+<string id="af_dummy_dummy_new_desc"><text>A very rare variety of the "Dummy" artifact. It has excellent protection against electricity. No harmful effects from this artifact have been observed so far.</text></string>
+
+<string id="af-eye"><text>"Eye"</text></string>
+
+<string id="af_eye_desc"><text>The "Eye" is an artifact that appears near the dual "Snow" anomaly. The properties of the "Eye" differ slightly between specific artifacts. Its activation allows for a slight reduction in the wearer's gravitational mass. Common traits include: protection against impact effects and increased vulnerability of the wearer to chemical burns.</text></string>
+
+<string id="af_eye_desc_1"><text>The "Eye" is an artifact that appears near the dual "Snow" anomaly. The properties of the "Eye" differ slightly between specific artifacts. Its activation allows for a slight reduction in the wearer's gravitational mass. Common traits include: protection against impact effects and increased vulnerability of the wearer to chemical burns.</text></string>
+
+<string id="af_eye_desc_2"><text>The "Eye" is an artifact that appears near the dual "Snow" anomaly. The properties of the "Eye" differ slightly between specific artifacts. Its activation allows for a slight reduction in the wearer's gravitational mass. Common traits include: protection against impact effects and increased vulnerability of the wearer to chemical burns.</text></string>
+
+<string id="af_eye_desc_4"><text>The "Eye" is an artifact that appears near the dual "Snow" anomaly. The properties of the "Eye" differ slightly between specific artifacts. Its activation allows for a slight reduction in the wearer's gravitational mass. Common traits include: protection against impact effects and increased vulnerability of the wearer to chemical burns.</text></string>
+
+<string id="af_eye_desc_5"><text>The "Eye" is an artifact that appears near the dual "Snow" anomaly. The properties of the "Eye" differ slightly between specific artifacts. Its activation allows for a slight reduction in the wearer's gravitational mass. Common traits include: protection against impact effects.</text></string>
+
+<string id="af_eye_desc_6"><text>A degenerate "Eye" artifact.</text></string>
+
+<string id="af_battery"><text>"Jumper"</text></string>
+<string id="artifact_battery_desc"><text>%c[1,1,1,1]___%c[255,255,255,255]Jump increase  %c[255,1,255,1]+10\n%c[default]"Jumper," as you might have guessed, got its name due to its ability to affect the gravitational constant in a narrow cone along a vector perpendicular to the earth's surface, allowing its wearer to soar high into the air. There are also rumors that with this artifact, one can pass through any "Labyrinth" type anomaly.</text></string>
+
+<string id="af_medusa_new"><text>"Gorgon Jellyfish"</text></string>
+<string id="af_medusa_new_desc"><text>An artifact that outwardly resembles a common "Jellyfish." The circumstances under which it appears are unclear. Experienced stalkers say that if you activate this artifact on your belt, you won't have to fear the sleep-inducing lullabies of the local cats.</text></string>
+
+<string id="af_flower_new"><text>"Pizza"</text></string>
+<string id="af_flower_new_desc"><text>"Pizza," or as it's also called, "Fried Eggs," is named so because of its resemblance to those food items. Nevertheless, the properties of this artifact live up to its name—having it on your belt allows you to go without food for a long time.</text></string>
+
+<string id="af-glassbeads"><text>"Electric Beads"</text></string>
+<string id="af_glassbeads_desc"><text>"Electric Beads" is an artifact obtained from several ingredients by direct transmutation in the "Snow" anomaly. It possesses properties that are highly attractive to most stalkers: it absorbs some of the kinetic energy of fast-moving objects, such as bullets, protects against electrical discharges, but in return slightly increases the body's overall fatigue.</text></string>
+
+<string id="af_glassbeads_desc_5"><text>"Electric Beads" is an artifact obtained from several ingredients by direct transmutation in the "Snow" anomaly. It possesses properties that are highly attractive to most stalkers: it absorbs some of the kinetic energy of fast-moving objects, such as bullets, protects against electrical discharges, and reduces overall fatigue. It may cause a feeling of hunger.</text></string>
+
+<string id="af_glassbeads_desc_6"><text>A degenerate "Electric Beads" artifact.</text></string>
+
+<string id="af_crist_new"><text>"Phantom Crystal"</text></string>
+<string id="af_crist_new_desc"><text>This artifact began appearing in the Zone relatively recently. Based on this fact, many researchers have created a theory about the evolution of the Zone as a kind of "living organism." In its properties, the "Phantom Crystal" is close to a regular "Crystal."</text></string>
+
+<string id="capsule"><text>"Artifact Capsule"</text></string>
+
+<string id="m_capsule_name"><text>"Unusual Artifact Capsule"</text></string>
+<string id="m_capsule_desc"><text>An occasionally encountered artifact capsule, the main distinguishing feature of which is its phenomenally durable shell. Opening it involves significant energy costs. Extremely radioactive.</text></string>
+
+<string id="af_mayatnik_name"><text>"Pendulum"</text></string>
+<string id="af_mayatnik_desc"><text>An extremely rare and poorly studied artifact, the origin of which remains a mystery to this day. According to one version, it is a product of the equally mysterious "Labyrinth" anomaly. It is characterized by one, but very pronounced property—altering the body's susceptibility to various types of psi-radiation. At the same time, this property is not permanent but has periods of activity: "phase," "antiphase," and a "rest" period. So far, no one has been able to reliably establish what causes the alternation of these activity periods.</text></string>
+
+<string id="artifact_capsule"><text>A shell containing an artifact of at least the third level.</text></string>
+<string id="enc_zone_capsule"><text>A shell containing a valuable artifact. Until the shell is opened, the artifact does not manifest its properties. Unfortunately, capsules are very radioactive.</text></string>
+
+<string id="af_medusa"><text>"Emerald Jellyfish"</text></string>
+<string id="af_green_medusa"><text>A unique artifact that looks like a common "Jellyfish" but is green. It is completely non-radioactive and emits a faint light. There is an opinion that it appears as a result of the combination of two anomalies: "Springboard" and "Fruit Punch".</text></string>
+
+<string id="af_vyvert"><text>"Emerald Wrenched"</text></string>
+<string id="af_green_vyvert"><text>A unique artifact that looks like a common "Wrenched" but is green. It is completely non-radioactive and emits a faint light. There is an opinion that it appears as a result of the combination of two anomalies: "Vortex" and "Fruit Punch".</text></string>
+
+<string id="af_blood"><text>"Emerald Stone Blood"</text></string>
+<string id="af_green_blood"><text>A unique artifact that looks like a common "Stone Blood" but is green. It is completely non-radioactive and emits a faint light. There is an opinion that it appears as a result of the combination of two anomalies: "Whirligig" and "Fruit Punch".</text></string>
+
+<string id="af_pellicle"><text>"Ruby Pellicle"</text></string>
+<string id="af_pellicle_red"><text>A unique artifact that resembles a common "Pellicle" in appearance but is red in color. It possibly transmutes from a "Pellicle" when it falls into a "Snow" anomaly. It possesses the effect of protection against explosions, chemical burns, and telepathy.</text></string>
+
+<string id="af_dummy_spring"><text>"Ruby Spring"</text></string>
+<string id="artifact_red_dummy_spring_desc"><text>%c[1,1,1,1]___%c[255,255,255,255]Jump increase  %c[255,1,255,1]+8\n%c[default]A unique artifact that resembles a common "Spring" in appearance but is red in color. It possibly transmutes from a "Spring" when it falls into a "Snow" anomaly. It possesses the effect of protection against impact, increases protection against bullets, and also significantly increases jump height.</text></string>
+
+<string id="af_dummy_battery"><text>"Ruby Battery"</text></string>
+<string id="af_red_dummy_battery"><text>A unique artifact that resembles a common "Battery" in appearance but is red in color. It possibly transmutes from a "Battery" when it falls into a "Snow" anomaly. It possesses a protective effect against radiation, electricity, and ruptures.</text></string>
+<string id="artifact_af-ameba-mica"><text>%c[1,1,1,1]___%c[255,255,255,255]Protection from psi-attacks  %c[255,1,255,1]+35%\n%c[default]A third-level artifact of the "Fruit Punch" anomaly family.</text></string>
+<string id="artifact_af-ameba-mica_dyn1"><text>A third-level artifact of the "Fruit Punch" anomaly family.</text></string>
+<string id="artifact_af-ameba-mica_dyn6"><text>A degenerate third-level artifact of the "Fruit Punch" anomaly family.</text></string>
+<string id="artifact_af-ameba-mica_dyn2"><text>%c[1,1,1,1]___%c[255,255,255,255]Protection from psi-attacks  %c[255,1,255,1]+30%\n%c[default]A third-level artifact of the "Fruit Punch" anomaly family.</text></string>
+<string id="artifact_af-ameba-slime_dyn1"><text>A first-level artifact of the "Fruit Punch" anomaly family.</text></string>
+<string id="artifact_af-ameba-slime_dyn6"><text>A degenerate first-level artifact of the "Fruit Punch" anomaly family.</text></string>
+<string id="artifact_af-ameba-slime_dyn2"><text>%c[1,1,1,1]___%c[255,255,255,255]Protection from psi-attacks  %c[255,1,255,1]+10%\n%c[default]A first-level artifact of the "Fruit Punch" anomaly family.</text></string>
+<string id="artifact_af-ameba-slime"><text>%c[1,1,1,1]___%c[255,255,255,255]Protection from psi-attacks  %c[255,1,255,1]+15%\n%c[default]A first-level artifact of the "Fruit Punch" anomaly family.</text></string>
+
+<string id="artifact_af-ameba-slug_dyn1"><text>A second-level artifact of the "Fruit Punch" anomaly family.</text></string>
+<string id="artifact_af-ameba-slug_dyn6"><text>A degenerate second-level artifact of the "Fruit Punch" anomaly family.</text></string>
+<string id="artifact_af-ameba-slug_dyn2"><text>%c[1,1,1,1]___%c[255,255,255,255]Protection from psi-attacks  %c[255,1,255,1]+20%\n%c[default]A second-level artifact of the "Fruit Punch" anomaly family.</text></string>
+<string id="artifact_af-ameba-slug"><text>%c[1,1,1,1]___%c[255,255,255,255]Protection from psi-attacks  %c[255,1,255,1]+25%\n%c[default]A second-level artifact of the "Fruit Punch" anomaly family.</text></string>
+
+<string id="artifact_af-blood"><text>A first-level artifact of the "Whirligig" anomaly family.</text></string>
+<string id="artifact_af-blood_dyn6d"><text>A degenerate first-level artifact of the "Whirligig" anomaly family.</text></string>
+<string id="artifact_af-cristall"><text>A third-level artifact of the "Burner" anomaly family.</text></string>
+<string id="artifact_af-cristall_dyn6d"><text>A degenerate third-level artifact of the "Burner" anomaly family.</text></string>
+
+<string id="artifact_af-drops"><text>A first-level artifact of the "Burner" anomaly family.</text></string>
+<string id="artifact_af-drops_dyn6d"><text>A degenerate first-level artifact of the "Burner" anomaly family.</text></string>
+<string id="artifact_af-dummy-battery"><text>An artifact of the "Dummy" family.</text></string>
+<string id="artifact_af-dummy-dummy"><text>An artifact of the "Dummy" family.</text></string>
+<string id="artifact_af-dummy-glassbeads"><text>An artifact of the "Dummy" family.</text></string>
+<string id="artifact_af-dummy-pellicle"><text>An artifact of the "Dummy" family.</text></string>
+<string id="artifact_af-dummy-spring"><text>An artifact of the "Dummy" family.</text></string>
+<string id="artifact_af-electra-flash"><text>A second-level artifact of the "Electra" anomaly family.\nGreatly increases human energy consumption.</text></string>
+<string id="artifact_af-electra-flash_dyn6d"><text>A degenerate second-level artifact of the "Electra" anomaly family.</text></string>
+<string id="artifact_af-electra-moonlight"><text>A third-level artifact of the "Electra" anomaly family.\nSignificantly increases human energy consumption.</text></string>
+<string id="artifact_af-electra-moonlight_dyn6d"><text>A degenerate third-level artifact of the "Electra" anomaly family.</text></string>
+<string id="artifact_af-electra-sparkler"><text>A first-level artifact of the "Electra" anomaly family.\nMay cause a feeling of hunger.</text></string>
+<string id="artifact_af-electra-sparkler_dyn6d"><text>A degenerate first-level artifact of the "Electra" anomaly family.</text></string>
+<string id="artifact_af-fireball"><text>A second-level artifact of the "Burner" anomaly family.</text></string>
+<string id="artifact_af-fireball_6"><text>A degenerate second-level artifact of the "Burner" anomaly family.</text></string>
+<string id="artifact_af-fuzz-kolobok"><text>An artifact of the "Dummy" family.</text></string>
+<string id="artifact_af-gold-fish"><text>A third-level artifact of the "Vortex" anomaly family.</text></string>
+<string id="artifact_af-gold-fish_dyn1d"><text>A third-level artifact of the "Vortex" anomaly family.</text></string>
+<string id="artifact_af-gold-fish_dyn6d"><text>A degenerate third-level artifact of the "Vortex" anomaly family.</text></string>
+<string id="artifact_af-gold-fish_dyn2d"><text>A third-level artifact of the "Vortex" anomaly family.</text></string>
+<string id="artifact_af-gold-fish_dyn4d"><text>A third-level artifact of the "Vortex" anomaly family.</text></string>
+<string id="artifact_af-gravi"><text>A second-level artifact of the "Vortex" anomaly family.</text></string>
+<string id="artifact_af-gravi_dyn1d"><text>A second-level artifact of the "Vortex" anomaly family.</text></string>
+<string id="artifact_af-gravi_dyn6d"><text>A degenerate second-level artifact of the "Vortex" anomaly family.</text></string>
+<string id="artifact_af-gravi_dyn2d"><text>A second-level artifact of the "Vortex" anomaly family.</text></string>
+<string id="artifact_af-gravi_dyn4d"><text>A second-level artifact of the "Vortex" anomaly family.</text></string>
+<string id="artifact_af-medusa_dyn1d"><text>A first-level artifact of the "Springboard" anomaly family.</text></string>
+<string id="artifact_af-medusa_dyn6d"><text>A degenerate first-level artifact of the "Springboard" anomaly family.</text></string>
+<string id="artifact_af-medusa_dyn3d"><text>A first-level artifact of the "Springboard" anomaly family.</text></string>
+<string id="artifact_af-medusa"><text>A first-level artifact of the "Springboard" anomaly family.</text></string>
+<string id="artifact_af-night-star"><text>A third-level artifact of the "Springboard" anomaly family.</text></string>
+<string id="artifact_af-night-star_dyn3d"><text>A third-level artifact of the "Springboard" anomaly family.</text></string>
+<string id="artifact_af-night-star_dyn1d"><text>A third-level artifact of the "Springboard" anomaly family.</text></string>
+<string id="artifact_af-night-star_dyn6d"><text>A degenerate third-level artifact of the "Springboard" anomaly family.</text></string>
+<string id="artifact_af-cristall-flower"><text>A second-level artifact of the "Springboard" anomaly family.</text></string>
+<string id="artifact_af-cristall-flower_dyn3d"><text>A second-level artifact of the "Springboard" anomaly family.</text></string>
+<string id="artifact_af-cristall-flower_dyn1d"><text>A second-level artifact of the "Springboard" anomaly family.</text></string>
+<string id="artifact_af-cristall-flower_dyn6d"><text>A degenerate second-level artifact of the "Springboard" anomaly family.</text></string>
+<string id="artifact_af-mincer-meat"><text>A second-level artifact of the "Whirligig" anomaly family.</text></string>
+<string id="artifact_af-mincer-meat_6"><text>A degenerate second-level artifact of the "Whirligig" anomaly family.</text></string>
+
+<string id="artifact_af-rusty-kristall"><text>%c[1,1,1,1]___%c[255,255,255,255]Jump increase  %c[255,1,255,1]+4\n%c[default]A second-level artifact of the "Rusty Hair" anomaly family. Increases jump height.</text></string>
+<string id="artifact_af-rusty-kristall_1"><text>A second-level artifact of the "Rusty Hair" anomaly family. Increases jump height.</text></string>
+<string id="artifact_af-rusty-kristall_6"><text>A degenerate second-level artifact of the "Rusty Hair" anomaly family.</text></string>
+<string id="artifact_af-rusty-kristall_2"><text>%c[1,1,1,1]___%c[255,255,255,255]Jump increase  %c[255,1,255,1]+3\n%c[default]A second-level artifact of the "Rusty Hair" anomaly family. Increases jump height.</text></string>
+<string id="artifact_af-rusty-sea-urchin"><text>%c[1,1,1,1]___%c[255,255,255,255]Jump increase  %c[255,1,255,1]+6\n%c[default]A third-level artifact of the "Rusty Hair" anomaly family. Increases jump height.</text></string>
+<string id="artifact_af-rusty-sea-urchin_1"><text>A third-level artifact of the "Rusty Hair" anomaly family. Increases jump height.</text></string>
+<string id="artifact_af-rusty-sea-urchin_6"><text>A degenerate third-level artifact of the "Rusty Hair" anomaly family.</text></string>
+<string id="artifact_af-rusty-sea-urchin_2"><text>%c[1,1,1,1]___%c[255,255,255,255]Jump increase  %c[255,1,255,1]+5\n%c[default]A third-level artifact of the "Rusty Hair" anomaly family. Increases jump height.</text></string>
+<string id="artifact_af-rusty-thorn"><text>%c[1,1,1,1]___%c[255,255,255,255]Jump increase  %c[255,1,255,1]+2\n%c[default]A first-level artifact of the "Rusty Hair" anomaly family. Increases jump height.</text></string>
+<string id="artifact_af-rusty-thorn_1"><text>A first-level artifact of the "Rusty Hair" anomaly family. Increases jump height.</text></string>
+<string id="artifact_af-rusty-thorn_6"><text>A degenerate first-level artifact of the "Rusty Hair" anomaly family.</text></string>
+<string id="artifact_af-rusty-thorn_2"><text>%c[1,1,1,1]___%c[255,255,255,255]Jump increase  %c[255,1,255,1]+1\n%c[default]A first-level artifact of the "Rusty Hair" anomaly family. Increases jump height.</text></string>
+<string id="artifact_af-soul"><text>A third-level artifact of the "Whirligig" anomaly family.</text></string>
+<string id="artifact_af-soul_dyn6d"><text>A degenerate third-level artifact of the "Whirligig" anomaly family.</text></string>
+<string id="af_electra_blue_desc"><text>A fairly rare but—alas—useless artifact for stalkers, somewhat resembling "Moonlight." It can be sold to traders for a relatively good profit.</text></string>
+<string id="artifact_af-soul_new"><text>A rare artifact possessing anti-gravity properties. It may cause a feeling of hunger.</text></string>
+<string id="af_sul_new_desc_1"><text>A rare artifact possessing anti-gravity properties. It may cause a feeling of hunger.</text></string>
+<string id="af_sul_new_desc_2"><text>A rare artifact possessing anti-gravity properties. It may cause a feeling of hunger.</text></string>
+<string id="af_sul_new_desc_4"><text>A rare artifact possessing anti-gravity properties. It may cause a feeling of hunger.</text></string>
+<string id="af_sul_new_desc_5"><text>A rare artifact possessing anti-gravity properties. It may cause a feeling of hunger.</text></string>
+<string id="af_sul_new_desc_6"><text>A degenerate "Wrenched" artifact.</text></string>
+<string id="artifact_af-vyvert"><text>A first-level artifact of the "Vortex" anomaly family.</text></string>
+<string id="artifact_af-vyvert_dyn1d"><text>A first-level artifact of the "Vortex" anomaly family.</text></string>
+<string id="artifact_af-vyvert_dyn6d"><text>A degenerate first-level artifact of the "Vortex" anomaly family.</text></string>
+<string id="artifact_af-vyvert_dyn2d"><text>A first-level artifact of the "Vortex" anomaly family.</text></string>
+<string id="artifact_af-vyvert_dyn4d"><text>A first-level artifact of the "Vortex" anomaly family.</text></string>
+
+<string id="af_glass"><text>"Little Star"</text></string>
+<string id="af_glass_desc"><text>The "Little Star" artifact was named for its shape. From afar, in the darkness of night, it is easily mistaken for a large star hanging low above the horizon. It holds no value for stalkers due to the absence of clearly defined positive properties; however, it is rumored that when worn on a belt, it protects the owner from the paralyzing influence of Burers. It can be sold for a reasonable amount of money.</text></string>
+
+<string id="af_electra_sparkler_new"><text>"Electro-sparkler"</text></string>
+<string id="af_electra_sparkler_new_desc"><text>At first glance, this artifact is a common "Sparkler." However, experienced Zone wanderers distinguish them without difficulty. Although considered quite rare, it is not useful for stalkers due to its weakly expressed anomalous properties. Nevertheless, traders may offer a good price for it.</text></string>
+
+<string id="af_dummy_sparkler"><text>"Snowball"</text></string>
+<string id="artifact_af_dummy_sparkler"><text>The "Snowball" artifact is practically never found in natural conditions and stands apart from other, more well-known and studied wonders of the Zone. Its main property lies in the ability to spawn a "Whirligig" anomaly when a strictly defined sequence of presses and touches to the artifact's surface is performed. Such manipulations are referred to in scientific circles as "activation of the artifact's hidden properties" or simply "activation." Activation can be performed only once, as the entire energy accumulated by the artifact is released during the birth of the anomaly, leading to its complete destruction.</text></string>
+
+<string id="af_ice_desc"><text>An extremely interesting artifact for science. It is famous for drawing almost any energy from surrounding objects—kinetic, thermal, and even discharging batteries in devices. The higher the energy, the more it takes. On its own, it rarely has a temperature above zero degrees and tends to cool all non-living objects within a meter radius. It remains a mystery to scientists where it puts the absorbed energy. It is expensive.</text></string>
+
+<string id="af_ice_desc_6"><text>A degenerate "Ice Cream" artifact.</text></string>
+
+<string id="af-night_star_new_desc"><text>When activated on a belt, the artifact exhibits an unusual property—thickening the air around the wearer, making it literally viscous, which helps avoid serious injury when falling from a great height. Also, according to unverified reports, the artifact helps the wearer not to freeze in terror from the deafening roar of Chimeras. It may cause a feeling of hunger.</text></string>
+
+<string id="af_dummy_fire_desc"><text>A strange artifact. It seems there are no properties upon stimulation. Whether to sell it or not, decide for yourself...</text></string>
+
+<string id="af_baloon_desc"><text>Another almost useless but beautiful little thing. A strange artifact. It helps stop bleeding slightly, but in return, it can increase the feeling of hunger, that's all. Whether to sell it or not, decide for yourself...</text></string>
+
+<string id="af_ice"><text>"Ice Cream"</text></string>
+<string id="enc_zone_artifact_af_unknown_1"><text>Anomalous formation A-239.</text></string>
+<string id="enc_zone_artifact_af_unknown_2"><text>Anomalous formation B-274.</text></string>
+<string id="enc_zone_artifact_af_unknown_3"><text>Anomalous formation C-247.</text></string>
+<string id="enc_zone_artifact_af_unknown_4"><text>Anomalous formation D-845.</text></string>
+<string id="enc_zone_artifact_af_unknown_5"><text>Anomalous formation D-396.</text></string>
+<string id="enc_zone_artifact_af_unknown_6"><text>Anomalous formation D-654.</text></string>
+<string id="enc_zone_artifact_af_unknown_7"><text>Anomalous formation D-781.</text></string>
+<string id="enc_zone_artifact_af_unknown_8"><text>Anomalous formation E-545.</text></string>
+<string id="enc_zone_artifact_af_unknown_9"><text>Anomalous formation G-024.</text></string>
+<string id="enc_zone_artifact_af_unknown_10"><text>Anomalous formation H-121.</text></string>
+<string id="enc_zone_artifact_af_unknown_11"><text>Anomalous formation I-182.</text></string>
+<string id="enc_zone_artifact_af_unknown_12"><text>Anomalous formation J-244.</text></string>
+<string id="enc_zone_artifact_af_unknown_13"><text>Anomalous formation J-142.</text></string>
+<string id="enc_zone_artifact_af_unknown_14"><text>Anomalous formation J-060.</text></string>
+<string id="enc_zone_artifact_af_unknown_15"><text>Anomalous formation J-790.</text></string>
+<string id="enc_zone_artifact_af_unknown_16"><text>Anomalous formation K-346.</text></string>
+<string id="enc_zone_artifact_af_unknown_17"><text>Anomalous formation K-162.</text></string>
+<string id="enc_zone_artifact_af_unknown_18"><text>Anomalous formation K-683.</text></string>
+<string id="enc_zone_artifact_af_unknown_19"><text>Anomalous formation L-614.</text></string>
+<string id="enc_zone_artifact_af_unknown_20"><text>Anomalous formation M-609.</text></string>
+<string id="enc_zone_artifact_af_unknown_21"><text>Anomalous formation N-766.</text></string>
+<string id="enc_zone_artifact_af_unknown_22"><text>Anomalous formation O-477.</text></string>
+<string id="enc_zone_artifact_af_unknown_23"><text>Anomalous formation P-049.</text></string>
+<string id="enc_zone_artifact_af_unknown_24"><text>Anomalous formation P-877.</text></string>
+<string id="enc_zone_artifact_af_unknown_25"><text>Anomalous formation P-702.</text></string>
+<string id="enc_zone_artifact_af_unknown_26"><text>Anomalous formation Q-317.</text></string>
+<string id="enc_zone_artifact_af_unknown_27"><text>Anomalous formation R-051.</text></string>
+<string id="enc_zone_artifact_af_unknown_28"><text>Anomalous formation S-804.</text></string>
+<string id="enc_zone_artifact_af_unknown_29"><text>Anomalous formation S-237.</text></string>
+<string id="enc_zone_artifact_af_unknown_30"><text>Anomalous formation S-357.</text></string>
+<string id="enc_zone_artifact_af_unknown_31"><text>Anomalous formation S-753.</text></string>
+<string id="enc_zone_locations_agroprom"><text>A strange area. If you go deep into it, you will come out onto a plain heavily contaminated with radiation. A shallow lake located there is filled to the brim with wreckage of machinery. You can also visit the old institute and the factory; however, lately, the military has started appearing there all too often.</text></string>
+
+<string id="enc_zone_locations_bar"><text>The Duty faction cleared a small spot for their base on the outskirts of the Wild Territory and allows stalkers to rest here. It's a kind of oasis in the desert: no anomalies, no mutants. There is an underground area housing the "100 Rads" bar. Stalkers from all over the Zone gather there. A local trader runs the bar, so here you can not only socialize but also buy and sell almost anything. To the north of the bar lies the military base; to the south is the Garbage.</text></string>
+
+<string id="enc_zone_locations_darkdolina"><text>It is always gloomy and foggy here; it rains often. In the Dark Valley, you can get hold of some good artifacts, but you can also quickly part with your life. There are many veteran stalkers here. They came for valuable artifacts, but there are also bandits. You can look for the entrance to an underground laboratory located somewhere around here, but no one has ever returned from there, and what hides within is not properly known to anyone.</text></string>
+
+<string id="enc_zone_locations_escape"><text>A kind of waiting room for the Zone, the first place where rookies arrive to gradually settle in. A trader lives in a cellar behind the village near the army checkpoint—it's useful to talk to him. Poking around the checkpoint and getting caught by the soldiers is not wise: they have orders to shoot without warning; on the other hand, some are ready to become instantly kinder for money, especially if the commanders aren't around. Killing soldiers is highly discouraged, except in cases of a direct threat to life.</text></string>
+
+<string id="enc_zone_locations_garbage"><text>A massive technical graveyard: piles of radioactive junk were brought here after the first accident. There are remains of old buildings and mutants can be encountered. Here, just like near the perimeter itself, there are many rookies, and bandits hang around nearby, always looking for a fatter piece without much trouble. You can find a few artifacts, but it's better not to linger—there are more interesting places. If you go north, you will reach the Wild Territory; to the west is the passage to the Dark Valley; to the east is the road to the Agroprom Research Institute.</text></string>
+
+<string id="enc_zone_locations_military-loc"><text>An abandoned army base near a village inhabited by strange creatures and a small marsh. Stalkers rarely venture into the village, usually bypassing it by a long way. The anarchists from the "Freedom" faction have settled on the territory of the military base. If you go further into the Zone from the base, you will run straight into the Brain Scorcher. It completely blocks the path to Pripyat and the CNPP.</text></string>
+
+<string id="enc_zone_locations_pripiat"><text>This used to be a city of power plant workers. It was built along with the CNPP. It was a fairly large town... only now no one lives there anymore, except, of course, for all sorts of evil spirits like mutants and zombies. It seems that passing through there is impossible. The Brain Scorcher blocks the way.</text></string>
+
+<string id="enc_zone_locations_radar"><text>A terrifying place. You can perish here for no reason at all, even if you’ve been lucky all your life. Anyone who gets close to the Brain Scorcher loses their mind, turns into a zombie, and then wanders through the Zone, restless. Only human shells remain, and no one has ever returned from there in their right mind.</text></string>
+
+<string id="enc_zone_locations_rostok"><text>On the Wild Territory, there used to be a fairly large factory, of which only ruins remain now. Many stalkers found their end in them: all sorts of filth have bred there, as if gathering from the entire Zone. According to rumors, however, there is something very important at this factory, so there are always plenty of people willing to try their luck.</text></string>
+
+<string id="enc_zone_locations_stancia"><text>The former nuclear power plant that everyone has heard of at least once. This is the very heart of the Zone. According to legends, somewhere there is a certain thing capable of granting any wish—they call it the Monolith.</text></string>
+
+<string id="enc_zone_locations_yantar"><text>The legendary lake in the sector of the same name dried up long ago; only a small marsh remains. Going there is especially dangerous because anyone who ventures too far immediately suffers mind damage. Zombies wander all over the sector, and if they see someone, they approach with far from peaceful intentions. If you bypass the lake and the groups of zombies, you will find a scientific camp. Scientists there—brought in by helicopters—are studying something. You can talk to them; they buy artifacts and might even give you a task.</text></string>
+
+<string id="enc_zone_zone-story_story-2006"><text>The Exclusion Zone was lit up by a bright, almost unbearable light, and clouds could be seen starting to evaporate in the sky. After a moment of complete silence came the roar and an earthquake. People fell to the ground, covering their eyes and ears; those who could, ran for their lives. From the outside, it looked as if all the nuclear fuel buried under the sarcophagus had blown up at once. A day later, government troops had already completely cordoned off the new Zone. With the help of satellites, it was discovered that the epicenter of the explosion was not at the power plant units themselves, but a kilometer away from them. It is believed that the entire station staff died instantly, but many other people remained inside the cordon ring. It was not possible to organize rescue operations, as the squads of people and equipment sent deep into the affected territory perished almost immediately. Sometime after the accident, the diameter of the Zone increased sharply by several kilometers. Most of the government troops guarding the perimeter and the scientific laboratories located there died instantly. Panic began; residents of surrounding villages and towns were evacuated in haste or fled on their own. A danger loomed over the world, the magnitude of which can still only be guessed at.</text></string>
+
+<string id="enc_zone_zone-story_story-2008"><text>Two years have passed since the terrible catastrophe occurred in the Exclusion Zone around the Chernobyl NPP. A large number of dead and missing people, fallen livestock, blackened buildings, mutilated forest... scientists still cannot provide explanations for what happened. Meanwhile, the Zone, inside which completely fantastic anomalies were discovered, is growing. Rare expeditions encounter mutated species of animals with amazing characteristics.</text></string>
+
+<string id="enc_zone_zone-story_story-2010"><text>Following in the footsteps of desperate lone stalkers, scientific expeditions are again taking up the large-scale study of the Zone. However, inside the army-guarded perimeter, there are already many "unaccounted for persons," ranging from poachers to bandits. For the most part, stalkers travel through the Zone in search of various anomalous formations, so-called artifacts, for which they often receive good money.</text></string>
+
+<string id="enc_zone_zone-story_story-raid"><text>Army units, including special forces led by military stalker squads, undertook a major expedition into the Zone with the aim of breaking through to the CNPP and destroying the presumed cause of the deadly anomalous fields, or finally obtaining reliable information about the processes occurring there. This enterprise, in which more than a thousand people and much equipment took part, failed completely. Individual groups of survivors settled in the territory of the Zone without much hope of rescue.</text></string>
+<string id="Escape"><text>Cordon</text></string>
+<string id="Fuzz"><text>"Burny Fuzz"</text></string>
+<string id="Garbage"><text>Garbage</text></string>
+<string id="Gravi"><text>"Vortex"</text></string>
+<string id="Lift"><text>"Lift"</text></string>
+<string id="Locations"><text>Locations</text></string>
+<string id="Meat"><text>"Whirligig"</text></string>
+<string id="Military-loc"><text>Military Base</text></string>
+<string id="Pripiat"><text>Pripyat</text></string>
+<string id="Radar"><text>"Scorcher"</text></string>
+<string id="Radioactive"><text>Radioactive Hotspot</text></string>
+<string id="Rostok"><text>Wild Territory</text></string>
+<string id="Stancia"><text>CNPP</text></string>
+<string id="Story-2006"><text>April 12, 2008, 14:33</text></string>
+<string id="Story-2008"><text>Year 2010</text></string>
+<string id="Story-2010"><text>Year 2011</text></string>
+<string id="Story-raid"><text>Breakthrough into the Zone. Year 2011</text></string>
+<string id="Time_machine"><text>"Time Machine"</text></string>
+<string id="Yantar"><text>Yantar</text></string>
+<string id="Zharka"><text>"Burner"</text></string>
+<string id="Zone"><text>The Zone</text></string>
+<string id="Zone-story"><text>History of the Zone</text></string>
+<string id="enc_many_in_zone"><text>About currency in the ZONE</text></string>
+<string id="enc_many_in_zone_text"><text>Sidorovich:\nRubles, yeah... Soviet ones... I look at them and remember my childhood. It was a good time. Carefree. Soda for a kopek. Ice cream for 10.\nHow did it happen that we started using them here for payment? See for yourself...\nWhen the second blast hit and the Zone was formed, there were brave souls who began to sneak in here—the military had surrounded it tightly from all sides, thinking: any moment some infection or monsters would come crawling out.\nSo, the first stalkers would crawl inside at night and carry out all sorts of curiosities—"artifacts." A small business was formed to deliver these arts to customers. Back then, stalkers were paid in hard-earned dollars or other foreign currency.\nLater, the bravest—let's be honest, the most desperate people—realized that carrying artifacts one by one was very inefficient. After all, if two out of five who went into the Zone returned, you were lucky, and even those often came back empty-handed. In short, we, yes, me too... ahem... my youth... We decided that stalkers needed support here, inside the Zone. Some food, ammo, gear... All sorts of things. Right.\nBut bringing dollars or other high-value "tugriks" here is dangerous; the people coming here are increasingly wild, frostbitten, those who have nothing left to lose. Such folks might shoot you not just for ten bucks, but sometimes for a loaf of sausage!\nHow to solve it, you ask? Luck helped, for the most part. A couple of stalkers found a bank vault in one of the destroyed settlements. Well, old Soviet rubles abandoned after the first evacuation. Whether it was a lot or not, we started using these scraps of paper, which are useless on the mainland, for transactions here in the Zone. At first, we only used them for payments, and for those who wanted hard currency—we, well, I, would write checks to bearer for banks. We didn't cheat anyone, so no one cut the throat of poor old Sidor...\nNow, more people have started visiting the Zone, and there aren't enough rubles for full transactions. So, we supply the rookies with these electronic gadgets—PDAs. They encrypt the account and the amount of savings. That's how it is, and the rubles... they're still around. You could say it's the hard currency of the Zone, backed by the Trader's word...</text></string>
+<string id="enc_art_belt"><text>About the artifact belt</text></string>
+<string id="enc_art_belt_text"><text>Stalkers use a special belt to activate the beneficial properties of artifacts. It's a system of containers or mounts that allow an artifact to safely interact with the wearer's body. An artifact simply sitting in a backpack is just a piece of anomalous matter, but once placed on the belt, it begins to manifest its unique characteristics, affecting the wearer's physical condition or providing protection against various types of damage. However, one should not forget that many artifacts are radioactive, and their constant presence near the body can lead to radiation sickness without proper protection.</text></string>
+<string id="belt_2_art"><text>One-slot artifact belt</text></string>
+<string id="belt_3_art"><text>Two-slot artifact belt</text></string>
+<string id="belt_4_art"><text>Three-slot artifact belt</text></string>
+<string id="belt_5_art"><text>Four-slot artifact belt</text></string>
+<string id="belt_6_art"><text>Five-slot artifact belt</text></string>
+<string id="enc_belt_2_art"><text>A belt equipped with metal mesh cells for artifacts and a battery compartment with an electronic converter to generate the high voltage required to activate an artifact.</text></string>
+<string id="enc_zone_theory"><text>What is it — the Zone?</text></string>
+<string id="enc_zone_theory_text"><text>What is the Zone? For some, it is a source of inexplicable wonders and wealth; for others, it is a mortal wound on the body of the Earth. Scientists argue about its nature: is it a result of a breakthrough in the noosphere, a physical manifestation of human subconsciousness, or simply a monstrous laboratory under the open sky? One thing is clear: the Zone lives by its own rules, which do not obey the laws of physics we are used to. It breathes, expands, and changes everyone who dares to cross the Perimeter. To understand the Zone is to understand the very essence of the Great Disaster, but so far, the Zone only asks questions, answering them with a deathly silence or the roar of an emission.</text></string>
+<string id="enc_zone_teleport"><text>About teleports</text></string>
+<string id="enc_zone_teleport_text">
+<text>Fanat:\nTeleports? Hell if I know what they are or how they work. I think of it like a hole in the wall to the neighbor's apartment. It's inconvenient, and you don't know where you'll end up or who you'll meet there—but hey, it's fast.\nGetting a teleport to work isn't that hard, in principle—you just need to know the "special" spot and have an artifact that allows you to break through that invisible "wall" in that specific location. But making that teleport work exactly how you need it to... for that, you have to account for a ton of factors: precise timing, air humidity, wind direction and strength... A whole lot of things. Don't overthink it. You also need a special gut feeling, and that's not something you can calculate...</text></string>
+
+<string id="enc_zone_weapons"><text>About weapon wear</text></string>
+<string id="enc_zone_weapons_text">
+<text>Lisaped:\nWhy does gear wear down so fast? Hm... Sit down, pour yourself a drink. Easy with the hands, you're spilling more than you're pouring...\nMany ask themselves this question about the wear and tear. I only ever heard a sensible answer from one scientist, a guy named Vasilyev... Good man, even if he was a "big head." Didn't shun stalkers, could knock back a glass of vodka without flinching, and explained things in a way that made sense... Well, almost.\nAnyway, I asked him. He says that time is also made of these tiny atoms—he gave 'em a name, but sorry, I can't repeat it. Those very atoms of time are always with us, so we don't notice 'em. Kind of like air. But here in the Zone, new time atoms appeared, ones not from our world. We barely notice them either. But! Only as long as our speed is low. Like a breeze. Or like sticking your head out of a fast car—it'll mess up your hair...\nKeep pouring, keep pouring...\nBut a bullet—its speed is even higher. So that bullet collides with "other" time much more. It ages in mid-flight, you could say. That's why hitting a target further than two hundred meters in the Zone is impossible... and the barrel gets a dose of this "wrong" time because of the bullet's high-speed flight. That's why the wear is so wild...\nThose foreign guns, and even our newer ones—they just fall apart after a dozen shots... But the Kalashnikov—it holds up, no problem...</text></string>
+
+<string id="enc_zone_mercenary"><text>About Mercenary goals</text></string>
+<string id="enc_zone_mercenary_text"><text>Volkodav:\nAh! It's you again. You're starting to cross our path a little too often. You've got a very convenient alibi—I don't remember anything, I don't know anything. It seems to me that such experience doesn't just appear out of nowhere, eh? Who are you working for? Won't say? Well, well... Calm down. I won't tell you who I work for either... Professional ethics.\nWhat I'm getting at is: think about it, maybe we're looking for something similar—you and I. Your "legend" is handy—you can slip in anywhere quietly, ask about anything, and no one wonders: "Why are you hanging around here, searching?" Let's help each other; I've had enough of this Zone. These mutants, the anomalies, the idiots with guns who just want to shoot... I just want to finish the job quickly, and get back to a normal life, a warm toilet, healthy food, girls ready for anything...\nWhat job? Hm.. Alright. Basically, have you heard about the Monolithians? You know, those fanatics who have north and south mixed up in their heads. Lately, they've got new, unusual guns. Almost a hundred percent accuracy, and the stopping power, mama mia! Some corporations abroad would love to "ride the wave" and outdo their competitors in terms of supplying such weaponry. But here's the paradox, the gun exists, it kills, but it's impossible to take! Not even with any grabbers. You try to take it, and—poof, nothing but black smoke... So we're looking for any lead that would allow us to take such a weapon out of the Zone and take it apart, so to speak. Understand the principle.\nLook, if you find out anything, we won't stay in your debt—you'll be living like a king for a hundred years, I'm telling you for sure. 
+There must be a solution! Most likely somewhere deep in the center, where those "Monolithians" gather—there's some kind of production facility where they assemble these "wonder-cannons." We just need to find the way there.</text></string>
+
+<string id="enc_zone_pda"><text>About PDA operation</text></string>
+<string id="enc_zone_pda_text"><text>Docent:\nGlad to see you again. How do our PDAs work? They work fine. They have a communication program in them, in English it's called "Meeting Point." Voice communication is very unstable, but short text messages on a selected channel or, say, other information can be sent. The fact that the connection sometimes works over quite long distances is due to the anomalous influence of the Zone. No one has figured this out exactly yet. Personally, I think that under the influence of Emissions, the local space of our world mixes with the space of another world. And ultra-high frequencies, which have very small wavelengths, sometimes pass through the gaps between our dimension and another.\nSidorovich said that when they took the pilot batch of PDAs, they didn't think they could be used for communication. Just for local calculations. But that's how it turned out. And now a stalker is not entirely alone in this world and can sometimes even hope for help in a critical situation. Or, at least, send out a final farewell...</text></string>
+
+<string id="enc_zone_x16"><text>About Laboratory X-16</text></string>
+<string id="enc_zone_x16_text"><text>Excerpts from the report of the XX department of the Russian FSB based on the results of the investigation of laboratory X-16 in the anomalous Zone of the CNPP (Ukraine)\n\n...Questions regarding the manipulation of the human mind were perhaps first practically addressed by Nazi Germany in 1937-45. Possessing strong pharmaceuticals and radio-electronics, plus an unlimited amount of human material in concentration camps, the Nazis managed to achieve great success in creating psychotropic drugs and psychotronic installations. By the end of the war, they were close to implementing parallel consciousness and creating super-agents following embedded programs via verbal commands or visual images. Most of the work was carried out in Western Germany, and the research results fell into the hands of the Americans, who significantly developed them during the Cold War. In the Soviet Union, theoretical research was conducted at the Bekhterev Brain Institute, while practical research took place in secret NKVD, KGB, and GRU laboratories.\n...In the early eighties, Laboratory X-16 was established, and a successful attempt was made to create a biological cyber-system—an artificial brain—where behavioral algorithms of artificially implanted parallel consciousness were modeled with the forced blocking of specific memory sectors. The test subject's brain was connected to a bio-computer via a telepathic channel, and a personality matrix replacement was performed, altering the individual's persona. The procedure was tested on guards and civilian personnel under the guise of medical examinations, kept strictly secret so that no one would even suspect it. Hundreds of special agents with unknown missions are now waiting for a code signal to begin executing their embedded programs.\n...In 2012, during the first Emission after the 1986 accident when the Zone first appeared, the bio-computer, the artificial brain, began to show signs of non-humanoid xeno-intelligence. Initially, this was met with enthusiasm; a new self-consciousness was created whose power could be used to acquire new knowledge. But things did not turn out as intended. Academician Patonov was the first to identify the problem. In his article, he pointed out strange patterns between the consequences of Emissions and the activity of the bio-computer. A month later, he died under strange circumstances, and the article had no follow-up.\n...In 2013, Professor Perelman proved the mutual influence of the Zone and the bio-computer. It was then decided to shut down the bio-system. However, during the shutdown attempt, the personnel were subjected to severe psi-influence, and Laboratory X-16 became inaccessible. The bio-computer evolved into a super-brain, turning into a communication channel and possibly a point of interaction between our world and the world that birthed the Zone. Who controls whom, and how or who influences whom, is unknown. Currently, access to Laboratory X-16 is impossible due to irreversible damage to the human psyche.</text></string>
+
+<string id="enc_flesh_mackintosh"><text>About Flesh-hide trench coats</text></string>
+<string id="enc_flesh_mackintosh_text"><text>Krysyuk:\nThey really knew how to make real men back in the USSR... but the ones today, ptui! Not worth a damn... All they think about is dough! You've shown me respect, thanks. I know "thanks" doesn't fill a glass or keep you warm, though. I've got one thing, something special. A little suit-coat... You follow? Why the long face? This is every authority's dream! A common thug dreams of a coat like this at night. And why?\nHave you tried to kill a Flesh? Hard, isn't it? In the Zone, the Flesh's hide has acquired unusual properties—it thickens at the point of bullet impact to an unbelievable degree! Like actual armor! But a knife cuts right through—paradox, ain't it...\nWell, these coats are crafted from those hides. There's a master craftsman who lives not far beyond the cordon. The brown coat is from a simple Flesh, not yet fully matured. But the black one... that's the real deal! Made from the toughest Fleshes! Getting a hide like that is no easy task! Hunters charge big money for it. But if you get one!\nSo, take it and remember Krysyuk, he remembers kindness...</text></string>
+
+<string id="enc_zone_mask_theory"><text>About respiratory protection</text></string>
+<string id="enc_zone_mask_theory_text"><text>Sidorovich:\nHere we are at the Cordon, the edge of the Zone. That's why the dangers it's rich in don't manifest themselves so clearly. Minor things, mostly—a few mutants, a couple of anomalies. A bolt for help and a bit of focus will save any rookie who isn't stupid.\nThose places closer to the center are a different story. There, the Zone will show you everything it's capable of. Let me warn you specifically—don't try to get through lightly equipped. No one has figured out exactly what might be in the air, but if you breathe without protection for long enough, poisoning occurs. From what, you ask? I don't know! And nobody knows. Some stubborn folks risk breathing it and even brag that nothing affects them. That's nonsense! There are places, of course, where the rot might not damage you as badly—at the Bar, for example. But it's better to play it safe there too. Don't take off a suit with a gas mask, or better yet, one with a closed-cycle breathing system. Or, activate some health-boosting artifacts on your belt...</text></string>
+
+<string id="enc_zone_teleport_theory"><text>On teleportation...</text></string>
+<string id="enc_zone_teleport_theory_text"><text>...these micro-shifts in time occur whenever a spatial teleport arises, which is quite understandable if one takes into account that space and time are inseparable. These micro-shifts are practically imperceptible and do not affect our world in any way, meaning no violations of cause-and-effect relationships are observed. This suggests that their typical lifespan is fractions of a second, and the time deviations themselves do not exceed fractions of a second. This represents a certain average level. However, if there is an average level of discrete states, then there must also be deviations from the norm—fluctuations. I believe that deviations should occur in approximately 1 out of 100,000 cases. I will provide the calculations for these fluctuations later; the computations were made based on the latest data obtained from Agroprom and other locations where such deviations were observed in the interval from several minutes to an hour...\n...Based on these calculations, it turns out that there is a probability of a time shift up to 1,000,000 seconds forward or backward, which is about two weeks. It is quite possible that this has already occurred somewhere but was not recorded by anyone...\n...This is, of course, only a hypothesis, but the question arises: how many spatial teleports must actually be forming if the probability of fluctuational time deviations is so high? (And these are specifically fluctuations, as mass violations of causality are not observed). Judging by the calculations, there are a great many. Of course, the vast majority exist for fractions of a second. Surely, many will even be impossible to record during an experiment. But still—there is a colossal number of them. Because of their sheer quantity, one could even speak of a certain "field"...\n\nManuscript delivered by Professor Grigorovich I.S.</text></string>
+
+<string id="artmod_blood_ice_text"><text>Meat Chunk from a Snow</text></string>
+<string id="artmod_mincer_meat_mosquito_bald_text"><text>Meat Chunk from a Springboard</text></string>
+<string id="artmod_electra_sparkler_mosquito_bald_text"><text>Sparkler from a Springboard</text></string>
+<string id="artmod_ameba_slug_mosquito_bald_text"><text>Slug from a Springboard</text></string>
+<string id="artmod_cristall_mosquito_bald_text"><text>Crystal from a Springboard</text></string>
+<string id="artmod_rusty_sea-urchin_mosquito_bald_text"><text>Sea Urchin from a Springboard</text></string>
+<string id="artmod_dummy_dummy_mosquito_bald_text"><text>Dummy from a Springboard</text></string>
+<string id="artmod_gravi_gravi_zone_text"><text>Gravi from a Vortex</text></string>
+<string id="artmod_ameba_slime_gravi_zone_text"><text>Slime from a Vortex</text></string>
+<string id="artmod_rusty_kristall_gravi_zone_text"><text>Stone Blood from a Vortex</text></string>
+<string id="artmod_electra_flash_gravi_zone_text"><text>Flash from a Vortex</text></string>
+<string id="artmod_night_star_gravi_zone_text"><text>Night Star from a Vortex</text></string>
+<string id="artmod_soul_gravi_zone_text"><text>Soul from a Vortex</text></string>
+<string id="artmod_dummy_pellicle_gravi_zone_text"><text>Pellicle from a Vortex</text></string>
+<string id="artmod_cristall_flower_mincer_text"><text>Stone Flower from a Whirligig</text></string>
+<string id="artmod_drops_mincer_text"><text>Droplets from a Whirligig</text></string>
+<string id="artmod_rusty_kristall_mincer_text"><text>Crystal Thorn from a Whirligig</text></string>
+<string id="artmod_electra_moonlight_mincer_text"><text>Moonlight from a Whirligig</text></string>
+<string id="artmod_ameba_slug_mincer_text"><text>Mica from a Whirligig</text></string>
+<string id="artmod_dummy_glassbeads_mincer_text"><text>Mama's Beads from a Whirligig</text></string>
+<string id="artmod_rusty_kristall_buzz_text"><text>Crystal Thorn from a Fruit Punch</text></string>
+<string id="artmod_rusty_thorn_buzz_text"><text>Thorn from a Fruit Punch</text></string>
+<string id="artmod_fireball_buzz_text"><text>Fireball from a Fruit Punch</text></string>
+<string id="artmod_cristall_buzz_text"><text>Crystal from a Fruit Punch</text></string>
+<string id="artmod_gold_fish_buzz_text"><text>Goldfish from a Fruit Punch</text></string>
+<string id="artmod_fuzz_kolobok_buzz_text"><text>Kolobok from a Fruit Punch</text></string>
+<string id="artmod_vyvert_buzz_text"><text>Wrenched from a Fruit Punch</text></string>
+<string id="artmod_electra_flash_zharka_text"><text>Flash from a Burner</text></string>
+<string id="artmod_ameba_slime_zharka_text"><text>Slime from a Burner</text></string>
+<string id="artmod_gravi_zharka_text"><text>Gravi from a Burner</text></string>
+<string id="artmod_night_star_zharka_text"><text>Night Star from a Burner</text></string>
+<string id="artmod_electra_moonlight_zharka_text"><text>Moonlight from a Burner</text></string>
+<string id="artmod_dummy_battery_zharka_text"><text>Battery from a Burner</text></string>
+<string id="artmod_fireball_galant_text"><text>Fireball from an Electra</text></string>
+<string id="artmod_cristall_flower_galant_text"><text>Stone Flower from an Electra</text></string>
+<string id="artmod_ameba_mica_galant_text"><text>Mica from an Electra</text></string>
+<string id="artmod_electra_moonlight_galant_text"><text>Soul from an Electra</text></string>
+<string id="artmod_gold_fish_galant_text"><text>Goldfish from an Electra</text></string>
+<string id="artmod_medusa_galant_text"><text>Jellyfish from an Electra</text></string>
+<string id="artmod_dummy_spring_galant_text"><text>Spring from an Electra</text></string>
+<string id="artmod_glassbeads_ice_text"><text>Electric Beads from a Snow</text></string>
+<string id="artmod_rusty_sea-urchin_ice_text"><text>Sea Urchin from a Snow</text></string>
+<string id="artmod_ameba_slug_ice_text"><text>Slug from a Snow</text></string>
+<string id="artmod_baloon_sakbuzz_text"><text>Canister from a Fruit Punch</text></string>
+<string id="artmod_sul_new_ice_text"><text>Dirigible from a Snow</text></string>
+
+<string id="enc_artmod_electra_sparkler_mosquito_bald_name"><text>[1] Sparkler from a Springboard</text></string>
+<string id="enc_artmod_ameba_slime_gravi_zone_name"><text>[1] Slime from a Vortex</text></string>
+<string id="enc_artmod_ameba_slime_zharka_name"><text>[1] Slime from a Burner</text></string>
+<string id="enc_artmod_rusty_kristall_gravi_zone_name"><text>[1] Stone Blood from a Vortex</text></string>
+<string id="enc_artmod_drops_mincer_name"><text>[1] Droplets from a Whirligig</text></string>
+<string id="enc_artmod_rusty_thorn_buzz_name"><text>[1] Thorn from a Fruit Punch</text></string>
+<string id="enc_artmod_medusa_galant_name"><text>[1] Jellyfish from an Electra</text></string>
+<string id="enc_info_artmod_vyvert_buzz_name"><text>[1] Wrenched from a Fruit Punch</text></string>
+
+<string id="enc_artmod_blood_ice_name"><text>[2] Meat Chunk from a Snow</text></string>
+<string id="enc_artmod_mincer_meat_mosquito_bald_name"><text>[2] Meat Chunk from a Springboard</text></string>
+<string id="enc_artmod_ameba_slug_mosquito_bald_name"><text>[2] Slug from a Springboard</text></string>
+<string id="enc_artmod_ameba_slug_ice_name"><text>[2] Slug from a Snow</text></string>
+<string id="enc_artmod_gravi_gravi_zone_name"><text>[2] Gravi from a Vortex</text></string>
+<string id="enc_artmod_gravi_zharka_name"><text>[2] Gravi from a Burner</text></string>
+<string id="enc_artmod_electra_flash_gravi_zone_name"><text>[2] Flash from a Vortex</text></string>
+<string id="enc_artmod_electra_flash_zharka_name"><text>[2] Flash from a Burner</text></string>
+<string id="enc_artmod_rusty_kristall_mincer_name"><text>[2] Crystal Thorn from a Whirligig</text></string>
+<string id="enc_artmod_rusty_kristall_buzz_name"><text>[2] Crystal Thorn from a Fruit Punch</text></string>
+<string id="enc_artmod_fireball_buzz_name"><text>[2] Fireball from a Fruit Punch</text></string>
+<string id="enc_artmod_fireball_galant_name"><text>[2] Fireball from an Electra</text></string>
+<string id="enc_artmod_cristall_flower_galant_name"><text>[2] Stone Flower from an Electra</text></string>
+<string id="enc_artmod_cristall_flower_mincer_name"><text>[2] Stone Flower from a Whirligig</text></string>
+
+<string id="enc_artmod_cristall_mosquito_bald_name"><text>[3] Crystal from a Springboard</text></string>
+<string id="enc_artmod_cristall_buzz_name"><text>[3] Crystal from a Fruit Punch</text></string>
+<string id="enc_artmod_rusty_sea-urchin_mosquito_bald_name"><text>[3] Sea Urchin from a Springboard</text></string>
+<string id="enc_artmod_rusty_sea-urchin_ice_name"><text>[3] Sea Urchin from a Snow</text></string>
+<string id="enc_artmod_night_star_gravi_zone_name"><text>[3] Night Star from a Vortex</text></string>
+<string id="enc_artmod_night_star_zharka_name"><text>[3] Night Star from a Burner</text></string>
+<string id="enc_artmod_soul_gravi_zone_name"><text>[3] Soul from a Vortex</text></string>
+<string id="enc_artmod_electra_moonlight_galant_name"><text>[3] Soul from an Electra</text></string>
+<string id="enc_artmod_electra_moonlight_mincer_name"><text>[3] Moonlight from a Whirligig</text></string>
+<string id="enc_artmod_electra_moonlight_zharka_name"><text>[3] Moonlight from a Burner</text></string>
+<string id="enc_artmod_ameba_slug_mincer_name"><text>[3] Mica from a Whirligig</text></string>
+<string id="enc_artmod_ameba_mica_galant_name"><text>[3] Mica from an Electra</text></string>
+<string id="enc_artmod_gold_fish_buzz_name"><text>[3] Goldfish from a Fruit Punch</text></string>
+<string id="enc_artmod_gold_fish_galant_name"><text>[3] Goldfish from an Electra</text></string>
+
+<string id="enc_artmod_dummy_dummy_mosquito_bald_name"><text>[4] Dummy from a Springboard</text></string>
+<string id="enc_artmod_dummy_pellicle_gravi_zone_name"><text>[4] Pellicle from a Vortex</text></string>
+<string id="enc_artmod_dummy_glassbeads_mincer_name"><text>[4] Mama's Beads from a Whirligig</text></string>
+<string id="enc_artmod_fuzz_kolobok_buzz_name"><text>[4] Kolobok from a Fruit Punch</text></string>
+<string id="enc_artmod_dummy_battery_zharka_name"><text>[4] Battery from a Burner</text></string>
+<string id="enc_artmod_dummy_spring_galant_name"><text>[4] Spring from an Electra</text></string>
+
+<string id="resiept_activ_anom_info_name"><text>[ ] Snowball from a Snow</text></string>
+<string id="enc_info_dummy_dummy_new_name"><text>[ ] Battery from a Snow</text></string>
+<string id="enc_info_red_battery_name"><text>[ ] Ruby Battery from a Snow</text></string>
+<string id="enc_info_red_spring_name"><text>[ ] Ruby Spring from a Snow</text></string>
+<string id="enc_info_red_pellicle_name"><text>[ ] Ruby Pellicle from a Snow</text></string>
+<string id="enc_info_green_blood_name"><text>[ ] Emerald Stone Blood</text></string>
+<string id="enc_info_green_medusa_name"><text>[ ] Emerald Jellyfish</text></string>
+<string id="enc_info_green_vyvert_name"><text>[ ] Emerald Wrenched</text></string>
+<string id="enc_artmod_battery_jump_name"><text>[ ] Jumper from a Springboard</text></string>
+<string id="enc_artmod_glassbeads_ice_name"><text>[ ] Electric Beads from a Snow</text></string>
+<string id="enc_artmod_baloon_sakbuzz_name"><text>[ ] Canister from a Fruit Punch</text></string>
+<string id="enc_info_medus_new_name"><text>[ ] Gorgon Jellyfish from a Fruit Punch</text></string>
+<string id="enc_artmod_sul_new_ice_name"><text>[ ] Dirigible from a Snow</text></string>
+<string id="enc_artmod_eye_ice_name"><text>[ ] Eye from a Snow</text></string>
+
+<string id="amk_recipt_stone_dikoobraz_1_name"><text>Notes on the psycho's flash drive</text></string>
+<string id="amk_recipt_stone_dikoobraz_2_name"><text>Notes on the psycho's PDA</text></string>
+<string id="amk_recipt_steel_kolobok_name"><text>Reward for the shotgun</text></string>
+<string id="amk_recipt_titan_kolobok_name"><text>Entry in the mercenary's PDA</text></string>
+<string id="amk_recipt_almaz_kolobok_name"><text>Data from Kruglov</text></string>
+<string id="amk_recipt_controller_skalp_name"><text>Entry in the Monolithian's PDA</text></string>
+<string id="amk_recipt_souls_name"><text>Message from the Cook</text></string>
+<string id="amk_recipt_tears_electra_name"><text>Data from Sakharov (1)</text></string>
+<string id="amk_recipt_tears_fire_name"><text>Data from Sakharov (2)</text></string>
+<string id="amk_recipt_tears_chimaera_name"><text>Data from Sakharov (3)</text></string>
+<string id="amk_recipt_tears_gigant_name"><text>Data from Gluzov</text></string>
+<string id="amk_recipt_grandmother_glassbeards_name"><text>Data from Duty</text></string>
+<string id="amk_recipt_pra_grandmother_glassbeards_name"><text>Data from Sidorovich</text></string>
+<string id="amk_recipt_burer_grandmother_glassbeards_name"><text>Conversation with the deserter</text></string>
+<string id="amk_recipt_burer_pra_grandmother_glassbeards_name"><text>From the "Apostle" program report</text></string>
+<string id="amk_recipt_dikoobraz_name"><text>Data from the informant</text></string>
+<string id="amk_recipt_electra_dikoobraz_name"><text>Reward for the Playboy</text></string>
+<string id="amk_recipt_sopl_dikoobraz_name"><text>Data from the wounded man</text></string>
+<string id="amk_recipt_giant_small_brother_name"><text>Data from the "Zaslon" commander</text></string>
+<string id="amk_recipt_shkura_name"><text>Papers from the checkpoint</text></string>
+<string id="amk_recipt_cheshya_name"><text>Data from Voronin</text></string>
+<string id="amk_recipt_pancir_name"><text>Data from Yantar</text></string>
+<string id="amk_recipt_simbion_name"><text>Entry from X-18</text></string>
+<string id="amk_recipt_dummy_name"><text>Entry from X-16</text></string>
+<string id="amk_recipt_fake_name"><text>Data from the informant 2</text></string>
+
+<string id="tex_mikhalych_item_name"><text>Devices for Mikhalych</text></string>
+<string id="tex_lim_trader_bauble_name"><text>Artifact for Mikhalych</text></string>
+<string id="tex_sidor_outfit_name"><text>Suit from Sidorovich</text></string>
+<string id="tex_barmen_outfit_name"><text>Suit from the Barman</text></string>
+<string id="tex_sherstuk_outfit_name"><text>Suit from Sherstyuk</text></string>
+<string id="tex_marsh_baze_ecolog_name"><text>Work for the scientist from the Swamps</text></string>
+<string id="ecolog_artefact1_rand1_article_name"><text>Artifacts for Sakharov</text></string>
+<string id="tex_barmen_scafandr_name"><text>Find the Barman's friend</text></string>
+<string id="tex_sidor_scafandr_name"><text>Clarify rumors</text></string>
+<string id="tex_sidor_scafandr_dlg_name"><text>Drinks and snacks</text></string>
+<string id="tex_saharov_controler_name"><text>Controller on Yantar</text></string>
+<string id="tex_volk_gonec_name"><text>Wolf's messenger</text></string>
+<string id="tex_ivan_toz_name"><text>Payment for the shotgun</text></string>
+<string id="tex_marsh_crash_vertolet_name"><text>Black box from the Swamps</text></string>
+<string id="tex_dar_crash_vertolet_name"><text>Black box from the Dark Valley</text></string>
+<string id="tex_gen_crash_vertolet_name"><text>Black box from the Tesla zone</text></string>
+<string id="tex_dead_crash_vertolet_name"><text>Black box from the district center</text></string>
+<string id="tex_saharov_scientist_rf_name"><text>Scientists' trail</text></string>
+<string id="tex_semenov_green_art_name"><text>Artifact for Semyonov</text></string>
+<string id="tex_marsh_baze_guard_ohota_name"><text>Burer hunt</text></string>
+<string id="tex_agroprom_prikaz_name"><text>Vodka for an order</text></string>
+<string id="tex_barmen_freeman_name"><text>Searching for the stalker</text></string>
+<string id="tex_dar_greens_yan_way_name"><text>Leather trench coat for Ignat</text></string>
+<string id="tex_marsh_cook_ammo_name"><text>Ammo for Sylvester</text></string>
+<string id="petrenko_ammo_article_name"><text>Searching for the deserter</text></string>
+<string id="petrenko_ammo2_article_name"><text>Returning Duty property</text></string>
+<string id="tex_green_dan_passage_name"><text>Skins for Dan</text></string>
+<string id="tex_shurup_instrument_name"><text>Tools for Screw</text></string>
+<string id="shurup_fal_upgrade_article_name"><text>Weapon accessories</text></string>
+<string id="voron_upgrade_kit_article_name"><text>Exoskeleton for Raven</text></string>
+<string id="tex_private_blockpost_outfit_name"><text>Vodka for gravity suits</text></string>
+<string id="tex_private_blockpost_recipt_name"><text>Vodka for a recipe</text></string>
+<string id="tex_barmen_upir_name"><text>Learn about the partner</text></string>
+<string id="tex_lisiy_umnik_name"><text>Talk to Smarty</text></string>
+<string id="tex_pahom_petrov_box_name"><text>Package for Petrov</text></string>
+<string id="tex_mil_trader_aver_name"><text>Find the mercenary base</text></string>
+</string_table>

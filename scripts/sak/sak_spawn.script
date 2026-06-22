@@ -1225,6 +1225,18 @@ function spawn_brain_zombie()
 		pk:set(data)	
 		set_st_conds(obj)
 	end
+	
+	local z1 = g_sim:create("zombie_scientist_1", sak.v3f(122.6484,30.2000,-12.4259), 7187, 1543)
+	local z2 = g_sim:create("zombie_scientist_2", sak.v3f(134.2582,30.7063,-19.2894), 7329, 1542)
+	for i=1,2 do
+		local zomb = (isEven(i) and z1) or z2
+		local pk = get_netpk(zomb)
+		local data = pk:get()
+		data.custom_data = "[smart_terrains]\nnone=true\n[logic]\ncfg=scripts\\labx16\\x16_zombies.ltx"
+		data.base_out_restrictors = "x16_space_restrictor"
+		pk:set(data)	
+		set_st_conds(zomb)
+	end
 end
 
 function add_matveev_monsters()

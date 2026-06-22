@@ -11,6 +11,7 @@ visual					= monsters\burer\burer
 corpse_visual			= monsters\burer\burer
 icon = ui_npc_monster_burer	;
 MaxHealthValue		    = 400		
+keep_visual = true
 
 Spawn_Inventory_Item_Section = mutant_burer_hand
 Spawn_Inventory_Item_Probability = 0.2
@@ -60,6 +61,9 @@ Accel_Generic			= 1.5
 Accel_Calm				= 2.5
 Accel_Aggressive		= 200 ;6.5
 
+run_animation_tl = stand_run_fwd_turn_left_
+run_animation_tr = stand_run_fwd_turn_right_
+
 MinAttackDist			= 1.5
 MaxAttackDist			= 2.5
 as_min_dist				= 0.5
@@ -77,7 +81,7 @@ satiety_health_v		= 0.00007
 satiety_critical		= -1.0
 radiation_health_v		= 0.01			
 morale_v				= 0.01	
-health_hit_part			= 0.45			
+health_hit_part			= 0.22 ;0.45			
 power_hit_part			= 1.0			
 psy_health_v			= 0.1
 
@@ -180,6 +184,7 @@ Gravi_Radius				= 5.0
 Gravi_Impulse_To_Objects	= 500.0
 Gravi_Impulse_To_Enemy		= 1000.0
 Gravi_Hit_Power				= 0.95
+gravi_animation_fire     = stand_power_attack_
 
 ;----
 ; Tele Ability
@@ -192,6 +197,9 @@ Tele_Find_Radius		 = 6.0
 
 sound_tele_hold			= monsters\burer\burer_tele_hold
 sound_tele_throw		= monsters\burer\burer_tele_throw
+
+tele_animation_fire = stand_power_attack_
+tele_animation_tele = telekinesis_
 
 ;----
 ; Scanner
@@ -213,6 +221,8 @@ Particle_Gravi_Wave		= anomaly2\burer_wave
 Particle_Gravi_Prepare	= anomaly2\burer_prepare
 Particle_Shield			= anomaly2\burer_shield_01
 
+shield_animation_start = stand_shield_
+shield_animation_cont  = stand_shield_idle_
 
 
 ;----
@@ -231,9 +241,9 @@ class					= SM_BURER					; AI class
 
 script_binding  		= bind_monster.bind
 
-bone_torso				= bip01_spine1 
-bone_head				= bip01_head
-bone_fire				= bip01_head
+bone_torso				= chest
+bone_head				= head
+bone_fire				= head
 weapon_usage			= 0	
 actor_restrictor		= medium_monster ;medium_monster,stalker,none
 
@@ -265,7 +275,7 @@ community				= burer
 ;-------------------------------------------------------------------------
 anti_aim_timeout      = 2       ;sec
 anti_aim_effectors    = effector_monster_hit_1, effector_monster_hit_2, effector_monster_hit_3, effector_monster_hit_4
-;anti_aim_animation    = stand_stamina_attack_
+anti_aim_animation    = stand_stamina_attack_
 anti_aim_max_angle    = 0.3
 anti_aim_detection_gain_speed  = 10
 anti_aim_detection_loose_speed = 0.1
@@ -284,7 +294,7 @@ weight_to_stamina_hit = 0.11    ;kg to stamina %
 ;---
 ;Left hand Strike
 stand_attack_0 =	  	0.5,		  0.20,	     80,        2.0, 1.0, 0.5,		 -1.6, 1.6, -1.6, 1.6,				  2.5
-
+stand_stamina_attack_0 	 =	  	0.4,		  0.0,	     0,          2.0, 1.0, 0.5,		 -1.6, 1.6, -1.6, 1.6,				  2.5
 
 ;=================================================================================
 ; Burer Attack Effector
@@ -354,8 +364,8 @@ default				= 0.1, -1, 0.1
 ;bip01_pelvis 			= 0.1, -1, 0.1
 ;bip01_spine 			= 0.1, -1, 0.1
 ;bip01_spine1 			= 0.1, -1, 0.1
-bip01_neck 				= 1.8, -1, 0.5
-bip01_head 				= 2.5, -1, 0.2
+neck 				= 1.8, -1, 0.5
+head 				= 2.5, -1, 0.2
 ;=================================================================================
 ; Burer Scan Effector
 ;=================================================================================

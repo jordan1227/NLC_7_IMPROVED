@@ -332,7 +332,6 @@
 		</phrase>
 		<phrase id="5">
 			<text>docent_x10_done_dlg_5</text>
-			<action>sak_dialog.text_code_x10</action>
 			<next>6</next>
 		</phrase>
 		<phrase id="6">
@@ -1337,7 +1336,6 @@
 		</phrase>			
 		<phrase id="2">
 			<text>sanek_quest_art1_dialog_2</text>
-			<action>mike.talk_about_set</action>
 			<next>3</next>
 		</phrase>			
 		<phrase id="3">
@@ -1403,7 +1401,6 @@
 		</phrase>			
 		<phrase id="4">
 			<text>sanek_quest_art2_dialog_4</text>
-			<action>mike.talk_about_set</action>
 			<next>5</next>
 			<next>6</next>
 			<next>7</next>
@@ -1541,7 +1538,6 @@
 		</phrase>			
 		<phrase id="2">
 			<text>voron_quest_art1_dialog_2</text>
-			<action>mike.talk_about_set</action>
 			<next>3</next>
 		</phrase>			
 		<phrase id="3">
@@ -1607,7 +1603,6 @@
 		</phrase>			
 		<phrase id="4">
 			<text>voron_quest_art2_dialog_4</text>
-			<action>mike.talk_about_set</action>
 			<next>5</next>
 			<next>6</next>
 			<next>7</next>

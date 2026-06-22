@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+<string id="actor_break_dialog_0"><text>See you around!</text></string>
+<string id="actor_help_wounded_0"><text>How you holdin’ up?</text></string>
+<string id="actor_help_wounded_100"><text>Like shit, can’t you see? I need a medkit, or at least a bandage.</text></string>
+<string id="actor_help_wounded_101"><text>Here, take a medkit.</text></string>
+<string id="actor_help_wounded_102"><text>Thanks, brother. I won’t forget this.</text></string>
+<string id="actor_help_wounded_201"><text>Here, take a bandage.</text></string>
+<string id="actor_help_wounded_301"><text>Sorry, I’ve got nothing.</text></string>
+<string id="actor_help_wounded_302"><text>How do you even survive in the Zone like that? Some infection’ll get you, and you won’t even be able to patch yourself up.</text></string>
+<string id="actor_help_wounded_401"><text>Heh, how’d it come to this… Sorry, I can’t give you my own, or I’ll be left with nothing.</text></string>
+<string id="actor_help_wounded_402"><text>Your call. Just don’t think it does you any credit.</text></string>
+<string id="hello_dialog_101"><text>Hi!</text></string>
+<string id="hello_dialog_201"><text>Hey, bro, help me out!</text></string>
+<string id="hello_dialog_301"><text>Go on, move along…</text></string>
+</string_table>

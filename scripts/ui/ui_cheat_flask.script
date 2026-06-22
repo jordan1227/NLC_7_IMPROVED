@@ -115,7 +115,7 @@ function cheat:on_quit()
 	self:del_windows()
 	used_items.set_get_flag_use_gadget(1,true)
 	self:GetHolder():start_stop_menu (self,true)
-	vergas_lib.s_play(vergas_lib.set_pr_from_config_str("bag_on_belt","snd_deselect"),1)
+	vergas_lib.s_play("razgruzka\\podsumok_deselect",1)
 	razgruzka.inventory_on_off(false)
 	self:ClearCallbacks()
 end
@@ -128,7 +128,7 @@ function cheat:on_work_quit()
 	self:del_windows()
 	used_items.set_get_flag_use_gadget(1,true)
 	self:GetHolder():start_stop_menu (self,true)
-	vergas_lib.s_play(vergas_lib.set_pr_from_config_str("bag_on_belt","snd_deselect"),1)
+	vergas_lib.s_play("razgruzka\\podsumok_deselect",1)
 	razgruzka.inventory_on_off_work(false)
 end
 
@@ -139,13 +139,13 @@ end
 
 function cheat:btn_left()
 	info_rug = razgruzka.step_left(info_rug,8)
-	vergas_lib.s_play(vergas_lib.set_pr_from_config_str("bag_on_belt","snd_scroll"),1)
+	vergas_lib.s_play("razgruzka\\bag_scroll",1)
 	self:reset_windows()
 end
 
 function cheat:btn_right()
 	info_rug = razgruzka.step_right(info_rug,8)
-	vergas_lib.s_play(vergas_lib.set_pr_from_config_str("bag_on_belt","snd_scroll"),1)
+	vergas_lib.s_play("razgruzka\\bag_scroll",1)
 	self:reset_windows()
 end
 
@@ -217,7 +217,7 @@ function cheat:btn_empty()				-- нопка выгрузки
 	elseif n == 7 then
 		self:set_wnd_4(1)
 	end
-	vergas_lib.s_play(vergas_lib.set_pr_from_config_str("bag_on_belt","snd_scroll"),1)
+	vergas_lib.s_play("razgruzka\\bag_scroll",1)
 end
 
 function cheat:btn_wash()				-- нопка помывки стекла
@@ -582,7 +582,7 @@ function cheat:klik_btn(btn,record)
 			btn_old = 0
 		end
 	end
-	vergas_lib.s_play(vergas_lib.set_pr_from_config_str("bag_on_belt","snd_load"),1)
+	vergas_lib.s_play("razgruzka\\medkit_load",1)
 end
 
 function cheat:set_window(btn,regime)

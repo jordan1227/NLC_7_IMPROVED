@@ -205,17 +205,17 @@ end
 -----------------------------------------------------------
 function notebook_arts_screen()
 	if not has_alife_info("arts_notebook_read") then
-		local act = db.actor
-		act:give_info_portion("info_fakeartmod1")
-		act:give_info_portion("info_fakeartmod2")
-		act:give_info_portion("info_fakeartmod3")
-		act:give_info_portion("info_fakeartmod4")
-		act:give_info_portion("info_fakeartmod5")
-		act:give_info_portion("info_fakeartmod_m")
-		act:give_info_portion("info_fakeartmod_mm")
-		act:give_info_portion("info_fakeartmod_gm")
-		act:give_info_portion("info_fakeartmod_a")
-		act:give_info_portion("arts_notebook_read")
+		give_article("enc_fakeartmod1")
+		give_article("enc_fakeartmod2")
+		give_article("enc_fakeartmod3")
+		give_article("enc_fakeartmod4")
+		give_article("enc_fakeartmod5")
+		give_article("enc_fakeartmod_m")
+		give_article("enc_fakeartmod_mm")
+		give_article("enc_fakeartmod_gm")
+		give_article("enc_fakeartmod_a")
+		
+		db.actor:give_info_portion("arts_notebook_read")
 		sak.send_tip("Новая информация добавлена в ПДА","",3,10,"pribor","news","green")
 	end
 	if has_alife_info( "ui_inventory" ) then

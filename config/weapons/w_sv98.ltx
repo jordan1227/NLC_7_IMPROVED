@@ -26,7 +26,7 @@ ammo_mag_size					= 10
 ammo_class						= ammo_7.62x54_ap, ammo_7.62x54_7h1, ammo_7.62x54_7h14
 sprint_allowed					= true
 
-fire_dispersion_base			= 0.035
+fire_dispersion_base			= 0.001
 
 control_inertion_factor			= 1.35f
 
@@ -150,9 +150,9 @@ anm_hide_empty             						   = sv98m_holster, idle_empty
 anm_idle             							   = sv98m_idle
 anm_idle_empty             						   = sv98m_idle, idle_empty
 anm_shots										   = sv98m_shoot, shoot
-anm_shots_last									   = sv98m_shoot_last, idle_empty
-anm_shots_when_aim								   = sv98m_shoot_scope, shoot
-anm_shots_when_aim_last							   = sv98m_shoot_scope_last, idle_empty
+; anm_shoot_last									   = sv98m_shoot_last, idle_empty
+anm_shoot_aim								   = sv98m_shoot_scope, shoot
+; anm_shoot_aim_last							   = sv98m_shoot_scope_last, idle_empty
 anm_idle_aim									   = sv98m_idle_aim
 anm_idle_aim_empty								   = sv98m_idle_aim, idle_empty
 anm_reload										   = sv98m_reload, reload_m

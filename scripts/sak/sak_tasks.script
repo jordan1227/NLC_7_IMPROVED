@@ -50,7 +50,7 @@ function proceed()
 	if (has_alife_info("borov_11_done") or has_alife_info("borov_11_failed")) and not has_alife_info("borov_11_fdone") then
 		actor:give_info_portion("borov_11_fdone")
 	end
-	if has_alife_info("borov_11_saharov_done") and not has_alife_info("borov_11_failed") then
+	if has_alife_info("sakharov_val_container_done_info") and not has_alife_info("borov_11_failed") then
 		actor:give_info_portion("borov_11_failed")
 	end
 	if has_alife_info("borov_11_start") and not has_alife_info("borov_11_have") then

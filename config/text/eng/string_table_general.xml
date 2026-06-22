@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+<string id="actor_has_borov_key"><text>Entrance to Laboratory X-18</text></string>
+<string id="Found_PDA"><text>Recovered data fragments</text></string>
+
+<string id="bandit"><text>Bandits</text></string>
+<string id="dolg"><text>Duty</text></string>
+<string id="ecolog"><text>Scientists</text></string>
+<string id="killer"><text>Mercenaries</text></string>
+<string id="freedom"><text>Freedom</text></string>
+<string id="military"><text>Military</text></string>
+<string id="monolith"><text>Monolith</text></string>
+<string id="trader"><text>Respected</text></string>
+<string id="stalker"><text>Loners</text></string>
+<string id="zombied"><text>Zombies</text></string>
+
+<string id="actor"><text>Loner</text></string>
+<string id="actor_dolg"><text>Duty</text></string>
+<string id="actor_freedom"><text>Freedom</text></string>
+<string id="arena_enemy"><text>Mercenary</text></string>
+
+<string id="neutral"><text>Neutral</text></string>
+<string id="indifferent"><text>Neutral</text></string>
+<string id="friendly"><text>Friendly</text></string>
+<string id="enemy"><text>Enemy</text></string>
+<string id="bad"><text>Bad</text></string>
+<string id="good"><text>Good</text></string>
+<string id="excellent"><text>Excellent</text></string>
+<string id="terrible"><text>Terrible</text></string>
+<string id="very_bad"><text>Very bad</text></string>
+<string id="very_good"><text>Very good</text></string>
+
+<string id="l01_escape"><text>Cordon</text></string>
+<string id="l02_garbage"><text>Garbage</text></string>
+<string id="l03_agroprom"><text>Agroprom</text></string>
+<string id="l04_darkvalley"><text>Dark Valley</text></string>
+<string id="l05_bar"><text>Bar</text></string>
+<string id="l06_rostok"><text>Wild Territory</text></string>
+<string id="l07_military"><text>Army Warehouses</text></string>
+<string id="l08_yantar"><text>Yantar</text></string>
+<string id="l10_radar"><text>Radar</text></string>
+<string id="l11_pripyat"><text>Pripyat</text></string>
+<string id="l12_stancia_new"><text>CNPP</text></string>
+<string id="l12_stancia_2"><text>CNPP</text></string>
+<string id="l12_stancia_2_new"><text>CNPP-2</text></string>
+<string id="l03u_agr_underground"><text>Agroprom Research Institute Underground</text></string>
+<string id="l04u_labx18"><text>Laboratory X-18</text></string>
+<string id="l08u_brainlab"><text>Laboratory X-16</text></string>
+<string id="labx8"><text>Laboratory X-8</text></string>
+<string id="labx10"><text>Laboratory X-10</text></string>
+<string id="l10u_bunker"><text>Laboratory X-12</text></string>
+<string id="l12u_sarcofag"><text>Sarcophagus</text></string>
+<string id="l12u_control_monolith"><text>Monolith Control Room</text></string>
+<string id="aver"><text>Foggy Thicket</text></string>
+<string id="av_peshera"><text>Diggers' Underground</text></string>
+<string id="deadcity"><text>Ivankovsky District Center</text></string>
+<string id="limansk"><text>Limansk</text></string>
+<string id="lost_village"><text>Forgotten Village</text></string>
+<string id="marsh"><text>Swamp</text></string>
+<string id="peshera"><text>Catacombs</text></string>
+<string id="red_forest"><text>Red Forest</text></string>
+<string id="generators"><text>Tesla Zone</text></string>
+<string id="hospital"><text>Sunray Sanatorium</text></string>
+<string id="k01_darkscape"><text>The Gut</text></string>
+<string id="warlab"><text>Tesla Bunker</text></string>
+
+<string id="master"><text>Master</text></string>
+<string id="experienced"><text>Experienced</text></string>
+<string id="novice"><text>Novice</text></string>
+<string id="veteran"><text>Veteran</text></string>
+
+<string id="st_no_active_task"><text>No active task</text></string>
+<string id="st_time_till_surge"><text>Time until Blowout</text></string>
+<string id="Btn_Cancel"><text>Cancel</text></string>
+<string id="Btn_No"><text>No</text></string>
+<string id="Btn_OK"><text>OK</text></string>
+<string id="Btn_Yes"><text>Yes</text></string>
+<string id="global_map"><text>ZONE</text></string>
+<string id="st_autosave"><text>Autosaving...</text></string>
+<string id="st_game_over"><text>Killed</text></string>
+<string id="st_item_used"><text>Used</text></string>
+<string id="st_not_enough_money"><text>Not enough money</text></string>
+<string id="st_not_enough_money_npc"><text>The other party doesn't have enough money</text></string>
+<string id="ui_st_opponent_items"><text>Backpack</text></string>
+<string id="st_search_treasure"><text>Search</text></string>
+<string id="st_search_body"><text>Let's see what he's got in his guts...</text></string>
+<string id="search_self_inv"><text>Look inside</text></string>
+<string id="search_self_rep"><text>Unload the toolbox</text></string>
+<string id="what_this"><text>What do I have here...</text></string>
+<string id="inventory_item_use"><text>Pick up</text></string>
+<string id="ui_mm_check_updates"><text>Updates</text></string>
+<string id="ui_mm_alternative"><text>Alternative</text></string>
+<string id="ui_inv_health"><text>Health</text></string>
+<string id="ui_inv_psy_health"><text>Psy-health</text></string>
+<string id="ui_inv_radiation"><text>Radiation</text></string>
+<string id="ui_inv_power"><text>Stamina</text></string>
+<string id="st_mp_say_to_all"><text>All</text></string>
+<string id="st_mp_say_to_team"><text>Team</text></string>
+<string id="st_mp_disabled_voting"><text>LAST SAVE</text></string>
+<string id="st_mp_no_current_voting"><text>LOAD</text></string>
+<string id="st_mp_ready"><text>Ready</text></string>
+<string id="st_mp_voting_succeed"><text>TO MAIN MENU</text></string>
+<string id="st_mp_voting_failed"><text>NLC 3.9.1</text></string>
+<string id="st_change_level_disabled"><text>Transition blocked. A digital profile signature is required. Upload player.dat to http://darkstalker.ru/sign_profile.php to sign it.</text></string>
+<string id="st_save_not_allowed"><text>You can't save during a blowout or for some time after it!</text></string>
+<string id="box_no_space"><text>No more space for items</text></string>
+
+<string id="enc_recipts"><text>Modificate recipes</text></string>
+<string id="a_level_1"><text>Level One</text></string>
+<string id="a_level_2"><text>Level Two</text></string>
+<string id="a_level_3"><text>Level Three</text></string>
+<string id="a_level_4"><text>Dummies</text></string>
+<string id="a_level_5"><text>Unique</text></string>
+<string id="mod"><text>Modificates</text></string>
+<string id="mezomod"><text>Mesomodificates</text></string>
+<string id="gipermod"><text>Hypermodificates</text></string>
+<string id="absol"><text>Absolutes</text></string>
+
+<string id="blowout_not_sleep"><text>A blowout! No sleep now!</text></string>
+<string id="cant_sleep_equip"><text>Can't fit in there with all this gear!</text></string>
+<string id="not_need_sleep"><text>Don't really feel like sleeping...</text></string>
+<string id="not_need_sleep_nrg"><text>Can't fall asleep! Energy drink's still working... Damn it!</text></string>
+<string id="not_need_sleep_enemy"><text>Sleep?! With enemies nearby?!</text></string>
+<string id="not_need_sleep_undegrourd"><text>The underground isn't the best place to sleep.</text></string>
+</string_table>
